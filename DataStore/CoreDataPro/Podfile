@@ -1,0 +1,5 @@
+target 'CoreDataPro' do
+platform :ios, '7.0'
+pod 'MagicalRecord', '~> 2.3.2' 
+end
+
