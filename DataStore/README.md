@@ -17,13 +17,13 @@
 
 * 一个应用的沙盒目录如下：
 
-![image](https://github.com/itwyhuaing/OC-WYH/blob/master/DataStore/image/01.png)
+![image](https://github.com/itwyhuaing/OC-WYH/blob/master/DataStore/image/sh1.png)
 
-![image](https://github.com/itwyhuaing/OC-WYH/blob/master/DataStore/image/02.png)
+![image](https://github.com/itwyhuaing/OC-WYH/blob/master/DataStore/image/sh2.png)
 
-![image](https://github.com/itwyhuaing/OC-WYH/blob/master/DataStore/image/03.png)
+![image](https://github.com/itwyhuaing/OC-WYH/blob/master/DataStore/image/sh3.png)
 
-![image](https://github.com/itwyhuaing/OC-WYH/blob/master/DataStore/image/04.png)
+![image](https://github.com/itwyhuaing/OC-WYH/blob/master/DataStore/image/sh4.png)
 
 * Documents 应用程序在运行时生成的一些需要长久保存的数据。Library/Caches 储存应用程序网络请求的数据信息(音视频与图片等的缓存)。此目录下的数据不会自动删除，需要程序员手动清除该目录下的数据。主要用于保存应用在运行时生成的需要长期使用的数据.一般用于存储体积较大数据。Library/Preferences 设置应用的一些功能会在该目录中查找相应设置的信息,该目录由系统自动管理,通常用来储存一些基本的应用配置信息,比如账号密码,自动登录等。tmp 保存应用运行时产生的一些临时数据;应用程序退出、系统空间不够、手机重启等情况下都会自动清除该目录的数据。无需程序员手动清除该目录中的数据。
 
@@ -98,3 +98,15 @@ isKindOfClass     ：参数为实例对象 - 参数所属类为其子类或本�
 * FMDB 正式基于 SQLite 开发的一套开源库。使用时，需要自己写一些简单的SQLite语句。
 * CoreData 是苹果给出的一套基于 SQLite 的数据存储方案；而且不需要自己写任何SQLite语句。该功能依赖于 CoreData.framework 框架，该框架已经很好地将数据库表和字段封装成了对象和属性，表之间的一对多、多对多关系则封装成了对象之间的包含关系。
 * Core Data的强大之处就在于这种关系可以在一个对象更新时，其关联的对象也会随着更新，相当于你更新一张表的时候，其关联的其他表也会随着更新。Core Data的另外一个特点就是提供了更简单的性能管理机制，仅提供几个类就可以管理整个数据库。由于直接使用苹果提供的CoreData容易出错，这里提供一个很好的三方库 MagicalRecord 。
+
+* Pod 添加 MagicalRecord 依赖库之后，文件创建 - 数据实体创建 - 数据迁移 :
+
+![image](https://github.com/itwyhuaing/OC-WYH/blob/master/DataStore/image/cd1.png)
+
+![image](https://github.com/itwyhuaing/OC-WYH/blob/master/DataStore/image/cd2.png)
+
+![image](https://github.com/itwyhuaing/OC-WYH/blob/master/DataStore/image/cd3.png)
+
+![image](https://github.com/itwyhuaing/OC-WYH/blob/master/DataStore/image/cd4.png)
+
+![image](https://github.com/itwyhuaing/OC-WYH/blob/master/DataStore/image/cd5.png)
