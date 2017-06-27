@@ -17,13 +17,13 @@
 
 * 一个应用的沙盒目录如下：
 
-![image](https://github.com/itwyhuaing/OC-WYH/DataStore/image/01.png)
+![image](https://github.com/itwyhuaing/OC-WYH/blob/master/DataStore/image/01.png)
 
-![image](https://github.com/itwyhuaing/OC-WYH/DataStore/image/02.png)
+![image](https://github.com/itwyhuaing/OC-WYH/blob/master/DataStore/image/02.png)
 
-![image](https://github.com/itwyhuaing/OC-WYH/DataStore/image/03.png)
+![image](https://github.com/itwyhuaing/OC-WYH/blob/master/DataStore/image/03.png)
 
-![image](https://github.com/itwyhuaing/OC-WYH/DataStore/image/04.png)
+![image](https://github.com/itwyhuaing/OC-WYH/blob/master/DataStore/image/04.png)
 
 * Documents 应用程序在运行时生成的一些需要长久保存的数据。Library/Caches 储存应用程序网络请求的数据信息(音视频与图片等的缓存)。此目录下的数据不会自动删除，需要程序员手动清除该目录下的数据。主要用于保存应用在运行时生成的需要长期使用的数据.一般用于存储体积较大数据。Library/Preferences 设置应用的一些功能会在该目录中查找相应设置的信息,该目录由系统自动管理,通常用来储存一些基本的应用配置信息,比如账号密码,自动登录等。tmp 保存应用运行时产生的一些临时数据;应用程序退出、系统空间不够、手机重启等情况下都会自动清除该目录的数据。无需程序员手动清除该目录中的数据。
 
@@ -37,27 +37,27 @@
 
 文件创建
 
-![image](https://github.com/itwyhuaing/OC-WYH/DataStore/image/plist_create.png)
+![image](https://github.com/itwyhuaing/OC-WYH/blob/master/DataStore/image/plist_create.png)
 
 
 字符串写入
 
-![image](https://github.com/itwyhuaing/OC-WYH/DataStore/image/plist_string_write.png)
+![image](https://github.com/itwyhuaing/OC-WYH/blob/master/DataStore/image/plist_string_write.png)
 
 
 数组写入
 
-![image](https://github.com/itwyhuaing/OC-WYH/DataStore/image/plist_arr_write.png)
+![image](https://github.com/itwyhuaing/OC-WYH/blob/master/DataStore/image/plist_arr_write.png)
 
 
 字典写入
 
-![image](https://github.com/itwyhuaing/OC-WYH/DataStore/image/plist_dic_write.png)
+![image](https://github.com/itwyhuaing/OC-WYH/blob/master/DataStore/image/plist_dic_write.png)
 
 
 数据读取
 
-![image](https://github.com/itwyhuaing/OC-WYH/DataStore/image/plist_read.png)
+![image](https://github.com/itwyhuaing/OC-WYH/blob/master/DataStore/image/plist_read.png)
 
 
 ##### NSUserDefaults 沙盒存储(个人偏好存储)
@@ -73,11 +73,11 @@ isKindOfClass     ：参数为实例对象 - 参数所属类为其子类或本�
 * 常用语存储用户的个人偏好设置。
 * 这种方式本质是操作plist文件，所以性能方面的考虑同plist文件数据储存。
 
-![image](https://github.com/itwyhuaing/OC-WYH/DataStore/image/default_write_before.png)
+![image](https://github.com/itwyhuaing/OC-WYH/blob/master/DataStore/image/default_write_before.png)
 
-![image](https://github.com/itwyhuaing/OC-WYH/DataStore/image/default_write_after.png)
+![image](https://github.com/itwyhuaing/OC-WYH/blob/master/DataStore/image/default_write_after.png)
 
-![image](https://github.com/itwyhuaing/OC-WYH/DataStore/image/default_read.png)
+![image](https://github.com/itwyhuaing/OC-WYH/blob/master/DataStore/image/default_read.png)
 
 
 ##### 文件读写储存
