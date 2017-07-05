@@ -1,24 +1,23 @@
 //
-//  ViewController.m
+//  CoreDataVC.m
 //  DataStoreDemo
 //
 //  Created by hnbwyh on 17/6/27.
 //  Copyright © 2017年 hainbwyh. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "CoreDataVC.h"
 
-@interface ViewController ()
+@interface CoreDataVC ()
 
 @end
 
-@implementation ViewController
+@implementation CoreDataVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.view.backgroundColor = [UIColor whiteColor];
-    
+    self.displayLabel.text = @"可查看 CoreDataPro 及 MagicalRecord 工程";
 }
 
 @end

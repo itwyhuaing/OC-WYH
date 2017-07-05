@@ -9,13 +9,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "DataStoreDemo/ViewController.m"
-            timestampString = "520241868.564841"
+            filePath = "DataStoreDemo/DataStoreGroup/PlistStore/PlistVC.m"
+            timestampString = "520248041.478432"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "20"
-            endingLineNumber = "20"
-            landmarkName = "-viewDidLoad"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
+            landmarkName = "-rightNavBtnEvent:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
