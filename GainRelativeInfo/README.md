@@ -22,6 +22,7 @@
 * 这样就可以将获取到 UUID ，保存到KeyChain里面。
 * 刷机或重装系统后 UUID 还是会改变。
 * 倘若只是配置同一个 bunldleid 无论卸载与否均可以使用同一个 UUID ,可做如下配置。
+
 第一：添加文件
 ![image](https://github.com/itwyhuaing/OC-WYH/blob/master/GainRelativeInfo/image/img1.png)
 
