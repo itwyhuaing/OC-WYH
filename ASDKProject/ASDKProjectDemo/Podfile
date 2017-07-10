@@ -1,0 +1,4 @@
+platform :ios,'8.0'
+target "ASDKProjectDemo" do
+pod 'AsyncDisplayKit', '~> 1.9.92'
+end

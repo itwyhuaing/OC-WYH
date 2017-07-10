@@ -7,15 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0BECCB418B9651FCF7AA3CDD /* libPods-ASDKProjectDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 43B2EAC87EB14EB802B0A73A /* libPods-ASDKProjectDemo.a */; };
 		26037D131F13627D0014608B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 26037D121F13627D0014608B /* main.m */; };
 		26037D1C1F13627D0014608B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26037D1A1F13627D0014608B /* Main.storyboard */; };
 		26037D1E1F13627D0014608B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 26037D1D1F13627D0014608B /* Assets.xcassets */; };
 		26037D211F13627D0014608B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26037D1F1F13627D0014608B /* LaunchScreen.storyboard */; };
 		26037D2D1F1362B80014608B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 26037D2A1F1362B80014608B /* AppDelegate.m */; };
 		26037D2E1F1362B80014608B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26037D2C1F1362B80014608B /* ViewController.m */; };
+		26037EBC1F1371EB0014608B /* BaseASVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 26037EBB1F1371EB0014608B /* BaseASVC.m */; };
+		26037EC31F1375050014608B /* FirstASVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 26037EC21F1375050014608B /* FirstASVC.m */; };
+		26037EC61F13759F0014608B /* BaseASCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 26037EC51F13759F0014608B /* BaseASCell.m */; };
+		26037EC91F1375D20014608B /* TesTypeOneASCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 26037EC81F1375D20014608B /* TesTypeOneASCell.m */; };
+		26037ECF1F1376F60014608B /* BaseDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 26037ECE1F1376F60014608B /* BaseDataModel.m */; };
+		26037ED51F1377300014608B /* DataModel1.m in Sources */ = {isa = PBXBuildFile; fileRef = 26037ED41F1377300014608B /* DataModel1.m */; };
+		26037ED81F137F280014608B /* image.png in Resources */ = {isa = PBXBuildFile; fileRef = 26037ED71F137F280014608B /* image.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		110A4E4D18F732FF52BF87AE /* Pods-ASDKProjectDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ASDKProjectDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-ASDKProjectDemo/Pods-ASDKProjectDemo.release.xcconfig"; sourceTree = "<group>"; };
 		26037D0E1F13627D0014608B /* ASDKProjectDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ASDKProjectDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		26037D121F13627D0014608B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		26037D1B1F13627D0014608B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -26,6 +35,21 @@
 		26037D2A1F1362B80014608B /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		26037D2B1F1362B80014608B /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		26037D2C1F1362B80014608B /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		26037EBA1F1371EB0014608B /* BaseASVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseASVC.h; sourceTree = "<group>"; };
+		26037EBB1F1371EB0014608B /* BaseASVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseASVC.m; sourceTree = "<group>"; };
+		26037EC11F1375050014608B /* FirstASVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirstASVC.h; sourceTree = "<group>"; };
+		26037EC21F1375050014608B /* FirstASVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirstASVC.m; sourceTree = "<group>"; };
+		26037EC41F13759F0014608B /* BaseASCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseASCell.h; sourceTree = "<group>"; };
+		26037EC51F13759F0014608B /* BaseASCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseASCell.m; sourceTree = "<group>"; };
+		26037EC71F1375D20014608B /* TesTypeOneASCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TesTypeOneASCell.h; sourceTree = "<group>"; };
+		26037EC81F1375D20014608B /* TesTypeOneASCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TesTypeOneASCell.m; sourceTree = "<group>"; };
+		26037ECD1F1376F60014608B /* BaseDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseDataModel.h; sourceTree = "<group>"; };
+		26037ECE1F1376F60014608B /* BaseDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseDataModel.m; sourceTree = "<group>"; };
+		26037ED31F1377300014608B /* DataModel1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataModel1.h; sourceTree = "<group>"; };
+		26037ED41F1377300014608B /* DataModel1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataModel1.m; sourceTree = "<group>"; };
+		26037ED71F137F280014608B /* image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image.png; sourceTree = "<group>"; };
+		43B2EAC87EB14EB802B0A73A /* libPods-ASDKProjectDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ASDKProjectDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DF31CD060EB963CD757CE843 /* Pods-ASDKProjectDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ASDKProjectDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ASDKProjectDemo/Pods-ASDKProjectDemo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +57,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0BECCB418B9651FCF7AA3CDD /* libPods-ASDKProjectDemo.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,6 +69,8 @@
 			children = (
 				26037D101F13627D0014608B /* ASDKProjectDemo */,
 				26037D0F1F13627D0014608B /* Products */,
+				5D86A4192E2C1F4AA4A00AF6 /* Pods */,
+				BF1F6F286AEC09AFAE2AD38F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,6 +85,9 @@
 		26037D101F13627D0014608B /* ASDKProjectDemo */ = {
 			isa = PBXGroup;
 			children = (
+				26037ED61F137F280014608B /* image */,
+				26037EBD1F13745F0014608B /* Func */,
+				26037EB91F13719E0014608B /* Base */,
 				26037D281F1362B80014608B /* Main */,
 				26037D1A1F13627D0014608B /* Main.storyboard */,
 				26037D1D1F13627D0014608B /* Assets.xcassets */,
@@ -87,6 +117,81 @@
 			path = Main;
 			sourceTree = "<group>";
 		};
+		26037EB91F13719E0014608B /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				26037EBA1F1371EB0014608B /* BaseASVC.h */,
+				26037EBB1F1371EB0014608B /* BaseASVC.m */,
+				26037EC41F13759F0014608B /* BaseASCell.h */,
+				26037EC51F13759F0014608B /* BaseASCell.m */,
+				26037ECD1F1376F60014608B /* BaseDataModel.h */,
+				26037ECE1F1376F60014608B /* BaseDataModel.m */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		26037EBD1F13745F0014608B /* Func */ = {
+			isa = PBXGroup;
+			children = (
+				26037EBE1F1374B10014608B /* Controller */,
+				26037EBF1F1374B10014608B /* Model */,
+				26037EC01F1374B10014608B /* View */,
+			);
+			path = Func;
+			sourceTree = "<group>";
+		};
+		26037EBE1F1374B10014608B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				26037EC11F1375050014608B /* FirstASVC.h */,
+				26037EC21F1375050014608B /* FirstASVC.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		26037EBF1F1374B10014608B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				26037ED31F1377300014608B /* DataModel1.h */,
+				26037ED41F1377300014608B /* DataModel1.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		26037EC01F1374B10014608B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				26037EC71F1375D20014608B /* TesTypeOneASCell.h */,
+				26037EC81F1375D20014608B /* TesTypeOneASCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		26037ED61F137F280014608B /* image */ = {
+			isa = PBXGroup;
+			children = (
+				26037ED71F137F280014608B /* image.png */,
+			);
+			path = image;
+			sourceTree = "<group>";
+		};
+		5D86A4192E2C1F4AA4A00AF6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DF31CD060EB963CD757CE843 /* Pods-ASDKProjectDemo.debug.xcconfig */,
+				110A4E4D18F732FF52BF87AE /* Pods-ASDKProjectDemo.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		BF1F6F286AEC09AFAE2AD38F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				43B2EAC87EB14EB802B0A73A /* libPods-ASDKProjectDemo.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -94,9 +199,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 26037D251F13627D0014608B /* Build configuration list for PBXNativeTarget "ASDKProjectDemo" */;
 			buildPhases = (
+				E817A2E949BB7821E6D2177E /* [CP] Check Pods Manifest.lock */,
 				26037D0A1F13627D0014608B /* Sources */,
 				26037D0B1F13627D0014608B /* Frameworks */,
 				26037D0C1F13627D0014608B /* Resources */,
+				01C43AB590FB37D0A5AF3A7D /* [CP] Embed Pods Frameworks */,
+				68F449D44D65E4BE203A6CAF /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -149,19 +257,74 @@
 				26037D211F13627D0014608B /* LaunchScreen.storyboard in Resources */,
 				26037D1E1F13627D0014608B /* Assets.xcassets in Resources */,
 				26037D1C1F13627D0014608B /* Main.storyboard in Resources */,
+				26037ED81F137F280014608B /* image.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		01C43AB590FB37D0A5AF3A7D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ASDKProjectDemo/Pods-ASDKProjectDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		68F449D44D65E4BE203A6CAF /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ASDKProjectDemo/Pods-ASDKProjectDemo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E817A2E949BB7821E6D2177E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		26037D0A1F13627D0014608B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				26037ECF1F1376F60014608B /* BaseDataModel.m in Sources */,
 				26037D2D1F1362B80014608B /* AppDelegate.m in Sources */,
+				26037EBC1F1371EB0014608B /* BaseASVC.m in Sources */,
+				26037EC91F1375D20014608B /* TesTypeOneASCell.m in Sources */,
 				26037D131F13627D0014608B /* main.m in Sources */,
+				26037ED51F1377300014608B /* DataModel1.m in Sources */,
 				26037D2E1F1362B80014608B /* ViewController.m in Sources */,
+				26037EC61F13759F0014608B /* BaseASCell.m in Sources */,
+				26037EC31F1375050014608B /* FirstASVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -227,7 +390,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -268,7 +431,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -277,6 +440,7 @@
 		};
 		26037D261F13627D0014608B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DF31CD060EB963CD757CE843 /* Pods-ASDKProjectDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = JA7UMD99EC;
@@ -289,6 +453,7 @@
 		};
 		26037D271F13627D0014608B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 110A4E4D18F732FF52BF87AE /* Pods-ASDKProjectDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = JA7UMD99EC;
@@ -318,6 +483,7 @@
 				26037D271F13627D0014608B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

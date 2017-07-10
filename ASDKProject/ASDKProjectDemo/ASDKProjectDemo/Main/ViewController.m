@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "FirstASVC.h"
 
 @interface ViewController ()
 
@@ -16,14 +17,34 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    self.navigationController.navigationBar.translucent = NO;
+    
+    UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+    [btn setFrame:CGRectMake(0, 0, 35, 35)];
+    [btn addTarget:self action:@selector(rightNavBtnClick:) forControlEvents:UIControlEventTouchUpInside];
+    btn.titleLabel.font = [UIFont systemFontOfSize:15.0];
+    [btn setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
+    [btn setTitle:@"启动" forState:UIControlStateNormal];
+    self.navigationItem.rightBarButtonItem= [[UIBarButtonItem alloc] initWithCustomView:btn];
+    
+    if (self.navigationController.viewControllers.count > 1) {
+        UIButton *backBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+        [backBtn setFrame:CGRectMake(0, 0, 35, 35)];
+        [backBtn addTarget:self action:@selector(backNavBtnClick:) forControlEvents:UIControlEventTouchUpInside];
+        backBtn.titleLabel.font = [UIFont systemFontOfSize:15.0];
+        [backBtn setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
+        [backBtn setTitle:@"返回" forState:UIControlStateNormal];
+        self.navigationItem.leftBarButtonItem= [[UIBarButtonItem alloc] initWithCustomView:backBtn];
+    }
+    
 }
 
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)rightNavBtnClick:(UIButton *)btn{
+    [self.navigationController pushViewController:[[FirstASVC alloc] init] animated:YES];
 }
 
+- (void)backNavBtnClick:(UIButton *)btn{
+    
+}
 
 @end
