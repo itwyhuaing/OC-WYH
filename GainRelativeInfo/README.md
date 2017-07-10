@@ -45,3 +45,5 @@
 第四：取操作
 
 ![image](https://github.com/itwyhuaing/OC-WYH/blob/master/GainRelativeInfo/image/img4.png)
+
+##### 参考[获取iOS设备唯一标示UUID](http://www.jianshu.com/p/2741f0124cd3)
