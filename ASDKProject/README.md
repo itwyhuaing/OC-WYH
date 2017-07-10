@@ -1,4 +1,4 @@
-###  APP 性能优化
+###  ASDK 学习
 
 #### 部分翻译
 * 在 AsyncDisplayKit 的所有 layoutSpecs 中， ASStackLayoutSpec 是最有用也是功能最强大的一个类。
