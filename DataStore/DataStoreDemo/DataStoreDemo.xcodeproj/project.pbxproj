@@ -51,6 +51,7 @@
 		265916E11F0259A800BE2AEF /* UIView+WebCacheOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 265916D01F0259A800BE2AEF /* UIView+WebCacheOperation.m */; };
 		265916E41F025A8600BE2AEF /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 265916E31F025A8600BE2AEF /* libsqlite3.tbd */; };
 		265916E81F025EC200BE2AEF /* CoreDataVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 265916E71F025EC200BE2AEF /* CoreDataVC.m */; };
+		26FC0EDD1F18B6DD002CFCC7 /* HNBFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 26FC0EDC1F18B6DD002CFCC7 /* HNBFileManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -139,6 +140,8 @@
 		265916E31F025A8600BE2AEF /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		265916E61F025EC200BE2AEF /* CoreDataVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataVC.h; sourceTree = "<group>"; };
 		265916E71F025EC200BE2AEF /* CoreDataVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataVC.m; sourceTree = "<group>"; };
+		26FC0EDB1F18B6DD002CFCC7 /* HNBFileManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HNBFileManager.h; sourceTree = "<group>"; };
+		26FC0EDC1F18B6DD002CFCC7 /* HNBFileManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HNBFileManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -311,6 +314,8 @@
 		265916951F02585300BE2AEF /* Tool */ = {
 			isa = PBXGroup;
 			children = (
+				26FC0EDB1F18B6DD002CFCC7 /* HNBFileManager.h */,
+				26FC0EDC1F18B6DD002CFCC7 /* HNBFileManager.m */,
 				265916961F02585300BE2AEF /* YHDataBaseManager.h */,
 				265916971F02585300BE2AEF /* YHDataBaseManager.m */,
 				265916981F02585300BE2AEF /* YHFileOperator.h */,
@@ -497,6 +502,7 @@
 				265916AA1F02597000BE2AEF /* FMDatabaseAdditions.m in Sources */,
 				2659168E1F02578D00BE2AEF /* SQLiteVC.m in Sources */,
 				265916AD1F02597000BE2AEF /* FMResultSet.m in Sources */,
+				26FC0EDD1F18B6DD002CFCC7 /* HNBFileManager.m in Sources */,
 				2659168D1F02578D00BE2AEF /* PlistVC.m in Sources */,
 				265916941F0257AE00BE2AEF /* DataStoreMainView.m in Sources */,
 				265916681F02545700BE2AEF /* ViewController.m in Sources */,
@@ -674,6 +680,7 @@
 				265916601F02375800BE2AEF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
