@@ -14,4 +14,4 @@ OC 记录。
 * [ASDK 学习](https://github.com/itwyhuaing/OC-WYH/tree/master/ASDKProject)
 
 ### URL Schemes
-* [URL Schemes](https://github.com/itwyhuaing/OC-WYH/tree/master/URL Schemes)
+* [URL Schemes](https://github.com/itwyhuaing/OC-WYH/tree/master/URL%20Schemes)
