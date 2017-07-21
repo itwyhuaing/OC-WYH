@@ -40,7 +40,12 @@
     /******************** IDFV ***********************/
     NSString *IDFV = [[[UIDevice currentDevice] identifierForVendor] UUIDString];
     
-    NSString *displayText = [NSString stringWithFormat:@"1> WebUA:%@ \n \n 2> idfa:%@ \n \n 3> iOS5之后 禁止获取UDID \n \n 4> IDFV :%@",OldUserAgent,idfa,IDFV];
+    /******************** 硬件设备信息 ***********************/
+    UIDevice *device = [UIDevice currentDevice];
+    
+    
+    
+    NSString *displayText = [NSString stringWithFormat:@"1> WebUA: \n%@ \n \n 2> idfa: \n%@ \n \n 3> iOS5之后 禁止获取UDID \n \n 4> IDFV : \n%@",OldUserAgent,idfa,IDFV];
     self.displayLabel.text = displayText;
 }
 

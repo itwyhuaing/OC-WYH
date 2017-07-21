@@ -21,7 +21,7 @@
     [super viewDidLoad];
     
     [self.dataSource addObjectsFromArray:@[@"SecondVC",@"ThirdVC",@"FourthVC",@"FifthVC"]];
-    [self.desArr addObjectsFromArray:@[@"22",@"33",@"44",@"55"]];
+    [self.desArr addObjectsFromArray:@[@"22",@"WIFI-4G-3G-2G-NOTNET",@"UA-idfa-UDID-IDFV",@"KeychainItemWrapper"]];
 }
 
 

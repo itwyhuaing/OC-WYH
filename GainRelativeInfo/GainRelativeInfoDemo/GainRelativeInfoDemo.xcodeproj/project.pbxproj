@@ -17,10 +17,10 @@
 		265975851F0C8DE600CA2562 /* SecondVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 265975841F0C8DE600CA2562 /* SecondVC.m */; };
 		265975881F0C978A00CA2562 /* ThirdVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 265975871F0C978A00CA2562 /* ThirdVC.m */; };
 		2659758B1F0CB6B400CA2562 /* FourthVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2659758A1F0CB6B400CA2562 /* FourthVC.m */; };
-		2659758F1F0CF36600CA2562 /* KeychainItemWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 2659758E1F0CF36600CA2562 /* KeychainItemWrapper.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		265975921F0CF53900CA2562 /* AppUntils.m in Sources */ = {isa = PBXBuildFile; fileRef = 265975911F0CF53900CA2562 /* AppUntils.m */; };
 		265975951F0CF5FB00CA2562 /* FifthVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 265975941F0CF5FB00CA2562 /* FifthVC.m */; };
 		265975971F0CFC9900CA2562 /* KeychainAccessGroups.plist in Resources */ = {isa = PBXBuildFile; fileRef = 265975961F0CFC9900CA2562 /* KeychainAccessGroups.plist */; };
+		26FDE8761F17175400E80B2C /* AppUntils.m in Sources */ = {isa = PBXBuildFile; fileRef = 26FDE8701F17175400E80B2C /* AppUntils.m */; };
+		26FDE8771F17175400E80B2C /* KeychainItemWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 26FDE8721F17175400E80B2C /* KeychainItemWrapper.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,13 +42,13 @@
 		265975871F0C978A00CA2562 /* ThirdVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThirdVC.m; sourceTree = "<group>"; };
 		265975891F0CB6B400CA2562 /* FourthVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FourthVC.h; sourceTree = "<group>"; };
 		2659758A1F0CB6B400CA2562 /* FourthVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FourthVC.m; sourceTree = "<group>"; };
-		2659758D1F0CF36600CA2562 /* KeychainItemWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KeychainItemWrapper.h; path = GainRelativeInfoDemo/FunctionModule/KeychainItemWrapper.h; sourceTree = SOURCE_ROOT; };
-		2659758E1F0CF36600CA2562 /* KeychainItemWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KeychainItemWrapper.m; path = GainRelativeInfoDemo/FunctionModule/KeychainItemWrapper.m; sourceTree = SOURCE_ROOT; };
-		265975901F0CF53900CA2562 /* AppUntils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppUntils.h; sourceTree = "<group>"; };
-		265975911F0CF53900CA2562 /* AppUntils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppUntils.m; sourceTree = "<group>"; };
 		265975931F0CF5FB00CA2562 /* FifthVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FifthVC.h; sourceTree = "<group>"; };
 		265975941F0CF5FB00CA2562 /* FifthVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FifthVC.m; sourceTree = "<group>"; };
 		265975961F0CFC9900CA2562 /* KeychainAccessGroups.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = KeychainAccessGroups.plist; sourceTree = "<group>"; };
+		26FDE86F1F17175400E80B2C /* AppUntils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppUntils.h; sourceTree = "<group>"; };
+		26FDE8701F17175400E80B2C /* AppUntils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppUntils.m; sourceTree = "<group>"; };
+		26FDE8711F17175400E80B2C /* KeychainItemWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeychainItemWrapper.h; sourceTree = "<group>"; };
+		26FDE8721F17175400E80B2C /* KeychainItemWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeychainItemWrapper.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,12 +141,20 @@
 		2659758C1F0CF34D00CA2562 /* Tool */ = {
 			isa = PBXGroup;
 			children = (
-				2659758D1F0CF36600CA2562 /* KeychainItemWrapper.h */,
-				2659758E1F0CF36600CA2562 /* KeychainItemWrapper.m */,
-				265975901F0CF53900CA2562 /* AppUntils.h */,
-				265975911F0CF53900CA2562 /* AppUntils.m */,
+				26FDE86E1F17175400E80B2C /* Keychain */,
 			);
 			path = Tool;
+			sourceTree = "<group>";
+		};
+		26FDE86E1F17175400E80B2C /* Keychain */ = {
+			isa = PBXGroup;
+			children = (
+				26FDE86F1F17175400E80B2C /* AppUntils.h */,
+				26FDE8701F17175400E80B2C /* AppUntils.m */,
+				26FDE8711F17175400E80B2C /* KeychainItemWrapper.h */,
+				26FDE8721F17175400E80B2C /* KeychainItemWrapper.m */,
+			);
+			path = Keychain;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -227,10 +235,10 @@
 				265975811F0C8DC100CA2562 /* AppDelegate.m in Sources */,
 				2659755C1F0C8AFF00CA2562 /* main.m in Sources */,
 				265975951F0CF5FB00CA2562 /* FifthVC.m in Sources */,
-				2659758F1F0CF36600CA2562 /* KeychainItemWrapper.m in Sources */,
 				265975851F0C8DE600CA2562 /* SecondVC.m in Sources */,
-				265975921F0CF53900CA2562 /* AppUntils.m in Sources */,
+				26FDE8761F17175400E80B2C /* AppUntils.m in Sources */,
 				2659758B1F0CB6B400CA2562 /* FourthVC.m in Sources */,
+				26FDE8771F17175400E80B2C /* KeychainItemWrapper.m in Sources */,
 				265975801F0C8DC100CA2562 /* BaseDisPlayInfoVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

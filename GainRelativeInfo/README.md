@@ -3,7 +3,7 @@
 #### 设备标识
 ###### IDFA
 
-*  广告标识符 - Apple 专门给各广告提供商用来追踪用户设置的32位标识符。默认设置为允许追踪，当不被允许时，将会读取到32位全0的字符串。设置 - 隐私 - 广告 可以自行设置。
+*  广告标识符 - Apple 专门给各广告提供商用来追踪用户设置的32位标识符。默认设置为允许追踪。设置 - 隐私 - 广告 可以自行设置。在被允许访问的情况下，卸载之后再安装，该字符串保持不变。在不被允许情况下，iOS10 开始开发者将会读取到32位全0的字符串；iOS10之前版本即便不被允许，开发者还是可以取到32位字符串，只是这时的字符串不同于被允许情况下的字符串，而且还有可能发生变化(这种情况测试设备为 iPhone6 - 中国电信 - iOS9.2 - 未越狱 - MG4H2J/A)。
 
 ###### UDID
 
@@ -13,6 +13,9 @@
 
 * IDFV [identifierForVendor] - 给Vendor用以标识用户的32位字符串，每个设备在所属同一个Vendor的应用里具有相同的值；虽然该标识一定可以读取到，但卸载以后再安装该字符串的读取值会发生变化。
 
+###### MAC地址
+
+* 在iOS 7中苹果再一次无情的封杀mac地址，使用之前的方法获取到的mac地址全部都变成了02:00:00:00:00:00。
 
 ###### Keychain
 
@@ -46,4 +49,16 @@
 
 ![image](https://github.com/itwyhuaing/OC-WYH/blob/master/GainRelativeInfo/image/img4.png)
 
-##### 参考[获取iOS设备唯一标示UUID](http://www.jianshu.com/p/2741f0124cd3)
+
+###### deviceToken 推送
+* 64位字符串,同一台设备卸载在安装值会改变,不被允许时全0；每次安装都是唯一的
+
+##### 参考
+* [获取iOS设备唯一标示UUID](http://www.jianshu.com/p/2741f0124cd3)
+
+}]
+
+
+Mozilla/5.0 (iPhone; CPU iPhone OS 9_2 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Mobile/13C75
+
+Mozilla/5.0 (iPhone; CPU iPhone OS 10_0_2 like Mac OS X) AppleWebKit/602.1.50 (KHTML, like Gecko) Mobile/14A456
