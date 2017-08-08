@@ -17,4 +17,4 @@ OC 记录。
 * [URL Schemes](https://github.com/itwyhuaing/OC-WYH/tree/master/URL%20Schemes)
 
 ### 富文本方案
-* [富文本方案](https://github.com/itwyhuaing/OC-WYH/tree/master/富文本方案)
+* [富文本方案](https://github.com/itwyhuaing/OC-WYH/tree/master/Moblie_RichText)
