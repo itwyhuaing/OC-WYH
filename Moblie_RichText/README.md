@@ -1,6 +1,21 @@
 # OC-WYH
 富文本方案。
 
+### Web 方案
+* 优点
+> 富文本编辑器实现比较容易;不涉及  HTML 数据解析棘手问题。
+
+* 缺点
+> 一个 web 实现所有，毕竟不是原生控件；若是想实现与原生控件无异的交互体验，需要强大的前端知识。
+
+### 原生方案
+* 优点
+> 可控性比较强，交互体验好。
+
+* 缺点
+> 组装 HTML 数据 或 解析 HTML 数据都不易。
+
+
 ### JS 部分语法记录
 * window.getSelection() ;
 > 返回一个  Selection 对象，表示用户选择的文本范围或插入符号的当前位置。
@@ -50,6 +65,8 @@
 
 
 ### 参考文献
+* [Web 富文本编辑器](https://github.com/nnhubbard/ZSSRichTextEditor)
+* [原生富文本编辑器](https://github.com/littleMeaning/SimpleWord)
 * [DOM-API中英文](https://developer.mozilla.org/zh-CN/docs/Web/API)
 * [JavaScriptCore 使用](http://www.jianshu.com/p/a329cd4a67ee)
 * [JS Event对象了解](http://www.itxueyuan.org/view/6340.html)
