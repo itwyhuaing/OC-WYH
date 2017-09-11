@@ -44,9 +44,6 @@
 * document.getElementsByTagName()
 >  标签元素获取
 
-* document.images
->
-
 * innerHTML
 > 读或写
 
@@ -63,6 +60,18 @@
 * JavaScript event对象
 > 该对象表示当前事件。
 
+* JQuery的ready函数与JS的onload的区别
+> window.onload必须等到页面内包括图片的所有元素加载完毕后才能执行。$(document).ready()是DOM结构绘制完毕后就执行，不必等到加载完毕。
+> window.onload不能同时编写多个，如果有多个window.onload方法，只会执行一个。$(document).ready()可以同时编写多个，并且都可以得到执行
+> window.onload没有简化写法。$(document).ready(function(){})可以简写成$(function(){})
+
+* blur()
+> 当元素失去焦点时发生 blur 事件。该方法常与 focus() 方法一起使用。
+```
+$(selector).blur()
+或
+$(selector).blur(function)
+```
 
 ### 参考文献
 * [Web 富文本编辑器](https://github.com/nnhubbard/ZSSRichTextEditor)
