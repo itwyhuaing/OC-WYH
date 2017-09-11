@@ -26,4 +26,4 @@ OC 记录。
 * [Crash日志分析](https://github.com/itwyhuaing/OC-WYH/tree/master/Crash_Analyze)
 
 ### YHCompoent
-* [YHCompoent - 记录部分项目个性化定制组件](https://github.com/itwyhuaing/OC-WYH/tree/masterYHCompoent)
+* [YHCompoent - 记录部分项目个性化定制组件](https://github.com/itwyhuaing/OC-WYH/tree/master/YHCompoent)
