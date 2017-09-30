@@ -11,15 +11,12 @@
 #import <objc/runtime.h>
 
 
-//#import <objc/runtime.h>
-//#import <UIKit/UIKit.h>
-//#import "ZSSBarButtonItem.h"
-//#import "HRColorUtil.h"
-//#import "ZSSTextView.h"
-//
-//@import JavaScriptCore;
-
 #define kToolBarHeight 44.0
+
+static void (*originalIMP)(id self, SEL _cmd, void* arg0, BOOL arg1, BOOL arg2, id arg3) = NULL;
+void interceptIMP (id self, SEL _cmd, void* arg0, BOOL arg1, BOOL arg2, id arg3) {
+    originalIMP(self, _cmd, arg0, TRUE, arg2, arg3);
+}
 
 @interface ZSSRichTextEditor () <WKUIDelegate,WKNavigationDelegate>
 /**rain数据
@@ -108,26 +105,7 @@
 #pragma mark ------ show UI
 
 - (void)loadEditorView{
-    NSBundle* bundle = [NSBundle mainBundle];
-    
-//    NSString *filePath = [bundle pathForResource:@"editor" ofType:@"html"];
-//    NSData *htmlData = [NSData dataWithContentsOfFile:filePath];
-//    NSString *htmlString = [[NSString alloc] initWithData:htmlData encoding:NSUTF8StringEncoding];
-//    
-//    NSString *jquery = [bundle pathForResource:@"jQuery" ofType:@"js"];
-//    NSString *jqueryString = [[NSString alloc] initWithData:[NSData dataWithContentsOfFile:jquery] encoding:NSUTF8StringEncoding];
-//    htmlString = [htmlString stringByReplacingOccurrencesOfString:@"<!-- jQuery -->" withString:jqueryString];
-//    
-//    NSString *beautifier = [bundle pathForResource:@"JSBeautifier" ofType:@"js"];
-//    NSString *beautifierString = [[NSString alloc] initWithData:[NSData dataWithContentsOfFile:beautifier] encoding:NSUTF8StringEncoding];
-//    htmlString = [htmlString stringByReplacingOccurrencesOfString:@"<!-- jsbeautifier -->" withString:beautifierString];
-//    
-//    NSString *source = [bundle pathForResource:@"ZSSRichTextEditor" ofType:@"js"];
-//    NSString *jsString = [[NSString alloc] initWithData:[NSData dataWithContentsOfFile:source] encoding:NSUTF8StringEncoding];
-//    htmlString = [htmlString stringByReplacingOccurrencesOfString:@"<!--editor-->" withString:jsString];
-//    
-//    [self.wkEditor loadHTMLString:htmlString baseURL:nil];
-    
+    NSBundle* bundle = [NSBundle mainBundle];    
     NSString *htmlPath = [bundle pathForResource:@"editor" ofType:@"html"];
     [self.wkEditor loadRequest:[NSURLRequest requestWithURL:[NSURL fileURLWithPath:htmlPath]]];
     
@@ -239,7 +217,17 @@
 #pragma mark ------ delegate
 
 -(void)webView:(WKWebView *)webView decidePolicyForNavigationAction:(WKNavigationAction *)navigationAction decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler{
-    NSLog(@" ===decidePolicyForNavigationAction=== ");
+    
+    NSString *httpString = navigationAction.request.URL.absoluteString;
+    NSLog(@" \n \n ===decidePolicyForNavigationAction===  \n \n %@ \n",httpString);
+    if ([httpString hasPrefix:@"http"]) {
+        
+        decisionHandler(WKNavigationActionPolicyCancel);
+        
+    } else if ([httpString rangeOfString:@"callback://0/"].location != NSNotFound) {
+        NSString *className = [httpString stringByReplacingOccurrencesOfString:@"callback://0/" withString:@""];
+        [self updateToolBarWithButtonName:className];
+    }
     decisionHandler(WKNavigationActionPolicyAllow);
 }
 
@@ -286,31 +274,73 @@
 }
 
 -(void)setBold:(UIButton *)btn{
-    
+    if (toolBarDownStatus) {
+        [self focusTextEditor];
+    }
+    [self.wkEditor evaluateJavaScript:@"zss_editor.setBold();"
+                    completionHandler:^(id _Nullable info, NSError * _Nullable error) {
+                            NSLog(@" \n \n setBold : %@ \n error:%@\n",info,error);
+                    }];
 }
 
 -(void)setItalic:(UIButton *)btn{
-    
+    if (toolBarDownStatus) {
+        [self focusTextEditor];
+    }
+    [self.wkEditor evaluateJavaScript:@"zss_editor.setItalic();"
+                    completionHandler:^(id _Nullable info, NSError * _Nullable error) {
+                        NSLog(@" \n \n setItalic : %@ \n error:%@\n",info,error);
+                    }];
 }
 
 -(void)setStrikethrough:(UIButton *)btn{
-    
+    if (toolBarDownStatus) {
+        [self focusTextEditor];
+    }
+    [self.wkEditor evaluateJavaScript:@"zss_editor.setStrikeThrough();"
+                    completionHandler:^(id _Nullable info, NSError * _Nullable error) {
+                        NSLog(@" \n \n setStrikethrough : %@ \n error:%@\n",info,error);
+                    }];
 }
 
 -(void)heading1:(UIButton *)btn{
-    
+    if (toolBarDownStatus) {
+        [self focusTextEditor];
+    }
+    [self.wkEditor evaluateJavaScript:@"zss_editor.setHeading('h1');"
+                    completionHandler:^(id _Nullable info, NSError * _Nullable error) {
+                        NSLog(@" \n \n heading1 : %@ \n error:%@\n",info,error);
+                    }];
 }
 
 -(void)heading2:(UIButton *)btn{
-    
+    if (toolBarDownStatus) {
+        [self focusTextEditor];
+    }
+    [self.wkEditor evaluateJavaScript:@"zss_editor.setHeading('h2');"
+                    completionHandler:^(id _Nullable info, NSError * _Nullable error) {
+                        NSLog(@" \n \n heading2 : %@ \n error:%@\n",info,error);
+                    }];
 }
 
 -(void)heading3:(UIButton *)btn{
-    
+    if (toolBarDownStatus) {
+        [self focusTextEditor];
+    }
+    [self.wkEditor evaluateJavaScript:@"zss_editor.setHeading('h3');"
+                    completionHandler:^(id _Nullable info, NSError * _Nullable error) {
+                        NSLog(@" \n \n heading3 : %@ \n error:%@\n",info,error);
+                    }];
 }
 
 -(void)heading4:(UIButton *)btn{
-    
+    if (toolBarDownStatus) {
+        [self focusTextEditor];
+    }
+    [self.wkEditor evaluateJavaScript:@"zss_editor.setHeading('h4');"
+                    completionHandler:^(id _Nullable info, NSError * _Nullable error) {
+                        NSLog(@" \n \n heading4 : %@ \n error:%@\n",info,error);
+                    }];
 }
 
 #pragma mark ------ private method
@@ -362,16 +392,64 @@
     [self.toolBarHolder setFrame:rect];
 }
 
+
+- (void)updateToolBarWithButtonName:(NSString *)name {
+    
+    // Items that are enabled
+    NSArray *itemNames = [name componentsSeparatedByString:@","];
+    
+    for (NSInteger cou = 0;cou < itemNames.count;cou ++) {
+        if([itemNames containsObject:@"strikeThrough"]){
+            [_strikeThroughBtn setImage:[UIImage imageNamed:@"ZSSstrikethrough_selected.png"] forState:UIControlStateNormal];
+        }else{
+            [_strikeThroughBtn setImage:[UIImage imageNamed:@"ZSSstrikethrough.png"] forState:UIControlStateNormal];
+        }
+        
+        if([itemNames containsObject:@"bold"]){
+            [_boldBtn setImage:[UIImage imageNamed:@"ZSSbold_selected.png"] forState:UIControlStateNormal];
+        }else{
+            [_boldBtn setImage:[UIImage imageNamed:@"ZSSbold.png"] forState:UIControlStateNormal];
+        }
+        
+        if([itemNames containsObject:@"italic"]){
+            [_italicBtn setImage:[UIImage imageNamed:@"ZSSitalic_selected.png"] forState:UIControlStateNormal];
+        }else{
+            [_italicBtn setImage:[UIImage imageNamed:@"ZSSitalic.png"] forState:UIControlStateNormal];
+        }
+        
+        if([itemNames containsObject:@"h1"]){
+            [_h1Btn setImage:[UIImage imageNamed:@"ZSSh1_selected.png"] forState:UIControlStateNormal];
+        }else{
+            [_h1Btn setImage:[UIImage imageNamed:@"ZSSh1.png"] forState:UIControlStateNormal];
+        }
+        
+        if([itemNames containsObject:@"h2"]){
+            [_h2Btn setImage:[UIImage imageNamed:@"ZSSh2_selected.png"] forState:UIControlStateNormal];
+        }else{
+            [_h2Btn setImage:[UIImage imageNamed:@"ZSSh2.png"] forState:UIControlStateNormal];
+        }
+        
+        if([itemNames containsObject:@"h3"]){
+            [_h3Btn setImage:[UIImage imageNamed:@"ZSSh3_selected.png"] forState:UIControlStateNormal];
+        }else{
+            [_h3Btn setImage:[UIImage imageNamed:@"ZSSh3.png"] forState:UIControlStateNormal];
+        }
+        
+        if([itemNames containsObject:@"h4"]){
+            [_h4Btn setImage:[UIImage imageNamed:@"ZSSh4_selected.png"] forState:UIControlStateNormal];
+        }else{
+            [_h4Btn setImage:[UIImage imageNamed:@"ZSSh4.png"] forState:UIControlStateNormal];
+        }
+        
+    }
+    
+}
+
 #pragma mark ------ WKWebView 处理 JS focus() 函数问题
 /**
  可参考1：https://stackoverflow.com/questions/32407185/wkwebview-cant-open-keyboard-for-input-field
  可参考2：http://www.jianshu.com/p/c7bd2af5005b
  **/
-
-static void (*originalIMP)(id self, SEL _cmd, void* arg0, BOOL arg1, BOOL arg2, id arg3) = NULL;
-void interceptIMP (id self, SEL _cmd, void* arg0, BOOL arg1, BOOL arg2, id arg3) {
-    originalIMP(self, _cmd, arg0, TRUE, arg2, arg3);
-}
 
 - (void)setWkWebViewShowKeybord {
     Class cls = NSClassFromString(@"WKContentView");

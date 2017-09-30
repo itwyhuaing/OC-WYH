@@ -29,3 +29,7 @@
 ```
 默认为 true ，这种情况下需要用户主动去点击元素，这样才能唤起键盘，通过focus去模拟的话是不行的。如果API设为false.这个时候是可以通过focus去模拟，并唤起键盘的。
 ```
+ 2. WKWebView 设置
+
+ [可参考1](https://stackoverflow.com/questions/32407185/wkwebview-cant-open-keyboard-for-input-field)
+ [可参考2](http://www.jianshu.com/p/c7bd2af5005b)
