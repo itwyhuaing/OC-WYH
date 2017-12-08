@@ -33,3 +33,6 @@ OC 记录。
 
 ### NSRunloop
 * [NSRunloop - 实际应用](https://github.com/itwyhuaing/OC-WYH/tree/master/NSRunloop)
+
+### iOS图片压缩问题简述  
+* [iOS图片压缩问题简述](https://github.com/itwyhuaing/OC-WYH/tree/master/iOS图片压缩问题简述)
