@@ -19,6 +19,13 @@
     // Do any additional setup after loading the view, typically from a nib.
 }
 
+-(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    
+    NSHTTPCookieStorage *cs = [NSHTTPCookieStorage sharedHTTPCookieStorage];
+    NSArray *arr = [cs cookies];
+    NSLog(@"");
+    
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
