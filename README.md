@@ -45,3 +45,6 @@ OC 记录。
 
 ### 音视频
 * [音视频](https://github.com/itwyhuaing/OC-WYH/tree/master/音视频)
+
+### 智能家居
+* [智能家居](https://github.com/itwyhuaing/OC-WYH/tree/master/智能家居)
