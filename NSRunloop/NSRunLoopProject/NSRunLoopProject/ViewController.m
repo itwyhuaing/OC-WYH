@@ -7,6 +7,8 @@
 //
 
 #import "ViewController.h"
+#import "FirstVC.h"
+
 
 @interface ViewController ()
 
@@ -16,33 +18,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    
-    
+    self.view.backgroundColor = [UIColor whiteColor];
 }
 
 -(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
-    
-    NSRunLoop *curRunLoop = [NSRunLoop currentRunLoop];
-    NSRunLoop *mainRunLoop = [NSRunLoop mainRunLoop];
-    
-    CFRunLoopRef curR = CFRunLoopGetCurrent();
-    CFRunLoopRef mainR = CFRunLoopGetMain();
-    
-    
-    /**<5 个类>*/
-    //CFRunLoopRef
-    //CFRunLoopMode
-    //CFRunLoopObserverRef
-    //CFRunLoopSourceRef
-    //CFRunLoopTimerRef
-    
-    /**<5 种模式>*/
-    //NSDefaultRunLoopMode
-    //UITrackingRunLoopMode
-    
-    NSLog(@"");
-    
+    FirstVC *vc = [[FirstVC alloc] init];
+    [self.navigationController pushViewController:vc animated:TRUE];
 }
 
 @end
