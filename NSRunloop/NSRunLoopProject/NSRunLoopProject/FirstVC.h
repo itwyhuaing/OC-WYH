@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
+#define kSCREEN_W UIScreen.mainScreen.bounds.size.width
+#define kSCREEN_H UIScreen.mainScreen.bounds.size.height
+
 @interface FirstVC : UIViewController
 
 @end

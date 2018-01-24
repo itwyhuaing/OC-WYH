@@ -17,6 +17,7 @@
 		26B18B82200DED94009A3490 /* NSRunLoopProjectUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 26B18B81200DED94009A3490 /* NSRunLoopProjectUITests.m */; };
 		26CC67212010821100D7073B /* FirstVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 26CC67202010821100D7073B /* FirstVC.m */; };
 		26CC67242010A11000D7073B /* YHThread.m in Sources */ = {isa = PBXBuildFile; fileRef = 26CC67232010A11000D7073B /* YHThread.m */; };
+		26DC87DA2018293B00C745E9 /* SecondVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 26DC87D92018293B00C745E9 /* SecondVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,8 @@
 		26CC67202010821100D7073B /* FirstVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstVC.m; sourceTree = "<group>"; };
 		26CC67222010A11000D7073B /* YHThread.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YHThread.h; sourceTree = "<group>"; };
 		26CC67232010A11000D7073B /* YHThread.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YHThread.m; sourceTree = "<group>"; };
+		26DC87D82018293B00C745E9 /* SecondVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondVC.h; sourceTree = "<group>"; };
+		26DC87D92018293B00C745E9 /* SecondVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +116,8 @@
 				26B18B61200DED94009A3490 /* ViewController.m */,
 				26CC671F2010821100D7073B /* FirstVC.h */,
 				26CC67202010821100D7073B /* FirstVC.m */,
+				26DC87D82018293B00C745E9 /* SecondVC.h */,
+				26DC87D92018293B00C745E9 /* SecondVC.m */,
 				26CC67222010A11000D7073B /* YHThread.h */,
 				26CC67232010A11000D7073B /* YHThread.m */,
 				26B18B63200DED94009A3490 /* Main.storyboard */,
@@ -279,6 +284,7 @@
 				26CC67212010821100D7073B /* FirstVC.m in Sources */,
 				26CC67242010A11000D7073B /* YHThread.m in Sources */,
 				26B18B6D200DED94009A3490 /* main.m in Sources */,
+				26DC87DA2018293B00C745E9 /* SecondVC.m in Sources */,
 				26B18B5F200DED94009A3490 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -8,7 +8,7 @@
 
 #import "ViewController.h"
 #import "FirstVC.h"
-
+#import "SecondVC.h"
 
 @interface ViewController ()
 
@@ -22,7 +22,8 @@
 }
 
 -(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
-    FirstVC *vc = [[FirstVC alloc] init];
+    //FirstVC *vc = [[FirstVC alloc] init];
+    SecondVC *vc = [[SecondVC alloc] init];
     [self.navigationController pushViewController:vc animated:TRUE];
 }
 
