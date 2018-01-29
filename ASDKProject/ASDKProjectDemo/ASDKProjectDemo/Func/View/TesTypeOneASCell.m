@@ -32,6 +32,7 @@
         [self addBriefInfoNode];
         [self addDateNode];
         [self addUnderLine];
+
         
     }
     return self;
@@ -112,12 +113,14 @@
     
 }
 
+#pragma mark ------ 设置尺寸
+
 - (ASLayoutSpec *)layoutSpecThatFits:(ASSizeRange)constrainedSize{
     
-    //    _titleNode.backgroundColor = [UIColor redColor];
-    //    _imgNode.backgroundColor = [UIColor greenColor];
-    //    _briefInfoNode.backgroundColor = [UIColor yellowColor];
-    //    _dateNode.backgroundColor = [UIColor orangeColor];
+//    _titleNode.backgroundColor = [UIColor redColor];
+//    _imgNode.backgroundColor = [UIColor greenColor];
+//    _briefInfoNode.backgroundColor = [UIColor yellowColor];
+//    _dateNode.backgroundColor = [UIColor orangeColor];
     
     _titleNode.flexShrink = YES;
     _imgNode.preferredFrameSize = CGSizeMake(80, 80);
@@ -158,6 +161,5 @@
     _imgV.frame = _imgNode.frame;
     
 }
-
 
 @end

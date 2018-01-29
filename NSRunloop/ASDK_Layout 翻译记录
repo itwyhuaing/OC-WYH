@@ -1,0 +1,21 @@
+Layout
+
+### 该部分用于进行约束，对于复杂的层次结构同样可以解决。
+相对于 UIKit 自动约束能力，有以下优点：
+1. 快 ： 相对于纯代码约束，速度差不多快；但比自动约束要快一些。
+2. 异步 & 并发 ：子线程完成约束计算，避免主线程中用户交互的阻塞。
+3. 声明 : Layouts 布局是用不可变的数据结构声明的。这使得布局代码更容易开发、调试、评审、测试、配置和维护。
+4. 可缓存的 : Layouts 计算出来的布局结果是不可变的数据结构，这样就可以将其在子线程中预先计算出来并缓存以便提升用户体验。
+5. 可扩展性 : 易于在不同类之间扩展使用。
+
+来自于 CSS Flexbox 的灵感
+熟悉 Flexbox 布局的开发者会注意到很多相似之处，但是 Layouts 布局并没有重写实现 CSS 的全部方法。
+
+### 基本概念
+Layouts 布局系统以两个基本概念为中心：
+1. Layout Specs (规则)
+Layout Specs 是 layout specification 的缩写，它并没有具体的说明；而是在具体应用中，它起着一个容器的作用，在这个容器中定义着子元素间的相互位置。
+Texture 提供了很多继承于 ASLayoutSpec 的子类。简单的和复杂的。
+
+2. Layout Elements (元素)
+Layout specs 承载和约束着 Layout Elements 。所有的 ASDisplayNode 与 ASLayoutSpec 都遵守 ASLayoutElement 协议。ASLayoutElement 协议有一些属性，可以用来设置复杂的约束。另外， layout specs 也有自己的一套属性可以用来调整元素间的布局。

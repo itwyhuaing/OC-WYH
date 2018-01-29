@@ -2,7 +2,7 @@
 
 #### ASStackLayoutSpec
 * 在 AsyncDisplayKit 的所有 layoutSpecs 中， ASStackLayoutSpec 是最有用也是功能最强大的一个类。
-ASStackLayoutSpec 运用 flexbox 算法来确定内部子控件的位置及尺寸。其中，flexbox 可以很方便的实现在不同尺寸屏幕上的适配。在一个堆栈布局中，开发者可以指定内部子控件的水平方向布局或垂直方向布局。一个布局堆栈可以嵌套在另一个布局堆栈当中，这样一来开发者局可以实现几乎所有任何一个复杂或简单的布局。
+ASStackLayoutSpec 运用 flexbox 算法来确定内部子控件的位置及尺寸。其中，flexbox 可以很方便的实现在不同尺寸屏幕上的适配。在一个堆栈布局中，开发者可以指定内部子控件的水平方向布局或垂直方向布局。一个布局堆栈可以嵌套在另一个布局堆栈当中，这样一来开发者就可以实现几乎所有任何一个复杂或简单的布局。
 
 * ASStackLayoutSpec 除了拥有 <ASLayoutElement> 的属性之外，还有其他 7 个属性。
 
@@ -71,3 +71,4 @@ ASStackLayoutSpec 运用 flexbox 算法来确定内部子控件的位置及尺�
 
 #### 参考
 * [AsyncDisplayKit 官方文档](http://texturegroup.org/docs/getting-started.html)
+* [AsyncDisplayKit官方文档翻译](http://awhisper.github.io/2016/05/04/AsyncDisplayKit官方文档翻译/)

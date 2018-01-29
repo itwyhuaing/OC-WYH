@@ -44,7 +44,7 @@
     _asTable.dataSource = self;
     _asTable.backgroundColor = [UIColor whiteColor];
     [self.node addSubnode:_asTable];
-    _asTable.view.contentInset = UIEdgeInsetsMake(0, 0, 0, 0);
+    //_asTable.view.contentInset = UIEdgeInsetsMake(0, 0, 0, 0);
     [_asTable setFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height - 20 - 44)];
     _asTable.view.separatorStyle = UITableViewCellSeparatorStyleNone;
     
