@@ -2,7 +2,9 @@
 
 ## Demo查看
 > FirstVC：获取 PersonDataModel 与 UIView 的属性、获取 PersonDataModel 与 UIView 的方法、获取 PersonDataModel 实例 / 类方法、系统方法拦截、属性遍历在数据模型归解档中的应用 ： MJEXtension,YYModel 字典与模型间的转换、依据类名字符串创建该类的实例对象
+
 > DefendContinHitVC 按钮防连击应用
+
 
 ## 1. 概念
  NSRuntime即运行时系统，其位于OC 的底层，是一套C语言的API ！
@@ -95,7 +97,7 @@ void objc_setAssociatedObject(id object, const void *key, id value, objc_Associa
 ```
 > 几个参数中需要补充的是：objc_AssociationPolicy policy ，该参数对应表如下：
 
-![image]()
+![image](https://github.com/itwyhuaing/OC-WYH/blob/master/NSRuntime/image/image_1.png)
 
 #### 依据类名字符串创建该类的实例对象
 > 给出已存在类的类名字符串，借助NSRuntime创建出该类实例。
