@@ -10,6 +10,17 @@
 
 @interface UIControl (ClickEvent)
 
+/**
+ * 自定义防连击时间间隔
+ */
 @property (nonatomic,assign) NSTimeInterval custom_acceptEventInterval;
+
+/**
+ * 测试属性
+ */
+@property (nonatomic,copy) NSString *testProperty;
+
+@property (copy, nonatomic) NSString *method;
+
 
 @end

@@ -6,35 +6,27 @@
 //  Copyright © 2016年 hnbwyh. All rights reserved.
 //
 
-/*
- 关联问题             http://blog.csdn.net/onlyou930/article/details/9299169
- 给分类增添属性        http://blog.csdn.net/yasi_xi/article/details/46708835
- 获取实例 / 类方法     http://blog.csdn.net/lvdezhou/article/details/49636561
- 方法的替换与增加      http://www.cnblogs.com/gugupluto/p/3159733.html
- 
- */
-
-
 #import "UIControl+ClickEvent.h"
 #import <objc/runtime.h>
 
 
 @implementation UIControl (ClickEvent)
 
-#pragma mark ----- 拦截系统方法
+#pragma mark ----- 拦截系统方法 - 添加、替换、交换
 
 +(void)load{
 
-    Method systemMethod = class_getInstanceMethod(self, @selector(sendAction:to:forEvent:));
     SEL sysSEL = @selector(sendAction:to:forEvent:);
+    Method systemMethod = class_getInstanceMethod(self, sysSEL);
+    IMP systemIMP = method_getImplementation(systemMethod);
     
-    Method customMethod = class_getInstanceMethod(self, @selector(custom_sendAction:to:forEvent:));
     SEL customSEL = @selector(custom_sendAction:to:forEvent:);
-    
-    // cls：被添加方法的类  name：被添加方法方法名  imp：被添加方法的实现函数  types：被添加方法的实现函数的返回值类型和参数类型的字符串
-    BOOL didAddMethod = class_addMethod(self, sysSEL, method_getImplementation(customMethod), method_getTypeEncoding(customMethod));
+    Method customMethod = class_getInstanceMethod(self, customSEL);
+    IMP customIMP = method_getImplementation(customMethod);
+
+    BOOL didAddMethod = class_addMethod(self, sysSEL, customIMP, method_getTypeEncoding(customMethod));
     if (didAddMethod) {
-        class_replaceMethod(self, customSEL, method_getImplementation(systemMethod), method_getTypeEncoding(systemMethod));
+        class_replaceMethod(self, customSEL, systemIMP, method_getTypeEncoding(systemMethod));
     }else{
         method_exchangeImplementations(systemMethod, customMethod);
     }
@@ -78,17 +70,39 @@
 
 }
 
-
-#pragma mark ------ 关联
+#pragma mark ------ 添加公有属性
 
 - (NSTimeInterval )custom_acceptEventInterval{
 
-    return [objc_getAssociatedObject(self, "UIControl_acceptEventInterval") doubleValue];
+    //return [objc_getAssociatedObject(self, "UIControl_acceptEventInterval") doubleValue];
+    
+    return [objc_getAssociatedObject(self,_cmd) doubleValue];
+    
 }
 
 - (void)setCustom_acceptEventInterval:(NSTimeInterval)custom_acceptEventInterval{
 
-    objc_setAssociatedObject(self, "UIControl_acceptEventInterval", @(custom_acceptEventInterval), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    //objc_setAssociatedObject(self, "UIControl_acceptEventInterval", @(custom_acceptEventInterval), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    
+    objc_setAssociatedObject(self, @selector(custom_acceptEventInterval), [NSString stringWithFormat:@"%f",custom_acceptEventInterval], OBJC_ASSOCIATION_ASSIGN);
+    
+}
+
+- (NSString *)testProperty{
+    return objc_getAssociatedObject(self, _cmd);
+}
+
+-(void)setTestProperty:(NSString *)testProperty{
+    objc_setAssociatedObject(self, @selector(testProperty), testProperty, OBJC_ASSOCIATION_COPY);
+}
+
+static char MethodKey;
+-(NSString *)method{
+    return objc_getAssociatedObject(self, &MethodKey);
+}
+
+-(void)setMethod:(NSString *)method{
+    objc_setAssociatedObject(self, &MethodKey, method, OBJC_ASSOCIATION_COPY);
 }
 
 @end

@@ -18,6 +18,9 @@
 		268627FB201F28F4002F610E /* DefendContinHitVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 268627FA201F28F4002F610E /* DefendContinHitVC.m */; };
 		26862800201F2C0C002F610E /* ImgTextAttachment.m in Sources */ = {isa = PBXBuildFile; fileRef = 268627FC201F2C0C002F610E /* ImgTextAttachment.m */; };
 		26862801201F2C0C002F610E /* UIControl+ClickEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 268627FD201F2C0C002F610E /* UIControl+ClickEvent.m */; };
+		2686284520204A76002F610E /* PersonDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2686284420204A76002F610E /* PersonDataModel.m */; };
+		2686284820215F3E002F610E /* UIImage+ImageName.m in Sources */ = {isa = PBXBuildFile; fileRef = 2686284720215F3E002F610E /* UIImage+ImageName.m */; };
+		2686284C2021A137002F610E /* FirstVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2686284B2021A137002F610E /* FirstVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +63,12 @@
 		268627FD201F2C0C002F610E /* UIControl+ClickEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIControl+ClickEvent.m"; sourceTree = "<group>"; };
 		268627FE201F2C0C002F610E /* ImgTextAttachment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImgTextAttachment.h; sourceTree = "<group>"; };
 		268627FF201F2C0C002F610E /* UIControl+ClickEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIControl+ClickEvent.h"; sourceTree = "<group>"; };
+		2686284320204A76002F610E /* PersonDataModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PersonDataModel.h; sourceTree = "<group>"; };
+		2686284420204A76002F610E /* PersonDataModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PersonDataModel.m; sourceTree = "<group>"; };
+		2686284620215F3E002F610E /* UIImage+ImageName.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageName.h"; sourceTree = "<group>"; };
+		2686284720215F3E002F610E /* UIImage+ImageName.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageName.m"; sourceTree = "<group>"; };
+		2686284A2021A137002F610E /* FirstVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstVC.h; sourceTree = "<group>"; };
+		2686284B2021A137002F610E /* FirstVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +119,7 @@
 		268627AE201F225F002F610E /* RuntimeProDemo */ = {
 			isa = PBXGroup;
 			children = (
+				268628492021A124002F610E /* CommonBaseTest */,
 				268627F5201F28C5002F610E /* DefendContinuousHit */,
 				268627E4201F270E002F610E /* Main */,
 				268627B5201F225F002F610E /* Main.storyboard */,
@@ -161,6 +171,19 @@
 				268627FD201F2C0C002F610E /* UIControl+ClickEvent.m */,
 			);
 			path = DefendContinuousHit;
+			sourceTree = "<group>";
+		};
+		268628492021A124002F610E /* CommonBaseTest */ = {
+			isa = PBXGroup;
+			children = (
+				2686284A2021A137002F610E /* FirstVC.h */,
+				2686284B2021A137002F610E /* FirstVC.m */,
+				2686284320204A76002F610E /* PersonDataModel.h */,
+				2686284420204A76002F610E /* PersonDataModel.m */,
+				2686284620215F3E002F610E /* UIImage+ImageName.h */,
+				2686284720215F3E002F610E /* UIImage+ImageName.m */,
+			);
+			path = CommonBaseTest;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -297,10 +320,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				26862800201F2C0C002F610E /* ImgTextAttachment.m in Sources */,
+				2686284C2021A137002F610E /* FirstVC.m in Sources */,
 				268627EB201F270E002F610E /* TableVC.m in Sources */,
 				268627BF201F225F002F610E /* main.m in Sources */,
 				268627EA201F270E002F610E /* AppDelegate.m in Sources */,
+				2686284520204A76002F610E /* PersonDataModel.m in Sources */,
 				268627FB201F28F4002F610E /* DefendContinHitVC.m in Sources */,
+				2686284820215F3E002F610E /* UIImage+ImageName.m in Sources */,
 				26862801201F2C0C002F610E /* UIControl+ClickEvent.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
