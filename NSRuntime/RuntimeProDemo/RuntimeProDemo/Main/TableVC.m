@@ -57,6 +57,8 @@
         {
             vc = [[FirstVC alloc] init];
             [self.navigationController pushViewController:vc animated:TRUE];
+            [self.navigationController pushViewController:vc animated:TRUE];
+            
         }
             break;
         case 1:

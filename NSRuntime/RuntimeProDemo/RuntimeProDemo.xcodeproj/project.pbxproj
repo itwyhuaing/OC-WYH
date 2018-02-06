@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		26408B9720231529006B09D2 /* UINavigationController+Consistent.m in Sources */ = {isa = PBXBuildFile; fileRef = 26408B9620231529006B09D2 /* UINavigationController+Consistent.m */; };
 		268627B7201F225F002F610E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 268627B5201F225F002F610E /* Main.storyboard */; };
 		268627B9201F225F002F610E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 268627B8201F225F002F610E /* Assets.xcassets */; };
 		268627BC201F225F002F610E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 268627BA201F225F002F610E /* LaunchScreen.storyboard */; };
@@ -41,6 +42,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		26408B9520231529006B09D2 /* UINavigationController+Consistent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+Consistent.h"; sourceTree = "<group>"; };
+		26408B9620231529006B09D2 /* UINavigationController+Consistent.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+Consistent.m"; sourceTree = "<group>"; };
 		268627AC201F225F002F610E /* RuntimeProDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RuntimeProDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		268627B6201F225F002F610E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		268627B8201F225F002F610E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -96,6 +99,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		26408B94202314F9006B09D2 /* UINavControllerCategary */ = {
+			isa = PBXGroup;
+			children = (
+				26408B9520231529006B09D2 /* UINavigationController+Consistent.h */,
+				26408B9620231529006B09D2 /* UINavigationController+Consistent.m */,
+			);
+			path = UINavControllerCategary;
+			sourceTree = "<group>";
+		};
 		268627A3201F225F002F610E = {
 			isa = PBXGroup;
 			children = (
@@ -119,6 +131,7 @@
 		268627AE201F225F002F610E /* RuntimeProDemo */ = {
 			isa = PBXGroup;
 			children = (
+				26408B94202314F9006B09D2 /* UINavControllerCategary */,
 				268628492021A124002F610E /* CommonBaseTest */,
 				268627F5201F28C5002F610E /* DefendContinuousHit */,
 				268627E4201F270E002F610E /* Main */,
@@ -320,6 +333,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				26862800201F2C0C002F610E /* ImgTextAttachment.m in Sources */,
+				26408B9720231529006B09D2 /* UINavigationController+Consistent.m in Sources */,
 				2686284C2021A137002F610E /* FirstVC.m in Sources */,
 				268627EB201F270E002F610E /* TableVC.m in Sources */,
 				268627BF201F225F002F610E /* main.m in Sources */,
@@ -430,7 +444,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -479,7 +493,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -491,7 +505,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 45542K4894;
 				INFOPLIST_FILE = RuntimeProDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ZhiXingJY.www.RuntimeProDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -504,7 +520,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 45542K4894;
 				INFOPLIST_FILE = RuntimeProDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ZhiXingJY.www.RuntimeProDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";

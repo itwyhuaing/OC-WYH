@@ -1,0 +1,51 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "E01CE76B65A512B40AF7090DB2D16B955D176B51+++D877D1D",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "E01CE76B65A512B40AF7090DB2D16B955D176B51+++7485689" : 0,
+    "E01CE76B65A512B40AF7090DB2D16B955D176B51+++B7D0551" : 0,
+    "E01CE76B65A512B40AF7090DB2D16B955D176B51+++D877D1D" : 9223372036854775807,
+    "E01CE76B65A512B40AF7090DB2D16B955D176B51+++11609CF" : 0,
+    "E01CE76B65A512B40AF7090DB2D16B955D176B51+++4DDF589" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "50133F06-D12D-4C3D-B0C7-D62022AE24D5",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "E01CE76B65A512B40AF7090DB2D16B955D176B51+++7485689" : "hinabian3\/",
+    "E01CE76B65A512B40AF7090DB2D16B955D176B51+++B7D0551" : "",
+    "E01CE76B65A512B40AF7090DB2D16B955D176B51+++D877D1D" : "Cr_Hinabian_2\/",
+    "E01CE76B65A512B40AF7090DB2D16B955D176B51+++11609CF" : "",
+    "E01CE76B65A512B40AF7090DB2D16B955D176B51+++4DDF589" : "hinabian-ios-app\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "hinabian",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "hinabian\/hinabian.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "ssh:\/\/119.29.58.95:34567\/data\/john\/github\/hinabian-ios-app.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "E01CE76B65A512B40AF7090DB2D16B955D176B51+++11609CF"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "ssh:\/\/172.16.10.158:2321\/diffusion\/39\/hinabian-ios-app.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "E01CE76B65A512B40AF7090DB2D16B955D176B51+++4DDF589"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "ssh:\/\/119.29.58.95:34567\/data\/john\/github\/hinabian-ios-app.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "E01CE76B65A512B40AF7090DB2D16B955D176B51+++7485689"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "ssh:\/\/119.29.58.95:34567\/data\/john\/github\/hinabian-ios-app.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "E01CE76B65A512B40AF7090DB2D16B955D176B51+++B7D0551"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "ssh:\/\/172.16.10.158:2321\/diffusion\/39\/hinabian-ios-app.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "E01CE76B65A512B40AF7090DB2D16B955D176B51+++D877D1D"
+    }
+  ]
+}

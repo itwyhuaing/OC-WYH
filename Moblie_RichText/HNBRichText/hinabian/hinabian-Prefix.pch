@@ -1,0 +1,557 @@
+//
+//  hinabian-Prefix.pch
+//  hinabian
+//
+//  Created by hnbwyh on 15/6/1.
+//  Copyright (c) 2015年 hnbwyh. All rights reserved.
+//
+
+#ifndef hinabian_hinabian_Prefix_pch
+#define hinabian_hinabian_Prefix_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#ifdef __OBJC__
+#import "UIColor+Colors.h"
+#import "UIFont+Fonts.h"
+#import <MagicalRecord/MagicalRecord.h>
+#import "UIImageView+AFNetworking.h"
+#import "UIImageView+WebCache.h"
+#import "MJExtension.h"
+#import "NSDictionary+ValueForKey.h"
+#import "HNBUtils.h"
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+#import <SystemConfiguration/SystemConfiguration.h>
+#import "SDAutoLayout.h"
+#import "HNBToast.h"
+#import "UIButton+ClickEventTime.h"
+#import "HYFileManager.h"
+#import "NSURL+InitWithString.h"
+//#import "HNBInterfaceUrl.h"
+#endif
+
+
+#ifndef ___UserDefaultKeys__
+
+
+#define ___UserDefaultKeys__
+
+/**<自定义 User-Agent>*/
+#define HNB_CUSTOM_USERAGENT @"hinabian.custom.user.agent"
+
+/* 首页移民评估弹框 */
+#define homepage_assessremindview_showdate @"homepage_assessremindview_showdate" // 记录上次弹出日期
+#define homepage_assessremindview_overexpire @"homepage_assessremindview_overexpire" // 记录 此次打开APP，距离上次弹框是否超过
+
+/* 新功能提醒 */
+#define homepage3_newFunction_message_search_tribe @"homepage3.newFunction.message.search.tribe" // 首页 消息中心 + 搜索 + 圈子 (2.0 V)
+#define tribeView_newFunction_writingpost @"tribeView.newFunction.writingpost"                   //帖子首页 发帖按钮(2.0 V / 2.1 V)
+#define tribedetailshowview_newFunction_jumppage @"tribedetailshowview.newFunction.jumppage"     //帖子详情页 跳页新功能 (2.0 V)
+#define user_first_load_person @"user.firstloadperson"                                           // 个人功能块 用户反馈 (2.0 V / 2.1 V)
+#define homepage3_newFunction_im_startstep @"homepage3.newFunction.im.startstep"                 // 首页 开始移民 (2.1 V)
+#define qa_detail_show_collection @"qa.detail.show.collection"                                   // 问答详情 收藏 (2.1 V)
+#define improj_home_appointFunction @"improj.home.appointFunction"                                           // 移民项目首页 预约咨询按钮 新功能提心
+
+/* homePage3 数据 */
+// 移民评估数据模型归档路径文件名 - 便于项目中其他地方使用
+#define homePage_func_imassess_fileName @"imassession.plist"
+
+// 三种类型总数
+#define homepage3_total_commonTribes_chineseOneDay_promotion @"homepage3.total.commonTribes.chineseOneDay.promotion"
+// 每页多少条数据
+#define homepage3_postCountPerPage_commonTribes_chineseOneDay_promotion @"homepage3.postCountPerPage.commonTribes.chineseOneDay.promotion"
+
+/* TribeShow */
+#define tribeshow_current_hotestitems_count @"tribeshow.current.hotestitems.count" // 具体圈子最热帖子当前数目
+#define tribeshow_current_latestitems_count @"tribeshow.current.latestitems.count" // 具体圈子最热帖子当前数目
+#define tribeshow_total_hotestitems_count @"tribeshow.total.hotestitems.count" // 具体圈子最热帖子总数
+#define tribeshow_total_latestitems_count @"tribeshow.total.latestitems.count" // 具体圈子最热帖子总数
+#define tribeshow_total_qaitems_count @"tribeshow.total.qaitems.count" // 具体圈子问答总数
+#define tribeshow_total_proitems_count @"tribeshow.total.proitems.count" // 具体圈子项目总数
+
+/* 他人的个人中心 */
+#define userinfo_histribe_total_post @"userinfo.histribe.total.post" // 他人的个人中心他的圈子帖子总数
+#define userinfo_hisPost_total      @"userinfo_hisPost_total"       //他人的个人中心发帖总数
+#define userinfo_hisReply_total     @"userinfo_hisReply_total"      //他人的个人中心回帖总数
+#define userinfo_hisqa_total_post @"userinfo.hisqa.total.post" // 他人的个人中心他的问答帖子总数
+
+/* 移民攻略 */
+#define activity_seminar_total      @"activity_seminar_total"   //专题总数
+#define activity_class_total        @"activity_class_total"     //课堂总数
+#define activity_interview_total    @"activity_interview_total" //华人说海外总数
+#define activity_IMActivity_total   @"activity_IMActivity_total"//活动总数
+
+/*海外课堂*/
+#define overseaclass_data           @"overseaclass_data"
+#define overseaclass_total          @"overseaclass_total"
+#define overseaclass_asiantalk      @"cn"
+#define overseaclass_imm            @"imm"
+#define overseaclass_house          @"house"
+#define overseaclass_xiaobian_id    @"2000241"
+#define overseaclass_haifangjun_id  @"2015353"
+
+
+/* 帖子详情跟帖总页数 */
+#define tribe_detailThem_comments_totalPages @"tribe_detailThem_comments_totalPages"
+
+#define personal_cookie @"Personal.cookie"
+#define personal_is_login @"Personal.login"
+#define PERSONAL_LOCAL_INFO   @"Personal.local.info"
+
+#define wx_code @"WX.code"
+
+#define wx_pay_order @"WX.payorder"
+
+#define index_popularpost_all_count @"Index.PopularPostAllCount"
+
+#define tirbe_index_post_all_count @"TribeIndex.PostAllCount"
+
+#define tirbe_index_post_this_count @"TribeIndex.PostThisCount"
+
+#define tribe_index_hot_tribes_info_tag @"tribe.index.hot.tribes.info.tag"
+#define tribe_index_hot_tribes_info @"tribe.index.hot.tribes.info"
+
+#define home_user_tel_country_code_idstr @"home.user.tel.country.code.idstr"
+
+#define push_tribe_switch @"Push.Tribe"
+
+#define push_qa_switch @"Push.QA"
+
+#define search_history @"Search.history"
+
+#define qa_search_history @"QASearch.history"
+
+#define DEFAULT_TELNUM @"4009-933-922"
+
+#define NOTICE_UPGRADE  @"hinabian.update"
+#define APP_VERSION     @"hinabian.version"
+#define personal_device_token   @"Personal.DeviceToken"
+#define personal_idfa   @"Personal.IDFA"
+#define personal_md5_idfa   @"Personal.MD5.IDFA"
+
+#define PRIVATE_FIDFA       @"private.fidfa"         // 参数 FIDFA
+#define PRIVATE_MD5_FIDFA   @"private.md5.fidfa"     // FIDFA 经 MD5 生成 MD5_FIDFA
+
+#define RecordResultUploadingUserFlag @"record.result.uploading.user.flag" /*< 记录用户第一次打开APP时是否上报成功，不成功则需要重新上报 >*/
+
+/* login 跳转标示 */
+/*login.change
+ **@"0": 正常值
+ **@"1": 登录成功返回
+ */
+#define login_change_to_assess @"login.change"
+
+#define personal_first_load @"personal.firstload"
+#define personal_activate @"personal.activate"
+#define user_first_load_oneday @"user.firstloadoneday"
+#define user_first_load_userinfo @"user.firstloaduserinfo"
+#define JUDGE_APP   @"judge.app"
+#define JUDGE_APP_NEXT   @"judge.app.next" //梯度弹框
+#define JUDGE_INDIVIDUAL    @"judge.individual" //第一次进入个性化推荐
+#define TAB_PERSON_INDEX    4
+#define TAB_MESSAGE_INDEX   3
+
+#define month_latest_open   @"moth.latestopen"//最后一次打开的月份
+
+#define home_personality_notice  @"home.personalitynotice"    //橘色提示条是否显示
+#define home_personality_notice_cancletime  @"home.personalitynotice.cancletime"  //橘色提示条最后关闭时间
+#define home_personality_notice_countformonth  @"home.personalitynotice.countformonth" //橘色每个月关闭次数
+
+#define home_personality_notice_more  @"home.personalitynoticemore" //灰色提示条是否显示
+#define home_personality_notice_more_cancletime  @"home.personalitynoticemore.cancletime" //灰色提示条最后关闭时间
+#define home_personality_notice_more_countformonth  @"home.personalitynoticemore.countformonth" //灰色每个月关闭次数
+
+#define IM_INTENTION_LOCAL   @"im.intention.local"   //本地存储 移民意向 与设备绑定  ---   V 3.0 移民状态 IMED-已移民 WANT_IM-想移民
+#define IM_NATION_LOCAL      @"im.nation.local"      //本地存储 意向国家 与设备绑定
+#define IMED_STATED          @"IMED"                 // 后台给定的已移民标识
+
+#define NEW_HEIGHT_NATION_VIEW  @"new.height.nation.view" //国家界面的新高度
+
+/* 功能按钮原生或者用网页 */
+#define im_assess_type @"im.assess.type"
+
+/* 页面统计关键字 */
+#define hnb_pv_analytics    @"analytics.pv"
+#define hnb_click_analyitcs @"analytics.click"
+#define hnb_interface_time  @"analytics.interfacetime"
+
+
+#define APIURL      @"https://www.hinabian.com"
+#define H5APIURL    @"https://m.hinabian.com"
+#define APIURLTEST  @"https://m.hinabian.com"
+#define H5URL       @"https://m.hinabian.com"
+#define DATAURL     @"https://data.hinabian.com"
+
+#define WX_ACCESS_TOKEN         @"access_token"
+#define WX_OPEN_ID              @"openid"
+#define WX_REFRESH_TOKEN        @"refresh_token"
+#define WX_LOGIN_NOTIFICATION   @"wx_login"
+#define WX_LOGIN_TYPE           @"weixin"
+
+#define QQ_ACCESS_TOKEN         @"qq_access_token"
+#define QQ_OPEN_ID              @"qq_open_id"
+#define QQ_LOGIN_TYPE           @"qq"
+
+#define UMKEY       @"55a31f0367e58e5109006156"
+#define QQKEY       @"101187770"
+#define WXKEY       @"wx12f1387805bf2897"
+#define WXSECRET    @"02579a2f2d658644e905e14efb48460f"
+
+#define PORT_VERSION "1008"
+
+#define SPLASHIMAGE     @"splash.image"
+#define SPLASHURL       @"splash.url"
+
+#define YOU_DONT_KONW_ONE  "skiplowster"
+
+#define ALL_KNOW_TWO     "devingjohn"
+
+#define NAV_TITLE_FONT_SIZE  17
+
+#define INDEX_ACTIVITY_LABEL  @"index.activitynum"
+
+#define NETEASE_LOGIN_RESULT    @"netease.login.result"
+#define NETEASE_LOGIN_SUCCESS   @"netease.login.success"
+#define NETEASE_LOGIN_FAIL      @"netease.login.fail"
+
+
+#define NETEASE_LIMITED_ARRAY   @"netease.limited.array"    //所有账号的聊天数据
+#define NETEASE_TODAY_WHOLE     @"netease.today.whole"      //今天新增前的总数
+#define NETEASE_TODAY_CHATNUM   @"netease.today.chatnum"    //今天新增聊天数
+#define NETEASE_FIRST_CHATTIME  @"netease.first.chattime"   //第一次发起聊天的时间
+#define NETEASE_LIMITED_ID      @"netease.limited.id"       //id映射的KEY
+
+enum Function_Name
+{
+    EN_FUNCTION_IMASSESS = 1,
+    EN_FUNCTION_NATION,
+    EN_FUNCTION_QANDA,
+    EN_FUNCTION_HOUSE,
+    EN_FUNCTION_VISA,
+    EN_FUNCTION_BIA,
+    
+};
+
+enum HomePage_Item_Index
+{
+    EN_HOME_SHUFFLING_IMAGE = 0,
+    EN_HOME_FUNCTION_ENTRY,
+    EN_HOME_SPECIALIST_TEST, //找专家、条件测试
+    EN_HOME_EMITY_ONE,
+    EN_HOME_YIMIN_QUESTION_TITLE,
+    EN_HOME_YIMIN_QUESTION, // 移民百问
+    EN_HOME_EMITY_TWO,
+    EN_HOME_YIMIN_RAIDERS_TITLE,
+    EN_HOME_YIMIN_RAIDERS, // 移民攻略
+    EN_HOME_EMITY_THREE,
+    EN_HOME_NOTICE_POST_TITLE, // 移民圈
+    EN_HOME_PERSONALITY_NOTICE,  //个性设置黄提示
+    EN_HOME_NOTICE_POST,
+    EN_HOME_NOTICE_LOGIN = 17, // 新增 登录 入口
+    EN_HOME_PERSONALITY_NOTICE_MORE = 41, //个性设置灰提示
+};
+
+enum TribeIndexPage_Item
+{
+    EN_TRIBE_INDEX_TRIBE_TITLE = 0,
+    EN_TRIBE_INDEX_HOT_TRIBE = 1,
+    EN_TRIBE_INDEX_EMITY_ONE = 2,
+    EN_TRIBE_INDEX_POST_TITLE = 3,
+    EN_TRIBE_INDEX_POST = 4,
+};
+
+enum QA_Item_Index
+{
+    EN_QA_INDEX_ASSESS = 0,
+    EN_QA_INDEX_RECOMMEND_ONE = 1,
+    EN_QA_INDEX_RECOMMEND_TWO = 2,
+    EN_QA_INDEX_MORE_SPECIAL = 3,
+    EN_QA_INDEX_SPECIAL_LIST = 4,
+    EN_QA_INDEX_NULL = 5,
+    
+};
+
+enum QA_Answer_Select
+{
+    EN_QA_INDEX_ANSWER = 0,
+    EN_QA_LABELS_QUESTION_ANSWER = 1,
+    EN_TRIBESHOW_QA_INDEX = 2
+};
+
+#endif
+
+#ifndef ___Constants__
+
+#define ___Constants__
+
+// 是否在 appdelegate 里开启远程推送注册代码
+#define REGISTERFORREMOTENOTIFICATION_APPDELEGATE 1
+
+
+//布局
+//#define NavigationBar_HEIGHT        [[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0f ? (64):(44)
+#define SCREEN_WIDTH                [UIScreen mainScreen].bounds.size.width
+#define SCREEN_HEIGHT               [UIScreen mainScreen].bounds.size.height 
+//#define IOS_VERSION                 [[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0f ? (7):(6)
+#define IOS_VERSION                 [[[UIDevice currentDevice] systemVersion] floatValue]
+#define CurrentLanguage             [[NSLocale preferredLanguages] objectAtIndex:0]
+#define SYSTEM_VERSION              [[[UIDevice currentDevice] systemVersion] floatValue]
+
+#define IS_IPHONE_X                 [UIScreen mainScreen].bounds.size.height == 812.f   //适配Iphone_X
+#define SUIT_IPHONE_X_HEIGHT        (IS_IPHONE_X ? 34 : 0)
+#define SCREEN_PROJ_NAVHEIGHT       (IS_IPHONE_X ? 38 : 52)                             //项目首页、移民项目页头部高度
+#define SCREEN_TABHEIGHT            (IS_IPHONE_X ? 83.0 : 49.0)
+#define SCREEN_STATUSHEIGHT         [[UIApplication sharedApplication] statusBarFrame].size.height
+#define SCREEN_NAVHEIGHT            44.0
+
+#define SCREEN_WIDTH_5S           320.0   //用于比例换算
+#define SCREEN_WIDTH_6            375.0   //同上
+#define SCREEN_WIDTH_Plus         414.0   //同上
+#define SCREEN_HEIGHT_4           480.0   //同上
+#define SCREEN_HEIGHT_5           574.0
+#define SCREEN_HEIGHT_6           667.0
+#define SCREEN_HEIGHT_PLUSE       736.0
+#define SCREEN_HEIGHT_X           812.0
+
+#define SCREEN_SCALE   (SCREEN_WIDTH / SCREEN_WIDTH_5S)     // 以 5s 为基准
+#define SCREEN_WIDTHRATE_6 (SCREEN_WIDTH / SCREEN_WIDTH_6)  // 以 6 为基准
+#define SCREEN_HEIGHTRATE_6 (SCREEN_HEIGHT / SCREEN_HEIGHT_6)
+
+// 字体对应
+#define FONT_UI40PX 20
+#define FONT_UI36PX 18
+#define FONT_UI34PX 17
+#define FONT_UI32PX 16
+#define FONT_UI30PX 15
+#define FONT_UI28PX 14
+#define FONT_UI26PX 13
+#define FONT_UI24PX 12
+#define FONT_UI22PX 11
+#define FONT_UI20PX 10
+#define FONT_UI18PX 9
+
+// 圆角
+#define RRADIUS_LAYERCORNE 2.0
+
+// toast 延时时间
+#define DELAY_TIME 1.5
+
+
+/**< ============================ 帖子详情 - 图文混排 相关参数设置============================ >*/
+// 帖子详情界面，楼层下最多显示的回复数
+#define DISPLAY_REPLY_MAXNUM 5
+
+// 文本行间距
+#define LINE_SPACE 7.0//5.0
+// 文本字间距
+#define KERN_SPACE 0.6
+// 楼层文本字体 font
+
+// 针对楼层回复的文本字体 font
+//#define FLOOR_TEXT_FONT [UIFont systemFontOfSize:16.0]
+//#define REPLY_FLOOR_TEXT_FONT [UIFont systemFontOfSize:14.0]
+
+#define FLOOR_TEXT_FONT [UIFont fontWithName:@"Helvetica"size:16]
+#define REPLY_FLOOR_TEXT_FONT [UIFont fontWithName:@"Helvetica"size:14]
+
+// 区分大小图片
+#define DIFFER_BIG_SMALL_IMAGE  100.0
+// 后台获取图片尺寸为 （0） 时 手动设置尺寸
+#define SETTING_IMAGE_SIZE_WIDTH 22.0
+// 针对楼层的回复，图片尺寸统一设置
+#define REPLY_FLOOR_IMAGE_SIZE_WIDTH 20.0
+
+
+// 布局
+#define ICON_WH 40.0
+#define GAP_S 10.0
+#define BUTTON_SMALL_H 10.0
+#define BUTTON_BIG_H 15.0
+#define REPORT_H 35.0
+#define REPORT_W 60.0
+
+
+#endif
+
+#ifndef __NotifactionCenter__
+
+#define __NotifactionCenter__
+
+//引导页 通知
+#define GUIDE_VIEW_COMPLETE_NOTIFICATION @"guide_view_complete"                   //引导页结束通知
+
+// homepage 通知
+#define HOMEPAGE_FUNCTION_NOTIFICATION   @"homepage_function_notification"         //功能模块点击通知
+#define HOMEPAGE_FINDSPECIAL_NOTIFICATION   @"homepage_findspecial_notification"     //找专家点击通知
+#define HOMEPAGE_CONDITION_TEST_NOTIFICATION    @"homepage_condition_test_notification"  //条件测试点击通知
+#define HOMEPAGE_QUESTION_NOTIFICATION   @"homepage_question_notification"         //移民百问模块点击通知
+#define HOMEPAGE_RAIDERS_NOTIFICATION    @"homepage_raiders_notification"          //移民攻略点击通知
+#define HOMEPAGE_TABLEVIEW_NOTIFICATION  @"homepage_hotpost_notification"        //首页TableView点击通知
+#define HOMEPAGE_HOME_CHINESEONEDAY_BTN_NOTIFICATION  @"homepage_chineseOneDayBtn_notification"        //首页华人的一天按钮点击通知
+#define HOMEPAGE_HOME_COMMONTRIBE_BTN_NOTIFICATION  @"homepage_commonTribeBtn_notification"        //首页帖子上圈子按钮点击通知
+#define NEWSCENTER_NOTIFYCATION @"newscenter_notification"                          // 消息中心 cell 点击通知
+#define SEARCH_CANCLE_NOTIFICATION    @"search_cancle"                            //搜索页面点击取消
+#define HOME_PROJECT_SCHEDULE_CLOSEVIEW_NOTIFICATION   @"home.project.schedule.closeview.notification"         // 首页项目进度通知,关闭弹框通知
+#define HOME_IMASSESS_REMINDVIEW_EVENT_NOTIFICATION @"home.imassess.remindview.event.notification"      // 首页移民评估点击事件通知
+#define HOME_JUDGE_TIME_NOTIFICATION   @"home.judge.time.notification"          //开始统计进入次数通知
+#define HOME_PERSONALITY_NOTICE_CANCLE @"home.personalitynotice.cancle"         //关闭个性化设置提示
+#define HOME_PERSONALITY_NOTICE_OK @"home.personalitynotice.ok"            //点击个性化设置提示
+#define HOME_PERSONALITY_SET_SUBMIT @"home.personalityset.submit"            //个性化设置完成
+// 首页是否显示条件测试cell - 1:显示  0：不显示
+#define HOME_ISSHOW_CONDITIONTEST   @"home.isshow.conditiontest"
+
+// 帖子详情原生控件显示 与 web页显示 切换标识 - 1：原生  0：web
+#define TRIBEDETAILTHEME_NATIVEUI_WEB @"tribedetailtheme.nativeui.web"
+
+#define APPOINTMENT_BUTTON_COLOR            @"appointment.button.color"                 // 预约咨询按钮颜色
+#define BINDING_PHONENUM_BACKGROUNDCOLOR    @"binding.phonenum.backgroundcolor"         // 绑定手机提示背景颜色
+#define BINDING_PHONENUM_TEXTCOLOR          @"binding.phonenum.textcolor"               // 绑定手机提示文本颜色
+#define BINDING_PHONENUM_CONTENT            @"binding.phonenum.content"                 // 绑定手机提示文本
+#define BINDING_PHONENUM_CANCEL             @"binding.phonenum.cancel"                  // 绑定手机提示点击取消
+#define BINDING_PHONENUM_CANCEL_TIME        @"binding.phonenum.cancel.time"             // 绑定手机提示点击或者关闭的时间
+
+//优惠券 通知
+#define COUPON_SELECT_NOTIFICATION    @"coupon_inssedselect"                       //优惠券点击通知
+#define COUPON_CODE_SELECT_NOTIFICATION    @"coupon_codeinputselect"               //优惠券优惠码输入
+#define COUPON_EXPLAIN_SELECT_NOTIFICATION    @"coupon_explainselect"              //优惠券说明
+
+//圈子首页
+#define TRIBE_INDEX_POST_NOTIFICATION        @"tribe_index_post"                 //圈子首页发帖通知
+#define TRIBE_INDEX_HOT_TRIBE_NOTIFICATION   @"tribe_index_hot_tribe"            //圈子首页点击热门帖子通知
+#define TRIBE_INDEX_TRIBE_IN_CELL_NOTIFICATION  @"tribe_index_tribe_in_cell"     //圈子首页点击热门帖子中所属的圈子
+#define TRIBE_INDEX_TABLE_CELL_SELECTED_NOTIFICATION   @"tribe_index_table_selected"  //圈子首页tablelist被选则
+
+// 具体圈子
+#define TRIBESHOW_BRIEFINFO_CAREBUTTON_NOTIFICATION @"tribeshow.briefinfo.carebtn.notification"             // 具体圈子的信息简介中的关注点击事件的通知
+#define TRIBESHOW_BRIEFINFO_TRIBEHOST_USERINFO_NOTIFICATION @"tribeshow.briefinfo.tribehost.userinfo.notification" // 具体圈子信息简介版主点击事件
+#define TRIBESHOW_HOTEST_TABLEVIEW_NOTIFICATION @"tribeshow.tableviewcell.hotestitem.notification"           // 具体圈子最热 TableView 点击通知
+#define TRIBESHOW_LATEST_TABLEVIEW_NOTIFICATION @"tribeshow.tableviewcell.latestitem.notification"           // 具体圈子最新 TableView 点击通知
+#define TRIBESHOW_QA_TABLEVIEW_NOTIFICATION @"tribeshow.tableviewcell.qaitem.notification"            // 具体圈子 问答 TableView 点击通知
+#define TRIBESHOW_PROJECT_TABLEVIEW_NOTIFICATION @"tribeshow.tableviewcell.projectitem.notification"  // 具体圈子 项目 TableView 点击通知
+#define TRIBESHOW_QA_SELECT_ANSWER_ID_NOTIFICATION @"tribeshow.qa.select.answer.id.notification"  // 具体圈子 问答 回答者 点击通知
+#define TRIBESHOW_WRITING_NOTIFICATION @"tribeshow.writing.notification"                                     // 具体圈子发帖通知
+
+// 问答首页
+#define QA_INDEX_GOTO_ASK_QUESTION @"qa.index.askquestion.notification"           //问答推荐页跳到提问页面
+#define QA_INDEX_GOTO_SEARCH       @"qa.index.search.notification"                //问答推荐页跳转到搜索
+#define QA_INDEX_REFRESH_BOTTOM    @"qa.index.refresh.bottom.notification"        //问答推荐页上拉加载更多
+#define QA_INDEX_REFRESH_TOP    @"qa.index.refresh.top.notification"        //问答推荐页下拉刷新
+#define QA_INDEX_REFRESH_FILTER_BOTTOM    @"qa.index.refresh.filter.bottom.notification"        //问答标签选择页上拉加载更多
+#define QA_INDEX_SELECT_TABLE_ITEM        @"qa.index.select.table.item"           //问答推荐页tableview选择
+#define QA_INDEX_SPECIAL_SELECT_ITEM        @"qa.index.special.select.item"           //问答推荐页专家页专家选择
+#define QA_FILTER_OK_PREESED    @"qa.index.filter.ok.PREESED"        //筛选界面OK按钮被按下
+#define QA_FILTER_CANCEL_PREESED    @"qa.index.filter.cancel.PREESED"        //筛选界面Cancel按钮被按下
+#define QA_FILTER_SELECT_TABLE_ITEM        @"qa.index.filter.select.table.item"           //筛选界面tableview选择
+#define QA_SELECT_ANSWER_ID         @"qa.select.answer.id"          //点击回答者名字进入其个人中心
+#define QA_LABELS_SELECT_ANSWER_ID         @"qalist.select.answer.id"   //标签问题选择列表回答者名字点击
+// 专家或普通用户的个人页
+#define USERINFO_CAREBUTTON @"userinfo.carebutton" // 关注
+#define USERINFO_MSGBUTTON  @"userinfo.msgbutton" // 发消息
+#define USERINFO_VBUTTON  @"userinfo.vbutton" // 点击认证
+#define USERINFO_LEVELBUTTON    @"userinfo.levelButton" //点击等级
+#define USERINFO_ENERGYBUTTON   @"userinfo.energyButton"//点击能量值
+#define USERINFO_BRIEFINFOBUTTON  @"userinfo.briefinfobutton" // 用户简介
+#define USERINFO_SPECIALIST_ASKBUTTON  @"userinfo.specialistbutton" // 专家界面 - 向他提问按钮
+#define USERINFO_HISTRIBE_TABLECELL  @"userinfo.histribe.tablecell" // 他的圈子 cell 点击
+#define USERINFO_HISQA_TABLECELL @"userinfo.hisqa.tablecell" // 他的问答 cell 点击
+#define USERINFO_HEADBUTTON @"userinfo.headbutton" // 点击用户头像
+
+#define IMHOME_PROJECT  @"imhome.project"
+#define IMHOME_VISA     @"imhome.visa"
+#define IMHOME_BANNER   @"imhome.banner"
+
+#define GuideHome_Nation            @"guidehome.nation"
+#define GuideHome_QuestionOptions   @"guidehome.questionoptions"
+
+// v3.0 版本引导页与首页
+#define USER_ASSESSED_IMMIGRANT @"user_assessed_immigrant" // 本地存储标记 1- 已评估   0- 未评估 : 移民状态
+#define LIST_LATEST_NEWS_LAST_IDMD5 @"list.latest.news.last.idmd5" // 快讯列表 拉去最新数据时 记录上一次id字符串的 md5
+#define PREFERRED_PLANS_DIC_DATAS @"preferred.plans.dic.datas"     // 最佳方案网络数据本地保存
+
+// v3.0 引导页生成移民方案所需参数
+#define IMAssess_Country @"country"
+#define IMAssess_Purpose @"purpose"
+#define IMAssess_Expense @"expense"
+#define IMAssess_Overseas_Residence_Requirements @"overseas_residence_requirements"
+#define IMAssess_Education @"education"
+#define IMAssess_Ielts @"ielts"
+#define IMAssess_Working_Life @"working_life"
+#define IMAssess_Name @"name"
+#define IMAssess_Sex @"sex"
+#define IMAssess_Mobile @"mobile"
+#define IMAssess_Vcode @"vcode"
+#define IMAssess_Type @"type"
+
+// v3.0 引导页做完题目后点击跳过保存的数据
+#define IMAssess_Local_Data @"imasses.local.data"
+// v3.0 引导页已移民用户保存的国家城市数据
+#define IMED_Local_Nation @"imed.local.nation"
+#define IMED_Local_City @"imed.local.city"
+// v3.0 引导页是否显示跳过按钮
+#define IMGuide_Show_Skip @"imguide.show.skip"
+// v3.0 本地原生移民评估问题
+#define IMAssess_Question_TXT @"IMAssessQuestion.txt"
+// v3.0 引导页是否曾经做完题目,没做完则进入引导页
+#define IMGuide_hasBeen_Finished @"imguide.hasbeen.finished"
+// v3.0 登录过的，不再进入引导页了
+#define IMGuide_hasBeen_Logined @"imguide.hasbeen.logined"
+// v3.0 个人中心推荐有礼URL
+#define Personal_Recommend_URL @"personal.recommend.url"
+// v3.0 是否走评估引导页总开关
+#define IMGuide_Show_Switch @"imguide.show.switch"
+// v3.0 是否经过引导页了
+#define IMGuide_Finished_Show @"imguide.finished.show"
+
+// v3.1 获取最新通知数目（不包含IM消息数）
+#define IMNotification_Lastest_Count @"imnotification_lastest_count"
+// v3.1 获取通知数据
+#define IMNotification_Datas @"imnotification_datas"
+// v3.1 获取通知数据总数
+#define IMNotification_Total @"imnotification_total"
+
+// v3.1 APP 打开标记
+#define OpenAPPCountFlag @"open.app.count.falg"
+
+#endif
+
+
+#ifndef __HNBHNBWeb__
+#define __HNBHNBWeb__
+
+#define IS_NATIVE_NAVBAR                    @"_is_show_native_top_menu"
+#define IS_NATIVE_BACKBTN                   @"_is_show_native_top_menu_return"
+#define IS_NATIVE_SHOWTITLE                 @"_is_show_native_top_menu_title"
+#define IS_NATIVE_SHOWSHAREDBTN             @"_is_show_native_top_menu_share"
+#define IS_NATIVE_SHOWTELBTN                @"_is_show_native_top_menu_tel"
+#define IS_NATIVE_SHOWCONSULT               @"_is_show_native_float_consult"
+#define IS_NATIVE_CANREFRESH_WHENBACK       @"_is_return_refresh"
+#define IS_JUMP_NATIVE                      @"_is_jump_native"
+#define JUMP_NATIVEMETHOD_OBJ               @"_jump_native_obj"
+#define JUMP_NATIVEMETHOD_OBJ_VALUE         @"_jump_native_obj_value"
+
+#endif
+
+
+#ifndef __DetailTribeHotAndLatestItem__
+
+#define __DetailTribeHotAndLatestItem__
+
+// 圈子
+#define TRIBE_HOTEST @"hotest"
+#define TRIBE_LATEST @"latest"
+#define TRIBE_QATHEM @"question"
+#define TRIBE_PROTHEM @"project"
+#define HORIZON_GAP 12.0
+#define TRIBESHOW_ADVANTAGE_ITEM_WIDTH 40.f
+#define TRIBESHOW_PROITEM_LINESPACE 3
+#define LOCAL_DRAFT_TRIBE_BASEINFO @"local.draft.tribe.base.info" // 帖子基本信息保存为草稿
+#define LOCAL_DRAFT_FAILRE_IMAGEMODEL @"local.draft.failure.imagemodel" // 保存为草稿时未成功上传的照片数据模型(注意这里只需保存模型的 basicTag 值)
+
+#endif
+
+
+
+#endif
+

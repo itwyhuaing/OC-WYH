@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="7701" systemVersion="14A389" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="ActivityInfo" representedClassName="ActivityInfo" syncable="YES">
+        <attribute name="image_url" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="url" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="HouseInfo" representedClassName="HouseInfo" syncable="YES">
+        <attribute name="image_url" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="url" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Label" representedClassName="Label" syncable="YES">
+        <attribute name="cate" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="value" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="LabelCate" representedClassName="LabelCate" syncable="YES">
+        <attribute name="catename" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="NationCode" representedClassName="NationCode" syncable="YES">
+        <attribute name="hot" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="PersonalInfo" representedClassName="PersonalInfo" syncable="YES">
+        <attribute name="asset" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="birthday" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="education_bk" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="graduate_school" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="head_url" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="hobby" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="iets" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="im_nation" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="im_nation_cn" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="im_state_cn" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="indroduction" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="mobile_nation" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="mobile_num" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="motto" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="sex_cn" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="work_life" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="work_life_in_tar_state" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="PopularPost" representedClassName="PopularPost" syncable="YES">
+        <attribute name="collect" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="comment_num" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="ess_img" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="head_url" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="show_time" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="url" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="view_num" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="ShufflingInfo" representedClassName="ShufflingInfo" syncable="YES">
+        <attribute name="image_url" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="url" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Tribe" representedClassName="Tribe" syncable="YES">
+        <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="ActivityInfo" positionX="-45" positionY="126" width="128" height="90"/>
+        <element name="HouseInfo" positionX="-54" positionY="117" width="128" height="90"/>
+        <element name="Label" positionX="-9" positionY="171" width="128" height="90"/>
+        <element name="LabelCate" positionX="-27" positionY="144" width="128" height="60"/>
+        <element name="NationCode" positionX="-36" positionY="144" width="128" height="90"/>
+        <element name="PersonalInfo" positionX="-54" positionY="-9" width="128" height="345"/>
+        <element name="PopularPost" positionX="-27" positionY="135" width="128" height="180"/>
+        <element name="ShufflingInfo" positionX="-27" positionY="135" width="128" height="75"/>
+        <element name="Tribe" positionX="-27" positionY="144" width="128" height="75"/>
+    </elements>
+</model>

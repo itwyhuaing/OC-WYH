@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="10171" systemVersion="15D21" minimumToolsVersion="Automatic">
+    <entity name="ActivityInfo" representedClassName="ActivityInfo" syncable="YES">
+        <attribute name="image_url" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="timestamp" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="url" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="CODActivityClassifyInfo" representedClassName="CODActivityClassifyInfo" syncable="YES">
+        <attribute name="image_url" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="isnew" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="seenum" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="timestamp" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="url" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="CODActivityInfo" representedClassName="CODActivityInfo" syncable="YES">
+        <attribute name="image_url" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="isnew" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="seenum" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="timestamp" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="url" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="CODInfo" representedClassName="CODInfo" syncable="YES">
+        <attribute name="image_url" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="timestamp" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="timestamp2" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="url" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="url_new" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="CODNation" representedClassName="CODNation" syncable="YES">
+        <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="timestamp" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Coupon" representedClassName="Coupon" syncable="YES">
+        <attribute name="describe" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="endtime" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="expiring" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="expiring_day" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="flag" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="isForbid" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="isLost" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="isNew" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="jumpdescribe" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="jumpurl" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="platform" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="program" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="quota" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="starttime" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="suitName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="suitTitle" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="timestamp" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="DetailTribeHotestitem" representedClassName="DetailTribeHotestitem" syncable="YES">
+        <attribute name="collect" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="comment_num" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="create_time" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="desc" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="detail_id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="formated_time" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="head_url" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="img_list" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="link" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="timestamp" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="tribe_id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="tribe_name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="user_id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="user_name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="view_num" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="DetailTribeLatestitem" representedClassName="DetailTribeLatestitem" syncable="YES">
+        <attribute name="collect" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="comment_num" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="create_time" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="desc" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="detail_id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="formated_time" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="head_url" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="img_list" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="link" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="timestamp" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="tribe_id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="tribe_name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="user_id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="user_name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="view_num" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="HomeHotPost" representedClassName="HomeHotPost" syncable="YES">
+        <attribute name="collect" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="comment_num" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="create_time" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="desc" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="detail_id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="formated_time" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="head_url" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="img_list" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="link" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="timestamp" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="tribe_id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="tribe_name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="user_id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="user_name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="view_num" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="HomeQA" representedClassName="HomeQA" syncable="YES">
+        <attribute name="configLabelGroupId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="desc" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="img" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="labelGroup" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="questionId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="related_num" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="timestamp" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="HomeQASpecial" representedClassName="HomeQASpecial" syncable="YES">
+        <attribute name="desc" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="head_url" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="HotTribeInfo" representedClassName="HotTribeInfo" syncable="YES">
+        <attribute name="comment_num" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="logo" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="theme_num" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="timestamp" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="url" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="HouseInfo" representedClassName="HouseInfo" syncable="YES">
+        <attribute name="area" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="image_url" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="price" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="timestamp" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="url" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Label" representedClassName="Label" syncable="YES">
+        <attribute name="cate" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="timestamp" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="value" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="LabelCate" representedClassName="LabelCate" syncable="YES">
+        <attribute name="catename" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="NationCode" representedClassName="NationCode" syncable="YES">
+        <attribute name="hot" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="timestamp" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="NewActivityInfo" representedClassName="NewActivityInfo" syncable="YES">
+        <attribute name="activity_time" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="end_time" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="follow_num" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="index_img" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="index_title" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="list_img" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="list_title" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="timestamp" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="url" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="PersonalInfo" representedClassName="PersonalInfo" syncable="YES">
+        <attribute name="asset" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="birthday" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="education_bk" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="graduate_school" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="head_url" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="hobby" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="iets" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="im_nation" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="im_nation_cn" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="im_state_cn" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="indroduction" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="mobile_nation" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="mobile_num" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="motto" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="sex_cn" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="work_life" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="work_life_in_tar_state" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="PopularPost" representedClassName="PopularPost" syncable="YES">
+        <attribute name="collect" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="comment_num" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="ess_img" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="head_url" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="show_time" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="timestamp" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="url" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="view_num" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="ShufflingInfo" representedClassName="ShufflingInfo" syncable="YES">
+        <attribute name="image_url" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="timestamp" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="url" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="TelCountryCode" representedClassName="TelCountryCode" syncable="YES">
+        <attribute name="showstring" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="telcountrycodeid" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="timestamp" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="TopThemeInfo" representedClassName="TopThemeInfo" syncable="YES">
+        <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="timestamp" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Tribe" representedClassName="Tribe" syncable="YES">
+        <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="timestamp" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="TribeHotPost" representedClassName="TribeHotPost" syncable="YES">
+        <attribute name="collect" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="comment_num" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="image_list" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="show_time" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="timestamp" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="tribeid" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="tribename" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="url" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="username" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="view_num" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="TribeIndexHotTribe" representedClassName="TribeIndexHotTribe" syncable="YES">
+        <attribute name="follow_num" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="img_url" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="theme_num" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="timestamp" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="TribeIndexItem" representedClassName="TribeIndexItem" syncable="YES">
+        <attribute name="collect" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="comment_num" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="create_time" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="desc" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="detail_id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="formated_time" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="head_url" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="img_list" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="link" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="timestamp" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="tribe_id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="tribe_name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="user_id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="user_name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="view_num" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="ActivityInfo" positionX="-45" positionY="126" width="128" height="105"/>
+        <element name="CODActivityClassifyInfo" positionX="-27" positionY="144" width="128" height="150"/>
+        <element name="CODActivityInfo" positionX="-18" positionY="153" width="128" height="135"/>
+        <element name="CODInfo" positionX="-27" positionY="144" width="128" height="135"/>
+        <element name="CODNation" positionX="-27" positionY="144" width="128" height="90"/>
+        <element name="Coupon" positionX="-27" positionY="144" width="128" height="330"/>
+        <element name="HomeHotPost" positionX="0" positionY="171" width="128" height="300"/>
+        <element name="HomeQA" positionX="-18" positionY="153" width="128" height="180"/>
+        <element name="HomeQASpecial" positionX="-9" positionY="162" width="128" height="105"/>
+        <element name="HotTribeInfo" positionX="-27" positionY="144" width="128" height="135"/>
+        <element name="HouseInfo" positionX="-54" positionY="117" width="128" height="150"/>
+        <element name="Label" positionX="-9" positionY="171" width="128" height="105"/>
+        <element name="LabelCate" positionX="-27" positionY="144" width="128" height="60"/>
+        <element name="NationCode" positionX="-36" positionY="144" width="128" height="105"/>
+        <element name="NewActivityInfo" positionX="-27" positionY="144" width="128" height="195"/>
+        <element name="PersonalInfo" positionX="-54" positionY="-9" width="128" height="345"/>
+        <element name="PopularPost" positionX="-27" positionY="135" width="128" height="195"/>
+        <element name="ShufflingInfo" positionX="-27" positionY="135" width="128" height="90"/>
+        <element name="TelCountryCode" positionX="-27" positionY="144" width="128" height="90"/>
+        <element name="TopThemeInfo" positionX="-18" positionY="153" width="128" height="90"/>
+        <element name="Tribe" positionX="-27" positionY="144" width="128" height="90"/>
+        <element name="TribeHotPost" positionX="-9" positionY="162" width="128" height="225"/>
+        <element name="TribeIndexHotTribe" positionX="-27" positionY="144" width="128" height="135"/>
+        <element name="TribeIndexItem" positionX="54" positionY="144" width="128" height="300"/>
+        <element name="DetailTribeHotestitem" positionX="54" positionY="144" width="128" height="300"/>
+        <element name="DetailTribeLatestitem" positionX="27" positionY="171" width="128" height="300"/>
+    </elements>
+</model>

@@ -105,7 +105,7 @@ void interceptIMP (id self, SEL _cmd, void* arg0, BOOL arg1, BOOL arg2, id arg3)
 #pragma mark ------ show UI
 
 - (void)loadEditorView{
-    NSBundle* bundle = [NSBundle mainBundle];    
+    NSBundle *bundle = [NSBundle mainBundle];
     NSString *htmlPath = [bundle pathForResource:@"editor" ofType:@"html"];
     [self.wkEditor loadRequest:[NSURLRequest requestWithURL:[NSURL fileURLWithPath:htmlPath]]];
     
@@ -149,6 +149,7 @@ void interceptIMP (id self, SEL _cmd, void* arg0, BOOL arg1, BOOL arg2, id arg3)
     //self.toolBarScroll.backgroundColor = [UIColor redColor];
     //self.keyImageView.backgroundColor = [UIColor purpleColor];
     
+    // 功能按钮
     [self addFunctionBtnItem];
 }
 

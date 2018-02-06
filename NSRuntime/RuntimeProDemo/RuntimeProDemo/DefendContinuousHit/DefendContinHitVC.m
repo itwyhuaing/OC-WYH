@@ -10,7 +10,6 @@
 #import "UIControl+ClickEvent.h"
 
 
-
 @interface DefendContinHitVC ()
 
 @end
@@ -38,6 +37,8 @@
 - (void)clickEventBtn:(UIButton *)btn{
 
     NSLog(@" %s ",__FUNCTION__);
+    
+    
 }
 
 @end
