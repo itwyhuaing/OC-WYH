@@ -36,6 +36,7 @@
     layer.backgroundColor = [UIColor cyanColor].CGColor;
     [self.view.layer addSublayer:layer];
     
+    
 }
 
 - (void)test01{
