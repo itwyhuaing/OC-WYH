@@ -90,7 +90,4 @@
 
 }
 
-/*
- + (instancetype)bezierPath;
- */
 @end

@@ -1,24 +1,27 @@
 //
-//  TableVC.m
+//  UIBezierPathVC.m
 //  CALayerDemo
 //
-//  Created by hnbwyh on 2018/2/8.
+//  Created by hnbwyh on 2018/2/9.
 //  Copyright © 2018年 ZhiXingJY. All rights reserved.
 //
 
-#import "TableVC.h"
-#import "CALayerVC.h"
 #import "UIBezierPathVC.h"
+#import "FirstVC.h"
+#import "SecondVC.h"
+#import "ThirdVC.h"
+#import "FourthVC.h"
 
-@interface TableVC ()
+@interface UIBezierPathVC ()
 @property (nonatomic,strong) NSMutableArray *dataSource;
 @end
 
-@implementation TableVC
+@implementation UIBezierPathVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.title = @" UIBezierPathVC ";
     //  UI 修饰
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     //NSArray *tmp = @[@"FirstVC",@"DefendContinHitVC - UIButton 防连击",@"3",@"4",@"5",@"6"];
@@ -54,24 +57,26 @@
     switch (indexPath.row) {
         case 0:
         {
-            vc = [[CALayerVC alloc] init];
+            vc = [[FirstVC alloc] init];
             [self.navigationController pushViewController:vc animated:TRUE];
         }
             break;
         case 1:
         {
-            vc = [[UIBezierPathVC alloc] init];
+            vc = [[SecondVC alloc] init];
             [self.navigationController pushViewController:vc animated:TRUE];
         }
             break;
         case 2:
         {
-        
+            vc = [[ThirdVC alloc] init];
+            [self.navigationController pushViewController:vc animated:TRUE];
         }
             break;
         case 3:
         {
-            
+            vc = [[FourthVC alloc] init];
+            [self.navigationController pushViewController:vc animated:TRUE];
         }
             break;
         case 4:
