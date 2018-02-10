@@ -7,25 +7,34 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		463CC6F72002660200C782E5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 463CC6F62002660200C782E5 /* AppDelegate.m */; };
-		463CC6FA2002660200C782E5 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 463CC6F92002660200C782E5 /* ViewController.m */; };
 		463CC6FD2002660200C782E5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 463CC6FB2002660200C782E5 /* Main.storyboard */; };
 		463CC6FF2002660200C782E5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 463CC6FE2002660200C782E5 /* Assets.xcassets */; };
 		463CC7022002660300C782E5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 463CC7002002660300C782E5 /* LaunchScreen.storyboard */; };
 		463CC7052002660300C782E5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 463CC7042002660300C782E5 /* main.m */; };
+		465EAEAA202E88140015DF4D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 465EAEA6202E88140015DF4D /* AppDelegate.m */; };
+		465EAEAB202E88140015DF4D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 465EAEA8202E88140015DF4D /* ViewController.m */; };
+		465EAEAE202E8B110015DF4D /* LocationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 465EAEAD202E8B110015DF4D /* LocationVC.m */; };
+		465EAEB1202E8B210015DF4D /* GeoCodeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 465EAEB0202E8B210015DF4D /* GeoCodeVC.m */; };
+		465EAEB4202E8B770015DF4D /* TableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 465EAEB2202E8B770015DF4D /* TableVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		463CC6F22002660200C782E5 /* LocationsProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LocationsProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		463CC6F52002660200C782E5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		463CC6F62002660200C782E5 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		463CC6F82002660200C782E5 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		463CC6F92002660200C782E5 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		463CC6FC2002660200C782E5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		463CC6FE2002660200C782E5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		463CC7012002660300C782E5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		463CC7032002660300C782E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		463CC7042002660300C782E5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		465EAEA5202E88140015DF4D /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		465EAEA6202E88140015DF4D /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		465EAEA7202E88140015DF4D /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		465EAEA8202E88140015DF4D /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		465EAEAC202E8B110015DF4D /* LocationVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LocationVC.h; sourceTree = "<group>"; };
+		465EAEAD202E8B110015DF4D /* LocationVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LocationVC.m; sourceTree = "<group>"; };
+		465EAEAF202E8B210015DF4D /* GeoCodeVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GeoCodeVC.h; sourceTree = "<group>"; };
+		465EAEB0202E8B210015DF4D /* GeoCodeVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GeoCodeVC.m; sourceTree = "<group>"; };
+		465EAEB2202E8B770015DF4D /* TableVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableVC.m; sourceTree = "<group>"; };
+		465EAEB3202E8B770015DF4D /* TableVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableVC.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,10 +67,8 @@
 		463CC6F42002660200C782E5 /* LocationsProject */ = {
 			isa = PBXGroup;
 			children = (
-				463CC6F52002660200C782E5 /* AppDelegate.h */,
-				463CC6F62002660200C782E5 /* AppDelegate.m */,
-				463CC6F82002660200C782E5 /* ViewController.h */,
-				463CC6F92002660200C782E5 /* ViewController.m */,
+				465EAEA9202E88140015DF4D /* Func */,
+				465EAEA4202E88140015DF4D /* Main */,
 				463CC6FB2002660200C782E5 /* Main.storyboard */,
 				463CC6FE2002660200C782E5 /* Assets.xcassets */,
 				463CC7002002660300C782E5 /* LaunchScreen.storyboard */,
@@ -69,6 +76,30 @@
 				463CC7042002660300C782E5 /* main.m */,
 			);
 			path = LocationsProject;
+			sourceTree = "<group>";
+		};
+		465EAEA4202E88140015DF4D /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				465EAEA5202E88140015DF4D /* AppDelegate.h */,
+				465EAEA6202E88140015DF4D /* AppDelegate.m */,
+				465EAEA7202E88140015DF4D /* ViewController.h */,
+				465EAEA8202E88140015DF4D /* ViewController.m */,
+				465EAEB3202E8B770015DF4D /* TableVC.h */,
+				465EAEB2202E8B770015DF4D /* TableVC.m */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		465EAEA9202E88140015DF4D /* Func */ = {
+			isa = PBXGroup;
+			children = (
+				465EAEAC202E8B110015DF4D /* LocationVC.h */,
+				465EAEAD202E8B110015DF4D /* LocationVC.m */,
+				465EAEAF202E8B210015DF4D /* GeoCodeVC.h */,
+				465EAEB0202E8B210015DF4D /* GeoCodeVC.m */,
+			);
+			path = Func;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -142,9 +173,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				463CC6FA2002660200C782E5 /* ViewController.m in Sources */,
+				465EAEAB202E88140015DF4D /* ViewController.m in Sources */,
+				465EAEAE202E8B110015DF4D /* LocationVC.m in Sources */,
+				465EAEAA202E88140015DF4D /* AppDelegate.m in Sources */,
+				465EAEB4202E8B770015DF4D /* TableVC.m in Sources */,
+				465EAEB1202E8B210015DF4D /* GeoCodeVC.m in Sources */,
 				463CC7052002660300C782E5 /* main.m in Sources */,
-				463CC6F72002660200C782E5 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
