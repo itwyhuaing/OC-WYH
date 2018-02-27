@@ -8,7 +8,7 @@
 
 #import "TableVC.h"
 #import "LocationVC.h"
-#import "GeoCodeVC.h"
+#import "GeoCoderVC.h"
 
 @interface TableVC ()
 @property (nonatomic,strong) NSMutableArray *dataSource;
@@ -60,7 +60,7 @@
             break;
         case 1:
         {
-            vc = [[GeoCodeVC alloc] init];
+            vc = [[GeoCoderVC alloc] init];
             [self.navigationController pushViewController:vc animated:TRUE];
         }
             break;

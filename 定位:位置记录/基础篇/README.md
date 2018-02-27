@@ -11,15 +11,27 @@
 3. 头文件导入：#import <CoreLocation/CoreLocation.h>
 
 * CoreLocation 定位服务
+
+
+1. 属性
+2. 方法
+3. 应用
+基本使用
+首先：隐私配置
+
+其次：判断系统定位权限是否打开
+
+然后：弹框给用户，本APP启用地图定位的状态
+
+
+* CLGeocoder 地理编码
 >
 1. 属性
 2. 方法
 3. 应用
 
-* CLGeocoder 地理编码
-> 
-1. 属性
-2. 方法
-3. 应用
-
 ##### 参考
+
+
+NSLocationAlwaysAndWhenInUseUsageDescription
+NSLocationWhenInUseUsageDescription
