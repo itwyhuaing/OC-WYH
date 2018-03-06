@@ -8,6 +8,7 @@
 
 #import "TableVC.h"
 #import "FirstVC.h"
+#import "SecondVC.h"
 
 @interface TableVC ()
 
@@ -27,9 +28,10 @@
     
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    self.title = @"TableVC";
+    
 }
 
 #pragma mark - Table view data source
@@ -61,7 +63,8 @@
             break;
         case 1:
             {
-                
+                vc = [[SecondVC alloc] init];
+                [self.navigationController pushViewController:vc animated:TRUE];
             }
             break;
             

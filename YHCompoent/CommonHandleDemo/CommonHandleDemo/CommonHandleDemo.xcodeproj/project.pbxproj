@@ -18,6 +18,8 @@
 		2608A8CD2043B821000938DB /* TableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2608A8C92043B821000938DB /* TableVC.m */; };
 		2608A8D12043B87C000938DB /* FirstVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2608A8D02043B87C000938DB /* FirstVC.m */; };
 		2608A8D82043D67A000938DB /* UILabel+CopySpeciality.m in Sources */ = {isa = PBXBuildFile; fileRef = 2608A8D72043D67A000938DB /* UILabel+CopySpeciality.m */; };
+		2608A8EC2047D78A000938DB /* SecondVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2608A8EB2047D78A000938DB /* SecondVC.m */; };
+		2608A8EF20492EFB000938DB /* CopyView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2608A8EE20492EFB000938DB /* CopyView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +62,10 @@
 		2608A8D02043B87C000938DB /* FirstVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstVC.m; sourceTree = "<group>"; };
 		2608A8D62043D67A000938DB /* UILabel+CopySpeciality.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UILabel+CopySpeciality.h"; sourceTree = "<group>"; };
 		2608A8D72043D67A000938DB /* UILabel+CopySpeciality.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UILabel+CopySpeciality.m"; sourceTree = "<group>"; };
+		2608A8EA2047D78A000938DB /* SecondVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondVC.h; sourceTree = "<group>"; };
+		2608A8EB2047D78A000938DB /* SecondVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondVC.m; sourceTree = "<group>"; };
+		2608A8ED20492EFB000938DB /* CopyView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CopyView.h; sourceTree = "<group>"; };
+		2608A8EE20492EFB000938DB /* CopyView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CopyView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,8 +163,12 @@
 			children = (
 				2608A8CF2043B87C000938DB /* FirstVC.h */,
 				2608A8D02043B87C000938DB /* FirstVC.m */,
+				2608A8EA2047D78A000938DB /* SecondVC.h */,
+				2608A8EB2047D78A000938DB /* SecondVC.m */,
 				2608A8D62043D67A000938DB /* UILabel+CopySpeciality.h */,
 				2608A8D72043D67A000938DB /* UILabel+CopySpeciality.m */,
+				2608A8ED20492EFB000938DB /* CopyView.h */,
+				2608A8EE20492EFB000938DB /* CopyView.m */,
 			);
 			path = FunctionDemo;
 			sourceTree = "<group>";
@@ -299,7 +309,9 @@
 				2608A8D12043B87C000938DB /* FirstVC.m in Sources */,
 				2608A8CB2043B821000938DB /* ViewController.m in Sources */,
 				2608A8D82043D67A000938DB /* UILabel+CopySpeciality.m in Sources */,
+				2608A8EF20492EFB000938DB /* CopyView.m in Sources */,
 				2608A8CD2043B821000938DB /* TableVC.m in Sources */,
+				2608A8EC2047D78A000938DB /* SecondVC.m in Sources */,
 				2608A8A22043B7C4000938DB /* main.m in Sources */,
 				2608A8CC2043B821000938DB /* AppDelegate.m in Sources */,
 			);

@@ -11,9 +11,18 @@
 
 @implementation UILabel (CopySpeciality)
 
+
+#pragma mark ------ 方法重写
+
+- (BOOL)canBecomeFirstResponder {
+    return [objc_getAssociatedObject(self, @selector(isCopyable)) boolValue];
+}
+
 - (BOOL)canPerformAction:(SEL)action withSender:(id)sender {
     return (action == @selector(copyText:));
 }
+
+#pragma mark ------
 
 - (void)attachTapHandler {
     self.userInteractionEnabled = YES;
@@ -51,10 +60,6 @@
             pBoard.string = self.attributedText.string;
         }
     }
-}
-
-- (BOOL)canBecomeFirstResponder {
-    return [objc_getAssociatedObject(self, @selector(isCopyable)) boolValue];
 }
 
 - (void)setIsCopyable:(BOOL)number {
