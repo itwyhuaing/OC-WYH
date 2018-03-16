@@ -37,7 +37,7 @@
 ```
 
 其中 position 与 anchorPoint 两个属性对于图层位置的影响如下：
-![]()
+![3](https://github.com/itwyhuaing/OC-WYH/blob/master/CALayer/image/3.png)
 
 其中具有隐身动画的属性有：bounds 、backgroundColor
 倘若想要关闭默认的隐式动画，这里提供如下参考代码：
@@ -161,18 +161,33 @@ typedef CF_ENUM(int32_t, CGLineJoin) {
 ```
 
 圆曲线绘制，关于方向与角度问题示意图:
-![]()
+![2](https://github.com/itwyhuaing/OC-WYH/blob/master/CALayer/image/2.png)
 
 最大斜接长度 miterLimit 示意图：
-![]()
+![1](https://github.com/itwyhuaing/OC-WYH/blob/master/CALayer/image/1.png)
 
 > 关于曲线绘制示例代码可查看 CALayerDemo ;
+
 > 其中 FirstVC 展示利用 UIBezierPath 提供的生成实例对象的 API 直接绘制直线、弧线等。
+
 > SecondVC 展示 moveToPoint 、addLineToPoint、addQuadCurveToPoint 等绘制。
+
 > ThirdVC 展示二次与三次贝塞尔曲线的绘制。
+
 > FourthVC 展示圆弧绘制。
 
 6. UIBezierPath 功能比较单一，主要用于指定曲线路径，但与 CAShapeLayer (CALayer子类) 相结合，便可以实现绘制、动画等效果。
 
 ### UIBezierPath 与 CALayer 的应用
-[YHCALayerDemo - 镂空效果，用于新功能提醒](https://github.com/itwyhuaing/OC-WYH/tree/master/YHCompoent/YHCALayerDemo) 、[YHChartView - 坐标系中曲线绘制](https://github.com/itwyhuaing/OC-WYH/tree/master/YHCompoent/YHChartView)
+* LayerPathVC 主要展示 CAShapeLayer 与 UIBezierPath 联合使用绘制镂空效果
+
+> 1. UIView 之所以可以展示不同的形状，在于其根 layer 上的 mask(CALayer类型) 属性是可以修改的。
+
+> 2. 利用 UIBezierPath 可以绘制出任意图形，但需注意的是曲线添加必须是反向的。
+
+> 3. 设法将绘制的图形借助 CAShapeLayer 展示出来。
+
+> 4. 具体代码可查看 LayerPathVC
+
+
+* [YHCALayerDemo - 镂空效果，用于新功能提醒](https://github.com/itwyhuaing/OC-WYH/tree/master/YHCompoent/YHCALayerDemo) 、[YHChartView - 坐标系中曲线绘制](https://github.com/itwyhuaing/OC-WYH/tree/master/YHCompoent/YHChartView)

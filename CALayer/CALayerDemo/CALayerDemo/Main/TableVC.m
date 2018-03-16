@@ -9,6 +9,7 @@
 #import "TableVC.h"
 #import "CALayerVC.h"
 #import "UIBezierPathVC.h"
+#import "LayerPathVC.h"
 
 @interface TableVC ()
 @property (nonatomic,strong) NSMutableArray *dataSource;
@@ -22,7 +23,7 @@
     //  UI 修饰
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     //NSArray *tmp = @[@"FirstVC",@"DefendContinHitVC - UIButton 防连击",@"3",@"4",@"5",@"6"];
-    NSArray *tmp = @[@"1",@"2",@"3",@"4",@"5",@"6"];
+    NSArray *tmp = @[@"CALayerVC",@"UIBezierPathVC",@"LayerPathVC"];
     _dataSource = [[NSMutableArray alloc] initWithArray:tmp];
 }
 
@@ -66,7 +67,8 @@
             break;
         case 2:
         {
-        
+            vc = [[LayerPathVC alloc] init];
+            [self.navigationController pushViewController:vc animated:TRUE];
         }
             break;
         case 3:

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		26229484205BA513002057F3 /* LayerPathVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 26229482205BA513002057F3 /* LayerPathVC.m */; };
 		265C2E78202C1D470073F244 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 265C2E76202C1D470073F244 /* Main.storyboard */; };
 		265C2E7A202C1D470073F244 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 265C2E79202C1D470073F244 /* Assets.xcassets */; };
 		265C2E7D202C1D470073F244 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 265C2E7B202C1D470073F244 /* LaunchScreen.storyboard */; };
@@ -43,6 +44,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		26229482205BA513002057F3 /* LayerPathVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LayerPathVC.m; sourceTree = "<group>"; };
+		26229483205BA513002057F3 /* LayerPathVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LayerPathVC.h; sourceTree = "<group>"; };
 		265C2E6D202C1D460073F244 /* CALayerDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CALayerDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		265C2E77202C1D470073F244 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		265C2E79202C1D470073F244 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -102,6 +105,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		26229481205BA513002057F3 /* Apply */ = {
+			isa = PBXGroup;
+			children = (
+				26229483205BA513002057F3 /* LayerPathVC.h */,
+				26229482205BA513002057F3 /* LayerPathVC.m */,
+			);
+			path = Apply;
+			sourceTree = "<group>";
+		};
 		265C2E64202C1D460073F244 = {
 			isa = PBXGroup;
 			children = (
@@ -157,6 +169,7 @@
 		265C2EA2202C21640073F244 /* ExampleVC */ = {
 			isa = PBXGroup;
 			children = (
+				26229481205BA513002057F3 /* Apply */,
 				265C2ED3202D7A1A0073F244 /* CALayer */,
 				265C2EC2202D79C60073F244 /* UIBezierPath */,
 			);
@@ -167,9 +180,9 @@
 			isa = PBXGroup;
 			children = (
 				265C2EA4202C21640073F244 /* AppDelegate.h */,
-				265C2EA5202C21640073F244 /* ViewController.m */,
 				265C2EA6202C21640073F244 /* AppDelegate.m */,
 				265C2EA7202C21640073F244 /* ViewController.h */,
+				265C2EA5202C21640073F244 /* ViewController.m */,
 				265C2EAA202C217B0073F244 /* TableVC.h */,
 				265C2EAB202C217B0073F244 /* TableVC.m */,
 			);
@@ -181,14 +194,14 @@
 			children = (
 				265C2EDA202D7A770073F244 /* UIBezierPathVC.h */,
 				265C2EDB202D7A770073F244 /* UIBezierPathVC.m */,
-				265C2EC3202D79C60073F244 /* SecondVC.h */,
-				265C2EC4202D79C60073F244 /* FourthVC.h */,
 				265C2EC5202D79C60073F244 /* FirstVC.h */,
-				265C2EC6202D79C60073F244 /* ThirdVC.h */,
-				265C2EC7202D79C60073F244 /* SecondVC.m */,
-				265C2EC8202D79C60073F244 /* FourthVC.m */,
-				265C2EC9202D79C60073F244 /* ThirdVC.m */,
 				265C2ECA202D79C60073F244 /* FirstVC.m */,
+				265C2EC3202D79C60073F244 /* SecondVC.h */,
+				265C2EC7202D79C60073F244 /* SecondVC.m */,
+				265C2EC6202D79C60073F244 /* ThirdVC.h */,
+				265C2EC9202D79C60073F244 /* ThirdVC.m */,
+				265C2EC4202D79C60073F244 /* FourthVC.h */,
+				265C2EC8202D79C60073F244 /* FourthVC.m */,
 			);
 			path = UIBezierPath;
 			sourceTree = "<group>";
@@ -339,6 +352,7 @@
 			files = (
 				265C2ED9202D7A1A0073F244 /* CALayerVC.m in Sources */,
 				265C2ECE202D79C60073F244 /* ThirdVC.m in Sources */,
+				26229484205BA513002057F3 /* LayerPathVC.m in Sources */,
 				265C2EDC202D7A770073F244 /* UIBezierPathVC.m in Sources */,
 				265C2EDF202D7BD30073F244 /* CAFirstVC.m in Sources */,
 				265C2ECF202D79C60073F244 /* FirstVC.m in Sources */,
