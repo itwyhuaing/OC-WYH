@@ -161,10 +161,14 @@ typedef CF_ENUM(int32_t, CGLineJoin) {
 ```
 
 圆曲线绘制，关于方向与角度问题示意图:
+
 ![2](https://github.com/itwyhuaing/OC-WYH/blob/master/CALayer/image/2.png)
 
+
 最大斜接长度 miterLimit 示意图：
+
 ![1](https://github.com/itwyhuaing/OC-WYH/blob/master/CALayer/image/1.png)
+
 
 > 关于曲线绘制示例代码可查看 CALayerDemo ;
 
