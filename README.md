@@ -60,3 +60,6 @@ OC 记录。
 
 ### 智能家居
 * [智能家居](https://github.com/itwyhuaing/OC-WYH/tree/master/智能家居)
+
+### iOS开发者证书
+* [iOS开发者证书](https://github.com/itwyhuaing/OC-WYH/tree/master/iOS开发者证书) 
