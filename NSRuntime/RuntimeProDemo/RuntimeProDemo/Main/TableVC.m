@@ -9,6 +9,7 @@
 #import "TableVC.h"
 #import "FirstVC.h"
 #import "DefendContinHitVC.h"
+#import "CategaryVC.h"
 
 @interface TableVC ()
 
@@ -22,8 +23,8 @@
     [super viewDidLoad];
     //  UI 修饰
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    //NSArray *tmp = @[@"FirstVC",@"DefendContinHitVC - UIButton 防连击",@"3",@"4",@"5",@"6"];
-    NSArray *tmp = @[@"1",@"2",@"3",@"4",@"5",@"6"];
+    NSArray *tmp = @[@"FirstVC",@"DefendContinHitVC - UIButton 防连击",@"CategaryVC",@"4",@"5",@"6"];
+    //NSArray *tmp = @[@"1",@"2",@"3",@"4",@"5",@"6"];
     _dataSource = [[NSMutableArray alloc] initWithArray:tmp];
     
 }
@@ -66,6 +67,12 @@
                 vc = [[DefendContinHitVC alloc] init];
                 [self.navigationController pushViewController:vc animated:TRUE];
             }
+            break;
+        case 2:
+        {
+            vc = [[CategaryVC alloc] init];
+            [self.navigationController pushViewController:vc animated:TRUE];
+        }
             break;
             
         default:
