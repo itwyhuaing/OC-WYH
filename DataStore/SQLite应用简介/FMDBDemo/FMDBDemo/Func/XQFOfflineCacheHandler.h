@@ -1,14 +1,14 @@
 //
 //  XQFOfflineCacheHandler.h
-//  A8TV_IPhone
+//  lx_doctor
 //
-//  Created by ggt on 2017/4/10.
+//  Created by yhua on 2014/4/10.
 //  Copyright © 2017年 New Sense Networks Technology Co., Ltd.. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
-#import "Singleton.h"
-#import "NewsDataEntity.h"
+//#import "Singleton.h"
+//#import "NewsDataEntity.h"
 
 
 typedef NS_ENUM(NSUInteger, XQFOfflineCacheModelType) {
@@ -19,7 +19,7 @@ typedef NS_ENUM(NSUInteger, XQFOfflineCacheModelType) {
 
 @interface XQFOfflineCacheHandler : NSObject
 
-singleton_interface(XQFOfflineCacheHandler)
+//singleton_interface(XQFOfflineCacheHandler)
 
 /**
  存储数据

@@ -143,8 +143,8 @@
 		26F085B92080C16D00C5C149 /* Func */ = {
 			isa = PBXGroup;
 			children = (
-				26F085BA2080C16D00C5C149 /* XQFOfflineCacheHandler.m */,
 				26F085BB2080C16D00C5C149 /* XQFOfflineCacheHandler.h */,
+				26F085BA2080C16D00C5C149 /* XQFOfflineCacheHandler.m */,
 			);
 			path = Func;
 			sourceTree = "<group>";
@@ -153,9 +153,9 @@
 			isa = PBXGroup;
 			children = (
 				26F085BD2080C16D00C5C149 /* AppDelegate.h */,
-				26F085BE2080C16D00C5C149 /* ViewController.m */,
 				26F085BF2080C16D00C5C149 /* AppDelegate.m */,
 				26F085C02080C16D00C5C149 /* ViewController.h */,
+				26F085BE2080C16D00C5C149 /* ViewController.m */,
 			);
 			path = Main;
 			sourceTree = "<group>";

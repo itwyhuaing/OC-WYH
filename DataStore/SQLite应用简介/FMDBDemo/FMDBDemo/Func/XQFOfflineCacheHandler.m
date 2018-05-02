@@ -1,15 +1,15 @@
 //
 //  XQFOfflineCacheHandler.m
-//  A8TV_IPhone
+//  lx_doctor
 //
-//  Created by ggt on 2017/4/10.
+//  Created by yhua on 2014/4/10.
 //  Copyright © 2017年 New Sense Networks Technology Co., Ltd.. All rights reserved.
 //
 
 #import "XQFOfflineCacheHandler.h"
 #import "FMDB.h"
-#import "XQFHomeNewsVideoHighlightsModel.h"
-#import "XQFPostModel.h"
+//#import "XQFHomeNewsVideoHighlightsModel.h"
+//#import "XQFPostModel.h"
 @interface XQFOfflineCacheHandler ()
 
 @property (nonatomic, copy) NSString *tableName; /**< 表名 */
@@ -19,7 +19,7 @@
 
 @implementation XQFOfflineCacheHandler
 
-singleton_implementation(XQFOfflineCacheHandler)
+//singleton_implementation(XQFOfflineCacheHandler)
 
 - (instancetype)init {
     
@@ -40,23 +40,23 @@ singleton_implementation(XQFOfflineCacheHandler)
     NSData *data;
     NSString * nid;
     if (type == XQFOfflineCacheModelTypeNewsAndVideos) {
-        NewsDataEntity * newsModel = (NewsDataEntity *)model;
-        newsModel.historyCacheTime = currentTimeString;
-        nid = newsModel.nid;
-        NSDictionary * dict = [newsModel dictionaryValue];
-        data = [NSKeyedArchiver archivedDataWithRootObject:dict];
+//        NewsDataEntity * newsModel = (NewsDataEntity *)model;
+//        newsModel.historyCacheTime = currentTimeString;
+//        nid = newsModel.nid;
+//        NSDictionary * dict = [newsModel dictionaryValue];
+//        data = [NSKeyedArchiver archivedDataWithRootObject:dict];
     } else if (type == XQFOfflineCacheModelTypePosts) {
-        XQFPostModel * postModel = (XQFPostModel *)model;
-        postModel.historyCacheTime = currentTimeString;
-        nid = [NSString stringWithFormat:@"%@&",postModel.postID];
-        NSDictionary * dict = [postModel dictionaryValue];
-        data = [NSKeyedArchiver archivedDataWithRootObject:dict];
+//        XQFPostModel * postModel = (XQFPostModel *)model;
+//        postModel.historyCacheTime = currentTimeString;
+//        nid = [NSString stringWithFormat:@"%@&",postModel.postID];
+//        NSDictionary * dict = [postModel dictionaryValue];
+//        data = [NSKeyedArchiver archivedDataWithRootObject:dict];
     } else {
-        XQFHomeNewsVideoHighlightsModel * videoModel = (XQFHomeNewsVideoHighlightsModel *)model;
-        videoModel.historyCacheTime = currentTimeString;
-        nid = videoModel.sGameId;
-        NSDictionary * dict = [videoModel modelToDictionary];
-        data = [NSKeyedArchiver archivedDataWithRootObject:dict];
+//        XQFHomeNewsVideoHighlightsModel * videoModel = (XQFHomeNewsVideoHighlightsModel *)model;
+//        videoModel.historyCacheTime = currentTimeString;
+//        nid = videoModel.sGameId;
+//        NSDictionary * dict = [videoModel modelToDictionary];
+//        data = [NSKeyedArchiver archivedDataWithRootObject:dict];
     }
     
     [self.dataBaseQueue inDatabase:^(FMDatabase *db) {
@@ -87,41 +87,41 @@ singleton_implementation(XQFOfflineCacheHandler)
                 NSData * dictData = [set objectForColumnName:@"newsData"];
                 NSDictionary *dict = [NSKeyedUnarchiver unarchiveObjectWithData:dictData];
                 if (type == XQFOfflineCacheModelTypeNewsAndVideos) {
-                    NewsDataEntity * cache = [MTLJSONAdapter modelOfClass:[NewsDataEntity class] fromJSONDictionary:dict error:nil];
-                    cache.videoDescription = dict[@"videoDescription"];
-                    cache.newsfeaturesId = dict[@"newsfeaturesId"];
-                    cache.newsfeaturesTitle = dict[@"newsfeaturesTitle"];
-                    cache.newsfeaturesDesc = dict[@"newsfeaturesDesc"];
-                    cache.newsfeaturesLogoUrl = dict[@"newsfeaturesLogoUrl"];
-                    cache.featuresId = dict[@"featuresId"];
-                    cache.featuresSubtitle = dict[@"featuresSubtitle"];
-                    cache.featuresTitle = dict[@"featuresTitle"];
-                    cache.featuresDesc = dict[@"featuresDesc"];
-                    cache.featuresLogoUrl = dict[@"featuresLogoUrl"];
-                    cache.webURL = dict[@"webURL"];
-                    cache.imageURL = dict[@"imageURL"];
-                    cache.nid = dict[@"nid"];
-                    cache.imagesURL = dict[@"imagesURL"];
-                    cache.videoURL = dict[@"videoURL"];
-                    cache.photos = dict[@"photos"];
-                    
-                    if ([currentTimeString isEqualToString:cache.historyCacheTime]) {
-                        cache.historyCacheTime = @"今天";
-                    }
-                    [modelArray insertObject:cache atIndex:0];
+//                    NewsDataEntity * cache = [MTLJSONAdapter modelOfClass:[NewsDataEntity class] fromJSONDictionary:dict error:nil];
+//                    cache.videoDescription = dict[@"videoDescription"];
+//                    cache.newsfeaturesId = dict[@"newsfeaturesId"];
+//                    cache.newsfeaturesTitle = dict[@"newsfeaturesTitle"];
+//                    cache.newsfeaturesDesc = dict[@"newsfeaturesDesc"];
+//                    cache.newsfeaturesLogoUrl = dict[@"newsfeaturesLogoUrl"];
+//                    cache.featuresId = dict[@"featuresId"];
+//                    cache.featuresSubtitle = dict[@"featuresSubtitle"];
+//                    cache.featuresTitle = dict[@"featuresTitle"];
+//                    cache.featuresDesc = dict[@"featuresDesc"];
+//                    cache.featuresLogoUrl = dict[@"featuresLogoUrl"];
+//                    cache.webURL = dict[@"webURL"];
+//                    cache.imageURL = dict[@"imageURL"];
+//                    cache.nid = dict[@"nid"];
+//                    cache.imagesURL = dict[@"imagesURL"];
+//                    cache.videoURL = dict[@"videoURL"];
+//                    cache.photos = dict[@"photos"];
+//
+//                    if ([currentTimeString isEqualToString:cache.historyCacheTime]) {
+//                        cache.historyCacheTime = @"今天";
+//                    }
+//                    [modelArray insertObject:cache atIndex:0];
                 }else if (type == XQFOfflineCacheModelTypePosts) {
-                    XQFPostModel * cache = [[XQFPostModel alloc]initWithDictionary:dict];
-                    if ([currentTimeString isEqualToString:cache.historyCacheTime]) {
-                        cache.historyCacheTime = @"今天";
-                    }
-                    
-                    [modelArray insertObject:cache atIndex:0];
+//                    XQFPostModel * cache = [[XQFPostModel alloc]initWithDictionary:dict];
+//                    if ([currentTimeString isEqualToString:cache.historyCacheTime]) {
+//                        cache.historyCacheTime = @"今天";
+//                    }
+//
+//                    [modelArray insertObject:cache atIndex:0];
                 } else {
-                    XQFHomeNewsVideoHighlightsModel * cache = [[XQFHomeNewsVideoHighlightsModel alloc]initWithDictionary:dict type:XQFHomeNewsVideoHighlightsTypeHot];
-                    if ([currentTimeString isEqualToString:cache.historyCacheTime]) {
-                        cache.historyCacheTime = @"今天";
-                    }
-                    [modelArray insertObject:cache atIndex:0];
+//                    XQFHomeNewsVideoHighlightsModel * cache = [[XQFHomeNewsVideoHighlightsModel alloc]initWithDictionary:dict type:XQFHomeNewsVideoHighlightsTypeHot];
+//                    if ([currentTimeString isEqualToString:cache.historyCacheTime]) {
+//                        cache.historyCacheTime = @"今天";
+//                    }
+//                    [modelArray insertObject:cache atIndex:0];
                 }
                 
             }
@@ -280,6 +280,7 @@ singleton_implementation(XQFOfflineCacheHandler)
     
     return title;
 }
+
 //获取时间戳
 - (NSString *)getTimeStamp {
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
@@ -289,4 +290,5 @@ singleton_implementation(XQFOfflineCacheHandler)
     
     return currentTimeString;
 }
+
 @end
