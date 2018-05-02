@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "DetailVC.h"
 
 @interface AppDelegate ()
 
@@ -47,5 +48,18 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
+#pragma mark --- open URL
+
+-(BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options{
+    NSLog(@" \n 打开 URL:%@ \n ",url);
+    
+    // 1. 解析路径 - 只做示例，简单解析
+    // 2. 解析参数 - 只做示例，简单解析
+    DetailVC *vc = [[DetailVC alloc] init];
+    UINavigationController *nav = (UINavigationController *)self.window.rootViewController;
+    [nav pushViewController:vc animated:TRUE];
+    
+    return TRUE;
+}
 
 @end
