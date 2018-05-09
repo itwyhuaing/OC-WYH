@@ -13,6 +13,12 @@
 
 @property (nonatomic,strong) UICollectionViewFlowLayout *layout;
 @property (nonatomic,strong) UICollectionView *collectV;
+@property (nonatomic,strong) NSMutableArray *items;
+
+/**<样式>*/
+@property (nonatomic,assign) CGFloat itemLineSpace;
+@property (nonatomic,assign) CGSize itemSize;
+@property (nonatomic,assign) UIEdgeInsets barInset;
 
 @end
 
@@ -22,21 +28,28 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
+        [self initData];
         [self initUI];
     }
     return self;
 }
 
+- (void)initData{
+    _items = [[NSMutableArray alloc] init];
+    _itemLineSpace = 5.0;
+    _itemSize = CGSizeMake(CGRectGetHeight(self.frame), CGRectGetHeight(self.frame));
+    _barInset = UIEdgeInsetsMake(0, 10.0, 0, 10.0);
+    
+}
+
 - (void)initUI{
-    CGRect rect = self.frame;
-    rect.origin = CGPointZero;
-    _layout = [[UICollectionViewFlowLayout alloc] init];
-    _layout.scrollDirection = UICollectionViewScrollDirectionVertical;
-    _collectV = [[UICollectionView alloc] initWithFrame:rect collectionViewLayout:_layout];
-    _collectV.delegate = self;
-    _collectV.dataSource = self;
-    [_collectV registerClass:[ToolBarCommonItem class] forCellWithReuseIdentifier:identity_ToolBarCommonItem];
-    [self addSubview:_collectV];
+    self.collectV.bounces = FALSE;
+    self.collectV.showsHorizontalScrollIndicator = FALSE;
+    [self.collectV registerClass:[ToolBarCommonItem class] forCellWithReuseIdentifier:identity_ToolBarCommonItem];
+    [self addSubview:self.collectV];
+    
+    self.collectV.backgroundColor = [UIColor cyanColor];
+    self.backgroundColor = [UIColor purpleColor];
     
 }
 
@@ -45,13 +58,18 @@
 #pragma mark - UICollectionViewDataSource
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
-    return 20;
+    if (_dataSource && [_dataSource respondsToSelector:@selector(contentsForEditorToolBar:)]) {
+        [_items removeAllObjects];
+        [_items addObjectsFromArray:[_dataSource contentsForEditorToolBar:self]];
+    }
+    return _items.count;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     
     ToolBarCommonItem *cell = [collectionView dequeueReusableCellWithReuseIdentifier:identity_ToolBarCommonItem forIndexPath:indexPath];
-    [cell configContentForThem:[NSString stringWithFormat:@"%ld",indexPath.row]];
+    [cell configContentForThem:self.items[indexPath.row]];
+    cell.backgroundColor = [UIColor greenColor];
     cell.layer.borderWidth = 0.5f;
     cell.layer.borderColor = [UIColor colorWithWhite:0.9 alpha:1.0].CGColor;
     return cell;
@@ -67,21 +85,54 @@
 #pragma mark - UICollectionViewDelegateFlowLayout
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
-    return CGSizeMake(44.0, 44.0);
+    return self.itemSize;
 }
 
-//
-//- (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section{
-//    return UIEdgeInsetsZero;
-//}
-//
-//- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section{
-//    return 0;
-//}
-//
-//- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section{
-//    return 0;
-//}
+
+- (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section{
+    // Top - Left - Bottom - Right
+    return self.barInset;
+}
+
+- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section{
+    return self.itemLineSpace;
+}
+
+#pragma mark ------ publick
+
+#pragma mark - 样式修改
+- (void)modifyItemSize:(CGSize)itemSize reloadRightNow:(BOOL)reloadRightNow{
+    if (!CGSizeEqualToSize(itemSize, _itemSize)) {
+        _itemSize = itemSize;
+        reloadRightNow ? [self.collectV reloadData] : nil;
+    }
+}
+
+- (void)modifyminimumLineSpacing:(CGFloat)lineSpace reloadRightNow:(BOOL)reloadRightNow{
+    if (lineSpace != _itemLineSpace) {
+        _itemLineSpace = lineSpace;
+        reloadRightNow ? [self.collectV reloadData] : nil;
+    }
+}
+
+- (void)modifyInset:(UIEdgeInsets)inset reloadRightNow:(BOOL)reloadRightNow{
+    _barInset = inset;
+    reloadRightNow ? [self.collectV reloadData] : nil;
+}
+
+#pragma mark ------ lazy load
+- (UICollectionView *)collectV{
+    if (!_collectV) {
+        CGRect rect = self.frame;
+        rect.origin = CGPointZero;
+        UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
+        layout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
+        _collectV = [[UICollectionView alloc] initWithFrame:rect collectionViewLayout:layout];
+        _collectV.delegate = self;
+        _collectV.dataSource = self;
+    }
+    return _collectV;
+}
 
 @end
 

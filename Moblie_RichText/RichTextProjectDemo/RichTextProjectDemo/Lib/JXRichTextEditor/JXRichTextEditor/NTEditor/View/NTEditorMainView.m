@@ -8,11 +8,9 @@
 
 #import "NTEditorMainView.h"
 #import "NTEditorHeader.h"
-#import "EditorToolBar.h"
 
 @interface NTEditorMainView ()
 
-@property (nonatomic,strong) EditorToolBar *toolBar;
 @property (nonatomic,strong) NTEditorHeader *titleHeader;
 
 @end
@@ -47,13 +45,9 @@
     self.textContainerInset = UIEdgeInsetsMake(CGRectGetMaxY(_titleHeader.frame)+6.0, 0, 0, 0);
     self.font = [UIFont systemFontOfSize:18.0];
     
-    rect.origin.y = 200;
-    rect.origin.x = 0;
-    rect.size.width = self.frame.size.width;
-    rect.size.height = 44.0;
-    _toolBar = [[EditorToolBar alloc] initWithFrame:rect];
-    [self addSubview:_toolBar];
-    
 }
+
+#pragma mark ------ delegate
+
 
 @end

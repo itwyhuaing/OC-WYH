@@ -30,6 +30,7 @@
     CGRect rect = self.frame;
     rect.origin = CGPointZero;
     _title = [[UILabel alloc] initWithFrame:rect];
+    _title.textAlignment = NSTextAlignmentCenter;
     [self addSubview:_title];
     
 }
