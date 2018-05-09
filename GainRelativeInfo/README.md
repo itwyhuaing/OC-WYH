@@ -53,12 +53,9 @@
 ###### deviceToken 推送
 * 64位字符串,同一台设备卸载在安装值会改变,不被允许时全0；每次安装都是唯一的
 
+###### SimulateIDFA
+* 尽可能多的读取设备信息生成唯一标识
+
 ##### 参考
 * [获取iOS设备唯一标示UUID](http://www.jianshu.com/p/2741f0124cd3)
-
-}]
-
-
-Mozilla/5.0 (iPhone; CPU iPhone OS 9_2 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Mobile/13C75
-
-Mozilla/5.0 (iPhone; CPU iPhone OS 10_0_2 like Mac OS X) AppleWebKit/602.1.50 (KHTML, like Gecko) Mobile/14A456
+* [SimulateIDFA，新一代iOS设备的广告追踪解决方案](http://www.cocoachina.com/industry/20161014/17761.html) [SimulateIDFA Git地址](https://github.com/youmi/SimulateIDFA.git)
