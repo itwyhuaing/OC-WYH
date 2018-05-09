@@ -8,6 +8,7 @@
 
 #import "TableVC.h"
 #import "RichTextEditor.h"
+#import "JXTextViewVC.h"
 
 @interface TableVC ()
 @property (nonatomic,strong) NSMutableArray *dataSource;
@@ -20,8 +21,7 @@
     
     //  UI 修饰
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    //NSArray *tmp = @[@"FirstVC",@"DefendContinHitVC - UIButton 防连击",@"3",@"4",@"5",@"6"];
-    NSArray *tmp = @[@"1",@"2",@"3",@"4",@"5",@"6"];
+    NSArray *tmp = @[@"RichTextEditor - WK",@"JXTextViewVC"];
     _dataSource = [[NSMutableArray alloc] initWithArray:tmp];
 }
 
@@ -59,7 +59,8 @@
             break;
         case 1:
         {
-            
+            vc = [[JXTextViewVC alloc] init];
+            [self.navigationController pushViewController:vc animated:FALSE];
         }
             break;
             
