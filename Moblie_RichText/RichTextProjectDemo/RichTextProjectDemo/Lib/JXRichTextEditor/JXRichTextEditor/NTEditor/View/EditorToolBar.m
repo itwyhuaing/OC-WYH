@@ -9,6 +9,8 @@
 #import "EditorToolBar.h"
 #import "ToolBarCommonItem.h"
 
+#define LAYER_LINE_HEIGHT 0.8
+
 @interface EditorToolBar ()<UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout>
 
 @property (nonatomic,strong) UICollectionViewFlowLayout *layout;
@@ -36,21 +38,34 @@
 
 - (void)initData{
     _items = [[NSMutableArray alloc] init];
-    _itemLineSpace = 5.0;
+    _itemLineSpace = 0.0;
+    _barInset = UIEdgeInsetsZero;
+    _scrollEnable = TRUE;
     _itemSize = CGSizeMake(CGRectGetHeight(self.frame), CGRectGetHeight(self.frame));
-    _barInset = UIEdgeInsetsMake(0, 10.0, 0, 10.0);
-    
 }
 
 - (void)initUI{
     self.collectV.bounces = FALSE;
     self.collectV.showsHorizontalScrollIndicator = FALSE;
     [self.collectV registerClass:[ToolBarCommonItem class] forCellWithReuseIdentifier:identity_ToolBarCommonItem];
+    self.collectV.backgroundColor = [UIColor whiteColor];
     [self addSubview:self.collectV];
     
-    self.collectV.backgroundColor = [UIColor cyanColor];
-    self.backgroundColor = [UIColor purpleColor];
+    // top - bottom : line
+    [self createLayerWithOriginY:0];
+    [self createLayerWithOriginY:CGRectGetHeight(self.frame)-LAYER_LINE_HEIGHT];
     
+    
+}
+
+- (void)createLayerWithOriginY:(CGFloat)y{
+    CGRect rect = self.frame;
+    rect.origin.y = y;
+    rect.size.height = LAYER_LINE_HEIGHT;
+    CALayer *l = [CALayer layer];
+    [l setFrame:rect];
+    [self.layer addSublayer:l];
+    l.backgroundColor = [UIColor colorWithWhite:0.9 alpha:0.8].CGColor;
 }
 
 #pragma mark ------ delegate
@@ -58,10 +73,6 @@
 #pragma mark - UICollectionViewDataSource
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
-    if (_dataSource && [_dataSource respondsToSelector:@selector(contentsForEditorToolBar:)]) {
-        [_items removeAllObjects];
-        [_items addObjectsFromArray:[_dataSource contentsForEditorToolBar:self]];
-    }
     return _items.count;
 }
 
@@ -69,9 +80,6 @@
     
     ToolBarCommonItem *cell = [collectionView dequeueReusableCellWithReuseIdentifier:identity_ToolBarCommonItem forIndexPath:indexPath];
     [cell configContentForThem:self.items[indexPath.row]];
-    cell.backgroundColor = [UIColor greenColor];
-    cell.layer.borderWidth = 0.5f;
-    cell.layer.borderColor = [UIColor colorWithWhite:0.9 alpha:1.0].CGColor;
     return cell;
     
 }
@@ -79,7 +87,11 @@
 #pragma mark - UICollectionViewDelegate
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
-    NSLog(@" didSelected ");
+    //NSLog(@" didSelected ");
+    [self updateBarWithDidSelectedIndex:indexPath.row];
+    if (_delegate && [_delegate respondsToSelector:@selector(editorToolBar:didSelectItemAtIndexPath:)]) {
+        [_delegate editorToolBar:self didSelectItemAtIndexPath:indexPath.row];
+    }
 }
 
 #pragma mark - UICollectionViewDelegateFlowLayout
@@ -100,9 +112,57 @@
 
 #pragma mark ------ publick
 
+- (void)updateBarWithDidSelectedIndex:(NSInteger)index{
+    
+    //NSLog(@" \n 点击Bar修改前:%@\n",self.items);
+    NSString *didSelectedCnt = self.items[index];
+    if (index <= 0) {
+        NSString *theImageName = didSelectedCnt;
+        if ([didSelectedCnt rangeOfString:@"_down"].location != NSNotFound) {
+            theImageName = [didSelectedCnt stringByReplacingOccurrencesOfString:@"_down" withString:@""];
+        }else{
+            theImageName = [NSString stringWithFormat:@"%@_down",didSelectedCnt];
+        }
+        [self.items replaceObjectAtIndex:index withObject:theImageName];
+    }else{
+        
+        if ([didSelectedCnt rangeOfString:@"_selected"].location != NSNotFound) {
+            // 取消
+            NSString *theNormal  = [didSelectedCnt stringByReplacingOccurrencesOfString:@"_selected" withString:@""];
+            [self.items replaceObjectAtIndex:index withObject:theNormal];
+        }else{
+            // 选中
+            NSString *selectedImageName = [NSString stringWithFormat:@"%@_selected",didSelectedCnt                   ];
+            for (NSInteger cou = 0;cou < self.items.count;cou ++) {
+                NSString *imageName = self.items[cou];
+                if ([imageName rangeOfString:@"_selected"].location != NSNotFound) {
+                    NSString *tmpNormal = [imageName stringByReplacingOccurrencesOfString:@"_selected" withString:@""];
+                    [self.items replaceObjectAtIndex:cou withObject:tmpNormal];
+                }
+            }
+            [self.items replaceObjectAtIndex:index withObject:selectedImageName];
+        }
+        
+    }
+    [self.collectV reloadData];
+    //NSLog(@" \n 点击Bar修改后:%@\n",self.items);
+}
+
+
+#pragma mark ------ publick
+
+-(void)editorToolBarWithContents:(NSArray *)cnts{
+    if (cnts) {
+        [self.items removeAllObjects];
+        [self.items addObjectsFromArray:cnts];
+    }
+}
+
 #pragma mark - 样式修改
 - (void)modifyItemSize:(CGSize)itemSize reloadRightNow:(BOOL)reloadRightNow{
     if (!CGSizeEqualToSize(itemSize, _itemSize)) {
+        // 赋值前确保值域
+        _itemSize.height = itemSize.height > self.frame.size.height ? self.frame.size.height : itemSize.height;
         _itemSize = itemSize;
         reloadRightNow ? [self.collectV reloadData] : nil;
     }

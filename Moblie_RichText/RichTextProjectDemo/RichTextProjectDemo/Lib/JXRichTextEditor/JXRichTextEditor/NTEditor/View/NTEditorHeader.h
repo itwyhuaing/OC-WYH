@@ -10,4 +10,6 @@
 
 @interface NTEditorHeader : UIView
 
+@property (nonatomic, strong) UITextField *titleTextField;
+
 @end

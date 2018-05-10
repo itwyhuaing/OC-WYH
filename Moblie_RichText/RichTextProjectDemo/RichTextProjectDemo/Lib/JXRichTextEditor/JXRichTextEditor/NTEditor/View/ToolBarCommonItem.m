@@ -29,15 +29,17 @@
 - (void)initSubViews{
     CGRect rect = self.frame;
     rect.origin = CGPointZero;
-    _title = [[UILabel alloc] initWithFrame:rect];
-    _title.textAlignment = NSTextAlignmentCenter;
-    [self addSubview:_title];
+    _icon = [[UIImageView alloc] initWithFrame:rect];
+    _icon.contentMode = UIViewContentModeCenter;
+    _icon.clipsToBounds = TRUE;
+    [self addSubview:_icon];
+    //_icon.backgroundColor = [UIColor greenColor];
     
 }
 
 -(void)configContentForThem:(NSString *)them{
-    if (them) {
-        _title.text = them;
+    if (them &&  _icon) {
+        [_icon setImage:[UIImage imageNamed:them]];
     }
 }
 

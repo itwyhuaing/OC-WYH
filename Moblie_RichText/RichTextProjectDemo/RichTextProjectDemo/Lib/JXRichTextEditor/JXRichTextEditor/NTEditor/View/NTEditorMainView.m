@@ -47,7 +47,27 @@
     
 }
 
-#pragma mark ------ delegate
+#pragma mark ------ publick method
 
+- (void)setNtDelegate:(id<UITextFieldDelegate,UITextViewDelegate>)ntDelegate{
+    self.titleHeader.titleTextField.delegate = ntDelegate;
+    self.delegate = ntDelegate;
+}
+
+-(void)modifyHeaderEditing:(BOOL)hdEditing contentEditing:(BOOL)cntEditing{
+    
+    if (cntEditing) {
+        [self becomeFirstResponder];
+    }else{
+        [self resignFirstResponder];
+    }
+    
+    if (hdEditing) {
+        [self.titleHeader.titleTextField becomeFirstResponder];
+    }else{
+        [self.titleHeader.titleTextField resignFirstResponder];
+    }
+    
+}
 
 @end

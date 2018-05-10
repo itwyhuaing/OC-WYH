@@ -10,7 +10,6 @@
 
 @interface NTEditorHeader ()
 
-@property (nonatomic, strong) UITextField *titleTextField;
 @property (nonatomic, strong) CALayer *underLine;
 
 @end
