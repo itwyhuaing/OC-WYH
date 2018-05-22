@@ -9,6 +9,9 @@
 #import "TableVC.h"
 #import "RichTextEditor.h"
 #import "JXTextViewVC.h"
+#import "AttibutedTestVC.h"
+#import "TextViewLoadHtmlVC.h"
+#import "WKLoadHtmlVC.h"
 
 @interface TableVC ()
 @property (nonatomic,strong) NSMutableArray *dataSource;
@@ -21,7 +24,7 @@
     
     //  UI 修饰
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    NSArray *tmp = @[@"RichTextEditor - WK",@"JXTextViewVC"];
+    NSArray *tmp = @[@"RichTextEditor - WK",@"JXTextViewVC",@"AttibutedTestVC:设置属性，代码设置与输入两种方式写入内容",@"TextViewLoadHtmlVC:UITextView加载HTML能力",@"WKLoadHtmlVC:WKWebView加载HTML能力"];
     _dataSource = [[NSMutableArray alloc] initWithArray:tmp];
 }
 
@@ -60,6 +63,24 @@
         case 1:
         {
             vc = [[JXTextViewVC alloc] init];
+            [self.navigationController pushViewController:vc animated:FALSE];
+        }
+            break;
+        case 2:
+        {
+            vc = [[AttibutedTestVC alloc] init];
+            [self.navigationController pushViewController:vc animated:FALSE];
+        }
+            break;
+        case 3:
+        {
+            vc = [[TextViewLoadHtmlVC alloc] init];
+            [self.navigationController pushViewController:vc animated:FALSE];
+        }
+            break;
+        case 4:
+        {
+            vc = [[WKLoadHtmlVC alloc] init];
             [self.navigationController pushViewController:vc animated:FALSE];
         }
             break;
