@@ -116,7 +116,7 @@
     
     //NSLog(@" \n 点击Bar修改前:%@\n",self.items);
     NSString *didSelectedCnt = self.items[index];
-    if (index <= 0) {
+    if (index < 0) {
         NSString *theImageName = didSelectedCnt;
         if ([didSelectedCnt rangeOfString:@"_down"].location != NSNotFound) {
             theImageName = [didSelectedCnt stringByReplacingOccurrencesOfString:@"_down" withString:@""];
@@ -145,6 +145,7 @@
         
     }
     [self.collectV reloadData];
+    return ;
     //NSLog(@" \n 点击Bar修改后:%@\n",self.items);
 }
 

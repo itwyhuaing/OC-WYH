@@ -49,6 +49,7 @@
 		266958B61F7F4B8800382A86 /* RichTextProjectDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 266958B51F7F4B8800382A86 /* RichTextProjectDemoUITests.m */; };
 		2669590F1F7F877300382A86 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 2669590E1F7F877300382A86 /* README.md */; };
 		26CAB1ED20B3C5FC00D94D3D /* HtmlContent.html in Resources */ = {isa = PBXBuildFile; fileRef = 26CAB1EC20B3C5FC00D94D3D /* HtmlContent.html */; };
+		26CAB1F120B3F1A900D94D3D /* NTEditorAttributeConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 26CAB1F020B3F1A900D94D3D /* NTEditorAttributeConfig.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -144,6 +145,8 @@
 		266958B71F7F4B8800382A86 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2669590E1F7F877300382A86 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		26CAB1EC20B3C5FC00D94D3D /* HtmlContent.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = HtmlContent.html; sourceTree = "<group>"; };
+		26CAB1EF20B3F1A900D94D3D /* NTEditorAttributeConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NTEditorAttributeConfig.h; sourceTree = "<group>"; };
+		26CAB1F020B3F1A900D94D3D /* NTEditorAttributeConfig.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NTEditorAttributeConfig.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -235,6 +238,7 @@
 		265D810620A2F8FD00F415F8 /* NTEditor */ = {
 			isa = PBXGroup;
 			children = (
+				26CAB1EE20B3F18100D94D3D /* NTEditorConfig */,
 				265D814820A2F94100F415F8 /* View */,
 			);
 			path = NTEditor;
@@ -413,6 +417,15 @@
 			path = JSRichText;
 			sourceTree = "<group>";
 		};
+		26CAB1EE20B3F18100D94D3D /* NTEditorConfig */ = {
+			isa = PBXGroup;
+			children = (
+				26CAB1EF20B3F1A900D94D3D /* NTEditorAttributeConfig.h */,
+				26CAB1F020B3F1A900D94D3D /* NTEditorAttributeConfig.m */,
+			);
+			path = NTEditorConfig;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -557,6 +570,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				265D814020A2F8FD00F415F8 /* HRColorPickerView.m in Sources */,
+				26CAB1F120B3F1A900D94D3D /* NTEditorAttributeConfig.m in Sources */,
 				265D813B20A2F8FD00F415F8 /* ZSSBarButtonItem.m in Sources */,
 				265D814E20A2F9B000F415F8 /* NTEditorHeader.m in Sources */,
 				265D813E20A2F8FD00F415F8 /* HRCgUtil.m in Sources */,

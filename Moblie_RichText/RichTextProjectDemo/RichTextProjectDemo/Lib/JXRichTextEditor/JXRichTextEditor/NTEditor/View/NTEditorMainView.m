@@ -30,9 +30,14 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
+        [self initParameters];
         [self initUI];
     }
     return self;
+}
+
+-(void)initParameters{
+    self.editingLocation = NTEditorMainViewEditingLocationNone;
 }
 
 - (void)initUI{
@@ -44,8 +49,11 @@
     
     self.textContainerInset = UIEdgeInsetsMake(CGRectGetMaxY(_titleHeader.frame)+6.0, 0, 0, 0);
     self.font = [UIFont systemFontOfSize:18.0];
-    
+
 }
+
+#pragma mark ------ delegate
+
 
 #pragma mark ------ publick method
 

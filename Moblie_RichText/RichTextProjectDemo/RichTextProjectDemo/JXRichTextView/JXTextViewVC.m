@@ -9,13 +9,14 @@
 #import "JXTextViewVC.h"
 #import "NTEditorMainView.h"
 #import "EditorToolBar.h"
+#import "NTEditorAttributeConfig.h"
 
 @interface JXTextViewVC () <UITextFieldDelegate,UITextViewDelegate,EditorToolBarDelegate>
 
 @property (nonatomic,strong) NTEditorMainView *jxtv;
 @property (nonatomic,strong) EditorToolBar *toolBar;
+@property (nonatomic,strong) NTEditorAttributeConfig *editorAttributeConfig;
 
-@property (nonatomic,assign) BOOL headerEditing; /**<标题是否处于编辑状态>*/
 @property (nonatomic,assign) BOOL barShowStatus; /**<工具条是否处于展示状态>*/
 @property (nonatomic,assign) CGFloat keyBoardHeight;
 
@@ -27,19 +28,30 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    // 编辑区
     [self.view addSubview:self.jxtv];
     [self.jxtv modifyHeaderEditing:TRUE contentEditing:FALSE];
+    
+    // 工具条
     [self.view addSubview:self.toolBar];
-    NSArray *cnts = @[@"JXkeyboard_down",
+    NSArray *cnts = @[
                       @"JXimageFromDevice",
-                      @"JXbold",@"JXitalic",
+                      @"JXbold",
+                      @"JXitalic",
                       @"JXstrikethrough",
-                      @"JXh1",@"JXh2",@"JXh3",@"JXh4"];
+                      @"JXh1"];
+    NSArray *atts = @[
+                      @(EditorRichTextCapacityTypeImage),
+                      @(EditorRichTextCapacityTypeBold),
+                      @(EditorRichTextCapacityTypeItalic),
+                      @(EditorRichTextCapacityTypeStrikethrough),
+                      @(EditorRichTextCapacityTypeFont)];
+    [self.editorAttributeConfig configAttributes:atts];
     [self.toolBar editorToolBarWithContents:cnts];
     [self.toolBar modifyItemSize:CGSizeMake(CGRectGetWidth(self.toolBar.frame)/cnts.count, 44.0) reloadRightNow:FALSE];
     
     
-    
+    // 键盘监听
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(keyBoardWillShowWithNotify:)
                                                  name:UIKeyboardWillShowNotification
@@ -59,6 +71,13 @@
     self.navigationController.navigationBar.translucent = TRUE;
     self.view.backgroundColor = [UIColor whiteColor];
     
+    UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+    [btn setFrame:CGRectMake(0, 0, 44, 44)];
+    [btn setTitle:@"获取HTML" forState:UIControlStateNormal];
+    btn.backgroundColor = [UIColor greenColor];
+    [btn addTarget:self action:@selector(htmlContent) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithCustomView:btn];
+    self.navigationItem.rightBarButtonItem = item;
     
 }
 
@@ -85,7 +104,7 @@
 }
 
 #pragma mark ------
-#pragma mark ------
+
 
 
 #pragma mark ------ delegate
@@ -93,76 +112,52 @@
 #pragma mark - UITextFieldDelegate
 
 - (BOOL)textFieldShouldBeginEditing:(UITextField *)textField{
-    NSLog(@" %s ",__FUNCTION__);
-    self.headerEditing = TRUE;
+    NSLog(@"\n \n %s \n \n ",__FUNCTION__);
+    self.jxtv.editingLocation = NTEditorMainViewEditingLocationTitle;
     [self hiddenToolBar];
-    return TRUE;
-}
-
-- (BOOL)textFieldShouldEndEditing:(UITextField *)textField{
-    NSLog(@" %s ",__FUNCTION__);
-    self.headerEditing = FALSE;
     return TRUE;
 }
 
 #pragma mark - UITextViewDelegate
 
 - (BOOL)textViewShouldBeginEditing:(UITextView *)textView{
-    NSLog(@" %s ",__FUNCTION__);
-    return TRUE;
-}
-
-- (BOOL)textViewShouldEndEditing:(UITextView *)textView{
-    NSLog(@" %s ",__FUNCTION__);
-    [self hiddenToolBar];
-    return TRUE;
-}
-
-- (void)textViewDidBeginEditing:(UITextView *)textView{
+    NSLog(@"\n \n %s \n \n ",__FUNCTION__);
+    self.jxtv.editingLocation = NTEditorMainViewEditingLocationCnt;
     [self showToolBar];
+    return TRUE;
 }
 
 #pragma mark - EditorToolBarDelegate
 
 -(void)editorToolBar:(EditorToolBar *)bar didSelectItemAtIndexPath:(NSInteger)index{
-    if (self.barShowStatus) { // 高处位置
-        [self hiddenToolBar];
-        [self.jxtv modifyHeaderEditing:FALSE contentEditing:FALSE];
-    } else {
-        [self showToolBar];
-        [self.jxtv modifyHeaderEditing:FALSE contentEditing:TRUE];
-    }
-    NSLog(@"\n %s : %ld\n",__FUNCTION__,index);
+    NSLog(@"\n \n %s : %ld \n \n",__FUNCTION__,index);
+    [self.editorAttributeConfig updateAttributesForEditor:self.jxtv didSelectedIndex:index];
     
 }
 
-#pragma mark ------ private method
+#pragma mark ------ KVO
 
 - (void)keyBoardWillShowWithNotify:(NSNotification *)notification{
     NSLog(@" %s ",__FUNCTION__);
     NSDictionary *info = [notification userInfo];
     NSValue *av = [info objectForKey:UIKeyboardFrameEndUserInfoKey];
     CGRect kbRect = av.CGRectValue;
-    CGRect barRect = self.toolBar.frame;
     self.keyBoardHeight = kbRect.size.height;
-    if (kbRect.origin.y < CGRectGetMaxY(barRect) && !self.headerEditing) {
-        //[self showToolBar];
-        //NSLog(@" \n kbRect.size.height:%f \n kbRect.origin.y:%f \n barRect.origin.y:%f \n",kbRect.size.height,kbRect.origin.y,self.toolBar.frame.origin.y);
-    }
-    
-    
 }
 
 - (void)keyBoardDidShowWithNotify:(NSNotification *)notification{
 }
 
 - (void)keyBoardWillHideWithNotify:(NSNotification *)notification{
-    NSLog(@" %s ",__FUNCTION__);
+    // NSLog(@" %s ",__FUNCTION__);
 }
+
+
+#pragma mark ------ private method
 
 // 展示工具条
 - (void)showToolBar{
-    NSLog(@" %s ",__FUNCTION__);
+    NSLog(@"\n \n %s \n \n ",__FUNCTION__);
     CGRect rect = self.toolBar.frame;
     rect.origin.y = CGRectGetHeight(self.view.frame) - self.keyBoardHeight - rect.size.height;
     [self.toolBar setFrame:rect];
@@ -171,11 +166,16 @@
 
 // 隐藏工具条
 - (void)hiddenToolBar{
-    NSLog(@" %s ",__FUNCTION__);
+    NSLog(@"\n \n %s \n \n ",__FUNCTION__);
     CGRect rect = self.toolBar.frame;
-    rect.origin.y = CGRectGetMaxY(self.view.frame) - rect.size.height;
+    rect.origin.y = CGRectGetMaxY(self.view.frame);// - rect.size.height;
     [self.toolBar setFrame:rect];
     self.barShowStatus = FALSE;
+}
+
+- (void)htmlContent{
+    NSLog(@"\n \n %s \n \n ",__FUNCTION__);
+    
 }
 
 #pragma mark - lazy load
@@ -201,6 +201,13 @@
         _toolBar.delegate = self;
     }
     return _toolBar;
+}
+
+-(NTEditorAttributeConfig *)editorAttributeConfig{
+    if (!_editorAttributeConfig) {
+        _editorAttributeConfig = [[NTEditorAttributeConfig alloc] init];
+    }
+    return _editorAttributeConfig;
 }
 
 @end
