@@ -10,6 +10,7 @@
 #import "RichTextEditor.h"
 #import "JXTextViewVC.h"
 #import "AttibutedTestVC.h"
+#import "AttributedTest2VC.h"
 #import "TextViewLoadHtmlVC.h"
 #import "WKLoadHtmlVC.h"
 
@@ -24,7 +25,7 @@
     
     //  UI 修饰
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    NSArray *tmp = @[@"RichTextEditor - WK",@"JXTextViewVC",@"AttibutedTestVC:设置属性，代码设置与输入两种方式写入内容",@"TextViewLoadHtmlVC:UITextView加载HTML能力",@"WKLoadHtmlVC:WKWebView加载HTML能力"];
+    NSArray *tmp = @[@"RichTextEditor - WK",@"JXTextViewVC",@"AttibutedTestVC:属性测试第一部分",@"AttributedTest2VC:属性测试第二部分",@"TextViewLoadHtmlVC:UITextView加载HTML",@"WKLoadHtmlVC:WKWebView加载HTML"];
     _dataSource = [[NSMutableArray alloc] initWithArray:tmp];
 }
 
@@ -74,11 +75,17 @@
             break;
         case 3:
         {
-            vc = [[TextViewLoadHtmlVC alloc] init];
+            vc = [[AttributedTest2VC alloc] init];
             [self.navigationController pushViewController:vc animated:FALSE];
         }
             break;
         case 4:
+        {
+            vc = [[TextViewLoadHtmlVC alloc] init];
+            [self.navigationController pushViewController:vc animated:FALSE];
+        }
+            break;
+        case 5:
         {
             vc = [[WKLoadHtmlVC alloc] init];
             [self.navigationController pushViewController:vc animated:FALSE];

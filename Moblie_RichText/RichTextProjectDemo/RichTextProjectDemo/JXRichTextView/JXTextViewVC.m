@@ -127,6 +127,16 @@
     return TRUE;
 }
 
+- (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text{
+    //NSLog(@"\n \n %s \n %ld - %ld \n %@\n ",__FUNCTION__,range.location,range.length,text);
+    return TRUE;
+}
+
+-(void)textViewDidChangeSelection:(UITextView *)textView{
+    NSRange range = NSMakeRange(0, textView.attributedText.length);
+    NSLog(@"\n \n %s \n %ld - %ld \n ",__FUNCTION__,range.location,range.length);
+}
+
 #pragma mark - EditorToolBarDelegate
 
 -(void)editorToolBar:(EditorToolBar *)bar didSelectItemAtIndexPath:(NSInteger)index{
@@ -175,6 +185,13 @@
 
 - (void)htmlContent{
     NSLog(@"\n \n %s \n \n ",__FUNCTION__);
+    
+    // fontWithDescriptor
+    UIFont *f0 = [UIFont systemFontOfSize:18.0];
+    UIFont *f1 = [UIFont systemFontOfSize:18.0 weight:UIFontWeightThin];
+    UIFont *f2 = [UIFont systemFontOfSize:18.0 weight:UIFontWeightBold];
+    NSLog(@" \ndescription: \n%@\n%@\n%@\n \n ",f0.description,f1.description,f2.description);
+    NSLog(@" \nfontDescriptor: \n%@\n%@\n%@\n \n ",f0.fontDescriptor,f1.fontDescriptor,f2.fontDescriptor);
     
 }
 

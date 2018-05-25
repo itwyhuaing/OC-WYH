@@ -80,7 +80,7 @@
      paragraphSpacing;      段间距
      alignment;             对齐方式
      firstLineHeadIndent;   首行缩进
-     headIndent;
+     headIndent;            整体缩进(首行除外)
      tailIndent;
      lineBreakMode;
      minimumLineHeight;
@@ -106,7 +106,7 @@
     NSDictionary *attributes = @{
                                  NSFontAttributeName:[UIFont systemFontOfSize:14],
                                  NSForegroundColorAttributeName:[UIColor redColor]
-                                  };;
+                                  };
     NSAttributedString *at = [[NSAttributedString alloc] initWithString:@"测试 \n 第二行测试" attributes:attributes];
     self.jxtv.attributedText = at;
 }

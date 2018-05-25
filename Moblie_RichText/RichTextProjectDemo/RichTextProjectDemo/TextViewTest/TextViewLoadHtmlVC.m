@@ -20,7 +20,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    self.view.backgroundColor = [UIColor whiteColor];
     // 编辑区
     [self.view addSubview:self.jxtv];
     [self.jxtv modifyHeaderEditing:FALSE contentEditing:FALSE];

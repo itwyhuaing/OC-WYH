@@ -9,7 +9,7 @@
 #import "WKLoadHtmlVC.h"
 #import <WebKit/WebKit.h>
 
-@interface WKLoadHtmlVC ()
+@interface WKLoadHtmlVC () <WKNavigationDelegate>
 
 @property (nonatomic,strong) WKWebView *wkweb;
 @property (nonatomic,assign) CFTimeInterval startT;
@@ -20,6 +20,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.view.backgroundColor = [UIColor whiteColor];
+    
     [self.view addSubview:self.wkweb];
     [self.wkweb.scrollView addObserver:self forKeyPath:@"contentSize" options:NSKeyValueObservingOptionNew context:NULL];
     
@@ -57,6 +59,11 @@
     }
 }
 
+#pragma mark - WKNavigationDelegate
+
+- (void)webView:(WKWebView *)webView didFinishNavigation:(null_unspecified WKNavigation *)navigation{
+    NSLog(@" \n 结果-didFinishNavigation：%f\n",CFAbsoluteTimeGetCurrent()-self.startT);
+}
 
 #pragma mark - lazy load
 
@@ -69,6 +76,7 @@
         WKWebViewConfiguration *confg = [[WKWebViewConfiguration alloc] init];
         _wkweb = [[WKWebView alloc] initWithFrame:rect configuration:confg];
         _wkweb.backgroundColor = [UIColor greenColor];
+        _wkweb.navigationDelegate = self;
     }
     return _wkweb;
 }
