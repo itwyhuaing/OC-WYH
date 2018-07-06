@@ -8,6 +8,7 @@
 
 #import "TableVC.h"
 #import "LocationVC.h"
+#import "RegionVC.h"
 #import "GeoCoderVC.h"
 
 @interface TableVC ()
@@ -21,8 +22,7 @@
     
     //  UI 修饰
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    //NSArray *tmp = @[@"FirstVC",@"DefendContinHitVC - UIButton 防连击",@"3",@"4",@"5",@"6"];
-    NSArray *tmp = @[@"1",@"2",@"3",@"4",@"5",@"6"];
+    NSArray *tmp = @[@"LocationVC",@"RegionVC",@"GeoCoderVC",@"3",@"4",@"5",@"6"];
     _dataSource = [[NSMutableArray alloc] initWithArray:tmp];
 }
 
@@ -50,6 +50,7 @@
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    [tableView deselectRowAtIndexPath:indexPath animated:FALSE];
     UIViewController *vc;
     switch (indexPath.row) {
         case 0:
@@ -60,13 +61,14 @@
             break;
         case 1:
         {
-            vc = [[GeoCoderVC alloc] init];
+            vc = [[RegionVC alloc] init];
             [self.navigationController pushViewController:vc animated:TRUE];
         }
             break;
         case 2:
         {
-        
+            vc = [[GeoCoderVC alloc] init];
+            [self.navigationController pushViewController:vc animated:TRUE];
         }
             break;
         case 3:

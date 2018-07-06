@@ -34,19 +34,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    
-    
-    
-    
-    
     /*
-     使用CLGeocoder可以完成：
+     使用 CLGeocoder 可以完成：
      1. 地理编码：根据给定的地名，获得具体的位置信息（比如经纬度、地址的全称等）
      2. 反地理编码：根据给定的经纬度，获得具体的位置信息
-     
-     
-     
      */
     
 }

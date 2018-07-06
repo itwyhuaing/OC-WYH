@@ -4,7 +4,7 @@
 <dict>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>APP 需要您的准许才可以使用定位服务</string>
-	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<key>NSLocationAlwaysUsageDescription</key>
 	<string>APP 需要您的准许才可以使用定位服务</string>
 	<key>NSAppTransportSecurity</key>
 	<dict>

@@ -27,53 +27,6 @@
     }
     [self.locationManager requestAlwaysAuthorization];
     
-/*
- CLLocationManager
- 
-@property(assign, nonatomic) CLLocationDistance distanceFilter; // 每隔多少米重新定位一次
-@property(assign, nonatomic) CLLocationAccuracy desiredAccuracy; // 定位精准度 (一般来说，越精准就越耗电)
- 
- 
- */
-
-/*
- CLLocation
-
-@property(readonly, nonatomic) CLLocationCoordinate2D coordinate; // 经纬度
- typedef struct {
-     CLLocationDegrees latitude; // 纬度
-     CLLocationDegrees longitude; // 经度
- } CLLocationCoordinate2D;
- 
- 
-@property(readonly, nonatomic) CLLocationDistance altitude; // 海拔
-@property(readonly, nonatomic) CLLocationAccuracy horizontalAccuracy; // 水平方向位置的精准度，倘若定位成功，该值不应小于 0
-@property(readonly, nonatomic) CLLocationAccuracy verticalAccuracy; // 垂直方向位置的精准度，倘若定位成功，该值不应小于 0
-@property(readonly, nonatomic, copy) NSDate *timestamp; // 获取当前位置时的时间戳
-    
-    
-- (instancetype)initWithLatitude:(CLLocationDegrees)latitude
-longitude:(CLLocationDegrees)longitude;
- 
-- (instancetype)initWithCoordinate:(CLLocationCoordinate2D)coordinate
-altitude:(CLLocationDistance)altitude
-horizontalAccuracy:(CLLocationAccuracy)hAccuracy
-verticalAccuracy:(CLLocationAccuracy)vAccuracy
-timestamp:(NSDate *)timestamp;
-    
-- (instancetype)initWithCoordinate:(CLLocationCoordinate2D)coordinate
-altitude:(CLLocationDistance)altitude
-horizontalAccuracy:(CLLocationAccuracy)hAccuracy
-verticalAccuracy:(CLLocationAccuracy)vAccuracy
-course:(CLLocationDirection)course
-speed:(CLLocationSpeed)speed
-timestamp:(NSDate *)timestamp API_AVAILABLE(ios(4.2), macos(10.7));
-
-// 计算2个位置之间的距离
-- (CLLocationDistance)distanceFromLocation:(const CLLocation *)location;
- 
-*/
-    
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -93,15 +46,6 @@ timestamp:(NSDate *)timestamp API_AVAILABLE(ios(4.2), macos(10.7));
 #pragma mark ------ CLLocationManagerDelegate
 
 -(void)locationManager:(CLLocationManager *)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status{
-    /*
-     
-     kCLAuthorizationStatusNotDetermined
-     kCLAuthorizationStatusRestricted
-     kCLAuthorizationStatusDenied
-     kCLAuthorizationStatusAuthorizedAlways
-     kCLAuthorizationStatusAuthorizedWhenInUse
-     
-     */
     switch (status) {
         case kCLAuthorizationStatusAuthorizedAlways:
         case kCLAuthorizationStatusAuthorizedWhenInUse:
@@ -121,10 +65,12 @@ timestamp:(NSDate *)timestamp API_AVAILABLE(ios(4.2), macos(10.7));
             break;
     }
     
+    
 }
 
 -(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray<CLLocation *> *)locations{
     NSLog(@" \n \n %@ \n \n ",locations);
+    CLLocation *l = locations[0];
 }
 
 - (void)displayToastWithMessage:(NSString *)msg{
