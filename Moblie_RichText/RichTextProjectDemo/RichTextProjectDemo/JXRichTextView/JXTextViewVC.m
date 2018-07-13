@@ -72,9 +72,10 @@
     self.view.backgroundColor = [UIColor whiteColor];
     
     UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
-    [btn setFrame:CGRectMake(0, 0, 44, 44)];
+    [btn setFrame:CGRectMake(0, 0, 88, 44)];
+    btn.titleLabel.font = [UIFont systemFontOfSize:13.0];
     [btn setTitle:@"获取HTML" forState:UIControlStateNormal];
-    btn.backgroundColor = [UIColor greenColor];
+    [btn setTitleColor:[UIColor purpleColor] forState:UIControlStateNormal];
     [btn addTarget:self action:@selector(htmlContent) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithCustomView:btn];
     self.navigationItem.rightBarButtonItem = item;

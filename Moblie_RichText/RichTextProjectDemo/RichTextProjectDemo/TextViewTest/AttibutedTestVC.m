@@ -24,7 +24,7 @@
     [self.jxtv modifyHeaderEditing:TRUE contentEditing:FALSE];
     
     // 1. 第一种测试：代码设置内容属性与内容
-    [self testContent];
+    //[self testContent];
     
     // 2. 第二种测试：代码设置属性，输入内容
     [self testAttributes];
@@ -74,8 +74,6 @@
     
     /**
       NSParagraphStyleAttributeName
-     
-     
      lineSpacing;           行间距
      paragraphSpacing;      段间距
      alignment;             对齐方式
@@ -107,7 +105,7 @@
                                  NSFontAttributeName:[UIFont systemFontOfSize:14],
                                  NSForegroundColorAttributeName:[UIColor redColor]
                                   };
-    NSAttributedString *at = [[NSAttributedString alloc] initWithString:@"测试 \n 第二行测试" attributes:attributes];
+    NSAttributedString *at = [[NSAttributedString alloc] initWithString:@"第一种测试： \n 代码设置内容属性与内容" attributes:attributes];
     self.jxtv.attributedText = at;
 }
 

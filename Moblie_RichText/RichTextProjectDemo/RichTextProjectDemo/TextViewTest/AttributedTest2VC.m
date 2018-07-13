@@ -20,9 +20,6 @@
     // 编辑区
     [self.view addSubview:self.jxtv];
     [self.jxtv modifyHeaderEditing:TRUE contentEditing:FALSE];
-    
-    
-    
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -30,12 +27,17 @@
     self.view.backgroundColor = [UIColor whiteColor];
     
     UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
-    [btn setFrame:CGRectMake(0, 0, 44, 44)];
-    [btn setTitle:@"修改" forState:UIControlStateNormal];
-    btn.backgroundColor = [UIColor greenColor];
+    [btn setFrame:CGRectMake(0, 0, 88, 44)];
+    btn.titleLabel.font = [UIFont systemFontOfSize:13.0];
+    [btn setTitle:@"点击修改" forState:UIControlStateNormal];
+    [btn setTitleColor:[UIColor purpleColor] forState:UIControlStateNormal];
     [btn addTarget:self action:@selector(clickBtn:) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithCustomView:btn];
     self.navigationItem.rightBarButtonItem = item;
+    
+    // 初始展示
+    [self displayForNormalStatus];
+    
 }
 
 #pragma mark ------ private method
