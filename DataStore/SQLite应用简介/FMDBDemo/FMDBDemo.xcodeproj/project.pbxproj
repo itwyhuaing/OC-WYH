@@ -7,13 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		26710B9A20FC9D260040D6AE /* 基本sql语句.m in Sources */ = {isa = PBXBuildFile; fileRef = 26710B9920FC9D260040D6AE /* 基本sql语句.m */; };
+		26710B9E20FCA2840040D6AE /* SQLite 语句.m in Sources */ = {isa = PBXBuildFile; fileRef = 26710B9D20FCA2840040D6AE /* SQLite 语句.m */; };
 		26F0858F2080C12800C5C149 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26F0858D2080C12800C5C149 /* Main.storyboard */; };
 		26F085912080C12800C5C149 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 26F085902080C12800C5C149 /* Assets.xcassets */; };
 		26F085942080C12800C5C149 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26F085922080C12800C5C149 /* LaunchScreen.storyboard */; };
 		26F085972080C12800C5C149 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 26F085962080C12800C5C149 /* main.m */; };
 		26F085A12080C12900C5C149 /* FMDBDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 26F085A02080C12900C5C149 /* FMDBDemoTests.m */; };
 		26F085AC2080C12900C5C149 /* FMDBDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 26F085AB2080C12900C5C149 /* FMDBDemoUITests.m */; };
-		26F085C12080C16D00C5C149 /* XQFOfflineCacheHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 26F085BA2080C16D00C5C149 /* XQFOfflineCacheHandler.m */; };
 		26F085C22080C16D00C5C149 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26F085BE2080C16D00C5C149 /* ViewController.m */; };
 		26F085C32080C16D00C5C149 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 26F085BF2080C16D00C5C149 /* AppDelegate.m */; };
 		93071D8894F6E5DD3312A527 /* libPods-FMDBDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 37A2EB19F20EF55CDB212ABF /* libPods-FMDBDemo.a */; };
@@ -39,6 +40,8 @@
 /* Begin PBXFileReference section */
 		208811B559DD560447F0AE26 /* Pods-FMDBDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FMDBDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FMDBDemo/Pods-FMDBDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		23943903BDE636091964F7A5 /* Pods-FMDBDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FMDBDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-FMDBDemo/Pods-FMDBDemo.release.xcconfig"; sourceTree = "<group>"; };
+		26710B9920FC9D260040D6AE /* 基本sql语句.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "基本sql语句.m"; sourceTree = "<group>"; };
+		26710B9D20FCA2840040D6AE /* SQLite 语句.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "SQLite 语句.m"; sourceTree = "<group>"; };
 		26F085842080C12800C5C149 /* FMDBDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FMDBDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		26F0858E2080C12800C5C149 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		26F085902080C12800C5C149 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -51,8 +54,6 @@
 		26F085A72080C12900C5C149 /* FMDBDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FMDBDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		26F085AB2080C12900C5C149 /* FMDBDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FMDBDemoUITests.m; sourceTree = "<group>"; };
 		26F085AD2080C12900C5C149 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		26F085BA2080C16D00C5C149 /* XQFOfflineCacheHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XQFOfflineCacheHandler.m; sourceTree = "<group>"; };
-		26F085BB2080C16D00C5C149 /* XQFOfflineCacheHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XQFOfflineCacheHandler.h; sourceTree = "<group>"; };
 		26F085BD2080C16D00C5C149 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		26F085BE2080C16D00C5C149 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		26F085BF2080C16D00C5C149 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -86,6 +87,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		26710B9B20FCA2570040D6AE /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				26710B9920FC9D260040D6AE /* 基本sql语句.m */,
+				26710B9D20FCA2840040D6AE /* SQLite 语句.m */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
 		26F0857B2080C12800C5C149 = {
 			isa = PBXGroup;
 			children = (
@@ -111,6 +121,7 @@
 		26F085862080C12800C5C149 /* FMDBDemo */ = {
 			isa = PBXGroup;
 			children = (
+				26710B9B20FCA2570040D6AE /* Resource */,
 				26F085B92080C16D00C5C149 /* Func */,
 				26F085BC2080C16D00C5C149 /* Main */,
 				26F0858D2080C12800C5C149 /* Main.storyboard */,
@@ -143,8 +154,6 @@
 		26F085B92080C16D00C5C149 /* Func */ = {
 			isa = PBXGroup;
 			children = (
-				26F085BB2080C16D00C5C149 /* XQFOfflineCacheHandler.h */,
-				26F085BA2080C16D00C5C149 /* XQFOfflineCacheHandler.m */,
 			);
 			path = Func;
 			sourceTree = "<group>";
@@ -364,10 +373,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				26710B9A20FC9D260040D6AE /* 基本sql语句.m in Sources */,
 				26F085C32080C16D00C5C149 /* AppDelegate.m in Sources */,
 				26F085C22080C16D00C5C149 /* ViewController.m in Sources */,
+				26710B9E20FCA2840040D6AE /* SQLite 语句.m in Sources */,
 				26F085972080C12800C5C149 /* main.m in Sources */,
-				26F085C12080C16D00C5C149 /* XQFOfflineCacheHandler.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
