@@ -11,9 +11,8 @@
 
 @interface DataManager : NSObject
 
-//- (NSMutableArray *)loadTitles;
-//- (NSMutableArray *)loadCntDetails;
-- (NSMutableArray *)loadListDataSource;
+- (NSMutableArray *)loadTitles;
+- (NSMutableArray *)loadCntDetails;
 
 - (CGFloat)caculateAutoHeightWithCnt:(NSString *)cnt defaultValue:(CGFloat)defaultValue;
 

@@ -10,4 +10,6 @@
 
 @interface DesTableViewCell : UITableViewCell
 
+@property (nonatomic,strong) UILabel *desDetail;
+
 @end

@@ -15,7 +15,8 @@
 
 @property (nonatomic,strong) UITableView            *listTable;
 @property (nonatomic,strong) DataManager            *dataManager;
-@property (nonatomic,strong) NSMutableArray         *listData;
+@property (nonatomic,strong) NSMutableArray         *titleData;
+@property (nonatomic,strong) NSMutableArray         *cntData;
 
 @end
 
@@ -39,12 +40,11 @@
 #pragma mark UITableViewDelegate
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    NSMutableArray *data = self.listData.firstObject;
-    return data.count;
+    return self.titleData.count;
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    NSMutableArray *data = self.listData.lastObject;
+    NSMutableArray *data = self.cntData[section];
     return data.count;
 }
 
@@ -57,18 +57,17 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    NSMutableArray *data = self.listData.lastObject;
+    NSMutableArray *data = self.cntData[indexPath.section];
     Data1Model *f = data[indexPath.row];
     return f.cellHeight;
 }
 
 -(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
-    NSMutableArray *data = self.listData.firstObject;
-    return data[section];
+    return self.titleData[section];
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     DesTableViewCell *cell      = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([DesTableViewCell class])];
-    NSMutableArray *data = self.listData.lastObject;
+    NSMutableArray *data = self.cntData[indexPath.section];
     Data1Model *f = data[indexPath.row];
     cell.textLabel.text         = f.cntDetail;
     return cell;
@@ -77,9 +76,10 @@
 #pragma mark ------ private method
 
 - (void)loadDataSource{
-    [self.listData removeAllObjects];
-    NSArray *arr = [self.dataManager loadListDataSource];
-    [self.listData addObjectsFromArray:arr];
+    [self.titleData removeAllObjects];
+    [self.cntData removeAllObjects];
+    [self.titleData addObjectsFromArray:[self.dataManager loadTitles]];
+    [self.cntData addObjectsFromArray:[self.dataManager loadCntDetails]];
     [self.listTable reloadData];
 }
 
@@ -103,11 +103,18 @@
     return _dataManager;
 }
 
--(NSMutableArray *)listData{
-    if (!_listData) {
-        _listData = [[NSMutableArray alloc] init];
+-(NSMutableArray *)titleData{
+    if (!_titleData) {
+        _titleData = [[NSMutableArray alloc] init];
     }
-    return _listData;
+    return _titleData;
+}
+
+-(NSMutableArray *)cntData{
+    if (!_cntData) {
+        _cntData = [[NSMutableArray alloc] init];
+    }
+    return _cntData;
 }
 
 @end

@@ -10,6 +10,9 @@
 
 @interface UIButton (JXButton)
 
+/**
+ 为 UIButton 类新增防连击属性，设置该值即为防连击间隔
+ */
 @property (nonatomic,assign) NSTimeInterval acceptEventCustomInterval;
 
 @end

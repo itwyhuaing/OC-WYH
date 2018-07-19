@@ -18,6 +18,8 @@
 		26710B9220FC6DD10040D6AE /* DesTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 26710B9120FC6DD10040D6AE /* DesTableViewCell.m */; };
 		26710B9520FC6EB80040D6AE /* Data1Model.m in Sources */ = {isa = PBXBuildFile; fileRef = 26710B9420FC6EB80040D6AE /* Data1Model.m */; };
 		26710B9820FC6F430040D6AE /* DataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 26710B9720FC6F430040D6AE /* DataManager.m */; };
+		267E006021006836002566DC /* UIColor+JXColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 267E005F21006836002566DC /* UIColor+JXColor.m */; };
+		267E006321007185002566DC /* UIImage+JXImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 267E006221007185002566DC /* UIImage+JXImage.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +43,10 @@
 		26710B9420FC6EB80040D6AE /* Data1Model.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Data1Model.m; sourceTree = "<group>"; };
 		26710B9620FC6F430040D6AE /* DataManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataManager.h; sourceTree = "<group>"; };
 		26710B9720FC6F430040D6AE /* DataManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DataManager.m; sourceTree = "<group>"; };
+		267E005E21006836002566DC /* UIColor+JXColor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+JXColor.h"; sourceTree = "<group>"; };
+		267E005F21006836002566DC /* UIColor+JXColor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+JXColor.m"; sourceTree = "<group>"; };
+		267E006121007185002566DC /* UIImage+JXImage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+JXImage.h"; sourceTree = "<group>"; };
+		267E006221007185002566DC /* UIImage+JXImage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+JXImage.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +97,10 @@
 				26710B8B20FC41C00040D6AE /* UIButton+JXButton.m */,
 				26710B8D20FC41D90040D6AE /* UILabel+JXLabel.h */,
 				26710B8E20FC41D90040D6AE /* UILabel+JXLabel.m */,
+				267E005E21006836002566DC /* UIColor+JXColor.h */,
+				267E005F21006836002566DC /* UIColor+JXColor.m */,
+				267E006121007185002566DC /* UIImage+JXImage.h */,
+				267E006221007185002566DC /* UIImage+JXImage.m */,
 			);
 			path = ObjCatagery;
 			sourceTree = "<group>";
@@ -188,6 +198,8 @@
 				26710B8C20FC41C00040D6AE /* UIButton+JXButton.m in Sources */,
 				26710B8820FC40D20040D6AE /* ViewController.m in Sources */,
 				26710B9820FC6F430040D6AE /* DataManager.m in Sources */,
+				267E006021006836002566DC /* UIColor+JXColor.m in Sources */,
+				267E006321007185002566DC /* UIImage+JXImage.m in Sources */,
 				26710B9220FC6DD10040D6AE /* DesTableViewCell.m in Sources */,
 				26710B8920FC40D20040D6AE /* AppDelegate.m in Sources */,
 			);
