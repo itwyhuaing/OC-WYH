@@ -7,8 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "YHBaseModel.h"
 
-@interface PersonInfo : NSObject
+@interface PersonInfo : YHBaseModel
 
 @property (nonatomic,copy) NSString *name;
 @property (nonatomic,assign) NSInteger age;

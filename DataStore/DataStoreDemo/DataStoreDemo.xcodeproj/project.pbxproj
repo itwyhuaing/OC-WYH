@@ -51,6 +51,8 @@
 		265916E11F0259A800BE2AEF /* UIView+WebCacheOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 265916D01F0259A800BE2AEF /* UIView+WebCacheOperation.m */; };
 		265916E41F025A8600BE2AEF /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 265916E31F025A8600BE2AEF /* libsqlite3.tbd */; };
 		265916E81F025EC200BE2AEF /* CoreDataVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 265916E71F025EC200BE2AEF /* CoreDataVC.m */; };
+		267E0066210081FC002566DC /* YHBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 267E0065210081FC002566DC /* YHBaseModel.m */; };
+		267E00692100887C002566DC /* SQLite 语句.m in Sources */ = {isa = PBXBuildFile; fileRef = 267E00682100887B002566DC /* SQLite 语句.m */; };
 		26FC0EDD1F18B6DD002CFCC7 /* HNBFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 26FC0EDC1F18B6DD002CFCC7 /* HNBFileManager.m */; };
 /* End PBXBuildFile section */
 
@@ -140,6 +142,9 @@
 		265916E31F025A8600BE2AEF /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		265916E61F025EC200BE2AEF /* CoreDataVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataVC.h; sourceTree = "<group>"; };
 		265916E71F025EC200BE2AEF /* CoreDataVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataVC.m; sourceTree = "<group>"; };
+		267E0064210081FC002566DC /* YHBaseModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YHBaseModel.h; sourceTree = "<group>"; };
+		267E0065210081FC002566DC /* YHBaseModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YHBaseModel.m; sourceTree = "<group>"; };
+		267E00682100887B002566DC /* SQLite 语句.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SQLite 语句.m"; sourceTree = "<group>"; };
 		26FC0EDB1F18B6DD002CFCC7 /* HNBFileManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HNBFileManager.h; sourceTree = "<group>"; };
 		26FC0EDC1F18B6DD002CFCC7 /* HNBFileManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HNBFileManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -176,6 +181,7 @@
 		265916491F02375800BE2AEF /* DataStoreDemo */ = {
 			isa = PBXGroup;
 			children = (
+				267E00672100887B002566DC /* Resource */,
 				2659169C1F02597000BE2AEF /* ThirdLibs */,
 				265916951F02585300BE2AEF /* Tool */,
 				265916691F02556100BE2AEF /* Base */,
@@ -231,6 +237,8 @@
 				2659166B1F02556100BE2AEF /* YHBaseController.m */,
 				2659166D1F0256F600BE2AEF /* YHBaseTable.h */,
 				2659166E1F0256F600BE2AEF /* YHBaseTable.m */,
+				267E0064210081FC002566DC /* YHBaseModel.h */,
+				267E0065210081FC002566DC /* YHBaseModel.m */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -409,6 +417,14 @@
 			path = CoreDataVC;
 			sourceTree = "<group>";
 		};
+		267E00672100887B002566DC /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				267E00682100887B002566DC /* SQLite 语句.m */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -497,6 +513,7 @@
 				265916DC1F0259A800BE2AEF /* UIImage+GIF.m in Sources */,
 				265916D71F0259A800BE2AEF /* SDWebImageDownloader.m in Sources */,
 				265916A91F02597000BE2AEF /* FMDatabase.m in Sources */,
+				267E00692100887C002566DC /* SQLite 语句.m in Sources */,
 				265916E01F0259A800BE2AEF /* UIImageView+WebCache.m in Sources */,
 				265916DB1F0259A800BE2AEF /* UIButton+WebCache.m in Sources */,
 				265916AA1F02597000BE2AEF /* FMDatabaseAdditions.m in Sources */,
@@ -512,6 +529,7 @@
 				265916DA1F0259A800BE2AEF /* SDWebImagePrefetcher.m in Sources */,
 				265916DE1F0259A800BE2AEF /* UIImage+WebP.m in Sources */,
 				265916E81F025EC200BE2AEF /* CoreDataVC.m in Sources */,
+				267E0066210081FC002566DC /* YHBaseModel.m in Sources */,
 				265916D91F0259A800BE2AEF /* SDWebImageManager.m in Sources */,
 				265916D21F0259A800BE2AEF /* NSData+ImageContentType.m in Sources */,
 				2659166C1F02556100BE2AEF /* YHBaseController.m in Sources */,

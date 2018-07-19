@@ -41,9 +41,11 @@
                     @"grade2":@"room200",
                     @"grade3":@"room300"
                     };
-    NSString *filePath = [YHFileOperator filePathForFileName:@"archeveFile.txt"];
+    NSString *filePath = [YHFileOperator filePathForFileName:@"archeveFile.plist"];
+    // 归档
     [NSKeyedArchiver archiveRootObject:f toFile:filePath];
     
+    // 解档
     PersonInfo *rf = [NSKeyedUnarchiver unarchiveObjectWithFile:filePath];
     NSLog(@"name:%@ - age:%ld - subs:%@ - classRoom:%@",rf.name,rf.age,rf.subs,rf.classRoom);
     
