@@ -15,11 +15,10 @@
 
 @interface SQLiteVC ()<UITableViewDataSource,UITableViewDelegate>
 {
-    UITableView *movieTableView;
-    
     //数据源
     NSMutableArray *movies;
 }
+@property (nonatomic,strong) UITableView *moviewTableView;
 
 @end
 
@@ -28,32 +27,29 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self initTableView];
-    movies = [[NSMutableArray alloc] init];
-    
-    // 删除旧库
-    [[YHDataBaseManager sharedManager] deleteDataBaseWithFileName:@"Movie.db"];
-    
-    // 创建新库
-    BOOL isSuc = [[YHDataBaseManager sharedManager] createDataBaseWithFileName:@"Movie.db"];
-    NSLog(@" 数据库建库状态 : %d",isSuc);
-    
-    // 清空
-    BOOL isClear = [[YHDataBaseManager sharedManager] clearDataFromTable:@"Movie"];
-    NSLog(@" 数据库清空状态 : %d",isClear);
-    // 入库
-    [self getNewData];
-    
+    self.displayLabel.text = @" 1> 点击启动按钮,删除旧数据库，创建新数据库 \n \n \n 2> 观察沙盒路径文件变化";
+
 }
 
 -(void)rightNavBtnEvent:(UIButton *)btn{
+    // 布局
+    [self initTableView];
+    movies = [[NSMutableArray alloc] init];
     
+    // 数据库操作
+    // 删除旧库
+    BOOL isDele = [[YHDataBaseManager sharedManager] deleteDataBaseWithFileName:@"Movie.db"];
+    NSLog(@" 删除旧库 : %d",isDele);
+    
+    // 创建新库
+    BOOL isNew = [[YHDataBaseManager sharedManager] createDataBaseWithFileName:@"Movie.db"];
+    NSLog(@" 新建数据库 : %d",isNew);
+    
+    // 入库
+    [self getNewData];
 }
 
 - (void)getNewData{
-    
-    
-    
     NSArray *jsonArray = @[
                            @{@"title":@"\u8096\u7533\u514b\u7684\u6551\u8d4e",@"img":@"https://img3.doubanio.com\/img\/celebrity\/large\/17525.jpg"},
                            @{@"title":@"\u8fd9\u4e2a\u6740\u624b\u4e0d\u592a\u51b7",@"img":@"https://img3.doubanio.com\/img\/celebrity\/large\/8833.jpg"},
@@ -62,35 +58,25 @@
                            @{@"title":@"\u5343\u4e0e\u5343\u5bfb",@"img":@"https://img3.doubanio.com\/img\/celebrity\/large\/1463193210.13.jpg"},
                            @{@"title":@"\u8f9b\u5fb7\u52d2\u7684\u540d\u5355",@"img":@"https://img3.doubanio.com\/img\/celebrity\/large\/44906.jpg"}
                            ];
-    
     //解析
-    for (NSDictionary *dic in jsonArray)
-    {
+    for (NSDictionary *dic in jsonArray){
         Movie *movie = [[Movie alloc] initWithDic:dic];
-        
         [movies addObject:movie];
-        
         //保存
         BOOL suc = [[YHDataBaseManager sharedManager] insertDataToDatabase:movie];
         NSLog(@"插入数据状态 : %d",suc);
-        
     }
-    [movieTableView reloadData];
+    [self.moviewTableView reloadData];
     
 }
 
 //创建tableView
-- (void)initTableView
-{
-    movieTableView = [[UITableView alloc] initWithFrame:self.view.bounds];
-    movieTableView.delegate = self;
-    movieTableView.dataSource = self;
-    movieTableView.rowHeight = 70;
-    [self.view addSubview:movieTableView];
+- (void)initTableView{
+    [self.view addSubview:self.moviewTableView];
     
     //注册单元格
-    //[movieTableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"Cell"];
-    [movieTableView registerNib:[UINib nibWithNibName:@"MovieCell" bundle:nil] forCellReuseIdentifier:@"Cell"];
+    //[self.movieTableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"Cell"];
+    [self.moviewTableView registerNib:[UINib nibWithNibName:@"MovieCell" bundle:nil] forCellReuseIdentifier:@"Cell"];
     
 }
 
@@ -99,31 +85,33 @@
     return movies.count + 6;
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    MovieCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
-    
-    if (movies.count > 0 && indexPath.row < movies.count)
-    {
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    UITableViewCell *rtnCell;
+    if (movies.count > 0 && indexPath.row < movies.count){
+        MovieCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CntCell"];
         Movie *movie = movies[indexPath.row];
         //赋值
         [cell setModel:movie];
-    }else{
-        
+        rtnCell = cell;
+    }
+    else{
+        MovieCell *cell = [tableView dequeueReusableCellWithIdentifier:@"FunctionCell"];
         if (indexPath.row == movies.count) {
-            [cell setTitle:@"allData"];
+            [cell setTitle:@"其他功能测试"];
         }else if (indexPath.row == movies.count + 1){
-            [cell setTitle:@"isModify"];
+            [cell setTitle:@"allData"];
         }else if (indexPath.row == movies.count + 2){
-            [cell setTitle:@"rslData"];
+            [cell setTitle:@"isModify"];
         }else if (indexPath.row == movies.count + 3){
-            [cell setTitle:@"isDel"];
+            [cell setTitle:@"rslData"];
         }else if (indexPath.row == movies.count + 4){
+            [cell setTitle:@"isDel"];
+        }else{
             NSLog(@" === ");
         }
-        
+        rtnCell = cell;
     }
-    return cell;
+    return rtnCell;
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -155,8 +143,20 @@
 - (void)refreshUIWithCurrentDataBase{
 
     movies = [[NSMutableArray alloc] initWithArray:[[YHDataBaseManager sharedManager] getAllDataFromDatabase]];
-    [movieTableView reloadData];
+    [self.moviewTableView reloadData];
     
 }
+
+-(UITableView *)moviewTableView{
+    if(!_moviewTableView){
+        CGRect rect = self.view.bounds;
+        _moviewTableView = [[UITableView alloc] initWithFrame:rect];
+        _moviewTableView.delegate = self;
+        _moviewTableView.dataSource = self;
+        _moviewTableView.rowHeight = 70;
+    }
+    return _moviewTableView;
+}
+
 
 @end

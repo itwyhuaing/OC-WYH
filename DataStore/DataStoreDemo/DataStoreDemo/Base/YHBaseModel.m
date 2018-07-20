@@ -24,6 +24,7 @@
             Ivar ivar = ivars[index];
             const char *keyName = ivar_getName(ivar);
             NSString *keyNameString = [NSString stringWithCString:keyName encoding:NSUTF8StringEncoding];
+            //NSLog(@"\n initWithCoder:%@ \n",keyNameString);
             id value = [aDecoder decodeObjectForKey:keyNameString];
             [self setValue:value forKey:keyNameString];
         }
@@ -40,8 +41,10 @@
     for (NSInteger index = 0; index < count; index ++) {
         Ivar ivar = ivars[index];
         const char *keyName = ivar_getName(ivar);
-        //const char *type = ivar_getTypeEncoding(ivar);
+        const char *type = ivar_getTypeEncoding(ivar);
+        NSString *typeString = [NSString stringWithCString:type encoding:NSUTF8StringEncoding];
         NSString *keyNameString = [NSString stringWithCString:keyName encoding:NSUTF8StringEncoding];
+        NSLog(@"\n \n key :%@ \n type:%@\n \n",keyNameString,typeString);
         id value = [self valueForKey:keyNameString];
         [aCoder encodeObject:value forKey:keyNameString];
     }

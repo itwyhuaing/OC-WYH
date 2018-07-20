@@ -58,6 +58,7 @@
 
     NSString *documentPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) firstObject];
     NSString *filePath = [documentPath stringByAppendingPathComponent:fileName];
+    NSLog(@" \n 数据库存储路径 : %@ \n",filePath);
     return filePath;
 
 }
