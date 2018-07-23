@@ -32,6 +32,7 @@
 }
 
 -(void)rightNavBtnEvent:(UIButton *)btn{
+    
     // 布局
     [self initTableView];
     movies = [[NSMutableArray alloc] init];
@@ -75,8 +76,8 @@
     [self.view addSubview:self.moviewTableView];
     
     //注册单元格
-    //[self.movieTableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"Cell"];
-    [self.moviewTableView registerNib:[UINib nibWithNibName:@"MovieCell" bundle:nil] forCellReuseIdentifier:@"Cell"];
+    [self.moviewTableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"FunctionCell"];
+    [self.moviewTableView registerNib:[UINib nibWithNibName:@"MovieCell" bundle:nil] forCellReuseIdentifier:@"CntCell"];
     
 }
 
@@ -95,17 +96,17 @@
         rtnCell = cell;
     }
     else{
-        MovieCell *cell = [tableView dequeueReusableCellWithIdentifier:@"FunctionCell"];
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"FunctionCell"];
         if (indexPath.row == movies.count) {
-            [cell setTitle:@"其他功能测试"];
+            cell.textLabel.text = @"数据库其他操作测试";
         }else if (indexPath.row == movies.count + 1){
-            [cell setTitle:@"allData"];
+            cell.textLabel.text = @"allData";
         }else if (indexPath.row == movies.count + 2){
-            [cell setTitle:@"isModify"];
+            cell.textLabel.text = @"isModify";
         }else if (indexPath.row == movies.count + 3){
-            [cell setTitle:@"rslData"];
+            cell.textLabel.text = @"rslData";
         }else if (indexPath.row == movies.count + 4){
-            [cell setTitle:@"isDel"];
+            cell.textLabel.text = @"isDel";
         }else{
             NSLog(@" === ");
         }

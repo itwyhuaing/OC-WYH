@@ -54,6 +54,8 @@
 		267E0066210081FC002566DC /* YHBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 267E0065210081FC002566DC /* YHBaseModel.m */; };
 		267E00692100887C002566DC /* SQLite 语句.m in Sources */ = {isa = PBXBuildFile; fileRef = 267E00682100887B002566DC /* SQLite 语句.m */; };
 		267E006C21018D81002566DC /* JXFMDBMOperator.m in Sources */ = {isa = PBXBuildFile; fileRef = 267E006B21018D81002566DC /* JXFMDBMOperator.m */; };
+		26A6AF012105BB1700CFA01A /* Son.m in Sources */ = {isa = PBXBuildFile; fileRef = 26A6AF002105BB1700CFA01A /* Son.m */; };
+		26A6AF042105EA0F00CFA01A /* JXSQLiteVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 26A6AF032105EA0F00CFA01A /* JXSQLiteVC.m */; };
 		26FC0EDD1F18B6DD002CFCC7 /* HNBFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 26FC0EDC1F18B6DD002CFCC7 /* HNBFileManager.m */; };
 /* End PBXBuildFile section */
 
@@ -148,6 +150,10 @@
 		267E00682100887B002566DC /* SQLite 语句.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SQLite 语句.m"; sourceTree = "<group>"; };
 		267E006A21018D81002566DC /* JXFMDBMOperator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JXFMDBMOperator.h; sourceTree = "<group>"; };
 		267E006B21018D81002566DC /* JXFMDBMOperator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JXFMDBMOperator.m; sourceTree = "<group>"; };
+		26A6AEFF2105BB1700CFA01A /* Son.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Son.h; sourceTree = "<group>"; };
+		26A6AF002105BB1700CFA01A /* Son.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Son.m; sourceTree = "<group>"; };
+		26A6AF022105EA0F00CFA01A /* JXSQLiteVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JXSQLiteVC.h; sourceTree = "<group>"; };
+		26A6AF032105EA0F00CFA01A /* JXSQLiteVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JXSQLiteVC.m; sourceTree = "<group>"; };
 		26FC0EDB1F18B6DD002CFCC7 /* HNBFileManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HNBFileManager.h; sourceTree = "<group>"; };
 		26FC0EDC1F18B6DD002CFCC7 /* HNBFileManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HNBFileManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -253,6 +259,8 @@
 				265916721F02578D00BE2AEF /* EncodeVC.m */,
 				265916731F02578D00BE2AEF /* PersonInfo.h */,
 				265916741F02578D00BE2AEF /* PersonInfo.m */,
+				26A6AEFF2105BB1700CFA01A /* Son.h */,
+				26A6AF002105BB1700CFA01A /* Son.m */,
 			);
 			path = CodeVC;
 			sourceTree = "<group>";
@@ -299,6 +307,8 @@
 			children = (
 				265916801F02578D00BE2AEF /* SQLiteVC.h */,
 				265916811F02578D00BE2AEF /* SQLiteVC.m */,
+				26A6AF022105EA0F00CFA01A /* JXSQLiteVC.h */,
+				26A6AF032105EA0F00CFA01A /* JXSQLiteVC.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -508,6 +518,7 @@
 				2659168A1F02578D00BE2AEF /* PersonInfo.m in Sources */,
 				265916D11F0259A800BE2AEF /* MKAnnotationView+WebCache.m in Sources */,
 				2659168C1F02578D00BE2AEF /* FileWRVC.m in Sources */,
+				26A6AF042105EA0F00CFA01A /* JXSQLiteVC.m in Sources */,
 				265916AB1F02597000BE2AEF /* FMDatabasePool.m in Sources */,
 				2659169A1F02585300BE2AEF /* YHDataBaseManager.m in Sources */,
 				265916891F02578D00BE2AEF /* EncodeVC.m in Sources */,
@@ -540,6 +551,7 @@
 				2659166C1F02556100BE2AEF /* YHBaseController.m in Sources */,
 				2659168B1F02578D00BE2AEF /* DefaultVC.m in Sources */,
 				2659166F1F0256F600BE2AEF /* YHBaseTable.m in Sources */,
+				26A6AF012105BB1700CFA01A /* Son.m in Sources */,
 				267E006C21018D81002566DC /* JXFMDBMOperator.m in Sources */,
 				265916671F02545700BE2AEF /* AppDelegate.m in Sources */,
 				2659164C1F02375800BE2AEF /* main.m in Sources */,

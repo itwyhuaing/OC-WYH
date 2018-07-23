@@ -21,7 +21,6 @@
   // text  字符串
   // blob  二进制数据类型  一般 存 图片 或者 mp3  mp4
   注意类型有integer,real,text,blob等
-  
   例如:
   create table if not exists Book
   (

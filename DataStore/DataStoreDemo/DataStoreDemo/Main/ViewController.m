@@ -20,7 +20,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    _list = [[NSMutableArray alloc] initWithArray:@[@"PlistVC",@"DefaultVC",@"FileWRVC",@"EncodeVC",@"SQLiteVC",@"CoreDataVC"]];
+    _list = [[NSMutableArray alloc] initWithArray:@[@"PlistVC",@"DefaultVC",@"FileWRVC",@"EncodeVC",@"SQLiteVC",@"JXSQLiteVC",@"CoreDataVC"]];
     _mainView = [[DataStoreMainView alloc] initWithFrame:CGRectMake(0,
                                                                     0,
                                                                     [UIScreen mainScreen].bounds.size.width,
