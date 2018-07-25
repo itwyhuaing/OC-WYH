@@ -23,7 +23,7 @@
     //  UI 修饰
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     //NSArray *tmp = @[@"FirstVC",@"DefendContinHitVC - UIButton 防连击",@"3",@"4",@"5",@"6"];
-    NSArray *tmp = @[@"CALayerVC",@"UIBezierPathVC",@"LayerPathVC"];
+    NSArray *tmp = @[@"CALayerVC",@"UIBezierPathVC",@"LayerPathVC 简单应用 - 镂空效果"];
     _dataSource = [[NSMutableArray alloc] initWithArray:tmp];
 }
 

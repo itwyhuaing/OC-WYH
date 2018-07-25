@@ -29,15 +29,13 @@ OC 记录。
 
 * [YHCompoent - 记录部分项目个性化定制组件](https://github.com/itwyhuaing/OC-WYH/tree/master/YHCompoent)
 
-> YHCALayerDemo 镂空 、绘制等，可用于新功能提醒 。
-
 > Banner  OC / Swift 无限轮播图
 
 > YHDropListMenu 商品筛选 商城 外卖 顶部Tab 下拉列表
 
 > YHChartView 曲线图 柱状图 饼状图
 
-### CALayer
+### CALayer 与 UIBezierPath 基础及常见应用
 * [CALayer](https://github.com/itwyhuaing/OC-WYH/tree/master/CALayer)
 
 ### NSRuntime
@@ -62,4 +60,4 @@ OC 记录。
 * [智能家居](https://github.com/itwyhuaing/OC-WYH/tree/master/智能家居)
 
 ### iOS开发者证书
-* [iOS开发者证书](https://github.com/itwyhuaing/OC-WYH/tree/master/iOS开发者证书) 
+* [iOS开发者证书](https://github.com/itwyhuaing/OC-WYH/tree/master/iOS开发者证书)

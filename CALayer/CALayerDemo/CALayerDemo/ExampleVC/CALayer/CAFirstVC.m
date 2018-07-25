@@ -18,6 +18,7 @@
     [super viewDidLoad];
     
     //[self reverseImage];
+    [self card];
 }
 
 - (void)viewWillAppear:(BOOL)animated{
@@ -52,23 +53,5 @@
     v2.layer.masksToBounds = TRUE;
     v2.layer.cornerRadius = 4.f;
 }
-
-#pragma mark --- 图片倒影
-
-- (void)reverseImage{
-    CAReplicatorLayer *rep = (CAReplicatorLayer *)self.view.layer;
-    rep.instanceCount = 2;
-    rep.anchorPoint = CGPointMake(0.5, 0.43);
-    rep.instanceTransform = CATransform3DMakeRotation(M_PI, 1, 0, 0);
-    
-    // 倒影效果
-    rep.instanceRedOffset -= 0.1;
-    rep.instanceGreenOffset -= 0.1;
-    rep.instanceBlueOffset -= 0.1;
-    rep.instanceRedOffset -= 0.1;
-    
-}
-
-
 
 @end

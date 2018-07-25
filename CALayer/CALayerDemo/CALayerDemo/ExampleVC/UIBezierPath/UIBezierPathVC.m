@@ -24,7 +24,7 @@
     self.title = @" UIBezierPathVC ";
     //  UI 修饰
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    NSArray *tmp = @[@"FirstVC",@"SecondVC",@"ThirdVC",@"FourthVC",];
+    NSArray *tmp = @[@"CAShapeLayer UIBezierPath 绘制图形",@"绘制直线、折线、曲线",@"拖动四个点动态绘制曲线",@"坐标系内绘制线条"];
     _dataSource = [[NSMutableArray alloc] initWithArray:tmp];
 }
 
