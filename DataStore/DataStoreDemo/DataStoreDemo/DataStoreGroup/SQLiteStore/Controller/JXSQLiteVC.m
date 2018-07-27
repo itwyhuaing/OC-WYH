@@ -32,9 +32,41 @@
     // 创建表
     [[JXFMDBMOperator sharedInstance] createTableWithModelCls:[PersonInfo class]];
     // 插入数据
-    
+    PersonInfo *f = [self createModel];
+    [[JXFMDBMOperator sharedInstance] insertDataModel:f];
     // 读取数据
     
     // 查询数据
 }
+
+- (PersonInfo *)createModel{
+    PersonInfo *f = [PersonInfo new];
+    NSDictionary *math = @{
+                           @"subName":@"Math",
+                           @"subID":@"S_150"
+                           };
+    NSDictionary *english = @{
+                              @"subName":@"English",
+                              @"subID":@"E_150"
+                              };
+    f.name      = @"wyh";
+    f.age       = 18;
+    f.mark      = 88.69;
+    f.subs      = @[math,english];
+    f.classRoom = @{
+                    @"grade1":@"room100",
+                    @"grade2":@"room200",
+                    @"grade3":@"room300"
+                    };
+    
+    // 带测试数据类型
+    Son *s = [Son new];
+    s.name = @"SonName";
+    f.son  = s;
+    f.ageTest = 68;
+    f.markTest = 68.68;
+    f.boolTest = TRUE;
+    return f;
+}
+
 @end

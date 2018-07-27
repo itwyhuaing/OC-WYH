@@ -26,7 +26,7 @@
             NSString *keyNameString = [NSString stringWithCString:keyName encoding:NSUTF8StringEncoding];
             //NSLog(@"\n initWithCoder:%@ \n",keyNameString);
             id value = [aDecoder decodeObjectForKey:keyNameString];
-            [self setValue:value forKey:keyNameString];
+            [self setValue:value forKeyPath:keyNameString];
         }
         free(ivars);
     }
@@ -48,7 +48,7 @@
         NSString *keyNameString = [NSString stringWithCString:keyName encoding:NSUTF8StringEncoding];
         NSLog(@"\n \n key :%@ \n type:%@\n \n",keyNameString,typeString);
         // 3. KVC 技术获取 value
-        id value = [self valueForKey:keyNameString];
+        id value = [self valueForKeyPath:keyNameString];
         // 4. 归档
         [aCoder encodeObject:value forKey:keyNameString];
     }

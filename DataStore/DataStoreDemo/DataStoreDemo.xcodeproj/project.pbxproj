@@ -56,6 +56,8 @@
 		267E006C21018D81002566DC /* JXFMDBMOperator.m in Sources */ = {isa = PBXBuildFile; fileRef = 267E006B21018D81002566DC /* JXFMDBMOperator.m */; };
 		26A6AF012105BB1700CFA01A /* Son.m in Sources */ = {isa = PBXBuildFile; fileRef = 26A6AF002105BB1700CFA01A /* Son.m */; };
 		26A6AF042105EA0F00CFA01A /* JXSQLiteVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 26A6AF032105EA0F00CFA01A /* JXSQLiteVC.m */; };
+		26A6AF0D2109781400CFA01A /* PredicateVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 26A6AF0C2109781400CFA01A /* PredicateVC.m */; };
+		26A6AF1021097B0300CFA01A /* PredicateTestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 26A6AF0F21097B0300CFA01A /* PredicateTestModel.m */; };
 		26FC0EDD1F18B6DD002CFCC7 /* HNBFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 26FC0EDC1F18B6DD002CFCC7 /* HNBFileManager.m */; };
 /* End PBXBuildFile section */
 
@@ -154,6 +156,10 @@
 		26A6AF002105BB1700CFA01A /* Son.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Son.m; sourceTree = "<group>"; };
 		26A6AF022105EA0F00CFA01A /* JXSQLiteVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JXSQLiteVC.h; sourceTree = "<group>"; };
 		26A6AF032105EA0F00CFA01A /* JXSQLiteVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JXSQLiteVC.m; sourceTree = "<group>"; };
+		26A6AF0B2109781400CFA01A /* PredicateVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PredicateVC.h; sourceTree = "<group>"; };
+		26A6AF0C2109781400CFA01A /* PredicateVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PredicateVC.m; sourceTree = "<group>"; };
+		26A6AF0E21097B0300CFA01A /* PredicateTestModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PredicateTestModel.h; sourceTree = "<group>"; };
+		26A6AF0F21097B0300CFA01A /* PredicateTestModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PredicateTestModel.m; sourceTree = "<group>"; };
 		26FC0EDB1F18B6DD002CFCC7 /* HNBFileManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HNBFileManager.h; sourceTree = "<group>"; };
 		26FC0EDC1F18B6DD002CFCC7 /* HNBFileManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HNBFileManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -309,6 +315,8 @@
 				265916811F02578D00BE2AEF /* SQLiteVC.m */,
 				26A6AF022105EA0F00CFA01A /* JXSQLiteVC.h */,
 				26A6AF032105EA0F00CFA01A /* JXSQLiteVC.m */,
+				26A6AF0B2109781400CFA01A /* PredicateVC.h */,
+				26A6AF0C2109781400CFA01A /* PredicateVC.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -318,6 +326,8 @@
 			children = (
 				265916831F02578D00BE2AEF /* Movie.h */,
 				265916841F02578D00BE2AEF /* Movie.m */,
+				26A6AF0E21097B0300CFA01A /* PredicateTestModel.h */,
+				26A6AF0F21097B0300CFA01A /* PredicateTestModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -515,6 +525,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				265916D61F0259A800BE2AEF /* SDWebImageDecoder.m in Sources */,
+				26A6AF1021097B0300CFA01A /* PredicateTestModel.m in Sources */,
 				2659168A1F02578D00BE2AEF /* PersonInfo.m in Sources */,
 				265916D11F0259A800BE2AEF /* MKAnnotationView+WebCache.m in Sources */,
 				2659168C1F02578D00BE2AEF /* FileWRVC.m in Sources */,
@@ -542,6 +553,7 @@
 				265916D81F0259A800BE2AEF /* SDWebImageDownloaderOperation.m in Sources */,
 				2659169B1F02585300BE2AEF /* YHFileOperator.m in Sources */,
 				2659168F1F02578D00BE2AEF /* Movie.m in Sources */,
+				26A6AF0D2109781400CFA01A /* PredicateVC.m in Sources */,
 				265916DA1F0259A800BE2AEF /* SDWebImagePrefetcher.m in Sources */,
 				265916DE1F0259A800BE2AEF /* UIImage+WebP.m in Sources */,
 				265916E81F025EC200BE2AEF /* CoreDataVC.m in Sources */,

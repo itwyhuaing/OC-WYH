@@ -58,8 +58,8 @@
 
 
 - (void)rightNavBtnClick:(UIButton *)btn{
-    [self rightNavBtnEvent:btn];
     _displayLabel.hidden = YES;
+    [self rightNavBtnEvent:btn];
 }
 
 - (void)backNavBtnClick:(UIButton *)btn{
