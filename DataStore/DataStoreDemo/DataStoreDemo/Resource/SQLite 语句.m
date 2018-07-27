@@ -1,5 +1,10 @@
+/** 参考
+ iOS 基于FMDB简单的查询操作 https://blog.csdn.net/rpf2014/article/details/53116906
+ 
+ */
 
- #pragma mark ------ 创建表
+
+#pragma mark ------ 创建表
  /**
   1.创建表
   create table [if not exists] 表名
@@ -42,22 +47,27 @@
   insert into Book (name,url,des) values ('霍金全集','www.baidu.com','描述');
   */
 
-  #pragma mark ------ 查询
+  #pragma mark ------ 查询/读取数据
   /**
   3.查询
   select [属性名,属性名]  from 表名字 [where 字段名=‘’] order by 字段名 desc|asc;
   
-  注意：1,where判断 > , >= ,< , <=,between 字段 and 字段
-  2,desc降序  asc升序
+  注意：1. where 判断 > , >= ,< , <=, between 字段 and 字段
+       2. desc降序  asc升序
   
   例如：
   （1）查询表中所有字段数据
-  select * from Book
+    select * from Book
+    select * from Book order by 字段名 desc
+    select * from Book order by 字段名 asc
   
-  （2）查询判断的条件
-  select * from Book where 字段名='';
+  （2）查询 - 单个条件的判断
+    select * from Book where 字段名=''
   
-  (3)select name,url from Book where name = '钢铁是怎么炼成的'
+   (3) 查询 - 多个条件的判断
+   select * from Book where 字段名='' or where 字段名=''
+   select * from Book where 字段名='' and where 字段名=''
+   select name,url from Book where name = '钢铁是怎么炼成的'
   
    */
 

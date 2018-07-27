@@ -27,6 +27,12 @@ typedef void(^HNBFileManagerBlock)(NSString *info);
 @interface HNBFileManager : NSObject
 
 /**
+ * 依据 URL 与 参数 存/取数据
+ */
++ (void)setHttpCache:(id)httpData URL:(NSString *)URL parameters:(NSDictionary *)parameters;
++ (id)httpCacheForURL:(NSString *)URL parameters:(NSDictionary *)parameters;
+
+/**
  * 计算文件夹大小 - 单位 MB
  */
 + (void)returnSizeAtFileFolder:(HNBFileFolderDirectory)folderDir completeBlock:(HNBFileManagerBlock)fileBlock;

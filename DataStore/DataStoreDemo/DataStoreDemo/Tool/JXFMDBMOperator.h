@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import "FMDB.h"
 
 
 @interface JXDataModelParser : NSObject
@@ -35,8 +35,18 @@
  */
 - (NSString *)sqlForInsertDataIntoTableWithModel:(id)model;
 
-@end
 
+/**
+ 数据查询结果配置数据
+
+ @param model 待赋值的数据模型实例对象
+ @param rltSet 待解析的 FMDB 查询结果
+ */
+- (void)configValuesForModel:(id)model rltSet:(FMResultSet *)rltSet;
+
+
+
+@end
 
 @interface JXFMDBMOperator : NSObject
 
@@ -56,19 +66,20 @@
 /**
  删除数据库
 
- @param fileName 数据库名称
+ @param dbName 数据库名称
  @return 操作状态 ：TRUE - 成功 、FALSE - 失败
  */
-- (BOOL)deleteDataBaseWithFileName:(NSString *)fileName;
+- (BOOL)deleteDataBaseWithdbName:(NSString *)dbName;
 
 
 /**
  创建数据库
 
- @param fileName 数据库名称
+ @param dbName 数据库名称
  @return 操作状态 ：TRUE - 成功 、FALSE - 失败
  */
-- (BOOL)createDataBaseWithFileName:(NSString *)fileName;
+- (BOOL)createDataBaseWithdbName:(NSString *)dbName;
+
 
 /**
  创建表
@@ -79,7 +90,6 @@
 -(BOOL)createTableWithModelCls:(Class)modelCls;
 
 
-
 /**
  插入数据
 
@@ -88,6 +98,16 @@
  */
 - (BOOL)insertDataModel:(id)model;
 
+
+/**
+ 读取数据库数据 - 默认全部升序排列
+
+ @param modelCls 待读取的数据的数据类型
+ @param querySql 查询语句 例如：1单个条件> name='wyh'    2 and 或 or 条件> name='wyh' and age>18      3 空> 为空时意味着不设置查询条件即查询全部数据
+ @param orderKey 结果排序关键字即数据模型属性
+ @return 读取数据结果，以相应模型的数组形式给出
+ */
+- (NSArray *)queryDataForModelCls:(Class)modelCls querySql:(NSString *)querySql orderKey:(NSString *)orderKey;
 
 /**
  用于快速测试
