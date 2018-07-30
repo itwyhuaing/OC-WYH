@@ -9,10 +9,11 @@
 #import "JXFMDBMOperator.h"
 #import <objc/runtime.h>
 
+static NSString *kdataBase = @"FMDatabase";  /**<数据库后缀>*/
+static NSString *kdataTable = @"Table";      /**<数据表后缀>*/
+static NSString *kcustomid = @"customid";    /**<存储数据主键>*/
 
 @interface JXDataModelParser ()
-
-
 
 @end
 
@@ -91,7 +92,7 @@
         NSString *keyNameString = [NSString stringWithCString:keyName encoding:NSUTF8StringEncoding];
         NSString *sqlKey = [keyNameString substringFromIndex:1];
         [rltSql appendString:[NSString stringWithFormat:@" %@ %@",sqlKey,[self sqlMapWithType:typeString]]];
-        NSLog(@"\n \n key :%@ \n type:%@ \n sqlKey :%@ \n \n",keyNameString,typeString,sqlKey);
+        //[self printLogMsg:@"\n \n key :%@ \n type:%@ \n sqlKey :%@ \n \n",keyNameString,typeString,sqlKey];
         if (index != count - 1) {
             [rltSql appendString:@","];
         }
@@ -188,8 +189,12 @@
     }else if ([dataType isEqualToString:@"f"] || [dataType isEqualToString:@"d"]) {
         [model setValue:[NSNumber numberWithFloat:[rltSet doubleForColumn:key]] forKey:key];
     }else{
-        id obj = [NSKeyedUnarchiver unarchiveObjectWithData:[rltSet objectForColumnName:key]];
-        [model setValue:obj forKey:key];
+        id tmpObj = [rltSet objectForColumnName:key];
+        if (![tmpObj isKindOfClass:[NSNull class]]) {
+            id obj = [NSKeyedUnarchiver unarchiveObjectWithData:tmpObj];
+            [model setValue:obj forKey:key];
+        }
+        
     }
 }
 
@@ -202,13 +207,16 @@
     return _modelValues;
 }
 
+#pragma mark - log
+- (void)printLogMsg:(NSString *)msg{
+    self.logStatus ? NSLog(@"\n %@ \n",msg) : nil;
+}
+
 @end
 
 
 @interface JXFMDBMOperator ()
-{
-    BOOL isLog;
-}
+
 @property (nonatomic,copy)   NSString                       *dbName;
 @property (nonatomic,strong) FMDatabaseQueue                *dataBaseQueue;
 @property (nonatomic,strong) JXDataModelParser              *modelParser;
@@ -230,7 +238,7 @@
 }
 
 - (void)openLog{
-    isLog = TRUE;
+    self.modelParser.logStatus = TRUE;
 }
 
 #pragma mark - 删除数据库
@@ -239,7 +247,22 @@
     BOOL rlt = TRUE;
     NSString *filePath = [self filePathWithFileName:dbName];
     rlt = [[NSFileManager defaultManager] removeItemAtPath:filePath error:nil];
-    rlt ? [self printLogMsg:[NSString stringWithFormat:@"数据库删除成功，地址：%@",filePath]] : [self printLogMsg:[NSString stringWithFormat:@"数据库删除失败，地址：%@",filePath]];
+    rlt ? [self.modelParser printLogMsg:[NSString stringWithFormat:@"数据库删除成功，地址：%@",filePath]] : [self.modelParser printLogMsg:[NSString stringWithFormat:@"数据库删除失败，地址：%@",filePath]];
+    return rlt;
+}
+
+#pragma mark - 删除数据表
+
+-(BOOL)deleteDataTableWithModelCls:(Class)modelCls{
+    __block BOOL rlt = FALSE;
+    NSString *dataTable = [self assembleDataTableWithModelCls:modelCls];
+    if ([self isExistTable:dataTable]) {
+        NSString *sql = [NSString stringWithFormat:@"drop table %@;",dataTable];
+        [self.dataBaseQueue inDatabase:^(FMDatabase *db) {
+            rlt = [db executeUpdate:sql];
+        }];
+    }
+    rlt ? [self.modelParser printLogMsg:[NSString stringWithFormat:@"数据表%@删除成功",dataTable]] : [self.modelParser printLogMsg:[NSString stringWithFormat:@"数据表%@删除失败",dataTable]];
     return rlt;
 }
 
@@ -251,21 +274,22 @@
     NSString *filePath = [self filePathWithFileName:self.dbName];
     FMDatabase *dataBase = [[FMDatabase alloc] initWithPath:filePath];
     rlt = [self openDataBase:dataBase];
-    rlt ? [self printLogMsg:[NSString stringWithFormat:@"数据库新建成功并打开，地址：%@",filePath]] : [self printLogMsg:[NSString stringWithFormat:@"数据库新建失败，地址：%@",filePath]];
+    rlt ? [self.modelParser printLogMsg:[NSString stringWithFormat:@"数据库新建成功并打开，地址：%@",filePath]] : [self.modelParser printLogMsg:[NSString stringWithFormat:@"数据库新建失败，地址：%@",filePath]];
     return rlt;
 }
 
 #pragma mark - 建表
 -(BOOL)createTableWithModelCls:(Class)modelCls{
     __block BOOL rlt = FALSE;
-    NSString *sql = [NSString stringWithFormat:@"create table if not exists %@ (customId integer primary key autoincrement,%@);",NSStringFromClass(modelCls),[self.modelParser sqlForTableKeyWithModelCls:modelCls]];
+    NSString *dataTable = [self assembleDataTableWithModelCls:modelCls];
+    NSString *sql = [NSString stringWithFormat:@"create table if not exists %@ (%@ integer primary key autoincrement,%@);",dataTable,kcustomid,[self.modelParser sqlForTableKeyWithModelCls:modelCls]];
     [self.dataBaseQueue inDatabase:^(FMDatabase *db) {
-        NSString *msg = [NSString stringWithFormat:@"数据库,数据表%@创建失败",NSStringFromClass(modelCls)];
+        NSString *msg = [NSString stringWithFormat:@"数据库,数据表%@创建失败",dataTable];
         if ([self openDataBase:db]) {
             rlt = [db executeUpdate:sql];
-            msg = [NSString stringWithFormat:@"数据库,数据表%@创建成功",NSStringFromClass(modelCls)];
+            msg = [NSString stringWithFormat:@"数据库,数据表%@创建成功",dataTable];
         }
-        [self printLogMsg:msg];
+        [self.modelParser printLogMsg:msg];
     }];
     return rlt;
 }
@@ -275,21 +299,21 @@
 -(BOOL)insertDataModel:(id)model{
     __block BOOL rlt = FALSE;
     // 1. 先判断数据表是否存在
-    if (![self isExistTable:NSStringFromClass([model class])]) {
+    NSString *dataTable = [self assembleDataTableWithModelCls:[model class]];
+    if (![self isExistTable:dataTable]) {
         [self createTableWithModelCls:[model class]];
     }
     // 2. 插入数据
     [self.dataBaseQueue inDatabase:^(FMDatabase *db) {
         if ([self openDataBase:db]) {
-            NSString *sql = [NSString stringWithFormat:@"insert into %@ %@",NSStringFromClass([model class]),[self.modelParser sqlForInsertDataIntoTableWithModel:model]];
-            NSLog(@"\n %@ \n",sql);
+            NSString *sql = [NSString stringWithFormat:@"insert into %@ %@",dataTable,[self.modelParser sqlForInsertDataIntoTableWithModel:model]];
             if ([db executeUpdate:sql withArgumentsInArray:self.modelParser.modelValues]) {
                 rlt = TRUE;
             }
             [self.modelParser.modelValues removeAllObjects];
         }
     }];
-    rlt ? [self printLogMsg:@"数据插入成功"] : [self printLogMsg:@"数据插入失败"];
+    rlt ? [self.modelParser printLogMsg:@"数据插入成功"] : [self.modelParser printLogMsg:@"数据插入失败"];
     return rlt;
 }
 
@@ -297,11 +321,12 @@
 
 -(NSArray *)queryDataForModelCls:(Class)modelCls querySql:(NSString *)querySql orderKey:(NSString *)orderKey{
    __block NSMutableArray *rlt = [NSMutableArray new];
-    if ([self isExistTable:NSStringFromClass(modelCls)]) {
+    NSString *dataTable = [self assembleDataTableWithModelCls:modelCls];
+    if ([self isExistTable:dataTable]) {
         [self.dataBaseQueue inDatabase:^(FMDatabase *db) {
             if ([self openDataBase:db]) {
                 NSString *tmpQuerySql = querySql ? [NSString stringWithFormat:@"where %@",querySql] : @"";
-                NSString *sql = [NSString stringWithFormat:@"select * from %@ %@ order by %@ asc",NSStringFromClass(modelCls),tmpQuerySql,orderKey];
+                NSString *sql = [NSString stringWithFormat:@"select * from %@ %@ order by %@ asc",dataTable,tmpQuerySql,orderKey];
                 FMResultSet *rltSet = [db executeQuery:sql];
                 while ([rltSet next]) {
                     id model = [modelCls new];
@@ -314,14 +339,71 @@
     return rlt;
 }
 
+#pragma mark - 依据给定的查重字段筛选数据库 - 默认全部升序排列 - 调试未通过
+
+- (NSArray *)distinctDataForModelCls:(Class)modelCls distinctKey:(NSString *)distinctKey orderKey:(NSString *)orderKey{
+    __block NSMutableArray *rlt = [NSMutableArray new];
+    NSString *dataTable = [self assembleDataTableWithModelCls:modelCls];
+    if ([self isExistTable:dataTable]) {
+        [self.dataBaseQueue inDatabase:^(FMDatabase *db) {
+            if ([self openDataBase:db]) {
+                NSString *sql = [NSString stringWithFormat:@"select distinct %@ from %@",distinctKey,dataTable];
+                FMResultSet *rltSet = [db executeQuery:sql];
+                while ([rltSet next]) {
+                    id model = [modelCls new];
+                    [self.modelParser configValuesForModel:model rltSet:rltSet];
+                    [rlt addObject:model];
+                }
+            }
+        }];
+    }
+    return rlt;
+}
+
+#pragma mark ------ 删除数据表数据
+
+-(BOOL)deleteDataFromTableWithModelCls:(Class)modelCls deleteSql:(NSString *)deleteSql{
+    __block BOOL rlt = FALSE;
+    NSString *dataTable = [self assembleDataTableWithModelCls:modelCls];
+    [self.dataBaseQueue inDatabase:^(FMDatabase *db) {
+        if ([self openDataBase:db]) {
+            NSString *sql = [NSString stringWithFormat:@"delete from %@ where %@;",dataTable,deleteSql];
+            rlt = [db executeUpdate:sql];
+        }
+    }];
+    rlt ? [self.modelParser printLogMsg:[NSString stringWithFormat:@"数据表%@删除数据成功",dataTable]] : [self.modelParser printLogMsg:[NSString stringWithFormat:@"数据表%@删除数据失败",dataTable]];
+    return rlt;
+}
+
+#pragma mark ------ 给指定数据表增加字段
+
+-(BOOL)addKeyForDataTableWithModelCls:(Class)modelCls addKeySql:(NSString *)addKeySql{
+    __block BOOL rlt = FALSE;
+    NSString *dataTable = [self assembleDataTableWithModelCls:modelCls];
+    [self.dataBaseQueue inDatabase:^(FMDatabase *db) {
+        if ([self openDataBase:db]) {
+            NSString *sql = [NSString stringWithFormat:@"alter table %@ add column %@;",dataTable,addKeySql];
+            rlt = [db executeUpdate:sql];
+        }
+    }];
+    rlt ? [self.modelParser printLogMsg:[NSString stringWithFormat:@"数据表%@增加字段成功",dataTable]] : [self.modelParser printLogMsg:[NSString stringWithFormat:@"数据表%@增加字段失败",dataTable]];
+    return rlt;
+}
+
 #pragma mark ------ private method
+
+#pragma mark - 生成数据表
+
+- (NSString *)assembleDataTableWithModelCls:(Class)modelCls{
+    NSString *dataTable = [NSString stringWithFormat:@"%@%@",NSStringFromClass(modelCls),kdataTable];
+    return dataTable;
+}
 
 #pragma mark - 存储路径
 
 - (NSString *)filePathWithFileName:(NSString *)fileName{
     NSString *documentPath = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) firstObject];
-    NSString *filePath = [documentPath stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.sqlite",fileName]];
-    [self printLogMsg:[NSString stringWithFormat:@"数据库存储路径：%@",filePath]];
+    NSString *filePath = [documentPath stringByAppendingPathComponent:[NSString stringWithFormat:@"%@%@.sqlite",fileName,kdataBase]];
     return filePath;
 }
 
@@ -353,11 +435,6 @@
         [rltSet close];
     }];
     return rlt;
-}
-
-#pragma mark - log
-- (void)printLogMsg:(NSString *)msg{
-    isLog ? NSLog(@"\n %@ \n",msg) : nil;
 }
 
 #pragma mark - lazy load

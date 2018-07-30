@@ -46,7 +46,7 @@
         const char *type = ivar_getTypeEncoding(ivar);
         NSString *typeString = [NSString stringWithCString:type encoding:NSUTF8StringEncoding];
         NSString *keyNameString = [NSString stringWithCString:keyName encoding:NSUTF8StringEncoding];
-        NSLog(@"\n \n key :%@ \n type:%@\n \n",keyNameString,typeString);
+        //NSLog(@"\n \n key :%@ \n type:%@\n \n",keyNameString,typeString);
         // 3. KVC 技术获取 value
         id value = [self valueForKeyPath:keyNameString];
         // 4. 归档

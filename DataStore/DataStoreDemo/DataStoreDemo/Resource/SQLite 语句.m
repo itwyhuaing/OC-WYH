@@ -1,5 +1,6 @@
 /** 参考
- iOS 基于FMDB简单的查询操作 https://blog.csdn.net/rpf2014/article/details/53116906
+ iOS 基于FMDB简单的查询操作
+ https://blog.csdn.net/rpf2014/article/details/53116906
  
  */
 
@@ -69,16 +70,28 @@
    select * from Book where 字段名='' and where 字段名=''
    select name,url from Book where name = '钢铁是怎么炼成的'
   
+   (4) 查询 - 查重
+   select distinct 字段名 from 表名
    */
 
 #pragma mark ------ 更新
  /**
   4.更新
-  update 表名 set 属性名 = '关键字' where 属性名 = 关键字
+  update 表名 set 属性名='关键字' where 属性名 = 关键字
   
-  例如：
+  例如：更新数据表中id=2这条数据中url信息
   update Book set url='www.aaa.com' where id = 2
   */
+
+#pragma mark ------ 添加属性(字段)
+/**
+ 7.添加属性(字段)
+ alter table 表名 add column 属性名 类型;
+ 
+ 例如：
+ alter table Book add column price integer;
+ 聚合函数
+ */
 
 #pragma mark ------ 删除数据
 /**
@@ -93,16 +106,6 @@
 /**
   6.删除整张表
   drop table 表名;
- */
-
-#pragma mark ------ 添加属性(字段)
-/**
-  7.添加属性(字段)
-  alter table 表名 add column 属性名 类型;
-  
-  例如：
-  alter table Book add column price integer;
-  聚合函数
  */
 
 #pragma mark ------ 求和

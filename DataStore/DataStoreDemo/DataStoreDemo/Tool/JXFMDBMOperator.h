@@ -14,6 +14,12 @@
 
 
 /**
+ 打印开启状态 ：TRUE - 打印 ，FALSE - 关闭
+ */
+@property (nonatomic,assign) BOOL logStatus;
+- (void)printLogMsg:(NSString *)msg;
+
+/**
  保存插入数据操作所解析出的 values 值
  */
 @property (nonatomic,strong) NSMutableArray                 *modelValues;
@@ -21,7 +27,7 @@
 /**
  解析数据模型的属性结构，并组装生成相应表的 SQLite 语句
 
- @param modelCls 传入数据模型类名
+ @param modelCls 待处理的数据的数据类型
  @return 相应的 SQLite 语句
  */
 - (NSString *)sqlForTableKeyWithModelCls:(Class)modelCls;
@@ -73,6 +79,14 @@
 
 
 /**
+ 删除数据表
+
+ @param modelCls 待处理的数据的数据类型
+ @return 操作状态 ：TRUE - 成功 、FALSE - 失败
+ */
+- (BOOL)deleteDataTableWithModelCls:(Class)modelCls;
+
+/**
  创建数据库
 
  @param dbName 数据库名称
@@ -84,7 +98,7 @@
 /**
  创建表
 
- @param modelCls 待存储的数据类型
+ @param modelCls 待处理的数据的数据类型
  @return 操作状态 ：TRUE - 成功 、FALSE - 失败
  */
 -(BOOL)createTableWithModelCls:(Class)modelCls;
@@ -102,12 +116,43 @@
 /**
  读取数据库数据 - 默认全部升序排列
 
- @param modelCls 待读取的数据的数据类型
+ @param modelCls 待处理的数据的数据类型
  @param querySql 查询语句 例如：1单个条件> name='wyh'    2 and 或 or 条件> name='wyh' and age>18      3 空> 为空时意味着不设置查询条件即查询全部数据
  @param orderKey 结果排序关键字即数据模型属性
  @return 读取数据结果，以相应模型的数组形式给出
  */
 - (NSArray *)queryDataForModelCls:(Class)modelCls querySql:(NSString *)querySql orderKey:(NSString *)orderKey;
+
+
+/**
+ 依据给定的查重字段筛选数据库 - 默认全部升序排列
+
+ @param modelCls 待处理的数据的数据类型
+ @param distinctKey 给定的查重字段
+ @param orderKey 结果排序关键字即数据模型属性
+ @return 查重之后的数据结果，以相应模型的数组形式给出
+ */
+- (NSArray *)distinctDataForModelCls:(Class)modelCls distinctKey:(NSString *)distinctKey orderKey:(NSString *)orderKey;
+
+
+/**
+ 删除数据表数据
+
+ @param modelCls 待处理的数据的数据类型
+ @param deleteSql 删除语句 例如： name='wyh'  2> age=18  age<18  age>=18  3> name='wyh' and age>=18 or mark>90
+ @return 操作状态 ：TRUE - 成功 、FALSE - 失败
+ */
+- (BOOL)deleteDataFromTableWithModelCls:(Class)modelCls deleteSql:(NSString *)deleteSql;
+
+
+/**
+ 给指定数据表增加字段
+
+ @param modelCls 待处理的数据的数据类型
+ @param addKeySql 新增数据表字段语句 例如：1> name text 2> age integer 3> testObj blob
+ @return 操作状态 ：TRUE - 成功 、FALSE - 失败
+ */
+- (BOOL)addKeyForDataTableWithModelCls:(Class)modelCls addKeySql:(NSString *)addKeySql;
 
 /**
  用于快速测试
