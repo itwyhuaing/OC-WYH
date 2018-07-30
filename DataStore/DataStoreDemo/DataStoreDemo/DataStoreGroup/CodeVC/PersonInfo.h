@@ -27,4 +27,9 @@
 @property (nonatomic,assign) int            intTest;
 @property (nonatomic,assign) float          floatTest;
 
+@property (nonatomic,copy)   NSString       *addStr;
+@property (nonatomic,strong) NSArray        *addArr;
+@property (nonatomic,strong) NSDictionary   *addDic;
+@property (nonatomic,assign) CGFloat        addFloat;
+
 @end

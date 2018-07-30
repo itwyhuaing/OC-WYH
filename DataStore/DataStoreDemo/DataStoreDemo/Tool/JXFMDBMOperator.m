@@ -139,7 +139,7 @@ static NSString *kcustomid = @"customid";    /**<存储数据主键>*/
         if ([typeForSql isEqualToString:@"blob"] || [typeForSql isEqualToString:@"BLOB"]) {
             value = [NSKeyedArchiver archivedDataWithRootObject:value];
         }
-        [self.modelValues addObject:value];
+        value != nil ? [self.modelValues addObject:value] : nil;
         
         // 4. 拼接 sql 语句
         [keySql appendFormat:@"%@",[keyNameString substringFromIndex:1]];

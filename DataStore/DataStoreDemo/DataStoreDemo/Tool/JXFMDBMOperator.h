@@ -146,7 +146,7 @@
 
 
 /**
- 给指定数据表增加字段
+ 给指定数据表增加字段 :在项目版本迭代过程中，会有增加字段的需求 。简述 1> 数据模型增加相应属性 2>插入数据之前调用该方法
 
  @param modelCls 待处理的数据的数据类型
  @param addKeySql 新增数据表字段语句 例如：1> name text 2> age integer 3> testObj blob

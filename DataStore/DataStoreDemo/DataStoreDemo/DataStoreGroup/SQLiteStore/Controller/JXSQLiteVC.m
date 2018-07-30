@@ -21,13 +21,13 @@
     self.displayLabel.text = @" 1> FMDB简单操作分析  \n \n \n2> 点击启动按钮,删除旧数据库，创建新数据库 \n \n \n3> 观察沙盒路径文件变化";
     [[JXFMDBMOperator sharedInstance] openLog];
     // 删除旧库
-    [[JXFMDBMOperator sharedInstance] deleteDataBaseWithdbName:NSStringFromClass([self class])];
+    //[[JXFMDBMOperator sharedInstance] deleteDataBaseWithdbName:NSStringFromClass([self class])];
     // 创建新库
     [[JXFMDBMOperator sharedInstance] createDataBaseWithdbName:NSStringFromClass([self class])];
     // 创建表
     [[JXFMDBMOperator sharedInstance] createTableWithModelCls:[PersonInfo class]];
     // 插入数据
-    [self insertData];
+    [self insertDataWithCount:1];
 }
 
 
@@ -39,19 +39,36 @@
     //[self deleteDataTable];
     
     //删除数据表数据
-    [self deleteData];
+    //[self deleteData];
     
+    // 数据表新增字段
     [self addKeyForTable];
+    [self insertDataAfterAdd];
     
     // 读取数据库中指定数据表数据
     [self queryData];
 }
+#pragma mark - 插入操作、新增字段
+
+- (void)insertDataAfterAdd{
+    NSArray *data = [self loadPersonInfoDataSourceWithTotal:1];
+    for (PersonInfo *f in data) {
+        f.addStr    = @"addStr";
+        f.addArr    = @[@"addStr1",@"addStr2"];
+        f.addDic    = @{
+                     @"k1":@"v1",
+                     @"k3":@"v2",
+                     };
+        f.addFloat  = 0.88;
+        [[JXFMDBMOperator sharedInstance] insertDataModel:f];
+    }
+}
 
 #pragma mark - 插入操作
 
-- (void)insertData{
+- (void)insertDataWithCount:(NSInteger)count{
     // 插入数据
-    NSArray *data = [self loadPersonInfoDataSourceWithTotal:8];
+    NSArray *data = [self loadPersonInfoDataSourceWithTotal:count];
     for (PersonInfo *f in data) {
         [[JXFMDBMOperator sharedInstance] insertDataModel:f];
     }
@@ -98,7 +115,10 @@
 
 // 新增表字段
 - (void)addKeyForTable{
-    [[JXFMDBMOperator sharedInstance] addKeyForDataTableWithModelCls:[PersonInfo class] addKeySql:@"writingName text"];
+    [[JXFMDBMOperator sharedInstance] addKeyForDataTableWithModelCls:[PersonInfo class] addKeySql:@"addStr text"];
+    [[JXFMDBMOperator sharedInstance] addKeyForDataTableWithModelCls:[PersonInfo class] addKeySql:@"addArr blob"];
+    [[JXFMDBMOperator sharedInstance] addKeyForDataTableWithModelCls:[PersonInfo class] addKeySql:@"addDic blob"];
+    [[JXFMDBMOperator sharedInstance] addKeyForDataTableWithModelCls:[PersonInfo class] addKeySql:@"addFloat f"];
 }
 
 // 更新/修改表数据
