@@ -155,6 +155,22 @@
 - (BOOL)addKeyForDataTableWithModelCls:(Class)modelCls addKeySql:(NSString *)addKeySql;
 
 /**
+ 更新指定数据表中指定数据 ：updateValue - 暂不支持数组、字典等对象
+
+ @param modelCls 待处理的数据的数据类型
+ @param updateKey 待更新的字段
+ @param updateValue 待更新的值
+ @param locationKey 定位待更新数据的字段
+ @param locationValue 定位待更新数据的值
+ @return 操作状态 ：TRUE - 成功 、FALSE - 失败
+ */
+- (BOOL)updateTableDataWithModelCls:(Class)modelCls
+                          updateKey:(NSString *)updateKey
+                        updateValue:(id)updateValue
+                        locationKey:(NSString *)locationKey
+                      locationValue:(id)locationValue;
+
+/**
  用于快速测试
  */
 - (void)testMethod:(id)modelCls;

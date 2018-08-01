@@ -26,7 +26,6 @@
 		265916911F02578D00BE2AEF /* MovieCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 265916881F02578D00BE2AEF /* MovieCell.xib */; };
 		265916941F0257AE00BE2AEF /* DataStoreMainView.m in Sources */ = {isa = PBXBuildFile; fileRef = 265916931F0257AE00BE2AEF /* DataStoreMainView.m */; };
 		2659169A1F02585300BE2AEF /* YHDataBaseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 265916971F02585300BE2AEF /* YHDataBaseManager.m */; };
-		2659169B1F02585300BE2AEF /* YHFileOperator.m in Sources */ = {isa = PBXBuildFile; fileRef = 265916991F02585300BE2AEF /* YHFileOperator.m */; };
 		265916A91F02597000BE2AEF /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 2659169F1F02597000BE2AEF /* FMDatabase.m */; };
 		265916AA1F02597000BE2AEF /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 265916A11F02597000BE2AEF /* FMDatabaseAdditions.m */; };
 		265916AB1F02597000BE2AEF /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = 265916A31F02597000BE2AEF /* FMDatabasePool.m */; };
@@ -54,11 +53,11 @@
 		267E0066210081FC002566DC /* YHBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 267E0065210081FC002566DC /* YHBaseModel.m */; };
 		267E00692100887C002566DC /* SQLite 语句.m in Sources */ = {isa = PBXBuildFile; fileRef = 267E00682100887B002566DC /* SQLite 语句.m */; };
 		267E006C21018D81002566DC /* JXFMDBMOperator.m in Sources */ = {isa = PBXBuildFile; fileRef = 267E006B21018D81002566DC /* JXFMDBMOperator.m */; };
+		268B35652111483400660D22 /* JXFileOperator.m in Sources */ = {isa = PBXBuildFile; fileRef = 268B35642111483400660D22 /* JXFileOperator.m */; };
 		26A6AF012105BB1700CFA01A /* Son.m in Sources */ = {isa = PBXBuildFile; fileRef = 26A6AF002105BB1700CFA01A /* Son.m */; };
 		26A6AF042105EA0F00CFA01A /* JXSQLiteVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 26A6AF032105EA0F00CFA01A /* JXSQLiteVC.m */; };
 		26A6AF0D2109781400CFA01A /* PredicateVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 26A6AF0C2109781400CFA01A /* PredicateVC.m */; };
 		26A6AF1021097B0300CFA01A /* PredicateTestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 26A6AF0F21097B0300CFA01A /* PredicateTestModel.m */; };
-		26FC0EDD1F18B6DD002CFCC7 /* HNBFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 26FC0EDC1F18B6DD002CFCC7 /* HNBFileManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -97,8 +96,6 @@
 		265916931F0257AE00BE2AEF /* DataStoreMainView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataStoreMainView.m; sourceTree = "<group>"; };
 		265916961F02585300BE2AEF /* YHDataBaseManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YHDataBaseManager.h; sourceTree = "<group>"; };
 		265916971F02585300BE2AEF /* YHDataBaseManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YHDataBaseManager.m; sourceTree = "<group>"; };
-		265916981F02585300BE2AEF /* YHFileOperator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YHFileOperator.h; sourceTree = "<group>"; };
-		265916991F02585300BE2AEF /* YHFileOperator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YHFileOperator.m; sourceTree = "<group>"; };
 		2659169E1F02597000BE2AEF /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
 		2659169F1F02597000BE2AEF /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabase.m; sourceTree = "<group>"; };
 		265916A01F02597000BE2AEF /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseAdditions.h; sourceTree = "<group>"; };
@@ -152,6 +149,8 @@
 		267E00682100887B002566DC /* SQLite 语句.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SQLite 语句.m"; sourceTree = "<group>"; };
 		267E006A21018D81002566DC /* JXFMDBMOperator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JXFMDBMOperator.h; sourceTree = "<group>"; };
 		267E006B21018D81002566DC /* JXFMDBMOperator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JXFMDBMOperator.m; sourceTree = "<group>"; };
+		268B35632111483400660D22 /* JXFileOperator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JXFileOperator.h; sourceTree = "<group>"; };
+		268B35642111483400660D22 /* JXFileOperator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JXFileOperator.m; sourceTree = "<group>"; };
 		26A6AEFF2105BB1700CFA01A /* Son.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Son.h; sourceTree = "<group>"; };
 		26A6AF002105BB1700CFA01A /* Son.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Son.m; sourceTree = "<group>"; };
 		26A6AF022105EA0F00CFA01A /* JXSQLiteVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JXSQLiteVC.h; sourceTree = "<group>"; };
@@ -160,8 +159,6 @@
 		26A6AF0C2109781400CFA01A /* PredicateVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PredicateVC.m; sourceTree = "<group>"; };
 		26A6AF0E21097B0300CFA01A /* PredicateTestModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PredicateTestModel.h; sourceTree = "<group>"; };
 		26A6AF0F21097B0300CFA01A /* PredicateTestModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PredicateTestModel.m; sourceTree = "<group>"; };
-		26FC0EDB1F18B6DD002CFCC7 /* HNBFileManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HNBFileManager.h; sourceTree = "<group>"; };
-		26FC0EDC1F18B6DD002CFCC7 /* HNBFileManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HNBFileManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -345,14 +342,12 @@
 		265916951F02585300BE2AEF /* Tool */ = {
 			isa = PBXGroup;
 			children = (
-				26FC0EDB1F18B6DD002CFCC7 /* HNBFileManager.h */,
-				26FC0EDC1F18B6DD002CFCC7 /* HNBFileManager.m */,
 				265916961F02585300BE2AEF /* YHDataBaseManager.h */,
 				265916971F02585300BE2AEF /* YHDataBaseManager.m */,
-				265916981F02585300BE2AEF /* YHFileOperator.h */,
-				265916991F02585300BE2AEF /* YHFileOperator.m */,
 				267E006A21018D81002566DC /* JXFMDBMOperator.h */,
 				267E006B21018D81002566DC /* JXFMDBMOperator.m */,
+				268B35632111483400660D22 /* JXFileOperator.h */,
+				268B35642111483400660D22 /* JXFileOperator.m */,
 			);
 			path = Tool;
 			sourceTree = "<group>";
@@ -546,12 +541,10 @@
 				265916AA1F02597000BE2AEF /* FMDatabaseAdditions.m in Sources */,
 				2659168E1F02578D00BE2AEF /* SQLiteVC.m in Sources */,
 				265916AD1F02597000BE2AEF /* FMResultSet.m in Sources */,
-				26FC0EDD1F18B6DD002CFCC7 /* HNBFileManager.m in Sources */,
 				2659168D1F02578D00BE2AEF /* PlistVC.m in Sources */,
 				265916941F0257AE00BE2AEF /* DataStoreMainView.m in Sources */,
 				265916681F02545700BE2AEF /* ViewController.m in Sources */,
 				265916D81F0259A800BE2AEF /* SDWebImageDownloaderOperation.m in Sources */,
-				2659169B1F02585300BE2AEF /* YHFileOperator.m in Sources */,
 				2659168F1F02578D00BE2AEF /* Movie.m in Sources */,
 				26A6AF0D2109781400CFA01A /* PredicateVC.m in Sources */,
 				265916DA1F0259A800BE2AEF /* SDWebImagePrefetcher.m in Sources */,
@@ -564,6 +557,7 @@
 				2659168B1F02578D00BE2AEF /* DefaultVC.m in Sources */,
 				2659166F1F0256F600BE2AEF /* YHBaseTable.m in Sources */,
 				26A6AF012105BB1700CFA01A /* Son.m in Sources */,
+				268B35652111483400660D22 /* JXFileOperator.m in Sources */,
 				267E006C21018D81002566DC /* JXFMDBMOperator.m in Sources */,
 				265916671F02545700BE2AEF /* AppDelegate.m in Sources */,
 				2659164C1F02375800BE2AEF /* main.m in Sources */,

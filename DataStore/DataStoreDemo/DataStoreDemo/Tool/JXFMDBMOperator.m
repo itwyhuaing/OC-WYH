@@ -390,6 +390,21 @@ static NSString *kcustomid = @"customid";    /**<存储数据主键>*/
     return rlt;
 }
 
+#pragma mark ------ 更新指定数据表中指定数据
+
+-(BOOL)updateTableDataWithModelCls:(Class)modelCls updateKey:(NSString *)updateKey updateValue:(id)updateValue locationKey:(NSString *)locationKey locationValue:(id)locationValue{
+    __block BOOL rlt = FALSE;
+    NSString *dataTable = [self assembleDataTableWithModelCls:modelCls];
+    ([updateValue isKindOfClass:[NSString class]] && [locationValue isKindOfClass:[NSString class]]) ? [self.dataBaseQueue inDatabase:^(FMDatabase *db) {
+        if ([self openDataBase:db]) {
+            NSString *sql = [NSString stringWithFormat:@"update %@ set %@=? where %@=?;",dataTable,updateKey,locationKey];
+            rlt = [db executeUpdate:sql withArgumentsInArray:@[updateValue,locationValue]];
+        }
+    }] : nil;
+    rlt ? [self.modelParser printLogMsg:[NSString stringWithFormat:@"数据表%@数据更新成功",dataTable]] : [self.modelParser printLogMsg:[NSString stringWithFormat:@"数据表%@数据更新失败",dataTable]];
+    return rlt;
+}
+
 #pragma mark ------ private method
 
 #pragma mark - 生成数据表

@@ -27,7 +27,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.displayLabel.text = @" 1> 点击启动按钮,删除旧数据库，创建新数据库 \n \n \n 2> 观察沙盒路径文件变化";
+    self.displayLabel.text = @"1> 简单 sql 拼接测试 \n \n \n 2> 点击启动按钮,删除旧数据库，创建新数据库 \n \n \n 3> 观察沙盒路径文件变化";
 
 }
 

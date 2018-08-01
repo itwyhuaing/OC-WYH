@@ -18,7 +18,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.displayLabel.text = @" 1> FMDB简单操作分析  \n \n \n2> 点击启动按钮,删除旧数据库，创建新数据库 \n \n \n3> 观察沙盒路径文件变化";
+    self.displayLabel.text = @" 1> FMDB简单操作分析及应用中添加运行时技术  \n \n \n2> 点击启动按钮,删除旧数据库，创建新数据库 \n \n \n3> 观察沙盒路径文件变化";
     [[JXFMDBMOperator sharedInstance] openLog];
     // 删除旧库
     //[[JXFMDBMOperator sharedInstance] deleteDataBaseWithdbName:NSStringFromClass([self class])];
@@ -27,7 +27,7 @@
     // 创建表
     [[JXFMDBMOperator sharedInstance] createTableWithModelCls:[PersonInfo class]];
     // 插入数据
-    [self insertDataWithCount:1];
+    [self insertDataWithCount:8];
 }
 
 
@@ -42,8 +42,11 @@
     //[self deleteData];
     
     // 数据表新增字段
-    [self addKeyForTable];
-    [self insertDataAfterAdd];
+    //[self addKeyForTable];
+    //[self insertDataAfterAdd];
+    
+    // 更新数据表数据
+    [self updateTableData];
     
     // 读取数据库中指定数据表数据
     [self queryData];
@@ -51,17 +54,17 @@
 #pragma mark - 插入操作、新增字段
 
 - (void)insertDataAfterAdd{
-    NSArray *data = [self loadPersonInfoDataSourceWithTotal:1];
-    for (PersonInfo *f in data) {
-        f.addStr    = @"addStr";
-        f.addArr    = @[@"addStr1",@"addStr2"];
-        f.addDic    = @{
-                     @"k1":@"v1",
-                     @"k3":@"v2",
-                     };
-        f.addFloat  = 0.88;
-        [[JXFMDBMOperator sharedInstance] insertDataModel:f];
-    }
+//    NSArray *data = [self loadPersonInfoDataSourceWithTotal:1];
+//    for (PersonInfo *f in data) {
+//        f.addStr    = @"addStr";
+//        f.addArr    = @[@"addStr1",@"addStr2"];
+//        f.addDic    = @{
+//                     @"k1":@"v1",
+//                     @"k3":@"v2",
+//                     };
+//        f.addFloat  = 0.88;
+//        [[JXFMDBMOperator sharedInstance] insertDataModel:f];
+//    }
 }
 
 #pragma mark - 插入操作
@@ -122,7 +125,29 @@
 }
 
 // 更新/修改表数据
-
+- (void)updateTableData{
+    // 更新 字符串 类型
+    [[JXFMDBMOperator sharedInstance] updateTableDataWithModelCls:[PersonInfo class]
+                                                        updateKey:@"name"
+                                                      updateValue:@"updateNameRain"
+                                                      locationKey:@"age"
+                                                    locationValue:@28];
+    
+    // 更新 数组 类型 - 失败
+//    NSDictionary *math2 = @{
+//                           @"math":@"66",
+//                           @"subID":@"88"
+//                           };
+//    NSDictionary *english2 = @{
+//                              @"subName":@"99",
+//                              @"subID":@"00"
+//                              };
+//    [[JXFMDBMOperator sharedInstance] updateTableDataWithModelCls:[PersonInfo class]
+//                                                        updateKey:@"subs"
+//                                                      updateValue:@[math2,english2]
+//                                                      locationKey:@"age"
+//                                                    locationValue:@28];
+}
 
 #pragma mark - 去重操作
 

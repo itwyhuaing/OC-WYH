@@ -30,11 +30,11 @@
     NSArray *arr = @[@"name",@"age"];
     NSDictionary *dic = @{@"key1":@"value1",@"key2":arr};
     
-    BOOL isStrW = [YHFileOperator defaultSaveInfo:testString forKey:DEFAULT_KEY_STRING];
-    BOOL isArrW = [YHFileOperator defaultSaveInfo:arr forKey:DEFAULT_KEY_ARR];
-    BOOL isDicW = [YHFileOperator defaultSaveInfo:dic forKey:DEFAULT_KEY_DIC];
-    
-    NSDictionary *dictR = [YHFileOperator defaultGetInfoCls:[NSDictionary class] forKey:DEFAULT_KEY_DIC];
+    BOOL isStrW = [JXFileOperator sandBoxSaveInfo:testString forKey:DEFAULT_KEY_STRING];
+    BOOL isArrW = [JXFileOperator sandBoxSaveInfo:arr forKey:DEFAULT_KEY_ARR];
+    BOOL isDicW = [JXFileOperator sandBoxSaveInfo:dic forKey:DEFAULT_KEY_DIC];
+
+    NSDictionary *dictR = [JXFileOperator sandBoxGetInfo:[NSDictionary class] forKey:DEFAULT_KEY_DIC];
     NSLog(@" 读取到的数据 ：%@",dictR);
     
 }
