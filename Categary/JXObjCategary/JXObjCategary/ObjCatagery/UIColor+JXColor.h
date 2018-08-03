@@ -30,9 +30,10 @@
 /**
  依据图片上的位置获取颜色
 
+ @param image 图片
  @param point 位置
  @return 计算获取到的位置颜色
  */
-+ (UIColor *)colorAtLocation:(CGPoint)point;
++ (UIColor *)colorFromImage:(UIImage *)image location:(CGPoint)point;
 
 @end

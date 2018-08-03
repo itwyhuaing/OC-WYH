@@ -10,6 +10,14 @@
 
 @implementation UIImage (JXImage)
 
++(UIImage *)customImageWithOriginImage:(UIImage *)orgImg toSize:(CGSize)size{
+    UIGraphicsBeginImageContext(size);
+    [orgImg drawInRect:CGRectMake(0, 0, size.width, size.height)];
+    UIImage *rltImg = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return rltImg;
+}
+
 +(UIImage *)imageWithColor:(UIColor *)clr{
     
     const CGFloat alpha     = CGColorGetAlpha(clr.CGColor);

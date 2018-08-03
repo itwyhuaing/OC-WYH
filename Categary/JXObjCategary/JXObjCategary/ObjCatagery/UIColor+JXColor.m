@@ -10,9 +10,12 @@
 
 @implementation UIColor (JXColor)
 
+#pragma mark ------ RGB 样式 或 16 进制方式设置颜色
+
 + (UIColor *)colorWithR:(CGFloat)red G:(CGFloat)green B:(CGFloat)blue A:(CGFloat)alpha{
     return [UIColor colorWithRed:red green:green blue:blue alpha:alpha];
 }
+
 
 + (UIColor *)colorWithHexSring:(NSString *)hexString A:(CGFloat)alpha{
     if (hexString == nil) {
@@ -25,6 +28,7 @@
     return [UIColor colorWithRed:((rgbValue & 0xFF0000) >> 16)/255.0 green:((rgbValue & 0xFF00) >> 8)/255.0 blue:(rgbValue & 0xFF)/255.0 alpha:alpha];
 }
 
+#pragma mark ------ 依据图片获取颜色
 
 + (UIColor *)colorWithImage:(UIImage *)img{
     //方法来自http://blog.csdn.net/ki19880210/article/details/38750789
@@ -115,109 +119,45 @@ static void RGBtoHSV( float r, float g, float b, float *h, float *s, float *v ) 
     }
 }
 
+#pragma mark ------ 依据图片上的位置获取颜色
 
-+ (UIColor *)colorAtLocation:(CGPoint)point img:(UIImage *)img{
-    // http://www.cocoachina.com/bbs/read.php?tid=109919
-    
-    UIColor* color = nil;
-    CGImageRef inImage = img.CGImage;
-    // Create off screen bitmap context to draw the image into. Format ARGB is 4 bytes for each pixel: Alpa, Red, Green, Blue
-    CGContextRef cgctx = [self createARGBBitmapContextFromImage:inImage];
-    if (cgctx == NULL) {
-        return nil; /* error */
-    }
-    
-    size_t w = CGImageGetWidth(inImage);
-    size_t h = CGImageGetHeight(inImage);
-    CGRect rect = {{0,0},{w,h}};
-    
-    // Draw the image to the bitmap context. Once we draw, the memory
-    // allocated for the context for rendering will then contain the
-    // raw image data in the specified color space.
-    CGContextDrawImage(cgctx, rect, inImage);
-    
-    // Now we can get a pointer to the image data associated with the bitmap
-    // context.
-    unsigned char* data = CGBitmapContextGetData (cgctx);
-    if (data != NULL) {
-        //offset locates the pixel in the data from x,y.
-        //4 for 4 bytes of data per pixel, w is width of one row of data.
-        int offset = 4*((w*round(point.y))+round(point.x));
-        int alpha =  data[offset];
-        int red = data[offset+1];
-        int green = data[offset+2];
-        int blue = data[offset+3];
-        //NSLog(@"offset: %i colors: RGB A %i %i %i  %i",offset,red,green,blue,alpha);
-        color = [UIColor colorWithRed:(red/255.0f) green:(green/255.0f) blue:(blue/255.0f) alpha:(alpha/255.0f)];
++(UIColor *)colorFromImage:(UIImage *)image location:(CGPoint)point{
+    UIColor *ptClr = nil;
+    if (CGRectContainsPoint(CGRectMake(0, 0, image.size.width, image.size.height), point)) {
+        NSInteger ptX           = truncl(point.x); /**<直接舍去小数>*/
+        NSInteger ptY           = truncl(point.y);
+        CGImageRef cgimg        = image.CGImage;
+        NSUInteger w            = image.size.width;
+        NSUInteger h            = image.size.height;
+        CGColorSpaceRef clrSpace= CGColorSpaceCreateDeviceRGB();/**<bitmap上下文使用的颜色空间>*/
+        int bytesPerPixel        = 4;/**<bitmap在内存中所占的比特数>*/
+        int bytesPerRow = bytesPerPixel * 1;   /**<bitmap的每一行在内存所占的比特数>*/
+        NSUInteger bitsPerComponent = 8;   /**<内存中像素的每个组件的位数.例如，对于32位像素格式和RGB 颜色空间，你应该将这个值设为8>*/
+        unsigned char pixelData[4] = {0, 0, 0, 0};  /**<初始化像素信息>*/
+        /**<创建位图文件环境。位图文件可自行百度 bitmap 。指定bitmap是否包含alpha通道，像素中alpha通道的相对位置，像素组件是整形还是浮点型等信息的字符串。>*/
+        CGContextRef context = CGBitmapContextCreate(pixelData,
+                                                     1,
+                                                     1,
+                                                     bitsPerComponent,
+                                                     bytesPerRow,
+                                                     clrSpace,
+                                                     kCGImageAlphaPremultipliedLast | kCGBitmapByteOrder32Big);
+        CGColorSpaceRelease(clrSpace);
+        CGContextSetBlendMode(context, kCGBlendModeCopy);/**<当一个颜色覆盖上另外一个颜色，两个颜色的混合方式>*/
+        
+        CGContextTranslateCTM(context, -ptX, ptY - (CGFloat)h);  /**<改变画布位置>*/
+        CGContextDrawImage(context, CGRectMake(0.0f, 0.0f, (CGFloat)w, (CGFloat)h ), cgimg);   /**<绘制图片>*/
+        CGContextRelease(context);
+        
+        CGFloat red = (CGFloat)pixelData[0] / 255.0f;
+        CGFloat green = (CGFloat)pixelData[1] / 255.0f;
+        CGFloat blue = (CGFloat)pixelData[2] / 255.0f;
+        CGFloat alpha = (CGFloat)pixelData[3] / 255.0f;
+        
+        ptClr = [UIColor colorWithRed:red green:green blue:blue alpha:alpha];
         
     }
-    
-    // When finished, release the context
-    CGContextRelease(cgctx);
-    // Free image data memory for the context
-    if (data) { free(data); }
-    return color;
+    return ptClr;
 }
-
-+ (CGContextRef) createARGBBitmapContextFromImage:(CGImageRef) inImage {
-    
-    CGContextRef    context = NULL;
-    CGColorSpaceRef colorSpace;
-    void *          bitmapData;
-    int             bitmapByteCount;
-    int             bitmapBytesPerRow;
-    
-    // Get image width, height. We'll use the entire image.
-    size_t pixelsWide = CGImageGetWidth(inImage);
-    size_t pixelsHigh = CGImageGetHeight(inImage);
-    
-    // Declare the number of bytes per row. Each pixel in the bitmap in this
-    // example is represented by 4 bytes; 8 bits each of red, green, blue, and
-    // alpha.
-    bitmapBytesPerRow   = (pixelsWide * 4);
-    bitmapByteCount     = (bitmapBytesPerRow * pixelsHigh);
-    
-    // Use the generic RGB color space.
-    colorSpace = CGColorSpaceCreateDeviceRGB();
-    
-    if (colorSpace == NULL)
-    {
-        fprintf(stderr, "Error allocating color space\n");
-        return NULL;
-    }
-    
-    // Allocate memory for image data. This is the destination in memory
-    // where any drawing to the bitmap context will be rendered.
-    bitmapData = malloc( bitmapByteCount );
-    if (bitmapData == NULL)
-    {
-        fprintf (stderr, "Memory not allocated!");
-        CGColorSpaceRelease( colorSpace );
-        return NULL;
-    }
-    
-    // Create the bitmap context. We want pre-multiplied ARGB, 8-bits
-    // per component. Regardless of what the source image format is
-    // (CMYK, Grayscale, and so on) it will be converted over to the format
-    // specified here by CGBitmapContextCreate.
-    context = CGBitmapContextCreate (bitmapData,
-                                     pixelsWide,
-                                     pixelsHigh,
-                                     8,      // bits per component
-                                     bitmapBytesPerRow,
-                                     colorSpace,
-                                     kCGImageAlphaPremultipliedFirst);
-    if (context == NULL)
-    {
-        free (bitmapData);
-        fprintf (stderr, "Context not created!");
-    }
-    
-    // Make sure and release colorspace before returning
-    CGColorSpaceRelease( colorSpace );
-    
-    return context;
-}
-
 
 @end
