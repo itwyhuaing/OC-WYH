@@ -7,105 +7,168 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		039BA4CC1E0F7D7ACCDD276C /* libPods-CoreDataPro.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B87F933A46ACAFB6B72EB03A /* libPods-CoreDataPro.a */; };
-		26BA871C211161FF00578E4E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 26BA871B211161FF00578E4E /* AppDelegate.m */; };
-		26BA871F211161FF00578E4E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26BA871E211161FF00578E4E /* ViewController.m */; };
-		26BA8722211161FF00578E4E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26BA8720211161FF00578E4E /* Main.storyboard */; };
-		26BA87272111620000578E4E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 26BA87262111620000578E4E /* Assets.xcassets */; };
-		26BA872A2111620000578E4E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26BA87282111620000578E4E /* LaunchScreen.storyboard */; };
-		26BA872D2111620000578E4E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 26BA872C2111620000578E4E /* main.m */; };
+		26A5BA49211997AE009E77B6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26A5BA47211997AE009E77B6 /* Main.storyboard */; };
+		26A5BA4B211997AF009E77B6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 26A5BA4A211997AF009E77B6 /* Assets.xcassets */; };
+		26A5BA4E211997AF009E77B6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26A5BA4C211997AF009E77B6 /* LaunchScreen.storyboard */; };
+		26A5BA51211997AF009E77B6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 26A5BA50211997AF009E77B6 /* main.m */; };
+		26A5BA5D211998E1009E77B6 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26A5BA59211998E1009E77B6 /* ViewController.m */; };
+		26A5BA5E211998E1009E77B6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 26A5BA5A211998E1009E77B6 /* AppDelegate.m */; };
+		26A5BA682119A09C009E77B6 /* OperateVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 26A5BA662119A09C009E77B6 /* OperateVC.m */; };
+		26A5BA742119A5B3009E77B6 /* model.md in Resources */ = {isa = PBXBuildFile; fileRef = 26A5BA732119A5B3009E77B6 /* model.md */; };
+		26A5BA762119A7F0009E77B6 /* DataOperator.m in Sources */ = {isa = PBXBuildFile; fileRef = 26A5BA752119A7F0009E77B6 /* DataOperator.m */; };
+		7EB5586EF7AC0E9D7471B5A2 /* libPods-CoreDataPro.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 101CC73AD19E8B03C5CDAC3C /* libPods-CoreDataPro.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		26BA8717211161FF00578E4E /* CoreDataPro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoreDataPro.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		26BA871A211161FF00578E4E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		26BA871B211161FF00578E4E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		26BA871D211161FF00578E4E /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		26BA871E211161FF00578E4E /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		26BA8721211161FF00578E4E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		26BA87262111620000578E4E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		26BA87292111620000578E4E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		26BA872B2111620000578E4E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		26BA872C2111620000578E4E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		3ECF90E215760B59849B5982 /* Pods-CoreDataPro.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoreDataPro.release.xcconfig"; path = "Pods/Target Support Files/Pods-CoreDataPro/Pods-CoreDataPro.release.xcconfig"; sourceTree = "<group>"; };
-		B7CDB5DF3CA3F9B905E2C521 /* Pods-CoreDataPro.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoreDataPro.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CoreDataPro/Pods-CoreDataPro.debug.xcconfig"; sourceTree = "<group>"; };
-		B87F933A46ACAFB6B72EB03A /* libPods-CoreDataPro.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CoreDataPro.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		101CC73AD19E8B03C5CDAC3C /* libPods-CoreDataPro.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CoreDataPro.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		26A5BA3E211997AE009E77B6 /* CoreDataPro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoreDataPro.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		26A5BA48211997AE009E77B6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		26A5BA4A211997AF009E77B6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		26A5BA4D211997AF009E77B6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		26A5BA4F211997AF009E77B6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		26A5BA50211997AF009E77B6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		26A5BA58211998E1009E77B6 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		26A5BA59211998E1009E77B6 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		26A5BA5A211998E1009E77B6 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		26A5BA5B211998E1009E77B6 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		26A5BA6221199DCF009E77B6 /* CoreDataPro.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoreDataPro.pch; sourceTree = "<group>"; };
+		26A5BA652119A09C009E77B6 /* OperateVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OperateVC.h; sourceTree = "<group>"; };
+		26A5BA662119A09C009E77B6 /* OperateVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OperateVC.m; sourceTree = "<group>"; };
+		26A5BA6F2119A13E009E77B6 /* DataOperator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataOperator.h; sourceTree = "<group>"; };
+		26A5BA732119A5B3009E77B6 /* model.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = model.md; sourceTree = "<group>"; };
+		26A5BA752119A7F0009E77B6 /* DataOperator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataOperator.m; sourceTree = "<group>"; };
+		3B2566EBD1F81227E6EDEFDA /* Pods-CoreDataPro.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoreDataPro.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CoreDataPro/Pods-CoreDataPro.debug.xcconfig"; sourceTree = "<group>"; };
+		CECA8123A3AF2063A6F58B4C /* Pods-CoreDataPro.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoreDataPro.release.xcconfig"; path = "Pods/Target Support Files/Pods-CoreDataPro/Pods-CoreDataPro.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		26BA8714211161FF00578E4E /* Frameworks */ = {
+		26A5BA3B211997AE009E77B6 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				039BA4CC1E0F7D7ACCDD276C /* libPods-CoreDataPro.a in Frameworks */,
+				7EB5586EF7AC0E9D7471B5A2 /* libPods-CoreDataPro.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		26BA870E211161FF00578E4E = {
+		26A5BA35211997AE009E77B6 = {
 			isa = PBXGroup;
 			children = (
-				26BA8719211161FF00578E4E /* CoreDataPro */,
-				26BA8718211161FF00578E4E /* Products */,
-				B156CFD7E44693C20726F659 /* Pods */,
-				2A0BDBE150FC89EA305C3159 /* Frameworks */,
+				26A5BA40211997AE009E77B6 /* CoreDataPro */,
+				26A5BA3F211997AE009E77B6 /* Products */,
+				5258D37D444D55E01F38CCA9 /* Pods */,
+				7255578880757C0D18571669 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
-		26BA8718211161FF00578E4E /* Products */ = {
+		26A5BA3F211997AE009E77B6 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				26BA8717211161FF00578E4E /* CoreDataPro.app */,
+				26A5BA3E211997AE009E77B6 /* CoreDataPro.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		26BA8719211161FF00578E4E /* CoreDataPro */ = {
+		26A5BA40211997AE009E77B6 /* CoreDataPro */ = {
 			isa = PBXGroup;
 			children = (
-				26BA871A211161FF00578E4E /* AppDelegate.h */,
-				26BA871B211161FF00578E4E /* AppDelegate.m */,
-				26BA871D211161FF00578E4E /* ViewController.h */,
-				26BA871E211161FF00578E4E /* ViewController.m */,
-				26BA8720211161FF00578E4E /* Main.storyboard */,
-				26BA87262111620000578E4E /* Assets.xcassets */,
-				26BA87282111620000578E4E /* LaunchScreen.storyboard */,
-				26BA872B2111620000578E4E /* Info.plist */,
-				26BA872C2111620000578E4E /* main.m */,
+				26A5BA722119A5B3009E77B6 /* Resource */,
+				26A5BA57211998E1009E77B6 /* Main */,
+				26A5BA5C211998E1009E77B6 /* Func */,
+				26A5BA4A211997AF009E77B6 /* Assets.xcassets */,
+				26A5BA4C211997AF009E77B6 /* LaunchScreen.storyboard */,
+				26A5BA4F211997AF009E77B6 /* Info.plist */,
+				26A5BA50211997AF009E77B6 /* main.m */,
+				26A5BA6221199DCF009E77B6 /* CoreDataPro.pch */,
 			);
 			path = CoreDataPro;
 			sourceTree = "<group>";
 		};
-		2A0BDBE150FC89EA305C3159 /* Frameworks */ = {
+		26A5BA57211998E1009E77B6 /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				B87F933A46ACAFB6B72EB03A /* libPods-CoreDataPro.a */,
+				26A5BA58211998E1009E77B6 /* AppDelegate.h */,
+				26A5BA5A211998E1009E77B6 /* AppDelegate.m */,
+				26A5BA5B211998E1009E77B6 /* ViewController.h */,
+				26A5BA59211998E1009E77B6 /* ViewController.m */,
+				26A5BA47211997AE009E77B6 /* Main.storyboard */,
 			);
-			name = Frameworks;
+			path = Main;
 			sourceTree = "<group>";
 		};
-		B156CFD7E44693C20726F659 /* Pods */ = {
+		26A5BA5C211998E1009E77B6 /* Func */ = {
 			isa = PBXGroup;
 			children = (
-				B7CDB5DF3CA3F9B905E2C521 /* Pods-CoreDataPro.debug.xcconfig */,
-				3ECF90E215760B59849B5982 /* Pods-CoreDataPro.release.xcconfig */,
+				26A5BA642119A09C009E77B6 /* Controller */,
+				26A5BA632119A09C009E77B6 /* Model */,
+				26A5BA672119A09C009E77B6 /* DataManager */,
+			);
+			path = Func;
+			sourceTree = "<group>";
+		};
+		26A5BA632119A09C009E77B6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		26A5BA642119A09C009E77B6 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				26A5BA652119A09C009E77B6 /* OperateVC.h */,
+				26A5BA662119A09C009E77B6 /* OperateVC.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		26A5BA672119A09C009E77B6 /* DataManager */ = {
+			isa = PBXGroup;
+			children = (
+				26A5BA6F2119A13E009E77B6 /* DataOperator.h */,
+				26A5BA752119A7F0009E77B6 /* DataOperator.m */,
+			);
+			path = DataManager;
+			sourceTree = "<group>";
+		};
+		26A5BA722119A5B3009E77B6 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				26A5BA732119A5B3009E77B6 /* model.md */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		5258D37D444D55E01F38CCA9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3B2566EBD1F81227E6EDEFDA /* Pods-CoreDataPro.debug.xcconfig */,
+				CECA8123A3AF2063A6F58B4C /* Pods-CoreDataPro.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		7255578880757C0D18571669 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				101CC73AD19E8B03C5CDAC3C /* libPods-CoreDataPro.a */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		26BA8716211161FF00578E4E /* CoreDataPro */ = {
+		26A5BA3D211997AE009E77B6 /* CoreDataPro */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 26BA87302111620000578E4E /* Build configuration list for PBXNativeTarget "CoreDataPro" */;
+			buildConfigurationList = 26A5BA54211997AF009E77B6 /* Build configuration list for PBXNativeTarget "CoreDataPro" */;
 			buildPhases = (
-				C377A8698BCB8DC367D6C13D /* [CP] Check Pods Manifest.lock */,
-				26BA8713211161FF00578E4E /* Sources */,
-				26BA8714211161FF00578E4E /* Frameworks */,
-				26BA8715211161FF00578E4E /* Resources */,
+				9DCAA5713DF7883810A31F9C /* [CP] Check Pods Manifest.lock */,
+				26A5BA3A211997AE009E77B6 /* Sources */,
+				26A5BA3B211997AE009E77B6 /* Frameworks */,
+				26A5BA3C211997AE009E77B6 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -113,24 +176,24 @@
 			);
 			name = CoreDataPro;
 			productName = CoreDataPro;
-			productReference = 26BA8717211161FF00578E4E /* CoreDataPro.app */;
+			productReference = 26A5BA3E211997AE009E77B6 /* CoreDataPro.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		26BA870F211161FF00578E4E /* Project object */ = {
+		26A5BA36211997AE009E77B6 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = TongXing;
 				TargetAttributes = {
-					26BA8716211161FF00578E4E = {
+					26A5BA3D211997AE009E77B6 = {
 						CreatedOnToolsVersion = 9.4.1;
 					};
 				};
 			};
-			buildConfigurationList = 26BA8712211161FF00578E4E /* Build configuration list for PBXProject "CoreDataPro" */;
+			buildConfigurationList = 26A5BA39211997AE009E77B6 /* Build configuration list for PBXProject "CoreDataPro" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -138,31 +201,32 @@
 				en,
 				Base,
 			);
-			mainGroup = 26BA870E211161FF00578E4E;
-			productRefGroup = 26BA8718211161FF00578E4E /* Products */;
+			mainGroup = 26A5BA35211997AE009E77B6;
+			productRefGroup = 26A5BA3F211997AE009E77B6 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				26BA8716211161FF00578E4E /* CoreDataPro */,
+				26A5BA3D211997AE009E77B6 /* CoreDataPro */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		26BA8715211161FF00578E4E /* Resources */ = {
+		26A5BA3C211997AE009E77B6 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				26BA872A2111620000578E4E /* LaunchScreen.storyboard in Resources */,
-				26BA87272111620000578E4E /* Assets.xcassets in Resources */,
-				26BA8722211161FF00578E4E /* Main.storyboard in Resources */,
+				26A5BA742119A5B3009E77B6 /* model.md in Resources */,
+				26A5BA4E211997AF009E77B6 /* LaunchScreen.storyboard in Resources */,
+				26A5BA4B211997AF009E77B6 /* Assets.xcassets in Resources */,
+				26A5BA49211997AE009E77B6 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		C377A8698BCB8DC367D6C13D /* [CP] Check Pods Manifest.lock */ = {
+		9DCAA5713DF7883810A31F9C /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -183,31 +247,33 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		26BA8713211161FF00578E4E /* Sources */ = {
+		26A5BA3A211997AE009E77B6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				26BA871F211161FF00578E4E /* ViewController.m in Sources */,
-				26BA871C211161FF00578E4E /* AppDelegate.m in Sources */,
-				26BA872D2111620000578E4E /* main.m in Sources */,
+				26A5BA762119A7F0009E77B6 /* DataOperator.m in Sources */,
+				26A5BA51211997AF009E77B6 /* main.m in Sources */,
+				26A5BA5D211998E1009E77B6 /* ViewController.m in Sources */,
+				26A5BA5E211998E1009E77B6 /* AppDelegate.m in Sources */,
+				26A5BA682119A09C009E77B6 /* OperateVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		26BA8720211161FF00578E4E /* Main.storyboard */ = {
+		26A5BA47211997AE009E77B6 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				26BA8721211161FF00578E4E /* Base */,
+				26A5BA48211997AE009E77B6 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		26BA87282111620000578E4E /* LaunchScreen.storyboard */ = {
+		26A5BA4C211997AF009E77B6 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				26BA87292111620000578E4E /* Base */,
+				26A5BA4D211997AF009E77B6 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -215,7 +281,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		26BA872E2111620000578E4E /* Debug */ = {
+		26A5BA52211997AF009E77B6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -273,7 +339,7 @@
 			};
 			name = Debug;
 		};
-		26BA872F2111620000578E4E /* Release */ = {
+		26A5BA53211997AF009E77B6 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -325,13 +391,14 @@
 			};
 			name = Release;
 		};
-		26BA87312111620000578E4E /* Debug */ = {
+		26A5BA55211997AF009E77B6 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B7CDB5DF3CA3F9B905E2C521 /* Pods-CoreDataPro.debug.xcconfig */;
+			baseConfigurationReference = 3B2566EBD1F81227E6EDEFDA /* Pods-CoreDataPro.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = JA7UMD99EC;
+				GCC_PREFIX_HEADER = CoreDataPro/CoreDataPro.pch;
 				INFOPLIST_FILE = CoreDataPro/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -344,13 +411,14 @@
 			};
 			name = Debug;
 		};
-		26BA87322111620000578E4E /* Release */ = {
+		26A5BA56211997AF009E77B6 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3ECF90E215760B59849B5982 /* Pods-CoreDataPro.release.xcconfig */;
+			baseConfigurationReference = CECA8123A3AF2063A6F58B4C /* Pods-CoreDataPro.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = JA7UMD99EC;
+				GCC_PREFIX_HEADER = CoreDataPro/CoreDataPro.pch;
 				INFOPLIST_FILE = CoreDataPro/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -366,25 +434,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		26BA8712211161FF00578E4E /* Build configuration list for PBXProject "CoreDataPro" */ = {
+		26A5BA39211997AE009E77B6 /* Build configuration list for PBXProject "CoreDataPro" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				26BA872E2111620000578E4E /* Debug */,
-				26BA872F2111620000578E4E /* Release */,
+				26A5BA52211997AF009E77B6 /* Debug */,
+				26A5BA53211997AF009E77B6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		26BA87302111620000578E4E /* Build configuration list for PBXNativeTarget "CoreDataPro" */ = {
+		26A5BA54211997AF009E77B6 /* Build configuration list for PBXNativeTarget "CoreDataPro" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				26BA87312111620000578E4E /* Debug */,
-				26BA87322111620000578E4E /* Release */,
+				26A5BA55211997AF009E77B6 /* Debug */,
+				26A5BA56211997AF009E77B6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 26BA870F211161FF00578E4E /* Project object */;
+	rootObject = 26A5BA36211997AE009E77B6 /* Project object */;
 }

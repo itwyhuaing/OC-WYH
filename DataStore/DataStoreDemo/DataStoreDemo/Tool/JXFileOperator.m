@@ -37,12 +37,12 @@
     return @"";//[_dataCache objectForKey:cacheKey];
 }
 
-+ (CGFloat)getAllHttpCacheSize {
++ (CGFloat)getAllHttpCacheSizeAboutYYCache {
     NSString *tmpRlt;// = [NSString stringWithFormat:@"%ld",[_dataCache.diskCache totalCost]];
     return tmpRlt.floatValue;
 }
 
-+ (void)removeAllHttpCache {
++ (void)removeAllHttpCacheAboutYYCache {
     //[_dataCache.diskCache removeAllObjects];
 }
 
@@ -388,35 +388,6 @@
             break;
     }
     return isClear;
-}
-
-/**<=====================发帖图片选择器图片路径 缓存 移除 =====================>*/
-
-+ (NSString *)richTextImagesCachePathWithKey:(NSString *)key{
-    
-    NSFileManager *fileManager = [NSFileManager defaultManager];
-    NSString *imagesCachePath = [[self cachePath] stringByAppendingPathComponent:@"RichTextImagesCache"];
-    if (![[NSFileManager defaultManager] fileExistsAtPath:imagesCachePath]) {
-        [fileManager createDirectoryAtPath:imagesCachePath withIntermediateDirectories:YES attributes:nil error:nil];
-    }
-    imagesCachePath = [imagesCachePath stringByAppendingPathComponent:[NSString stringWithFormat:@"/%@",key]];
-    return imagesCachePath;
-}
-
-+(BOOL)writeRichTextImageData:(NSData *)data path:(NSString *)path{
-    return [data writeToFile:path atomically:TRUE];
-}
-
-+(BOOL)removeRichTextImageFromPath:(NSString *)path{
-    return [[NSFileManager defaultManager] removeItemAtPath:path error:nil];
-}
-
-+ (BOOL)readRichTextImageFromPath:(NSString *)path{
-    UIImage *img = [[UIImage alloc] initWithContentsOfFile:path];
-    if (img != nil) {
-        return TRUE;
-    }
-    return FALSE;
 }
 
 @end
