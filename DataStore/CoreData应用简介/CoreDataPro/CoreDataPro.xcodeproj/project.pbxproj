@@ -16,6 +16,7 @@
 		26A5BA682119A09C009E77B6 /* OperateVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 26A5BA662119A09C009E77B6 /* OperateVC.m */; };
 		26A5BA742119A5B3009E77B6 /* model.md in Resources */ = {isa = PBXBuildFile; fileRef = 26A5BA732119A5B3009E77B6 /* model.md */; };
 		26A5BA762119A7F0009E77B6 /* DataOperator.m in Sources */ = {isa = PBXBuildFile; fileRef = 26A5BA752119A7F0009E77B6 /* DataOperator.m */; };
+		26A5BA852119B142009E77B6 /* CoreDataPro.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 26A5BA832119B142009E77B6 /* CoreDataPro.xcdatamodeld */; };
 		7EB5586EF7AC0E9D7471B5A2 /* libPods-CoreDataPro.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 101CC73AD19E8B03C5CDAC3C /* libPods-CoreDataPro.a */; };
 /* End PBXBuildFile section */
 
@@ -37,6 +38,7 @@
 		26A5BA6F2119A13E009E77B6 /* DataOperator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataOperator.h; sourceTree = "<group>"; };
 		26A5BA732119A5B3009E77B6 /* model.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = model.md; sourceTree = "<group>"; };
 		26A5BA752119A7F0009E77B6 /* DataOperator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataOperator.m; sourceTree = "<group>"; };
+		26A5BA842119B142009E77B6 /* CoreDataPro.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataPro.xcdatamodel; sourceTree = "<group>"; };
 		3B2566EBD1F81227E6EDEFDA /* Pods-CoreDataPro.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoreDataPro.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CoreDataPro/Pods-CoreDataPro.debug.xcconfig"; sourceTree = "<group>"; };
 		CECA8123A3AF2063A6F58B4C /* Pods-CoreDataPro.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoreDataPro.release.xcconfig"; path = "Pods/Target Support Files/Pods-CoreDataPro/Pods-CoreDataPro.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -82,6 +84,7 @@
 				26A5BA4F211997AF009E77B6 /* Info.plist */,
 				26A5BA50211997AF009E77B6 /* main.m */,
 				26A5BA6221199DCF009E77B6 /* CoreDataPro.pch */,
+				26A5BA832119B142009E77B6 /* CoreDataPro.xcdatamodeld */,
 			);
 			path = CoreDataPro;
 			sourceTree = "<group>";
@@ -101,18 +104,11 @@
 		26A5BA5C211998E1009E77B6 /* Func */ = {
 			isa = PBXGroup;
 			children = (
+				26A5BAC5211A8D53009E77B6 /* Model */,
 				26A5BA642119A09C009E77B6 /* Controller */,
-				26A5BA632119A09C009E77B6 /* Model */,
 				26A5BA672119A09C009E77B6 /* DataManager */,
 			);
 			path = Func;
-			sourceTree = "<group>";
-		};
-		26A5BA632119A09C009E77B6 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		26A5BA642119A09C009E77B6 /* Controller */ = {
@@ -139,6 +135,13 @@
 				26A5BA732119A5B3009E77B6 /* model.md */,
 			);
 			path = Resource;
+			sourceTree = "<group>";
+		};
+		26A5BAC5211A8D53009E77B6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		5258D37D444D55E01F38CCA9 /* Pods */ = {
@@ -253,6 +256,7 @@
 			files = (
 				26A5BA762119A7F0009E77B6 /* DataOperator.m in Sources */,
 				26A5BA51211997AF009E77B6 /* main.m in Sources */,
+				26A5BA852119B142009E77B6 /* CoreDataPro.xcdatamodeld in Sources */,
 				26A5BA5D211998E1009E77B6 /* ViewController.m in Sources */,
 				26A5BA5E211998E1009E77B6 /* AppDelegate.m in Sources */,
 				26A5BA682119A09C009E77B6 /* OperateVC.m in Sources */,
@@ -453,6 +457,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		26A5BA832119B142009E77B6 /* CoreDataPro.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				26A5BA842119B142009E77B6 /* CoreDataPro.xcdatamodel */,
+			);
+			currentVersion = 26A5BA842119B142009E77B6 /* CoreDataPro.xcdatamodel */;
+			path = CoreDataPro.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 26A5BA36211997AE009E77B6 /* Project object */;
 }

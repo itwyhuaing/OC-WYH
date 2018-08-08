@@ -103,6 +103,8 @@ isKindOfClass     ：参数为实例对象 - 参数所属类为其子类或本�
 
 * Pod 添加 MagicalRecord 依赖库之后，文件创建 - 数据实体创建 - 数据迁移 :
 
+![image](https://github.com/itwyhuaing/OC-WYH/blob/master/DataStore/image/cd0.png)
+
 ![image](https://github.com/itwyhuaing/OC-WYH/blob/master/DataStore/image/cd1.png)
 
 ![image](https://github.com/itwyhuaing/OC-WYH/blob/master/DataStore/image/cd2.png)

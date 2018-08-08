@@ -7,7 +7,7 @@
 //
 
 #import "DataOperator.h"
-
+#import "PersonalInfo+CoreDataClass.h"
 
 @implementation DataOperator
 
@@ -21,6 +21,8 @@
                                                         options:NSJSONReadingMutableContainers
                                                           error:nil];
     NSDictionary *dataDic = dic ? [dic valueForKey:@"data"] : [NSDictionary new];
+    PersonalInfo *f = [PersonalInfo MR_createEntity];
+    [f MR_importValuesForKeysWithObject:dataDic];
     NSLog(@"");
 }
 

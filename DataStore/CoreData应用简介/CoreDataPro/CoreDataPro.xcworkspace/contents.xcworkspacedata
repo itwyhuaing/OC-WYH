@@ -2,6 +2,18 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:PersonalInfo+CoreDataProperties.h">
+   </FileRef>
+   <FileRef
+      location = "group:PersonalInfo+CoreDataClass.h">
+   </FileRef>
+   <FileRef
+      location = "group:PersonalInfo+CoreDataClass.m">
+   </FileRef>
+   <FileRef
+      location = "group:PersonalInfo+CoreDataProperties.m">
+   </FileRef>
+   <FileRef
       location = "group:CoreDataPro.xcodeproj">
    </FileRef>
    <FileRef
