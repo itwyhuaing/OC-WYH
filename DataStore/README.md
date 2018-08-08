@@ -6,6 +6,25 @@
 * 文件读写储存
 * 解归档存储
 * 数据库存储
+* Keychain 存储(可解决设备唯一标识问题)
+
+### Demo 示例
+
+* 文件读写操作、沙盒操作、解归档操作、依赖 FMDB 的数据库操作 以及 UIWeb/WKWeb 缓存清理 、NSPredicate 数据筛查等操作 [DataStore Git地址](https://github.com/itwyhuaing/OC-WYH/tree/master/DataStore)
+
+
+![image](https://github.com/itwyhuaing/OC-WYH/blob/master/DataStore/image/demo1.png)
+
+* 依赖 MagicalRecord 的数据库操作 [CoreDataPro](https://github.com/itwyhuaing/OC-WYH/tree/master/DataStore/CoreData应用简介/CoreDataPro)
+
+![image](https://github.com/itwyhuaing/OC-WYH/blob/master/DataStore/image/demo1_0.png)
+
+
+* 获取设备信息 - keychain 存储 [GainRelativeInfo](https://github.com/itwyhuaing/OC-WYH/tree/master/GainRelativeInfo)
+
+![image](https://github.com/itwyhuaing/OC-WYH/blob/master/DataStore/image/demo2.png)
+
+* Demo 做笔记使用，持续更新 。。。
 
 ### 数据存储基础
 * 作为移动端开发工程师，所需要的数据几乎全部都是通过网络获取，而且网络请求都有时耗；在网络好的情况下这种时耗虽然不足考虑，但是一旦网络环境不好，会很影响产品体验。网络环境无法控制，但是对于一些数据不经常变动的网络请求或没必要实时更新的数据，我们可以选择将网络数据缓存本地，适时更新。
@@ -26,8 +45,6 @@
 ![image](https://github.com/itwyhuaing/OC-WYH/blob/master/DataStore/image/sh4.png)
 
 * Documents 应用程序在运行时生成的一些需要长久保存的数据。Library/Caches 储存应用程序网络请求的数据信息(音视频与图片等的缓存)。此目录下的数据不会自动删除，需要程序员手动清除该目录下的数据。主要用于保存应用在运行时生成的需要长期使用的数据.一般用于存储体积较大数据。Library/Preferences 设置应用的一些功能会在该目录中查找相应设置的信息,该目录由系统自动管理,通常用来储存一些基本的应用配置信息,比如账号密码,自动登录等。tmp 保存应用运行时产生的一些临时数据;应用程序退出、系统空间不够、手机重启等情况下都会自动清除该目录的数据。无需程序员手动清除该目录中的数据。
-
-* 查看 [DataStore Git地址](https://github.com/itwyhuaing/OC-WYH/tree/master/DataStore) 其中 Demo 涉及 FMDB 部分的应用更新中 。。。
 
 #### Plist 格式文件存储
 * plist文件，即属性列表文件。
@@ -95,32 +112,140 @@ isKindOfClass     ：参数为实例对象 - 参数所属类为其子类或本�
 * 不适合存储大量数据，可以存储自定义的数据模型。
 * 虽然归档可以存储自定义的数据结构，但在大批量处理数据时，性能上仍有所欠缺。
 
+![image](https://github.com/itwyhuaing/OC-WYH/blob/master/DataStore/image/encode.png)
+
 #### 数据库存储
 * SQLite : 它是一款轻型的嵌入式数据库，安卓和ios开发使用的都是SQLite数据库；占用资源非常的低，在嵌入式设备中，可能只需要几百K的内存就够了；而且它的处理速度比Mysql、PostgreSQL这两款著名的数据库都还快。
 * FMDB 正式基于 SQLite 开发的一套开源库。使用时，需要自己写一些简单的SQLite语句。
 * CoreData 是苹果给出的一套基于 SQLite 的数据存储方案；而且不需要自己写任何SQLite语句。该功能依赖于 CoreData.framework 框架，该框架已经很好地将数据库表和字段封装成了对象和属性，表之间的一对多、多对多关系则封装成了对象之间的包含关系。
 * Core Data的强大之处就在于这种关系可以在一个对象更新时，其关联的对象也会随着更新，相当于你更新一张表的时候，其关联的其他表也会随着更新。Core Data的另外一个特点就是提供了更简单的性能管理机制，仅提供几个类就可以管理整个数据库。由于直接使用苹果提供的CoreData容易出错，这里提供一个很好的三方库 MagicalRecord 。
+* 关于 Core Data 想吐槽的是，数据存储功能虽然封装的很好、功能很强大，但是版本迭代中反复修改数据模型、新增数据模型等问题引起的数据库迁移问题给开发工作带来很多不必要的工作；尤其有未解除过该技术的新人加入。
 
 * Pod 添加 MagicalRecord 依赖库之后，文件创建 - 数据实体创建 - 数据迁移 :
 
+> 新建工程 ，Use Core Data 可选可不选，这就给未勾选该项的旧工程使用 Core Data 技术提供可能
+
 ![image](https://github.com/itwyhuaing/OC-WYH/blob/master/DataStore/image/cd0.png)
+
+
+> 创建 .xcdatamodeld 文件
 
 ![image](https://github.com/itwyhuaing/OC-WYH/blob/master/DataStore/image/cd1.png)
 
+
+> 创建实体、新增属性
+
 ![image](https://github.com/itwyhuaing/OC-WYH/blob/master/DataStore/image/cd2.png)
+
+
+> 创建实体相应的关联文件
 
 ![image](https://github.com/itwyhuaing/OC-WYH/blob/master/DataStore/image/cd3.png)
 
+
+> 数据库迁移步骤 1
+
 ![image](https://github.com/itwyhuaing/OC-WYH/blob/master/DataStore/image/cd4.png)
+
+
+> 数据库迁移步骤 2
 
 ![image](https://github.com/itwyhuaing/OC-WYH/blob/master/DataStore/image/cd5.png)
 
 
 #### 缓存系统
 
-> 对大多数 APP 而言，都是 Hybrid 开发，Web 页与原生同时存在，其中 Web 页可能是 UIWeb 也可能是 WKWeb 。所以与之相应的缓存系统，应该包括 Web 缓存与 原生接口数据缓存两部分。
+* 对大多数 APP 而言，都是 Hybrid 开发，Web 页与原生同时存在，其中 Web 页可能是 UIWeb 也可能是 WKWeb 。所以与之相应的缓存系统，应该包括 Web 缓存与 原生接口数据缓存两部分。
 
-> 原生接口部分的数据缓存
-   * 存储方式：主要采用文件读写、归档、个人偏好设置(NSUserDefaults) 。
-   * 具体说明：大部分接口数据解析之后写入文件保存(读写操作最好 GCD 子线程操作)；整个应用需要用到的重要数据模型可以考虑采用归档方式(标记状态的数据模型);与用户相关的信息、单个标记标识等采用个人偏好设置。
-   * 补充： 原生接口数据存储方式以上三种方式就已够用；当然对于一些涉及查询、删除、更新等操作的数据模型，就需要使用数据库操作。这里推荐使用 CoreData 的封装库 MagicalRecord 。
+* Web 缓存有网络缓存及 Webkit 框架机制内的缓存。这里也可以依据 URL + 时间戳 自行设计一套缓存。
+
+* 原生接口部分的数据缓存
+
+  1. 与用户相关的信息、单个标记符标识等常采用沙盒存储。
+  2. 全局使用到的数据模型，需要永久存储的话可以考虑归档；例如用户登陆后的个人信息数据模型。
+  3. 倘若不涉及大规模数据的增删改查等操作，可以考虑文件读写的方式直接存储网络返回的 JSON 对象，借助 YYCache 亦可实现高性能存储。
+  4. 大规模数据的存储例如帖子、评论、新闻、外卖、商品等可以考虑使用数据库：FMDB 或 Core Data ；也可以简单点直接使用 NSPredicate 对数据的筛查操作，简单直接。
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+end
