@@ -10,7 +10,8 @@
 
 
 @interface JXFileOperator ()
-@property (nonatomic,strong) NSFileManager *fileManager;
+@property (nonatomic,strong) NSFileManager              *fileManager;
+@property (nonatomic,assign) BOOL                       logStatus;
 @end
 
 @implementation JXFileOperator
@@ -24,26 +25,24 @@
     return instance;
 }
 
-#pragma mark ------ YYCache 高性能数据存储 :需要先引入  YYCache
-
-+ (void)setHttpCache:(id)httpData URL:(NSString *)URL parameters:(NSDictionary *)parameters {
-    NSString *cacheKey = [self cacheKeyWithURL:URL parameters:parameters];
-    //异步缓存,不会阻塞主线程
-    //[_dataCache setObject:httpData forKey:cacheKey withBlock:nil];
+- (void)openLog{
+    self.logStatus = TRUE;
 }
 
-+ (id)httpCacheForURL:(NSString *)URL parameters:(NSDictionary *)parameters {
-    NSString *cacheKey = [self cacheKeyWithURL:URL parameters:parameters];
-    return @"";//[_dataCache objectForKey:cacheKey];
-}
+#pragma mark ------ http 网络数据 JSON 存储
 
-+ (CGFloat)getAllHttpCacheSizeAboutYYCache {
-    NSString *tmpRlt;// = [NSString stringWithFormat:@"%ld",[_dataCache.diskCache totalCost]];
-    return tmpRlt.floatValue;
++ (BOOL)saveHttpCache:(id)httpData URL:(NSString *)URL parameters:(NSDictionary *)parameters{
+    BOOL rlt = FALSE;
+    BOOL isSave = [httpData isKindOfClass:[NSDictionary class]];
+    if (httpData && isSave) {
+        NSString *filePath = [self filePathAtFolderDirectory:JXFileFolderNetHttpCacheResponseData fileName:[self cacheKeyWithURL:URL parameters:parameters]];
+        rlt = [httpData writeToFile:filePath atomically:NO];
+    }
+    return rlt;
 }
-
-+ (void)removeAllHttpCacheAboutYYCache {
-    //[_dataCache.diskCache removeAllObjects];
++ (id)getHttpCacheForURL:(NSString *)URL parameters:(NSDictionary *)parameters{
+    NSString *filePath = [self filePathAtFolderDirectory:JXFileFolderNetHttpCacheResponseData fileName:[self cacheKeyWithURL:URL parameters:parameters]];
+    return [NSDictionary dictionaryWithContentsOfFile:filePath];
 }
 
 #pragma mark - cacheKeyWithURL
@@ -58,7 +57,7 @@
     return [NSString stringWithFormat:@"%ld",cacheKey.hash];
 }
 
-#pragma mark ------ 沙盒读写操作
+#pragma mark ------ 沙盒读写清空操作
 
 +(BOOL)sandBoxSaveInfo:(id)info forKey:(NSString *)key{
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
@@ -66,6 +65,7 @@
     BOOL isSaved = [userDefaults synchronize];
     return isSaved;
 }
+
 +(id)sandBoxGetInfo:(Class)cls forKey:(NSString *)key{
     NSString *ClsString = NSStringFromClass(cls);
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
@@ -88,66 +88,108 @@
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
-#pragma mark ------ 基本数据类型存取
-
-+ (NSString *)filePathForFileName:(NSString *)fileName{
-    
-    NSString *filePath = [self documentPath];
-    filePath = [filePath stringByAppendingPathComponent:fileName];
-    return filePath;
-    
-}
+#pragma mark ------ 常规文件读写清空操作
 
 + (BOOL)clearFileDataWithCacheKey:(NSString *)key{
     NSString *dataCachePath = [[self netInterfaceDataCachePath] stringByAppendingPathComponent:key];
     return [[NSFileManager defaultManager] removeItemAtPath:dataCachePath error:nil];
 }
 
-+ (BOOL)writeStringAPPNetInterfaceData:(NSString *)str cacheKey:(NSString *)key{
-    NSString *dataCachePath = [[self netInterfaceDataCachePath] stringByAppendingPathComponent:key];
-    return [str writeToFile:dataCachePath atomically:NO encoding:NSUTF8StringEncoding error:nil];
+
++(BOOL)saveDataInfo:(id)info forKey:(NSString *)key{
+    BOOL rlt = FALSE;
+    BOOL isSave = [info isKindOfClass:[NSString class]] ||
+                  [info isKindOfClass:[NSArray class]] ||
+                  [info isKindOfClass:[NSDictionary class]];
+    if (info && isSave) {
+        NSString *dataCachePath = [[self netInterfaceDataCachePath] stringByAppendingPathComponent:key];
+        rlt = [info isKindOfClass:[NSString class]] ? [info writeToFile:dataCachePath atomically:NO encoding:NSUTF8StringEncoding error:nil] : [info writeToFile:dataCachePath atomically:NO];
+    }
+    return rlt;
 }
 
-+ (NSString *)readStringAPPNetInterfaceDataWithCacheKey:(NSString *)key{
++(id)getDataInfo:(Class)cls forKey:(NSString *)key{
     NSString *dataCachePath = [[self netInterfaceDataCachePath] stringByAppendingPathComponent:key];
-    return [NSString stringWithContentsOfFile:dataCachePath encoding:NSUTF8StringEncoding error:nil];
+    if ([cls isSubclassOfClass:[NSString class]]) {
+        return [NSString stringWithContentsOfFile:dataCachePath encoding:NSUTF8StringEncoding error:nil];
+    }else if([cls isSubclassOfClass:[NSArray class]]){
+        return [NSArray arrayWithContentsOfFile:dataCachePath];
+    }else if([cls isSubclassOfClass:[NSDictionary class]]){
+        return [NSDictionary dictionaryWithContentsOfFile:dataCachePath];
+    }else {
+        return @"";
+    }
+    
 }
 
-+ (BOOL)writeArrAPPNetInterfaceData:(NSArray *)data cacheKey:(NSString *)key{
-    NSString *dataCachePath = [[self netInterfaceDataCachePath] stringByAppendingPathComponent:key];
-    return [data writeToFile:dataCachePath atomically:NO];
+#pragma mark ------ 生成文件路径
+
++ (NSString *)filePathAtFolderDirectory:(JXFileFolderDirectory)folderDir fileName:(NSString *)fileName{
+    NSString *filePath = [self fileFolder:folderDir];
+    filePath = [filePath stringByAppendingPathComponent:fileName];
+    return filePath;
 }
 
-+ (NSArray *)readArrAPPNetInterfaceDataWithCacheKey:(NSString *)key{
-    NSString *dataCachePath = [[self netInterfaceDataCachePath] stringByAppendingPathComponent:key];
-    return [NSArray arrayWithContentsOfFile:dataCachePath];
-}
+#pragma mark ------ 清空文件夹
 
-+ (BOOL)writeDicAPPNetInterfaceData:(NSDictionary *)data cacheKey:(NSString *)key{
-    NSString *dataCachePath = [[self netInterfaceDataCachePath] stringByAppendingPathComponent:key];
-    return [data writeToFile:dataCachePath atomically:NO];
-}
-
-+ (NSDictionary *)readDicAPPNetInterfaceDataWithCacheKey:(NSString *)key{
-    NSString *dataCachePath = [[self netInterfaceDataCachePath] stringByAppendingPathComponent:key];
-    return [NSDictionary dictionaryWithContentsOfFile:dataCachePath];
-}
-
-+ (BOOL)writeImageAPPNetInterfaceData:(NSData *)data cacheKey:(NSString *)key{
-    //设置一个图片的存储路径
-    //NSString *imagePath = [path_sandox stringByAppendingString:@"/Library/Caches/pic_splash.png"];
-    NSString *dataCachePath = [[self netInterfaceDataCachePath] stringByAppendingPathComponent:key];
-    return [data writeToFile:dataCachePath atomically:YES];
-}
-
-+ (UIImage *)readImageAPPNetInterfaceDataWithCacheKey:(NSString *)key{
-    NSString *dataCachePath = [[self netInterfaceDataCachePath] stringByAppendingPathComponent:key];
-    return [UIImage imageWithContentsOfFile:dataCachePath];
++ (BOOL)clearUpFileFolder:(JXFileFolderDirectory)folderDir{
+    
+    BOOL isClear = TRUE; // 默认值
+    switch (folderDir) {
+        case JXFileFolderDocuments:
+            isClear = [[NSFileManager defaultManager] removeItemAtPath:[self documentPath] error:nil];
+            [[self class] printLogMsg:@"JXFileFolderDocuments"];
+            break;
+        case JXFileFolderLibrary:
+            isClear = [[NSFileManager defaultManager] removeItemAtPath:[self libraryPath] error:nil];
+            [[self class] printLogMsg:@"JXFileFolderLibrary"];
+            break;
+        case JXFileFolderCaches:
+            isClear = [[NSFileManager defaultManager] removeItemAtPath:[self cachePath] error:nil];
+            [[self class] printLogMsg:@"JXFileFolderCaches"];
+            break;
+        case JXFileFolderSDWebImageCacheDefault:
+            isClear = [[NSFileManager defaultManager] removeItemAtPath:[self sdWebImageCacheDefaultPath] error:nil];
+            [[self class] printLogMsg:@"JXFileFolderSDWebImageCacheDefault"];
+            break;
+        case JXFileFolderWKWebKitfsCachedData:
+            isClear = [[NSFileManager defaultManager] removeItemAtPath:[self wkWebKitfsCachedDataPath] error:nil];
+            [[self class] printLogMsg:@"JXFileFolderWKWebKitfsCachedData"];
+            break;
+        case JXFileFolderNetInterfaceData:
+            isClear = [[NSFileManager defaultManager] removeItemAtPath:[self netInterfaceDataCachePath] error:nil];
+            [[self class] printLogMsg:@"JXFileFolderNetInterfaceData"];
+            break;
+        case JXFileFolderNetHttpCacheResponseData:
+            isClear = [[NSFileManager defaultManager] removeItemAtPath:[self netHttpDataCacheResponsePath] error:nil];
+            [[self class] printLogMsg:@"JXFileFolderNetHttpCacheResponseData"];
+            break;
+        case JXFileFolderTmp:
+            isClear = [[NSFileManager defaultManager] removeItemAtPath:[self tmpPath] error:nil];
+            [[self class] printLogMsg:@"JXFileFolderTmp"];
+            break;
+        case JXFileFolderLibUIWebKit:
+            isClear = [[NSFileManager defaultManager] removeItemAtPath:[self libUIWebKitPath] error:nil];
+            [[self class] printLogMsg:@"JXFileFolderTmp"];
+            break;
+        case JXFileFoldersSet:
+            isClear = [[NSFileManager defaultManager] removeItemAtPath:[self netInterfaceDataCachePath] error:nil] &&
+            [[NSFileManager defaultManager] removeItemAtPath:[self sdWebImageCacheDefaultPath] error:nil] &&
+            [[NSFileManager defaultManager] removeItemAtPath:[self wkWebKitfsCachedDataPath] error:nil] &&
+            [[NSFileManager defaultManager] removeItemAtPath:[self wkWebKitCachePath] error:nil] &&
+            [[NSFileManager defaultManager] removeItemAtPath:[self libUIWebKitPath] error:nil] &&
+            [[NSFileManager defaultManager] removeItemAtPath:[self netHttpDataCacheResponsePath] error:nil];
+            [[self class] printLogMsg:@"JXFileFoldersSet"];
+            break;
+        default:
+            break;
+    }
+    return isClear;
 }
 
 #pragma mark ------ folder size
 
-+ (void)returnSizeAtFileFolder:(HNBFileFolderDirectory)folderDir completeBlock:(JXFileOperatorBlock)fileBlock{
++ (void)returnSizeAtFileFolder:(JXFileFolderDirectory)folderDir completeBlock:(JXFileOperatorBlock)fileBlock{
     
     dispatch_queue_t globalQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
     dispatch_async(globalQueue, ^{
@@ -160,53 +202,53 @@
 
 
 // 私有方法 - 计算1
-+ (NSString *)returnSizeAtFileFolder:(HNBFileFolderDirectory)folderDir {
++ (NSString *)returnSizeAtFileFolder:(JXFileFolderDirectory)folderDir {
     CGFloat folderSize = 0.00; // 默认值
     switch (folderDir) {
-            case HNBFileFolderDocuments:
+            case JXFileFolderDocuments:
             folderSize += [self caculateSizeAtSingleFolder:[self documentPath]];
-            NSLog(@"HNBFileFolderDocuments");
+            [[self class] printLogMsg:@"JXFileFolderDocuments"];
             break;
-            case HNBFileFolderLibrary:
+            case JXFileFolderLibrary:
             folderSize += [self caculateSizeAtSingleFolder:[self libraryPath]];
-            NSLog(@"HNBFileFolderLibrary");
+            [[self class] printLogMsg:@"JXFileFolderLibrary"];
             break;
-            case HNBFileFolderCaches:
+            case JXFileFolderCaches:
             folderSize += [self caculateSizeAtSingleFolder:[self cachePath]];
-            NSLog(@"HNBFileFolderCaches");
+            [[self class] printLogMsg:@"JXFileFolderCaches"];
             break;
-            case HNBFileFolderSDWebImageCacheDefault:
+            case JXFileFolderSDWebImageCacheDefault:
             folderSize += [self caculateSizeAtSingleFolder:[self sdWebImageCacheDefaultPath]];
-            NSLog(@"HNBFileFolderSDWebImageCacheDefault");
+            [[self class] printLogMsg:@"JXFileFolderSDWebImageCacheDefault"];
             break;
-            case HNBFileFolderWKWebKitfsCachedData:
+            case JXFileFolderWKWebKitfsCachedData:
             folderSize += [self caculateSizeAtSingleFolder:[self wkWebKitfsCachedDataPath]];
-            NSLog(@"HNBFileFolderWKWebKitfsCachedData");
+            [[self class] printLogMsg:@"JXFileFolderWKWebKitfsCachedData"];
             break;
-            case HNBFileFolderNetInterfaceData:
+            case JXFileFolderNetInterfaceData:
             folderSize += [self caculateSizeAtSingleFolder:[self netInterfaceDataCachePath]];
-            NSLog(@"HNBFileFolderNetInterfaceData");
+            [[self class] printLogMsg:@"JXFileFolderNetInterfaceData"];
             break;
-            case HNBFileFolderNetHttpCacheResponseData:
+            case JXFileFolderNetHttpCacheResponseData:
             folderSize += [self caculateSizeAtSingleFolder:[self netHttpDataCacheResponsePath]];
-            NSLog(@"HNBFileFolderNetHttpCacheResponseData");
+            [[self class] printLogMsg:@"JXFileFolderNetHttpCacheResponseData"];
             break;
-            case HNBFileFolderTmp:
+            case JXFileFolderTmp:
             folderSize += [self caculateSizeAtSingleFolder:[self tmpPath]];
-            NSLog(@"HNBFileFolderTmp");
+            [[self class] printLogMsg:@"JXFileFolderTmp"];
             break;
-            case HNBFileFolderLibUIWebKit:
+            case JXFileFolderLibUIWebKit:
             folderSize += [self caculateSizeAtSingleFolder:[self libUIWebKitPath]];
-            NSLog(@"HNBFileFolderTmp");
+            [[self class] printLogMsg:@"JXFileFolderTmp"];
             break;
-            case HNBFileFoldersSet:
+            case JXFileFoldersSet:
             folderSize += [self caculateSizeAtSingleFolder:[self netInterfaceDataCachePath]];
             folderSize += [self caculateSizeAtSingleFolder:[self sdWebImageCacheDefaultPath]];
             folderSize += [self caculateSizeAtSingleFolder:[self wkWebKitfsCachedDataPath]];
             folderSize += [self caculateSizeAtSingleFolder:[self wkWebKitCachePath]];
             folderSize += [self caculateSizeAtSingleFolder:[self libUIWebKitPath]];
             folderSize += [self caculateSizeAtSingleFolder:[self netHttpDataCacheResponsePath]];
-            NSLog(@"HNBFileFoldersSet");
+            [[self class] printLogMsg:@"JXFileFoldersSet"];
             break;
         default:
             break;
@@ -229,9 +271,7 @@
         while ((fileName = [childFilesEnumertor nextObject]) != nil) {
             NSString *fileAbsolutePath = [folderPath stringByAppendingPathComponent:fileName];
             folderSize += [[[NSFileManager defaultManager] attributesOfItemAtPath:fileAbsolutePath error:nil] fileSize];
-            //NSLog(@" 文件：%@ < ====== > 大小 ：%llu",fileAbsolutePath,[[[NSFileManager defaultManager] attributesOfItemAtPath:fileAbsolutePath error:nil] fileSize]);
         }
-        //NSLog(@"文件件大小：%f ---- 换算：%f",folderSize,folderSize/(1024 * 1024));
     }
     return folderSize;
     
@@ -240,27 +280,16 @@
 
 #pragma mark ------ 私有方法
 
-#pragma mark - 生成文件夹
-// Library/Caches/netInterfaceData
-+ (NSString *)createNetInterfaceDataCachePath{
-    NSFileManager *fileManager = [NSFileManager defaultManager];
-    NSString *dataCachePath = [[self cachePath] stringByAppendingPathComponent:kHNBNetInterfaceData];
-    if (![[NSFileManager defaultManager] fileExistsAtPath:dataCachePath]) {
-        [fileManager createDirectoryAtPath:dataCachePath withIntermediateDirectories:YES attributes:nil error:nil];
-    }
-    return dataCachePath;
-}
-
-#pragma mark - 删除某一路径下的文件
+#pragma mark  删除某一路径下的文件
 
 - (void)deleteSubFilesForPath:(NSString *)path{
     NSArray *subFilePaths = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:path error:nil];
     for (NSString *subPath in subFilePaths) {
-        NSLog(@"\n subPath:%@ \n",subPath);
+        [[self class] printLogMsg:[NSString stringWithFormat:@"subPath:%@",subPath]];
     }
 }
 
-#pragma mark - 获取 bundleID
+#pragma mark  获取 bundleID
 
 + (NSString *)bundleid{
     
@@ -271,7 +300,50 @@
 }
 
 
-#pragma mark ------ 获取文件路径
+#pragma mark  获取文件路径
+
+// 默认 JXFileFolderDocuments
++ (NSString *)fileFolder:(JXFileFolderDirectory)folderDir{
+    NSString *rlt = [self documentPath];
+    switch (folderDir) {
+        case JXFileFolderDocuments:
+            rlt = [self documentPath];
+            break;
+        case JXFileFolderLibrary:
+            rlt = [self libraryPath];
+            break;
+        case JXFileFolderCaches:
+            rlt = [self cachePath];
+            break;
+        case JXFileFolderSDWebImageCacheDefault:
+            rlt = [self sdWebImageCacheDefaultPath];
+            break;
+        case JXFileFolderWKWebKitfsCachedData:
+            rlt = [self wkWebKitfsCachedDataPath];
+            break;
+        case JXFileFolderNetInterfaceData:
+            rlt = [self netInterfaceDataCachePath];
+            break;
+        case JXFileFolderNetHttpCacheResponseData:
+            rlt = [self netHttpDataCacheResponsePath];
+            break;
+        case JXFileFolderTmp:
+            rlt = [self tmpPath];
+            break;
+        case JXFileFolderLibUIWebKit:
+            rlt = [self libUIWebKitPath];
+            break;
+        case JXFileFolderWKWebKitCachedData:
+            rlt = [self wkWebKitCachePath];
+            break;
+        case JXFileFoldersSet:
+            break;
+    }
+    [[self class] printLogMsg:[NSString stringWithFormat:@"fileFolder:%@",rlt]];
+    return rlt;
+    
+}
+
 
 // Documents
 + (NSString *)documentPath{
@@ -301,17 +373,17 @@
 // Library/Caches/netInterfaceData
 + (NSString *)netInterfaceDataCachePath{
     NSFileManager *fileManager = [NSFileManager defaultManager];
-    NSString *dataCachePath = [[self cachePath] stringByAppendingPathComponent:kHNBNetInterfaceData];
+    NSString *dataCachePath = [[self cachePath] stringByAppendingPathComponent:kJXNetInterfaceData];
     if (![[NSFileManager defaultManager] fileExistsAtPath:dataCachePath]) {
         [fileManager createDirectoryAtPath:dataCachePath withIntermediateDirectories:YES attributes:nil error:nil];
     }
     return dataCachePath;
 }
 
-// Library/Caches/kHNBNetDataCacheResponse
+// Library/Caches/kJXNetDataCacheResponse
 + (NSString *)netHttpDataCacheResponsePath{
     NSFileManager *fileManager = [NSFileManager defaultManager];
-    NSString *dataCachePath = [[self cachePath] stringByAppendingPathComponent:kHNBNetDataCacheResponse];
+    NSString *dataCachePath = [[self cachePath] stringByAppendingPathComponent:kJXNetDataCacheResponse];
     if (![[NSFileManager defaultManager] fileExistsAtPath:dataCachePath]) {
         [fileManager createDirectoryAtPath:dataCachePath withIntermediateDirectories:YES attributes:nil error:nil];
     }
@@ -333,61 +405,8 @@
     return [NSString stringWithFormat:@"%@/%@/WebKit",[self cachePath],[self bundleid]];
 }
 
-#pragma mark ------ 清空文件夹
-// 外部
-+ (BOOL)clearUpFileFolder:(HNBFileFolderDirectory)folderDir{
-    
-    BOOL isClear = TRUE; // 默认值
-    switch (folderDir) {
-            case HNBFileFolderDocuments:
-            isClear = [[NSFileManager defaultManager] removeItemAtPath:[self documentPath] error:nil];
-            NSLog(@"HNBFileFolderDocuments");
-            break;
-            case HNBFileFolderLibrary:
-            isClear = [[NSFileManager defaultManager] removeItemAtPath:[self libraryPath] error:nil];
-            NSLog(@"HNBFileFolderLibrary");
-            break;
-            case HNBFileFolderCaches:
-            isClear = [[NSFileManager defaultManager] removeItemAtPath:[self cachePath] error:nil];
-            NSLog(@"HNBFileFolderCaches");
-            break;
-            case HNBFileFolderSDWebImageCacheDefault:
-            isClear = [[NSFileManager defaultManager] removeItemAtPath:[self sdWebImageCacheDefaultPath] error:nil];
-            NSLog(@"HNBFileFolderSDWebImageCacheDefault");
-            break;
-            case HNBFileFolderWKWebKitfsCachedData:
-            isClear = [[NSFileManager defaultManager] removeItemAtPath:[self wkWebKitfsCachedDataPath] error:nil];
-            NSLog(@"HNBFileFolderWKWebKitfsCachedData");
-            break;
-            case HNBFileFolderNetInterfaceData:
-            isClear = [[NSFileManager defaultManager] removeItemAtPath:[self netInterfaceDataCachePath] error:nil];
-            NSLog(@"HNBFileFolderNetInterfaceData");
-            break;
-            case HNBFileFolderNetHttpCacheResponseData:
-            isClear = [[NSFileManager defaultManager] removeItemAtPath:[self netHttpDataCacheResponsePath] error:nil];
-            NSLog(@"HNBFileFolderNetHttpCacheResponseData");
-            break;
-            case HNBFileFolderTmp:
-            isClear = [[NSFileManager defaultManager] removeItemAtPath:[self tmpPath] error:nil];
-            NSLog(@"HNBFileFolderTmp");
-            break;
-            case HNBFileFolderLibUIWebKit:
-            isClear = [[NSFileManager defaultManager] removeItemAtPath:[self libUIWebKitPath] error:nil];
-            NSLog(@"HNBFileFolderTmp");
-            break;
-            case HNBFileFoldersSet:
-            isClear = [[NSFileManager defaultManager] removeItemAtPath:[self netInterfaceDataCachePath] error:nil] &&
-            [[NSFileManager defaultManager] removeItemAtPath:[self sdWebImageCacheDefaultPath] error:nil] &&
-            [[NSFileManager defaultManager] removeItemAtPath:[self wkWebKitfsCachedDataPath] error:nil] &&
-            [[NSFileManager defaultManager] removeItemAtPath:[self wkWebKitCachePath] error:nil] &&
-            [[NSFileManager defaultManager] removeItemAtPath:[self libUIWebKitPath] error:nil] &&
-            [[NSFileManager defaultManager] removeItemAtPath:[self netHttpDataCacheResponsePath] error:nil];
-            NSLog(@"HNBFileFoldersSet");
-            break;
-        default:
-            break;
-    }
-    return isClear;
+- (void)printLogMsg:(NSString *)msg{
+    self.logStatus ? NSLog(@"\n%@\n",msg) : nil;
 }
 
 @end

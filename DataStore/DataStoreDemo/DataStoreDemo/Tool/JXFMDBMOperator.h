@@ -125,14 +125,14 @@
 
 
 /**
- 依据给定的查重字段筛选数据库 - 默认全部升序排列
+ 依据给定的查重字段筛选数据库 - 默认全部升序排列 - 调试未通过
 
  @param modelCls 待处理的数据的数据类型
  @param distinctKey 给定的查重字段
  @param orderKey 结果排序关键字即数据模型属性
  @return 查重之后的数据结果，以相应模型的数组形式给出
  */
-- (NSArray *)distinctDataForModelCls:(Class)modelCls distinctKey:(NSString *)distinctKey orderKey:(NSString *)orderKey;
+//- (NSArray *)distinctDataForModelCls:(Class)modelCls distinctKey:(NSString *)distinctKey orderKey:(NSString *)orderKey;
 
 
 /**

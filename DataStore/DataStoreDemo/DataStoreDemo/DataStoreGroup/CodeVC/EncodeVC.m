@@ -52,7 +52,7 @@
     f.boolTest = TRUE;
     
     
-    NSString *filePath = [JXFileOperator filePathForFileName:@"archeveFile.plist"];
+    NSString *filePath = [JXFileOperator filePathAtFolderDirectory:JXFileFolderDocuments fileName:@"archeveFile.plist"];
     // 归档
     [NSKeyedArchiver archiveRootObject:f toFile:filePath];
     

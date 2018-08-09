@@ -23,6 +23,9 @@
 		26A5BA792119A9AE009E77B6 /* NSString+JXString.m in Sources */ = {isa = PBXBuildFile; fileRef = 26A5BA782119A9AE009E77B6 /* NSString+JXString.m */; };
 		26A5BA7C2119A9C9009E77B6 /* NSDictionary+JXDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 26A5BA7B2119A9C9009E77B6 /* NSDictionary+JXDictionary.m */; };
 		26A5BA7F2119AB0E009E77B6 /* NSData+JXData.m in Sources */ = {isa = PBXBuildFile; fileRef = 26A5BA7E2119AB0E009E77B6 /* NSData+JXData.m */; };
+		26A5BAE6211BD566009E77B6 /* NSArray+JXArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 26A5BAE5211BD566009E77B6 /* NSArray+JXArray.m */; };
+		26A5BAEC211BD9AF009E77B6 /* JXBaseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 26A5BAEB211BD9AF009E77B6 /* JXBaseVC.m */; };
+		26A5BAEF211BD9C1009E77B6 /* TestVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 26A5BAEE211BD9C1009E77B6 /* TestVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +59,14 @@
 		26A5BA7B2119A9C9009E77B6 /* NSDictionary+JXDictionary.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+JXDictionary.m"; sourceTree = "<group>"; };
 		26A5BA7D2119AB0E009E77B6 /* NSData+JXData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSData+JXData.h"; sourceTree = "<group>"; };
 		26A5BA7E2119AB0E009E77B6 /* NSData+JXData.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSData+JXData.m"; sourceTree = "<group>"; };
+		26A5BAE4211BD566009E77B6 /* NSArray+JXArray.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSArray+JXArray.h"; sourceTree = "<group>"; };
+		26A5BAE5211BD566009E77B6 /* NSArray+JXArray.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSArray+JXArray.m"; sourceTree = "<group>"; };
+		26A5BAE7211BD76D009E77B6 /* JXCategory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JXCategory.h; sourceTree = "<group>"; };
+		26A5BAE8211BD91E009E77B6 /* JXObjCategary.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JXObjCategary.pch; sourceTree = "<group>"; };
+		26A5BAEA211BD9AF009E77B6 /* JXBaseVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JXBaseVC.h; sourceTree = "<group>"; };
+		26A5BAEB211BD9AF009E77B6 /* JXBaseVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JXBaseVC.m; sourceTree = "<group>"; };
+		26A5BAED211BD9C1009E77B6 /* TestVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestVC.h; sourceTree = "<group>"; };
+		26A5BAEE211BD9C1009E77B6 /* TestVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,11 +101,13 @@
 			children = (
 				26710B8320FC40D20040D6AE /* Main */,
 				26710B8220FC40D10040D6AE /* ObjCatagery */,
+				26A5BAE9211BD987009E77B6 /* Function */,
 				26710B7220FC404F0040D6AE /* Main.storyboard */,
 				26710B7520FC40510040D6AE /* Assets.xcassets */,
 				26710B7720FC40510040D6AE /* LaunchScreen.storyboard */,
 				26710B7A20FC40510040D6AE /* Info.plist */,
 				26710B7B20FC40510040D6AE /* main.m */,
+				26A5BAE8211BD91E009E77B6 /* JXObjCategary.pch */,
 			);
 			path = JXObjCategary;
 			sourceTree = "<group>";
@@ -102,6 +115,7 @@
 		26710B8220FC40D10040D6AE /* ObjCatagery */ = {
 			isa = PBXGroup;
 			children = (
+				26A5BAE7211BD76D009E77B6 /* JXCategory.h */,
 				26710B8A20FC41C00040D6AE /* UIButton+JXButton.h */,
 				26710B8B20FC41C00040D6AE /* UIButton+JXButton.m */,
 				26710B8D20FC41D90040D6AE /* UILabel+JXLabel.h */,
@@ -116,6 +130,8 @@
 				26A5BA7B2119A9C9009E77B6 /* NSDictionary+JXDictionary.m */,
 				26A5BA7D2119AB0E009E77B6 /* NSData+JXData.h */,
 				26A5BA7E2119AB0E009E77B6 /* NSData+JXData.m */,
+				26A5BAE4211BD566009E77B6 /* NSArray+JXArray.h */,
+				26A5BAE5211BD566009E77B6 /* NSArray+JXArray.m */,
 			);
 			path = ObjCatagery;
 			sourceTree = "<group>";
@@ -135,6 +151,17 @@
 				26710B9720FC6F430040D6AE /* DataManager.m */,
 			);
 			path = Main;
+			sourceTree = "<group>";
+		};
+		26A5BAE9211BD987009E77B6 /* Function */ = {
+			isa = PBXGroup;
+			children = (
+				26A5BAEA211BD9AF009E77B6 /* JXBaseVC.h */,
+				26A5BAEB211BD9AF009E77B6 /* JXBaseVC.m */,
+				26A5BAED211BD9C1009E77B6 /* TestVC.h */,
+				26A5BAEE211BD9C1009E77B6 /* TestVC.m */,
+			);
+			path = Function;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -207,16 +234,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				26A5BAEC211BD9AF009E77B6 /* JXBaseVC.m in Sources */,
 				26A5BA7C2119A9C9009E77B6 /* NSDictionary+JXDictionary.m in Sources */,
 				26710B9520FC6EB80040D6AE /* Data1Model.m in Sources */,
 				26710B8F20FC41D90040D6AE /* UILabel+JXLabel.m in Sources */,
 				26710B7C20FC40510040D6AE /* main.m in Sources */,
 				26A5BA7F2119AB0E009E77B6 /* NSData+JXData.m in Sources */,
 				26710B8C20FC41C00040D6AE /* UIButton+JXButton.m in Sources */,
+				26A5BAE6211BD566009E77B6 /* NSArray+JXArray.m in Sources */,
 				26A5BA792119A9AE009E77B6 /* NSString+JXString.m in Sources */,
 				26710B8820FC40D20040D6AE /* ViewController.m in Sources */,
 				26710B9820FC6F430040D6AE /* DataManager.m in Sources */,
 				267E006021006836002566DC /* UIColor+JXColor.m in Sources */,
+				26A5BAEF211BD9C1009E77B6 /* TestVC.m in Sources */,
 				267E006321007185002566DC /* UIImage+JXImage.m in Sources */,
 				26710B9220FC6DD10040D6AE /* DesTableViewCell.m in Sources */,
 				26710B8920FC40D20040D6AE /* AppDelegate.m in Sources */,
@@ -360,6 +390,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				GCC_PREFIX_HEADER = JXObjCategary/JXObjCategary.pch;
 				INFOPLIST_FILE = JXObjCategary/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -376,6 +407,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				GCC_PREFIX_HEADER = JXObjCategary/JXObjCategary.pch;
 				INFOPLIST_FILE = JXObjCategary/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

@@ -50,9 +50,9 @@ static NSString *kUIImage       = @"UIImage";
 
 - (NSMutableArray *)cntDataForButton{
     NSMutableArray *cnt = [NSMutableArray new];
-    [cnt addObjectsFromArray:@[@"防连击",
-                               @"图文分离",
-                               @"高亮态"]];
+    [cnt addObjectsFromArray:@[@"",
+                               @"",
+                               @""]];
     return cnt;
 }
 

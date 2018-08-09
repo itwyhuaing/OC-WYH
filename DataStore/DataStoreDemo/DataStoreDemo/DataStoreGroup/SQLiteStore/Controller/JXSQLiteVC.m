@@ -147,14 +147,15 @@
 //                                                      updateValue:@[math2,english2]
 //                                                      locationKey:@"age"
 //                                                    locationValue:@28];
+    
 }
 
 #pragma mark - 去重操作
 
 - (void)distinctData{
     // 读取数据 - 查重 - 待定，未完成
-    NSArray *rlt = [[JXFMDBMOperator sharedInstance] distinctDataForModelCls:[PersonInfo class] distinctKey:@"name" orderKey:@"age"];
-    [self printRltData:rlt];
+//    NSArray *rlt = [[JXFMDBMOperator sharedInstance] distinctDataForModelCls:[PersonInfo class] distinctKey:@"name" orderKey:@"age"];
+//    [self printRltData:rlt];
 }
 
 #pragma mark - 加载数据

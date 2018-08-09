@@ -22,7 +22,7 @@
 
 - (void)rightNavBtnEvent:(UIButton *)btn{
 
-    NSString *filePath = [JXFileOperator filePathForFileName:@"test.plist"];
+    NSString *filePath = [JXFileOperator filePathAtFolderDirectory:JXFileFolderDocuments fileName:@"test.plist"];
     NSString *testString = @"testString";
     NSArray *arr = @[@"name",@"age"];
     NSDictionary *dic = @{@"key1":@"value1",@"key2":arr};

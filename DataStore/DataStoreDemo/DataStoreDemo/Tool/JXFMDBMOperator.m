@@ -341,26 +341,26 @@ static NSString *kcustomid = @"customid";    /**<存储数据主键>*/
 
 #pragma mark - 依据给定的查重字段筛选数据库 - 默认全部升序排列 - 调试未通过
 
-- (NSArray *)distinctDataForModelCls:(Class)modelCls distinctKey:(NSString *)distinctKey orderKey:(NSString *)orderKey{
-    __block NSMutableArray *rlt = [NSMutableArray new];
-    NSString *dataTable = [self assembleDataTableWithModelCls:modelCls];
-    if ([self isExistTable:dataTable]) {
-        [self.dataBaseQueue inDatabase:^(FMDatabase *db) {
-            if ([self openDataBase:db]) {
-                NSString *sql = [NSString stringWithFormat:@"select distinct %@ from %@",distinctKey,dataTable];
-                FMResultSet *rltSet = [db executeQuery:sql];
-                while ([rltSet next]) {
-                    id model = [modelCls new];
-                    [self.modelParser configValuesForModel:model rltSet:rltSet];
-                    [rlt addObject:model];
-                }
-            }
-        }];
-    }
-    return rlt;
-}
+//- (NSArray *)distinctDataForModelCls:(Class)modelCls distinctKey:(NSString *)distinctKey orderKey:(NSString *)orderKey{
+//    __block NSMutableArray *rlt = [NSMutableArray new];
+//    NSString *dataTable = [self assembleDataTableWithModelCls:modelCls];
+//    if ([self isExistTable:dataTable]) {
+//        [self.dataBaseQueue inDatabase:^(FMDatabase *db) {
+//            if ([self openDataBase:db]) {
+//                NSString *sql = [NSString stringWithFormat:@"select distinct %@ from %@",distinctKey,dataTable];
+//                FMResultSet *rltSet = [db executeQuery:sql];
+//                while ([rltSet next]) {
+//                    id model = [modelCls new];
+//                    [self.modelParser configValuesForModel:model rltSet:rltSet];
+//                    [rlt addObject:model];
+//                }
+//            }
+//        }];
+//    }
+//    return rlt;
+//}
 
-#pragma mark ------ 删除数据表数据
+#pragma mark  删除数据表数据
 
 -(BOOL)deleteDataFromTableWithModelCls:(Class)modelCls deleteSql:(NSString *)deleteSql{
     __block BOOL rlt = FALSE;
@@ -375,7 +375,7 @@ static NSString *kcustomid = @"customid";    /**<存储数据主键>*/
     return rlt;
 }
 
-#pragma mark ------ 给指定数据表增加字段
+#pragma mark 给指定数据表增加字段
 
 -(BOOL)addKeyForDataTableWithModelCls:(Class)modelCls addKeySql:(NSString *)addKeySql{
     __block BOOL rlt = FALSE;
@@ -390,7 +390,7 @@ static NSString *kcustomid = @"customid";    /**<存储数据主键>*/
     return rlt;
 }
 
-#pragma mark ------ 更新指定数据表中指定数据
+#pragma mark 更新指定数据表中指定数据 - updateValue : 暂不支持数组、字典等对象
 
 -(BOOL)updateTableDataWithModelCls:(Class)modelCls updateKey:(NSString *)updateKey updateValue:(id)updateValue locationKey:(NSString *)locationKey locationValue:(id)locationValue{
     __block BOOL rlt = FALSE;

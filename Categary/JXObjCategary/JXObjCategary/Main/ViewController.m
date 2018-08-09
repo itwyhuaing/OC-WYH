@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "TestVC.h"
 #import "DesTableViewCell.h"
 #import "DataManager.h"
 #import "Data1Model.h"
@@ -71,6 +72,12 @@
     Data1Model *f = data[indexPath.row];
     cell.textLabel.text         = f.cntDetail;
     return cell;
+}
+
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    [tableView deselectRowAtIndexPath:indexPath animated:TRUE];
+    [self.navigationController pushViewController:[[TestVC alloc] init] animated:TRUE];
 }
 
 #pragma mark ------ private method
