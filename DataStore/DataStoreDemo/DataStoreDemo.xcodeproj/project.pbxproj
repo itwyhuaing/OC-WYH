@@ -54,6 +54,7 @@
 		267E00692100887C002566DC /* SQLite 语句.m in Sources */ = {isa = PBXBuildFile; fileRef = 267E00682100887B002566DC /* SQLite 语句.m */; };
 		267E006C21018D81002566DC /* JXFMDBMOperator.m in Sources */ = {isa = PBXBuildFile; fileRef = 267E006B21018D81002566DC /* JXFMDBMOperator.m */; };
 		268B35652111483400660D22 /* JXFileOperator.m in Sources */ = {isa = PBXBuildFile; fileRef = 268B35642111483400660D22 /* JXFileOperator.m */; };
+		26A5BAF2211D3595009E77B6 /* OperateVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 26A5BAF1211D3595009E77B6 /* OperateVC.m */; };
 		26A6AF012105BB1700CFA01A /* Son.m in Sources */ = {isa = PBXBuildFile; fileRef = 26A6AF002105BB1700CFA01A /* Son.m */; };
 		26A6AF042105EA0F00CFA01A /* JXSQLiteVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 26A6AF032105EA0F00CFA01A /* JXSQLiteVC.m */; };
 		26A6AF0D2109781400CFA01A /* PredicateVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 26A6AF0C2109781400CFA01A /* PredicateVC.m */; };
@@ -151,6 +152,8 @@
 		267E006B21018D81002566DC /* JXFMDBMOperator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JXFMDBMOperator.m; sourceTree = "<group>"; };
 		268B35632111483400660D22 /* JXFileOperator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JXFileOperator.h; sourceTree = "<group>"; };
 		268B35642111483400660D22 /* JXFileOperator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JXFileOperator.m; sourceTree = "<group>"; };
+		26A5BAF0211D3595009E77B6 /* OperateVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OperateVC.h; sourceTree = "<group>"; };
+		26A5BAF1211D3595009E77B6 /* OperateVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OperateVC.m; sourceTree = "<group>"; };
 		26A6AEFF2105BB1700CFA01A /* Son.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Son.h; sourceTree = "<group>"; };
 		26A6AF002105BB1700CFA01A /* Son.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Son.m; sourceTree = "<group>"; };
 		26A6AF022105EA0F00CFA01A /* JXSQLiteVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JXSQLiteVC.h; sourceTree = "<group>"; };
@@ -314,6 +317,8 @@
 				26A6AF032105EA0F00CFA01A /* JXSQLiteVC.m */,
 				26A6AF0B2109781400CFA01A /* PredicateVC.h */,
 				26A6AF0C2109781400CFA01A /* PredicateVC.m */,
+				26A5BAF0211D3595009E77B6 /* OperateVC.h */,
+				26A5BAF1211D3595009E77B6 /* OperateVC.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -522,6 +527,7 @@
 				265916D61F0259A800BE2AEF /* SDWebImageDecoder.m in Sources */,
 				26A6AF1021097B0300CFA01A /* PredicateTestModel.m in Sources */,
 				2659168A1F02578D00BE2AEF /* PersonInfo.m in Sources */,
+				26A5BAF2211D3595009E77B6 /* OperateVC.m in Sources */,
 				265916D11F0259A800BE2AEF /* MKAnnotationView+WebCache.m in Sources */,
 				2659168C1F02578D00BE2AEF /* FileWRVC.m in Sources */,
 				26A6AF042105EA0F00CFA01A /* JXSQLiteVC.m in Sources */,
