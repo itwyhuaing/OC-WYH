@@ -32,8 +32,8 @@
 @property CGFloat anchorPointZ;                     // 图层在z轴中的锚点；
 @property CATransform3D transform;                  // 与动画相关
 
-@property CGPoint position;
-@property CGPoint anchorPoint;
+@property CGPoint position;                         // 用来设置 CALayer 在父层中的位置,以父层的左上角为原点(0, 0)
+@property CGPoint anchorPoint;                      // 称为“定位点”、“锚点”，决定着 CALayer 身上的哪个点会在 position 属性所指的位置，以自己的左上角为原点(0, 0)，它的x、y取值范围都是0~1，默认值为（0.5, 0.5）
 ```
 
 其中 position 与 anchorPoint 两个属性对于图层位置的影响如下：
