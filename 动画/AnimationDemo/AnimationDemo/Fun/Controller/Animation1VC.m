@@ -12,11 +12,11 @@
 
 @property (nonatomic,strong) UIImageView *firstV;
 @property (nonatomic,strong) UIImageView *secondV;
-@property (nonatomic,assign) CGFloat gap;
-@property (nonatomic,assign) CGFloat imgWH;
+@property (nonatomic,assign) CGRect      firstRect;
+@property (nonatomic,assign) CGRect      secondRect;
 
-@property (nonatomic,assign) CGRect firstRect;
-@property (nonatomic,assign) CGRect secondRect;
+@property (nonatomic,assign) CGFloat     gap;
+@property (nonatomic,assign) CGFloat     imgWH;
 
 @end
 
@@ -33,13 +33,13 @@
     rct.size   = CGSizeMake(self.imgWH, self.imgWH);
     rct.origin = CGPointMake(self.gap, 100);
     [self.firstV setFrame:rct];
-    rct.origin.x += CGRectGetWidth(rct) + self.gap;
-    rct.origin.y += 0.0;
+    
+    rct.origin.x = CGRectGetMaxX(self.firstV.frame) + self.gap;
     [self.secondV setFrame:rct];
     
     // 赋值
-    self.firstV.image = [UIImage imageNamed:@"1"];
-    self.secondV.image = [UIImage imageNamed:@"2"];
+    self.firstV.image       = [UIImage imageNamed:@"11"];
+    self.secondV.image      = [UIImage imageNamed:@"22"];
     
     // 视图添加
     [self.view addSubview:self.firstV];
@@ -48,15 +48,23 @@
     // 手势添加
     UIPanGestureRecognizer *pan1 = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(pan1:)];
     UIPanGestureRecognizer *pan2 = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(pan2:)];
-    self.firstV.userInteractionEnabled  = TRUE;
-    self.secondV.userInteractionEnabled = TRUE;
+    self.firstV.userInteractionEnabled          = TRUE;
+    self.secondV.userInteractionEnabled         = TRUE;
     [self.firstV addGestureRecognizer:pan1];
     [self.secondV addGestureRecognizer:pan2];
     
     // 取初始值
-    self.firstRect  = self.firstV.frame;
-    self.secondRect = self.secondV.frame;
+    self.firstRect      = self.firstV.frame;
+    self.secondRect     = self.secondV.frame;
 }
+
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    //self.view.backgroundColor           = [UIColor redColor];
+}
+
+
+#pragma mark ------ 手势
 
 -(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     // CATransform3D tf = CATransform3DIdentity;
@@ -64,10 +72,11 @@
 }
 
 - (void)pan1:(UIPanGestureRecognizer *)pan{
-    NSLog(@"\n %s \n",__FUNCTION__);
+    NSLog(@"\n \n %s \n \n ",__FUNCTION__);
 }
 
 - (void)pan2:(UIPanGestureRecognizer *)pan{
+    
     UIImageView *v2     = (UIImageView *)pan.view;
     CGPoint curPoint    = [pan translationInView:v2.superview];
     //NSLog(@"\n%s\n(%f) - (%f)\n",__FUNCTION__,curPoint.x,curPoint.y);
@@ -92,6 +101,7 @@
         }
     }
 }
+
 
 #pragma mark - lazy load
 

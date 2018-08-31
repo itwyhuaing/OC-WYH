@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		267C0CE12136761600AAC538 /* UIImage+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = 267C0CDF2136761600AAC538 /* UIImage+Addition.m */; };
+		267C0CE4213797B900AAC538 /* UIImageView+JXImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 267C0CE3213797B900AAC538 /* UIImageView+JXImageView.m */; };
 		26C2ADCF212D094E001CB9E1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 26C2ADCE212D094E001CB9E1 /* AppDelegate.m */; };
 		26C2ADD5212D094E001CB9E1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26C2ADD3212D094E001CB9E1 /* Main.storyboard */; };
 		26C2ADD7212D094F001CB9E1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 26C2ADD6212D094F001CB9E1 /* Assets.xcassets */; };
@@ -22,6 +24,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		267C0CDF2136761600AAC538 /* UIImage+Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Addition.m"; sourceTree = "<group>"; };
+		267C0CE02136761600AAC538 /* UIImage+Addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Addition.h"; sourceTree = "<group>"; };
+		267C0CE2213797B900AAC538 /* UIImageView+JXImageView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImageView+JXImageView.h"; sourceTree = "<group>"; };
+		267C0CE3213797B900AAC538 /* UIImageView+JXImageView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+JXImageView.m"; sourceTree = "<group>"; };
 		26C2ADCA212D094E001CB9E1 /* AnimationDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AnimationDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		26C2ADCD212D094E001CB9E1 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		26C2ADCE212D094E001CB9E1 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -57,6 +63,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		267C0CDD2136761600AAC538 /* Class */ = {
+			isa = PBXGroup;
+			children = (
+				267C0CDE2136761600AAC538 /* Categary */,
+			);
+			path = Class;
+			sourceTree = "<group>";
+		};
+		267C0CDE2136761600AAC538 /* Categary */ = {
+			isa = PBXGroup;
+			children = (
+				267C0CE02136761600AAC538 /* UIImage+Addition.h */,
+				267C0CDF2136761600AAC538 /* UIImage+Addition.m */,
+				267C0CE2213797B900AAC538 /* UIImageView+JXImageView.h */,
+				267C0CE3213797B900AAC538 /* UIImageView+JXImageView.m */,
+			);
+			path = Categary;
+			sourceTree = "<group>";
+		};
 		26C2ADC1212D094E001CB9E1 = {
 			isa = PBXGroup;
 			children = (
@@ -78,6 +103,7 @@
 			children = (
 				26C2ADE3212D0ADE001CB9E1 /* Main */,
 				26C2ADED212D0BD3001CB9E1 /* Fun */,
+				267C0CDD2136761600AAC538 /* Class */,
 				26C2ADD6212D094F001CB9E1 /* Assets.xcassets */,
 				26C2ADD8212D094F001CB9E1 /* LaunchScreen.storyboard */,
 				26C2ADDB212D094F001CB9E1 /* Info.plist */,
@@ -206,10 +232,12 @@
 				26C2ADDD212D094F001CB9E1 /* main.m in Sources */,
 				26C2AF49212E54BB001CB9E1 /* Animation5VC.m in Sources */,
 				26C2AF4A212E54BB001CB9E1 /* Animation2VC.m in Sources */,
+				267C0CE12136761600AAC538 /* UIImage+Addition.m in Sources */,
 				26C2AF48212E54BB001CB9E1 /* Animation4VC.m in Sources */,
 				26C2ADF3212D0CB5001CB9E1 /* BaseAnimationVC.m in Sources */,
 				26C2AF4B212E54BB001CB9E1 /* Animation3VC.m in Sources */,
 				26C2ADEC212D0ADE001CB9E1 /* TableVC.m in Sources */,
+				267C0CE4213797B900AAC538 /* UIImageView+JXImageView.m in Sources */,
 				26C2ADCF212D094E001CB9E1 /* AppDelegate.m in Sources */,
 				26C2AF4C212E54BB001CB9E1 /* Animation1VC.m in Sources */,
 			);
