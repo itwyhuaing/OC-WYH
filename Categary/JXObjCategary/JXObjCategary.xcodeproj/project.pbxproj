@@ -26,6 +26,7 @@
 		26A5BAE6211BD566009E77B6 /* NSArray+JXArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 26A5BAE5211BD566009E77B6 /* NSArray+JXArray.m */; };
 		26A5BAEC211BD9AF009E77B6 /* JXBaseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 26A5BAEB211BD9AF009E77B6 /* JXBaseVC.m */; };
 		26A5BAEF211BD9C1009E77B6 /* TestVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 26A5BAEE211BD9C1009E77B6 /* TestVC.m */; };
+		26C2AE88212E4AD5001CB9E1 /* UILabel+YBAttributeTextTapAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 26C2AE86212E4AD4001CB9E1 /* UILabel+YBAttributeTextTapAction.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -67,6 +68,8 @@
 		26A5BAEB211BD9AF009E77B6 /* JXBaseVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JXBaseVC.m; sourceTree = "<group>"; };
 		26A5BAED211BD9C1009E77B6 /* TestVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestVC.h; sourceTree = "<group>"; };
 		26A5BAEE211BD9C1009E77B6 /* TestVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestVC.m; sourceTree = "<group>"; };
+		26C2AE86212E4AD4001CB9E1 /* UILabel+YBAttributeTextTapAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+YBAttributeTextTapAction.m"; sourceTree = "<group>"; };
+		26C2AE87212E4AD4001CB9E1 /* UILabel+YBAttributeTextTapAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+YBAttributeTextTapAction.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +119,8 @@
 			isa = PBXGroup;
 			children = (
 				26A5BAE7211BD76D009E77B6 /* JXCategory.h */,
+				26C2AE87212E4AD4001CB9E1 /* UILabel+YBAttributeTextTapAction.h */,
+				26C2AE86212E4AD4001CB9E1 /* UILabel+YBAttributeTextTapAction.m */,
 				26710B8A20FC41C00040D6AE /* UIButton+JXButton.h */,
 				26710B8B20FC41C00040D6AE /* UIButton+JXButton.m */,
 				26710B8D20FC41D90040D6AE /* UILabel+JXLabel.h */,
@@ -246,6 +251,7 @@
 				26710B8820FC40D20040D6AE /* ViewController.m in Sources */,
 				26710B9820FC6F430040D6AE /* DataManager.m in Sources */,
 				267E006021006836002566DC /* UIColor+JXColor.m in Sources */,
+				26C2AE88212E4AD5001CB9E1 /* UILabel+YBAttributeTextTapAction.m in Sources */,
 				26A5BAEF211BD9C1009E77B6 /* TestVC.m in Sources */,
 				267E006321007185002566DC /* UIImage+JXImage.m in Sources */,
 				26710B9220FC6DD10040D6AE /* DesTableViewCell.m in Sources */,
