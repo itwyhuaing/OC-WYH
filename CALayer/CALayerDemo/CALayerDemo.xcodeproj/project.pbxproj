@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		26229484205BA513002057F3 /* LayerPathVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 26229482205BA513002057F3 /* LayerPathVC.m */; };
+		264920072147D2070010348A /* JXChartVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 264920062147D2070010348A /* JXChartVC.m */; };
+		264920152147DA670010348A /* YHChartLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 2649200B2147DA670010348A /* YHChartLine.m */; };
+		264920172147DA670010348A /* YHChartPie.m in Sources */ = {isa = PBXBuildFile; fileRef = 2649200F2147DA670010348A /* YHChartPie.m */; };
+		264920182147DA670010348A /* YHChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 264920132147DA670010348A /* YHChart.m */; };
 		265C2E78202C1D470073F244 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 265C2E76202C1D470073F244 /* Main.storyboard */; };
 		265C2E7A202C1D470073F244 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 265C2E79202C1D470073F244 /* Assets.xcassets */; };
 		265C2E7D202C1D470073F244 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 265C2E7B202C1D470073F244 /* LaunchScreen.storyboard */; };
@@ -24,6 +28,7 @@
 		265C2ED9202D7A1A0073F244 /* CALayerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 265C2ED5202D7A1A0073F244 /* CALayerVC.m */; };
 		265C2EDC202D7A770073F244 /* UIBezierPathVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 265C2EDB202D7A770073F244 /* UIBezierPathVC.m */; };
 		265C2EDF202D7BD30073F244 /* CAFirstVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 265C2EDE202D7BD30073F244 /* CAFirstVC.m */; };
+		26DB43D6214A8303004B345B /* FifthVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 26DB43D5214A8303004B345B /* FifthVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +51,14 @@
 /* Begin PBXFileReference section */
 		26229482205BA513002057F3 /* LayerPathVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LayerPathVC.m; sourceTree = "<group>"; };
 		26229483205BA513002057F3 /* LayerPathVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LayerPathVC.h; sourceTree = "<group>"; };
+		264920052147D2070010348A /* JXChartVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JXChartVC.h; sourceTree = "<group>"; };
+		264920062147D2070010348A /* JXChartVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JXChartVC.m; sourceTree = "<group>"; };
+		2649200A2147DA670010348A /* YHChartLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YHChartLine.h; sourceTree = "<group>"; };
+		2649200B2147DA670010348A /* YHChartLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YHChartLine.m; sourceTree = "<group>"; };
+		2649200E2147DA670010348A /* YHChartPie.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YHChartPie.h; sourceTree = "<group>"; };
+		2649200F2147DA670010348A /* YHChartPie.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YHChartPie.m; sourceTree = "<group>"; };
+		264920122147DA670010348A /* YHChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YHChart.h; sourceTree = "<group>"; };
+		264920132147DA670010348A /* YHChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YHChart.m; sourceTree = "<group>"; };
 		265C2E6D202C1D460073F244 /* CALayerDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CALayerDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		265C2E77202C1D470073F244 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		265C2E79202C1D470073F244 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -78,6 +91,8 @@
 		265C2EDB202D7A770073F244 /* UIBezierPathVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UIBezierPathVC.m; sourceTree = "<group>"; };
 		265C2EDD202D7BD30073F244 /* CAFirstVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CAFirstVC.h; sourceTree = "<group>"; };
 		265C2EDE202D7BD30073F244 /* CAFirstVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CAFirstVC.m; sourceTree = "<group>"; };
+		26DB43D4214A8303004B345B /* FifthVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FifthVC.h; sourceTree = "<group>"; };
+		26DB43D5214A8303004B345B /* FifthVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FifthVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +127,51 @@
 				26229482205BA513002057F3 /* LayerPathVC.m */,
 			);
 			path = Apply;
+			sourceTree = "<group>";
+		};
+		264920082147DA670010348A /* YHChartView */ = {
+			isa = PBXGroup;
+			children = (
+				264920092147DA670010348A /* YHChartLine */,
+				2649200D2147DA670010348A /* YHChartPie */,
+				264920112147DA670010348A /* YHChart */,
+				264920142147DA670010348A /* YHChartBar */,
+			);
+			path = YHChartView;
+			sourceTree = "<group>";
+		};
+		264920092147DA670010348A /* YHChartLine */ = {
+			isa = PBXGroup;
+			children = (
+				2649200A2147DA670010348A /* YHChartLine.h */,
+				2649200B2147DA670010348A /* YHChartLine.m */,
+			);
+			path = YHChartLine;
+			sourceTree = "<group>";
+		};
+		2649200D2147DA670010348A /* YHChartPie */ = {
+			isa = PBXGroup;
+			children = (
+				2649200E2147DA670010348A /* YHChartPie.h */,
+				2649200F2147DA670010348A /* YHChartPie.m */,
+			);
+			path = YHChartPie;
+			sourceTree = "<group>";
+		};
+		264920112147DA670010348A /* YHChart */ = {
+			isa = PBXGroup;
+			children = (
+				264920122147DA670010348A /* YHChart.h */,
+				264920132147DA670010348A /* YHChart.m */,
+			);
+			path = YHChart;
+			sourceTree = "<group>";
+		};
+		264920142147DA670010348A /* YHChartBar */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = YHChartBar;
 			sourceTree = "<group>";
 		};
 		265C2E64202C1D460073F244 = {
@@ -202,6 +262,11 @@
 				265C2EC9202D79C60073F244 /* ThirdVC.m */,
 				265C2EC4202D79C60073F244 /* FourthVC.h */,
 				265C2EC8202D79C60073F244 /* FourthVC.m */,
+				26DB43D4214A8303004B345B /* FifthVC.h */,
+				26DB43D5214A8303004B345B /* FifthVC.m */,
+				264920052147D2070010348A /* JXChartVC.h */,
+				264920062147D2070010348A /* JXChartVC.m */,
+				264920082147DA670010348A /* YHChartView */,
 			);
 			path = UIBezierPath;
 			sourceTree = "<group>";
@@ -350,15 +415,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				264920072147D2070010348A /* JXChartVC.m in Sources */,
 				265C2ED9202D7A1A0073F244 /* CALayerVC.m in Sources */,
 				265C2ECE202D79C60073F244 /* ThirdVC.m in Sources */,
 				26229484205BA513002057F3 /* LayerPathVC.m in Sources */,
 				265C2EDC202D7A770073F244 /* UIBezierPathVC.m in Sources */,
 				265C2EDF202D7BD30073F244 /* CAFirstVC.m in Sources */,
 				265C2ECF202D79C60073F244 /* FirstVC.m in Sources */,
+				264920172147DA670010348A /* YHChartPie.m in Sources */,
 				265C2EA8202C21640073F244 /* ViewController.m in Sources */,
 				265C2EAC202C217B0073F244 /* TableVC.m in Sources */,
+				264920152147DA670010348A /* YHChartLine.m in Sources */,
 				265C2E80202C1D470073F244 /* main.m in Sources */,
+				264920182147DA670010348A /* YHChart.m in Sources */,
+				26DB43D6214A8303004B345B /* FifthVC.m in Sources */,
 				265C2ECC202D79C60073F244 /* SecondVC.m in Sources */,
 				265C2ECD202D79C60073F244 /* FourthVC.m in Sources */,
 				265C2EA9202C21640073F244 /* AppDelegate.m in Sources */,

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		262A8C29213D096800031207 /* UIView+SDAutoLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 262A8C24213D096800031207 /* UIView+SDAutoLayout.m */; };
+		262A8C2A213D096800031207 /* UITableView+SDAutoTableViewCellHeight.m in Sources */ = {isa = PBXBuildFile; fileRef = 262A8C27213D096800031207 /* UITableView+SDAutoTableViewCellHeight.m */; };
 		267C0CE12136761600AAC538 /* UIImage+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = 267C0CDF2136761600AAC538 /* UIImage+Addition.m */; };
 		267C0CE4213797B900AAC538 /* UIImageView+JXImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 267C0CE3213797B900AAC538 /* UIImageView+JXImageView.m */; };
 		26C2ADCF212D094E001CB9E1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 26C2ADCE212D094E001CB9E1 /* AppDelegate.m */; };
@@ -24,6 +26,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		262A8C24213D096800031207 /* UIView+SDAutoLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+SDAutoLayout.m"; sourceTree = "<group>"; };
+		262A8C25213D096800031207 /* UITableView+SDAutoTableViewCellHeight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+SDAutoTableViewCellHeight.h"; sourceTree = "<group>"; };
+		262A8C26213D096800031207 /* SDAutoLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDAutoLayout.h; sourceTree = "<group>"; };
+		262A8C27213D096800031207 /* UITableView+SDAutoTableViewCellHeight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+SDAutoTableViewCellHeight.m"; sourceTree = "<group>"; };
+		262A8C28213D096800031207 /* UIView+SDAutoLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+SDAutoLayout.h"; sourceTree = "<group>"; };
 		267C0CDF2136761600AAC538 /* UIImage+Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Addition.m"; sourceTree = "<group>"; };
 		267C0CE02136761600AAC538 /* UIImage+Addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Addition.h"; sourceTree = "<group>"; };
 		267C0CE2213797B900AAC538 /* UIImageView+JXImageView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImageView+JXImageView.h"; sourceTree = "<group>"; };
@@ -63,9 +70,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		262A8C22213D096800031207 /* ThirdLib */ = {
+			isa = PBXGroup;
+			children = (
+				262A8C23213D096800031207 /* SDAutoLayout */,
+			);
+			path = ThirdLib;
+			sourceTree = "<group>";
+		};
+		262A8C23213D096800031207 /* SDAutoLayout */ = {
+			isa = PBXGroup;
+			children = (
+				262A8C24213D096800031207 /* UIView+SDAutoLayout.m */,
+				262A8C25213D096800031207 /* UITableView+SDAutoTableViewCellHeight.h */,
+				262A8C26213D096800031207 /* SDAutoLayout.h */,
+				262A8C27213D096800031207 /* UITableView+SDAutoTableViewCellHeight.m */,
+				262A8C28213D096800031207 /* UIView+SDAutoLayout.h */,
+			);
+			path = SDAutoLayout;
+			sourceTree = "<group>";
+		};
 		267C0CDD2136761600AAC538 /* Class */ = {
 			isa = PBXGroup;
 			children = (
+				262A8C22213D096800031207 /* ThirdLib */,
 				267C0CDE2136761600AAC538 /* Categary */,
 			);
 			path = Class;
@@ -130,16 +158,8 @@
 			isa = PBXGroup;
 			children = (
 				26C2AF3D212E54BB001CB9E1 /* Controller */,
-				26C2AF3C212E54BB001CB9E1 /* View */,
 			);
 			path = Fun;
-			sourceTree = "<group>";
-		};
-		26C2AF3C212E54BB001CB9E1 /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		26C2AF3D212E54BB001CB9E1 /* Controller */ = {
@@ -238,8 +258,10 @@
 				26C2AF4B212E54BB001CB9E1 /* Animation3VC.m in Sources */,
 				26C2ADEC212D0ADE001CB9E1 /* TableVC.m in Sources */,
 				267C0CE4213797B900AAC538 /* UIImageView+JXImageView.m in Sources */,
+				262A8C2A213D096800031207 /* UITableView+SDAutoTableViewCellHeight.m in Sources */,
 				26C2ADCF212D094E001CB9E1 /* AppDelegate.m in Sources */,
 				26C2AF4C212E54BB001CB9E1 /* Animation1VC.m in Sources */,
+				262A8C29213D096800031207 /* UIView+SDAutoLayout.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

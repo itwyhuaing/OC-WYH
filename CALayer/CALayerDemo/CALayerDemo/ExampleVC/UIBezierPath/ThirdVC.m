@@ -27,6 +27,8 @@
     [self addLayer];     // CAShapeLayer
     [self makeUpPoint];  // CGPoint
     [self path3];        // UIBezierPath
+    self.title = NSStringFromClass(self.class);
+    
 }
 
 - (void)addLayer{

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		262A8C55213E7A6D00031207 /* UIView+JXView.m in Sources */ = {isa = PBXBuildFile; fileRef = 262A8C54213E7A6D00031207 /* UIView+JXView.m */; };
 		26710B7420FC404F0040D6AE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26710B7220FC404F0040D6AE /* Main.storyboard */; };
 		26710B7620FC40510040D6AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 26710B7520FC40510040D6AE /* Assets.xcassets */; };
 		26710B7920FC40510040D6AE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26710B7720FC40510040D6AE /* LaunchScreen.storyboard */; };
@@ -30,6 +31,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		262A8C53213E7A6D00031207 /* UIView+JXView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+JXView.h"; sourceTree = "<group>"; };
+		262A8C54213E7A6D00031207 /* UIView+JXView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+JXView.m"; sourceTree = "<group>"; };
 		26710B6920FC404F0040D6AE /* JXObjCategary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JXObjCategary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		26710B7320FC404F0040D6AE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		26710B7520FC40510040D6AE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -137,6 +140,8 @@
 				26A5BA7E2119AB0E009E77B6 /* NSData+JXData.m */,
 				26A5BAE4211BD566009E77B6 /* NSArray+JXArray.h */,
 				26A5BAE5211BD566009E77B6 /* NSArray+JXArray.m */,
+				262A8C53213E7A6D00031207 /* UIView+JXView.h */,
+				262A8C54213E7A6D00031207 /* UIView+JXView.m */,
 			);
 			path = ObjCatagery;
 			sourceTree = "<group>";
@@ -244,6 +249,7 @@
 				26710B9520FC6EB80040D6AE /* Data1Model.m in Sources */,
 				26710B8F20FC41D90040D6AE /* UILabel+JXLabel.m in Sources */,
 				26710B7C20FC40510040D6AE /* main.m in Sources */,
+				262A8C55213E7A6D00031207 /* UIView+JXView.m in Sources */,
 				26A5BA7F2119AB0E009E77B6 /* NSData+JXData.m in Sources */,
 				26710B8C20FC41C00040D6AE /* UIButton+JXButton.m in Sources */,
 				26A5BAE6211BD566009E77B6 /* NSArray+JXArray.m in Sources */,

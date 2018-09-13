@@ -14,3 +14,4 @@
 #import "NSDictionary+JXDictionary.h"
 #import "NSData+JXData.h"
 #import "NSArray+JXArray.h"
+#import "UIView+JXView.h"

@@ -18,6 +18,7 @@
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
     self.navigationController.navigationBar.translucent = FALSE;
+    self.title = NSStringFromClass(self.class);
     
     [self test00];
     [self test01];

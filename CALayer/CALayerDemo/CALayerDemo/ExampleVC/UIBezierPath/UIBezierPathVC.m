@@ -11,6 +11,8 @@
 #import "SecondVC.h"
 #import "ThirdVC.h"
 #import "FourthVC.h"
+#import "JXChartVC.h"
+#import "FifthVC.h"
 
 @interface UIBezierPathVC ()
 @property (nonatomic,strong) NSMutableArray *dataSource;
@@ -24,7 +26,7 @@
     self.title = @" UIBezierPathVC ";
     //  UI 修饰
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    NSArray *tmp = @[@"CAShapeLayer UIBezierPath 绘制图形",@"绘制直线、折线、曲线",@"拖动四个点动态绘制曲线",@"坐标系内绘制线条"];
+    NSArray *tmp = @[@"CAShapeLayer UIBezierPath 绘制图形",@"绘制直线、折线、曲线",@"拖动四个点动态绘制曲线",@"坐标系内绘制线条",@"应用：柱状图、曲线图、折线图",@"曲线简单绘制"];
     _dataSource = [[NSMutableArray alloc] initWithArray:tmp];
 }
 
@@ -80,7 +82,14 @@
             break;
         case 4:
         {
-            
+            vc = [[JXChartVC alloc] init];
+            [self.navigationController pushViewController:vc animated:TRUE];
+        }
+            break;
+        case 5:
+        {
+            vc = [[FifthVC alloc] init];
+            [self.navigationController pushViewController:vc animated:TRUE];
         }
             break;
             

@@ -2,8 +2,8 @@
 //  JXFMDBMOperator.m
 //  DataStoreDemo
 //
-//  Created by hnbwyh on 2018/7/20.
-//  Copyright © 2018年 hainbwyh. All rights reserved.
+//  Created by hnbwyh on 2016/7/20.
+//  Copyright © 2016年 hainbwyh. All rights reserved.
 //
 
 #import "JXFMDBMOperator.h"

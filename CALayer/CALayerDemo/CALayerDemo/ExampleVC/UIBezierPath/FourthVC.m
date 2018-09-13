@@ -21,7 +21,7 @@
     self.view.backgroundColor = [UIColor whiteColor];
     [self makeUpCoordinate];
     [self arcPath];
-    
+    self.title = NSStringFromClass(self.class);
     
 }
 

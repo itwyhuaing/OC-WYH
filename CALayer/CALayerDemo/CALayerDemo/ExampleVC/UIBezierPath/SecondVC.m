@@ -24,6 +24,7 @@
     [self makeUpPoint];         // 制定坐标位置
     [self pathStraightLine];    // 依据点绘制直线线条
     [self path2];
+    self.title = NSStringFromClass(self.class);
     
 }
 

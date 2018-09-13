@@ -11,7 +11,6 @@
 
 @interface Animation4VC ()
 
-
 @end
 
 @implementation Animation4VC
@@ -19,7 +18,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-}
 
+}
 
 @end

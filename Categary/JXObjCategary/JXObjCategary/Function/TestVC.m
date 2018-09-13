@@ -20,17 +20,28 @@
     
     //[self testCommonObj];
     
-    [self textCustomObj];
+    //[self textCustomObj];
+    
+   
     
 }
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
+     [self testJXView];
 }
 
 
-
 #pragma mark ------ testCommonObj
+
+- (void)testJXView{
+    UIView *v = [UIView cardStyle];
+    [v setFrame:CGRectMake(30, 100, 100, 100)];
+    [self.view addSubview:v];
+    
+    self.view.backgroundColor = [UIColor grayColor];
+}
+
 
 - (void)testCommonObj{
     NSMutableArray *arr1 = [NSMutableArray new];
