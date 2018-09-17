@@ -16,6 +16,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    UIView *tv = [[UIView alloc] initWithFrame:self.view.bounds];
+    tv.backgroundColor = [UIColor orangeColor];
+    [self.view addSubview:tv];
+    
     self.view.backgroundColor = [UIColor whiteColor];
     self.navigationController.navigationBar.translucent = FALSE;
     self.title = NSStringFromClass(self.class);
@@ -34,7 +39,7 @@
     shapeLayer.strokeColor = [[UIColor blackColor] CGColor]; //[[[UIColor blackColor] colorWithAlphaComponent:0.1] CGColor];
     shapeLayer.fillColor = [[UIColor clearColor] CGColor];
     shapeLayer.lineWidth = 1;
-    [self.view.layer addSublayer:shapeLayer];
+    [tv.layer addSublayer:shapeLayer];
     
 }
 

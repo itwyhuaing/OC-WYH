@@ -35,7 +35,7 @@
 #pragma mark ------ testCommonObj
 
 - (void)testJXView{
-    UIView *v = [UIView cardStyle];
+    UIView *v = [UIView cardStyleView];
     [v setFrame:CGRectMake(30, 100, 100, 100)];
     [self.view addSubview:v];
     
