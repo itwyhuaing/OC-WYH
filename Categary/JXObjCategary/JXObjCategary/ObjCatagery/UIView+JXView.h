@@ -10,6 +10,16 @@
 
 @interface UIView (JXView)
 
-+ (UIView *)cardStyle;
+
+/**
+ 渲染卡片效果
+
+ @return 具有卡片效果的视图
+ */
++ (UIView *)cardStyleView;
+
+/**
+ https://www.jianshu.com/p/e7c9e94e165b
+ */
 
 @end
