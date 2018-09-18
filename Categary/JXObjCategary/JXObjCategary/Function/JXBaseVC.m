@@ -16,13 +16,22 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    [self.view addSubview:self.cntV];
+    self.sw               = [UIScreen mainScreen].bounds.size.width;
+    self.sh               = [UIScreen mainScreen].bounds.size.height;
 }
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     self.view.backgroundColor = [UIColor whiteColor];
     self.title = NSStringFromClass(self.class);
+}
+
+-(UIScrollView *)cntV{
+    if (!_cntV) {
+        _cntV                   = [[UIScrollView alloc] initWithFrame:self.view.bounds];
+    }
+    return _cntV;
 }
 
 @end

@@ -19,7 +19,10 @@
 + (UIView *)cardStyleView;
 
 /**
- https://www.jianshu.com/p/e7c9e94e165b
+ 渲染颜色渐变 ： 参考 - https://www.jianshu.com/p/e7c9e94e165b
+
+ @return 具有颜色渐变效果的视图
  */
++ (UIView *)gradeColorViewWithFrame:(CGRect)rect;
 
 @end

@@ -21,6 +21,9 @@
 		26710B9820FC6F430040D6AE /* DataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 26710B9720FC6F430040D6AE /* DataManager.m */; };
 		267E006021006836002566DC /* UIColor+JXColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 267E005F21006836002566DC /* UIColor+JXColor.m */; };
 		267E006321007185002566DC /* UIImage+JXImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 267E006221007185002566DC /* UIImage+JXImage.m */; };
+		2691CF932150D5FA00799B11 /* JXViewVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2691CF912150D5FA00799B11 /* JXViewVC.m */; };
+		2691CF962150D70000799B11 /* JXColorVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2691CF952150D70000799B11 /* JXColorVC.m */; };
+		2691CF992150D71000799B11 /* JXImageVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2691CF982150D71000799B11 /* JXImageVC.m */; };
 		26A5BA792119A9AE009E77B6 /* NSString+JXString.m in Sources */ = {isa = PBXBuildFile; fileRef = 26A5BA782119A9AE009E77B6 /* NSString+JXString.m */; };
 		26A5BA7C2119A9C9009E77B6 /* NSDictionary+JXDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 26A5BA7B2119A9C9009E77B6 /* NSDictionary+JXDictionary.m */; };
 		26A5BA7F2119AB0E009E77B6 /* NSData+JXData.m in Sources */ = {isa = PBXBuildFile; fileRef = 26A5BA7E2119AB0E009E77B6 /* NSData+JXData.m */; };
@@ -57,6 +60,12 @@
 		267E005F21006836002566DC /* UIColor+JXColor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+JXColor.m"; sourceTree = "<group>"; };
 		267E006121007185002566DC /* UIImage+JXImage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+JXImage.h"; sourceTree = "<group>"; };
 		267E006221007185002566DC /* UIImage+JXImage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+JXImage.m"; sourceTree = "<group>"; };
+		2691CF912150D5FA00799B11 /* JXViewVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXViewVC.m; sourceTree = "<group>"; };
+		2691CF922150D5FA00799B11 /* JXViewVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXViewVC.h; sourceTree = "<group>"; };
+		2691CF942150D70000799B11 /* JXColorVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JXColorVC.h; sourceTree = "<group>"; };
+		2691CF952150D70000799B11 /* JXColorVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JXColorVC.m; sourceTree = "<group>"; };
+		2691CF972150D71000799B11 /* JXImageVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JXImageVC.h; sourceTree = "<group>"; };
+		2691CF982150D71000799B11 /* JXImageVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JXImageVC.m; sourceTree = "<group>"; };
 		26A5BA772119A9AE009E77B6 /* NSString+JXString.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+JXString.h"; sourceTree = "<group>"; };
 		26A5BA782119A9AE009E77B6 /* NSString+JXString.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+JXString.m"; sourceTree = "<group>"; };
 		26A5BA7A2119A9C9009E77B6 /* NSDictionary+JXDictionary.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+JXDictionary.h"; sourceTree = "<group>"; };
@@ -163,6 +172,33 @@
 			path = Main;
 			sourceTree = "<group>";
 		};
+		2691CF8E2150D5FA00799B11 /* JXImageShow */ = {
+			isa = PBXGroup;
+			children = (
+				2691CF972150D71000799B11 /* JXImageVC.h */,
+				2691CF982150D71000799B11 /* JXImageVC.m */,
+			);
+			path = JXImageShow;
+			sourceTree = "<group>";
+		};
+		2691CF8F2150D5FA00799B11 /* JXColorShow */ = {
+			isa = PBXGroup;
+			children = (
+				2691CF942150D70000799B11 /* JXColorVC.h */,
+				2691CF952150D70000799B11 /* JXColorVC.m */,
+			);
+			path = JXColorShow;
+			sourceTree = "<group>";
+		};
+		2691CF902150D5FA00799B11 /* JXViewShow */ = {
+			isa = PBXGroup;
+			children = (
+				2691CF922150D5FA00799B11 /* JXViewVC.h */,
+				2691CF912150D5FA00799B11 /* JXViewVC.m */,
+			);
+			path = JXViewShow;
+			sourceTree = "<group>";
+		};
 		26A5BAE9211BD987009E77B6 /* Function */ = {
 			isa = PBXGroup;
 			children = (
@@ -170,6 +206,9 @@
 				26A5BAEB211BD9AF009E77B6 /* JXBaseVC.m */,
 				26A5BAED211BD9C1009E77B6 /* TestVC.h */,
 				26A5BAEE211BD9C1009E77B6 /* TestVC.m */,
+				2691CF902150D5FA00799B11 /* JXViewShow */,
+				2691CF8F2150D5FA00799B11 /* JXColorShow */,
+				2691CF8E2150D5FA00799B11 /* JXImageShow */,
 			);
 			path = Function;
 			sourceTree = "<group>";
@@ -244,6 +283,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2691CF962150D70000799B11 /* JXColorVC.m in Sources */,
 				26A5BAEC211BD9AF009E77B6 /* JXBaseVC.m in Sources */,
 				26A5BA7C2119A9C9009E77B6 /* NSDictionary+JXDictionary.m in Sources */,
 				26710B9520FC6EB80040D6AE /* Data1Model.m in Sources */,
@@ -259,7 +299,9 @@
 				267E006021006836002566DC /* UIColor+JXColor.m in Sources */,
 				26C2AE88212E4AD5001CB9E1 /* UILabel+YBAttributeTextTapAction.m in Sources */,
 				26A5BAEF211BD9C1009E77B6 /* TestVC.m in Sources */,
+				2691CF932150D5FA00799B11 /* JXViewVC.m in Sources */,
 				267E006321007185002566DC /* UIImage+JXImage.m in Sources */,
+				2691CF992150D71000799B11 /* JXImageVC.m in Sources */,
 				26710B9220FC6DD10040D6AE /* DesTableViewCell.m in Sources */,
 				26710B8920FC40D20040D6AE /* AppDelegate.m in Sources */,
 			);

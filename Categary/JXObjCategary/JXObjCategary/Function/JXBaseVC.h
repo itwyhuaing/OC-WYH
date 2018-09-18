@@ -10,4 +10,10 @@
 
 @interface JXBaseVC : UIViewController
 
+@property (nonatomic,assign) CGFloat sw;
+@property (nonatomic,assign) CGFloat sh;
+
+// 内容
+@property (nonatomic,strong) UIScrollView *cntV;
+
 @end

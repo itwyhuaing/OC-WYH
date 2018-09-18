@@ -96,7 +96,8 @@
             rect.size.width = 15;
             rect.size.height = rect.size.width;
             rect.origin.y = sectionHeight/2.0 - rect.size.height / 2.0;
-            UIImageView *img_mark = [[UIImageView alloc] initWithFrame:rect];
+            UIImageView *img_mark       = [[UIImageView alloc] initWithFrame:rect];
+            img_mark.backgroundColor    = [UIColor redColor];
             img_mark.image = [UIImage imageNamed:@"down_mark"];
             img_mark.tag = TAG_OF_IMAGEVIEW_MARK + cou;
             [self addSubview:img_mark];

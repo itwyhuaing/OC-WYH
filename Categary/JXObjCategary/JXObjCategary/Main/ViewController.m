@@ -18,6 +18,7 @@
 @property (nonatomic,strong) DataManager            *dataManager;
 @property (nonatomic,strong) NSMutableArray         *titleData;
 @property (nonatomic,strong) NSMutableArray         *cntData;
+@property (nonatomic,strong) NSMutableArray         *vcs;
 
 @end
 
@@ -68,16 +69,21 @@
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     DesTableViewCell *cell      = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([DesTableViewCell class])];
-    NSMutableArray *data = self.cntData[indexPath.section];
-    Data1Model *f = data[indexPath.row];
-    cell.textLabel.text         = f.cntDetail;
+    NSMutableArray *data        = self.cntData[indexPath.section];
+    Data1Model *f               = data[indexPath.row];
+    cell.desDetail.text         = f.cntDetail;
     return cell;
 }
 
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:TRUE];
-    [self.navigationController pushViewController:[[TestVC alloc] init] animated:TRUE];
+    UIViewController *vc;
+    if (self.vcs.count > 0 && self.vcs.count - 1 >= indexPath.section) {
+        NSString *vcstring = self.vcs[indexPath.section];
+        vc = [[NSClassFromString(vcstring) alloc] init];
+    }
+    [self.navigationController pushViewController:vc animated:TRUE];
 }
 
 #pragma mark ------ private method
@@ -85,8 +91,10 @@
 - (void)loadDataSource{
     [self.titleData removeAllObjects];
     [self.cntData removeAllObjects];
+    [self.vcs removeAllObjects];
     [self.titleData addObjectsFromArray:[self.dataManager loadTitles]];
     [self.cntData addObjectsFromArray:[self.dataManager loadCntDetails]];
+    [self.vcs addObjectsFromArray:[self.dataManager loadShowVCS]];
     [self.listTable reloadData];
 }
 
@@ -122,6 +130,13 @@
         _cntData = [[NSMutableArray alloc] init];
     }
     return _cntData;
+}
+
+-(NSMutableArray *)vcs{
+    if (!_vcs) {
+        _vcs = [[NSMutableArray alloc] init];
+    }
+    return _vcs;
 }
 
 @end

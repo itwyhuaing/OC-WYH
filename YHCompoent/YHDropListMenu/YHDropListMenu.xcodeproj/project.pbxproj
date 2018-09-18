@@ -140,8 +140,8 @@
 		265C2F73202D9EDE0073F244 /* Func */ = {
 			isa = PBXGroup;
 			children = (
-				265C2F74202D9EDE0073F244 /* DropListMenu.m */,
 				265C2F75202D9EDE0073F244 /* DropListMenu.h */,
+				265C2F74202D9EDE0073F244 /* DropListMenu.m */,
 			);
 			path = Func;
 			sourceTree = "<group>";

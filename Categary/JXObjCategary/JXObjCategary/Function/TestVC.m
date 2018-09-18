@@ -24,11 +24,23 @@
     
    
     
+   
+    
 }
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-     [self testJXView];
+     //[self testJXView];
+    
+    self.view.backgroundColor           = [UIColor whiteColor];
+    UIView *subV                        = [[UIView alloc] initWithFrame:CGRectMake(100, 100, 3, 3)];
+    subV.backgroundColor                = [UIColor redColor];
+    //subV.alpha                          = 0.6;
+    subV.layer.shadowOffset             = CGSizeMake(0.0, 0.0);
+    subV.layer.shadowOpacity            = 1;
+    subV.layer.shadowRadius             = 3.0;
+    subV.layer.shadowColor              = [UIColor redColor].CGColor;
+    [self.view addSubview:subV];
 }
 
 
