@@ -440,14 +440,16 @@ static NSString *kcustomid = @"customid";    /**<存储数据主键>*/
     __block BOOL rlt = FALSE;
     NSString *sql = [NSString stringWithFormat:@"select count(name) as countNum from sqlite_master where type = 'table' and name = '%@'", tableName];
     [self.dataBaseQueue inDatabase:^(FMDatabase *db) {
-        FMResultSet *rltSet = [db executeQuery:sql];
-        while ([rltSet next]) {
-            NSInteger count = [rltSet intForColumn:@"countNum"];
-            if (count == 1) {
-                rlt = TRUE;
+        if ([db open]) {
+            FMResultSet *rltSet = [db executeQuery:sql];
+            while ([rltSet next]) {
+                NSInteger count = [rltSet intForColumn:@"countNum"];
+                if (count == 1) {
+                    rlt = TRUE;
+                }
             }
+            [rltSet close];
         }
-        [rltSet close];
     }];
     return rlt;
 }
