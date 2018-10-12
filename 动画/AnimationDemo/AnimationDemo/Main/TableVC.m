@@ -7,10 +7,10 @@
 //
 
 #import "TableVC.h"
-
+#import "DataModel.h"
 
 @interface TableVC ()
-@property (nonatomic,strong) NSMutableArray *dataSource;
+@property (nonatomic,strong) NSMutableArray<DataModel *> *dataSource;
 @end
 
 @implementation TableVC
@@ -20,8 +20,15 @@
     
     //  UI 修饰
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    NSArray *tmp = @[@"Animation1VC",@"Animation2VC",@"Animation3VC",@"Animation4VC",@"Animation5VC"];
-    _dataSource = [[NSMutableArray alloc] initWithArray:tmp];
+    NSArray *vcs        = @[@"FirstVC",@"SecondVC",@"ThirdVC",@"FourthVC",@"Animation1VC",@"Animation2VC",@"Animation3VC",@"Animation4VC",@"Animation5VC"];
+    NSArray *desCnts    = @[@"平面平移",@"平面缩放",@"平面旋转",@"在一个形变基础上的另一个形变",@"Animation1VC",@"Animation2VC",@"Animation3VC",@"Animation4VC",@"Animation5VC"];
+    _dataSource         = [NSMutableArray new];
+    for (NSInteger cou = 0; cou < vcs.count; cou ++) {
+        DataModel *f    = [DataModel new];
+        f.vc            = vcs[cou];
+        f.desCnt        = desCnts[cou];
+        [_dataSource addObject:f];
+    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -42,59 +49,14 @@
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell_id_reuse"];
     }
-    cell.textLabel.text = _dataSource[indexPath.row];
+    cell.textLabel.text = _dataSource[indexPath.row].desCnt;
     return cell;
     
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    UIViewController *vc = [[NSClassFromString(_dataSource[indexPath.row]) alloc] init];
+    UIViewController *vc = [[NSClassFromString(_dataSource[indexPath.row].vc) alloc] init];
     [self.navigationController pushViewController:vc animated:TRUE];
 }
-
-
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

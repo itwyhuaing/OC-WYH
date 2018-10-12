@@ -11,6 +11,11 @@
 		262A8C2A213D096800031207 /* UITableView+SDAutoTableViewCellHeight.m in Sources */ = {isa = PBXBuildFile; fileRef = 262A8C27213D096800031207 /* UITableView+SDAutoTableViewCellHeight.m */; };
 		267C0CE12136761600AAC538 /* UIImage+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = 267C0CDF2136761600AAC538 /* UIImage+Addition.m */; };
 		267C0CE4213797B900AAC538 /* UIImageView+JXImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 267C0CE3213797B900AAC538 /* UIImageView+JXImageView.m */; };
+		26AD6F81216DEF6000D01DA2 /* FirstVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 26AD6F80216DEF6000D01DA2 /* FirstVC.m */; };
+		26AD6F84216DEFA000D01DA2 /* SecondVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 26AD6F83216DEFA000D01DA2 /* SecondVC.m */; };
+		26AD6F87216DF49300D01DA2 /* ThirdVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 26AD6F86216DF49300D01DA2 /* ThirdVC.m */; };
+		26AD6F8A216DF64200D01DA2 /* FourthVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 26AD6F89216DF64200D01DA2 /* FourthVC.m */; };
+		26AD6F8D216DFE7F00D01DA2 /* DataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 26AD6F8C216DFE7F00D01DA2 /* DataModel.m */; };
 		26C2ADCF212D094E001CB9E1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 26C2ADCE212D094E001CB9E1 /* AppDelegate.m */; };
 		26C2ADD5212D094E001CB9E1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26C2ADD3212D094E001CB9E1 /* Main.storyboard */; };
 		26C2ADD7212D094F001CB9E1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 26C2ADD6212D094F001CB9E1 /* Assets.xcassets */; };
@@ -35,6 +40,17 @@
 		267C0CE02136761600AAC538 /* UIImage+Addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Addition.h"; sourceTree = "<group>"; };
 		267C0CE2213797B900AAC538 /* UIImageView+JXImageView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImageView+JXImageView.h"; sourceTree = "<group>"; };
 		267C0CE3213797B900AAC538 /* UIImageView+JXImageView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+JXImageView.m"; sourceTree = "<group>"; };
+		26AD6F7E216DEDC000D01DA2 /* AnimationNote.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AnimationNote.h; sourceTree = "<group>"; };
+		26AD6F7F216DEF5F00D01DA2 /* FirstVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstVC.h; sourceTree = "<group>"; };
+		26AD6F80216DEF6000D01DA2 /* FirstVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstVC.m; sourceTree = "<group>"; };
+		26AD6F82216DEFA000D01DA2 /* SecondVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondVC.h; sourceTree = "<group>"; };
+		26AD6F83216DEFA000D01DA2 /* SecondVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondVC.m; sourceTree = "<group>"; };
+		26AD6F85216DF49300D01DA2 /* ThirdVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ThirdVC.h; sourceTree = "<group>"; };
+		26AD6F86216DF49300D01DA2 /* ThirdVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ThirdVC.m; sourceTree = "<group>"; };
+		26AD6F88216DF64200D01DA2 /* FourthVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FourthVC.h; sourceTree = "<group>"; };
+		26AD6F89216DF64200D01DA2 /* FourthVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FourthVC.m; sourceTree = "<group>"; };
+		26AD6F8B216DFE7F00D01DA2 /* DataModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataModel.h; sourceTree = "<group>"; };
+		26AD6F8C216DFE7F00D01DA2 /* DataModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DataModel.m; sourceTree = "<group>"; };
 		26C2ADCA212D094E001CB9E1 /* AnimationDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AnimationDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		26C2ADCD212D094E001CB9E1 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		26C2ADCE212D094E001CB9E1 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -110,6 +126,14 @@
 			path = Categary;
 			sourceTree = "<group>";
 		};
+		26AD6F7D216DEDAA00D01DA2 /* Notes */ = {
+			isa = PBXGroup;
+			children = (
+				26AD6F7E216DEDC000D01DA2 /* AnimationNote.h */,
+			);
+			path = Notes;
+			sourceTree = "<group>";
+		};
 		26C2ADC1212D094E001CB9E1 = {
 			isa = PBXGroup;
 			children = (
@@ -150,6 +174,8 @@
 				26C2ADF1212D0CB5001CB9E1 /* BaseAnimationVC.h */,
 				26C2ADF2212D0CB5001CB9E1 /* BaseAnimationVC.m */,
 				26C2ADD3212D094E001CB9E1 /* Main.storyboard */,
+				26AD6F8B216DFE7F00D01DA2 /* DataModel.h */,
+				26AD6F8C216DFE7F00D01DA2 /* DataModel.m */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -157,6 +183,7 @@
 		26C2ADED212D0BD3001CB9E1 /* Fun */ = {
 			isa = PBXGroup;
 			children = (
+				26AD6F7D216DEDAA00D01DA2 /* Notes */,
 				26C2AF3D212E54BB001CB9E1 /* Controller */,
 			);
 			path = Fun;
@@ -165,6 +192,14 @@
 		26C2AF3D212E54BB001CB9E1 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				26AD6F7F216DEF5F00D01DA2 /* FirstVC.h */,
+				26AD6F80216DEF6000D01DA2 /* FirstVC.m */,
+				26AD6F82216DEFA000D01DA2 /* SecondVC.h */,
+				26AD6F83216DEFA000D01DA2 /* SecondVC.m */,
+				26AD6F85216DF49300D01DA2 /* ThirdVC.h */,
+				26AD6F86216DF49300D01DA2 /* ThirdVC.m */,
+				26AD6F88216DF64200D01DA2 /* FourthVC.h */,
+				26AD6F89216DF64200D01DA2 /* FourthVC.m */,
 				26C2AF45212E54BB001CB9E1 /* Animation1VC.h */,
 				26C2AF42212E54BB001CB9E1 /* Animation1VC.m */,
 				26C2AF47212E54BB001CB9E1 /* Animation2VC.h */,
@@ -250,17 +285,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				26C2ADDD212D094F001CB9E1 /* main.m in Sources */,
+				26AD6F81216DEF6000D01DA2 /* FirstVC.m in Sources */,
 				26C2AF49212E54BB001CB9E1 /* Animation5VC.m in Sources */,
+				26AD6F8A216DF64200D01DA2 /* FourthVC.m in Sources */,
 				26C2AF4A212E54BB001CB9E1 /* Animation2VC.m in Sources */,
 				267C0CE12136761600AAC538 /* UIImage+Addition.m in Sources */,
 				26C2AF48212E54BB001CB9E1 /* Animation4VC.m in Sources */,
 				26C2ADF3212D0CB5001CB9E1 /* BaseAnimationVC.m in Sources */,
 				26C2AF4B212E54BB001CB9E1 /* Animation3VC.m in Sources */,
+				26AD6F87216DF49300D01DA2 /* ThirdVC.m in Sources */,
 				26C2ADEC212D0ADE001CB9E1 /* TableVC.m in Sources */,
+				26AD6F8D216DFE7F00D01DA2 /* DataModel.m in Sources */,
 				267C0CE4213797B900AAC538 /* UIImageView+JXImageView.m in Sources */,
 				262A8C2A213D096800031207 /* UITableView+SDAutoTableViewCellHeight.m in Sources */,
 				26C2ADCF212D094E001CB9E1 /* AppDelegate.m in Sources */,
 				26C2AF4C212E54BB001CB9E1 /* Animation1VC.m in Sources */,
+				26AD6F84216DEFA000D01DA2 /* SecondVC.m in Sources */,
 				262A8C29213D096800031207 /* UIView+SDAutoLayout.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
