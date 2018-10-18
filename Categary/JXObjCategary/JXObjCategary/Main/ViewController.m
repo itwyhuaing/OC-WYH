@@ -102,7 +102,8 @@
 
 -(UITableView *)listTable{
     if (!_listTable) {
-        CGRect rect = self.view.bounds;
+        CGRect rect         = self.view.bounds;
+        rect.size.height    = CGRectGetHeight(rect) - 64.0;
         rect.origin = CGPointZero;
         _listTable = [[UITableView alloc] initWithFrame:rect style:UITableViewStyleGrouped];
         _listTable.delegate         = self;

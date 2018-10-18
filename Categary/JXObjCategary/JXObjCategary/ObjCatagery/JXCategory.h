@@ -15,3 +15,4 @@
 #import "NSData+JXData.h"
 #import "NSArray+JXArray.h"
 #import "UIView+JXView.h"
+#import "UIFont+JXFont.h"

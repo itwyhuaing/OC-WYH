@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		260FD3E121788F5100370446 /* UIFont+JXFont.m in Sources */ = {isa = PBXBuildFile; fileRef = 260FD3E021788F5100370446 /* UIFont+JXFont.m */; };
+		260FD3E5217890DC00370446 /* JXFontVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 260FD3E4217890DC00370446 /* JXFontVC.m */; };
 		262A8C55213E7A6D00031207 /* UIView+JXView.m in Sources */ = {isa = PBXBuildFile; fileRef = 262A8C54213E7A6D00031207 /* UIView+JXView.m */; };
 		26710B7420FC404F0040D6AE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26710B7220FC404F0040D6AE /* Main.storyboard */; };
 		26710B7620FC40510040D6AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 26710B7520FC40510040D6AE /* Assets.xcassets */; };
@@ -34,6 +36,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		260FD3DF21788F5100370446 /* UIFont+JXFont.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIFont+JXFont.h"; sourceTree = "<group>"; };
+		260FD3E021788F5100370446 /* UIFont+JXFont.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIFont+JXFont.m"; sourceTree = "<group>"; };
+		260FD3E3217890DC00370446 /* JXFontVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JXFontVC.h; sourceTree = "<group>"; };
+		260FD3E4217890DC00370446 /* JXFontVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JXFontVC.m; sourceTree = "<group>"; };
+		260FD3E72178949000370446 /* JXFontNote.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JXFontNote.h; sourceTree = "<group>"; };
 		262A8C53213E7A6D00031207 /* UIView+JXView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+JXView.h"; sourceTree = "<group>"; };
 		262A8C54213E7A6D00031207 /* UIView+JXView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+JXView.m"; sourceTree = "<group>"; };
 		26710B6920FC404F0040D6AE /* JXObjCategary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JXObjCategary.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -95,6 +102,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		260FD3E2217890CA00370446 /* JXFontVCShow */ = {
+			isa = PBXGroup;
+			children = (
+				260FD3E3217890DC00370446 /* JXFontVC.h */,
+				260FD3E4217890DC00370446 /* JXFontVC.m */,
+			);
+			path = JXFontVCShow;
+			sourceTree = "<group>";
+		};
+		260FD3E62178947500370446 /* Notes */ = {
+			isa = PBXGroup;
+			children = (
+				260FD3E72178949000370446 /* JXFontNote.h */,
+			);
+			path = Notes;
+			sourceTree = "<group>";
+		};
 		26710B6020FC404F0040D6AE = {
 			isa = PBXGroup;
 			children = (
@@ -114,6 +138,7 @@
 		26710B6B20FC404F0040D6AE /* JXObjCategary */ = {
 			isa = PBXGroup;
 			children = (
+				260FD3E62178947500370446 /* Notes */,
 				26710B8320FC40D20040D6AE /* Main */,
 				26710B8220FC40D10040D6AE /* ObjCatagery */,
 				26A5BAE9211BD987009E77B6 /* Function */,
@@ -151,6 +176,8 @@
 				26A5BAE5211BD566009E77B6 /* NSArray+JXArray.m */,
 				262A8C53213E7A6D00031207 /* UIView+JXView.h */,
 				262A8C54213E7A6D00031207 /* UIView+JXView.m */,
+				260FD3DF21788F5100370446 /* UIFont+JXFont.h */,
+				260FD3E021788F5100370446 /* UIFont+JXFont.m */,
 			);
 			path = ObjCatagery;
 			sourceTree = "<group>";
@@ -206,6 +233,7 @@
 				26A5BAEB211BD9AF009E77B6 /* JXBaseVC.m */,
 				26A5BAED211BD9C1009E77B6 /* TestVC.h */,
 				26A5BAEE211BD9C1009E77B6 /* TestVC.m */,
+				260FD3E2217890CA00370446 /* JXFontVCShow */,
 				2691CF902150D5FA00799B11 /* JXViewShow */,
 				2691CF8F2150D5FA00799B11 /* JXColorShow */,
 				2691CF8E2150D5FA00799B11 /* JXImageShow */,
@@ -286,6 +314,7 @@
 				2691CF962150D70000799B11 /* JXColorVC.m in Sources */,
 				26A5BAEC211BD9AF009E77B6 /* JXBaseVC.m in Sources */,
 				26A5BA7C2119A9C9009E77B6 /* NSDictionary+JXDictionary.m in Sources */,
+				260FD3E5217890DC00370446 /* JXFontVC.m in Sources */,
 				26710B9520FC6EB80040D6AE /* Data1Model.m in Sources */,
 				26710B8F20FC41D90040D6AE /* UILabel+JXLabel.m in Sources */,
 				26710B7C20FC40510040D6AE /* main.m in Sources */,
@@ -296,6 +325,7 @@
 				26A5BA792119A9AE009E77B6 /* NSString+JXString.m in Sources */,
 				26710B8820FC40D20040D6AE /* ViewController.m in Sources */,
 				26710B9820FC6F430040D6AE /* DataManager.m in Sources */,
+				260FD3E121788F5100370446 /* UIFont+JXFont.m in Sources */,
 				267E006021006836002566DC /* UIColor+JXColor.m in Sources */,
 				26C2AE88212E4AD5001CB9E1 /* UILabel+YBAttributeTextTapAction.m in Sources */,
 				26A5BAEF211BD9C1009E77B6 /* TestVC.m in Sources */,
@@ -444,15 +474,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = JA7UMD99EC;
 				GCC_PREFIX_HEADER = JXObjCategary/JXObjCategary.pch;
 				INFOPLIST_FILE = JXObjCategary/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ZhiXingJY.www.JXObjCategary;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -461,15 +493,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = JA7UMD99EC;
 				GCC_PREFIX_HEADER = JXObjCategary/JXObjCategary.pch;
 				INFOPLIST_FILE = JXObjCategary/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ZhiXingJY.www.JXObjCategary;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
