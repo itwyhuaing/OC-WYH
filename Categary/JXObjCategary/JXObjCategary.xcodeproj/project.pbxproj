@@ -40,7 +40,7 @@
 		260FD3E021788F5100370446 /* UIFont+JXFont.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIFont+JXFont.m"; sourceTree = "<group>"; };
 		260FD3E3217890DC00370446 /* JXFontVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JXFontVC.h; sourceTree = "<group>"; };
 		260FD3E4217890DC00370446 /* JXFontVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JXFontVC.m; sourceTree = "<group>"; };
-		260FD3E72178949000370446 /* JXFontNote.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JXFontNote.h; sourceTree = "<group>"; };
+		260FD3E72178949000370446 /* Note.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Note.h; sourceTree = "<group>"; };
 		262A8C53213E7A6D00031207 /* UIView+JXView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+JXView.h"; sourceTree = "<group>"; };
 		262A8C54213E7A6D00031207 /* UIView+JXView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+JXView.m"; sourceTree = "<group>"; };
 		26710B6920FC404F0040D6AE /* JXObjCategary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JXObjCategary.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -114,7 +114,7 @@
 		260FD3E62178947500370446 /* Notes */ = {
 			isa = PBXGroup;
 			children = (
-				260FD3E72178949000370446 /* JXFontNote.h */,
+				260FD3E72178949000370446 /* Note.h */,
 			);
 			path = Notes;
 			sourceTree = "<group>";
