@@ -57,7 +57,7 @@
     return _collectionView;
 }
 
-//重用ID
+// 重用ID
 static NSString *const ID = @"cell";
 
 - (void)viewDidLoad {

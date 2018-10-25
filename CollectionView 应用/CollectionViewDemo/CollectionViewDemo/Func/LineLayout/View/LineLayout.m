@@ -18,10 +18,12 @@
  * 这个方法的返回值决定了rect范围内所有元素的排布（frame）
  */
 - (NSArray<UICollectionViewLayoutAttributes *> *)layoutAttributesForElementsInRect:(CGRect)rect {
+
+    NSLog(@" \n\n%s\n\n ",__FUNCTION__);
+    
     NSArray *layoutAttrs = [super layoutAttributesForElementsInRect:rect];
     //collectionView 中心点的位置
     CGFloat collectionViewCenterX = self.collectionView.bounds.size.width * 0.5 + self.collectionView.contentOffset.x;
-    //NSLog(@" \n\n%s\n%f\n\n ",__FUNCTION__,self.collectionView.contentOffset.x);
     for (UICollectionViewLayoutAttributes *attrs in layoutAttrs) {
 
         // item 距离collectionView中点的位置距离
@@ -55,6 +57,8 @@
  */
 - (CGPoint)targetContentOffsetForProposedContentOffset:(CGPoint)proposedContentOffset withScrollingVelocity:(CGPoint)velocity {
     
+    NSLog(@" \n\n%s\n\n ",__FUNCTION__);
+    
     // 目的的位置，然后计算与中心点的距离 最小的那一个就 = 中心点的位置。
     NSArray *layoutAttrs = [self layoutAttributesForElementsInRect:CGRectMake(proposedContentOffset.x, 0, self.collectionView.bounds.size.width, self.collectionView.bounds.size.height)];
 
@@ -81,8 +85,9 @@
  注意：一定要调用[super prepareLayout]
  */
 - (void)prepareLayout {
-    
     [super prepareLayout];
+    
+    NSLog(@" \n\n%s\n\n ",__FUNCTION__);
     
     self.scrollDirection        = UICollectionViewScrollDirectionHorizontal;
     self.itemSize               = CGSizeMake(self.collectionView.bounds.size.height * 0.5, self.collectionView.bounds.size.height * 0.5);
