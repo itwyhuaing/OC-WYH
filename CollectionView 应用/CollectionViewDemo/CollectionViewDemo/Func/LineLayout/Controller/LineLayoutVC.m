@@ -10,7 +10,7 @@
 #import "LineLayout.h"
 #import "JXCollectionViewCell.h"
 
-@interface LineLayoutVC ()<UICollectionViewDataSource>
+@interface LineLayoutVC ()<UICollectionViewDataSource,UICollectionViewDelegate>
 //imageName 数组 （图片的命名是按钮1.jpg，2.jpg来命名的）
 @property (strong,nonatomic) NSMutableArray * imageNames;
 //控制器View里面的CollectionView
@@ -24,7 +24,7 @@
     
     if (!_imageNames) {
         _imageNames = [NSMutableArray array];
-        for (int i = 0; i < 20; i++ ) {
+        for (int i = 0; i < 8; i++ ) {
             NSString *name = [NSString stringWithFormat:@"%d",i%5 + 1];
             [_imageNames addObject:name];
         }
@@ -47,7 +47,8 @@
         //随便设置了1个背景颜色
         collectionView.backgroundColor = [UIColor darkGrayColor];
         //设置数据源
-        collectionView.dataSource = self;
+        collectionView.dataSource = (id)self;
+        collectionView.delegate   = (id)self;
         //注册Cell
         [collectionView registerClass:[JXCollectionViewCell class] forCellWithReuseIdentifier:ID];
         //添加到控制器的View中
@@ -68,9 +69,10 @@ static NSString *const ID = @"cell";
     self.collectionView.backgroundColor     = [UIColor orangeColor];
     
     //取出layout
-    LineLayout *layout                  = (LineLayout *)self.collectionView.collectionViewLayout;
-    //为了让第一个 Item 放在最中间，所以设置了edgeInsets
-    self.collectionView.contentInset    = UIEdgeInsetsMake(0, self.collectionView.bounds.size.width * 0.5 - layout.itemSize.width * 0.5 , 0, self.collectionView.bounds.size.width * 0.5 - layout.itemSize.width * 0.5);
+//    LineLayout *layout                  = (LineLayout *)self.collectionView.collectionViewLayout;
+//    //为了让第一个 Item 放在最中间，所以设置了edgeInsets
+//    self.collectionView.contentInset    = UIEdgeInsetsMake(0, self.collectionView.bounds.size.width * 0.5 - layout.itemSize.width * 0.5 , 0, self.collectionView.bounds.size.width * 0.5 - layout.itemSize.width * 0.5);
+    
 }
 
 //数据源方法返回一共多少个cell
@@ -86,5 +88,11 @@ static NSString *const ID = @"cell";
     cell.imageName  = self.imageNames[indexPath.item];
     return cell;
 }
+
+
+-(void)scrollViewDidScroll:(UIScrollView *)scrollView{
+    NSLog(@" \n\n scrollViewDidScroll \n\n\n ");
+}
+
 
 @end

@@ -88,7 +88,6 @@
     [super prepareLayout];
     
     NSLog(@" \n\n%s\n\n ",__FUNCTION__);
-    
     self.scrollDirection        = UICollectionViewScrollDirectionHorizontal;
     self.itemSize               = CGSizeMake(self.collectionView.bounds.size.height * 0.5, self.collectionView.bounds.size.height * 0.5);
     
