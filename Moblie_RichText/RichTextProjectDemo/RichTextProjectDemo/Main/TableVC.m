@@ -15,7 +15,11 @@
 #import "WKLoadHtmlVC.h"
 
 @interface TableVC ()
+
 @property (nonatomic,strong) NSMutableArray *dataSource;
+
+@property (nonatomic,strong) NSMutableArray *vcs;
+
 @end
 
 @implementation TableVC
@@ -25,15 +29,15 @@
     
     //  UI 修饰
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    NSArray *tmp = @[@"RichTextEditor - WK",@"JXTextViewVC",@"AttibutedTestVC:属性测试第一部分",@"AttributedTest2VC:属性测试第二部分",@"TextViewLoadHtmlVC:UITextView加载HTML",@"WKLoadHtmlVC:WKWebView加载HTML"];
-    _dataSource = [[NSMutableArray alloc] initWithArray:tmp];
+    NSArray *tmpds  = @[@"富文本编辑:UITextView属性测试第一部分",@"富文本编辑:UITextView属性测试第二部分",
+                        @"富文本编辑:UITextView实现方式",@"富文本编辑:WKWebView实现方式 - WK",
+                        @"富文本展示:UITextView加载HTML",@"富文本展示:WKWebView加载HTML"];
+    NSArray *tmpvcs = @[@"AttibutedTestVC",@"AttributedTest2VC",
+                        @"JXTextViewVC",@"RichTextEditor",
+                        @"TextViewLoadHtmlVC",@"WKLoadHtmlVC"];
+    _vcs        = [[NSMutableArray alloc] initWithArray:tmpvcs];
+    _dataSource = [[NSMutableArray alloc] initWithArray:tmpds];
 }
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
 
 #pragma mark - Table view data source
 
@@ -53,93 +57,8 @@
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    UIViewController *vc;
-    switch (indexPath.row) {
-        case 0:
-        {
-            vc = [[RichTextEditor alloc] init];
-            [self.navigationController pushViewController:vc animated:FALSE];
-        }
-            break;
-        case 1:
-        {
-            vc = [[JXTextViewVC alloc] init];
-            [self.navigationController pushViewController:vc animated:FALSE];
-        }
-            break;
-        case 2:
-        {
-            vc = [[AttibutedTestVC alloc] init];
-            [self.navigationController pushViewController:vc animated:FALSE];
-        }
-            break;
-        case 3:
-        {
-            vc = [[AttributedTest2VC alloc] init];
-            [self.navigationController pushViewController:vc animated:FALSE];
-        }
-            break;
-        case 4:
-        {
-            vc = [[TextViewLoadHtmlVC alloc] init];
-            [self.navigationController pushViewController:vc animated:FALSE];
-        }
-            break;
-        case 5:
-        {
-            vc = [[WKLoadHtmlVC alloc] init];
-            [self.navigationController pushViewController:vc animated:FALSE];
-        }
-            break;
-            
-        default:
-            break;
-    }
+    UIViewController *vc = (UIViewController *)[[NSClassFromString(self.vcs[indexPath.row]) alloc] init];
+    [self.navigationController pushViewController:vc animated:FALSE];
 }
-
-
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

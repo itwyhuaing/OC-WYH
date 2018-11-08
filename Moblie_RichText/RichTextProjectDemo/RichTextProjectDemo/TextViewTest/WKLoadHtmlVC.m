@@ -31,6 +31,7 @@
 
 
 - (void)loadHtmlContent{
+    self.startT = CFAbsoluteTimeGetCurrent();
     NSString *path = [[NSBundle mainBundle] pathForResource:@"HtmlContent" ofType:@"html"];
     NSString *html = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
     CGFloat iw = [UIScreen mainScreen].bounds.size.width - 20;
@@ -39,7 +40,6 @@
         newHtml = [html stringByReplacingOccurrencesOfString:@"<img" withString:[NSString stringWithFormat:@"<img width=\"%f\"",iw]];
     }
     //NSLog(@" \n %@ \n  %@ \n ",html,newHtml);
-    self.startT = CFAbsoluteTimeGetCurrent();
     [self.wkweb loadHTMLString:newHtml baseURL:[NSURL URLWithString:@"https://www.baidu.com"]];
     NSLog(@"\n高度值获取 \n%f \n",self.wkweb.scrollView.contentSize.height);
     
