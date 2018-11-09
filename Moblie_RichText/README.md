@@ -52,11 +52,6 @@
 ###### 第三方库
 
 1. 轻量级 HTML+CSS 样式的解析框架 DTCoreText 。注：集成比较坑，建议使用 Cocoapods 管理。
-  * d
-  * r
-  * d
-2. alkfjl
-
 
 ---
 ### 富文本编辑

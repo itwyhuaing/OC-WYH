@@ -12,6 +12,8 @@
 
 @property (nonatomic,strong)    NSMutableArray *listData;
 
+@property (nonatomic,strong)    NSMutableArray *vcs;
+
 @end
 
 @implementation TableVC
@@ -42,7 +44,7 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:TRUE];
-    NSString *vcstring          = self.listData[indexPath.row];
+    NSString *vcstring          = self.vcs[indexPath.row];
     UIViewController *vc        = [[NSClassFromString(vcstring) alloc] init];
     [self.navigationController pushViewController:vc animated:TRUE];
 }
@@ -52,9 +54,17 @@
 -(NSMutableArray *)listData{
     if (!_listData) {
         _listData = [NSMutableArray new];
-        [_listData addObjectsFromArray:@[@"UITestVC",@"FirstVC",@"SecondVC",@"CirCleLayoutVC",@"LineLayoutVC",@"ThirdVC"]];
+        [_listData addObjectsFromArray:@[@"UI 测试",@"支付宝应用分类",@"常规瀑布流布局",@"环形布局",@"线性布局 - 动画",@"联动 - 类似锚点滑动"]];
     }
     return _listData;
+}
+
+-(NSMutableArray *)vcs{
+    if (!_vcs) {
+        _vcs = [NSMutableArray new];
+        [_vcs addObjectsFromArray:@[@"UITestVC",@"FirstVC",@"SecondVC",@"CirCleLayoutVC",@"LineLayoutVC",@"RelatedScrollVC"]];
+    }
+    return _vcs;
 }
 
 @end

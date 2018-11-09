@@ -1,10 +1,6 @@
-友盟推送、分享、统计
+1.
+给iOS工程增加 Daily Build
+http://blog.devtang.com/2012/02/16/apply-daily-build-in-ios-project/
 
-
-微信支付
-
-
-支付宝支付
-
-
-Crash 监控系统
+2. xcodebuild命令
+https://www.cnblogs.com/liuluoxing/p/8622108.html

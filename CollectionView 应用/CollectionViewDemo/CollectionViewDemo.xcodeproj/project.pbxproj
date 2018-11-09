@@ -7,15 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		26AD6F5C216C476D00D01DA2 /* ThirdVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 26AD6F5B216C476D00D01DA2 /* ThirdVC.m */; };
 		26AD6F63216C807E00D01DA2 /* UITestVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 26AD6F62216C807E00D01DA2 /* UITestVC.m */; };
 		26AD6F6A216CBAE800D01DA2 /* CirCleLayoutVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 26AD6F69216CBAE800D01DA2 /* CirCleLayoutVC.m */; };
 		26AD6F71216CBD4F00D01DA2 /* CircleLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 26AD6F70216CBD4F00D01DA2 /* CircleLayout.m */; };
 		26AD6F74216CBDD800D01DA2 /* LineLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 26AD6F73216CBDD800D01DA2 /* LineLayout.m */; };
 		26AD6F77216CBE1D00D01DA2 /* LineLayoutVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 26AD6F76216CBE1D00D01DA2 /* LineLayoutVC.m */; };
 		26AD6F7A216DA84000D01DA2 /* JXCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 26AD6F79216DA84000D01DA2 /* JXCollectionViewCell.m */; };
-		26B0628E218043020050DF8F /* CustomLineLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 26B0628D218043020050DF8F /* CustomLineLayout.m */; };
-		26B062912180434A0050DF8F /* CustomLineCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 26B062902180434A0050DF8F /* CustomLineCell.m */; };
 		26BA2348215DC75E00DD8A32 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26BA2346215DC75E00DD8A32 /* Main.storyboard */; };
 		26BA234A215DC76000DD8A32 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 26BA2349215DC76000DD8A32 /* Assets.xcassets */; };
 		26BA234D215DC76000DD8A32 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26BA234B215DC76000DD8A32 /* LaunchScreen.storyboard */; };
@@ -30,13 +27,13 @@
 		26BA238D215F2B6F00DD8A32 /* SecondVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 26BA238C215F2B6F00DD8A32 /* SecondVC.m */; };
 		26BA2390215F2C0300DD8A32 /* WaterFlowModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 26BA238F215F2C0300DD8A32 /* WaterFlowModel.m */; };
 		26BA2393215F2C7700DD8A32 /* WaterFlowItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 26BA2392215F2C7700DD8A32 /* WaterFlowItem.m */; };
+		26F189742194397E00B7D7BF /* RelatedScrollVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 26F189732194397E00B7D7BF /* RelatedScrollVC.m */; };
+		26F1897721943ABF00B7D7BF /* JXScrollBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 26F1897621943ABF00B7D7BF /* JXScrollBar.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		260FD3AC2178595500370446 /* fontName.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = fontName.h; sourceTree = "<group>"; };
 		264AC997217497EC0003CEC7 /* keyword.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = keyword.h; sourceTree = "<group>"; };
-		26AD6F5A216C476D00D01DA2 /* ThirdVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ThirdVC.h; sourceTree = "<group>"; };
-		26AD6F5B216C476D00D01DA2 /* ThirdVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ThirdVC.m; sourceTree = "<group>"; };
 		26AD6F61216C807E00D01DA2 /* UITestVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UITestVC.h; sourceTree = "<group>"; };
 		26AD6F62216C807E00D01DA2 /* UITestVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UITestVC.m; sourceTree = "<group>"; };
 		26AD6F68216CBAE800D01DA2 /* CirCleLayoutVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CirCleLayoutVC.h; sourceTree = "<group>"; };
@@ -50,10 +47,6 @@
 		26AD6F78216DA84000D01DA2 /* JXCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JXCollectionViewCell.h; sourceTree = "<group>"; };
 		26AD6F79216DA84000D01DA2 /* JXCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JXCollectionViewCell.m; sourceTree = "<group>"; };
 		26AD6F7C216DD98D00D01DA2 /* CommonFunctions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommonFunctions.h; sourceTree = "<group>"; };
-		26B0628C218043020050DF8F /* CustomLineLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomLineLayout.h; sourceTree = "<group>"; };
-		26B0628D218043020050DF8F /* CustomLineLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomLineLayout.m; sourceTree = "<group>"; };
-		26B0628F2180434A0050DF8F /* CustomLineCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomLineCell.h; sourceTree = "<group>"; };
-		26B062902180434A0050DF8F /* CustomLineCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomLineCell.m; sourceTree = "<group>"; };
 		26BA233D215DC75E00DD8A32 /* CollectionViewDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CollectionViewDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		26BA2347215DC75E00DD8A32 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		26BA2349215DC76000DD8A32 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -84,6 +77,10 @@
 		26BA238F215F2C0300DD8A32 /* WaterFlowModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WaterFlowModel.m; sourceTree = "<group>"; };
 		26BA2391215F2C7700DD8A32 /* WaterFlowItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WaterFlowItem.h; sourceTree = "<group>"; };
 		26BA2392215F2C7700DD8A32 /* WaterFlowItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WaterFlowItem.m; sourceTree = "<group>"; };
+		26F189722194397E00B7D7BF /* RelatedScrollVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RelatedScrollVC.h; sourceTree = "<group>"; };
+		26F189732194397E00B7D7BF /* RelatedScrollVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RelatedScrollVC.m; sourceTree = "<group>"; };
+		26F1897521943ABF00B7D7BF /* JXScrollBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JXScrollBar.h; sourceTree = "<group>"; };
+		26F1897621943ABF00B7D7BF /* JXScrollBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JXScrollBar.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -333,10 +330,8 @@
 		26BA237F215E3ED200DD8A32 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				26B0628C218043020050DF8F /* CustomLineLayout.h */,
-				26B0628D218043020050DF8F /* CustomLineLayout.m */,
-				26B0628F2180434A0050DF8F /* CustomLineCell.h */,
-				26B062902180434A0050DF8F /* CustomLineCell.m */,
+				26F1897521943ABF00B7D7BF /* JXScrollBar.h */,
+				26F1897621943ABF00B7D7BF /* JXScrollBar.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -344,8 +339,8 @@
 		26BA2380215E3ED200DD8A32 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				26AD6F5A216C476D00D01DA2 /* ThirdVC.h */,
-				26AD6F5B216C476D00D01DA2 /* ThirdVC.m */,
+				26F189722194397E00B7D7BF /* RelatedScrollVC.h */,
+				26F189732194397E00B7D7BF /* RelatedScrollVC.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -467,18 +462,17 @@
 				26BA236A215DCE2900DD8A32 /* FirstVC.m in Sources */,
 				26BA2363215DC82000DD8A32 /* TableVC.m in Sources */,
 				26AD6F63216C807E00D01DA2 /* UITestVC.m in Sources */,
+				26F1897721943ABF00B7D7BF /* JXScrollBar.m in Sources */,
 				26BA2390215F2C0300DD8A32 /* WaterFlowModel.m in Sources */,
 				26AD6F7A216DA84000D01DA2 /* JXCollectionViewCell.m in Sources */,
 				26AD6F77216CBE1D00D01DA2 /* LineLayoutVC.m in Sources */,
 				26BA235C215DC79B00DD8A32 /* ViewController.m in Sources */,
-				26AD6F5C216C476D00D01DA2 /* ThirdVC.m in Sources */,
+				26F189742194397E00B7D7BF /* RelatedScrollVC.m in Sources */,
 				26BA2373215DCF2400DD8A32 /* ZFBItemModel.m in Sources */,
 				26BA2350215DC76000DD8A32 /* main.m in Sources */,
 				26BA235D215DC79B00DD8A32 /* AppDelegate.m in Sources */,
 				26AD6F71216CBD4F00D01DA2 /* CircleLayout.m in Sources */,
 				26BA237D215E36EF00DD8A32 /* CommonReusableHeader.m in Sources */,
-				26B0628E218043020050DF8F /* CustomLineLayout.m in Sources */,
-				26B062912180434A0050DF8F /* CustomLineCell.m in Sources */,
 				26AD6F6A216CBAE800D01DA2 /* CirCleLayoutVC.m in Sources */,
 				26BA2393215F2C7700DD8A32 /* WaterFlowItem.m in Sources */,
 				26AD6F74216CBDD800D01DA2 /* LineLayout.m in Sources */,
