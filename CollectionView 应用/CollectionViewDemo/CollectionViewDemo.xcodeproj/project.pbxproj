@@ -29,6 +29,9 @@
 		26BA2393215F2C7700DD8A32 /* WaterFlowItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 26BA2392215F2C7700DD8A32 /* WaterFlowItem.m */; };
 		26F189742194397E00B7D7BF /* RelatedScrollVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 26F189732194397E00B7D7BF /* RelatedScrollVC.m */; };
 		26F1897721943ABF00B7D7BF /* JXScrollBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 26F1897621943ABF00B7D7BF /* JXScrollBar.m */; };
+		26F1898521958D7700B7D7BF /* UIView+SDAutoLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 26F1898021958D7700B7D7BF /* UIView+SDAutoLayout.m */; };
+		26F1898621958D7700B7D7BF /* UITableView+SDAutoTableViewCellHeight.m in Sources */ = {isa = PBXBuildFile; fileRef = 26F1898321958D7700B7D7BF /* UITableView+SDAutoTableViewCellHeight.m */; };
+		26F18989219590FC00B7D7BF /* ContentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 26F18988219590FC00B7D7BF /* ContentCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -81,6 +84,13 @@
 		26F189732194397E00B7D7BF /* RelatedScrollVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RelatedScrollVC.m; sourceTree = "<group>"; };
 		26F1897521943ABF00B7D7BF /* JXScrollBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JXScrollBar.h; sourceTree = "<group>"; };
 		26F1897621943ABF00B7D7BF /* JXScrollBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JXScrollBar.m; sourceTree = "<group>"; };
+		26F1898021958D7700B7D7BF /* UIView+SDAutoLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+SDAutoLayout.m"; sourceTree = "<group>"; };
+		26F1898121958D7700B7D7BF /* UITableView+SDAutoTableViewCellHeight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+SDAutoTableViewCellHeight.h"; sourceTree = "<group>"; };
+		26F1898221958D7700B7D7BF /* SDAutoLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDAutoLayout.h; sourceTree = "<group>"; };
+		26F1898321958D7700B7D7BF /* UITableView+SDAutoTableViewCellHeight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+SDAutoTableViewCellHeight.m"; sourceTree = "<group>"; };
+		26F1898421958D7700B7D7BF /* UIView+SDAutoLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+SDAutoLayout.h"; sourceTree = "<group>"; };
+		26F18987219590FC00B7D7BF /* ContentCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ContentCell.h; sourceTree = "<group>"; };
+		26F18988219590FC00B7D7BF /* ContentCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ContentCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -230,6 +240,7 @@
 		26BA233F215DC75E00DD8A32 /* CollectionViewDemo */ = {
 			isa = PBXGroup;
 			children = (
+				26F1897E21958D7700B7D7BF /* ThirdLib */,
 				26BA2357215DC79A00DD8A32 /* Main */,
 				26BA2356215DC79A00DD8A32 /* Func */,
 				26BA2378215E34AE00DD8A32 /* Config */,
@@ -332,6 +343,8 @@
 			children = (
 				26F1897521943ABF00B7D7BF /* JXScrollBar.h */,
 				26F1897621943ABF00B7D7BF /* JXScrollBar.m */,
+				26F18987219590FC00B7D7BF /* ContentCell.h */,
+				26F18988219590FC00B7D7BF /* ContentCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -387,6 +400,26 @@
 				26BA238F215F2C0300DD8A32 /* WaterFlowModel.m */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		26F1897E21958D7700B7D7BF /* ThirdLib */ = {
+			isa = PBXGroup;
+			children = (
+				26F1897F21958D7700B7D7BF /* SDAutoLayout */,
+			);
+			path = ThirdLib;
+			sourceTree = "<group>";
+		};
+		26F1897F21958D7700B7D7BF /* SDAutoLayout */ = {
+			isa = PBXGroup;
+			children = (
+				26F1898021958D7700B7D7BF /* UIView+SDAutoLayout.m */,
+				26F1898121958D7700B7D7BF /* UITableView+SDAutoTableViewCellHeight.h */,
+				26F1898221958D7700B7D7BF /* SDAutoLayout.h */,
+				26F1898321958D7700B7D7BF /* UITableView+SDAutoTableViewCellHeight.m */,
+				26F1898421958D7700B7D7BF /* UIView+SDAutoLayout.h */,
+			);
+			path = SDAutoLayout;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -464,8 +497,10 @@
 				26AD6F63216C807E00D01DA2 /* UITestVC.m in Sources */,
 				26F1897721943ABF00B7D7BF /* JXScrollBar.m in Sources */,
 				26BA2390215F2C0300DD8A32 /* WaterFlowModel.m in Sources */,
+				26F18989219590FC00B7D7BF /* ContentCell.m in Sources */,
 				26AD6F7A216DA84000D01DA2 /* JXCollectionViewCell.m in Sources */,
 				26AD6F77216CBE1D00D01DA2 /* LineLayoutVC.m in Sources */,
+				26F1898621958D7700B7D7BF /* UITableView+SDAutoTableViewCellHeight.m in Sources */,
 				26BA235C215DC79B00DD8A32 /* ViewController.m in Sources */,
 				26F189742194397E00B7D7BF /* RelatedScrollVC.m in Sources */,
 				26BA2373215DCF2400DD8A32 /* ZFBItemModel.m in Sources */,
@@ -473,6 +508,7 @@
 				26BA235D215DC79B00DD8A32 /* AppDelegate.m in Sources */,
 				26AD6F71216CBD4F00D01DA2 /* CircleLayout.m in Sources */,
 				26BA237D215E36EF00DD8A32 /* CommonReusableHeader.m in Sources */,
+				26F1898521958D7700B7D7BF /* UIView+SDAutoLayout.m in Sources */,
 				26AD6F6A216CBAE800D01DA2 /* CirCleLayoutVC.m in Sources */,
 				26BA2393215F2C7700DD8A32 /* WaterFlowItem.m in Sources */,
 				26AD6F74216CBDD800D01DA2 /* LineLayout.m in Sources */,
