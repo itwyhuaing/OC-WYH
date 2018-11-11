@@ -27,11 +27,8 @@
 		26BA238D215F2B6F00DD8A32 /* SecondVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 26BA238C215F2B6F00DD8A32 /* SecondVC.m */; };
 		26BA2390215F2C0300DD8A32 /* WaterFlowModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 26BA238F215F2C0300DD8A32 /* WaterFlowModel.m */; };
 		26BA2393215F2C7700DD8A32 /* WaterFlowItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 26BA2392215F2C7700DD8A32 /* WaterFlowItem.m */; };
-		26F189742194397E00B7D7BF /* RelatedScrollVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 26F189732194397E00B7D7BF /* RelatedScrollVC.m */; };
-		26F1897721943ABF00B7D7BF /* JXScrollBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 26F1897621943ABF00B7D7BF /* JXScrollBar.m */; };
 		26F1898521958D7700B7D7BF /* UIView+SDAutoLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 26F1898021958D7700B7D7BF /* UIView+SDAutoLayout.m */; };
 		26F1898621958D7700B7D7BF /* UITableView+SDAutoTableViewCellHeight.m in Sources */ = {isa = PBXBuildFile; fileRef = 26F1898321958D7700B7D7BF /* UITableView+SDAutoTableViewCellHeight.m */; };
-		26F18989219590FC00B7D7BF /* ContentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 26F18988219590FC00B7D7BF /* ContentCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -80,17 +77,11 @@
 		26BA238F215F2C0300DD8A32 /* WaterFlowModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WaterFlowModel.m; sourceTree = "<group>"; };
 		26BA2391215F2C7700DD8A32 /* WaterFlowItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WaterFlowItem.h; sourceTree = "<group>"; };
 		26BA2392215F2C7700DD8A32 /* WaterFlowItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WaterFlowItem.m; sourceTree = "<group>"; };
-		26F189722194397E00B7D7BF /* RelatedScrollVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RelatedScrollVC.h; sourceTree = "<group>"; };
-		26F189732194397E00B7D7BF /* RelatedScrollVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RelatedScrollVC.m; sourceTree = "<group>"; };
-		26F1897521943ABF00B7D7BF /* JXScrollBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JXScrollBar.h; sourceTree = "<group>"; };
-		26F1897621943ABF00B7D7BF /* JXScrollBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JXScrollBar.m; sourceTree = "<group>"; };
 		26F1898021958D7700B7D7BF /* UIView+SDAutoLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+SDAutoLayout.m"; sourceTree = "<group>"; };
 		26F1898121958D7700B7D7BF /* UITableView+SDAutoTableViewCellHeight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+SDAutoTableViewCellHeight.h"; sourceTree = "<group>"; };
 		26F1898221958D7700B7D7BF /* SDAutoLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDAutoLayout.h; sourceTree = "<group>"; };
 		26F1898321958D7700B7D7BF /* UITableView+SDAutoTableViewCellHeight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+SDAutoTableViewCellHeight.m"; sourceTree = "<group>"; };
 		26F1898421958D7700B7D7BF /* UIView+SDAutoLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+SDAutoLayout.h"; sourceTree = "<group>"; };
-		26F18987219590FC00B7D7BF /* ContentCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ContentCell.h; sourceTree = "<group>"; };
-		26F18988219590FC00B7D7BF /* ContentCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ContentCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -260,7 +251,6 @@
 				26AD6F6B216CBD2A00D01DA2 /* LineLayout */,
 				26AD6F64216CBA8200D01DA2 /* CirCleLayout */,
 				26BA2387215F2B3500DD8A32 /* WaterFlowLayout */,
-				26BA237E215E3EAF00DD8A32 /* CustomLayout */,
 				26BA2364215DCE2900DD8A32 /* ZhiFuBao */,
 				26AD6F5D216C7D7C00D01DA2 /* UITest */,
 			);
@@ -326,43 +316,6 @@
 				26BA2379215E350700DD8A32 /* CollectionViewDemoPrefix.pch */,
 			);
 			path = Config;
-			sourceTree = "<group>";
-		};
-		26BA237E215E3EAF00DD8A32 /* CustomLayout */ = {
-			isa = PBXGroup;
-			children = (
-				26BA2380215E3ED200DD8A32 /* Controller */,
-				26BA2381215E3ED200DD8A32 /* Model */,
-				26BA237F215E3ED200DD8A32 /* View */,
-			);
-			path = CustomLayout;
-			sourceTree = "<group>";
-		};
-		26BA237F215E3ED200DD8A32 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				26F1897521943ABF00B7D7BF /* JXScrollBar.h */,
-				26F1897621943ABF00B7D7BF /* JXScrollBar.m */,
-				26F18987219590FC00B7D7BF /* ContentCell.h */,
-				26F18988219590FC00B7D7BF /* ContentCell.m */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		26BA2380215E3ED200DD8A32 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				26F189722194397E00B7D7BF /* RelatedScrollVC.h */,
-				26F189732194397E00B7D7BF /* RelatedScrollVC.m */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		26BA2381215E3ED200DD8A32 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		26BA2387215F2B3500DD8A32 /* WaterFlowLayout */ = {
@@ -495,14 +448,11 @@
 				26BA236A215DCE2900DD8A32 /* FirstVC.m in Sources */,
 				26BA2363215DC82000DD8A32 /* TableVC.m in Sources */,
 				26AD6F63216C807E00D01DA2 /* UITestVC.m in Sources */,
-				26F1897721943ABF00B7D7BF /* JXScrollBar.m in Sources */,
 				26BA2390215F2C0300DD8A32 /* WaterFlowModel.m in Sources */,
-				26F18989219590FC00B7D7BF /* ContentCell.m in Sources */,
 				26AD6F7A216DA84000D01DA2 /* JXCollectionViewCell.m in Sources */,
 				26AD6F77216CBE1D00D01DA2 /* LineLayoutVC.m in Sources */,
 				26F1898621958D7700B7D7BF /* UITableView+SDAutoTableViewCellHeight.m in Sources */,
 				26BA235C215DC79B00DD8A32 /* ViewController.m in Sources */,
-				26F189742194397E00B7D7BF /* RelatedScrollVC.m in Sources */,
 				26BA2373215DCF2400DD8A32 /* ZFBItemModel.m in Sources */,
 				26BA2350215DC76000DD8A32 /* main.m in Sources */,
 				26BA235D215DC79B00DD8A32 /* AppDelegate.m in Sources */,
