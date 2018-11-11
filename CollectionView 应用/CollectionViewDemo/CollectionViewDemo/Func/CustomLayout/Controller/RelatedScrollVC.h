@@ -11,7 +11,9 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface RelatedScrollVC : UIViewController
-
+/** TableView 联动
+ https://www.jianshu.com/p/70cdcdcb6764
+ */
 @end
 
 NS_ASSUME_NONNULL_END

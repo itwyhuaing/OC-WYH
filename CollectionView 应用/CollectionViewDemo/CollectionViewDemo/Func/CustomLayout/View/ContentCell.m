@@ -55,22 +55,29 @@
     .rightSpaceToView(self.contentView, 10.0)
     .topSpaceToView(self.themLabel, 10.0)
     .heightIs(130.0);
-    [self setupAutoHeightWithBottomView:self.container bottomMargin:10.0];
+    [self setupAutoHeightWithBottomView:self.container bottomMargin:20.0];
     self.themLabel.hidden = TRUE;
 }
 
 -(void)setDatas:(NSArray *)datas{
     if (datas) {
-//        self.themLabel.hidden = FALSE;
-//        NSMutableArray *views = [NSMutableArray new];
-//        for (NSInteger cou = 0; cou < datas.count; cou ++) {
-//            UILabel *l = [self createLabel];
-//            l.text = datas[cou];
-//            [self.container addSubview:l];
-//            [views addObject:l];
-//            l.sd_layout.heightIs(60);
-//        }
-//        [self.container setupAutoWidthFlowItems:views withPerRowItemsCount:2 verticalMargin:10 horizontalMargin:10 verticalEdgeInset:0 horizontalEdgeInset:0];
+        self.themLabel.hidden = FALSE;
+        NSMutableArray *views = [NSMutableArray new];
+        for (NSInteger cou = 0; cou < datas.count; cou ++) {
+            UILabel *l = [self createLabel];
+            l.text = datas[cou];
+            [self.container addSubview:l];
+            [views addObject:l];
+            l.sd_layout.heightIs(60);
+        }
+        [self.container setupAutoWidthFlowItems:views withPerRowItemsCount:2 verticalMargin:10 horizontalMargin:10 verticalEdgeInset:10 horizontalEdgeInset:10];
+    }
+}
+
+-(void)setTitle:(NSString *)title{
+    if (title) {
+        _title = title;
+        self.themLabel.text = title;
     }
 }
 

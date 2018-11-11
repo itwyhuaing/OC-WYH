@@ -14,6 +14,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic,strong) NSArray *datas;
 
+@property (nonatomic,copy)   NSString *title;
+
 @end
 
 NS_ASSUME_NONNULL_END

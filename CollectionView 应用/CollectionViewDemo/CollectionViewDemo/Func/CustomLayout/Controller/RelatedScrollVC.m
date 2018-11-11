@@ -10,7 +10,7 @@
 #import "SDAutoLayout.h"
 #import "ContentCell.h"
 
-@interface RelatedScrollVC () <UITableViewDelegate,UITableViewDataSource>
+@interface RelatedScrollVC () <UITableViewDelegate,UITableViewDataSource,UIScrollViewDelegate>
 
 @property (nonatomic,strong) UITableView            *table;
 @property (nonatomic,strong) NSMutableArray         *listData;
@@ -21,49 +21,103 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor   = [UIColor orangeColor];
+    self.view.backgroundColor   = [UIColor grayColor];
     self.table.backgroundColor  = [UIColor redColor];
 }
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     self.navigationController.navigationBar.translucent = FALSE;
-    self.view.backgroundColor       = [UIColor whiteColor];
 }
+
+-(void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    
+    [self.table scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:3 inSection:1]
+                      atScrollPosition:UITableViewScrollPositionTop
+                              animated:TRUE];
+    
+}
+
 
 #pragma mark ------ UITableViewDelegate,UITableViewDataSource
 
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    return 2;
+}
+
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return self.listData.count + 1;
+    NSInteger rows = 1;
+    if (section == 1) {
+        rows = self.listData.count + 1;
+    }
+    return rows;
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
-    UIView *hv = [[UIView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.bounds), 100.0)];
+    UIButton *hv = [UIButton buttonWithType:UIButtonTypeCustom];//[[UIView alloc] initWithFrame:CGRectZero];
     hv.backgroundColor = [UIColor orangeColor];
+    if (section == 1) {
+        [hv setFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.bounds), 60.0)];
+        [hv addTarget:self action:@selector(clickEvent:) forControlEvents:UIControlEventTouchUpInside];
+    }
     return hv;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
-    return 100;
+    CGFloat height = 0;
+    if (section == 1) {
+        height = 60;
+    }
+    return height;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     CGFloat cellHeight = 0.0;
-    if (indexPath.row <= 0) {
-        cellHeight = 60.0;
+    if (indexPath.section <= 0) {
+        cellHeight = 200.0;
     } else {
-        cellHeight = [tableView cellHeightForIndexPath:indexPath model:@[] keyPath:@"datas" cellClass:[ContentCell class] contentViewWidth:[self cellContentViewWith]];
+        cellHeight = [tableView cellHeightForIndexPath:indexPath model:[NSArray new] keyPath:@"datas" cellClass:[ContentCell class] contentViewWidth:[self cellContentViewWith]];
     }
     return cellHeight;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    ContentCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass(ContentCell.class)];
-    cell.datas = @[@"美国国家概况",
-                   @"美国国家虽无及州政府税务规则",
-                   @"美国国家虽无及州政府税务规则",
-                   @"美国国家虽无及州政府税务规则"];
-    return cell;
+    UITableViewCell *returnCell;
+    if (indexPath.section <= 0) {
+        returnCell = [[UITableViewCell alloc] init];
+    } else {
+        ContentCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass(ContentCell.class)];
+        cell.datas = @[@"美国国家概况",
+                       @"美国国家虽无及州政府税务规则",
+                       @"美国国家虽无及州政府税务规则",
+                       @"美国国家虽无及州政府税务规则"];
+        cell.title = [NSString stringWithFormat:@"Title %ld",indexPath.row];
+        
+        CGRect rectInTable = [self.table rectForRowAtIndexPath:indexPath];
+        
+        
+        
+        
+        
+        returnCell = cell;
+    }
+    
+    returnCell.layer.borderWidth = 0.6;
+    returnCell.layer.borderColor = [UIColor grayColor].CGColor;
+    
+    return returnCell;
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    [tableView deselectRowAtIndexPath:indexPath animated:FALSE];
+}
+
+- (void)clickEvent:(UIButton *)btn{
+    NSLog(@"\n 点击切换 \n");
+    [self.table scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:3 inSection:1]
+                      atScrollPosition:UITableViewScrollPositionTop
+                              animated:TRUE];
 }
 
 - (CGFloat)cellContentViewWith
@@ -82,12 +136,11 @@
 
 -(UITableView *)table{
     if (!_table) {
-        _table = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStyleGrouped];
+        _table = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
         [self.view addSubview:_table];
         _table.delegate     = (id)self;
         _table.dataSource   = (id)self;
         [_table registerClass:[ContentCell class] forCellReuseIdentifier:NSStringFromClass(ContentCell.class)];
-        _table.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
         _table.sd_layout
         .topSpaceToView(self.view, 0)
         .bottomEqualToView(self.view)
@@ -114,5 +167,20 @@
     }
     return _listData;
 }
+
+-(void)scrollViewDidScroll:(UIScrollView *)scrollView{
+    CGPoint targetPoint = scrollView.contentOffset;
+    targetPoint.y       += 60;
+    NSIndexPath *idx = [self.table indexPathForRowAtPoint:targetPoint];
+    NSLog(@"\n scrollViewDidScroll 偏移:%ld \n",idx.row);
+}
+
+//-(void)scrollViewWillEndDragging:(UIScrollView *)scrollView withVelocity:(CGPoint)velocity targetContentOffset:(CGPoint)targetContentOffset{
+//    NSLog(@"\n scrollViewWillEndDragging 偏移:%f \n",targetContentOffset.y);
+//}
+//
+//-(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
+//    NSLog(@"\n scrollViewDidEndDecelerating 偏移:%f \n",scrollView.contentOffset.y);
+//}
 
 @end
