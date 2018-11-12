@@ -8,7 +8,7 @@
 
 #import "RelatedScrollVC.h"
 #import "GangedTable.h"
-#import "GangedTableBar.h"
+
 
 #import "GangedTableModel.h"
 
@@ -18,7 +18,6 @@
 @interface RelatedScrollVC () 
 
 @property (nonatomic,strong)  GangedTable            *gtable;
-@property (nonatomic,strong)  GangedTableBar         *gtTabBar;
 
 @end
 
@@ -28,7 +27,7 @@
     [super viewDidLoad];
     self.view.backgroundColor   = [UIColor grayColor];
     self.gtable.gtableHeader    = [[UIView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.frame), 200.0)];
-    self.gtable.gtableBar       = self.gtTabBar;
+    //self.gtable.gtableBar       = self.gtTabBar;
     [self loadData];
 }
 
@@ -41,9 +40,10 @@
     [super viewDidAppear:animated];
 }
 
+
 - (void)loadData{
     
-    NSArray *barThems = @[@"baritem1",@"baritem2",@"baritem3",@"baritem4",@"baritem5",@"baritem6"];
+    NSArray *barThems = @[@"baritem0",@"baritem1",@"baritem2",@"baritem3",@"baritem4",@"baritem5",@"baritem6"];
     NSMutableArray *items = [NSMutableArray new];
     for (NSInteger i = 0; i < 5; i ++) {
         ItemModel *ifm = [ItemModel new];
@@ -66,8 +66,7 @@
     f.elements = elements;
     
     // 赋值
-    self.gtable.dataModels = f.elements;
-    self.gtTabBar.thems    = barThems;
+    self.gtable.dataModel = f;
 }
 
 #pragma mark ------ lazy load
@@ -83,13 +82,6 @@
         .bottomEqualToView(self.view);
     }
     return _gtable;
-}
-
--(GangedTableBar *)gtTabBar{
-    if (!_gtTabBar) {
-        _gtTabBar = [[GangedTableBar alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.frame), 60.0)];
-    }
-    return _gtTabBar;
 }
 
 @end

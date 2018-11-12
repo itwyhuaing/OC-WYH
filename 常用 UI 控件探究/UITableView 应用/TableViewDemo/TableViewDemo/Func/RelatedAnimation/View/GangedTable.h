@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-@class ElementModel;
+@class GangedTableModel;
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -17,10 +17,11 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic,strong)    UIView *gtableHeader;
 
 // 联动 table 水平方向滚动条bar - 外部传入、内部解耦
-@property (nonatomic,strong)    UIView *gtableBar;
+//@property (nonatomic,strong)    UIView *gtableBar;
 
 // 联动 table 所需数据 - UI依赖指定数据模型、外部组装
-@property (nonatomic,strong)    NSArray<ElementModel *> *dataModels;
+@property (nonatomic,strong)    GangedTableModel *dataModel;
+
 
 @end
 

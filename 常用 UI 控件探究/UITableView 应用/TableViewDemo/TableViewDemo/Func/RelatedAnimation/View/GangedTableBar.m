@@ -15,7 +15,8 @@
 
 @interface GangedTableBar () <UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
 
-@property (nonatomic,strong)    UICollectionView *tabBar;
+@property (nonatomic,strong)    UICollectionView  *tabBar;
+@property (nonatomic,strong)    UIView            *underLine;
 
 @end
 
@@ -46,12 +47,28 @@
 #pragma mark ------ UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout
 
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
-    UICollectionViewCell *returnCell = [collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass(TabBarItem.class) forIndexPath:indexPath];
+    TabBarItem *returnCell = [collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass(TabBarItem.class) forIndexPath:indexPath];
+    returnCell.title             = self.thems[indexPath.row];
     return returnCell;
 }
 
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
     return self.thems.count;
+}
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    [collectionView deselectItemAtIndexPath:indexPath animated:FALSE];
+    if (_delegate && [_delegate respondsToSelector:@selector(gangedTableBar:didSelectedAtIndexPath:)]) {
+        [_delegate gangedTableBar:self didSelectedAtIndexPath:indexPath];
+    }
+}
+
+#pragma mark ------ method
+
+-(void)gangedTableBarScrollToItemAtIndexPath:(NSIndexPath *)indexPath{
+    [self.tabBar scrollToItemAtIndexPath:[NSIndexPath indexPathForRow:indexPath.row inSection:0]
+                        atScrollPosition:UICollectionViewScrollPositionRight
+                                animated:FALSE];
 }
 
 #pragma mark ------ setter data
@@ -68,12 +85,12 @@
 -(UICollectionView *)tabBar{
     if (!_tabBar) {
         UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
-        layout.sectionInset                = UIEdgeInsetsMake(5, 20, 50, 60);
+        layout.sectionInset                = UIEdgeInsetsZero;
         layout.minimumLineSpacing          = 10.0;
-        layout.minimumInteritemSpacing     = 60.0;
         layout.itemSize                    = CGSizeMake(100, CGRectGetHeight(self.frame));
         layout.scrollDirection             = UICollectionViewScrollDirectionHorizontal;
         _tabBar = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:layout];
+        _tabBar.backgroundColor            = [UIColor whiteColor];
         [self addSubview:_tabBar];
         [_tabBar registerClass:[TabBarItem class] forCellWithReuseIdentifier:NSStringFromClass(TabBarItem.class)];
         _tabBar.delegate        = (id)self;
@@ -83,12 +100,16 @@
         .leftEqualToView(self)
         .rightEqualToView(self)
         .bottomEqualToView(self);
-        
-        _tabBar.backgroundColor = [UIColor redColor];
-        self.backgroundColor    = [UIColor purpleColor];
-        
     }
     return _tabBar;
+}
+
+-(UIView *)underLine{
+    if (!_underLine) {
+        _underLine = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 60, 5.0)];
+        _underLine.backgroundColor = [UIColor redColor];
+    }
+    return _underLine;
 }
 
 @end

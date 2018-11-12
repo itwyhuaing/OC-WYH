@@ -8,11 +8,24 @@
 
 #import <UIKit/UIKit.h>
 
+@class GangedTableBar;
+@protocol GangedTableBarDelegate <NSObject>
+@optional
+- (void)gangedTableBar:(GangedTableBar *)bar didSelectedAtIndexPath:(NSIndexPath *)index;
+
+@end
+
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface GangedTableBar : UIView
 
 @property (nonatomic,strong)        NSArray<NSString *> *thems;
+
+@property (nonatomic,weak) id<GangedTableBarDelegate> delegate;
+
+// 滚动
+- (void)gangedTableBarScrollToItemAtIndexPath:(NSIndexPath *)indexPath;
 
 @end
 

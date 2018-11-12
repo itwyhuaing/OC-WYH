@@ -7,7 +7,9 @@
 //
 
 #import "GangedTable.h"
+#import "GangedTableBar.h"
 #import "GangedTableElementCell.h"
+#import "GangedTableModel.h"
 
 //测试
 #import "SDAutoLayout.h"
@@ -20,10 +22,10 @@ typedef enum : NSUInteger {
 } GangedTableSection;
 
 
-@interface GangedTable () <UITableViewDelegate,UITableViewDataSource,UIScrollViewDelegate>
+@interface GangedTable () <UITableViewDelegate,UITableViewDataSource,UIScrollViewDelegate,GangedTableBarDelegate>
 
-@property (nonatomic,strong) UIView                 *blankHeader;
-
+@property (nonatomic,strong)    UIView                 *blankHeader;
+@property (nonatomic,strong)    GangedTableBar        *gtTabBar;
 
 @end
 
@@ -76,23 +78,23 @@ typedef enum : NSUInteger {
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     NSInteger rows = 1;
     if (section == GangedTableSection1) {
-        rows = self.dataModels.count;
+        rows = self.dataModel.elements.count;
     }
     return rows;
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
     UIView *hv = self.blankHeader;
-    if (section == GangedTableSection1 && self.gtableBar) {
-        hv = self.gtableBar;
+    if (section == GangedTableSection1) {
+        hv = self.gtTabBar;
     }
     return hv;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
     CGFloat height = 0;
-    if (section == GangedTableSection1 && self.gtableBar) {
-        height = CGRectGetHeight(self.gtableBar.frame);
+    if (section == GangedTableSection1) {
+        height = CGRectGetHeight(self.gtTabBar.frame);
     }
     return height;
 }
@@ -102,7 +104,7 @@ typedef enum : NSUInteger {
     if (indexPath.section <= GangedTableSection0) {
         cellHeight = self.gtableHeader ? CGRectGetHeight(self.gtableHeader.frame) : 0.0;
     } else if (indexPath.section == GangedTableSection1){
-        cellHeight = [tableView cellHeightForIndexPath:indexPath model:self.dataModels[indexPath.row] keyPath:@"elementData" cellClass:[GangedTableElementCell class] contentViewWidth:[self cellContentViewWith]];
+        cellHeight = [tableView cellHeightForIndexPath:indexPath model:self.dataModel.elements[indexPath.row] keyPath:@"elementData" cellClass:[GangedTableElementCell class] contentViewWidth:[self cellContentViewWith]];
     }
     return cellHeight;
 }
@@ -113,7 +115,7 @@ typedef enum : NSUInteger {
         returnCell = [[UITableViewCell alloc] init];
     } else {
         GangedTableElementCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass(GangedTableElementCell.class)];
-        cell.elementData = self.dataModels[indexPath.row];
+        cell.elementData = self.dataModel.elements[indexPath.row];
         returnCell = cell;
     }
     
@@ -141,15 +143,25 @@ typedef enum : NSUInteger {
     CGPoint targetPoint = scrollView.contentOffset;
     targetPoint.y       += 60;
     NSIndexPath *idx = [self indexPathForRowAtPoint:targetPoint];
+    [self.gtTabBar gangedTableBarScrollToItemAtIndexPath:idx];
     NSLog(@"\n scrollViewDidScroll 偏移:%ld \n",idx.row);
 }
 
+#pragma mark ------ GangedTableBarDelegate
+
+-(void)gangedTableBar:(GangedTableBar *)bar didSelectedAtIndexPath:(NSIndexPath *)index{
+    [self scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:index.row inSection:GangedTableSection1]
+                atScrollPosition:UITableViewScrollPositionTop
+                        animated:FALSE];
+}
+
+
 #pragma mark ------ set data
 
--(void)setDataModels:(NSArray<ElementModel *> *)dataModels{
-    if (![dataModels isEqualToArray:_dataModels]) {
-        
-        _dataModels = dataModels;
+-(void)setDataModel:(GangedTableModel *)dataModel{
+    if (![dataModel isEqual:_dataModel]) {
+        _dataModel = dataModel;
+        self.gtTabBar.thems = dataModel.barThems;
         [self reloadData];
     }
 }
@@ -164,6 +176,14 @@ typedef enum : NSUInteger {
         _blankHeader = [[UIView alloc] initWithFrame:CGRectZero];
     }
     return _blankHeader;
+}
+
+-(GangedTableBar *)gtTabBar{
+    if (!_gtTabBar) {
+        _gtTabBar = [[GangedTableBar alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.frame), 30.0)];
+        _gtTabBar.delegate = (id)self;
+    }
+    return _gtTabBar;
 }
 
 @end

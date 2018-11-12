@@ -35,7 +35,7 @@
 }
 
 - (void)configUI{
-    self.cntLabel.text = @"内容";
+    
 }
 
 -(void)layoutSubviews{
@@ -45,6 +45,13 @@
     self.backgroundColor            = [UIColor cyanColor];
     self.cntLabel.backgroundColor   = [UIColor orangeColor];
     
+}
+
+-(void)setTitle:(NSString *)title{
+    if (title) {
+        _title = title;
+        self.cntLabel.text = title;
+    }
 }
 
 -(UILabel *)cntLabel{
