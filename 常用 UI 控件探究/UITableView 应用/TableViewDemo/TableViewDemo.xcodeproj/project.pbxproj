@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2671B9F72199119D0001A89D /* GangedTableModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2671B9F52199119D0001A89D /* GangedTableModel.m */; };
+		2671B9FA2199143F0001A89D /* GangedTableElementCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2671B9F92199143F0001A89D /* GangedTableElementCell.m */; };
+		2671BA00219915FA0001A89D /* GangedTable.m in Sources */ = {isa = PBXBuildFile; fileRef = 2671B9FF219915FA0001A89D /* GangedTable.m */; };
+		2671BA0921996B430001A89D /* GangedTableBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 2671BA0821996B430001A89D /* GangedTableBar.m */; };
+		2671BA0C219973280001A89D /* TabBarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 2671BA0B219973280001A89D /* TabBarItem.m */; };
 		46651967219810200088441D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46651965219810200088441D /* Main.storyboard */; };
 		46651969219810220088441D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 46651968219810220088441D /* Assets.xcassets */; };
 		4665196C219810220088441D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4665196A219810220088441D /* LaunchScreen.storyboard */; };
@@ -17,11 +22,19 @@
 		46651985219810E00088441D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 46651980219810E00088441D /* AppDelegate.m */; };
 		46651988219811D80088441D /* TableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 46651987219811D80088441D /* TableVC.m */; };
 		46651993219812C40088441D /* RelatedScrollVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4665198C219812C40088441D /* RelatedScrollVC.m */; };
-		46651994219812C40088441D /* ContentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 46651990219812C40088441D /* ContentCell.m */; };
-		46651995219812C40088441D /* JXScrollBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 46651992219812C40088441D /* JXScrollBar.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2671B9F52199119D0001A89D /* GangedTableModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GangedTableModel.m; sourceTree = "<group>"; };
+		2671B9F62199119D0001A89D /* GangedTableModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GangedTableModel.h; sourceTree = "<group>"; };
+		2671B9F82199143F0001A89D /* GangedTableElementCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GangedTableElementCell.h; sourceTree = "<group>"; };
+		2671B9F92199143F0001A89D /* GangedTableElementCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GangedTableElementCell.m; sourceTree = "<group>"; };
+		2671B9FE219915FA0001A89D /* GangedTable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GangedTable.h; sourceTree = "<group>"; };
+		2671B9FF219915FA0001A89D /* GangedTable.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GangedTable.m; sourceTree = "<group>"; };
+		2671BA0721996B430001A89D /* GangedTableBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GangedTableBar.h; sourceTree = "<group>"; };
+		2671BA0821996B430001A89D /* GangedTableBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GangedTableBar.m; sourceTree = "<group>"; };
+		2671BA0A219973280001A89D /* TabBarItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TabBarItem.h; sourceTree = "<group>"; };
+		2671BA0B219973280001A89D /* TabBarItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TabBarItem.m; sourceTree = "<group>"; };
 		4665195C219810200088441D /* TableViewDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TableViewDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		46651966219810200088441D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		46651968219810220088441D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -41,10 +54,6 @@
 		46651987219811D80088441D /* TableVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableVC.m; sourceTree = "<group>"; };
 		4665198B219812C40088441D /* RelatedScrollVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RelatedScrollVC.h; sourceTree = "<group>"; };
 		4665198C219812C40088441D /* RelatedScrollVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RelatedScrollVC.m; sourceTree = "<group>"; };
-		4665198F219812C40088441D /* JXScrollBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXScrollBar.h; sourceTree = "<group>"; };
-		46651990219812C40088441D /* ContentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContentCell.m; sourceTree = "<group>"; };
-		46651991219812C40088441D /* ContentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContentCell.h; sourceTree = "<group>"; };
-		46651992219812C40088441D /* JXScrollBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXScrollBar.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +67,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2671B9F42199119D0001A89D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2671B9F62199119D0001A89D /* GangedTableModel.h */,
+				2671B9F52199119D0001A89D /* GangedTableModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		46651953219810200088441D = {
 			isa = PBXGroup;
 			children = (
@@ -77,9 +95,9 @@
 		4665195E219810200088441D /* TableViewDemo */ = {
 			isa = PBXGroup;
 			children = (
-				46651975219810E00088441D /* Func */,
 				4665197D219810E00088441D /* Main */,
 				46651976219810E00088441D /* ThirdLib */,
+				46651975219810E00088441D /* Func */,
 				46651965219810200088441D /* Main.storyboard */,
 				46651968219810220088441D /* Assets.xcassets */,
 				4665196A219810220088441D /* LaunchScreen.storyboard */,
@@ -134,7 +152,7 @@
 			isa = PBXGroup;
 			children = (
 				4665198A219812C40088441D /* Controller */,
-				4665198D219812C40088441D /* Model */,
+				2671B9F42199119D0001A89D /* Model */,
 				4665198E219812C40088441D /* View */,
 			);
 			path = RelatedAnimation;
@@ -149,20 +167,17 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		4665198D219812C40088441D /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
 		4665198E219812C40088441D /* View */ = {
 			isa = PBXGroup;
 			children = (
-				4665198F219812C40088441D /* JXScrollBar.h */,
-				46651990219812C40088441D /* ContentCell.m */,
-				46651991219812C40088441D /* ContentCell.h */,
-				46651992219812C40088441D /* JXScrollBar.m */,
+				2671B9FE219915FA0001A89D /* GangedTable.h */,
+				2671B9FF219915FA0001A89D /* GangedTable.m */,
+				2671BA0721996B430001A89D /* GangedTableBar.h */,
+				2671BA0821996B430001A89D /* GangedTableBar.m */,
+				2671BA0A219973280001A89D /* TabBarItem.h */,
+				2671BA0B219973280001A89D /* TabBarItem.m */,
+				2671B9F82199143F0001A89D /* GangedTableElementCell.h */,
+				2671B9F92199143F0001A89D /* GangedTableElementCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -237,15 +252,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2671BA00219915FA0001A89D /* GangedTable.m in Sources */,
 				46651982219810E00088441D /* UIView+SDAutoLayout.m in Sources */,
 				46651983219810E00088441D /* UITableView+SDAutoTableViewCellHeight.m in Sources */,
 				46651984219810E00088441D /* ViewController.m in Sources */,
-				46651994219812C40088441D /* ContentCell.m in Sources */,
+				2671B9F72199119D0001A89D /* GangedTableModel.m in Sources */,
+				2671BA0921996B430001A89D /* GangedTableBar.m in Sources */,
 				46651993219812C40088441D /* RelatedScrollVC.m in Sources */,
 				46651988219811D80088441D /* TableVC.m in Sources */,
 				4665196F219810220088441D /* main.m in Sources */,
 				46651985219810E00088441D /* AppDelegate.m in Sources */,
-				46651995219812C40088441D /* JXScrollBar.m in Sources */,
+				2671BA0C219973280001A89D /* TabBarItem.m in Sources */,
+				2671B9FA2199143F0001A89D /* GangedTableElementCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

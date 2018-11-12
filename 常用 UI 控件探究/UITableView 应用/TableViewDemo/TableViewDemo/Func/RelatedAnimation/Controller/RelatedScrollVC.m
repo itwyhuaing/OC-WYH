@@ -7,13 +7,18 @@
 //
 
 #import "RelatedScrollVC.h"
+#import "GangedTable.h"
+#import "GangedTableBar.h"
+
+#import "GangedTableModel.h"
+
+//测试
 #import "SDAutoLayout.h"
-#import "ContentCell.h"
 
-@interface RelatedScrollVC () <UITableViewDelegate,UITableViewDataSource,UIScrollViewDelegate>
+@interface RelatedScrollVC () 
 
-@property (nonatomic,strong) UITableView            *table;
-@property (nonatomic,strong) NSMutableArray         *listData;
+@property (nonatomic,strong)  GangedTable            *gtable;
+@property (nonatomic,strong)  GangedTableBar         *gtTabBar;
 
 @end
 
@@ -22,7 +27,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor   = [UIColor grayColor];
-    self.table.backgroundColor  = [UIColor redColor];
+    self.gtable.gtableHeader    = [[UIView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.frame), 200.0)];
+    self.gtable.gtableBar       = self.gtTabBar;
+    [self loadData];
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -32,155 +39,57 @@
 
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
+}
+
+- (void)loadData{
     
-    [self.table scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:3 inSection:1]
-                      atScrollPosition:UITableViewScrollPositionTop
-                              animated:TRUE];
-    
-}
-
-
-#pragma mark ------ UITableViewDelegate,UITableViewDataSource
-
--(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return 2;
-}
-
--(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    NSInteger rows = 1;
-    if (section == 1) {
-        rows = self.listData.count + 1;
-    }
-    return rows;
-}
-
-- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
-    UIButton *hv = [UIButton buttonWithType:UIButtonTypeCustom];//[[UIView alloc] initWithFrame:CGRectZero];
-    hv.backgroundColor = [UIColor orangeColor];
-    if (section == 1) {
-        [hv setFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.bounds), 60.0)];
-        [hv addTarget:self action:@selector(clickEvent:) forControlEvents:UIControlEventTouchUpInside];
-    }
-    return hv;
-}
-
-- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
-    CGFloat height = 0;
-    if (section == 1) {
-        height = 60;
-    }
-    return height;
-}
-
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    CGFloat cellHeight = 0.0;
-    if (indexPath.section <= 0) {
-        cellHeight = 200.0;
-    } else {
-        cellHeight = [tableView cellHeightForIndexPath:indexPath model:[NSArray new] keyPath:@"datas" cellClass:[ContentCell class] contentViewWidth:[self cellContentViewWith]];
-    }
-    return cellHeight;
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    UITableViewCell *returnCell;
-    if (indexPath.section <= 0) {
-        returnCell = [[UITableViewCell alloc] init];
-    } else {
-        ContentCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass(ContentCell.class)];
-        cell.datas = @[@"美国国家概况",
-                       @"美国国家虽无及州政府税务规则",
-                       @"美国国家虽无及州政府税务规则",
-                       @"美国国家虽无及州政府税务规则"];
-        cell.title = [NSString stringWithFormat:@"Title %ld",indexPath.row];
-        
-        CGRect rectInTable = [self.table rectForRowAtIndexPath:indexPath];
-        
-        
-        
-        
-        
-        returnCell = cell;
+    NSArray *barThems = @[@"baritem1",@"baritem2",@"baritem3",@"baritem4",@"baritem5",@"baritem6"];
+    NSMutableArray *items = [NSMutableArray new];
+    for (NSInteger i = 0; i < 5; i ++) {
+        ItemModel *ifm = [ItemModel new];
+        ifm.cnt = [NSString stringWithFormat:@"内容%ld-美国社会",i];
+        ifm.pid = [NSString stringWithFormat:@"id%ld",i];
+        [items addObject:ifm];
     }
     
-    returnCell.layer.borderWidth = 0.6;
-    returnCell.layer.borderColor = [UIColor grayColor].CGColor;
-    
-    return returnCell;
-}
-
--(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    [tableView deselectRowAtIndexPath:indexPath animated:FALSE];
-}
-
-- (void)clickEvent:(UIButton *)btn{
-    NSLog(@"\n 点击切换 \n");
-    [self.table scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:3 inSection:1]
-                      atScrollPosition:UITableViewScrollPositionTop
-                              animated:TRUE];
-}
-
-- (CGFloat)cellContentViewWith
-{
-    CGFloat width = [UIScreen mainScreen].bounds.size.width;
-    
-    // 适配ios7横屏
-    if ([UIApplication sharedApplication].statusBarOrientation != UIInterfaceOrientationPortrait && [[UIDevice currentDevice].systemVersion floatValue] < 8) {
-        width = [UIScreen mainScreen].bounds.size.height;
+    NSMutableArray *elements = [NSMutableArray new];
+    for (NSInteger e = 0; e < barThems.count; e ++) {
+        ElementModel *ef = [ElementModel new];
+        [elements addObject:ef];
+        ef.items = items;
+        ef.them = [NSString stringWithFormat:@"Thme%ld",e];
     }
-    return width;
+    
+    // 数据模型
+    GangedTableModel *f = [[GangedTableModel alloc] init];
+    f.barThems = barThems;
+    f.elements = elements;
+    
+    // 赋值
+    self.gtable.dataModels = f.elements;
+    self.gtTabBar.thems    = barThems;
 }
-
 
 #pragma mark ------ lazy load
 
--(UITableView *)table{
-    if (!_table) {
-        _table = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
-        [self.view addSubview:_table];
-        _table.delegate     = (id)self;
-        _table.dataSource   = (id)self;
-        [_table registerClass:[ContentCell class] forCellReuseIdentifier:NSStringFromClass(ContentCell.class)];
-        _table.sd_layout
-        .topSpaceToView(self.view, 0)
-        .bottomEqualToView(self.view)
+-(GangedTable *)gtable{
+    if (!_gtable) {
+        _gtable = [[GangedTable alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
+        [self.view addSubview:_gtable];
+        _gtable.sd_layout
         .leftEqualToView(self.view)
-        .rightEqualToView(self.view);
-        
-        if(@available(iOS 11.0,*)){
-            _table.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
-        }else{
-            self.automaticallyAdjustsScrollViewInsets = FALSE;
-        }
+        .rightEqualToView(self.view)
+        .topSpaceToView(self.view, 0)
+        .bottomEqualToView(self.view);
     }
-    return _table;
+    return _gtable;
 }
 
-
--(NSMutableArray *)listData{
-    if (!_listData) {
-        _listData = [NSMutableArray new];
-        [_listData addObjectsFromArray:@[@"Them1",@"Them2",
-                                         @"Them3",@"Them4",
-                                         @"Them5",@"Them6",
-                                         @"Them7",@"Them8"]];
+-(GangedTableBar *)gtTabBar{
+    if (!_gtTabBar) {
+        _gtTabBar = [[GangedTableBar alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.frame), 60.0)];
     }
-    return _listData;
+    return _gtTabBar;
 }
-
--(void)scrollViewDidScroll:(UIScrollView *)scrollView{
-    CGPoint targetPoint = scrollView.contentOffset;
-    targetPoint.y       += 60;
-    NSIndexPath *idx = [self.table indexPathForRowAtPoint:targetPoint];
-    NSLog(@"\n scrollViewDidScroll 偏移:%ld \n",idx.row);
-}
-
-//-(void)scrollViewWillEndDragging:(UIScrollView *)scrollView withVelocity:(CGPoint)velocity targetContentOffset:(CGPoint)targetContentOffset{
-//    NSLog(@"\n scrollViewWillEndDragging 偏移:%f \n",targetContentOffset.y);
-//}
-//
-//-(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
-//    NSLog(@"\n scrollViewDidEndDecelerating 偏移:%f \n",scrollView.contentOffset.y);
-//}
 
 @end

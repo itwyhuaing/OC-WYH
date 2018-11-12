@@ -1,20 +1,28 @@
 //
-//  ContentCell.m
-//  CollectionViewDemo
+//  GangedTableElementCell.m
+//  TableViewDemo
 //
-//  Created by hnbwyh on 2018/11/9.
-//  Copyright © 2018年 JiXia. All rights reserved.
+//  Created by hnbwyh on 2018/11/12.
+//  Copyright © 2018年 TongXin. All rights reserved.
 //
 
-#import "ContentCell.h"
+#import "GangedTableElementCell.h"
+#import "GangedTableModel.h"
+
+//测试
 #import "SDAutoLayout.h"
 
-@interface ContentCell ()
-@property (nonatomic,strong)        UILabel     *themLabel;
-@property (nonatomic,strong)        UIView      *container;
+// 初始化时设置的d item 最大个数
+#define kMaxItemCount   10
+
+@interface GangedTableElementCell ()
+@property (nonatomic,strong)        UILabel                 *themLabel;
+@property (nonatomic,strong)        UIView                  *container;
+@property (nonatomic,strong)        NSMutableArray          *itemLabels;
+
 @end
 
-@implementation ContentCell
+@implementation GangedTableElementCell
 
 
 -(instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier{
@@ -32,7 +40,7 @@
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
-
+    
     // Configure the view for the selected state
 }
 
@@ -59,27 +67,6 @@
     self.themLabel.hidden = TRUE;
 }
 
--(void)setDatas:(NSArray *)datas{
-    if (datas) {
-        self.themLabel.hidden = FALSE;
-        NSMutableArray *views = [NSMutableArray new];
-        for (NSInteger cou = 0; cou < datas.count; cou ++) {
-            UILabel *l = [self createLabel];
-            l.text = datas[cou];
-            [self.container addSubview:l];
-            [views addObject:l];
-            l.sd_layout.heightIs(60);
-        }
-        [self.container setupAutoWidthFlowItems:views withPerRowItemsCount:2 verticalMargin:10 horizontalMargin:10 verticalEdgeInset:10 horizontalEdgeInset:10];
-    }
-}
-
--(void)setTitle:(NSString *)title{
-    if (title) {
-        _title = title;
-        self.themLabel.text = title;
-    }
-}
 
 - (UILabel *)createLabel{
     UILabel *l = [[UILabel alloc] init];
@@ -107,5 +94,35 @@
     return _container;
 }
 
+-(NSMutableArray *)itemLabels{
+    if (!_itemLabels) {
+        _itemLabels = [[NSMutableArray alloc] init];
+        for (NSInteger cou = 0; cou < kMaxItemCount; cou ++) {
+            [_itemLabels addObject:[self createLabel]];
+        }
+    }
+    return _itemLabels;
+}
+
+#pragma mark --- set data
+
+-(void)setElementData:(ElementModel *)elementData{
+    if (![elementData isEqual:_elementData]) {
+        _elementData = elementData;
+        self.themLabel.hidden       = FALSE;
+        self.themLabel.text         = elementData.them;
+        NSMutableArray *views = [NSMutableArray new];
+        for (NSInteger cou = 0; cou < elementData.items.count; cou ++) {
+            ItemModel *f = elementData.items[cou];
+            UILabel *l = (cou > kMaxItemCount - 1) ? [self createLabel] : self.itemLabels[cou];
+            l.text = f.cnt;
+            [self.container addSubview:l];
+            [views addObject:l];
+            l.sd_layout.heightIs(60);
+        }
+        [self.container setupAutoWidthFlowItems:views withPerRowItemsCount:2 verticalMargin:10 horizontalMargin:10 verticalEdgeInset:10 horizontalEdgeInset:10];
+    }
+}
 
 @end
+
