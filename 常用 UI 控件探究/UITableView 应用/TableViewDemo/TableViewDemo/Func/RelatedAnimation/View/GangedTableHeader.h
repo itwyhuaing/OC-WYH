@@ -1,8 +1,8 @@
 //
-//  TabBarItem.h
+//  GangedTableHeader.h
 //  TableViewDemo
 //
-//  Created by hnbwyh on 2018/11/12.
+//  Created by hnbwyh on 2018/11/13.
 //  Copyright © 2018年 TongXin. All rights reserved.
 //
 
@@ -10,9 +10,11 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface TabBarItem : UICollectionViewCell
+@interface GangedTableHeader : UIView
 
-@property (nonatomic,copy)      NSString *title;
+
+// 高度
++ (CGFloat)height;
 
 @end
 

@@ -1,7 +1,7 @@
 
 //@interface UICollectionViewFlowLayout : UICollectionViewLayout
 
-// 行与行之间最小行间距，这里的 “行” 其方向与滚动方向垂直
+// 行与行之间最小行间距，这里的 “行” 其方向与滚动方向一致
 @property (nonatomic) CGFloat minimumLineSpacing;
 // 同一行的cell中互相之间的最小间隔，设置这个值之后，那么cell与cell之间至少为这个值
 @property (nonatomic) CGFloat minimumInteritemSpacing;

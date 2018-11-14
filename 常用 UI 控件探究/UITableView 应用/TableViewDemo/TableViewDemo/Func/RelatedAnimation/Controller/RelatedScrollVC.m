@@ -8,7 +8,7 @@
 
 #import "RelatedScrollVC.h"
 #import "GangedTable.h"
-
+#import "GangedTableHeader.h"
 
 #import "GangedTableModel.h"
 
@@ -26,8 +26,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor   = [UIColor grayColor];
-    self.gtable.gtableHeader    = [[UIView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.frame), 200.0)];
-    //self.gtable.gtableBar       = self.gtTabBar;
+    self.gtable.gtableHeader    = [[GangedTableHeader alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.frame), [GangedTableHeader height])];
     [self loadData];
 }
 

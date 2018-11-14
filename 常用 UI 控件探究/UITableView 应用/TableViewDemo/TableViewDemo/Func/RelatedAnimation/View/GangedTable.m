@@ -125,6 +125,13 @@ typedef enum : NSUInteger {
     return returnCell;
 }
 
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    [tableView deselectRowAtIndexPath:indexPath animated:FALSE];
+    
+}
+
+
+
 - (CGFloat)cellContentViewWith
 {
     CGFloat width = [UIScreen mainScreen].bounds.size.width;
@@ -144,7 +151,6 @@ typedef enum : NSUInteger {
     targetPoint.y       += 60;
     NSIndexPath *idx = [self indexPathForRowAtPoint:targetPoint];
     [self.gtTabBar gangedTableBarScrollToItemAtIndexPath:idx];
-    NSLog(@"\n scrollViewDidScroll 偏移:%ld \n",idx.row);
 }
 
 #pragma mark ------ GangedTableBarDelegate

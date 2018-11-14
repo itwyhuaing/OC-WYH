@@ -8,6 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
+NS_ASSUME_NONNULL_BEGIN
+@interface TabBarItem : UICollectionViewCell
+
+@property (nonatomic,copy)      NSString *title;
+
+@end
+NS_ASSUME_NONNULL_END
+
+
 @class GangedTableBar;
 @protocol GangedTableBarDelegate <NSObject>
 @optional

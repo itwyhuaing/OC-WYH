@@ -7,13 +7,73 @@
 //
 
 #import "GangedTableBar.h"
-#import "TabBarItem.h"
 
 //测试
 #import "SDAutoLayout.h"
 
 
-@interface GangedTableBar () <UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
+@interface TabBarItem ()
+
+@property (nonatomic,strong) UILabel *cntLabel;
+
+@end
+
+@implementation TabBarItem
+
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        [self configUI];
+    }
+    return self;
+}
+
+- (instancetype)initWithFrame:(CGRect)frame
+{
+    self = [super initWithFrame:frame];
+    if (self) {
+        [self configUI];
+    }
+    return self;
+}
+
+- (void)configUI{
+    
+}
+
+-(void)layoutSubviews{
+    [super layoutSubviews];
+    [self.cntLabel setFrame:self.bounds];
+    
+    self.backgroundColor            = [UIColor cyanColor];
+    self.cntLabel.backgroundColor   = [UIColor orangeColor];
+    
+}
+
+-(void)setTitle:(NSString *)title{
+    if (title) {
+        _title = title;
+        self.cntLabel.text = title;
+    }
+}
+
+-(UILabel *)cntLabel{
+    if (!_cntLabel) {
+        _cntLabel = [[UILabel alloc] init];
+        [self.contentView addSubview:_cntLabel];
+        _cntLabel.textColor = [UIColor blackColor];
+        _cntLabel.font      = [UIFont systemFontOfSize:16.0];
+        _cntLabel.textAlignment = NSTextAlignmentCenter;
+    }
+    return _cntLabel;
+}
+
+@end
+
+
+
+@interface GangedTableBar () <UICollectionViewDelegate,UICollectionViewDataSource,UIScrollViewDelegate>
 
 @property (nonatomic,strong)    UICollectionView  *tabBar;
 @property (nonatomic,strong)    UIView            *underLine;
@@ -41,7 +101,7 @@
 }
 
 - (void)configUI{
-    
+    [self.tabBar addSubview:self.underLine];
 }
 
 #pragma mark ------ UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout
@@ -58,6 +118,7 @@
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     [collectionView deselectItemAtIndexPath:indexPath animated:FALSE];
+    [self relayoutTheSelectedUnderLineAtIndexPath:indexPath];
     if (_delegate && [_delegate respondsToSelector:@selector(gangedTableBar:didSelectedAtIndexPath:)]) {
         [_delegate gangedTableBar:self didSelectedAtIndexPath:indexPath];
     }
@@ -66,9 +127,22 @@
 #pragma mark ------ method
 
 -(void)gangedTableBarScrollToItemAtIndexPath:(NSIndexPath *)indexPath{
+    
+    //NSLog(@"\n\n 测试点 ScrollToItemAtIndexPath : %ld \n\n",indexPath.row);
+    
     [self.tabBar scrollToItemAtIndexPath:[NSIndexPath indexPathForRow:indexPath.row inSection:0]
                         atScrollPosition:UICollectionViewScrollPositionRight
                                 animated:FALSE];
+    
+    [self relayoutTheSelectedUnderLineAtIndexPath:[NSIndexPath indexPathForRow:indexPath.row inSection:0]];
+}
+
+- (void)relayoutTheSelectedUnderLineAtIndexPath:(NSIndexPath *)index{
+    TabBarItem *item = (TabBarItem *)[self.tabBar cellForItemAtIndexPath:index];
+    CGRect rect = self.underLine.frame;
+    rect.origin.x = item.origin.x;
+    [self.underLine setFrame:rect];
+    
 }
 
 #pragma mark ------ setter data
@@ -85,9 +159,9 @@
 -(UICollectionView *)tabBar{
     if (!_tabBar) {
         UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
-        layout.sectionInset                = UIEdgeInsetsZero;
+        layout.sectionInset                = UIEdgeInsetsMake(0.0, 0.0, 8.0, 0.0);
         layout.minimumLineSpacing          = 10.0;
-        layout.itemSize                    = CGSizeMake(100, CGRectGetHeight(self.frame));
+        layout.itemSize                    = CGSizeMake(100, CGRectGetHeight(self.frame) - 8.0);
         layout.scrollDirection             = UICollectionViewScrollDirectionHorizontal;
         _tabBar = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:layout];
         _tabBar.backgroundColor            = [UIColor whiteColor];
@@ -106,8 +180,8 @@
 
 -(UIView *)underLine{
     if (!_underLine) {
-        _underLine = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 60, 5.0)];
-        _underLine.backgroundColor = [UIColor redColor];
+        _underLine = [[UIView alloc] initWithFrame:CGRectMake(0, CGRectGetHeight(self.frame) - 5.0 - 2.0, 100.0, 5.0)];
+        _underLine.backgroundColor = [UIColor blueColor];
     }
     return _underLine;
 }
