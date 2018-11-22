@@ -30,6 +30,8 @@
     CGRect rect             = CGRectZero;
     rect.size               = self.view.bounds.size;
     UIScrollView *scrollV   = [[UIScrollView alloc] initWithFrame:rect];
+    rect.size.height        = [UIScreen mainScreen].bounds.size.height * 12.0;
+    [scrollV setContentSize:rect.size];
     [self.view addSubview:scrollV];
     
     // UISegmentedControl

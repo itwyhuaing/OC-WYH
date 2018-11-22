@@ -19,7 +19,6 @@
 }
 
 +(UIImage *)imageWithColor:(UIColor *)clr{
-    
     const CGFloat alpha     = CGColorGetAlpha(clr.CGColor);
     const BOOL opaque       = alpha == 1;
     CGRect rect             = CGRectMake(0.0f, 0.0f, 1.0f, 1.0f);
@@ -29,8 +28,15 @@
     CGContextFillRect(context, rect);
     UIImage *image          = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
-    
     return image;
+}
+
++(UIImage *)imageWithLayer:(CALayer *)layer{
+    UIGraphicsBeginImageContextWithOptions(layer.frame.size, FALSE, 0);
+    [layer renderInContext:UIGraphicsGetCurrentContext()];
+    UIImage *rltImg = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return rltImg;
 }
 
 @end

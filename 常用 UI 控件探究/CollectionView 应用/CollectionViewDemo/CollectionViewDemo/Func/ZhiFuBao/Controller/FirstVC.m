@@ -48,7 +48,7 @@
 }
 
 
-- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath{
+- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath {
     UICollectionReusableView *rltView;
     if ([kind isEqualToString:UICollectionElementKindSectionHeader]) {
        CommonReusableHeader *header     = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:NSStringFromClass(CommonReusableHeader.class) forIndexPath:indexPath];
@@ -100,7 +100,7 @@
         flowLayout.itemSize                    = CGSizeMake(56.0 * SCREEN_WIDTHRATE_6, 56.0 * SCREEN_WIDTHRATE_6);
         flowLayout.headerReferenceSize         = CGSizeMake(SCREEN_WIDTH, 30);
         flowLayout.footerReferenceSize         = CGSizeMake(SCREEN_WIDTH, 5);
-        flowLayout.sectionHeadersPinToVisibleBounds = TRUE;
+        flowLayout.sectionHeadersPinToVisibleBounds = TRUE; 
         _collectionV                           = [[UICollectionView alloc] initWithFrame:self.view.bounds collectionViewLayout:flowLayout];
         _collectionV.backgroundColor           = [UIColor whiteColor];
         _collectionV.delegate                  = (id)self;

@@ -18,5 +18,5 @@
 
 /**
  参考 ： https://www.jianshu.com/p/c13ef47c55ff
- UICollectionViewLayout——layout实现圆形布局
+ UICollectionViewLayout —— layout 实现圆形布局
  */
