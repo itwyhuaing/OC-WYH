@@ -169,9 +169,9 @@ isKindOfClass     ：参数为实例对象 - 参数所属类为其子类或本�
 
 
 
+##### 参考
 
-
-
+* [iOS内存缓存和磁盘缓存的区别](https://www.jianshu.com/p/3b0e290cc049)
 
 
 
