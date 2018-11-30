@@ -18,6 +18,7 @@
 		2623A71A21A577CD0070844F /* NSPredicateVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2623A71821A577CD0070844F /* NSPredicateVC.m */; };
 		2623A71D21A578460070844F /* PredicateTestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2623A71C21A578460070844F /* PredicateTestModel.m */; };
 		2623A72021A693C40070844F /* CAGradientLayerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2623A71F21A693C40070844F /* CAGradientLayerVC.m */; };
+		26C3BCFF21AFE7CE00EC30BD /* NSEnumeratorVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 26C3BCFE21AFE7CE00EC30BD /* NSEnumeratorVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,8 @@
 		2623A71C21A578460070844F /* PredicateTestModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PredicateTestModel.m; sourceTree = "<group>"; };
 		2623A71E21A693C40070844F /* CAGradientLayerVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CAGradientLayerVC.h; sourceTree = "<group>"; };
 		2623A71F21A693C40070844F /* CAGradientLayerVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CAGradientLayerVC.m; sourceTree = "<group>"; };
+		26C3BCFD21AFE7CE00EC30BD /* NSEnumeratorVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NSEnumeratorVC.h; sourceTree = "<group>"; };
+		26C3BCFE21AFE7CE00EC30BD /* NSEnumeratorVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NSEnumeratorVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +135,8 @@
 				2623A71821A577CD0070844F /* NSPredicateVC.m */,
 				2623A71E21A693C40070844F /* CAGradientLayerVC.h */,
 				2623A71F21A693C40070844F /* CAGradientLayerVC.m */,
+				26C3BCFD21AFE7CE00EC30BD /* NSEnumeratorVC.h */,
+				26C3BCFE21AFE7CE00EC30BD /* NSEnumeratorVC.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -213,6 +218,7 @@
 				2623A6FB21A571E20070844F /* main.m in Sources */,
 				2623A70A21A5722F0070844F /* AppDelegate.m in Sources */,
 				2623A72021A693C40070844F /* CAGradientLayerVC.m in Sources */,
+				26C3BCFF21AFE7CE00EC30BD /* NSEnumeratorVC.m in Sources */,
 				2623A71A21A577CD0070844F /* NSPredicateVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

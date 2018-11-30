@@ -54,7 +54,7 @@
 -(NSMutableArray *)listData{
     if (!_listData) {
         _listData = [NSMutableArray new];
-        [_listData addObjectsFromArray:@[@"NSPredicate 简单使用",@"CAGradientLayer 颜色渐变器",@"常规瀑布流布局",@"环形布局",@"线性布局 - 动画"]];
+        [_listData addObjectsFromArray:@[@"NSPredicate 简单使用",@"CAGradientLayer 颜色渐变器",@"NSEnumerator 遍历集合元素",@"环形布局",@"线性布局 - 动画"]];
     }
     return _listData;
 }
@@ -62,7 +62,7 @@
 -(NSMutableArray *)vcs{
     if (!_vcs) {
         _vcs = [NSMutableArray new];
-        [_vcs addObjectsFromArray:@[@"NSPredicateVC",@"CAGradientLayerVC",@"SecondVC",@"CirCleLayoutVC",@"LineLayoutVC"]];
+        [_vcs addObjectsFromArray:@[@"NSPredicateVC",@"CAGradientLayerVC",@"NSEnumeratorVC",@"CirCleLayoutVC",@"LineLayoutVC"]];
     }
     return _vcs;
 }
