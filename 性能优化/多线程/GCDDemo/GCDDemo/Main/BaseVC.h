@@ -10,4 +10,6 @@
 
 @interface BaseVC : UIViewController
 
+@property (nonatomic,copy)  NSString *title;
+
 @end

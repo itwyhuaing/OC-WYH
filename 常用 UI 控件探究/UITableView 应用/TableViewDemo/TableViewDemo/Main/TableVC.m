@@ -54,7 +54,9 @@
 -(NSMutableArray *)listData{
     if (!_listData) {
         _listData = [NSMutableArray new];
-        [_listData addObjectsFromArray:@[@"TableView联动 - 类似锚点滑动"]];
+        [_listData addObjectsFromArray:@[@"TableView联动 - 类似锚点滑动",
+                                         @"单独添加 Table:测试头部悬浮效果",
+                                         @"继承 UITableViewController:测试头部悬浮效果"]];
     }
     return _listData;
 }
@@ -62,7 +64,7 @@
 -(NSMutableArray *)vcs{
     if (!_vcs) {
         _vcs = [NSMutableArray new];
-        [_vcs addObjectsFromArray:@[@"RelatedScrollVC"]];
+        [_vcs addObjectsFromArray:@[@"RelatedScrollVC",@"TestVC",@"TestTableVC"]];
     }
     return _vcs;
 }

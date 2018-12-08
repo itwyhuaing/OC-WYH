@@ -7,6 +7,7 @@
 //
 
 #import "GCDMainTableVC.h"
+#import "BaseVC.h"
 
 @interface GCDMainTableVC ()
 
@@ -19,8 +20,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    NSArray *vcs        = @[@"TestVC1",@"TestVC2",@"TestVC3",@"TestVC4",@"TestVC5",@"TestVC6"];
-    NSArray *cnts       = @[@"Dispatch Semaphore",@"TestVC2",@"TestVC3",@"TestVC4",@"TestVC5",@"TestVC6"];
+    NSArray *vcs        = @[@"TestVC1",@"TestVC2",@"TestVC3",@"TestVC4",@"TestVC5",@"TestVC6",@"TestVC7",@"TestVC8"];
+    NSArray *cnts       = @[@"Semaphore - 线程等待",@"Queue 队列生成、获取，优先级变更、合并",@"After",@"Group-Notify-Wait:队列组操作、通知、等待",@"数竞争冒险 - 数据读写问题解决",@"Apply高效率循环",@"Queue 挂起/恢复",@"Once - 单例对象"];
     [self.vcsData addObjectsFromArray:vcs];
     [self.dataSource addObjectsFromArray:cnts];
 }
@@ -47,7 +48,8 @@
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    UIViewController *vc = [[NSClassFromString(self.vcsData[indexPath.row]) alloc] init];
+    BaseVC *vc = (BaseVC *)[[NSClassFromString(self.vcsData[indexPath.row]) alloc] init];
+    vc.title = self.dataSource[indexPath.row];
     [self.navigationController pushViewController:vc animated:TRUE];
 }
 

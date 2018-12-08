@@ -16,6 +16,26 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    /**
+     Dispatch Semaphore 主要作用是进行更细粒度的排他控制。Dispatch Semaphore 是持有计数的信号，该计数是多线程编程中的技术类型信号。计数为 0 时等待，计数为 1 或大于 1 时，减去 1 而不等待。
+     主要函数及意义如下：
+    // dispatch_semaphore_create 函数生成一个 Dispatch Semaphore ,其中参数表示计数的初始值。
+     dispatch_semaphore_t semepore = dispatch_semaphore_create(1);
+     
+     // 第一个参数是一个 Dispatch Semaphore 信号，第二个参数是 dispatch_time_t 类型，用于指定等待时间
+     // 该句意思 ： 若执行该句前 semepore > 0 ,则执行该句之后 semepore 执行 -1 操作而不等待，直接返回数值 0 ；若执行该句前 semepore = 0 则按第二个参数等待指定时间，这里为永久等待
+     dispatch_semaphore_wait(semepore, DISPATCH_TIME_FOREVER)
+     
+     // 该函数之后 Dispatch Semaphore 信号执行 +1 操作
+     dispatch_semaphore_signal(<#dispatch_semaphore_t  _Nonnull dsema#>)
+     
+     应用中常见于：
+     1. 确保某一网络请求成功为止
+     2. 异步操作可变数据，防止数据竞争冒险
+     
+     */
+    
+    
     
 }
 
@@ -85,8 +105,10 @@
     NSLog(@"\n 测试-start \n");
     for (NSInteger cou = 0; cou < 9; cou ++) {
         dispatch_async(queue, ^{
-            dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
-            [arr addObject:[NSNumber numberWithInteger:cou]];
+            long rlt = dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
+            if (rlt == 0) { // 这句不写也可以
+                [arr addObject:[NSNumber numberWithInteger:cou]];
+            }
             dispatch_semaphore_signal(semaphore);
             //            dispatch_release(semaphore);
             NSLog(@"\n 测试-ing:%@ \n",[NSThread currentThread]);

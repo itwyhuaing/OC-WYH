@@ -16,13 +16,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    self.navigationController.navigationItem.title = self.title;
 }
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     self.view.backgroundColor  = [UIColor whiteColor];
-    self.title = NSStringFromClass(self.class);
 }
 
 @end

@@ -16,22 +16,67 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+#pragma mark - 队列创建 / 获取
+
+- (void)queueBriefInfo{
+    
+    /**
+     dispatch_queue_create(const char * _Nullable label, <#dispatch_queue_attr_t  _Nullable attr#>)
+     
+     dispatch_get_global_queue(<#long identifier#>, <#unsigned long flags#>)
+     
+     */
+    
+    // Serail Dispatch Quue
+    dispatch_queue_t squeue = dispatch_queue_create("SerailDispatchQueue", NULL);
+    
+    // Concurrent Dispatch Quue
+    dispatch_queue_t cqueue = dispatch_queue_create("ConcurrentDispatchQueue", DISPATCH_QUEUE_CONCURRENT);
+    
+    // Main Queue - Serail Dispatch Quue
+    dispatch_queue_t mainQueue = dispatch_get_main_queue();
+    
+    // Global Queue - Concurrent Dispatch Quue
+    dispatch_queue_t globalQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    
+    
+    /**
+     
+      dispatch_async 异步方式添加任务到队列
+     
+      dispatch_sync  同步方式添加任务到队列
+     
+     */
+    dispatch_async(squeue, ^{
+        NSLog(@" 异步方式 - 添加任务到同步队列中 ");
+    });
+    
+    dispatch_sync(squeue, ^{
+        NSLog(@" 同步方式 - 添加任务到同步队列中 ");
+    });
+    
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+#pragma mark - 队列优先级变更、队列合并
+
+- (void)modifyAndMerge{
+    // 将 squeue 队列优先级修改为 后台模式 （注意：系统生成的主队列与全局队列不可修改）
+    dispatch_queue_t squeue = dispatch_queue_create("SerailDispatchQueue", NULL);
+    dispatch_queue_t globalQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0);
+    dispatch_set_target_queue(squeue, globalQueue);
 }
-*/
+
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+}
+
+-(void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+}
 
 @end

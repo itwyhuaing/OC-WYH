@@ -13,6 +13,9 @@
 		2671BA0921996B430001A89D /* GangedTableBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 2671BA0821996B430001A89D /* GangedTableBar.m */; };
 		2671BA0F219A7F050001A89D /* GangedTableHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 2671BA0E219A7F050001A89D /* GangedTableHeader.m */; };
 		2671BA13219A9CBD0001A89D /* UIFont+FHFont.m in Sources */ = {isa = PBXBuildFile; fileRef = 2671BA11219A9CBD0001A89D /* UIFont+FHFont.m */; };
+		4620CC5D219FD8A50043A3DF /* TestVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4620CC5C219FD8A50043A3DF /* TestVC.m */; };
+		4620CC60219FD8C00043A3DF /* TestTableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4620CC5F219FD8C00043A3DF /* TestTableVC.m */; };
+		4620CC63219FDD740043A3DF /* TestView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4620CC62219FDD740043A3DF /* TestView.m */; };
 		46651967219810200088441D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46651965219810200088441D /* Main.storyboard */; };
 		46651969219810220088441D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 46651968219810220088441D /* Assets.xcassets */; };
 		4665196C219810220088441D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4665196A219810220088441D /* LaunchScreen.storyboard */; };
@@ -38,6 +41,12 @@
 		2671BA0E219A7F050001A89D /* GangedTableHeader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GangedTableHeader.m; sourceTree = "<group>"; };
 		2671BA11219A9CBD0001A89D /* UIFont+FHFont.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIFont+FHFont.m"; sourceTree = "<group>"; };
 		2671BA12219A9CBD0001A89D /* UIFont+FHFont.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIFont+FHFont.h"; sourceTree = "<group>"; };
+		4620CC5B219FD8A50043A3DF /* TestVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestVC.h; sourceTree = "<group>"; };
+		4620CC5C219FD8A50043A3DF /* TestVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestVC.m; sourceTree = "<group>"; };
+		4620CC5E219FD8C00043A3DF /* TestTableVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestTableVC.h; sourceTree = "<group>"; };
+		4620CC5F219FD8C00043A3DF /* TestTableVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestTableVC.m; sourceTree = "<group>"; };
+		4620CC61219FDD740043A3DF /* TestView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestView.h; sourceTree = "<group>"; };
+		4620CC62219FDD740043A3DF /* TestView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestView.m; sourceTree = "<group>"; };
 		4665195C219810200088441D /* TableViewDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TableViewDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		46651966219810200088441D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		46651968219810220088441D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -176,6 +185,10 @@
 			children = (
 				4665198B219812C40088441D /* RelatedScrollVC.h */,
 				4665198C219812C40088441D /* RelatedScrollVC.m */,
+				4620CC5B219FD8A50043A3DF /* TestVC.h */,
+				4620CC5C219FD8A50043A3DF /* TestVC.m */,
+				4620CC5E219FD8C00043A3DF /* TestTableVC.h */,
+				4620CC5F219FD8C00043A3DF /* TestTableVC.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -191,6 +204,8 @@
 				2671B9F92199143F0001A89D /* GangedTableElementCell.m */,
 				2671BA0D219A7F050001A89D /* GangedTableHeader.h */,
 				2671BA0E219A7F050001A89D /* GangedTableHeader.m */,
+				4620CC61219FDD740043A3DF /* TestView.h */,
+				4620CC62219FDD740043A3DF /* TestView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -265,6 +280,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4620CC63219FDD740043A3DF /* TestView.m in Sources */,
 				2671BA00219915FA0001A89D /* GangedTable.m in Sources */,
 				2671BA0F219A7F050001A89D /* GangedTableHeader.m in Sources */,
 				46651982219810E00088441D /* UIView+SDAutoLayout.m in Sources */,
@@ -274,7 +290,9 @@
 				2671B9F72199119D0001A89D /* GangedTableModel.m in Sources */,
 				2671BA0921996B430001A89D /* GangedTableBar.m in Sources */,
 				46651993219812C40088441D /* RelatedScrollVC.m in Sources */,
+				4620CC60219FD8C00043A3DF /* TestTableVC.m in Sources */,
 				46651988219811D80088441D /* TableVC.m in Sources */,
+				4620CC5D219FD8A50043A3DF /* TestVC.m in Sources */,
 				4665196F219810220088441D /* main.m in Sources */,
 				46651985219810E00088441D /* AppDelegate.m in Sources */,
 				2671B9FA2199143F0001A89D /* GangedTableElementCell.m in Sources */,

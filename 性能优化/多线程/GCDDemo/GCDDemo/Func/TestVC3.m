@@ -19,19 +19,29 @@
     // Do any additional setup after loading the view.
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+-(void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
 }
-*/
+
+#pragma mark -
+
+- (void)time{
+    /**
+     dispatch_time(<#dispatch_time_t when#>, <#int64_t delta#>);
+     xnull * NSEC_PER_SEC 乘积得到单位为好微妙的数值。 "ull" 是 C 语言的数值字面量，是显式表明类型时使用的字符串 ：unsigned long long 。如果 NSEC_PER_MSEC 则可以以毫秒单位计算。
+     */
+    // 从现在起 1 秒后的 dispatch_time_t 类型值
+    dispatch_time_t time = dispatch_time(DISPATCH_TIME_NOW, 1ull * NSEC_PER_SEC);
+    
+    // 从现在起 150 毫秒后的 dispatch_time_t 类型值
+    dispatch_time_t mtime = dispatch_time(DISPATCH_TIME_NOW, 150ull * NSEC_PER_MSEC);
+    
+}
 
 @end

@@ -21,6 +21,8 @@
 		26E82FB1217EEC1300FE02B9 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26E82FAB217EEC1300FE02B9 /* ViewController.m */; };
 		26E82FB2217EEC1300FE02B9 /* BaseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 26E82FAC217EEC1300FE02B9 /* BaseVC.m */; };
 		26E82FB3217EEC1300FE02B9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 26E82FAD217EEC1300FE02B9 /* AppDelegate.m */; };
+		468A4F3E21BC12EC00460371 /* TestVC7.m in Sources */ = {isa = PBXBuildFile; fileRef = 468A4F3D21BC12EC00460371 /* TestVC7.m */; };
+		468A4F4121BC12FB00460371 /* TestVC8.m in Sources */ = {isa = PBXBuildFile; fileRef = 468A4F4021BC12FB00460371 /* TestVC8.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +53,10 @@
 		26E82FAD217EEC1300FE02B9 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		26E82FAE217EEC1300FE02B9 /* GCDMainTableVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDMainTableVC.h; sourceTree = "<group>"; };
 		26E82FAF217EEC1300FE02B9 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		468A4F3C21BC12EC00460371 /* TestVC7.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestVC7.h; sourceTree = "<group>"; };
+		468A4F3D21BC12EC00460371 /* TestVC7.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestVC7.m; sourceTree = "<group>"; };
+		468A4F3F21BC12FB00460371 /* TestVC8.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestVC8.h; sourceTree = "<group>"; };
+		468A4F4021BC12FB00460371 /* TestVC8.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestVC8.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,19 +103,23 @@
 		26E82F91217EEBAF00FE02B9 /* Func */ = {
 			isa = PBXGroup;
 			children = (
-				26E82F92217EEBAF00FE02B9 /* TestVC2.m */,
-				26E82F93217EEBAF00FE02B9 /* TestVC4.h */,
-				26E82F94217EEBAF00FE02B9 /* TestVC6.m */,
-				26E82F95217EEBAF00FE02B9 /* TestVC1.m */,
-				26E82F96217EEBAF00FE02B9 /* TestVC5.m */,
-				26E82F97217EEBAF00FE02B9 /* TestVC3.h */,
-				26E82F98217EEBAF00FE02B9 /* TestVC6.h */,
-				26E82F99217EEBAF00FE02B9 /* TestVC4.m */,
-				26E82F9A217EEBAF00FE02B9 /* TestVC2.h */,
-				26E82F9B217EEBAF00FE02B9 /* TestVC3.m */,
-				26E82F9C217EEBAF00FE02B9 /* TestVC5.h */,
-				26E82F9D217EEBAF00FE02B9 /* TestVC1.h */,
 				26E82F9E217EEBAF00FE02B9 /* Note.h */,
+				26E82F9D217EEBAF00FE02B9 /* TestVC1.h */,
+				26E82F95217EEBAF00FE02B9 /* TestVC1.m */,
+				26E82F9A217EEBAF00FE02B9 /* TestVC2.h */,
+				26E82F92217EEBAF00FE02B9 /* TestVC2.m */,
+				26E82F97217EEBAF00FE02B9 /* TestVC3.h */,
+				26E82F9B217EEBAF00FE02B9 /* TestVC3.m */,
+				26E82F93217EEBAF00FE02B9 /* TestVC4.h */,
+				26E82F99217EEBAF00FE02B9 /* TestVC4.m */,
+				26E82F9C217EEBAF00FE02B9 /* TestVC5.h */,
+				26E82F96217EEBAF00FE02B9 /* TestVC5.m */,
+				26E82F98217EEBAF00FE02B9 /* TestVC6.h */,
+				26E82F94217EEBAF00FE02B9 /* TestVC6.m */,
+				468A4F3C21BC12EC00460371 /* TestVC7.h */,
+				468A4F3D21BC12EC00460371 /* TestVC7.m */,
+				468A4F3F21BC12FB00460371 /* TestVC8.h */,
+				468A4F4021BC12FB00460371 /* TestVC8.m */,
 			);
 			path = Func;
 			sourceTree = "<group>";
@@ -199,6 +209,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				468A4F3E21BC12EC00460371 /* TestVC7.m in Sources */,
+				468A4F4121BC12FB00460371 /* TestVC8.m in Sources */,
 				26E82FB3217EEC1300FE02B9 /* AppDelegate.m in Sources */,
 				26E82FB1217EEC1300FE02B9 /* ViewController.m in Sources */,
 				26E82FA3217EEBAF00FE02B9 /* TestVC1.m in Sources */,
