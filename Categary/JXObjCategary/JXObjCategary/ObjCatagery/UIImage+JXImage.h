@@ -29,4 +29,13 @@
  */
 + (UIImage *)imageWithColor:(UIColor *)clr;
 
+
+/**
+ 依据给定的 CALayer 生成图片
+
+ @param layer 指定的 CALayer 实例
+ @return 生成的图片
+ */
++ (UIImage *)imageWithLayer:(CALayer *)layer;
+
 @end

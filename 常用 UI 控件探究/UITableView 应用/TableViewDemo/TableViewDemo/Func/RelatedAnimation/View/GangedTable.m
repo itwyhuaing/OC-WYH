@@ -27,6 +27,9 @@ typedef enum : NSUInteger {
 @property (nonatomic,strong)    UIView                 *blankHeader;
 @property (nonatomic,strong)    GangedTableBar        *gtTabBar;
 
+//用于区分 Table 滑动是手动还是自动（bar 选中引起）
+@property (nonatomic,assign)    BOOL                   isAutoScroll;
+
 @end
 
 
@@ -146,16 +149,23 @@ typedef enum : NSUInteger {
 
 #pragma mark ------ UIScrollViewDelegate
 
+- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView{
+    self.isAutoScroll = FALSE;
+}
+
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView{
-    CGPoint targetPoint = scrollView.contentOffset;
-    targetPoint.y       += 60;
-    NSIndexPath *idx = [self indexPathForRowAtPoint:targetPoint];
-    [self.gtTabBar gangedTableBarScrollToItemAtIndexPath:idx];
+    if (!self.isAutoScroll) {
+        CGPoint targetPoint = scrollView.contentOffset;
+        targetPoint.y       += 60;
+        NSIndexPath *idx = [self indexPathForRowAtPoint:targetPoint];
+        [self.gtTabBar gangedTableBarScrollToItemAtIndexPath:idx];
+    }
 }
 
 #pragma mark ------ GangedTableBarDelegate
 
 -(void)gangedTableBar:(GangedTableBar *)bar didSelectedAtIndexPath:(NSIndexPath *)index{
+    self.isAutoScroll = TRUE;
     [self scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:index.row inSection:GangedTableSection1]
                 atScrollPosition:UITableViewScrollPositionTop
                         animated:FALSE];

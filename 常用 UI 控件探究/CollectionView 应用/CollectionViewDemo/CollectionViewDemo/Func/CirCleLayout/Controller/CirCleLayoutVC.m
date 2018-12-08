@@ -53,7 +53,7 @@
     if ([kind isEqualToString:UICollectionElementKindSectionHeader]) {
         UICollectionReusableView *header     = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"UICollectionReusableViewHeader" forIndexPath:indexPath];
         rltView = header;
-        rltView.backgroundColor     = [UIColor cyanColor];
+        rltView.backgroundColor     = [UIColor redColor];
     }else if ([kind isEqualToString:UICollectionElementKindSectionFooter]){
         rltView     = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:@"CFOOTERID" forIndexPath:indexPath];
         rltView.backgroundColor     = [UIColor purpleColor];

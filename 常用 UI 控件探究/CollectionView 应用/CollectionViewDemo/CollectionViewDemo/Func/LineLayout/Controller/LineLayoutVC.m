@@ -19,6 +19,43 @@
 
 @implementation LineLayoutVC
 
+// 重用ID
+static NSString *const ID = @"cell";
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    self.view.backgroundColor               = [UIColor whiteColor];
+    self.title                              = NSStringFromClass(self.class);
+    
+    self.collectionView.backgroundColor     = [UIColor orangeColor];
+    
+    //取出layout
+//    LineLayout *layout                  = (LineLayout *)self.collectionView.collectionViewLayout;
+//    //为了让第一个 Item 放在最中间，所以设置了edgeInsets
+//    self.collectionView.contentInset    = UIEdgeInsetsMake(0, self.collectionView.bounds.size.width * 0.5 - layout.itemSize.width * 0.5 , 0, self.collectionView.bounds.size.width * 0.5 - layout.itemSize.width * 0.5);
+    
+}
+
+//数据源方法返回一共多少个cell
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+    return self.imageNames.count;
+}
+
+//数据源方法，返回显示的是什么样的cell
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    
+    JXCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:ID forIndexPath:indexPath];
+    
+    cell.imageName  = self.imageNames[indexPath.item];
+    return cell;
+}
+
+
+-(void)scrollViewDidScroll:(UIScrollView *)scrollView{
+    NSLog(@" \n\n scrollViewDidScroll \n\n\n ");
+}
+
+
 // 懒加载图片数组
 - (NSMutableArray *)imageNames {
     
@@ -56,42 +93,6 @@
         _collectionView = collectionView;
     }
     return _collectionView;
-}
-
-// 重用ID
-static NSString *const ID = @"cell";
-
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    self.view.backgroundColor               = [UIColor whiteColor];
-    self.title                              = NSStringFromClass(self.class);
-    
-    self.collectionView.backgroundColor     = [UIColor orangeColor];
-    
-    //取出layout
-//    LineLayout *layout                  = (LineLayout *)self.collectionView.collectionViewLayout;
-//    //为了让第一个 Item 放在最中间，所以设置了edgeInsets
-//    self.collectionView.contentInset    = UIEdgeInsetsMake(0, self.collectionView.bounds.size.width * 0.5 - layout.itemSize.width * 0.5 , 0, self.collectionView.bounds.size.width * 0.5 - layout.itemSize.width * 0.5);
-    
-}
-
-//数据源方法返回一共多少个cell
-- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return self.imageNames.count;
-}
-
-//数据源方法，返回显示的是什么样的cell
-- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    
-    JXCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:ID forIndexPath:indexPath];
-    
-    cell.imageName  = self.imageNames[indexPath.item];
-    return cell;
-}
-
-
--(void)scrollViewDidScroll:(UIScrollView *)scrollView{
-    NSLog(@" \n\n scrollViewDidScroll \n\n\n ");
 }
 
 

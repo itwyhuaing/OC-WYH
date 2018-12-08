@@ -31,8 +31,8 @@
 +(UIView *)gradeColorViewWithFrame:(CGRect)rect{
     UIView *rlt = [[UIView alloc] initWithFrame:rect];
     CAGradientLayer *gradientLayer = [CAGradientLayer layer];
-    gradientLayer.colors = @[(__bridge id)[UIColor redColor].CGColor, (__bridge id)[UIColor redColor].CGColor, (__bridge id)[UIColor whiteColor].CGColor];
-    //gradientLayer.locations = @[@0.3, @0.5, @1.0];
+    gradientLayer.colors = @[(__bridge id)[UIColor blackColor].CGColor, (__bridge id)[UIColor blackColor].CGColor, (__bridge id)[UIColor whiteColor].CGColor];
+    gradientLayer.locations = @[@0.1, @0.2,@1.0];
     gradientLayer.startPoint = CGPointMake(0, 0);
     gradientLayer.endPoint = CGPointMake(1.0, 0);
     gradientLayer.frame = CGRectMake(0, 0, rect.size.width, rect.size.height);

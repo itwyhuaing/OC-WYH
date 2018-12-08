@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2623A6DE21A566DF0070844F /* RegExCategories.m in Sources */ = {isa = PBXBuildFile; fileRef = 2623A6DC21A566DE0070844F /* RegExCategories.m */; };
 		2659164C1F02375800BE2AEF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2659164B1F02375800BE2AEF /* main.m */; };
 		265916551F02375800BE2AEF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 265916531F02375800BE2AEF /* Main.storyboard */; };
 		265916571F02375800BE2AEF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 265916561F02375800BE2AEF /* Assets.xcassets */; };
@@ -62,6 +63,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2623A6DC21A566DE0070844F /* RegExCategories.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegExCategories.m; sourceTree = "<group>"; };
+		2623A6DD21A566DE0070844F /* RegExCategories.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegExCategories.h; sourceTree = "<group>"; };
 		265916471F02375800BE2AEF /* DataStoreDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DataStoreDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2659164B1F02375800BE2AEF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		265916541F02375800BE2AEF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -176,6 +179,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2623A6DB21A566DE0070844F /* RegExCategories */ = {
+			isa = PBXGroup;
+			children = (
+				2623A6DD21A566DE0070844F /* RegExCategories.h */,
+				2623A6DC21A566DE0070844F /* RegExCategories.m */,
+			);
+			path = RegExCategories;
+			sourceTree = "<group>";
+		};
 		2659163E1F02375700BE2AEF = {
 			isa = PBXGroup;
 			children = (
@@ -360,6 +372,7 @@
 		2659169C1F02597000BE2AEF /* ThirdLibs */ = {
 			isa = PBXGroup;
 			children = (
+				2623A6DB21A566DE0070844F /* RegExCategories */,
 				265916AE1F0259A800BE2AEF /* SDWebImage */,
 				2659169D1F02597000BE2AEF /* FMDB */,
 			);
@@ -566,6 +579,7 @@
 				268B35652111483400660D22 /* JXFileOperator.m in Sources */,
 				267E006C21018D81002566DC /* JXFMDBMOperator.m in Sources */,
 				265916671F02545700BE2AEF /* AppDelegate.m in Sources */,
+				2623A6DE21A566DF0070844F /* RegExCategories.m in Sources */,
 				2659164C1F02375800BE2AEF /* main.m in Sources */,
 				265916E11F0259A800BE2AEF /* UIView+WebCacheOperation.m in Sources */,
 				265916DF1F0259A800BE2AEF /* UIImageView+HighlightedWebCache.m in Sources */,

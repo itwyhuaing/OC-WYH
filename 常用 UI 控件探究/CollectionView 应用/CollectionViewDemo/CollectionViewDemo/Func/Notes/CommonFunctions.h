@@ -24,7 +24,7 @@ float fabsf(float i);
 ```
 
 3. ceilf
-进位方法
+向上取整
 
 ```
 float numberToRound;
@@ -59,6 +59,7 @@ NSLog(@"roundf(%.2f) = %d", numberToRound, result);
 ```
 
 5. floorf
+乡下取整
 
 ```
 float numberToRound;
@@ -74,7 +75,8 @@ NSLog(@"floorf(%.2f) = %d", numberToRound, result);
 //输出 floorf(5.41) = 5
 ```
 
-6.
+6. 
+
 
 ```
 
