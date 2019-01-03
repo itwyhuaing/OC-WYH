@@ -11,10 +11,13 @@
 #import "JXCollectionViewCell.h"
 
 @interface LineLayoutVC ()<UICollectionViewDataSource,UICollectionViewDelegate>
-//imageName 数组 （图片的命名是按钮1.jpg，2.jpg来命名的）
-@property (strong,nonatomic) NSMutableArray * imageNames;
-//控制器View里面的CollectionView
-@property (weak,nonatomic) UICollectionView *collectionView;
+
+//imageName 数组 （图片的命名是按钮 1.jpg，2.jpg 来命名的）
+@property (strong,nonatomic)    NSMutableArray * imageNames;
+
+//控制器View里面的 CollectionView
+@property (weak,nonatomic)      UICollectionView *collectionView;
+
 @end
 
 @implementation LineLayoutVC
@@ -30,9 +33,14 @@ static NSString *const ID = @"cell";
     self.collectionView.backgroundColor     = [UIColor orangeColor];
     
     //取出layout
-//    LineLayout *layout                  = (LineLayout *)self.collectionView.collectionViewLayout;
-//    //为了让第一个 Item 放在最中间，所以设置了edgeInsets
+    LineLayout *layout                  = (LineLayout *)self.collectionView.collectionViewLayout;
+    // 为了让第一个 Item 放在最中间，所以设置了edgeInsets
+    // self.collectionView.contentInset    = UIEdgeInsetsMake(<#CGFloat top#>, <#CGFloat left#>, <#CGFloat bottom#>, <#CGFloat right#>)
 //    self.collectionView.contentInset    = UIEdgeInsetsMake(0, self.collectionView.bounds.size.width * 0.5 - layout.itemSize.width * 0.5 , 0, self.collectionView.bounds.size.width * 0.5 - layout.itemSize.width * 0.5);
+//    
+//    CGFloat sw = [UIScreen mainScreen].bounds.size.width;
+//    CGFloat sh = [UIScreen mainScreen].bounds.size.height;
+//    self.collectionView.contentInset    = UIEdgeInsetsMake(0, sw * 0.5 , 0, sw * 0.5);
     
 }
 
@@ -45,9 +53,9 @@ static NSString *const ID = @"cell";
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     
     JXCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:ID forIndexPath:indexPath];
-    
     cell.imageName  = self.imageNames[indexPath.item];
     return cell;
+    
 }
 
 
@@ -61,7 +69,7 @@ static NSString *const ID = @"cell";
     
     if (!_imageNames) {
         _imageNames = [NSMutableArray array];
-        for (int i = 0; i < 8; i++ ) {
+        for (int i = 0; i < 800; i++ ) {
             NSString *name = [NSString stringWithFormat:@"%d",i%5 + 1];
             [_imageNames addObject:name];
         }
@@ -86,6 +94,7 @@ static NSString *const ID = @"cell";
         //设置数据源
         collectionView.dataSource = (id)self;
         collectionView.delegate   = (id)self;
+        
         //注册Cell
         [collectionView registerClass:[JXCollectionViewCell class] forCellWithReuseIdentifier:ID];
         //添加到控制器的View中

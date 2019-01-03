@@ -27,8 +27,8 @@
 }
 
 - (void)configUI{
-    CircleLayout * layout         = [[CircleLayout alloc] init];
-    UICollectionView * collect              = [[UICollectionView alloc]initWithFrame:CGRectMake(50, 100, kScreenWidth-100, kScreenHeight-180) collectionViewLayout:layout];
+    CircleLayout        *layout         = [[CircleLayout alloc] init];
+    UICollectionView    *collect        = [[UICollectionView alloc]initWithFrame:CGRectMake(50, 100, kScreenWidth-100, kScreenHeight-180) collectionViewLayout:layout];
     collect.delegate                        = self;
     collect.dataSource                      = self;
     collect.backgroundColor                 = [UIColor cyanColor];
@@ -62,8 +62,8 @@
 }
 
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
-    UICollectionViewCell    *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cellid" forIndexPath:indexPath];
-    cell.contentView.backgroundColor                = [UIColor orangeColor];
+    UICollectionViewCell    *cell        = [collectionView dequeueReusableCellWithReuseIdentifier:@"cellid" forIndexPath:indexPath];
+    cell.contentView.backgroundColor     = [UIColor orangeColor];
     return cell;
 }
 

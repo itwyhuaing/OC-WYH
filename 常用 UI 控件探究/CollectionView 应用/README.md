@@ -21,7 +21,7 @@ UICollectionViewFlowLayout 继承于 UICollectionViewLayout。
 @property (nonatomic) CGSize itemSize;
 //预估高度
 @property (nonatomic) CGSize estimatedItemSize;
-//滑动反向，默认滑动方向是垂直方向滑动
+//滑动方向，默认滑动方向是垂直方向滑动
 @property (nonatomic) UICollectionViewScrollDirection scrollDirection;
 //每一组头视图的尺寸。如果是垂直方向滑动，则只有高起作用；如果是水平方向滑动，则只有宽起作用。
 @property (nonatomic) CGSize headerReferenceSize;
@@ -86,9 +86,12 @@ collectionView 上面子视图的相关设置都是由强大的 UICollectionView
 ```
 
 3. 当 collectionView 的 bounds 变化的时候会调用该方法。倘若需要滚动过程中重新布局，那么我们需要返回 TRUE ，默认值为 FALSE 。
-3.1> 返回值为 TRUE 时，会将 collectionView 的 layout 设置为 invalidated ；将会使 collectionView 重新调用上面的 prepareLayout 方法重新获得布局。
-3.2> 屏幕旋转时，collectionView 的 bounds 也会调用该方法；若设置为 FALSE ，将不会达到屏幕适配的效果。
-3.3> 当 collectionView 执行一些操作如 delete insert reload 等时候，不会调用这个方法，而会直接调用 prepareLayout 方法重新获得布局 。
+
+  3.1> 返回值为 TRUE 时，会将 collectionView 的 layout 设置为 invalidated ；将会使 collectionView 重新调用上面的 prepareLayout 方法重新获得布局。
+
+  3.2> 屏幕旋转时，collectionView 的 bounds 也会调用该方法；若设置为 FALSE ，将不会达到屏幕适配的效果。
+
+  3.3> 当 collectionView 执行一些操作如 delete insert reload 等时候，不会调用这个方法，而会直接调用 prepareLayout 方法重新获得布局 。
 
 ```
 - (BOOL)shouldInvalidateLayoutForBoundsChange:(CGRect)newBounds; // return YES to cause the collection view to requery the layout for geometry information
@@ -118,3 +121,9 @@ collectionView 上面子视图的相关设置都是由强大的 UICollectionView
 ```
 - (CGPoint)targetContentOffsetForProposedContentOffset:(CGPoint)proposedContentOffset withScrollingVelocity:(CGPoint)velocity; // return a point at which to rest after scrolling - for layouts that want snap-to-point scrolling behavior
 ```
+
+### 参考
+
+* [UICollectionViewLayout —— layout 实现圆形布局](https://www.jianshu.com/p/c13ef47c55ff)
+
+* [UICollectionView 线性布局 - 滚动](https://www.jianshu.com/p/57e3b96a5e9c)

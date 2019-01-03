@@ -19,9 +19,16 @@
 
 @implementation CircleLayout
 
+// 当 collectionView 的显示范围发生改变的时候，是否需要重新刷新布局
+-(BOOL)shouldInvalidateLayoutForBoundsChange:(CGRect)newBounds{
+    NSLog(@" \n \n 测试函数 1 - shouldInvalidateLayoutForBoundsChange \n\n ");
+    return TRUE;
+}
 
 -(void)prepareLayout{
     [super prepareLayout];
+    NSLog(@" \n \n 测试函数 2 - prepareLayout \n\n ");
+    
     //获取item的个数
     _itemCount      = (int)[self.collectionView numberOfItemsInSection:0];
     _attributeAttay = [[NSMutableArray alloc]init];
@@ -29,7 +36,7 @@
     CGFloat radius  = MIN(self.collectionView.frame.size.width, self.collectionView.frame.size.height)/2;
     //计算圆心位置
     CGPoint center  = CGPointMake(self.collectionView.frame.size.width/2, self.collectionView.frame.size.height/2);
-    //设置每个item的大小为50*50 则半径为25
+    // 设置每个 item 的大小为 50*50  则半径为 25
     for (int i=0; i<_itemCount; i++) {
         UICollectionViewLayoutAttributes * attris = [UICollectionViewLayoutAttributes layoutAttributesForCellWithIndexPath:[NSIndexPath indexPathForItem:i inSection:0]];
         //设置item大小
@@ -44,15 +51,15 @@
     }
 }
 
-// 设置内容区域的大小
--(CGSize)collectionViewContentSize{
-    return self.collectionView.frame.size;
-}
-
 // 返回设置数组
 -(NSArray<UICollectionViewLayoutAttributes *> *)layoutAttributesForElementsInRect:(CGRect)rect{
+    NSLog(@" \n \n 测试函数 3 - layoutAttributesForElementsInRect \n\n ");
     return _attributeAttay;
 }
 
+// 设置内容区域的大小
+//-(CGSize)collectionViewContentSize{
+//    return self.collectionView.frame.size;
+//}
 
 @end
