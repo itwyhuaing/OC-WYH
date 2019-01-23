@@ -23,7 +23,19 @@
 -(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     NSURL *URL = [NSURL URLWithString:@"appSDemoB://Detail?para=88"]; // 指定页面 、携带参数
     if ([[UIApplication sharedApplication] canOpenURL:URL]) {
-        [[UIApplication sharedApplication] openURL:URL];
+        if ([UIDevice currentDevice].systemVersion.floatValue >= 10.0) {
+            
+            [[UIApplication sharedApplication] openURL:URL options:nil completionHandler:^(BOOL success) {
+                NSLog(@"\n success %d\n",success);
+            }];
+            
+        }else{
+            
+            BOOL rlt = [[UIApplication sharedApplication] openURL:URL];
+            NSLog(@"\n rlt %d\n",rlt);
+        }
+        
+
     }else{
         NSLog(@"未能打开应用 B");
     }
