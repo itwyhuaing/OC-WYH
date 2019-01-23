@@ -1,0 +1,20 @@
+
+//
+//  JXRelease.xcconfig
+//  ConfigDemo
+//
+//  Created by hnbwyh on 2019/1/23.
+//  Copyright © 2019年 JiXia. All rights reserved.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+// 新接口地址
+API_URL = @"119.29.58.95"
+
+// 环境显示
+JXPRODUCT_NAME = @"Release环境"
+
+// 引用/包含 JXCommon.xcconfig 文件
+#include "JXCommon.xcconfig"
