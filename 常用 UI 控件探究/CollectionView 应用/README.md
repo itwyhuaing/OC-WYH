@@ -87,11 +87,11 @@ collectionView 上面子视图的相关设置都是由强大的 UICollectionView
 
 3. 当 collectionView 的 bounds 变化的时候会调用该方法。倘若需要滚动过程中重新布局，那么我们需要返回 TRUE ，默认值为 FALSE 。
 
-  3.1> 返回值为 TRUE 时，会将 collectionView 的 layout 设置为 invalidated ；将会使 collectionView 重新调用上面的 prepareLayout 方法重新获得布局。
+  > 3.1> 返回值为 TRUE 时，会将 collectionView 的 layout 设置为 invalidated ；将会使 collectionView 重新调用上面的 prepareLayout 方法重新获得布局。
 
-  3.2> 屏幕旋转时，collectionView 的 bounds 也会调用该方法；若设置为 FALSE ，将不会达到屏幕适配的效果。
+  > 3.2> 屏幕旋转时，collectionView 的 bounds 也会调用该方法；若设置为 FALSE ，将不会达到屏幕适配的效果。
 
-  3.3> 当 collectionView 执行一些操作如 delete insert reload 等时候，不会调用这个方法，而会直接调用 prepareLayout 方法重新获得布局 。
+  > 3.3> 当 collectionView 执行一些操作如 delete insert reload 等时候，不会调用这个方法，而会直接调用 prepareLayout 方法重新获得布局 。
 
 ```
 - (BOOL)shouldInvalidateLayoutForBoundsChange:(CGRect)newBounds; // return YES to cause the collection view to requery the layout for geometry information

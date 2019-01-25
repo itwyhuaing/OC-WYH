@@ -1,4 +1,141 @@
 
+---
+###### 视频播放方案
+
+1. iOS9.0 之前使用 MPMoviePlayerController, 或者自带一个 view 的 MPMoviePlayerViewController。
+2. iOS9.0 之后，可以使用新的API AVPictureInPictureController, AVPlayerViewController。
+3. 使用WKWebView。
+4. AVPlayer，这种方案可实现较强的个性化定制需求。
+
+
+
+---
+###### AVPlayer
+
+* 就
+* 地方
+
+
+
+
+
+---
+###### AVAudioPlayer
+
+*  AVAudioPlayer是属于 AVFundation.framework 的一个类。
+
+* 它的功能类似于一个功能强大的播放器，AVAudioPlayer每次播放都需要将上一个player对象释放掉，然后重新创建一个player来进行播放。
+
+
+> 常见的属性与方法
+
+```
+// 常用的初始化音频播放器方法
+- (nullable instancetype)initWithContentsOfURL:(NSURL *)url error:(NSError **)outError;
+- (nullable instancetype)initWithData:(NSData *)data error:(NSError **)outError;
+
+// 准备播放
+- (BOOL)prepareToPlay;
+
+// 播放
+- (BOOL)play;		
+
+// 指定播放时间
+- (BOOL)playAtTime:(NSTimeInterval)time;
+
+// 暂停
+- (void)pause;
+
+// 停止
+- (void)stop;
+
+// 播放状态(只读)
+@property(readonly, getter=isPlaying) BOOL playing;
+
+// 该音频的声道次数 (只读)
+@property(readonly) NSUInteger numberOfChannels;
+
+// 该音频播放时长
+@property(readonly) NSTimeInterval duration;
+
+//
+@property(copy, nullable) NSString *currentDevice;
+
+// 播放器代理
+@property(assign, nullable) id<AVAudioPlayerDelegate> delegate;
+
+// 获取播放器资源 (只读)
+@property(readonly, nullable) NSURL *url;
+@property(readonly, nullable) NSData *data;
+
+// 允许使用立体声播放声音：播放器的pan只有一个浮点表示，范围从-1.0（极左）到1.0（极右）。默认值为0.0（居中）
+@property float pan;
+
+// 播放器的音量，播放器的音量独立于系统的音量；取值
+@property float volume;
+
+//
+- (void)setVolume:(float)volume fadeDuration:(NSTimeInterval)duration;
+
+// 是否允许改变播放速率
+@property BOOL enableRate;
+
+// 调整播放率，允许用户在不改变声调的情况下调整播放率（0.5-2.0）
+@property float rate;
+
+// 该音频的播放点
+@property NSTimeInterval currentTime;
+
+// /输出设备播放音频的时间，注意如果播放中被暂停此时间也会继续累加
+@property(readonly) NSTimeInterval deviceCurrentTime;
+
+// 循环次数，如果要单曲循环，设置为负数
+@property NSInteger numberOfLoops;
+
+//
+@property(readonly) NSDictionary<NSString *, id> *settings;
+
+//
+@property(readonly) AVAudioFormat *format;
+
+//
+@property(getter=isMeteringEnabled) BOOL meteringEnabled;
+
+// 更新音频测量值，注意如果要更新音频测量值必须设置meteringEnabled为YES，通过音频测量值可以即时获得音频分贝等信息
+- (void)updateMeters;
+
+// 返回给定通道的分贝峰值功率
+- (float)peakPowerForChannel:(NSUInteger)channelNumber;
+
+// 获得指定声道的分贝峰值，注意如果要获得分贝峰值必须在此之前调用updateMeters方法
+- (float)averagePowerForChannel:(NSUInteger)channelNumber;
+
+```
+
+> 代理 AVAudioPlayerDelegate
+
+```
+
+// 一个音频播放结束时调用，由于中断而停止播放情况下并不调起该方法
+- (void)audioPlayerDidFinishPlaying:(AVAudioPlayer *)player successfully:(BOOL)flag;
+
+// 播放音频文件中，解码发生错误回调
+- (void)audioPlayerDecodeErrorDidOccur:(AVAudioPlayer *)player error:(NSError * __nullable)error;
+
+
+// 播放器中断回调 (比如有电话呼入，该方法就会被回调，该方法可以保存当前播放信息，以便恢复继续播放的进度)
+- (void)audioPlayerBeginInterruption:(AVAudioPlayer *)player;
+// 播放器中断回调
+- (void)audioPlayerEndInterruption:(AVAudioPlayer *)player withOptions:(NSUInteger)flags;
+- (void)audioPlayerEndInterruption:(AVAudioPlayer *)player withFlags:(NSUInteger)flags;
+- (void)audioPlayerEndInterruption:(AVAudioPlayer *)player;
+
+
+```
+
+
+---
+
 CMTimeMake 和 CMTimeMakeWithSeconds 解释
 
 * CMTime 是专门用来表示影片时间的类别,CMTimeMake 亦是用来创建 CMTime ；
