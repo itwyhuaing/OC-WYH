@@ -26,7 +26,7 @@
 }
 
 - (void)addSubviews{
-    UISegmentedControl *segControl = [[UISegmentedControl alloc] initWithItems:@[@"本地资源",@"远程资源"]];
+    UISegmentedControl *segControl = [[UISegmentedControl alloc] initWithItems:@[@"本地资源",@"远程资源",@"启用后台播放能力"]];
     CGSize sgSize = CGSizeMake(200, 30);
     [segControl setFrame:CGRectMake(CGRectGetMidX(self.progess.frame) - sgSize.width/2.0,
                                     CGRectGetMinY(self.progess.frame) - sgSize.height - 10,
@@ -36,23 +36,58 @@
 }
 
 - (void)clickEventSegControl:(UISegmentedControl *)sl{
-    AVPlayerItem *item;
     switch (sl.selectedSegmentIndex) {
         case 0:
             {
-                item = [self playLocalResource];
+                [self playVoiceWithItem:[self playLocalResource]];
             }
             break;
         case 1:
             {
-                item = [self playRemoteResource];
+                [self playVoiceWithItem:[self playRemoteResource]];
             }
             break;
-            
+        case 2:
+        {
+            [self playBackEnable:TRUE];
+        }
+            break;
         default:
             break;
     }
-    
+}
+
+#pragma mark ------------ 本地资源简单播放
+
+- (AVPlayerItem *)playLocalResource{
+    // 读取本地资源并创建播放实例
+    NSString *sourcePath = [[NSBundle mainBundle] pathForResource:@"Voice02" ofType:@"mp3"];
+    NSURL    *sourceURL  = [NSURL fileURLWithPath:sourcePath];
+    AVPlayerItem *item   = [[AVPlayerItem alloc] initWithURL:sourceURL];
+    return item;
+}
+
+- (AVPlayerItem *)playRemoteResource{
+    // 读取远程资源并创建播放实例
+    NSString *URLString = @"https://hinabian-oss.oss-cn-shenzhen.aliyuncs.com/20190115/87c8e454242f63847661005f7810d953.mp3";
+    NSURL    *sourceURL  = [NSURL URLWithString:URLString];
+    AVPlayerItem *item   = [[AVPlayerItem alloc] initWithURL:sourceURL];
+    return item;
+}
+
+- (void)playBackEnable:(BOOL)able{
+    if (able) { // 后台播放能力
+        
+        [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayback error:nil];
+        [[AVAudioSession sharedInstance] setActive:TRUE error:nil];
+        
+        
+    } else {
+        
+    }
+}
+
+- (void)playVoiceWithItem:(AVPlayerItem *)item{
     if (item) {
         // 替换当前的播放资源
         [self.avplayer replaceCurrentItemWithPlayerItem:item];
@@ -74,24 +109,6 @@
                                                                        }
                                                                    }];
     }
-}
-
-#pragma mark ------------ 本地资源简单播放
-
-- (AVPlayerItem *)playLocalResource{
-    // 读取本地资源并创建播放实例
-    NSString *sourcePath = [[NSBundle mainBundle] pathForResource:@"Voice02" ofType:@"mp3"];
-    NSURL    *sourceURL  = [NSURL fileURLWithPath:sourcePath];
-    AVPlayerItem *item   = [[AVPlayerItem alloc] initWithURL:sourceURL];
-    return item;
-}
-
-- (AVPlayerItem *)playRemoteResource{
-    // 读取远程资源并创建播放实例
-    NSString *URLString = @"https://hinabian-oss.oss-cn-shenzhen.aliyuncs.com/20190115/87c8e454242f63847661005f7810d953.mp3";
-    NSURL    *sourceURL  = [NSURL URLWithString:URLString];
-    AVPlayerItem *item   = [[AVPlayerItem alloc] initWithURL:sourceURL];
-    return item;
 }
 
 #pragma mark ------------ 播放管理
