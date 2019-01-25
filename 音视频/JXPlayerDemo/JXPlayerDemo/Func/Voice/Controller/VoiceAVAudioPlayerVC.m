@@ -54,7 +54,6 @@
     _audioPlayer.delegate       = (id)self;
     _audioPlayer.volume         = 0.8;
     _audioPlayer.numberOfLoops  = -1;
-    //    _audioPlayer.currentTime    = ;
     [_audioPlayer prepareToPlay];
     [_audioPlayer play];
 }

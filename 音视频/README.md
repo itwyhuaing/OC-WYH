@@ -12,12 +12,92 @@
 ---
 ###### AVPlayer
 
-* 就
-* 地方
+* AVPlayer支持播放本地、分步下载、或在线流媒体音视频。
+
+* AVPlayer只支持单个媒体资源的播放，使用AVPlayer的子类AVQueuePlayer可实现列表播放。
+
+> 常用类简述
+
+```
+1. AVPlayer - 播放器。
+
+// 实例化播放器对象
++ (instancetype)playerWithURL:(NSURL *)URL;
++ (instancetype)playerWithPlayerItem:(nullable AVPlayerItem *)item;
+- (instancetype)initWithURL:(NSURL *)URL;
+- (instancetype)initWithPlayerItem:(nullable AVPlayerItem *)item;
+// 播放器状态(只读)
+@property (nonatomic, readonly) AVPlayerStatus status;
+// 播放器报错(只读)
+@property (nonatomic, readonly, nullable) NSError *error;
+
+@property (nonatomic) float rate;
+- (void)play;
+- (void)pause;
 
 
+typedef NS_ENUM(NSInteger, AVPlayerTimeControlStatus) {
+	AVPlayerTimeControlStatusPaused,
+	AVPlayerTimeControlStatusWaitingToPlayAtSpecifiedRate,
+	AVPlayerTimeControlStatusPlaying
+} NS_ENUM_AVAILABLE(10_12, 10_0);
+@property (nonatomic, readonly) AVPlayerTimeControlStatus timeControlStatus;
+
+// 当前播放器所拥有的多媒体资源
+@property (nonatomic, readonly, nullable) AVPlayerItem *currentItem;
+// 修改/更新播放器所拥有的多媒体资源
+- (void)replaceCurrentItemWithPlayerItem:(nullable AVPlayerItem *)item;
+
+// 播放进度/时间监听
+- (id)addPeriodicTimeObserverForInterval:(CMTime)interval queue:(nullable dispatch_queue_t)queue usingBlock:(void (^)(CMTime time))block;
+- (void)removeTimeObserver:(id)observer;
+
+// 以下属性、方法可实现多媒体资源播放的一些交互操作
+- (CMTime)currentTime;
+- (void)seekToDate:(NSDate *)date;
+- (void)seekToDate:(NSDate *)date completionHandler:(void (^)(BOOL finished))completionHandler;
+- (void)seekToTime:(CMTime)time;
+- (void)seekToTime:(CMTime)time toleranceBefore:(CMTime)toleranceBefore toleranceAfter:(CMTime)toleranceAfter;
+- (void)seekToTime:(CMTime)time completionHandler:(void (^)(BOOL finished))completionHandler;
+- (void)seekToTime:(CMTime)time toleranceBefore:(CMTime)toleranceBefore toleranceAfter:(CMTime)toleranceAfter completionHandler:(void (^)(BOOL finished))completionHandler;
+
+- (void)setRate:(float)rate time:(CMTime)itemTime atHostTime:(CMTime)hostClockTime;
+- (void)prerollAtRate:(float)rate completionHandler:(nullable void (^)(BOOL finished))completionHandler;
+- (void)cancelPendingPrerolls;
+
+2. AVPlayerItem - 一个媒体资源管理对象，管理着多媒体资源的一些基本信息和状态。
+
+// 多媒体资源对象初始化
++ (instancetype)playerItemWithURL:(NSURL *)URL;
++ (instancetype)playerItemWithAsset:(AVAsset *)asset;
++ (instancetype)playerItemWithAsset:(AVAsset *)asset automaticallyLoadedAssetKeys:(nullable NSArray<NSString *> *)automaticallyLoadedAssetKeys;
+- (instancetype)initWithURL:(NSURL *)URL;
+- (instancetype)initWithAsset:(AVAsset *)asset;
+- (instancetype)initWithAsset:(AVAsset *)asset automaticallyLoadedAssetKeys:(nullable NSArray<NSString *> *)automaticallyLoadedAssetKeys;
+// 多媒体资源状态
+@property (nonatomic, readonly) AVPlayerItemStatus status;
+// 多媒体缓冲
+@property (nonatomic, readonly) NSArray<NSValue *> *loadedTimeRanges;
 
 
+```
+
+> AVPlayer 播放能力 - 后台播放
+
+```
+
+```
+
+> AVPlayer 播放能力 - 锁屏信息
+
+```
+
+```
+
+
+* [iOS开发之AVPlayer的精彩使用--->网易新闻视频播放界面的另类实现](http://blog.csdn.net/super_man_ww/article/details/52411332)
+* [AVPlayer 本地、网络视频播放相关](http://www.jianshu.com/p/de418c21d33c)
+* [CADisplayLink](http://www.jianshu.com/p/c35a81c3b9eb)
 
 ---
 ###### AVAudioPlayer
@@ -26,6 +106,7 @@
 
 * 它的功能类似于一个功能强大的播放器，AVAudioPlayer每次播放都需要将上一个player对象释放掉，然后重新创建一个player来进行播放。
 
+* 类AVAudioPlayer 与 类AVAudioRecorder 相似。
 
 > 常见的属性与方法
 
@@ -154,24 +235,21 @@ CMTimeMake(90, 45);
 
 ```
 NSEC：纳秒。
-USEC：微妙。
+USEC：微秒。
+MSEC：毫秒
 SEC：秒
 PER：每
 
-NSEC_PER_SEC，每秒有多少纳秒。
-USEC_PER_SEC，每秒有多少毫秒。（注意是指在纳秒的基础上）。
-NSEC_PER_USEC，每毫秒有多少纳秒。
+NSEC_PER_SEC， 每秒有多少纳秒。
+USEC_PER_SEC， 每秒有多少微秒。   （注意是指在纳秒的基础上）。
+NSEC_PER_USEC，每微秒有多少纳秒。
 
 1 * NSEC_PER_SEC                （=1s）
 1000 * USEC_PER_SEC             （=1s）
 USEC_PER_SEC * NSEC_PER_USEC    （=1s）
 
+1s=103ms(毫秒)
+=106μs(微秒)
+=109ns(纳秒)
+
 ```
-
-
-
-* [AVAudioPlayer的简单使用-涉及大多API](http://blog.csdn.net/wkffantasy/article/details/49890793)  备注： 类AVAudioPlayer 与 类AVAudioRecorder 相似。
-* [iOS开发之AVPlayer的精彩使用--->网易新闻视频播放界面的另类实现](http://blog.csdn.net/super_man_ww/article/details/52411332)
-* [AVPlayer 本地、网络视频播放相关](http://www.jianshu.com/p/de418c21d33c)
-* [CADisplayLink](http://www.jianshu.com/p/c35a81c3b9eb)
-* [AI](http://edu.csdn.net/topic/ai2?utm_source=blog10)
