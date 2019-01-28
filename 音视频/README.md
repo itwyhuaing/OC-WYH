@@ -86,17 +86,17 @@ typedef NS_ENUM(NSInteger, AVPlayerTimeControlStatus) {
 
 >> 1. 代码设置
 
-![image](https://github.com/itwyhuaing/OC-WYH/tree/master/音视频/后台播放1.png)
+![image](https://github.com/itwyhuaing/OC-WYH/tree/master/音视频/image/后台播放1.png)
 
 
 >> 2. 工程配置
 
-![image](https://github.com/itwyhuaing/OC-WYH/tree/master/音视频/后台播放2.png)
+![image](https://github.com/itwyhuaing/OC-WYH/tree/master/音视频/image/后台播放2.png)
 
 
 >> 3. 工程配置
 
-![image](https://github.com/itwyhuaing/OC-WYH/tree/master/音视频/后台播放3.png)
+![image](https://github.com/itwyhuaing/OC-WYH/tree/master/音视频/image/后台播放3.png)
 
 >> 注意：后台播放需要注意播放器不要被释放。
 
