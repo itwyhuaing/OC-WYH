@@ -19,6 +19,7 @@
 		265EE87921F9934B00B228D3 /* BaseFuncVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 265EE87821F9934B00B228D3 /* BaseFuncVC.m */; };
 		265EE87D21F99FAC00B228D3 /* Voice02.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 265EE87B21F99FAC00B228D3 /* Voice02.mp3 */; };
 		265EE87E21F99FAC00B228D3 /* voice01.flac in Resources */ = {isa = PBXBuildFile; fileRef = 265EE87C21F99FAC00B228D3 /* voice01.flac */; };
+		268A27CD21FED4C6008B08F2 /* JXVoiceAVPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 268A27CC21FED4C6008B08F2 /* JXVoiceAVPlayer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,8 @@
 		265EE87821F9934B00B228D3 /* BaseFuncVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseFuncVC.m; sourceTree = "<group>"; };
 		265EE87B21F99FAC00B228D3 /* Voice02.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Voice02.mp3; sourceTree = "<group>"; };
 		265EE87C21F99FAC00B228D3 /* voice01.flac */ = {isa = PBXFileReference; lastKnownFileType = file; path = voice01.flac; sourceTree = "<group>"; };
+		268A27CB21FED4C6008B08F2 /* JXVoiceAVPlayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JXVoiceAVPlayer.h; sourceTree = "<group>"; };
+		268A27CC21FED4C6008B08F2 /* JXVoiceAVPlayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JXVoiceAVPlayer.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,6 +168,8 @@
 		265EE86A21F9640000B228D3 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				268A27CB21FED4C6008B08F2 /* JXVoiceAVPlayer.h */,
+				268A27CC21FED4C6008B08F2 /* JXVoiceAVPlayer.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -257,6 +262,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				268A27CD21FED4C6008B08F2 /* JXVoiceAVPlayer.m in Sources */,
 				265EE87021F9647A00B228D3 /* TableVC.m in Sources */,
 				265EE85821F9630500B228D3 /* main.m in Sources */,
 				265EE87921F9934B00B228D3 /* BaseFuncVC.m in Sources */,

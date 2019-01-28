@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import <AVFoundation/AVFoundation.h>
 
 @interface AppDelegate ()
 
@@ -16,7 +17,9 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    
+    [self.jxVoicePlayer playBackEnable:TRUE];
+    
     return YES;
 }
 
@@ -47,5 +50,11 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
+-(JXVoiceAVPlayer *)jxVoicePlayer{
+    if (!_jxVoicePlayer) {
+        _jxVoicePlayer = [[JXVoiceAVPlayer alloc] init];
+    }
+    return _jxVoicePlayer;
+}
 
 @end
