@@ -11,7 +11,3 @@
 @interface Animation1VC : BaseAnimationVC
 
 @end
-
-/**
- 
- */

@@ -18,7 +18,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.demoImageView = [[UIImageView alloc] initWithFrame:CGRectMake([UIScreen mainScreen].bounds.size.width/2.0-50.0, 100, 100, 100)];
+    self.demoImageView = [[UIImageView alloc] initWithFrame:CGRectMake([UIScreen mainScreen].bounds.size.width/2.0-50.0, 300, 100, 100)];
     self.demoImageView.image = [UIImage imageNamed:@"11"];
     [self.view addSubview:self.demoImageView];
 }
