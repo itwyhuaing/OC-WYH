@@ -1,5 +1,7 @@
 ##### CGAffineTransform 简要认识
-CGAffineTransform 是一个用于处理形变的类,其可以改变控件的平移、缩放、旋转等,其坐标系统采用的是二维坐标系(平面),即向右为x轴正方向,向下为y轴正方向。
+
+CGAffineTransform 是一个用于处理形变的类,其可以改变控件的平移、缩放、旋转等,其坐标系统采用的是二维坐标系(平面),即向右为x轴正方向,向下为y轴正方向。直接作用在视图控件上。CATransform3D 系列与之相似，作用与视图的 layer 层。
+
 
 * 平移：实现以初始位置为基准,在x轴方向上平移x单位,在y轴方向上平移y单位。
 
@@ -23,9 +25,14 @@ CGAffineTransformMakeRotation(CGFloat angle)
 ```
 
 * 在已有形变上的形变处理
+
 CGAffineTransformTranslate      实现以一个已经存在的形变为基准,继续平移形变 。
+
 CGAffineTransformScale          实现以一个已经存在的形变为基准,继续缩放形变 。
+
 CGAffineTransformRotate         实现以一个已经存在的形变为基准,继续旋转形变 。
+
+CGAffineTransformConcat         链接两个不同的动画。
 
 ```
 CGAffineTransformTranslate(CGAffineTransform t, CGFloat tx, CGFloat ty)
@@ -35,4 +42,11 @@ CGAffineTransformScale(CGAffineTransform t, CGFloat sx, CGFloat sy)
 CGAffineTransformRotate(CGAffineTransform t, CGFloat angle)
 ```
 
-* CGAffineTransformIdentity  在形变之后设置该值以还原到最初状态。
+* CGAffineTransformIdentity  在形变之后设置该值以还原到最初状态 。
+
+
+##### Core Animation
+
+* [iOS-Core-Animation之一 ～ 十五](https://blog.csdn.net/huangznian/article/details/42741283)
+
+* [iOS动画篇：核心动画](https://www.jianshu.com/p/d05d19f70bac)

@@ -44,17 +44,39 @@
 }
 
 - (void)animationDaDaLabel{
-    [UIView animateWithDuration:6.5f animations:^{
+    // 3D
+//    [UIView animateWithDuration:2.0f animations:^{
+//        self.nameLab.alpha                  = 0.5f;
+//        self.desLab.alpha                   = 0.5f;
+//        self.nameLab.layer.transform        = CATransform3DMakeScale(1.5, 1.5, 1.0);
+//        self.desLab.layer.transform         = CATransform3DMakeScale(1.5, 1.5, 1.0);
+//    } completion:^(BOOL finished) {
+//
+//        [UIView animateWithDuration:2.0f animations:^{
+//            self.nameLab.alpha                  = 1.f;
+//            self.desLab.alpha                   = 1.f;
+//            self.nameLab.layer.transform        = CATransform3DMakeScale(1.f, 1.f, 1.f);
+//            self.desLab.layer.transform         = CATransform3DMakeScale(1.f, 1.f, 1.f);
+//        }];
+//
+//    }];
+    
+    [UIView animateWithDuration:2.0f animations:^{
         self.nameLab.alpha                  = 0.5f;
         self.desLab.alpha                   = 0.5f;
-        self.nameLab.layer.transform        = CATransform3DMakeScale(1.5, 1.5, 1.0);
-        self.desLab.layer.transform         = CATransform3DMakeScale(1.5, 1.5, 1.0);
+        self.nameLab.transform        = CGAffineTransformMakeScale(1.5, 1.5);
+        self.desLab.transform         = CGAffineTransformMakeScale(1.5, 1.5);
     } completion:^(BOOL finished) {
-        self.nameLab.alpha                  = 1.f;
-        self.desLab.alpha                   = 1.f;
-        self.nameLab.layer.transform        = CATransform3DMakeScale(1.f, 1.f, 1.f);
-        self.desLab.layer.transform         = CATransform3DMakeScale(1.f, 1.f, 1.f);
+        
+        [UIView animateWithDuration:2.0f animations:^{
+            self.nameLab.alpha                  = 1.f;
+            self.desLab.alpha                   = 1.f;
+            self.nameLab.transform        = CGAffineTransformIdentity;//CGAffineTransformMakeScale(1.0, 1.0);
+            self.desLab.transform         = CGAffineTransformIdentity;//CGAffineTransformMakeScale(1.0, 1.0);
+        }];
+        
     }];
+    
 }
 
 
