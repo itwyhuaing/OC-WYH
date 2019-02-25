@@ -45,8 +45,32 @@ CGAffineTransformRotate(CGAffineTransform t, CGFloat angle)
 * CGAffineTransformIdentity  在形变之后设置该值以还原到最初状态 。
 
 
-##### Core Animation
+##### Core Animation 与 UIview
 
-* [iOS-Core-Animation之一 ～ 十五](https://blog.csdn.net/huangznian/article/details/42741283)
+Core Animation 作用在 CALayer 上，UIView动画可以看成是对核心动画的封装，其本质也是对其 layer 进行操作；不同的是，通过 Core Animation 改变 layer 的状态（比如position），动画执行完毕后实际上是没有改变的 。
+
+> 动画所作用的层级
+
+![image]()
+
+
+> Core Animation 动画家族
+
+![image]()
+
+
+
+Core Animation 动画优点：
+
+  > 1. 性能强大，硬件加速，可以向多个图层添加不同的动画
+
+  > 2. 接口简单易用，只需少量代码就可以直接实现复杂的动画效果
+
+  > 3. 动画运动在后台线程中，在动画过程中可以响应交互事件(UIView 动画默认动画过程中不响应交互事件)
+
+
+###### 参考
+
+* [iOS动画篇_CoreAnimation(超详细解析核心动画)](http://www.cocoachina.com/ios/20170623/19612.html)
 
 * [iOS动画篇：核心动画](https://www.jianshu.com/p/d05d19f70bac)
