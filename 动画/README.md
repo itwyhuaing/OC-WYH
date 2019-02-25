@@ -51,12 +51,12 @@ Core Animation 作用在 CALayer 上，UIView动画可以看成是对核心动�
 
 > 动画所作用的层级
 
-![image]()
+![image](https://github.com/itwyhuaing/OC-WYH/blob/master/动画/image/animation_1.png)
 
 
 > Core Animation 动画家族
 
-![image]()
+![image](https://github.com/itwyhuaing/OC-WYH/blob/master/动画/image/animation_2.png)
 
 
 
