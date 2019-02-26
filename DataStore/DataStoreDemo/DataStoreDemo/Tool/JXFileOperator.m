@@ -11,7 +11,6 @@
 
 @interface JXFileOperator ()
 @property (nonatomic,strong) NSFileManager              *fileManager;
-@property (nonatomic,assign) BOOL                       logStatus;
 @end
 
 @implementation JXFileOperator
@@ -23,10 +22,6 @@
         instance = [[JXFileOperator alloc] init];
     });
     return instance;
-}
-
-- (void)openLog{
-    self.logStatus = TRUE;
 }
 
 #pragma mark ------ http 网络数据 JSON 存储
@@ -138,39 +133,39 @@
     switch (folderDir) {
         case JXFileFolderDocuments:
             isClear = [[NSFileManager defaultManager] removeItemAtPath:[self documentPath] error:nil];
-            [[self class] printLogMsg:@"JXFileFolderDocuments"];
+            [[self class] printFileLogMsg:@"JXFileFolderDocuments"];
             break;
         case JXFileFolderLibrary:
             isClear = [[NSFileManager defaultManager] removeItemAtPath:[self libraryPath] error:nil];
-            [[self class] printLogMsg:@"JXFileFolderLibrary"];
+            [[self class] printFileLogMsg:@"JXFileFolderLibrary"];
             break;
         case JXFileFolderCaches:
             isClear = [[NSFileManager defaultManager] removeItemAtPath:[self cachePath] error:nil];
-            [[self class] printLogMsg:@"JXFileFolderCaches"];
+            [[self class] printFileLogMsg:@"JXFileFolderCaches"];
             break;
         case JXFileFolderSDWebImageCacheDefault:
             isClear = [[NSFileManager defaultManager] removeItemAtPath:[self sdWebImageCacheDefaultPath] error:nil];
-            [[self class] printLogMsg:@"JXFileFolderSDWebImageCacheDefault"];
+            [[self class] printFileLogMsg:@"JXFileFolderSDWebImageCacheDefault"];
             break;
         case JXFileFolderWKWebKitfsCachedData:
             isClear = [[NSFileManager defaultManager] removeItemAtPath:[self wkWebKitfsCachedDataPath] error:nil];
-            [[self class] printLogMsg:@"JXFileFolderWKWebKitfsCachedData"];
+            [[self class] printFileLogMsg:@"JXFileFolderWKWebKitfsCachedData"];
             break;
         case JXFileFolderNetInterfaceData:
             isClear = [[NSFileManager defaultManager] removeItemAtPath:[self netInterfaceDataCachePath] error:nil];
-            [[self class] printLogMsg:@"JXFileFolderNetInterfaceData"];
+            [[self class] printFileLogMsg:@"JXFileFolderNetInterfaceData"];
             break;
         case JXFileFolderNetHttpCacheResponseData:
             isClear = [[NSFileManager defaultManager] removeItemAtPath:[self netHttpDataCacheResponsePath] error:nil];
-            [[self class] printLogMsg:@"JXFileFolderNetHttpCacheResponseData"];
+            [[self class] printFileLogMsg:@"JXFileFolderNetHttpCacheResponseData"];
             break;
         case JXFileFolderTmp:
             isClear = [[NSFileManager defaultManager] removeItemAtPath:[self tmpPath] error:nil];
-            [[self class] printLogMsg:@"JXFileFolderTmp"];
+            [[self class] printFileLogMsg:@"JXFileFolderTmp"];
             break;
         case JXFileFolderLibUIWebKit:
             isClear = [[NSFileManager defaultManager] removeItemAtPath:[self libUIWebKitPath] error:nil];
-            [[self class] printLogMsg:@"JXFileFolderTmp"];
+            [[self class] printFileLogMsg:@"JXFileFolderTmp"];
             break;
         case JXFileFoldersSet:
             isClear = [[NSFileManager defaultManager] removeItemAtPath:[self netInterfaceDataCachePath] error:nil] &&
@@ -179,7 +174,7 @@
             [[NSFileManager defaultManager] removeItemAtPath:[self wkWebKitCachePath] error:nil] &&
             [[NSFileManager defaultManager] removeItemAtPath:[self libUIWebKitPath] error:nil] &&
             [[NSFileManager defaultManager] removeItemAtPath:[self netHttpDataCacheResponsePath] error:nil];
-            [[self class] printLogMsg:@"JXFileFoldersSet"];
+            [[self class] printFileLogMsg:@"JXFileFoldersSet"];
             break;
         default:
             break;
@@ -207,39 +202,39 @@
     switch (folderDir) {
             case JXFileFolderDocuments:
             folderSize += [self caculateSizeAtSingleFolder:[self documentPath]];
-            [[self class] printLogMsg:@"JXFileFolderDocuments"];
+            [[self class] printFileLogMsg:@"JXFileFolderDocuments"];
             break;
             case JXFileFolderLibrary:
             folderSize += [self caculateSizeAtSingleFolder:[self libraryPath]];
-            [[self class] printLogMsg:@"JXFileFolderLibrary"];
+            [[self class] printFileLogMsg:@"JXFileFolderLibrary"];
             break;
             case JXFileFolderCaches:
             folderSize += [self caculateSizeAtSingleFolder:[self cachePath]];
-            [[self class] printLogMsg:@"JXFileFolderCaches"];
+            [[self class] printFileLogMsg:@"JXFileFolderCaches"];
             break;
             case JXFileFolderSDWebImageCacheDefault:
             folderSize += [self caculateSizeAtSingleFolder:[self sdWebImageCacheDefaultPath]];
-            [[self class] printLogMsg:@"JXFileFolderSDWebImageCacheDefault"];
+            [[self class] printFileLogMsg:@"JXFileFolderSDWebImageCacheDefault"];
             break;
             case JXFileFolderWKWebKitfsCachedData:
             folderSize += [self caculateSizeAtSingleFolder:[self wkWebKitfsCachedDataPath]];
-            [[self class] printLogMsg:@"JXFileFolderWKWebKitfsCachedData"];
+            [[self class] printFileLogMsg:@"JXFileFolderWKWebKitfsCachedData"];
             break;
             case JXFileFolderNetInterfaceData:
             folderSize += [self caculateSizeAtSingleFolder:[self netInterfaceDataCachePath]];
-            [[self class] printLogMsg:@"JXFileFolderNetInterfaceData"];
+            [[self class] printFileLogMsg:@"JXFileFolderNetInterfaceData"];
             break;
             case JXFileFolderNetHttpCacheResponseData:
             folderSize += [self caculateSizeAtSingleFolder:[self netHttpDataCacheResponsePath]];
-            [[self class] printLogMsg:@"JXFileFolderNetHttpCacheResponseData"];
+            [[self class] printFileLogMsg:@"JXFileFolderNetHttpCacheResponseData"];
             break;
             case JXFileFolderTmp:
             folderSize += [self caculateSizeAtSingleFolder:[self tmpPath]];
-            [[self class] printLogMsg:@"JXFileFolderTmp"];
+            [[self class] printFileLogMsg:@"JXFileFolderTmp"];
             break;
             case JXFileFolderLibUIWebKit:
             folderSize += [self caculateSizeAtSingleFolder:[self libUIWebKitPath]];
-            [[self class] printLogMsg:@"JXFileFolderTmp"];
+            [[self class] printFileLogMsg:@"JXFileFolderTmp"];
             break;
             case JXFileFoldersSet:
             folderSize += [self caculateSizeAtSingleFolder:[self netInterfaceDataCachePath]];
@@ -248,7 +243,7 @@
             folderSize += [self caculateSizeAtSingleFolder:[self wkWebKitCachePath]];
             folderSize += [self caculateSizeAtSingleFolder:[self libUIWebKitPath]];
             folderSize += [self caculateSizeAtSingleFolder:[self netHttpDataCacheResponsePath]];
-            [[self class] printLogMsg:@"JXFileFoldersSet"];
+            [[self class] printFileLogMsg:@"JXFileFoldersSet"];
             break;
         default:
             break;
@@ -285,7 +280,7 @@
 - (void)deleteSubFilesForPath:(NSString *)path{
     NSArray *subFilePaths = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:path error:nil];
     for (NSString *subPath in subFilePaths) {
-        [[self class] printLogMsg:[NSString stringWithFormat:@"subPath:%@",subPath]];
+        [[self class] printFileLogMsg:[NSString stringWithFormat:@"subPath:%@",subPath]];
     }
 }
 
@@ -339,7 +334,7 @@
         case JXFileFoldersSet:
             break;
     }
-    [[self class] printLogMsg:[NSString stringWithFormat:@"fileFolder:%@",rlt]];
+    [[self class] printFileLogMsg:[NSString stringWithFormat:@"fileFolder:%@",rlt]];
     return rlt;
     
 }
@@ -405,8 +400,8 @@
     return [NSString stringWithFormat:@"%@/%@/WebKit",[self cachePath],[self bundleid]];
 }
 
-- (void)printLogMsg:(NSString *)msg{
-    self.logStatus ? NSLog(@"\n%@\n",msg) : nil;
++ (void)printFileLogMsg:(NSString *)msg{
+    NSLog(@"\n%@\n",msg);
 }
 
 @end

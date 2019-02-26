@@ -35,11 +35,6 @@ typedef void(^JXFileOperatorBlock)(NSString *info);
  */
 + (instancetype)defaultManager;
 
-/**
- 打开打印日志
- */
-- (void)openLog;
-
 /**<===================== http 网络数据 JSON 存储 =====================>*/
 /**
  * 依据 URL 与 参数 存/取数据

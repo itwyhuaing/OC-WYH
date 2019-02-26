@@ -17,12 +17,11 @@
 
 * 依赖 MagicalRecord 的数据库操作 [CoreDataPro](https://github.com/itwyhuaing/OC-WYH/tree/master/DataStore/CoreData应用简介/CoreDataPro)
 
-![image](https://github.com/itwyhuaing/OC-WYH/blob/master/DataStore/image/demo1_0.png)
-
+![image](https://github.com/itwyhuaing/OC-WYH/blob/master/DataStore/image/demo2.png)
 
 * 获取设备信息 - keychain 存储 [GainRelativeInfo](https://github.com/itwyhuaing/OC-WYH/tree/master/GainRelativeInfo)
 
-![image](https://github.com/itwyhuaing/OC-WYH/blob/master/DataStore/image/demo2.png)
+![image](https://github.com/itwyhuaing/OC-WYH/blob/master/DataStore/image/demo1_0.png)
 
 * Demo 做笔记使用，持续更新 。。。
 
@@ -44,7 +43,14 @@
 
 ![image](https://github.com/itwyhuaing/OC-WYH/blob/master/DataStore/image/sh4.png)
 
-* Documents 应用程序在运行时生成的一些需要长久保存的数据。Library/Caches 储存应用程序网络请求的数据信息(音视频与图片等的缓存)。此目录下的数据不会自动删除，需要程序员手动清除该目录下的数据。主要用于保存应用在运行时生成的需要长期使用的数据.一般用于存储体积较大数据。Library/Preferences 设置应用的一些功能会在该目录中查找相应设置的信息,该目录由系统自动管理,通常用来储存一些基本的应用配置信息,比如账号密码,自动登录等。tmp 保存应用运行时产生的一些临时数据;应用程序退出、系统空间不够、手机重启等情况下都会自动清除该目录的数据。无需程序员手动清除该目录中的数据。
+![image](https://github.com/itwyhuaing/OC-WYH/blob/master/DataStore/image/sh5.png)
+
+* Documents 应用程序在运行时生成的一些需要长久保存的数据。
+
+* Library/Caches 储存应用程序网络请求的数据信息(音视频与图片等的缓存)。此目录下的数据不会自动删除，需要程序员手动清除该目录下的数据。主要用于保存应用在运行时生成的需要长期使用的数据.一般用于存储体积较大数据。
+* Library/Preferences 设置应用的一些功能会在该目录中查找相应设置的信息,该目录由系统自动管理,通常用来储存一些基本的应用配置信息,比如账号密码,自动登录等。
+* tmp 保存应用运行时产生的一些临时数据;应用程序退出、系统空间不够、手机重启等情况下都会自动清除该目录的数据，iTunes或iCloud也不会对其进行备份。无需程序员手动清除该目录中的数据。
+* SystemData - 近期优化项目数据存储，发现多了该文件路径，暂未做过多研究。
 
 #### Plist 格式文件存储
 * plist文件，即属性列表文件。
@@ -155,6 +161,9 @@ isKindOfClass     ：参数为实例对象 - 参数所属类为其子类或本�
 
 #### 缓存系统
 
+> [APP缓存系统设计简要记录(整理中)](https://github.com/itwyhuaing/OC-WYH/tree/master/APP缓存系统设计简要记录)
+> [HybridAPP(整理优化中)](https://github.com/itwyhuaing/HybridAPP)
+
 * 对大多数 APP 而言，都是 Hybrid 开发，Web 页与原生同时存在，其中 Web 页可能是 UIWeb 也可能是 WKWeb 。所以与之相应的缓存系统，应该包括 Web 缓存与 原生接口数据缓存两部分。
 
 * Web 缓存有网络缓存及 Webkit 框架机制内的缓存。这里也可以依据 URL + 时间戳 自行设计一套缓存。
@@ -165,9 +174,6 @@ isKindOfClass     ：参数为实例对象 - 参数所属类为其子类或本�
   2. 全局使用到的数据模型，需要永久存储的话可以考虑归档；例如用户登陆后的个人信息数据模型。
   3. 倘若不涉及大规模数据的增删改查等操作，可以考虑文件读写的方式直接存储网络返回的 JSON 对象，借助 YYCache 亦可实现高性能存储。
   4. 大规模数据的存储例如帖子、评论、新闻、外卖、商品等可以考虑使用数据库：FMDB （DataStoreDemo - JXFMDBMOperator）或 Core Data （推荐使用 CoreData 的封装库 MagicalRecord）；也可以简单点直接使用 NSPredicate 对数据的筛查操作，简单直接。
-
-
-
 
 ##### 参考
 
