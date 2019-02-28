@@ -69,6 +69,9 @@ Core Animation 动画优点：
   > 3. 动画运动在后台线程中，在动画过程中可以响应交互事件(UIView 动画默认动画过程中不响应交互事件)
 
 
+* 常用：
+> removedOnCompletion -> 是否让图层保持显示动画执行后的状态，默认为YES，也就是动画执行完毕后从涂层上移除，恢复到执行前的状态，如果设置为NO，并且设置fillMode为kCAFillModeForwards，则保持动画执行后的状态。
+
 ###### 参考
 
 * [iOS动画篇_CoreAnimation(超详细解析核心动画)](http://www.cocoachina.com/ios/20170623/19612.html)

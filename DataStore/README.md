@@ -162,6 +162,7 @@ isKindOfClass     ：参数为实例对象 - 参数所属类为其子类或本�
 #### 缓存系统
 
 > [APP缓存系统设计简要记录(整理中)](https://github.com/itwyhuaing/OC-WYH/tree/master/APP缓存系统设计简要记录)
+
 > [HybridAPP(整理优化中)](https://github.com/itwyhuaing/HybridAPP)
 
 * 对大多数 APP 而言，都是 Hybrid 开发，Web 页与原生同时存在，其中 Web 页可能是 UIWeb 也可能是 WKWeb 。所以与之相应的缓存系统，应该包括 Web 缓存与 原生接口数据缓存两部分。

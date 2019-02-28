@@ -18,6 +18,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    //CAAnimation
+    // --- > CAMediaTiming
+    
 }
 
 @end

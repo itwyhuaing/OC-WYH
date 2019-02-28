@@ -20,8 +20,8 @@
     
     //  UI 修饰
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    NSArray *vcs        = @[@"FirstVC",@"SecondVC",@"ThirdVC",@"FourthVC",@"Animation1VC",@"Animation2VC",@"Animation3VC",@"Animation4VC",@"Animation5VC"];
-    NSArray *desCnts    = @[@"UIView-平面平移",@"UIView-平面缩放",@"UIView-平面旋转",@"UIView-在一个形变基础上的另一个形变",@"UIView-卡片动画",@"UIView-字体缩放动画",@"Core Animation-旋转",@"Animation4VC",@"Animation5VC"];
+    NSArray *vcs        = @[@"FirstVC",@"SecondVC",@"ThirdVC",@"FourthVC",@"Animation1VC",@"Animation2VC",@"Animation3VC",@"Animation4VC",@"Animation5VC",@"CAAnimationTestVC"];
+    NSArray *desCnts    = @[@"UIView-平面平移",@"UIView-平面缩放",@"UIView-平面旋转",@"UIView-在一个形变基础上的另一个形变",@"UIView-卡片动画",@"UIView-字体缩放动画",@"Core Animation-旋转",@"Animation4VC",@"Animation5VC",@"核心动画"];
     _dataSource         = [NSMutableArray new];
     for (NSInteger cou = 0; cou < vcs.count; cou ++) {
         DataModel *f    = [DataModel new];

@@ -28,6 +28,7 @@
 		26C2AF4A212E54BB001CB9E1 /* Animation2VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 26C2AF40212E54BB001CB9E1 /* Animation2VC.m */; };
 		26C2AF4B212E54BB001CB9E1 /* Animation3VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 26C2AF41212E54BB001CB9E1 /* Animation3VC.m */; };
 		26C2AF4C212E54BB001CB9E1 /* Animation1VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 26C2AF42212E54BB001CB9E1 /* Animation1VC.m */; };
+		26D6878F2227CB0900407632 /* CAAnimationTestVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D6878E2227CB0900407632 /* CAAnimationTestVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,6 +73,8 @@
 		26C2AF45212E54BB001CB9E1 /* Animation1VC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Animation1VC.h; sourceTree = "<group>"; };
 		26C2AF46212E54BB001CB9E1 /* Animation3VC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Animation3VC.h; sourceTree = "<group>"; };
 		26C2AF47212E54BB001CB9E1 /* Animation2VC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Animation2VC.h; sourceTree = "<group>"; };
+		26D6878D2227CB0900407632 /* CAAnimationTestVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CAAnimationTestVC.h; sourceTree = "<group>"; };
+		26D6878E2227CB0900407632 /* CAAnimationTestVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CAAnimationTestVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -200,6 +203,8 @@
 				26C2AF3E212E54BB001CB9E1 /* Animation4VC.m */,
 				26C2AF43212E54BB001CB9E1 /* Animation5VC.h */,
 				26C2AF3F212E54BB001CB9E1 /* Animation5VC.m */,
+				26D6878D2227CB0900407632 /* CAAnimationTestVC.h */,
+				26D6878E2227CB0900407632 /* CAAnimationTestVC.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -283,6 +288,7 @@
 				26C2AF48212E54BB001CB9E1 /* Animation4VC.m in Sources */,
 				26C2ADF3212D0CB5001CB9E1 /* BaseAnimationVC.m in Sources */,
 				26C2AF4B212E54BB001CB9E1 /* Animation3VC.m in Sources */,
+				26D6878F2227CB0900407632 /* CAAnimationTestVC.m in Sources */,
 				26AD6F87216DF49300D01DA2 /* ThirdVC.m in Sources */,
 				26C2ADEC212D0ADE001CB9E1 /* TableVC.m in Sources */,
 				26AD6F8D216DFE7F00D01DA2 /* DataModel.m in Sources */,
