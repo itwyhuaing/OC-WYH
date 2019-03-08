@@ -20,6 +20,8 @@
 		265EE87D21F99FAC00B228D3 /* Voice02.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 265EE87B21F99FAC00B228D3 /* Voice02.mp3 */; };
 		265EE87E21F99FAC00B228D3 /* voice01.flac in Resources */ = {isa = PBXBuildFile; fileRef = 265EE87C21F99FAC00B228D3 /* voice01.flac */; };
 		268A27CD21FED4C6008B08F2 /* JXVoiceAVPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 268A27CC21FED4C6008B08F2 /* JXVoiceAVPlayer.m */; };
+		26B448612232628400F63D57 /* JXVedioPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 26B448602232628400F63D57 /* JXVedioPlayer.m */; };
+		26B4486322326B0D00F63D57 /* 01.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 26B4486222326B0D00F63D57 /* 01.mp4 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +47,9 @@
 		265EE87C21F99FAC00B228D3 /* voice01.flac */ = {isa = PBXFileReference; lastKnownFileType = file; path = voice01.flac; sourceTree = "<group>"; };
 		268A27CB21FED4C6008B08F2 /* JXVoiceAVPlayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JXVoiceAVPlayer.h; sourceTree = "<group>"; };
 		268A27CC21FED4C6008B08F2 /* JXVoiceAVPlayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JXVoiceAVPlayer.m; sourceTree = "<group>"; };
+		26B4485F2232628400F63D57 /* JXVedioPlayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JXVedioPlayer.h; sourceTree = "<group>"; };
+		26B448602232628400F63D57 /* JXVedioPlayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JXVedioPlayer.m; sourceTree = "<group>"; };
+		26B4486222326B0D00F63D57 /* 01.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = 01.mp4; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +138,8 @@
 		265EE86621F9640000B228D3 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				26B4485F2232628400F63D57 /* JXVedioPlayer.h */,
+				26B448602232628400F63D57 /* JXVedioPlayer.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -184,6 +191,7 @@
 		265EE87A21F99FAC00B228D3 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				26B4486222326B0D00F63D57 /* 01.mp4 */,
 				265EE87B21F99FAC00B228D3 /* Voice02.mp3 */,
 				265EE87C21F99FAC00B228D3 /* voice01.flac */,
 			);
@@ -249,6 +257,7 @@
 			files = (
 				265EE85521F9630500B228D3 /* LaunchScreen.storyboard in Resources */,
 				265EE87D21F99FAC00B228D3 /* Voice02.mp3 in Resources */,
+				26B4486322326B0D00F63D57 /* 01.mp4 in Resources */,
 				265EE85221F9630500B228D3 /* Assets.xcassets in Resources */,
 				265EE85021F9630400B228D3 /* Main.storyboard in Resources */,
 				265EE87E21F99FAC00B228D3 /* voice01.flac in Resources */,
@@ -267,6 +276,7 @@
 				265EE85821F9630500B228D3 /* main.m in Sources */,
 				265EE87921F9934B00B228D3 /* BaseFuncVC.m in Sources */,
 				265EE86D21F9640000B228D3 /* AppDelegate.m in Sources */,
+				26B448612232628400F63D57 /* JXVedioPlayer.m in Sources */,
 				26106A5E21FAAB38007741AB /* VedioAVPlayerVC.m in Sources */,
 				26106A5821FAAAFA007741AB /* VoiceAVAudioPlayerVC.m in Sources */,
 				26106A5B21FAAB14007741AB /* VoiceAVPlayerVC.m in Sources */,

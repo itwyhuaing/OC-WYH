@@ -1,5 +1,8 @@
 
 ---
+
+> 项目需要，涉及音频部分简要作如下笔记。使用 AVPlayer 实现音视频，两者差不多，这里不做太多记录。
+
 ###### 视频播放方案
 
 1. iOS9.0 之前使用 MPMoviePlayerController, 或者自带一个 view 的 MPMoviePlayerViewController。
