@@ -12,6 +12,7 @@
 
 @interface VoiceAVPlayerVC ()
 
+@property (strong, nonatomic) JXVoiceAVPlayer *jxVoicePlayer;
 @property (nonatomic,strong) UIProgressView         *progess;
 @property (nonatomic,strong) UIView                 *circle;
 
@@ -20,27 +21,60 @@
 
 @implementation VoiceAVPlayerVC
 
++(instancetype)currentAVPlayerVC{
+    static VoiceAVPlayerVC *instance = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        instance = [[VoiceAVPlayerVC alloc] init];
+    });
+    return instance;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self addSubviews];
     
+    __weak typeof(self)weakSelf = self;
     // 缓冲
-    AppDelegate *app = (AppDelegate *)[UIApplication sharedApplication].delegate;
-    app.jxVoicePlayer.loadedScale = ^(NSTimeInterval ti) {
-        NSLog(@"\n\n 缓冲百分比 ：%f \n\n",ti);
-        self.progess.progress = ti;
+    self.jxVoicePlayer.loadedScale = ^(NSTimeInterval ti) {
+        // NSLog(@"\n\n 缓冲百分比 ：%f \n\n",ti);
     };
     
     // 播放
-    app.jxVoicePlayer.playedScale = ^(NSTimeInterval ti) {
-        NSLog(@" \n\n 播放进度 ：%f \n\n ",ti);
-        CGFloat offsetX = ti * CGRectGetWidth(self.progess.frame);
-        CGRect rect = self.circle.frame;
-        rect.origin.x = CGRectGetMinX(self.progess.frame) - CGRectGetWidth(self.circle.frame)/2.0 + offsetX;
-        [self.circle setFrame:rect];
+    self.jxVoicePlayer.playedScale = ^(NSTimeInterval ti) {
+        //NSLog(@" \n\n 播放进度 ：%f \n\n ",ti);
+        weakSelf.progess.progress = ti;
+        CGFloat offsetX = ti * CGRectGetWidth(weakSelf.progess.frame);
+        CGRect rect = weakSelf.circle.frame;
+        rect.origin.x = CGRectGetMinX(weakSelf.progess.frame) - CGRectGetWidth(weakSelf.circle.frame)/2.0 + offsetX;
+        [weakSelf.circle setFrame:rect];
     };
     
 }
+
+
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [self.jxVoicePlayer remoteControlEventWithVC:self isResign:FALSE];
+}
+
+
+-(void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+}
+
+// 销毁 - 释放
+-(void)dealloc{
+    NSLog(@"\n\n dealloc \n\n");
+    [self.jxVoicePlayer remoteControlEventWithVC:self isResign:TRUE];
+    [self.jxVoicePlayer jx_removeObservers];
+}
+
+- (void)remoteControlReceivedWithEvent:(UIEvent *)event{
+    [self.jxVoicePlayer remoteControlReceivedEvent:event];
+}
+
+#pragma mark --- UI - ClickEvent
 
 - (void)addSubviews{
     
@@ -65,17 +99,16 @@
 }
 
 - (void)clickEventSegControl:(UISegmentedControl *)sl{
-    AppDelegate *app = (AppDelegate *)[UIApplication sharedApplication].delegate;
     switch (sl.selectedSegmentIndex) {
         case 0:
             {
-                [app.jxVoicePlayer playVoiceWithURLString:@""];
+                [self.jxVoicePlayer playVoiceWithURLString:@""];
             }
             break;
         case 1:
             {
                 NSString *URLString = @"https://hinabian-oss.oss-cn-shenzhen.aliyuncs.com/20190115/87c8e454242f63847661005f7810d953.mp3";
-                [app.jxVoicePlayer playVoiceWithURLString:URLString];
+                [self.jxVoicePlayer playVoiceWithURLString:URLString];
             }
             break;
         default:
@@ -101,12 +134,27 @@
     }
 }
 
+#pragma mark --- outer method
+
+- (void)playBackEnable:(BOOL)able{
+    [self.jxVoicePlayer playBackEnable:able];
+}
+
+#pragma mark --- lazy load
+
+-(JXVoiceAVPlayer *)jxVoicePlayer{
+    if (!_jxVoicePlayer) {
+        _jxVoicePlayer = [[JXVoiceAVPlayer alloc] init];
+    }
+    return _jxVoicePlayer;
+}
+
 
 -(UIProgressView *)progess{
     if (!_progess) {
         _progess = [[UIProgressView alloc] initWithProgressViewStyle:UIProgressViewStyleDefault];
         _progess.trackTintColor    = [UIColor orangeColor];
-        _progess.progressTintColor = [UIColor blueColor];
+        _progess.progressTintColor = [UIColor cyanColor];
         [_progess setFrame:CGRectMake(20, 150, [UIScreen mainScreen].bounds.size.width - 40.0, 10)];
         [self.view addSubview:_progess];
     }
@@ -126,10 +174,4 @@
     return _circle;
 }
 
-// 销毁 - 释放
--(void)dealloc{
-    NSLog(@"\n\n dealloc \n\n");
-    AppDelegate *app = (AppDelegate *)[UIApplication sharedApplication].delegate;
-    [app.jxVoicePlayer jx_removeObservers];
-}
 @end

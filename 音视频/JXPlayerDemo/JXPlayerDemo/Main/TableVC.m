@@ -7,6 +7,7 @@
 //
 
 #import "TableVC.h"
+#import "VoiceAVPlayerVC.h"
 #import "BaseFuncVC.h"
 
 static NSString *kTHEM          = @"them";
@@ -44,9 +45,13 @@ static NSString *kType          = @"type";
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:TRUE];
     NSString *vcstr = [self.cnts[indexPath.row] objectForKey:kVC];
-    BaseFuncVC *vc  = [[NSClassFromString(vcstr) alloc] init];
-    vc.type         = [[self.cnts[indexPath.row] objectForKey:kType] integerValue];
-    [self.navigationController pushViewController:vc animated:TRUE];
+    if ([vcstr isEqualToString:@"VoiceAVPlayerVC"]) {
+        [self.navigationController pushViewController:[VoiceAVPlayerVC currentAVPlayerVC] animated:TRUE];
+    } else {
+        BaseFuncVC *vc  = [[NSClassFromString(vcstr) alloc] init];
+        vc.type         = [[self.cnts[indexPath.row] objectForKey:kType] integerValue];
+        [self.navigationController pushViewController:vc animated:TRUE];
+    }
 }
 
 -(NSMutableArray<NSDictionary *> *)cnts{

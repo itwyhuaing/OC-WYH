@@ -16,6 +16,16 @@
 
 @implementation JXVoiceAVPlayer
 
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        // 设置锁屏封面信息
+        [self updateLockScreenInfo];
+    }
+    return self;
+}
+
 -(void)playVoiceWithURLString:(NSString *)URLString{
     AVPlayerItem *item;
     if (URLString && [URLString hasPrefix:@"http"]) {
@@ -64,6 +74,8 @@
                                                                            }
                                                                        }
                                                                    }];
+        
+        
     }
 }
 
@@ -135,6 +147,100 @@
     
 }
 
+- (void)remoteControlEventWithVC:(UIViewController *)vc isResign:(BOOL)isResign{
+    if (vc) {
+        if (!isResign) {
+            [[UIApplication sharedApplication] beginReceivingRemoteControlEvents];
+            [vc becomeFirstResponder];
+        } else {
+            [[UIApplication sharedApplication] endReceivingRemoteControlEvents];
+            [vc resignFirstResponder];
+        }
+    }
+}
+
+
+- (void)remoteControlReceivedEvent:(UIEvent *)event{
+    if (event.type == UIEventTypeRemoteControl) {
+        switch (event.subtype) {
+            case UIEventSubtypeRemoteControlTogglePlayPause:
+            {
+                NSLog(@"UIEventSubtypeRemoteControlTogglePlayPause");
+            }
+                break;
+            case UIEventSubtypeRemoteControlPlay:
+            {
+                NSLog(@"UIEventSubtypeRemoteControlPlay");
+                [self.avplayer play];
+            }
+                break;
+            case UIEventSubtypeRemoteControlPause:
+            {
+                NSLog(@"UIEventSubtypeRemoteControlPause");
+                [self.avplayer pause];
+            }
+                break;
+            case UIEventSubtypeRemoteControlStop:
+            {
+                NSLog(@"UIEventSubtypeRemoteControlStop");
+            }
+                break;
+            case UIEventSubtypeRemoteControlNextTrack:
+            {   // 下一曲
+                NSLog(@"UIEventSubtypeRemoteControlNextTrack");
+            }
+                break;
+            case UIEventSubtypeRemoteControlPreviousTrack:
+            {   // 上一曲
+                NSLog(@"UIEventSubtypeRemoteControlPreviousTrack");
+            }
+                break;
+            case UIEventSubtypeRemoteControlEndSeekingForward:
+            {
+                NSLog(@"UIEventSubtypeRemoteControlEndSeekingForward");
+            }
+                break;
+            case UIEventSubtypeRemoteControlEndSeekingBackward:
+            {
+                NSLog(@"UIEventSubtypeRemoteControlEndSeekingBackward");
+            }
+                break;
+            case UIEventSubtypeRemoteControlBeginSeekingForward:
+            {
+                NSLog(@"UIEventSubtypeRemoteControlBeginSeekingForward");
+            }
+                break;
+            case UIEventSubtypeRemoteControlBeginSeekingBackward:
+            {
+                NSLog(@"UIEventSubtypeRemoteControlBeginSeekingBackward");
+            }
+                break;
+                
+            default:
+                break;
+        }
+    }
+}
+
+
+- (void)updateLockScreenInfo{
+    NSMutableDictionary *info = [NSMutableDictionary dictionary];
+    
+    //更新锁屏时的歌曲信息
+    MPMediaItemArtwork *artWork = [[MPMediaItemArtwork alloc] initWithImage:[UIImage imageNamed:@"6"]];
+    [info setObject:@"Title" forKey:MPMediaItemPropertyTitle];
+    //[info setObject:@"Artist" forKey:MPMediaItemPropertyAlbumArtist];
+    //[info setObject:@"Lyrics" forKey:MPMediaItemPropertyLyrics];
+    //[info setObject:@"Genre" forKey:MPMediaItemPropertyGenre];
+    [info setObject:@"Artist" forKey:MPMediaItemPropertyArtist];
+    //[info setObject:@"Rating" forKey:MPMediaItemPropertyRating];
+    [info setObject:artWork forKey:MPMediaItemPropertyArtwork];
+    //[info setObject:@"AssetURL" forKey:MPMediaItemPropertyAssetURL];
+    [[MPNowPlayingInfoCenter defaultCenter] setNowPlayingInfo:info];
+}
+
+#pragma mark ------ outer methed
+
 -(void)playBackEnable:(BOOL)able{
     if (able) { // 后台播放能力
         [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayback error:nil];
@@ -144,7 +250,19 @@
     }
 }
 
-#pragma mark ------------ lazy load
+// 播放
+- (void)playAction:(MPRemoteCommandCenter *)cnter{
+    [self.avplayer play];
+}
+
+// 暂停
+- (void)pauseAction:(MPRemoteCommandCenter *)cnter{
+    [self.avplayer pause];
+}
+
+
+
+#pragma mark ------ lazy load
 
 -(AVPlayer *)avplayer{
     if (!_avplayer) {

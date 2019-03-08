@@ -86,7 +86,11 @@ typedef NS_ENUM(NSInteger, AVPlayerTimeControlStatus) {
 
 >> 1. 代码设置
 
-![image](https://github.com/itwyhuaing/OC-WYH/blob/master/音视频/image/后台播放1.png)
+![image](https://github.com/itwyhuaing/OC-WYH/blob/master/音视频/image/enable_11.png)
+
+![image](https://github.com/itwyhuaing/OC-WYH/blob/master/音视频/image/enable_12.png)
+
+![image](https://github.com/itwyhuaing/OC-WYH/blob/master/音视频/image/enable_13.png)
 
 
 >> 2. 工程配置
@@ -100,11 +104,23 @@ typedef NS_ENUM(NSInteger, AVPlayerTimeControlStatus) {
 
 >> 注意：后台播放需要注意播放器不要被释放。
 
+> AVPlayer 播放能力 - 远程控制
+
+>> 代码设置
+
+![image](https://github.com/itwyhuaing/OC-WYH/blob/master/音视频/image/enable_21.png)
+
+
+
+![image](https://github.com/itwyhuaing/OC-WYH/blob/master/音视频/image/enable_22.png)
+
+
 > AVPlayer 播放能力 - 锁屏信息
 
-```
+>> 代码设置
 
-```
+![image](https://github.com/itwyhuaing/OC-WYH/blob/master/音视频/image/enable_31.png)
+
 
 
 * [iOS开发之AVPlayer的精彩使用--->网易新闻视频播放界面的另类实现](http://blog.csdn.net/super_man_ww/article/details/52411332)

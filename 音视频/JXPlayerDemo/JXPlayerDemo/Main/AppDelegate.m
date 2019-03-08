@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import <AVFoundation/AVFoundation.h>
+#import "VoiceAVPlayerVC.h"
 
 @interface AppDelegate ()
 
@@ -18,7 +18,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
-    [self.jxVoicePlayer playBackEnable:TRUE];
+    [[VoiceAVPlayerVC currentAVPlayerVC] playBackEnable:TRUE];
     
     return YES;
 }
@@ -48,13 +48,6 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
-}
-
--(JXVoiceAVPlayer *)jxVoicePlayer{
-    if (!_jxVoicePlayer) {
-        _jxVoicePlayer = [[JXVoiceAVPlayer alloc] init];
-    }
-    return _jxVoicePlayer;
 }
 
 @end
