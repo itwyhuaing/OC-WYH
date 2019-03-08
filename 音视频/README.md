@@ -122,6 +122,7 @@ typedef NS_ENUM(NSInteger, AVPlayerTimeControlStatus) {
 ![image](https://github.com/itwyhuaing/OC-WYH/blob/master/音视频/image/enable_31.png)
 
 
+* 《注：》当前未解决在非播放界面退出后台时，锁屏上的暂停、上下曲功能失效。(即：Demo 进入后台状态前，栈顶控制器不是VoiceAVPlayerVC时，锁屏界面无法远程控制播放状态。)
 
 * [iOS开发之AVPlayer的精彩使用--->网易新闻视频播放界面的另类实现](http://blog.csdn.net/super_man_ww/article/details/52411332)
 * [AVPlayer 本地、网络视频播放相关](http://www.jianshu.com/p/de418c21d33c)
