@@ -39,7 +39,7 @@
     
     
     rect.size.height = 20.0;
-    rect.origin.y = 0.0;//kSCREEN_H / 2.0 - rect.size.height;
+    rect.origin.y = 0.0;        //  kSCREEN_H / 2.0 - rect.size.height;
     UILabel *l = [[UILabel alloc] initWithFrame:rect];
     l.textColor = [UIColor redColor];
     l.textAlignment = NSTextAlignmentCenter;
@@ -54,9 +54,9 @@
     globalTimer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(updateDisplay:) userInfo:nil repeats:TRUE];
     
     
-    //[[NSRunLoop currentRunLoop] addTimer:globalTimer forMode:NSRunLoopCommonModes];
+    [[NSRunLoop currentRunLoop] addTimer:globalTimer forMode:NSRunLoopCommonModes];
+    //[[NSRunLoop currentRunLoop] addTimer:globalTimer forMode:UITrackingRunLoopMode];
     
-    [[NSRunLoop currentRunLoop] addTimer:globalTimer forMode:UITrackingRunLoopMode];
 }
 
 -(void)viewWillAppear:(BOOL)animated{
