@@ -15,7 +15,7 @@
 ## 3. 应用
 
 ### block 原理探究
-> block 即匿名函数，在 iOS 开发中有着重要作用，其原理与具体应用细节见 《Objective-C高级编程 iOS与OS X多线程和内存管理》 一书整理笔记。
+> block 即匿名函数，在 iOS 开发中有着重要作用，其原理与具体应用细节见 《Objective-C高级编程 iOS与OS X多线程和内存管理》 一书整理笔记。  也可参考这里 [iOS中Block的用法，举例，解析与底层原理（这可能是最详细的Block解析）](http://www.cocoachina.com/ios/20180424/23147.html)
 
 
 #### 方法的添加、替换、交换

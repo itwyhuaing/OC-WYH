@@ -19,7 +19,6 @@
     SEL customSEL = @selector(yh_imageNamed:);
     Method customMethod = class_getClassMethod(self, customSEL);
     
-
     method_exchangeImplementations(systemMethod, customMethod);
     
 }
@@ -28,6 +27,7 @@
     CGFloat dVersion = [[UIDevice currentDevice].systemVersion doubleValue];
     if (dVersion >= 7.0) {
         name = [name stringByAppendingString:@"_ios7"];
+        NSLog(@" \n 方法已交换 \n ");
     }
     return [UIImage yh_imageNamed:name];
 }

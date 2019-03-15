@@ -1,41 +1,62 @@
 //
-//  FirstVC.m
+//  FirstTableVC.m
 //  RuntimeProDemo
 //
-//  Created by hnbwyh on 2018/1/31.
-//  Copyright © 2018年 ZhiXingJY. All rights reserved.
+//  Created by hnbwyh on 2019/3/14.
+//  Copyright © 2019 ZhiXingJY. All rights reserved.
 //
 
-#import "FirstVC.h"
+#import "FirstTableVC.h"
 #import "UIImage+ImageName.h"
 #import "PersonDataModel.h"
 #import <objc/runtime.h>
 
-@interface FirstVC ()
+@interface FirstTableVC ()
+
+@property (nonatomic,strong) NSMutableArray<NSString *> *thems;
 
 @end
 
-@implementation FirstVC
+@implementation FirstTableVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"FirstVC";
-    self.view.backgroundColor = [UIColor whiteColor];
-    
-    UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
-    [btn setFrame:CGRectMake(0, 0, 80.0, 30.0)];
-    btn.center = self.view.center;
-    [self.view addSubview:btn];
-    [btn setTitle:@"点击测试" forState:UIControlStateNormal];
-    [btn setTitleColor:[UIColor cyanColor] forState:UIControlStateNormal];
-    [btn addTarget:self action:@selector(clickEventBtn:) forControlEvents:UIControlEventTouchUpInside];
-    
+    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"CellID"];
 }
 
-- (void)clickEventBtn:(UIButton *)btn{
- 
-    [self test6];
+#pragma mark - Table view data source
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return self.thems.count;
 }
+
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CellID" forIndexPath:indexPath];
+    cell.textLabel.text   = self.thems[indexPath.row];
+    return cell;
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    [tableView deselectRowAtIndexPath:indexPath animated:FALSE];
+    NSString *methodString = [NSString stringWithFormat:@"test%ld",indexPath.row+1];
+    SEL method = NSSelectorFromString(methodString);
+    [self performSelector:method withObject:nil];
+}
+
+-(NSMutableArray<NSString *> *)thems {
+    if (!_thems) {
+        _thems = [[NSMutableArray alloc] initWithObjects:@"获取 PersonDataModel 属性",
+                                                         @"获取 PersonDataModel 方法",
+                                                         @"获取 PersonDataModel 实例/类方法",
+                                                         @"系统方法拦截",
+                                                         @"归解档中的应用 ： MJEXtension,YYModel 字典与模型间的转换",
+                                                         @"依据类名字符串创建该类的实例对象",nil];
+    }
+    return _thems;
+}
+
+#pragma mark ------ 测试方法
 
 #pragma mark ------ /*<获取 PersonDataModel 与 UIView 的属性>*/
 - (void)test1{
@@ -45,8 +66,9 @@
     for (NSInteger i = 0; i < count11; i++) {
         const char *pName = property_getName(propertys1[i]);
         NSString *strName = [NSString stringWithCString:pName encoding:NSUTF8StringEncoding];
-        //NSLog(@" PersonDataModel - strName :%@ \n ",strName);
+        NSLog(@" \n PersonDataModel - strName :%@ \n ",strName);
     }
+    
 }
 
 #pragma mark ------ /*<获取 PersonDataModel 与 UIView 的方法>*/
@@ -56,61 +78,64 @@
     Method *ms21 = class_copyMethodList([PersonDataModel class], &count21);
     for (NSInteger i = 0; i < count21; i ++) {
         SEL name = method_getName(ms21[i]); // 这里只有实例方法，并没有类方法
-        //        NSString *strName = [NSString stringWithCString:sel_getName(name) encoding:NSUTF8StringEncoding];
+//        NSString *strName = [NSString stringWithCString:sel_getName(name) encoding:NSUTF8StringEncoding];
         NSString *strName = NSStringFromSelector(name);
-        //NSLog(@" PersonDataModel - method :%@ \n ",strName);
+        NSLog(@" PersonDataModel - method :%@ \n ",strName);
     }
+    
 }
 
 #pragma mark ------ /*<获取 PersonDataModel 实例 / 类方法>*/
 - (void)test3{
-    /*<获取 PersonDataModel 实例方法>*/
+    
+    /**<获取 PersonDataModel 实例方法>*/
     Method clsMethod = class_getClassMethod([PersonDataModel class], @selector(testClsMethod11));
     
-    /*<获取 PersonDataModel 类方法>*/
+    /**<获取 PersonDataModel 类方法>*/
     Method instanceMethod = class_getInstanceMethod([PersonDataModel class], @selector(testInstanceMethod21));
+    
 }
 
-#pragma mark ------ /*<系统方法拦截>*/
+#pragma mark ------ /*<系统方法拦截 >*/
 - (void)test4{
-    /*<系统方法拦截>*/
+    
+    /**<系统方法拦截>*/
     UIImage *img = [UIImage imageNamed:@"login_hnb_icon"];
     UIImageView *imgV = [[UIImageView alloc] initWithFrame:CGRectMake(0, 80, 50, 50)];
     imgV.backgroundColor = [UIColor greenColor];
     imgV.image = img;
     [self.view addSubview:imgV];
+    
 }
 
-#pragma mark ------ /*<属性遍历在数据模型归解档中的应用 ： MJEXtension,YYModel 字典与模型间的转换 >*/
+#pragma mark ------ /*< 属性遍历在数据模型归解档中的应用 ： MJEXtension,YYModel 字典与模型间的转换 >*/
 - (void)test5{
-    /*<属性遍历在数据模型归解档中的应用 ： MJEXtension,YYModel 字典与模型间的转换 >*/
+    
+    /**< 属性遍历在数据模型归解档中的应用 ： MJEXtension,YYModel 字典与模型间的转换 >*/
     NSString *tmpPath = @"testRuntime";
     NSString *sysPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, TRUE) lastObject];
     NSString *lastPath = [sysPath stringByAppendingPathComponent:tmpPath];
-    
     PersonDataModel *f = [[PersonDataModel alloc] init];
     f.name = @"ZhongGuo";
     f.age = 22;
-    f.children = @[@"Son:Jolin",@"Girl:LinCon"];
+    f.children     = @[@"Son:Jolin",@"Girl:LinCon"];
     f.homeLocation = @{
                        @"省":@"河南",
                        @"市":@"南阳",
                        };
-    
     // 归档
     [NSKeyedArchiver archiveRootObject:f toFile:lastPath];
-    
     // 解档
     PersonDataModel *lf = (PersonDataModel *)[NSKeyedUnarchiver unarchiveObjectWithFile:lastPath];
-    
     NSLog(@" lf: %@ ",lf);
+    
 }
 
 
-#pragma mark ------ /**<依据类名字符串创建该类的实例对象>*/
+#pragma mark ------ /**< 依据类名字符串创建该类的实例对象 >*/
 - (void)test6{
     
-    /**<依据类名字符串创建该类的实例对象>*/
+    /**< 依据类名字符串创建该类的实例对象  >*/
     //FirstVC
     NSString *class = @"DefendContinHitVC";
     const char *className = [class cStringUsingEncoding:NSASCIIStringEncoding];
@@ -125,4 +150,6 @@
     [self.navigationController pushViewController:instance animated:TRUE];
     
 }
+
+
 @end
