@@ -29,8 +29,11 @@
 -(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     NSArray *arr = @[@"A1",@"A2",@"A3",
                      @"A4",@"A5",@"A6"];
-    NSString *A = [arr objectAtIndex:0];
-
+    
+    NSString *A = [arr objectAtIndex:9];
+    
+    
+    
     NSString *B = arr[0];
     
     NSString *AX = [arr jx_objectAtIndex:0];
