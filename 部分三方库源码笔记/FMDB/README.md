@@ -92,3 +92,7 @@ FMResultSet获取不同数据格式的方法
 - (void)inTransaction:(void (^)(FMDatabase *db, BOOL *rollback))block;
 
 ```
+
+### Demo
+
+* 注 - 此处 Demo 为网上看到一个蛮不错的调试代码。
