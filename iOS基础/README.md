@@ -178,3 +178,4 @@ property = 实例变量+setter方法+getter方法
 ### 关于面试知识题目参考
 
 * [iOS面试知识点整理](http://www.cocoachina.com/cms/wap.php?action=article&id=23051)
+* [iOS面试总结（基础知识深入及新知识扩展）](https://www.jianshu.com/p/c3e56d6cf06f)
