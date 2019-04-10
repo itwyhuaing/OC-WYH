@@ -12,7 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface HTMLFactory : NSObject
 
-+ (NSString *)htmlFactoryWithTextAttributes:(NSDictionary *)attributes;
++ (NSString *)htmlFactoryWithttributedString:(NSAttributedString *)attributedText;
 
 @end
 

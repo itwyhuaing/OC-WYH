@@ -12,7 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface FontLabel : NSObject
 
-+ (NSString *)fontLabelWithTextAttributes:(NSDictionary *)attributes;
++ (NSString *)fontLabelWithTextAttributes:(NSDictionary *)attributes content:(NSString *)text;
 
 @end
 

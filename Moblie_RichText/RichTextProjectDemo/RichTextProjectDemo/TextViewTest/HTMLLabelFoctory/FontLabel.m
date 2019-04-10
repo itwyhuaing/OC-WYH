@@ -11,9 +11,9 @@
 
 @implementation FontLabel
 
-+(NSString *)fontLabelWithTextAttributes:(NSDictionary *)attributes{
++(NSString *)fontLabelWithTextAttributes:(NSDictionary *)attributes content:(nonnull NSString *)text{
     
-    NSMutableString *rlt = [[NSMutableString alloc] init];
+    NSMutableString *rlt = [[NSMutableString alloc] initWithString:text];
     UIFont  *font = attributes[@"NSFont"];
     UIColor *clr  = attributes[@"NSColor"];
     NSString *fontSize = [NSString stringWithFormat:@"font-size:%f",font.pointSize];
@@ -21,7 +21,8 @@
     BOOL bold          = [font.description containsString:@"font-weight: bold;"];
     CGFloat obli       = [NSString stringWithFormat:@"%@",attributes[@"NSObliqueness"]].floatValue;
     if (obli > 0.0) {
-        [rlt appendFormat:@"<i></i>"];
+        [rlt insertString:@"<i>" atIndex:0];
+        [rlt appendString:@"</i>"];
     }
     
     if (bold) {

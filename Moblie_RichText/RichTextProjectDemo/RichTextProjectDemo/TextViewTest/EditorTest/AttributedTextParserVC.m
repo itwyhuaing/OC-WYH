@@ -10,6 +10,7 @@
 #import "HTMLVC.h"
 #import "HTMLFactory.h"
 
+
 @interface AttributedTextParserVC ()
 
 @property (nonatomic,strong) UITextView *editor;
@@ -29,7 +30,7 @@
     // 展示区
     [self.view addSubview:self.editor];
     self.editor.backgroundColor = [UIColor cyanColor];
-    NSString *cnt = @"常规红色粗体28黑色粗体斜体蓝色测试放假\n第二行";
+    NSString *cnt = @"常规红色粗体28黑色粗体斜体蓝色测试放假";
     NSMutableAttributedString *rltAttributedString = [[NSMutableAttributedString alloc] initWithString:cnt];
     [rltAttributedString addAttributes:@{NSForegroundColorAttributeName:[UIColor redColor],
                                          NSFontAttributeName:[UIFont systemFontOfSize:19.0 weight:UIFontWeightBold]
@@ -60,72 +61,11 @@
 
 -(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
 
-    NSMutableString *htmlContent = [NSMutableString string];
-    NSRange effectiveRange = NSMakeRange(0, 0);
-    while (NSMaxRange(effectiveRange) < self.editor.text.length) {
-        NSDictionary *attributes = [self.editor.attributedText attributesAtIndex:effectiveRange.location effectiveRange:&effectiveRange];
-        NSString *text = [self.editor.attributedText.string substringWithRange:effectiveRange];
-        effectiveRange = NSMakeRange(NSMaxRange(effectiveRange), 0);
-        NSTextAttachment *attachment = attributes[@"NSAttachment"];
-        
-        [HTMLFactory htmlFactoryWithTextAttributes:attributes];
-        //break;
-        
-        if (attachment) { // 图片
-            
-        }else{  // 文字
-            
-            NSParagraphStyle *paraStyle  = attributes[@"NSParagraphStyle"];
-            UIFont  *font = attributes[@"NSFont"];
-            UIColor *clr  = attributes[@"NSColor"];
-            NSString *kern = [NSString stringWithFormat:@"%@",attributes[@"NSKern"]];
-            NSString *obli = [NSString stringWithFormat:@"%@",attributes[@"NSObliqueness"]];
-            
-            if (paraStyle && ![htmlContent hasPrefix:@"<p"]) { // <p>
-                [htmlContent appendFormat:@"<p style=\"text-indent:%fem;line-height:%fpx;letter-spacing:%f;text-align:%@\">",paraStyle.firstLineHeadIndent /5.0,paraStyle.lineSpacing * 9.0,kern.floatValue * 3.0,@"center"];
-            }
-            
-            NSString *font_style = @"";
-            if (font) {
-                font_style = [NSString stringWithFormat:@"font-size:%f",font.pointSize * 2.0];
-            }
-            
-            NSString *clr_style = @"";
-            if (clr) {
-                clr_style = [NSString stringWithFormat:@"color:%@",[self hexStringWithColor:clr]];
-            }
-            
-            if (obli != nil && ![obli isEqualToString:@"(null)"]) {
-                [htmlContent appendFormat:@"<font style=\"%@;%@;\"><i>%@</i></font>",font_style,clr_style,text];
-            }else{
-                [htmlContent appendFormat:@"<font style=\"%@;%@;\">%@</font>",font_style,clr_style,text];
-            }
-            
-            if (paraStyle && NSMaxRange(effectiveRange) >= self.editor.text.length
-                && [htmlContent hasPrefix:@"<p"] && ![htmlContent hasSuffix:@"</p>"]) {
-                [htmlContent appendString:@"</p>"];
-            }
-            
-        }
-
-    }
+    NSString *html = [HTMLFactory htmlFactoryWithttributedString:self.editor.attributedText];
+    HTMLVC *vc = [[HTMLVC alloc] init];
+    vc.cntHtml = html;
+    [self.navigationController pushViewController:vc animated:TRUE];
     
-//    HTMLVC *vc = [[HTMLVC alloc] init];
-//    vc.cntHtml = htmlContent;
-//    [self.navigationController pushViewController:vc animated:TRUE];
-    
-}
-
-- (NSString *)hexStringWithColor:(UIColor *)color {
-    
-    NSString *colorString = [[CIColor colorWithCGColor:color.CGColor] stringRepresentation];
-    NSArray *parts = [colorString componentsSeparatedByString:@" "];
-    
-    NSMutableString *hexString = [NSMutableString stringWithString:@"#"];
-    for (int i = 0; i < 3; i ++) {
-        [hexString appendString:[NSString stringWithFormat:@"%02X", (int)([parts[i] floatValue] * 255)]];
-    }
-    return [hexString copy];
 }
 
 - (UITextView *)editor{
