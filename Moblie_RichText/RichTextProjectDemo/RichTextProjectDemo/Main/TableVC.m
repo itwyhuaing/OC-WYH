@@ -28,11 +28,15 @@
     [super viewDidLoad];
     
     //  UI 修饰
-    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    NSArray *tmpds  = @[@"富文本编辑:UITextView属性测试第一部分",@"富文本编辑:UITextView属性测试第二部分",
-                        @"富文本编辑:UITextView实现方式",@"富文本编辑:WKWebView实现方式 - WK",
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
+    NSArray *tmpds  = @[@"富文本编辑:UITextView \nattributedText、typingAttributes",@"富文本编辑:UITextView \nUIFontDescriptor",
+                        @"attributedText 字符串字体样式信息",@"HTML 标签测试",
+                        @"富文本编辑:UITextView \n编辑过程中修改 typingAttributes 属性",
+                        @"富文本编辑:UITextView \n自定义库",@"富文本编辑:WKWebView实现方式 - WK",
                         @"富文本展示:UITextView加载HTML",@"富文本展示:WKWebView加载HTML"];
     NSArray *tmpvcs = @[@"AttibutedTestVC",@"AttributedTest2VC",
+                        @"AttributedTextParserVC",@"HTMLVC",
+                        @"RichTextEditorVC",
                         @"JXTextViewVC",@"RichTextEditor",
                         @"TextViewLoadHtmlVC",@"WKLoadHtmlVC"];
     _vcs        = [[NSMutableArray alloc] initWithArray:tmpvcs];
@@ -45,13 +49,18 @@
     return _dataSource.count;
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return 100.0;
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell_id_reuse"];
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell_id_reuse"];
     }
-    cell.textLabel.text = _dataSource[indexPath.row];
+    cell.textLabel.text          = _dataSource[indexPath.row];
+    cell.textLabel.numberOfLines = 0;
     return cell;
     
 }

@@ -19,31 +19,46 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.view.backgroundColor = [UIColor whiteColor];
+
     // 编辑区
     [self.view addSubview:self.jxtv];
     [self.jxtv modifyHeaderEditing:TRUE contentEditing:FALSE];
     
     // 1. 第一种测试：代码设置内容属性与内容
-    //[self testContent];
+//    [self testContent];
     
     // 2. 第二种测试：代码设置属性，输入内容
-    [self testAttributes];
-}
-
--(void)viewWillAppear:(BOOL)animated{
-    [super viewWillAppear:animated];
-    self.view.backgroundColor = [UIColor whiteColor];
+//    [self testAttributes];
     
+    // 3. 第三种测试：测试图文混排
+    [self testMutableAttributedString];
 }
 
+
+// 第一种测试：代码设置内容属性与内容
+- (void)testContent{
+
+    NSDictionary *attributes = @{
+                                 NSFontAttributeName:[UIFont systemFontOfSize:14],
+                                 NSForegroundColorAttributeName:[UIColor redColor]
+                                  };
+    NSAttributedString *at = [[NSAttributedString alloc] initWithString:@"第一种测试： \n 代码设置内容属性与内容" attributes:attributes];
+    self.jxtv.attributedText = at;
+}
+
+
+// 代码设置属性，输入内容
 - (void)testAttributes{
+    
     NSMutableDictionary *typeingAttributes = [self.jxtv.typingAttributes mutableCopy];
     // 字体大小
     typeingAttributes[NSFontAttributeName] = [UIFont systemFontOfSize:32.0 weight:UIFontWeightBold];
     // 字体颜色
     typeingAttributes[NSForegroundColorAttributeName] = [UIColor whiteColor];
+    
     /**
-     字体删除线样式
+     字体删除线/下划线样式
      NSUnderlineStyleNone
      NSUnderlineStyleSingle
      NSUnderlineStyleThick
@@ -57,6 +72,7 @@
      
      NSUnderlineByWord
      */
+    // 字体下划线样式
     typeingAttributes[NSUnderlineStyleAttributeName] = @(NSUnderlineStyleSingle);
     // 字体下划线颜色
     typeingAttributes[NSUnderlineColorAttributeName] = [UIColor greenColor];
@@ -68,12 +84,12 @@
     typeingAttributes[NSStrokeColorAttributeName] = [UIColor redColor];
     typeingAttributes[NSStrokeWidthAttributeName] = @(2);
     // 字符间隔 : 注意区分于字间距
-    typeingAttributes[NSKernAttributeName] = @(9);
+    typeingAttributes[NSKernAttributeName] = @(3);
     // 字体倾斜
-    typeingAttributes[NSObliquenessAttributeName] = @(0.3);
+    typeingAttributes[NSObliquenessAttributeName] = @(0.0);
     
     /**
-      NSParagraphStyleAttributeName
+     NSParagraphStyleAttributeName
      lineSpacing;           行间距
      paragraphSpacing;      段间距
      alignment;             对齐方式
@@ -92,21 +108,27 @@
     paragraphStyle.lineHeightMultiple = 20.f;
     paragraphStyle.maximumLineHeight = 85.f;
     paragraphStyle.minimumLineHeight = 65.f;
-    paragraphStyle.firstLineHeadIndent = 200.f;
-    paragraphStyle.alignment = NSTextAlignmentCenter;
+    paragraphStyle.firstLineHeadIndent = 0.f;
+    paragraphStyle.alignment = NSTextAlignmentLeft;
     typeingAttributes[NSParagraphStyleAttributeName] = paragraphStyle;
     
     self.jxtv.typingAttributes = typeingAttributes;
 }
 
-- (void)testContent{
 
-    NSDictionary *attributes = @{
-                                 NSFontAttributeName:[UIFont systemFontOfSize:14],
-                                 NSForegroundColorAttributeName:[UIColor redColor]
-                                  };
-    NSAttributedString *at = [[NSAttributedString alloc] initWithString:@"第一种测试： \n 代码设置内容属性与内容" attributes:attributes];
-    self.jxtv.attributedText = at;
+// 测试图文混排
+- (void)testMutableAttributedString{
+    
+    //创建Attachment Str
+    NSTextAttachment * attach = [[NSTextAttachment alloc] init];
+    attach.image = [UIImage imageNamed:@"ZSSimageFromDevice_selected"];
+    attach.bounds = CGRectMake(0, 10, 20, 20);
+    NSAttributedString * imageStr = [NSAttributedString attributedStringWithAttachment:attach];
+    //添加
+    NSMutableAttributedString * mutableAttriStr = [[NSMutableAttributedString alloc] initWithString:@"Wenchen   "];
+    [mutableAttriStr appendAttributedString:imageStr];
+    self.jxtv.attributedText = mutableAttriStr;
+
 }
 
 #pragma mark - lazy load

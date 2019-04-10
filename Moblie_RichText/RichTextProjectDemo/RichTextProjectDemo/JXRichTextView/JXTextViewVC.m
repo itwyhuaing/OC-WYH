@@ -104,19 +104,19 @@
     [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillHideNotification object:nil];
 }
 
-#pragma mark ------
-
-
 
 #pragma mark ------ delegate
+
 
 #pragma mark - UITextFieldDelegate
 
 - (BOOL)textFieldShouldBeginEditing:(UITextField *)textField{
+    
     NSLog(@"\n \n %s \n \n ",__FUNCTION__);
     self.jxtv.editingLocation = NTEditorMainViewEditingLocationTitle;
     [self hiddenToolBar];
     return TRUE;
+    
 }
 
 #pragma mark - UITextViewDelegate
@@ -149,14 +149,17 @@
 #pragma mark ------ KVO
 
 - (void)keyBoardWillShowWithNotify:(NSNotification *)notification{
+    
     NSLog(@" %s ",__FUNCTION__);
     NSDictionary *info = [notification userInfo];
     NSValue *av = [info objectForKey:UIKeyboardFrameEndUserInfoKey];
     CGRect kbRect = av.CGRectValue;
     self.keyBoardHeight = kbRect.size.height;
+
 }
 
 - (void)keyBoardDidShowWithNotify:(NSNotification *)notification{
+    
 }
 
 - (void)keyBoardWillHideWithNotify:(NSNotification *)notification{

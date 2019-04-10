@@ -48,6 +48,8 @@
     [self addSubview:_titleHeader];
     
     self.textContainerInset = UIEdgeInsetsMake(CGRectGetMaxY(_titleHeader.frame)+6.0, 0, 0, 0);
+    self.contentInset       = UIEdgeInsetsMake(0, 0, 280, 0);
+    self.layoutManager.allowsNonContiguousLayout = FALSE;
     self.font = [UIFont systemFontOfSize:18.0];
 
 }

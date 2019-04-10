@@ -2,9 +2,9 @@
 富文本方案。
 
 ---
-### 富文本展示
+## 富文本展示
 
-###### UITextView
+### UITextView
 
 * 数据结构若为 json 格式可直接使用原生控件展示，适用于新项目。
 
@@ -21,7 +21,7 @@
 1.150971
 ```
 
-###### UIWebView （iOS 8 之前）
+### UIWebView （iOS 8 之前）
 
 * 数据结构若为 json 格式可直接使用原生控件展示，适用于新项目。
 
@@ -35,12 +35,12 @@
 1.121078
 ```
 
-###### WKWebView （iOS 8 及之后版本系统）
+### WKWebView （iOS 8 及之后版本系统）
 
 * 同 UIWebView。
 
 
-###### 原生控件展示
+### 原生控件展示
 
 1. 数据源是 html 格式时，需要先解析成数据模型再使用相应的原生控件展示。
     * 关于 HTML 数据格式的解析，这里暂且使用 TFHpple ，可以解析出标签及相应的属性。但有一个问题需要思考的是，解析过程若是按标签类别解析，在解析之后还需要对已解析出的数据模型进行排序；也就是说要按照 HTML 格式将解析出的文本数据、换行数据、图片数据等类型的数据模型按照 HTML 内容展示的顺序进行排序。在自己的项目中已尝试，调试也已通过但蛮花费时间。后来在想是否可以依照标签顺序解析，尚未尝试；应为这样你只需要针对项目写出标签的解析方法就可以了，而无需在解析之后在进行排序。
@@ -49,19 +49,20 @@
    * 这种方式就比较直白简单，后端给定json数据，正常解析为数据模型，使用相应原生控件展示即可。
    * 新项目大多采用这种方式，移动端只需要拿数据解析-展示，即便已发布出了问题，后端修改数据结构就可以轻松解决问题。
 
-###### 第三方库
+### 第三方库
 
 1. 轻量级 HTML+CSS 样式的解析框架 DTCoreText 。注：集成比较坑，建议使用 Cocoapods 管理。
 
 ---
-### 富文本编辑
+## 富文本编辑
 
-###### UITextView
+### UITextView
+
+#### 简述
 
 1. 已有的轮子 SimpleWord - 石墨文档原生方案。
 
 2. YYText 在展示中如果有太多个性化展示效果比较麻烦。
-
 
 
 * 优点
@@ -70,7 +71,62 @@
 * 缺点
 > 组装 HTML 数据 或 解析 HTML 数据都不易。
 
-###### UIWebView / WKWebView
+#### UITextView 认识
+
+
+* [键盘遮挡问题解决](http://www.zhimengzhe.com/IOSkaifa/355632.html)
+
+```
+
+textContainerInset
+
+
+contentInset
+
+
+allowsNonContiguousLayout
+
+```
+
+* [编辑过程中过动态高度](https://www.jianshu.com/p/36d62951ffc1)
+
+
+```
+-(void)textViewDidChange:(UITextView *)textView;
+```
+
+
+
+* [iOS--NSAttributedString超全属性详解及应用（富文本、图文混排）](https://www.jianshu.com/p/1056d983bdfd)    [iOS-属性字符串 NSAttributedString](https://www.jianshu.com/p/71489b66b0c3)
+
+
+```
+
+NSFontAttributeName; //字体，value是UIFont对象
+NSParagraphStyleAttributeName;//绘图的风格（居中，换行模式，间距等诸多风格），value是NSParagraphStyle对象
+NSForegroundColorAttributeName;// 文字颜色，value是UIFont对象
+NSBackgroundColorAttributeName;// 背景色，value是UIFont
+NSLigatureAttributeName; //  字符连体，value是NSNumber
+NSKernAttributeName; // 字符间隔
+NSStrikethroughStyleAttributeName;//删除线，value是NSNumber
+NSUnderlineStyleAttributeName;//下划线，value是NSNumber
+NSStrokeColorAttributeName; //描绘边颜色，value是UIColor
+NSStrokeWidthAttributeName; //描边宽度，value是NSNumber
+NSShadowAttributeName; //阴影，value是NSShadow对象
+NSTextEffectAttributeName; //文字效果，value是NSString
+NSAttachmentAttributeName;//附属，value是NSTextAttachment 对象
+NSLinkAttributeName;//链接，value是NSURL or NSString
+NSBaselineOffsetAttributeName;//基础偏移量，value是NSNumber对象
+NSUnderlineColorAttributeName;//下划线颜色，value是UIColor对象
+NSStrikethroughColorAttributeName;//删除线颜色，value是UIColor
+NSObliquenessAttributeName; //字体倾斜
+NSExpansionAttributeName; //字体扁平化
+NSVerticalGlyphFormAttributeName;//垂直或者水平，value是 NSNumber，0表示水平，1垂直
+
+```
+
+
+### UIWebView / WKWebView
 
 1. ZSSRichTextEditor(UIWebView)。
 
