@@ -16,6 +16,7 @@
 		261606BE225DF754000BC4F5 /* PLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 261606BD225DF754000BC4F5 /* PLabel.m */; };
 		261606C1225DF777000BC4F5 /* FontLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 261606C0225DF777000BC4F5 /* FontLabel.m */; };
 		261606C4225DF82D000BC4F5 /* ImgLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 261606C3225DF82D000BC4F5 /* ImgLabel.m */; };
+		261606C8225F4761000BC4F5 /* RTImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 261606C7225F4761000BC4F5 /* RTImage.m */; };
 		2626FFBA20AD8A5500125D58 /* AttibutedTestVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2626FFB920AD8A5500125D58 /* AttibutedTestVC.m */; };
 		2626FFBD20AE784D00125D58 /* TextViewLoadHtmlVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2626FFBC20AE784D00125D58 /* TextViewLoadHtmlVC.m */; };
 		2626FFC320AE7E4700125D58 /* WKLoadHtmlVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2626FFC220AE7E4700125D58 /* WKLoadHtmlVC.m */; };
@@ -99,6 +100,8 @@
 		261606C0225DF777000BC4F5 /* FontLabel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FontLabel.m; sourceTree = "<group>"; };
 		261606C2225DF82D000BC4F5 /* ImgLabel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImgLabel.h; sourceTree = "<group>"; };
 		261606C3225DF82D000BC4F5 /* ImgLabel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImgLabel.m; sourceTree = "<group>"; };
+		261606C6225F4761000BC4F5 /* RTImage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RTImage.h; sourceTree = "<group>"; };
+		261606C7225F4761000BC4F5 /* RTImage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RTImage.m; sourceTree = "<group>"; };
 		2626FFB820AD8A5500125D58 /* AttibutedTestVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AttibutedTestVC.h; sourceTree = "<group>"; };
 		2626FFB920AD8A5500125D58 /* AttibutedTestVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AttibutedTestVC.m; sourceTree = "<group>"; };
 		2626FFBB20AE784D00125D58 /* TextViewLoadHtmlVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TextViewLoadHtmlVC.h; sourceTree = "<group>"; };
@@ -237,9 +240,19 @@
 			path = HTMLLabelFoctory;
 			sourceTree = "<group>";
 		};
+		261606C5225F4739000BC4F5 /* ImageAttachment */ = {
+			isa = PBXGroup;
+			children = (
+				261606C6225F4761000BC4F5 /* RTImage.h */,
+				261606C7225F4761000BC4F5 /* RTImage.m */,
+			);
+			path = ImageAttachment;
+			sourceTree = "<group>";
+		};
 		2626FFB720AD8A2300125D58 /* TextViewTest */ = {
 			isa = PBXGroup;
 			children = (
+				261606C5225F4739000BC4F5 /* ImageAttachment */,
 				261606B8225DF69D000BC4F5 /* HTMLLabelFoctory */,
 				261606AE225DCE1C000BC4F5 /* EditorTest */,
 				2626FFB820AD8A5500125D58 /* AttibutedTestVC.h */,
@@ -694,6 +707,7 @@
 				2669590F1F7F877300382A86 /* README.md in Sources */,
 				26CAB20220B50D6C00D94D3D /* ToolBarCommonItem.m in Sources */,
 				261606AB225DC919000BC4F5 /* JXFont.m in Sources */,
+				261606C8225F4761000BC4F5 /* RTImage.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

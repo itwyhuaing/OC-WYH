@@ -16,7 +16,7 @@
     NSMutableString *rlt = [[NSMutableString alloc] initWithString:text];
     UIFont  *font = attributes[@"NSFont"];
     UIColor *clr  = attributes[@"NSColor"];
-    NSString *fontSize = [NSString stringWithFormat:@"font-size:%f",font.pointSize];
+    NSString *fontSize = [NSString stringWithFormat:@"font-size:%fpx",font.pointSize * 2.6];
     NSString *color    = [NSString stringWithFormat:@"color:%@",[self hexStringWithColor:clr]];
     BOOL bold          = [font.description containsString:@"font-weight: bold;"];
     CGFloat obli       = [NSString stringWithFormat:@"%@",attributes[@"NSObliqueness"]].floatValue;

@@ -19,7 +19,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor whiteColor];
+    self.view.backgroundColor = [UIColor greenColor];
+    self.wkweb.scrollView.contentInset = UIEdgeInsetsMake(10, 0, 0, 0);
     
     [self.view addSubview:self.wkweb];
     [self.wkweb.scrollView addObserver:self forKeyPath:@"contentSize" options:NSKeyValueObservingOptionNew context:NULL];
@@ -66,12 +67,12 @@
 -(WKWebView *)wkweb{
     if (!_wkweb) {
         CGRect rect = self.view.frame;
-        rect.origin.x = 10.0;
-        rect.size.width -= rect.origin.x * 2.0;
+        rect.origin.x = 0.0;
+        rect.origin.y = 100.0;
         rect.size.height -= 100.0;
         WKWebViewConfiguration *confg = [[WKWebViewConfiguration alloc] init];
         _wkweb = [[WKWebView alloc] initWithFrame:rect configuration:confg];
-        _wkweb.backgroundColor = [UIColor greenColor];
+        _wkweb.backgroundColor = [UIColor cyanColor];
         _wkweb.navigationDelegate = self;
     }
     return _wkweb;

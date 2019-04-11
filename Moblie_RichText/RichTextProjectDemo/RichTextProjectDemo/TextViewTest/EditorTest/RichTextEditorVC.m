@@ -7,8 +7,11 @@
 //
 
 #import "RichTextEditorVC.h"
+#import "HTMLVC.h"
+#import "HTMLFactory.h"
+#import "RTImage.h"
 
-@interface RichTextEditorVC ()
+@interface RichTextEditorVC ()<UIImagePickerControllerDelegate>
 {
     UIFontWeight currentWeight;
 }
@@ -88,7 +91,23 @@
     
 }
 
-- (void)imageFunction{}
+- (void)imageFunction{
+    UIAlertController *alrtVC = [[UIAlertController alloc] init];
+    __weak typeof(self)weakSelf = self;
+    UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+        [weakSelf dismissViewControllerAnimated:FALSE completion:nil];
+    }];
+    UIAlertAction *xj = [UIAlertAction actionWithTitle:@"相机" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        [weakSelf openCamera];
+    }];
+    UIAlertAction *xc = [UIAlertAction actionWithTitle:@"相册" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        [weakSelf openPhotoLibrary];
+    }];
+    [alrtVC addAction:xj];
+    [alrtVC addAction:xc];
+    [alrtVC addAction:cancel];
+    [self presentViewController:alrtVC animated:FALSE completion:nil];
+}
 
 - (void)boldFunction{
     NSMutableDictionary *typeingAttributes = [self.editor.typingAttributes mutableCopy];
@@ -124,8 +143,14 @@
 }
 
 - (void)contentString{
-    NSLog(@"\n %@ \n",self.editor.attributedText);
+    NSString *html = [HTMLFactory htmlFactoryWithAttributedString:self.editor.attributedText];
+
+    HTMLVC *vc = [[HTMLVC alloc] init];
+    vc.cntHtml = html;
+    [self.navigationController pushViewController:vc animated:TRUE];
 }
+
+#pragma mark --- lazy load
 
 -(UITextView *)editor{
 
@@ -138,40 +163,63 @@
     
 }
 
-/**
- self.editor.attributedText
- 
- 普通{
- NSColor = "UIExtendedGrayColorSpace 0 1";
- NSFont = "<UICTFont: 0x100d0c3e0> font-family: \".PingFangSC-Light\"; font-weight: normal; font-style: normal; font-size: 18.00pt";
- NSOriginalFont = "<UICTFont: 0x100c69a60> font-family: \".SFUIText-Light\"; font-weight: normal; font-style: normal; font-size: 18.00pt";
- NSParagraphStyle = "Alignment 4, LineSpacing 0, ParagraphSpacing 0, ParagraphSpacingBefore 0, HeadIndent 0, TailIndent 0, FirstLineHeadIndent 0, LineHeight 0/0, LineHeightMultiple 0, LineBreakMode 0, Tabs (\n    28L,\n    56L,\n    84L,\n    112L,\n    140L,\n    168L,\n    196L,\n    224L,\n    252L,\n    280L,\n    308L,\n    336L\n), DefaultTabInterval 0, Blocks (\n), Lists (\n), BaseWritingDirection 0, HyphenationFactor 0, TighteningForTruncation NO, HeaderLevel 0";
- }粗体{
- NSColor = "UIExtendedGrayColorSpace 0 1";
- NSFont = "<UICTFont: 0x100914580> font-family: \".PingFangSC-Medium\"; font-weight: bold; font-style: normal; font-size: 18.00pt";
- NSOriginalFont = "<UICTFont: 0x100f1bea0> font-family: \".SFUIText-Bold\"; font-weight: bold; font-style: normal; font-size: 18.00pt";
- NSParagraphStyle = "Alignment 4, LineSpacing 0, ParagraphSpacing 0, ParagraphSpacingBefore 0, HeadIndent 0, TailIndent 0, FirstLineHeadIndent 0, LineHeight 0/0, LineHeightMultiple 0, LineBreakMode 0, Tabs (\n    28L,\n    56L,\n    84L,\n    112L,\n    140L,\n    168L,\n    196L,\n    224L,\n    252L,\n    280L,\n    308L,\n    336L\n), DefaultTabInterval 0, Blocks (\n), Lists (\n), BaseWritingDirection 0, HyphenationFactor 0, TighteningForTruncation NO, HeaderLevel 0";
- }粗体{
- NSColor = "UIExtendedGrayColorSpace 0 1";
- NSFont = "<UICTFont: 0x100914150> font-family: \".PingFangSC-Medium\"; font-weight: bold; font-style: normal; font-size: 28.00pt";
- NSOriginalFont = "<UICTFont: 0x100912470> font-family: \".SFUIDisplay-Bold\"; font-weight: bold; font-style: normal; font-size: 28.00pt";
- NSParagraphStyle = "Alignment 4, LineSpacing 0, ParagraphSpacing 0, ParagraphSpacingBefore 0, HeadIndent 0, TailIndent 0, FirstLineHeadIndent 0, LineHeight 0/0, LineHeightMultiple 0, LineBreakMode 0, Tabs (\n    28L,\n    56L,\n    84L,\n    112L,\n    140L,\n    168L,\n    196L,\n    224L,\n    252L,\n    280L,\n    308L,\n    336L\n), DefaultTabInterval 0, Blocks (\n), Lists (\n), BaseWritingDirection 0, HyphenationFactor 0, TighteningForTruncation NO, HeaderLevel 0";
- }28{
- NSColor = "UIExtendedGrayColorSpace 0 1";
- NSFont = "<UICTFont: 0x100912470> font-family: \".SFUIDisplay-Bold\"; font-weight: bold; font-style: normal; font-size: 28.00pt";
- NSParagraphStyle = "Alignment 4, LineSpacing 0, ParagraphSpacing 0, ParagraphSpacingBefore 0, HeadIndent 0, TailIndent 0, FirstLineHeadIndent 0, LineHeight 0/0, LineHeightMultiple 0, LineBreakMode 0, Tabs (\n    28L,\n    56L,\n    84L,\n    112L,\n    140L,\n    168L,\n    196L,\n    224L,\n    252L,\n    280L,\n    308L,\n    336L\n), DefaultTabInterval 0, Blocks (\n), Lists (\n), BaseWritingDirection 0, HyphenationFactor 0, TighteningForTruncation NO, HeaderLevel 0";
- }普通红色{
- NSColor = "UIExtendedSRGBColorSpace 1 0 0 1";
- NSFont = "<UICTFont: 0x100f1e1c0> font-family: \".PingFangSC-Light\"; font-weight: normal; font-style: normal; font-size: 18.00pt";
- NSOriginalFont = "<UICTFont: 0x100c69a60> font-family: \".SFUIText-Light\"; font-weight: normal; font-style: normal; font-size: 18.00pt";
- NSParagraphStyle = "Alignment 4, LineSpacing 0, ParagraphSpacing 0, ParagraphSpacingBefore 0, HeadIndent 0, TailIndent 0, FirstLineHeadIndent 0, LineHeight 0/0, LineHeightMultiple 0, LineBreakMode 0, Tabs (\n    28L,\n    56L,\n    84L,\n    112L,\n    140L,\n    168L,\n    196L,\n    224L,\n    252L,\n    280L,\n    308L,\n    336L\n), DefaultTabInterval 0, Blocks (\n), Lists (\n), BaseWritingDirection 0, HyphenationFactor 0, TighteningForTruncation NO, HeaderLevel 0";
- }普通白色{
- NSColor = "UIExtendedGrayColorSpace 1 1";
- NSFont = "<UICTFont: 0x100d21080> font-family: \".PingFangSC-Light\"; font-weight: normal; font-style: normal; font-size: 18.00pt";
- NSOriginalFont = "<UICTFont: 0x100c69a60> font-family: \".SFUIText-Light\"; font-weight: normal; font-style: normal; font-size: 18.00pt";
- NSParagraphStyle = "Alignment 4, LineSpacing 0, ParagraphSpacing 0, ParagraphSpacingBefore 0, HeadIndent 0, TailIndent 0, FirstLineHeadIndent 0, LineHeight 0/0, LineHeightMultiple 0, LineBreakMode 0, Tabs (\n    28L,\n    56L,\n    84L,\n    112L,\n    140L,\n    168L,\n    196L,\n    224L,\n    252L,\n    280L,\n    308L,\n    336L\n), DefaultTabInterval 0, Blocks (\n), Lists (\n), BaseWritingDirection 0, HyphenationFactor 0, TighteningForTruncation NO, HeaderLevel 0";
- }
+#pragma mark --- 相机/相册操作
 
- */
+- (void)openCamera{
+    if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
+        UIImagePickerController *imgPikerVC = [[UIImagePickerController alloc] init];
+        imgPikerVC.delegate = (id)self;
+        imgPikerVC.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+        imgPikerVC.allowsEditing = TRUE;
+        imgPikerVC.sourceType = UIImagePickerControllerSourceTypeCamera;
+        [self presentViewController:imgPikerVC animated:FALSE completion:nil];
+    }else{
+        NSLog(@"\n 没有监控摄像头 \n");
+    }
+}
+
+- (void)openPhotoLibrary{
+    if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypePhotoLibrary]) {
+        UIImagePickerController *imgPikerVC = [[UIImagePickerController alloc] init];
+        imgPikerVC.delegate = (id)self;
+        imgPikerVC.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+        imgPikerVC.allowsEditing = TRUE;
+        imgPikerVC.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+        [self presentViewController:imgPikerVC animated:FALSE completion:nil];
+    }else{
+        NSLog(@"\n 不能打开相册 \n");
+    }
+}
+
+-(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<UIImagePickerControllerInfoKey,id> *)info{
+    RTImage *img = (RTImage *)info[@"UIImagePickerControllerEditedImage"];
+    if (picker.sourceType == UIImagePickerControllerSourceTypeCamera) {
+        UIImageWriteToSavedPhotosAlbum(img, nil, nil, nil);
+    }
+    [self dismissViewControllerAnimated:FALSE completion:nil];
+    // 图片先上传
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(6.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        NSString *imgURLString = @"http://cache.hinabian.com/images/release/b/d/bb87ed887dbe7fff01a6a383895baa0d.png";
+        img.uniqueID = @"";
+        img.loadedLink = [NSURL URLWithString:imgURLString];
+        [self addToEditorWithImage:img];
+    });
+}
+
+-(void)imagePickerControllerDidCancel:(UIImagePickerController *)picker{
+    [self dismissViewControllerAnimated:FALSE completion:nil];
+}
+
+- (void)addToEditorWithImage:(UIImage *)img{
+    
+    NSTextAttachment *imgMent = [[NSTextAttachment alloc] init];
+    imgMent.image  = img;
+    imgMent.bounds = CGRectMake(0, 0, 100.0, 100 * img.size.height / img.size.width);
+    NSAttributedString *imageAttributedString = [NSAttributedString attributedStringWithAttachment:imgMent];
+    NSMutableAttributedString *mutableAttribuedString = [[NSMutableAttributedString alloc] initWithAttributedString:self.editor.attributedText];
+    [mutableAttribuedString appendAttributedString:imageAttributedString];
+    self.editor.attributedText = mutableAttribuedString;
+    
+}
 
 @end

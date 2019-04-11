@@ -11,6 +11,7 @@
 #import "HTMLFactory.h"
 
 
+
 @interface AttributedTextParserVC ()
 
 @property (nonatomic,strong) UITextView *editor;
@@ -30,7 +31,7 @@
     // 展示区
     [self.view addSubview:self.editor];
     self.editor.backgroundColor = [UIColor cyanColor];
-    NSString *cnt = @"常规红色粗体28黑色粗体斜体蓝色测试放假";
+    NSString *cnt = @"常规\n红色粗体28黑色粗体斜体蓝色测试数据中心少壮不努力老大体伤悲放假";
     NSMutableAttributedString *rltAttributedString = [[NSMutableAttributedString alloc] initWithString:cnt];
     [rltAttributedString addAttributes:@{NSForegroundColorAttributeName:[UIColor redColor],
                                          NSFontAttributeName:[UIFont systemFontOfSize:19.0 weight:UIFontWeightBold]
@@ -52,7 +53,7 @@
     //paragraphStyle.minimumLineHeight = 65.f;
     paragraphStyle.firstLineHeadIndent = 10.f;
     paragraphStyle.lineSpacing  = 6.0f;
-    paragraphStyle.alignment    = NSTextAlignmentCenter;
+    paragraphStyle.alignment    = NSTextAlignmentLeft;
     [rltAttributedString addAttribute:NSParagraphStyleAttributeName value:paragraphStyle range:NSMakeRange(0, cnt.length)];
     [rltAttributedString addAttribute:NSKernAttributeName value:@(10) range:NSMakeRange(0, cnt.length)];
     self.editor.attributedText = rltAttributedString;
@@ -61,7 +62,7 @@
 
 -(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
 
-    NSString *html = [HTMLFactory htmlFactoryWithttributedString:self.editor.attributedText];
+    NSString *html = [HTMLFactory htmlFactoryWithAttributedString:self.editor.attributedText];
     HTMLVC *vc = [[HTMLVC alloc] init];
     vc.cntHtml = html;
     [self.navigationController pushViewController:vc animated:TRUE];
