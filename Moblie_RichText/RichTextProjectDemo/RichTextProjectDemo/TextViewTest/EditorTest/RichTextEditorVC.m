@@ -9,11 +9,12 @@
 #import "RichTextEditorVC.h"
 #import "HTMLVC.h"
 #import "HTMLFactory.h"
-#import "RTImage.h"
+#import "NSTextAttachment+RichText.h"
 
-@interface RichTextEditorVC ()<UIImagePickerControllerDelegate>
+@interface RichTextEditorVC ()<UIImagePickerControllerDelegate,UITextViewDelegate>
 {
     UIFontWeight currentWeight;
+    NSDictionary *oldTypesDic;
 }
 @property (nonatomic,strong)    UITextView *editor;
 
@@ -27,72 +28,11 @@
     [self configUI];
 }
 
-
-- (void)configUI{
-    // 控制按钮
-    UISegmentedControl *seg = [[UISegmentedControl alloc] initWithItems:@[@"图片",@"粗体",@"字体28",@"红色",@"白色",@"初始状态",@"获取"]];
-    CGFloat maxY            = CGRectGetMaxY(self.navigationController.navigationBar.frame);
-    CGRect  screenFrame     = [UIScreen mainScreen].bounds;
-    [seg setFrame:CGRectMake(10, maxY, screenFrame.size.width-20.0, 56)];
-    [self.view addSubview:seg];
-    [seg addTarget:self action:@selector(clickSegControl:) forControlEvents:UIControlEventValueChanged];
-    
-    // 编辑区
-    [self.view addSubview:self.editor];
-    [self initStatus];
-    self.editor.backgroundColor = [UIColor cyanColor];
-    
-}
-
-
-
-- (void)clickSegControl:(UISegmentedControl *)segCtrl{
-
-    switch (segCtrl.selectedSegmentIndex) {
-        case 0:
-            {
-                [self imageFunction];
-            }
-            break;
-        case 1:
-            {
-                [self boldFunction];
-            }
-            break;
-        case 2:
-            {
-                [self fontFunction];
-            }
-            break;
-        case 3:
-            {
-                [self colorFunction];
-            }
-            break;
-        case 4:
-            {
-                [self colorFunction2];
-            }
-            break;
-        case 5:
-            {
-                [self initStatus];
-            }
-            break;
-        case 6:
-            {
-                [self contentString];
-            }
-            break;
-            
-        default:
-            break;
-    }
-    
-}
+#pragma mark ------ 功能实现
 
 - (void)imageFunction{
-    UIAlertController *alrtVC = [[UIAlertController alloc] init];
+    oldTypesDic = self.editor.typingAttributes;
+    UIAlertController *alrtVC   = [[UIAlertController alloc] init];
     __weak typeof(self)weakSelf = self;
     UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
         [weakSelf dismissViewControllerAnimated:FALSE completion:nil];
@@ -122,6 +62,26 @@
     self.editor.typingAttributes = typeingAttributes;
 }
 
+- (void)fontIFunction{
+    NSMutableDictionary *typeingAttributes = [self.editor.typingAttributes mutableCopy];
+    typeingAttributes[NSObliquenessAttributeName] = @(0.5);
+    self.editor.typingAttributes = typeingAttributes;
+}
+
+- (void)fontUFunction{
+    NSMutableDictionary *typeingAttributes = [self.editor.typingAttributes mutableCopy];
+    typeingAttributes[NSUnderlineStyleAttributeName] = @(NSUnderlineStyleSingle);
+    typeingAttributes[NSUnderlineColorAttributeName] = [UIColor blackColor];
+    self.editor.typingAttributes = typeingAttributes;
+}
+
+- (void)fontSFunction{
+    NSMutableDictionary *typeingAttributes = [self.editor.typingAttributes mutableCopy];
+    typeingAttributes[NSStrikethroughStyleAttributeName] = @(NSUnderlineStylePatternDot);
+    self.editor.typingAttributes = typeingAttributes;
+}
+
+
 - (void)colorFunction{
     NSMutableDictionary *typeingAttributes = [self.editor.typingAttributes mutableCopy];
     typeingAttributes[NSForegroundColorAttributeName] = [UIColor redColor];
@@ -144,7 +104,7 @@
 
 - (void)contentString{
     NSString *html = [HTMLFactory htmlFactoryWithAttributedString:self.editor.attributedText];
-
+    NSLog(@"\n %@ \n",self.editor.attributedText);
     HTMLVC *vc = [[HTMLVC alloc] init];
     vc.cntHtml = html;
     [self.navigationController pushViewController:vc animated:TRUE];
@@ -158,9 +118,19 @@
         CGFloat navMaxY            = CGRectGetMaxY(self.navigationController.navigationBar.frame);
         CGRect  screenFrame        = [UIScreen mainScreen].bounds;
         _editor = [[UITextView alloc] initWithFrame:CGRectMake(0, navMaxY + 66.0, screenFrame.size.width, 200.0)];
+        _editor.delegate           = (id)self;
+        oldTypesDic                = _editor.typingAttributes;
     }
     return _editor;
     
+}
+
+#pragma mark --- UITextViewDelegate
+
+- (BOOL)textViewShouldBeginEditing:(UITextView *)textView{
+    /**< 解决插入图片前后编辑区属性变更问题 >*/
+    //self.editor.typingAttributes = oldTypesDic;
+    return TRUE;
 }
 
 #pragma mark --- 相机/相册操作
@@ -192,17 +162,26 @@
 }
 
 -(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<UIImagePickerControllerInfoKey,id> *)info{
-    RTImage *img = (RTImage *)info[@"UIImagePickerControllerEditedImage"];
+    UIImage *img = (UIImage *)info[@"UIImagePickerControllerEditedImage"];
     if (picker.sourceType == UIImagePickerControllerSourceTypeCamera) {
         UIImageWriteToSavedPhotosAlbum(img, nil, nil, nil);
     }
     [self dismissViewControllerAnimated:FALSE completion:nil];
+    
+    __block NSTextAttachment *rltMent = [self addToEditorWithImage:img];
+    NSInteger cou = 6;//arc4random() % 100;
     // 图片先上传
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(6.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        NSString *imgURLString = @"http://cache.hinabian.com/images/release/b/d/bb87ed887dbe7fff01a6a383895baa0d.png";
-        img.uniqueID = @"";
-        img.loadedLink = [NSURL URLWithString:imgURLString];
-        [self addToEditorWithImage:img];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        
+        if (cou % 2 == 0) { // 图片上传成功
+            NSString *imgURLString = @"http://cache.hinabian.com/images/release/b/d/bb87ed887dbe7fff01a6a383895baa0d.png";
+            NSDictionary *info = @{kImageAttachmentLoadedURL:imgURLString};
+            rltMent.extendedInfo   = info;
+            NSLog(@"\n %@ \n",rltMent.extendedInfo);
+        } else { // 图片上传失败
+            rltMent = nil;
+        }
+        
     });
 }
 
@@ -210,16 +189,121 @@
     [self dismissViewControllerAnimated:FALSE completion:nil];
 }
 
-- (void)addToEditorWithImage:(UIImage *)img{
-    
+- (NSTextAttachment *)addToEditorWithImage:(UIImage *)img{
     NSTextAttachment *imgMent = [[NSTextAttachment alloc] init];
     imgMent.image  = img;
     imgMent.bounds = CGRectMake(0, 0, 100.0, 100 * img.size.height / img.size.width);
+    NSLog(@"\n %@ \n",imgMent.extendedInfo);
     NSAttributedString *imageAttributedString = [NSAttributedString attributedStringWithAttachment:imgMent];
     NSMutableAttributedString *mutableAttribuedString = [[NSMutableAttributedString alloc] initWithAttributedString:self.editor.attributedText];
     [mutableAttribuedString appendAttributedString:imageAttributedString];
     self.editor.attributedText = mutableAttribuedString;
+    return imgMent;
+}
+
+
+#pragma mark ------ UI 组件
+
+- (void)configUI{
+    // 控制按钮
+    UISegmentedControl *seg = [[UISegmentedControl alloc] initWithItems:@[@"输入样式调整",@"获取 html"]];
+    CGFloat maxY            = CGRectGetMaxY(self.navigationController.navigationBar.frame);
+    CGRect  screenFrame     = [UIScreen mainScreen].bounds;
+    [seg setFrame:CGRectMake(10, maxY, screenFrame.size.width-20.0, 56)];
+    [self.view addSubview:seg];
+    [seg addTarget:self action:@selector(clickSegControl:) forControlEvents:UIControlEventValueChanged];
+    
+    // 编辑区
+    [self.view addSubview:self.editor];
+    [self initStatus];
+    self.editor.backgroundColor = [UIColor cyanColor];
     
 }
+
+- (void)functions{
+    UIAlertController *alrtVC = [[UIAlertController alloc] init];
+    __weak typeof(self)weakSelf = self;
+    NSArray *thems = @[@"初始状态",@"图片",@"字体加粗大小28",@"红色",@"白色",@"斜体",@"删除线",@"下划线"];
+    UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+        [weakSelf dismissViewControllerAnimated:FALSE completion:nil];
+    }];
+    for (NSInteger cou = 0; cou < thems.count; cou ++) {
+        UIAlertAction *func = [UIAlertAction actionWithTitle:thems[cou] style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            [weakSelf functionOperateAtIndex:cou];
+        }];
+        [alrtVC addAction:func];
+    }
+    [alrtVC addAction:cancel];
+    [self presentViewController:alrtVC animated:FALSE completion:nil];
+}
+
+- (void)functionOperateAtIndex:(NSInteger)index{
+    
+    switch (index) {
+        case 0:
+        {
+            [self initStatus];
+        }
+            break;
+        case 1:
+        {
+            [self imageFunction];
+        }
+            break;
+        case 2:
+        {
+            [self fontFunction];
+        }
+            break;
+        case 3:
+        {
+            [self colorFunction];
+        }
+            break;
+        case 4:
+        {
+            [self colorFunction2];
+        }
+            break;
+        case 5:
+        {// 斜体
+            [self fontIFunction];
+        }
+            break;
+        case 6:
+        {// 删除线
+            [self fontSFunction];
+        }
+            break;
+        case 7:
+        {// 下划线
+            [self fontUFunction];
+        }
+            break;
+            
+        default:
+            break;
+    }
+}
+
+
+- (void)clickSegControl:(UISegmentedControl *)segCtrl{
+    switch (segCtrl.selectedSegmentIndex) {
+        case 0:
+        {
+            [self functions];
+        }
+            break;
+        case 1:
+        {
+            [self contentString];
+        }
+            break;
+            
+        default:
+            break;
+    }
+}
+
 
 @end

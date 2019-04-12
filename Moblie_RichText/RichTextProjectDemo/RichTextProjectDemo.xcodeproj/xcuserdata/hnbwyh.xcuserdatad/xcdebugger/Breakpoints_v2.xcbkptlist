@@ -4,59 +4,17 @@
    version = "2.0">
    <Breakpoints>
       <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.ExceptionBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            scope = "0"
-            stopOnStyle = "0">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "RichTextProjectDemo/TextViewTest/EditorTest/RichTextEditorVC.m"
-            timestampString = "576670323.9088"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "148"
-            endingLineNumber = "148"
-            landmarkName = "-contentString"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "RichTextProjectDemo/TextViewTest/HTMLLabelFoctory/ImgLabel.m"
-            timestampString = "576670323.910491"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "19"
-            endingLineNumber = "19"
-            landmarkName = "+imgLabelWithTextAttributes:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RichTextProjectDemo/TextViewTest/HTMLLabelFoctory/HTMLFactory.m"
-            timestampString = "576670323.910755"
+            timestampString = "576753327.410791"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "65"
-            endingLineNumber = "65"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
             landmarkName = "+htmlFactoryWithAttributedString:"
             landmarkType = "7">
          </BreakpointContent>
@@ -67,13 +25,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "RichTextProjectDemo/TextViewTest/EditorTest/RichTextEditorVC.m"
-            timestampString = "576670323.9109679"
+            filePath = "RichTextProjectDemo/TextViewTest/HTMLLabelFoctory/FontLabel.m"
+            timestampString = "576753327.411054"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "203"
-            endingLineNumber = "203"
-            landmarkName = "-imagePickerController:didFinishPickingMediaWithInfo:"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
+            landmarkName = "-fontLabelWithTextAttributes:content:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

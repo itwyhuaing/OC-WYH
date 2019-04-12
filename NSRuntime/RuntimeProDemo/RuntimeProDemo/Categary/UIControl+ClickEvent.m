@@ -96,6 +96,7 @@
     objc_setAssociatedObject(self, @selector(testProperty), testProperty, OBJC_ASSOCIATION_COPY);
 }
 
+
 static char MethodKey;
 -(NSString *)method{
     return objc_getAssociatedObject(self, &MethodKey);

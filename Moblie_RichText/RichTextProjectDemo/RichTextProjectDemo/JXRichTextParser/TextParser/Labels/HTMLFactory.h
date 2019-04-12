@@ -12,6 +12,13 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface HTMLFactory : NSObject
 
+
+/**
+ 将富文本解析为 HTML
+
+ @param attributedText 富文本
+ @return 解析出的 HTML
+ */
 + (NSString *)htmlFactoryWithAttributedString:(NSAttributedString *)attributedText;
 
 @end
