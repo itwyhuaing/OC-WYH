@@ -13,7 +13,6 @@
 		26D478A02264236E0041E15F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D4789F2264236E0041E15F /* main.m */; };
 		26D478AE22642C260041E15F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D478AB22642C260041E15F /* AppDelegate.m */; };
 		26D478B122642C950041E15F /* FucnsTable.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D478B022642C950041E15F /* FucnsTable.m */; };
-		26D478B422642D5E0041E15F /* HppleVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D478B322642D5E0041E15F /* HppleVC.m */; };
 		26D478CC226432060041E15F /* NSTextAttachment+RichText.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D478B8226432060041E15F /* NSTextAttachment+RichText.m */; };
 		26D478CD226432060041E15F /* ImgLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D478BC226432060041E15F /* ImgLabel.m */; };
 		26D478CE226432060041E15F /* HTMLLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D478BD226432060041E15F /* HTMLLabel.m */; };
@@ -23,8 +22,12 @@
 		26D478D2226432060041E15F /* RichTextEditorVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D478C9226432060041E15F /* RichTextEditorVC.m */; };
 		26D478D3226432060041E15F /* HTMLVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D478CA226432060041E15F /* HTMLVC.m */; };
 		26D478D4226432060041E15F /* AttributedTextParserVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D478CB226432060041E15F /* AttributedTextParserVC.m */; };
-		26D478D82264320C0041E15F /* cnt.html in Resources */ = {isa = PBXBuildFile; fileRef = 26D478D62264320C0041E15F /* cnt.html */; };
+		26D478D82264320C0041E15F /* HTMLVC.html in Resources */ = {isa = PBXBuildFile; fileRef = 26D478D62264320C0041E15F /* HTMLVC.html */; };
 		26D478D92264320C0041E15F /* HtmlContent.html in Resources */ = {isa = PBXBuildFile; fileRef = 26D478D72264320C0041E15F /* HtmlContent.html */; };
+		26D478DE226467A30041E15F /* HppleVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D478DD226467A30041E15F /* HppleVC.m */; };
+		26EAEE422266D5F70079AA5A /* WebVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 26EAEE412266D5F70079AA5A /* WebVC.m */; };
+		26EAEE452266D6160079AA5A /* NativeTextViewVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 26EAEE442266D6160079AA5A /* NativeTextViewVC.m */; };
+		26EAEE472266D6C80079AA5A /* WebVC.html in Resources */ = {isa = PBXBuildFile; fileRef = 26EAEE462266D6C80079AA5A /* WebVC.html */; };
 		AA358C66519940F08A9B0EF3 /* libPods-JXRichTextDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 66EF8E8DED1911C40316C807 /* libPods-JXRichTextDemo.a */; };
 /* End PBXBuildFile section */
 
@@ -39,8 +42,6 @@
 		26D478AB22642C260041E15F /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		26D478AF22642C950041E15F /* FucnsTable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FucnsTable.h; sourceTree = "<group>"; };
 		26D478B022642C950041E15F /* FucnsTable.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FucnsTable.m; sourceTree = "<group>"; };
-		26D478B222642D5E0041E15F /* HppleVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HppleVC.h; sourceTree = "<group>"; };
-		26D478B322642D5E0041E15F /* HppleVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HppleVC.m; sourceTree = "<group>"; };
 		26D478B8226432060041E15F /* NSTextAttachment+RichText.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSTextAttachment+RichText.m"; sourceTree = "<group>"; };
 		26D478B9226432060041E15F /* NSTextAttachment+RichText.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSTextAttachment+RichText.h"; sourceTree = "<group>"; };
 		26D478BB226432060041E15F /* PLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLabel.h; sourceTree = "<group>"; };
@@ -59,8 +60,15 @@
 		26D478C9226432060041E15F /* RichTextEditorVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RichTextEditorVC.m; sourceTree = "<group>"; };
 		26D478CA226432060041E15F /* HTMLVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTMLVC.m; sourceTree = "<group>"; };
 		26D478CB226432060041E15F /* AttributedTextParserVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AttributedTextParserVC.m; sourceTree = "<group>"; };
-		26D478D62264320C0041E15F /* cnt.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = cnt.html; sourceTree = "<group>"; };
+		26D478D62264320C0041E15F /* HTMLVC.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = HTMLVC.html; sourceTree = "<group>"; };
 		26D478D72264320C0041E15F /* HtmlContent.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = HtmlContent.html; sourceTree = "<group>"; };
+		26D478DC226467A30041E15F /* HppleVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HppleVC.h; sourceTree = "<group>"; };
+		26D478DD226467A30041E15F /* HppleVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HppleVC.m; sourceTree = "<group>"; };
+		26EAEE402266D5F70079AA5A /* WebVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WebVC.h; sourceTree = "<group>"; };
+		26EAEE412266D5F70079AA5A /* WebVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WebVC.m; sourceTree = "<group>"; };
+		26EAEE432266D6160079AA5A /* NativeTextViewVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NativeTextViewVC.h; sourceTree = "<group>"; };
+		26EAEE442266D6160079AA5A /* NativeTextViewVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NativeTextViewVC.m; sourceTree = "<group>"; };
+		26EAEE462266D6C80079AA5A /* WebVC.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = WebVC.html; sourceTree = "<group>"; };
 		5F0A116F11B3E663ECF32F55 /* Pods-JXRichTextDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JXRichTextDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-JXRichTextDemo/Pods-JXRichTextDemo.release.xcconfig"; sourceTree = "<group>"; };
 		66EF8E8DED1911C40316C807 /* libPods-JXRichTextDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-JXRichTextDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCE4A83EEBCDBF74F26E0F0D /* Pods-JXRichTextDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JXRichTextDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JXRichTextDemo/Pods-JXRichTextDemo.debug.xcconfig"; sourceTree = "<group>"; };
@@ -123,8 +131,8 @@
 		26D478A722642C260041E15F /* HppleExample */ = {
 			isa = PBXGroup;
 			children = (
-				26D478B222642D5E0041E15F /* HppleVC.h */,
-				26D478B322642D5E0041E15F /* HppleVC.m */,
+				26D478DB226467A30041E15F /* ParserTest */,
+				26D478DA226467A30041E15F /* HTMLParser */,
 			);
 			path = HppleExample;
 			sourceTree = "<group>";
@@ -200,10 +208,31 @@
 		26D478D52264320C0041E15F /* Resource */ = {
 			isa = PBXGroup;
 			children = (
-				26D478D62264320C0041E15F /* cnt.html */,
+				26EAEE462266D6C80079AA5A /* WebVC.html */,
+				26D478D62264320C0041E15F /* HTMLVC.html */,
 				26D478D72264320C0041E15F /* HtmlContent.html */,
 			);
 			path = Resource;
+			sourceTree = "<group>";
+		};
+		26D478DA226467A30041E15F /* HTMLParser */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = HTMLParser;
+			sourceTree = "<group>";
+		};
+		26D478DB226467A30041E15F /* ParserTest */ = {
+			isa = PBXGroup;
+			children = (
+				26D478DC226467A30041E15F /* HppleVC.h */,
+				26D478DD226467A30041E15F /* HppleVC.m */,
+				26EAEE402266D5F70079AA5A /* WebVC.h */,
+				26EAEE412266D5F70079AA5A /* WebVC.m */,
+				26EAEE432266D6160079AA5A /* NativeTextViewVC.h */,
+				26EAEE442266D6160079AA5A /* NativeTextViewVC.m */,
+			);
+			path = ParserTest;
 			sourceTree = "<group>";
 		};
 		49BC551168790EDEF55D7913 /* Pods */ = {
@@ -281,11 +310,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				26D478D82264320C0041E15F /* cnt.html in Resources */,
+				26D478D82264320C0041E15F /* HTMLVC.html in Resources */,
 				26D4789D2264236E0041E15F /* LaunchScreen.storyboard in Resources */,
 				26D478D92264320C0041E15F /* HtmlContent.html in Resources */,
 				26D4789A2264236E0041E15F /* Assets.xcassets in Resources */,
 				26D478982264236D0041E15F /* Main.storyboard in Resources */,
+				26EAEE472266D6C80079AA5A /* WebVC.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -317,16 +347,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				26D478DE226467A30041E15F /* HppleVC.m in Sources */,
 				26D478CE226432060041E15F /* HTMLLabel.m in Sources */,
 				26D478A02264236E0041E15F /* main.m in Sources */,
+				26EAEE422266D5F70079AA5A /* WebVC.m in Sources */,
 				26D478B122642C950041E15F /* FucnsTable.m in Sources */,
 				26D478D2226432060041E15F /* RichTextEditorVC.m in Sources */,
 				26D478D1226432060041E15F /* HTMLFactory.m in Sources */,
 				26D478D4226432060041E15F /* AttributedTextParserVC.m in Sources */,
 				26D478CD226432060041E15F /* ImgLabel.m in Sources */,
 				26D478D0226432060041E15F /* PLabel.m in Sources */,
-				26D478B422642D5E0041E15F /* HppleVC.m in Sources */,
 				26D478CF226432060041E15F /* FontLabel.m in Sources */,
+				26EAEE452266D6160079AA5A /* NativeTextViewVC.m in Sources */,
 				26D478D3226432060041E15F /* HTMLVC.m in Sources */,
 				26D478AE22642C260041E15F /* AppDelegate.m in Sources */,
 				26D478CC226432060041E15F /* NSTextAttachment+RichText.m in Sources */,

@@ -20,8 +20,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = NSStringFromClass(self.class);
-    self.thems = @[@"Hpple解析",@"固定富文本",@"可编辑富文本"];
-    self.vcs   = @[@"HppleVC",@"AttributedTextParserVC",@"RichTextEditorVC"];
+    self.thems = @[@"Hpple 解析",@"Web展示-UITextView展示",@"固定富文本",@"可编辑富文本"];
+    self.vcs   = @[@"HppleVC",@"WebVC",@"AttributedTextParserVC",@"RichTextEditorVC"];
 }
 
 #pragma mark - Table view data source

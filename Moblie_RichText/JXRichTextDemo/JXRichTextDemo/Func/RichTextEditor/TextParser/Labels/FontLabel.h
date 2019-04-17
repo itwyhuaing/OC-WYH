@@ -12,7 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface FontLabel : HTMLLabel
 
-// <font><b><i></i></b></font>
+// <font><u><s><i><b></b></i></s></u></font>
 - (NSString *)fontLabelWithTextAttributes:(NSDictionary *)attributes content:(NSString *)text;
 
 @end
