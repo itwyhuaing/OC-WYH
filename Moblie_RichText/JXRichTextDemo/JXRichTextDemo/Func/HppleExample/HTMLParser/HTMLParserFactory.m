@@ -63,12 +63,12 @@
             for (NSInteger cou = 0; cou < children.count; cou ++) {
                 TFHppleElement *theElement = children[cou];
                 if ([theElement.tagName isEqualToString:@"img"]) {
-                    [tmpString appendAttributedString:[[ImgParser currentHTMLParser] modifyAttributedStringWithHppleElement:theElement]];
+                    [tmpString appendAttributedString:[[ImgParser currentHTMLParser] parserImgLabelsWithFontElement:theElement]];
                 } else if ([theElement.tagName isEqualToString:@"font"]) {
-                    [tmpString appendAttributedString:[[FontParser currentHTMLParser] modifyAttributedStringWithHppleElement:theElement]];
+                    [tmpString appendAttributedString:[[FontParser currentHTMLParser] parserFontLabelsWithFontElement:theElement]];
                 }else if ([theElement.tagName isEqualToString:@"text"]){
                     NSMutableAttributedString *p_tmpString = [[NSMutableAttributedString alloc] initWithString:@""];
-                    pelement.text ? [p_tmpString appendAttributedString:[[NSAttributedString alloc] initWithString:pelement.text]] : nil;
+                    theElement.content ? [p_tmpString appendAttributedString:[[NSAttributedString alloc] initWithString:theElement.content]] : nil;
                     [tmpString appendAttributedString:[p_parser addAttributesWithAts:p_tmpString attribute:p_parser.attributes]];
                 }
             }

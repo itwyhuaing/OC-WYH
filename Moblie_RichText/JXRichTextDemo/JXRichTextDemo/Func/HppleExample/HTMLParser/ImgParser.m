@@ -25,12 +25,12 @@
     return instance;
 }
 
-- (NSAttributedString *)modifyAttributedStringWithHppleElement:(TFHppleElement *)element {
-    NSString *text = element.text;
+- (NSAttributedString *)parserImgLabelsWithFontElement:(TFHppleElement *)ielement {
+    NSString *text = ielement.text;
     NSString *showText = text ? text : @"";
     NSMutableAttributedString *mutableAtString = [[NSMutableAttributedString alloc] initWithString:showText];
-    if ([element.tagName isEqualToString:@"img"]) {
-        [self attributedString:mutableAtString info:element.attributes];
+    if ([ielement.tagName isEqualToString:@"img"]) {
+        [self attributedString:mutableAtString info:ielement.attributes];
     }
     return mutableAtString;
 }

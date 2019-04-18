@@ -16,7 +16,6 @@ NS_ASSUME_NONNULL_BEGIN
 + (instancetype)currentHTMLParser;
 
 - (NSDictionary *)composeAttributedDicWithAts:(NSDictionary *)ats;
-- (NSAttributedString *)modifyAttributedStringWithHppleElement:(TFHppleElement *)element;
 
 @property (nonatomic,strong)    NSDictionary *attributes;
 

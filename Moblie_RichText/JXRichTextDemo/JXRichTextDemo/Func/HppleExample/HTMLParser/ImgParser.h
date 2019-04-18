@@ -13,6 +13,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface ImgParser : HTMLParser
 
+- (NSAttributedString *)parserImgLabelsWithFontElement:(TFHppleElement *)ielement;
+
 @end
 
 NS_ASSUME_NONNULL_END

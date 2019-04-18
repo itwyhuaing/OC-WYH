@@ -27,11 +27,33 @@
     self.view.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:self.editor];
     self.editor.backgroundColor = [UIColor cyanColor];
+    [self testLabel];
 }
 
 
 -(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     self.editor.attributedText = [[HTMLParserFactory currentHTMLParserFactory] htmlParserFactoryWithHtmlContent:self.htmlCnt];
+}
+
+- (void)testLabel {
+    NSData  *data = [self.htmlCnt dataUsingEncoding:NSUTF8StringEncoding];
+    TFHpple *doc = [[TFHpple alloc] initWithHTMLData:data];
+    NSArray *us  = [doc searchWithXPathQuery:@"//p"];
+    for (TFHppleElement *elt in us) {
+        NSArray *cds = [elt children];
+        for (TFHppleElement *t in cds) {
+            if ([t.tagName isEqualToString:@"u"]) {
+                if ([t hasChildren]) {
+                    NSArray *children = [t children];
+                    for (TFHppleElement *c in children) {
+                        NSLog(@"");
+                    }
+                    
+                }
+            }
+        }
+        
+    }
 }
 
 - (void)logTheElement:(TFHppleElement *)element mark:(NSString *)mark{

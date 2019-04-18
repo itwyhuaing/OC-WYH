@@ -23,10 +23,6 @@
     return instance;
 }
 
--(NSAttributedString *)modifyAttributedStringWithHppleElement:(TFHppleElement *)element {
-    return [[NSAttributedString alloc] initWithString:@""];
-}
-
 - (NSDictionary *)composeAttributedDicWithAts:(NSDictionary *)ats {
     NSMutableDictionary *mutableDic = [NSMutableDictionary dictionary];
     NSString *atsValue  = [ats valueForKey:@"style"];
