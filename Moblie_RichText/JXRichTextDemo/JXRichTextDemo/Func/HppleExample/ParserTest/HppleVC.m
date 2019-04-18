@@ -44,70 +44,6 @@
 #pragma mark --- parser
 
 - (void)htmlParser {
-    
-//    NSData *data = [self.htmlContent dataUsingEncoding:NSUTF8StringEncoding];
-//    TFHpple *doc = [[TFHpple alloc] initWithHTMLData:data];
-//
-//    NSArray *elements = [doc searchWithXPathQuery:@"//p"];
-//    TFHppleElement *theElement;
-//    if (elements) {
-//        for (NSInteger cou = 0; cou < elements.count; cou ++) {
-//            TFHppleElement *element = elements[cou];
-//            theElement = element;
-//
-//
-//
-//
-//
-//
-//            if ([element hasChildren]) {
-//                NSArray *children = [element children];
-//                if (children) {
-//                    for (NSInteger index = 0; index < children.count; index ++) {
-//                        TFHppleElement *ele = children[index];
-//                        [self logTheElement:ele];
-//                    }
-//                }
-//            }
-//        }
-//    }
-    
-
-//    NSString *html = @"<p>净化心灵的最佳途径。<font><b>数据测试标签</b></font><font style=\"font-size:18px;color:red;\"><b>一切快乐的享受都属于精神，</b><i>这种快乐把忍受变为享受，</i><s>是精神对于物质的胜利，</s><u>这便是人生哲学。</u></font></p>";
-//    NSData  *data = [html dataUsingEncoding:NSUTF8StringEncoding];
-//    TFHpple *doc = [[TFHpple alloc] initWithHTMLData:data];
-//    NSArray *elements = [doc searchWithXPathQuery:@"//p"];
-//    TFHppleElement *theElement;
-//    for (NSInteger idx = 0; idx < elements.count; idx ++) {
-//        theElement = elements[idx];
-//        //[self logTheElement:theElement];
-//        while ([theElement hasChildren]) {
-//            NSArray *children = [theElement children];
-//            for (NSInteger x = 0; x < children.count; x ++) {
-//                theElement = children[x];
-//                while ([theElement hasChildren]) {
-//                    NSArray *children2 = [theElement children];
-//                    for (NSInteger y = 0; y < children2.count; y ++) {
-//                        theElement = children2[y];
-//                        [self logTheElement:theElement];
-//                    }
-//                }
-//
-//            }
-//        }
-//    }
-
-/**
- NSString *html = @"<p><font>第1段第1句。</font>第1段测试数据</p>";
- 
- 
- */
-    
-    
-    
-    
-    
-    
     NSString *html = @"<p><font><b>第1段第1句。</b></font><font>第1段第2句。</font></p><p><font><s>第2段第1句。</s></font><font><u><b>第2段第2句。</b></u></font></p>"; // @"<p><font>第1段第1句。</font><font>第1段测试数据</font></p>";//
     NSData  *data = [html dataUsingEncoding:NSUTF8StringEncoding];
     TFHpple *doc = [[TFHpple alloc] initWithHTMLData:data];
@@ -119,7 +55,6 @@
         }
     }
     NSLog(@"");
-    
 }
 
 

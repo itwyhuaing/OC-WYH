@@ -39,7 +39,7 @@
 
 - (void)loadHtmlContent{
     
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"WebVC" ofType:@"html"];
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"WebVC" ofType:@"html"]; // WebVC // ParserNorm 
     NSString *cntHtml = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
     [self extractContentWithHtml:cntHtml];
     [self.wkweb loadHTMLString:cntHtml baseURL:[NSURL URLWithString:@"https://www.baidu.com"]];
@@ -49,10 +49,10 @@
 }
 
 - (void)extractContentWithHtml:(NSString *)html{
-    NSRange r1 = [html rangeOfString:@"<p"];
-    NSRange r2 = [html rangeOfString:@"</p>"];
-    NSInteger start = r1.location;
-    NSInteger end   = r2.location + r2.length;
+    NSRange r1 = [html rangeOfString:@"<body>"];
+    NSRange r2 = [html rangeOfString:@"</body>"];
+    NSInteger start = r1.location + r1.length;
+    NSInteger end   = r2.location;
     NSRange theRange = NSMakeRange(start, end - start);
     htmlContent = [html substringWithRange:theRange];
     NSLog(@"");

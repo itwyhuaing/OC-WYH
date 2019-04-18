@@ -8,10 +8,14 @@
 
 #import "NativeTextViewVC.h"
 #import "TFHpple.h"
+#import "HTMLParserFactory.h"
+#import "PParser.h"
+#import "FontParser.h"
+#import "ImgParser.h"
 
 @interface NativeTextViewVC ()
 
-@property (nonatomic,strong) UITextView *editor;
+@property (nonatomic,strong)        UITextView              *editor;
 
 @end
 
@@ -23,28 +27,11 @@
     self.view.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:self.editor];
     self.editor.backgroundColor = [UIColor cyanColor];
-    [self parserPTag];
 }
 
-- (void)parserPTag {
-    NSData  *data = [self.htmlCnt dataUsingEncoding:NSUTF8StringEncoding];
-    TFHpple *doc = [[TFHpple alloc] initWithHTMLData:data];
-    NSArray *elements = [doc searchWithXPathQuery:@"//p"];
-    for (TFHppleElement *elt in elements) {
-        //[self logTheElement:elt mark:@"00"];
-        
-        NSString            *showText   = elt.text ? elt.text : @"";
-        NSMutableAttributedString *mutableAttributedString = [[NSMutableAttributedString alloc] initWithString:showText];
-        NSDictionary *atsDic = [self composeDicWithAts:elt.attributes];
-        // 组装 attributedText
-        [self modifyAttributedStringWithDic:atsDic cnt:mutableAttributedString tagName:elt.tagName];
-        self.editor.attributedText = mutableAttributedString;
-        
-    }
-}
 
-- (void)parserFontTagWith:(NSString *)html {
-    
+-(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    self.editor.attributedText = [[HTMLParserFactory currentHTMLParserFactory] htmlParserFactoryWithHtmlContent:self.htmlCnt];
 }
 
 - (void)logTheElement:(TFHppleElement *)element mark:(NSString *)mark{
@@ -56,49 +43,6 @@
     NSLog(@"isTextNode  : %d",[element isTextNode]);
     NSLog(@"attributes  : %@",[element attributes]);
     NSLog(@"\n \n");
-}
-
-
-- (NSDictionary *)composeDicWithAts:(NSDictionary *)ats {
-    NSMutableDictionary *mutableDic = [NSMutableDictionary dictionary];
-    NSString *atsValue  = [ats valueForKey:@"style"];
-    NSArray *kvs        = [atsValue componentsSeparatedByString:@";"];
-    for (NSInteger cou = 0; cou < kvs.count; cou ++) {
-        NSString *theContent = kvs[cou];
-        NSArray *cnts = [theContent componentsSeparatedByString:@":"];
-        if (cnts && cnts.count == 2) {
-            [mutableDic setObject:cnts.lastObject forKey:cnts.firstObject];
-        }
-    }
-    return mutableDic;
-}
-
-- (void)modifyAttributedStringWithDic:(NSDictionary *)dic cnt:(NSMutableAttributedString *)atdString tagName:(NSString *)tagName{
-    
-    NSArray *keys = dic.allKeys;
-    // p
-    if ([tagName isEqualToString:@"p"]) {
-        NSMutableParagraphStyle *paraStyle = [[NSMutableParagraphStyle alloc] init];
-        for (NSString *key in keys) {
-            if ([key isEqualToString:@"text-indent"]) {
-                NSString *value = [dic valueForKey:key];
-                paraStyle.firstLineHeadIndent = 10;
-            }
-            if ([key isEqualToString:@"font-size"]) {
-                NSString *value = [dic valueForKey:key];
-                [atdString addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:18.0] range:NSMakeRange(0, atdString.length)];
-            }
-            if ([key isEqualToString:@"color"]) {
-                NSString *value = [dic valueForKey:key];
-                [atdString addAttribute:NSForegroundColorAttributeName value:[UIColor blueColor] range:NSMakeRange(0, atdString.length)];
-            }
-        }
-        [atdString addAttribute:NSParagraphStyleAttributeName value:paraStyle range:NSMakeRange(0, atdString.length)];
-    }
-
-    // font
-    
-    
 }
 
 
