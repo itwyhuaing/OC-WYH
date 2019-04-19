@@ -25,7 +25,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor whiteColor];
+    self.view.backgroundColor = [UIColor purpleColor];
     [self configUI];
 }
 
@@ -149,7 +149,7 @@
 
 - (void)contentString{
     NSString *bodyContent = [HTMLFactory htmlFactoryWithAttributedString:self.editor.attributedText];
-    NSLog(@"\n %@ \n",self.editor.attributedText);
+    NSLog(@"\n\n 测试点 - 原生富文本：\n %@  \n\n",self.editor.attributedText);
     ShowWebVC *vc = [[ShowWebVC alloc] init];
     [vc showWebWithHTMLBody:bodyContent isWkWeb:TRUE];
     [self.navigationController pushViewController:vc animated:TRUE];

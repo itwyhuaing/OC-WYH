@@ -20,8 +20,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = NSStringFromClass(self.class);
-    self.thems = @[@"直接加载HTML，测试HTML ",@"固定富文本原生展示 -> 组装HTML",@"富文本原生编辑 -> 组装HTML",@"Hpple 解析"];
-    self.vcs   = @[@"HTMLTestVC",@"AttributedTextParserVC",@"RichTextEditorVC",@"HppleVC"];
+    self.thems = @[@"紫色背景可点击！紫色背景可点击！",@"直接加载HTML，测试HTML ",@"固定富文本原生展示 -> 组装HTML",@"富文本原生编辑 -> 组装HTML",@"Hpple 解析测试"];
+    self.vcs   = @[@"",@"HTMLTestVC",@"AttributedTextParserVC",@"RichTextEditorVC",@"HppleVC"];
 }
 
 #pragma mark - Table view data source

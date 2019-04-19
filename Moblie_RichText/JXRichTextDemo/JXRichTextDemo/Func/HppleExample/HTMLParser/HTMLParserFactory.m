@@ -66,7 +66,7 @@
                     [tmpString appendAttributedString:[[ImgParser currentHTMLParser] parserImgLabelsWithFontElement:theElement]];
                 } else if ([theElement.tagName isEqualToString:@"font"]) {
                     [tmpString appendAttributedString:[[FontParser currentHTMLParser] parserFontLabelsWithFontElement:theElement]];
-                }else if ([theElement.tagName isEqualToString:@"text"]){
+                }else if ([theElement.tagName isEqualToString:@"text"]) {
                     NSMutableAttributedString *p_tmpString = [[NSMutableAttributedString alloc] initWithString:@""];
                     theElement.content ? [p_tmpString appendAttributedString:[[NSAttributedString alloc] initWithString:theElement.content]] : nil;
                     [tmpString appendAttributedString:[p_parser addAttributesWithAts:p_tmpString attribute:p_parser.attributes]];

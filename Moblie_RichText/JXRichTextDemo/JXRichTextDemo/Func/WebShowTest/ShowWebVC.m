@@ -24,7 +24,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor whiteColor];
+    self.view.backgroundColor = [UIColor purpleColor];
 }
 
 - (void)showWebWithHTMLBody:(NSString *)bodyContent isWkWeb:(BOOL)isWkWeb{
@@ -34,7 +34,7 @@
         NSString *tmpString = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
         NSString *html = [tmpString stringByReplacingOccurrencesOfString:@"<!--      bodyContent-->" withString:bodyContent];
         htmlContent = html;
-        NSLog(@"\n\n %@ \n\n",html);
+        NSLog(@"\n\n 测试点 - 原生富文本组装 HTML 数据： \n %@ \n\n",html);
         if (isWkWeb) {
             [self.wkweb loadHTMLString:html baseURL:[NSURL URLWithString:@""]];
         }else{
@@ -45,7 +45,6 @@
 
 
 -(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
-    
     
     TextViewShowVC *vc = [[TextViewShowVC alloc] init];
     vc.htmlContent = htmlContent;
