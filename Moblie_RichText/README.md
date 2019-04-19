@@ -146,6 +146,10 @@ NSVerticalGlyphFormAttributeName;//垂直或者水平，value是 NSNumber，0表
 
   > 体验好不好，只有用了才知道。（用了之后就不想再用了）。
 
+
+---
+## 富文本编辑与展示 - 自定义“轮子”
+
 ##### 参考文献
 
 * 富文本展示

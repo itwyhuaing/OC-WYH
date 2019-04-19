@@ -28,7 +28,7 @@
     NSString        *strikeThrough      = [NSString stringWithFormat:@"%@",attributes[@"NSStrikethrough"]];
     NSString        *underline          = [NSString stringWithFormat:@"%@",attributes[@"NSUnderline"]];
     NSString        *underlineColor     = [NSString stringWithFormat:@"%@",attributes[@"NSUnderlineColor"]];
-    NSString        *fontSize           = [NSString stringWithFormat:@"font-size:%f",font.pointSize]; //  * self.adjustedFontSizeScale
+    NSString        *fontSize           = [NSString stringWithFormat:@"font-size:%fpx",font.pointSize]; 
     NSString        *color              = [NSString stringWithFormat:@"color:%@",[self hexStringWithColor:clr]];
     BOOL            bold                = [font.description containsString:@"font-weight: bold;"];
     CGFloat         obliFloat           = [NSString stringWithFormat:@"%@",attributes[@"NSObliqueness"]].floatValue;

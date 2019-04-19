@@ -26,16 +26,16 @@
         if (![self isEndWithLineBreakForContent:text]) {
             // <font>、<b>、<i>、<img>
             if (attachment) { // 图片
-                [itemContent appendString:[HTMLLabel htmlLabelForImgLabelWithTextAttributes:attributes]];
+                [itemContent appendString:[HTMLLabel htmlLabelFor_Img_LabelWithTextAttributes:attributes]];
             }else{  // 文字
-                [itemContent appendString:[HTMLLabel htmlLabelForFontLabelWithTextAttributes:attributes content:text]];
+                [itemContent appendString:[HTMLLabel htmlLabelFor_Font_LabelWithTextAttributes:attributes content:text]];
             }
             [paraContent appendString:itemContent];
             // <p>
             NSRange range = NSMakeRange(effectiveRange.location, effectiveRange.length);
             if ([self isEndParagraphWithAttributedString:attributedText range:range]) {
                 NSString *p_end = @"</p>";
-                NSMutableString *p = [[NSMutableString alloc] initWithString:[HTMLLabel htmlLabelForPLabelWithTextAttributes:attributes]];
+                NSMutableString *p = [[NSMutableString alloc] initWithString:[HTMLLabel htmlLabelFor_P_LabelWithTextAttributes:attributes]];
                 [p insertString:paraContent atIndex:p.length - p_end.length];
                 [rlt appendString:p];
                 paraContent = [[NSMutableString alloc] init];

@@ -1,8 +1,8 @@
 //
-//  WebVC.h
+//  HTMLTestVC.h
 //  JXRichTextDemo
 //
-//  Created by hnbwyh on 2019/4/17.
+//  Created by hnbwyh on 2019/4/19.
 //  Copyright © 2019 JiXia. All rights reserved.
 //
 
@@ -10,7 +10,9 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface WebVC : UIViewController
+@interface HTMLTestVC : UIViewController
+
+- (void)showWebWithTheWeb:(BOOL)isWkWeb;
 
 @end
 

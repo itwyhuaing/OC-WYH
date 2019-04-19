@@ -7,7 +7,7 @@
 //
 
 #import "RichTextEditorVC.h"
-#import "HTMLVC.h"
+#import "ShowWebVC.h"
 #import "HTMLFactory.h"
 #import "NSTextAttachment+RichText.h"
 #import "HppleVC.h"
@@ -97,17 +97,61 @@
 
 - (void)initStatus{
     NSMutableDictionary *typeingAttributes = [self.editor.typingAttributes mutableCopy];
+    // 黑色 - 常规 - 18
     typeingAttributes[NSFontAttributeName] = [UIFont systemFontOfSize:18.0 weight:UIFontWeightLight];
     typeingAttributes[NSForegroundColorAttributeName] = [UIColor blackColor];
-    self.editor.typingAttributes = typeingAttributes;
+    
+    // 首行无缩进 - 行间距 10 - j左对齐 - 字间距 10
+    NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc]init];
+    paragraphStyle.firstLineHeadIndent      = 0.f;
+    paragraphStyle.lineSpacing              = 0.0f;
+    paragraphStyle.alignment                = NSTextAlignmentLeft;
+    typeingAttributes[NSParagraphStyleAttributeName] = paragraphStyle;
+    typeingAttributes[NSKernAttributeName]  = @(0);
+    self.editor.typingAttributes            = typeingAttributes;
+    
     currentWeight = UIFontWeightLight;
 }
 
+// @"NSPara-HeadIndent",@"NSPara-LineSpacing",@"NSPara-Kern"
+- (void)paraHeadIndent {
+    NSMutableDictionary *typeingAttributes  = [self.editor.typingAttributes mutableCopy];
+    NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc]init];
+    paragraphStyle.firstLineHeadIndent      = 20.f;
+    paragraphStyle.lineSpacing              = 0.0f;
+    paragraphStyle.alignment                = NSTextAlignmentLeft;
+    typeingAttributes[NSParagraphStyleAttributeName] = paragraphStyle;
+    typeingAttributes[NSKernAttributeName]  = @(0);
+    self.editor.typingAttributes            = typeingAttributes;
+}
+
+- (void)paraLineSpacing {
+    NSMutableDictionary *typeingAttributes  = [self.editor.typingAttributes mutableCopy];
+    NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc]init];
+    paragraphStyle.firstLineHeadIndent      = 0.f;
+    paragraphStyle.lineSpacing              = 20.0f;
+    paragraphStyle.alignment                = NSTextAlignmentLeft;
+    typeingAttributes[NSParagraphStyleAttributeName] = paragraphStyle;
+    typeingAttributes[NSKernAttributeName]  = @(0);
+    self.editor.typingAttributes            = typeingAttributes;
+}
+
+- (void)paraKern {
+    NSMutableDictionary *typeingAttributes  = [self.editor.typingAttributes mutableCopy];
+    NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc]init];
+    paragraphStyle.firstLineHeadIndent      = 0.f;
+    paragraphStyle.lineSpacing              = 0.0f;
+    paragraphStyle.alignment                = NSTextAlignmentLeft;
+    typeingAttributes[NSParagraphStyleAttributeName] = paragraphStyle;
+    typeingAttributes[NSKernAttributeName]  = @(20);
+    self.editor.typingAttributes            = typeingAttributes;
+}
+
 - (void)contentString{
-    NSString *html = [HTMLFactory htmlFactoryWithAttributedString:self.editor.attributedText];
+    NSString *bodyContent = [HTMLFactory htmlFactoryWithAttributedString:self.editor.attributedText];
     NSLog(@"\n %@ \n",self.editor.attributedText);
-    HTMLVC *vc = [[HTMLVC alloc] init];
-    vc.cntHtml = html;
+    ShowWebVC *vc = [[ShowWebVC alloc] init];
+    [vc showWebWithHTMLBody:bodyContent isWkWeb:TRUE];
     [self.navigationController pushViewController:vc animated:TRUE];
 }
 
@@ -215,7 +259,7 @@
 
 - (void)configUI{
     // 控制按钮
-    UISegmentedControl *seg = [[UISegmentedControl alloc] initWithItems:@[@"输入样式调整",@"Web 展示",@"HTML获取并解析",@"复原点击"]];
+    UISegmentedControl *seg = [[UISegmentedControl alloc] initWithItems:@[@"样式调整",@"Web展示",@"HTML解析测试",@"复原点击"]];
     CGFloat maxY            = CGRectGetMaxY(self.navigationController.navigationBar.frame);
     CGRect  screenFrame     = [UIScreen mainScreen].bounds;
     [seg setFrame:CGRectMake(10, maxY, screenFrame.size.width-20.0, 56)];
@@ -255,7 +299,7 @@
 - (void)functions{
     UIAlertController *alrtVC = [[UIAlertController alloc] init];
     __weak typeof(self)weakSelf = self;
-    NSArray *thems = @[@"初始状态",@"图片",@"字体加粗大小28",@"红色",@"白色",@"斜体",@"删除线",@"下划线"];
+    NSArray *thems = @[@"初始状态",@"图片",@"字体加粗大小28",@"红色",@"白色",@"斜体",@"删除线",@"下划线",@"NSPara-HeadIndent",@"NSPara-LineSpacing",@"NSPara-Kern"];
     UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
         [weakSelf dismissViewControllerAnimated:FALSE completion:nil];
     }];
@@ -310,6 +354,21 @@
         case 7:
         {// 下划线
             [self fontUFunction];
+        }
+            break;
+        case 8:
+        {// NSParagraphStyle
+            [self paraHeadIndent];
+        }
+            break;
+        case 9:
+        {// NSParagraphStyle
+            [self paraLineSpacing];
+        }
+            break;
+        case 10:
+        {// NSParagraphStyle
+            [self paraKern];
         }
             break;
             

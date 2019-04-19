@@ -22,33 +22,18 @@
     return instance;
 }
 
-- (instancetype)init
-{
-    self = [super init];
-    if (self) {
-        static dispatch_once_t onceToken;
-        dispatch_once(&onceToken, ^{
-            _adjustedFirstLineHeadIndentScale   = 10.0;
-            _adjustedLineSpacingScale           = 6.0;
-            _adjustedKernScale                  = 10.0;
-            _adjustedFontSizeScale              = 2.6;
-        });
-    }
-    return self;
-}
-
 // <p></p>
-+ (NSString *)htmlLabelForPLabelWithTextAttributes:(NSDictionary *)attributes {
++ (NSString *)htmlLabelFor_P_LabelWithTextAttributes:(NSDictionary *)attributes {
     return [[PLabel currentLabel] pLabelWithTextAttributes:attributes];
 }
 
-// <font><b><i><s><u></u></s></i></b></font>
-+ (NSString *)htmlLabelForFontLabelWithTextAttributes:(NSDictionary *)attributes content:(NSString *)text {
+// <font>(<b><i><s><u></u></s></i></b>)</font>
++ (NSString *)htmlLabelFor_Font_LabelWithTextAttributes:(NSDictionary *)attributes content:(NSString *)text {
     return [[FontLabel currentLabel] fontLabelWithTextAttributes:attributes content:text];
 }
 
 // <img />
-+ (NSString *)htmlLabelForImgLabelWithTextAttributes:(NSDictionary *)attributes {
++ (NSString *)htmlLabelFor_Img_LabelWithTextAttributes:(NSDictionary *)attributes {
     return [[ImgLabel currentLabel] imgLabelWithTextAttributes:attributes];
 }
 

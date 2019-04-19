@@ -1,8 +1,8 @@
 //
-//  NativeTextViewVC.h
+//  TextViewShowVC.h
 //  JXRichTextDemo
 //
-//  Created by hnbwyh on 2019/4/17.
+//  Created by hnbwyh on 2019/4/19.
 //  Copyright © 2019 JiXia. All rights reserved.
 //
 
@@ -10,9 +10,9 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface NativeTextViewVC : UIViewController
+@interface TextViewShowVC : UIViewController
 
-@property (nonatomic,copy) NSString *htmlCnt;
+@property (nonatomic,copy)  NSString *htmlContent;
 
 @end
 

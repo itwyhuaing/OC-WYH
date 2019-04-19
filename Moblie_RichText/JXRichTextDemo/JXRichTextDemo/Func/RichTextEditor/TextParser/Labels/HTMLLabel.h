@@ -15,26 +15,14 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (instancetype)currentLabel;
 
-// 首行缩进
-@property (nonatomic,assign) CGFloat adjustedFirstLineHeadIndentScale;
-
-// 行间距
-@property (nonatomic,assign) CGFloat adjustedLineSpacingScale;
-
-// 字间距
-@property (nonatomic,assign) CGFloat adjustedKernScale;
-
-// 字体大小
-@property (nonatomic,assign) CGFloat adjustedFontSizeScale;
-
 // <p></p>
-+ (NSString *)htmlLabelForPLabelWithTextAttributes:(NSDictionary *)attributes;
++ (NSString *)htmlLabelFor_P_LabelWithTextAttributes:(NSDictionary *)attributes;
 
-// <font><b><i><s><u></u></s></i></b></font>
-+ (NSString *)htmlLabelForFontLabelWithTextAttributes:(NSDictionary *)attributes content:(NSString *)text;
+// <font>(<b><i><s><u></u></s></i></b>)</font>
++ (NSString *)htmlLabelFor_Font_LabelWithTextAttributes:(NSDictionary *)attributes content:(NSString *)text;
 
 // <img />
-+ (NSString *)htmlLabelForImgLabelWithTextAttributes:(NSDictionary *)attributes;
++ (NSString *)htmlLabelFor_Img_LabelWithTextAttributes:(NSDictionary *)attributes;
 
 @end
 

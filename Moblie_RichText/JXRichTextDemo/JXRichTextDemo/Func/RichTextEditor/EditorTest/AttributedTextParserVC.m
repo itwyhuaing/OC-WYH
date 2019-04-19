@@ -7,10 +7,8 @@
 //
 
 #import "AttributedTextParserVC.h"
-#import "HTMLVC.h"
 #import "HTMLFactory.h"
-
-
+#import "ShowWebVC.h"
 
 @interface AttributedTextParserVC ()
 
@@ -31,40 +29,37 @@
     // 展示区
     [self.view addSubview:self.editor];
     self.editor.backgroundColor = [UIColor cyanColor];
-    NSString *cnt = @"常规\n红色粗体28黑色粗体斜体蓝色测试数据中心少壮不努力老大体伤悲放假";
+    NSString *cnt = @"常规黑色粗体斜体测试数据中心少壮不努力老大体伤悲放假";
     NSMutableAttributedString *rltAttributedString = [[NSMutableAttributedString alloc] initWithString:cnt];
-    [rltAttributedString addAttributes:@{NSForegroundColorAttributeName:[UIColor redColor],
-                                         NSFontAttributeName:[UIFont systemFontOfSize:19.0 weight:UIFontWeightBold]
+    [rltAttributedString addAttributes:@{NSForegroundColorAttributeName:[UIColor blackColor],
+                                         NSFontAttributeName:[UIFont systemFontOfSize:18.0 weight:UIFontWeightLight],
+                                         NSKernAttributeName:@(3.0)
                                          }
-                                 range:NSMakeRange(2, 4)];
+                                 range:NSMakeRange(0, rltAttributedString.length)];
     [rltAttributedString addAttributes:@{NSForegroundColorAttributeName:[UIColor blackColor],
                                          NSFontAttributeName:[UIFont systemFontOfSize:28.0 weight:UIFontWeightLight]
                                          }
-                                 range:NSMakeRange(6, 4)];
-    [rltAttributedString addAttributes:@{
-                                         NSFontAttributeName:[UIFont systemFontOfSize:19.0 weight:UIFontWeightBold],
-                                         NSObliquenessAttributeName:@(0.3),
-                                         NSForegroundColorAttributeName:[UIColor blueColor]
-                                         } range:NSMakeRange(10, 6)];
+                                 range:NSMakeRange(rltAttributedString.length - 8, 8)];
+//    [rltAttributedString addAttributes:@{
+//                                         NSFontAttributeName:[UIFont systemFontOfSize:19.0 weight:UIFontWeightBold],
+//                                         NSObliquenessAttributeName:@(0.3),
+//                                         NSForegroundColorAttributeName:[UIColor blueColor]
+//                                         } range:NSMakeRange(10, 6)];
     
     NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc]init];
-    //paragraphStyle.lineHeightMultiple = 20.f;
-    //paragraphStyle.maximumLineHeight = 85.f;
-    //paragraphStyle.minimumLineHeight = 65.f;
-    paragraphStyle.firstLineHeadIndent = 10.f;
-    paragraphStyle.lineSpacing  = 6.0f;
-    paragraphStyle.alignment    = NSTextAlignmentLeft;
+    paragraphStyle.firstLineHeadIndent = 20.f;
+    paragraphStyle.lineSpacing         = 0.0;
+    paragraphStyle.alignment           = NSTextAlignmentLeft;
     [rltAttributedString addAttribute:NSParagraphStyleAttributeName value:paragraphStyle range:NSMakeRange(0, cnt.length)];
-    [rltAttributedString addAttribute:NSKernAttributeName value:@(10) range:NSMakeRange(0, cnt.length)];
     self.editor.attributedText = rltAttributedString;
     
 }
 
 -(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
 
-    NSString *html = [HTMLFactory htmlFactoryWithAttributedString:self.editor.attributedText];
-    HTMLVC *vc = [[HTMLVC alloc] init];
-    vc.cntHtml = html;
+    NSString *bodyContent = [HTMLFactory htmlFactoryWithAttributedString:self.editor.attributedText];
+    ShowWebVC *vc = [[ShowWebVC alloc] init];
+    [vc showWebWithHTMLBody:bodyContent isWkWeb:TRUE];
     [self.navigationController pushViewController:vc animated:TRUE];
     
 }
