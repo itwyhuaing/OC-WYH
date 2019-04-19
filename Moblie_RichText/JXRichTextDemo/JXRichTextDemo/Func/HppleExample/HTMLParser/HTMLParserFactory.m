@@ -69,10 +69,10 @@
                 }else if ([theElement.tagName isEqualToString:@"text"]) {
                     NSMutableAttributedString *p_tmpString = [[NSMutableAttributedString alloc] initWithString:@""];
                     theElement.content ? [p_tmpString appendAttributedString:[[NSAttributedString alloc] initWithString:theElement.content]] : nil;
-                    [tmpString appendAttributedString:[p_parser addAttributesWithAts:p_tmpString attribute:p_parser.attributes]];
+                    [tmpString appendAttributedString:p_tmpString];
                 }
             }
-            rlt = tmpString;
+            rlt = [p_parser addAttributesWithAts:tmpString attribute:p_parser.attributes];
         }
     }
     return rlt;

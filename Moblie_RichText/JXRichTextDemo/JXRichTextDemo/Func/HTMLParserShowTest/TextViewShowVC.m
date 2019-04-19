@@ -20,8 +20,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
+    NSLog(@"\n\n 测试点 - HTML : \n %@ \n\n",self.htmlContent);
     NSAttributedString *ats = [[HTMLParserFactory currentHTMLParserFactory] htmlParserFactoryWithHtmlContent:self.htmlContent];
-    NSLog(@"\n\n 测试点 - HTML : \n %@   \n 解析出原生富文本数据 :%@ \n\n",self.htmlContent,ats);
+    NSLog(@"\n\n 解析出原生富文本数据 :  \n %@ \n\n",ats);
     self.showTextView.attributedText = ats;
 }
 

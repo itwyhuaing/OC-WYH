@@ -33,12 +33,19 @@
         
         if ([key isEqualToString:@"text-indent"]) {
             NSString *value = [attributes valueForKey:key];
-            paraStyle.firstLineHeadIndent = 10;
+            if (value && ![value isEqualToString:@"auto"]) {
+                paraStyle.firstLineHeadIndent = value.floatValue;
+            }
         }
         
         if ([key isEqualToString:@"line-height"]) {
             NSString *value = [attributes valueForKey:key];
-            paraStyle.lineSpacing = 10;
+            if (value && ![value isEqualToString:@"auto"]) {
+                paraStyle.lineSpacing = value.floatValue;
+            }
+//            else {
+//                paraStyle.lineSpacing = 10.0;
+//            }
         }
         
         if ([key isEqualToString:@"text-align"]) {
@@ -55,12 +62,14 @@
         
         if ([key isEqualToString:@"letter-spacing"]) {
             NSString *value = [attributes valueForKey:key];
-            [ats addAttribute:NSKernAttributeName value:@(10) range:allRange];
+            if (value && ![value isEqualToString:@"auto"]) {
+                [ats addAttribute:NSKernAttributeName value:@(value.floatValue) range:allRange];
+            }
         }
         
         if ([key isEqualToString:@"font-size"]) {
             NSString *value = [attributes valueForKey:key];
-            [ats addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:18.0] range:allRange];
+            [ats addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:value.floatValue] range:allRange];
         }
         
         if ([key isEqualToString:@"color"]) {

@@ -81,6 +81,7 @@
             }
             // font 属性设置
             [tmpString addAttribute:NSForegroundColorAttributeName value:clr range:NSMakeRange(0, tmpString.length)];
+            [tmpString addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:fontSize weight:UIFontWeightLight] range:NSMakeRange(0, tmpString.length)];
             rlt = tmpString;
             
         }
