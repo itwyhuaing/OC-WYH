@@ -34,7 +34,7 @@
         NSString *tmpString = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
         NSString *html = [tmpString stringByReplacingOccurrencesOfString:@"<!--      bodyContent-->" withString:bodyContent];
         htmlContent = html;
-        NSLog(@"\n\n 测试点 - 原生富文本组装 HTML 数据： \n %@ \n\n",html);
+        //NSLog(@"\n\n 测试点 - 原生富文本组装 HTML 数据： \n %@ \n\n",html);
         if (isWkWeb) {
             [self.wkweb loadHTMLString:html baseURL:[NSURL URLWithString:@""]];
         }else{

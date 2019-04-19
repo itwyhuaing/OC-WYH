@@ -59,7 +59,7 @@
 
     NSAttributedString *ats = self.editor.attributedText;
     NSString *bodyContent = [HTMLFactory htmlFactoryWithAttributedString:ats];
-    NSLog(@"\n\n 测试点 - 原生富文本：\n %@ ",ats);
+    //NSLog(@"\n\n 测试点 - 原生富文本：\n %@ ",ats);
     ShowWebVC *vc = [[ShowWebVC alloc] init];
     [vc showWebWithHTMLBody:bodyContent isWkWeb:TRUE];
     [self.navigationController pushViewController:vc animated:TRUE];
