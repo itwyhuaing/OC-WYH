@@ -17,8 +17,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (NSAttributedString *)htmlParserFactoryWithHtmlContent:(NSString *)htmlContent;
 
-//- (NSAttributedString *)htmlContentWithPElement:(TFHppleElement *)pelement;
-
 @end
 
 NS_ASSUME_NONNULL_END

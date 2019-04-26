@@ -28,7 +28,8 @@
             if (attachment) { // 图片
                 [itemContent appendString:[HTMLLabel htmlLabelFor_Img_LabelWithTextAttributes:attributes]];
             }else{  // 文字
-                [itemContent appendString:[HTMLLabel htmlLabelFor_Font_LabelWithTextAttributes:attributes content:text]];
+                NSString *theText = [self parserBlankSpaceForContent:text];
+                [itemContent appendString:[HTMLLabel htmlLabelFor_Font_LabelWithTextAttributes:attributes content:theText]];
             }
             [paraContent appendString:itemContent];
             // <p>
@@ -65,11 +66,12 @@
 
 // 判定字符串格式
 + (BOOL)isEndWithLineBreakForContent:(NSString *)content{
-    /** 注意 \n 可能有空格的情况 : @"\n" @" \\ n" @" \n" @" \n "*/
+    /** 注意 \n 可能有空格的情况 : @"\n" @" \n" @" \n " @"\n " - 空格数量可变*/
     BOOL lineBreak = FALSE;
     if (content) {
-        content = [content stringByReplacingOccurrencesOfString:@"\n" withString:@"A"];
         content = [content stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+        content = [content stringByReplacingOccurrencesOfString:@"\n" withString:@"A"];
+        
         if ([content hasSuffix:@"A"]) {
             lineBreak = TRUE;
         }
@@ -77,4 +79,16 @@
     return lineBreak;
 }
 
+// 空格文本兼容处理 - &nbsp;
++ (NSString *)parserBlankSpaceForContent:(NSString *)content {
+    NSString *rltString = [NSString stringWithFormat:@"%@",content];
+    if (content) {
+        rltString = [content stringByReplacingOccurrencesOfString:@" " withString:@"&nbsp;"];
+    }
+    return rltString;
+}
+
 @end
+
+// Undefined symbol: _swift_getFieldAt
+
