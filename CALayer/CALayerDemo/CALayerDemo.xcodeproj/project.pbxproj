@@ -132,9 +132,9 @@
 		264920082147DA670010348A /* YHChartView */ = {
 			isa = PBXGroup;
 			children = (
+				264920112147DA670010348A /* YHChart */,
 				264920092147DA670010348A /* YHChartLine */,
 				2649200D2147DA670010348A /* YHChartPie */,
-				264920112147DA670010348A /* YHChart */,
 				264920142147DA670010348A /* YHChartBar */,
 			);
 			path = YHChartView;

@@ -194,5 +194,5 @@ typedef CF_ENUM(int32_t, CGLineJoin) {
 > 4. 具体代码可查看 LayerPathVC
 
 * CALayerDemo 中常见应用示例：卡片效果、镂空效果、线条绘制、电商商品加入购物车动画等持续更新 。。。
-* [RWGuidanceView - 镂空效果，用于新功能提醒](https://github.com/itwyhuaing/RWGuidanceView)
+* [JXHollowView - 镂空效果，用于新功能提醒](https://github.com/itwyhuaing/JXHollowView)
 * [YHChartView - 坐标系中曲线绘制](https://github.com/itwyhuaing/OC-WYH/tree/master/YHCompoent/YHChartView)
