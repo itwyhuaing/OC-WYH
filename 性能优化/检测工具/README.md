@@ -1,4 +1,4 @@
-# 
+#
 
 ### 白说
 * 使用真机设备。
@@ -17,3 +17,6 @@
 * [iOS Instrument使用之Timer Profiler耗时分析 - 新版](https://blog.csdn.net/kuangdacaikuang/article/details/78919702)
 * [使用 Instruments 做 iOS 程序性能调试](https://blog.csdn.net/wlly1/article/details/78461197)
 * [Leaks](http://www.jianshu.com/p/d0e149332380)
+
+
+* [Analyze 静态分析简单示例](https://www.jianshu.com/p/f344abae35ce)
