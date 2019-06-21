@@ -37,12 +37,12 @@
     __weak typeof(self)weakSelf = self;
     // 缓冲
     self.jxVoicePlayer.loadedScale = ^(NSTimeInterval ti) {
-        // NSLog(@"\n\n 缓冲百分比 ：%f \n\n",ti);
+         NSLog(@"\n\n 缓冲百分比 ：%f \n\n",ti);
     };
     
     // 播放
     self.jxVoicePlayer.playedScale = ^(NSTimeInterval ti) {
-        //NSLog(@" \n\n 播放进度 ：%f \n\n ",ti);
+        NSLog(@" \n\n 播放进度 ：%f \n\n ",ti);
         weakSelf.progess.progress = ti;
         CGFloat offsetX = ti * CGRectGetWidth(weakSelf.progess.frame);
         CGRect rect = weakSelf.circle.frame;

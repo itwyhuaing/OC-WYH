@@ -228,11 +228,11 @@
     
     //更新锁屏时的歌曲信息
     MPMediaItemArtwork *artWork = [[MPMediaItemArtwork alloc] initWithImage:[UIImage imageNamed:@"6"]];
-    [info setObject:@"Title" forKey:MPMediaItemPropertyTitle];
+    [info setObject:@"Title 测试" forKey:MPMediaItemPropertyTitle];
     //[info setObject:@"Artist" forKey:MPMediaItemPropertyAlbumArtist];
     //[info setObject:@"Lyrics" forKey:MPMediaItemPropertyLyrics];
     //[info setObject:@"Genre" forKey:MPMediaItemPropertyGenre];
-    [info setObject:@"Artist" forKey:MPMediaItemPropertyArtist];
+    [info setObject:@"Artist 测试" forKey:MPMediaItemPropertyArtist];
     //[info setObject:@"Rating" forKey:MPMediaItemPropertyRating];
     [info setObject:artWork forKey:MPMediaItemPropertyArtwork];
     //[info setObject:@"AssetURL" forKey:MPMediaItemPropertyAssetURL];
