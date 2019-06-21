@@ -8,11 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		261EEAA822BCD993006B4EEC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 261EEAA622BCD993006B4EEC /* Main.storyboard */; };
-		261EEAAA22BCD995006B4EEC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 261EEAA922BCD995006B4EEC /* Assets.xcassets */; };
 		261EEAAD22BCD995006B4EEC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 261EEAAB22BCD995006B4EEC /* LaunchScreen.storyboard */; };
 		261EEAB022BCD995006B4EEC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 261EEAAF22BCD995006B4EEC /* main.m */; };
 		261EEABC22BCD9EA006B4EEC /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 261EEAB922BCD9EA006B4EEC /* ViewController.m */; };
 		261EEABD22BCD9EA006B4EEC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 261EEABA22BCD9EA006B4EEC /* AppDelegate.m */; };
+		261EEACF22BCE431006B4EEC /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 261EEAB922BCD9EA006B4EEC /* ViewController.m */; };
+		261EEAD022BCE431006B4EEC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 261EEAAF22BCD995006B4EEC /* main.m */; };
+		261EEAD122BCE431006B4EEC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 261EEABA22BCD9EA006B4EEC /* AppDelegate.m */; };
+		261EEAD422BCE431006B4EEC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 261EEAAB22BCD995006B4EEC /* LaunchScreen.storyboard */; };
+		261EEAD622BCE431006B4EEC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 261EEAA622BCD993006B4EEC /* Main.storyboard */; };
+		261EEADC22BCE9B4006B4EEC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 261EEAA922BCD995006B4EEC /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,10 +31,19 @@
 		261EEAB922BCD9EA006B4EEC /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		261EEABA22BCD9EA006B4EEC /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		261EEABB22BCD9EA006B4EEC /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		261EEADA22BCE431006B4EEC /* TargetPrj_FH.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TargetPrj_FH.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		261EEADB22BCE431006B4EEC /* TargetPrj_FH.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = TargetPrj_FH.plist; path = "/Users/hnbwyh/HNBProject/STYHProject/OC/多Target/TargetPrj/TargetPrj_FH.plist"; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		261EEA9A22BCD993006B4EEC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		261EEAD222BCE431006B4EEC /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -44,6 +58,7 @@
 			children = (
 				261EEA9F22BCD993006B4EEC /* TargetPrj */,
 				261EEA9E22BCD993006B4EEC /* Products */,
+				261EEADB22BCE431006B4EEC /* TargetPrj_FH.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -51,6 +66,7 @@
 			isa = PBXGroup;
 			children = (
 				261EEA9D22BCD993006B4EEC /* TargetPrj.app */,
+				261EEADA22BCE431006B4EEC /* TargetPrj_FH.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -107,6 +123,23 @@
 			productReference = 261EEA9D22BCD993006B4EEC /* TargetPrj.app */;
 			productType = "com.apple.product-type.application";
 		};
+		261EEACD22BCE431006B4EEC /* TargetPrj_FH */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 261EEAD722BCE431006B4EEC /* Build configuration list for PBXNativeTarget "TargetPrj_FH" */;
+			buildPhases = (
+				261EEACE22BCE431006B4EEC /* Sources */,
+				261EEAD222BCE431006B4EEC /* Frameworks */,
+				261EEAD322BCE431006B4EEC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TargetPrj_FH;
+			productName = TargetPrj;
+			productReference = 261EEADA22BCE431006B4EEC /* TargetPrj_FH.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -135,6 +168,7 @@
 			projectRoot = "";
 			targets = (
 				261EEA9C22BCD993006B4EEC /* TargetPrj */,
+				261EEACD22BCE431006B4EEC /* TargetPrj_FH */,
 			);
 		};
 /* End PBXProject section */
@@ -145,8 +179,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				261EEAAD22BCD995006B4EEC /* LaunchScreen.storyboard in Resources */,
-				261EEAAA22BCD995006B4EEC /* Assets.xcassets in Resources */,
+				261EEADC22BCE9B4006B4EEC /* Assets.xcassets in Resources */,
 				261EEAA822BCD993006B4EEC /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		261EEAD322BCE431006B4EEC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				261EEAD422BCE431006B4EEC /* LaunchScreen.storyboard in Resources */,
+				261EEAD622BCE431006B4EEC /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -160,6 +203,16 @@
 				261EEABC22BCD9EA006B4EEC /* ViewController.m in Sources */,
 				261EEAB022BCD995006B4EEC /* main.m in Sources */,
 				261EEABD22BCD9EA006B4EEC /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		261EEACE22BCE431006B4EEC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				261EEACF22BCE431006B4EEC /* ViewController.m in Sources */,
+				261EEAD022BCE431006B4EEC /* main.m in Sources */,
+				261EEAD122BCE431006B4EEC /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -302,6 +355,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+					"kTargetNormal=1",
+				);
 				INFOPLIST_FILE = TargetPrj/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -331,6 +389,45 @@
 			};
 			name = Release;
 		};
+		261EEAD822BCE431006B4EEC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+					"kTargetFH=1",
+				);
+				INFOPLIST_FILE = TargetPrj_FH.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.jixia.www.TargetPrj;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		261EEAD922BCE431006B4EEC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = TargetPrj_FH.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.jixia.www.TargetPrj;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -348,6 +445,15 @@
 			buildConfigurations = (
 				261EEAB422BCD995006B4EEC /* Debug */,
 				261EEAB522BCD995006B4EEC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		261EEAD722BCE431006B4EEC /* Build configuration list for PBXNativeTarget "TargetPrj_FH" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				261EEAD822BCE431006B4EEC /* Debug */,
+				261EEAD922BCE431006B4EEC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
