@@ -20,6 +20,4 @@
     self.view.backgroundColor = [UIColor whiteColor];
 }
 
-// https://blog.csdn.net/ycf03211230/article/details/80506505
-
 @end
