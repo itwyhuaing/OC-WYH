@@ -17,7 +17,8 @@
 		261EEAD122BCE431006B4EEC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 261EEABA22BCD9EA006B4EEC /* AppDelegate.m */; };
 		261EEAD422BCE431006B4EEC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 261EEAAB22BCD995006B4EEC /* LaunchScreen.storyboard */; };
 		261EEAD622BCE431006B4EEC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 261EEAA622BCD993006B4EEC /* Main.storyboard */; };
-		261EEADC22BCE9B4006B4EEC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 261EEAA922BCD995006B4EEC /* Assets.xcassets */; };
+		264A6BBD22C2207A00ADDB4B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 261EEAA922BCD995006B4EEC /* Assets.xcassets */; };
+		264A6BBE22C2211500ADDB4B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 261EEAA922BCD995006B4EEC /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,7 +59,6 @@
 			children = (
 				261EEA9F22BCD993006B4EEC /* TargetPrj */,
 				261EEA9E22BCD993006B4EEC /* Products */,
-				261EEADB22BCE431006B4EEC /* TargetPrj_FH.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -80,6 +80,7 @@
 				261EEAA922BCD995006B4EEC /* Assets.xcassets */,
 				261EEAAB22BCD995006B4EEC /* LaunchScreen.storyboard */,
 				261EEAAE22BCD995006B4EEC /* Info.plist */,
+				261EEADB22BCE431006B4EEC /* TargetPrj_FH.plist */,
 				261EEAAF22BCD995006B4EEC /* main.m */,
 			);
 			path = TargetPrj;
@@ -179,7 +180,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				261EEAAD22BCD995006B4EEC /* LaunchScreen.storyboard in Resources */,
-				261EEADC22BCE9B4006B4EEC /* Assets.xcassets in Resources */,
+				264A6BBD22C2207A00ADDB4B /* Assets.xcassets in Resources */,
 				261EEAA822BCD993006B4EEC /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -189,6 +190,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				261EEAD422BCE431006B4EEC /* LaunchScreen.storyboard in Resources */,
+				264A6BBE22C2211500ADDB4B /* Assets.xcassets in Resources */,
 				261EEAD622BCE431006B4EEC /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
