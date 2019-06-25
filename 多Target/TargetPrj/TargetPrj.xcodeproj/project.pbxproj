@@ -34,6 +34,7 @@
 		261EEABB22BCD9EA006B4EEC /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		261EEADA22BCE431006B4EEC /* TargetPrj_FH.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TargetPrj_FH.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		261EEADB22BCE431006B4EEC /* TargetPrj_FH.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = TargetPrj_FH.plist; path = "/Users/hnbwyh/HNBProject/STYHProject/OC/多Target/TargetPrj/TargetPrj_FH.plist"; sourceTree = "<absolute>"; };
+		264A6BBF22C2269D00ADDB4B /* Config.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Config.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +99,7 @@
 		261EEAB722BCD9EA006B4EEC /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				264A6BBF22C2269D00ADDB4B /* Config.h */,
 				261EEAB822BCD9EA006B4EEC /* AppDelegate.h */,
 				261EEABA22BCD9EA006B4EEC /* AppDelegate.m */,
 			);
