@@ -22,13 +22,22 @@
     // Override point for customization after application launch.
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = [UIColor whiteColor];
+    
 #ifdef kTargetFH
-    NSLog(@"海房");
+    NSLog(@" \n 方式一：海房 \n ");
     [self fh];
 #else
-    NSLog(@"移民");
+    NSLog(@" \n 方式一：移民 \n ");
     [self ym];
 #endif
+    
+    if (kTarget) {
+        NSLog(@" \n 方式二：海房 \n ");
+    }else {
+        NSLog(@" \n 方式二：移民 \n ");
+    }
+    
+    
     [self.window makeKeyAndVisible];
     return YES;
 }

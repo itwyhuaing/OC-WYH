@@ -31,6 +31,7 @@
 		2648EA0722C310E5009D18AB /* TabBarAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 2648EA0422C310E5009D18AB /* TabBarAdapter.m */; };
 		2648EA0A22C310FE009D18AB /* BaseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2648EA0922C310FE009D18AB /* BaseVC.m */; };
 		2648EA0B22C310FE009D18AB /* BaseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2648EA0922C310FE009D18AB /* BaseVC.m */; };
+		2648EA0D22C31D2B009D18AB /* TargetPrj_FH.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2648EA0C22C31D2B009D18AB /* TargetPrj_FH.plist */; };
 		264A6BBD22C2207A00ADDB4B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 261EEAA922BCD995006B4EEC /* Assets.xcassets */; };
 		264A6BBE22C2211500ADDB4B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 261EEAA922BCD995006B4EEC /* Assets.xcassets */; };
 		7E5FBF78DA4DC935399010C3 /* Pods_TargetPrj.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5244C45B9762CC30424A3FE1 /* Pods_TargetPrj.framework */; };
@@ -51,7 +52,6 @@
 		261EEABA22BCD9EA006B4EEC /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		261EEABB22BCD9EA006B4EEC /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		261EEADA22BCE431006B4EEC /* TargetPrj_FH.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TargetPrj_FH.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		261EEADB22BCE431006B4EEC /* TargetPrj_FH.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = TargetPrj_FH.plist; path = "/Users/hnbwyh/HNBProject/STYHProject/OC/多Target/TargetPrj/TargetPrj_FH.plist"; sourceTree = "<absolute>"; };
 		2648E9E822C30FB4009D18AB /* HomeVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeVC.h; sourceTree = "<group>"; };
 		2648E9E922C30FB4009D18AB /* HomeVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeVC.m; sourceTree = "<group>"; };
 		2648E9EC22C30FC6009D18AB /* DtVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DtVC.h; sourceTree = "<group>"; };
@@ -66,6 +66,7 @@
 		2648EA0422C310E5009D18AB /* TabBarAdapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarAdapter.m; sourceTree = "<group>"; };
 		2648EA0822C310FE009D18AB /* BaseVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseVC.h; sourceTree = "<group>"; };
 		2648EA0922C310FE009D18AB /* BaseVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseVC.m; sourceTree = "<group>"; };
+		2648EA0C22C31D2B009D18AB /* TargetPrj_FH.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = TargetPrj_FH.plist; sourceTree = "<group>"; };
 		5244C45B9762CC30424A3FE1 /* Pods_TargetPrj.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TargetPrj.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		74F042CB5983466533B1E307 /* Pods_TargetPrj_FH.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TargetPrj_FH.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		87702F8D813A6DFDDD87A253 /* Pods-TargetPrj.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TargetPrj.release.xcconfig"; path = "Pods/Target Support Files/Pods-TargetPrj/Pods-TargetPrj.release.xcconfig"; sourceTree = "<group>"; };
@@ -129,7 +130,7 @@
 				261EEAA922BCD995006B4EEC /* Assets.xcassets */,
 				261EEAAB22BCD995006B4EEC /* LaunchScreen.storyboard */,
 				261EEAAE22BCD995006B4EEC /* Info.plist */,
-				261EEADB22BCE431006B4EEC /* TargetPrj_FH.plist */,
+				2648EA0C22C31D2B009D18AB /* TargetPrj_FH.plist */,
 				261EEAAF22BCD995006B4EEC /* main.m */,
 			);
 			path = TargetPrj;
@@ -323,6 +324,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2648EA0D22C31D2B009D18AB /* TargetPrj_FH.plist in Resources */,
 				261EEAD422BCE431006B4EEC /* LaunchScreen.storyboard in Resources */,
 				264A6BBE22C2211500ADDB4B /* Assets.xcassets in Resources */,
 				261EEAD622BCE431006B4EEC /* Main.storyboard in Resources */,
@@ -605,6 +607,7 @@
 					"DEBUG=1",
 					"$(inherited)",
 					"kTargetNormal=1",
+					"kTarget=0",
 				);
 				INFOPLIST_FILE = TargetPrj/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -624,6 +627,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"COCOAPODS=1",
+					"kTargetNormal=1",
+					"kTarget=0",
+				);
 				INFOPLIST_FILE = TargetPrj/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -646,6 +655,7 @@
 					"DEBUG=1",
 					"$(inherited)",
 					"kTargetFH=1",
+					"kTarget=1",
 				);
 				INFOPLIST_FILE = TargetPrj/TargetPrj_FH.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -653,7 +663,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.jixia.www.TargetPrj;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jixia.www.TargetPrjFH;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -665,13 +675,19 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIconFH;
 				CODE_SIGN_STYLE = Automatic;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"COCOAPODS=1",
+					"kTargetFH=1",
+					"kTarget=1",
+				);
 				INFOPLIST_FILE = TargetPrj/TargetPrj_FH.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.jixia.www.TargetPrj;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jixia.www.TargetPrjFH;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
