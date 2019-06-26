@@ -17,11 +17,29 @@
 		261EEAD122BCE431006B4EEC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 261EEABA22BCD9EA006B4EEC /* AppDelegate.m */; };
 		261EEAD422BCE431006B4EEC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 261EEAAB22BCD995006B4EEC /* LaunchScreen.storyboard */; };
 		261EEAD622BCE431006B4EEC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 261EEAA622BCD993006B4EEC /* Main.storyboard */; };
+		2648E9EA22C30FB4009D18AB /* HomeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2648E9E922C30FB4009D18AB /* HomeVC.m */; };
+		2648E9EB22C30FB4009D18AB /* HomeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2648E9E922C30FB4009D18AB /* HomeVC.m */; };
+		2648E9EE22C30FC6009D18AB /* DtVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2648E9ED22C30FC6009D18AB /* DtVC.m */; };
+		2648E9EF22C30FC6009D18AB /* DtVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2648E9ED22C30FC6009D18AB /* DtVC.m */; };
+		2648E9F222C31030009D18AB /* TrVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2648E9F122C31030009D18AB /* TrVC.m */; };
+		2648E9F322C31030009D18AB /* TrVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2648E9F122C31030009D18AB /* TrVC.m */; };
+		2648E9F622C3103E009D18AB /* MsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2648E9F522C3103E009D18AB /* MsVC.m */; };
+		2648E9F722C3103E009D18AB /* MsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2648E9F522C3103E009D18AB /* MsVC.m */; };
+		2648EA0022C31099009D18AB /* PersonVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2648E9FF22C31099009D18AB /* PersonVC.m */; };
+		2648EA0122C31099009D18AB /* PersonVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2648E9FF22C31099009D18AB /* PersonVC.m */; };
+		2648EA0622C310E5009D18AB /* TabBarAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 2648EA0422C310E5009D18AB /* TabBarAdapter.m */; };
+		2648EA0722C310E5009D18AB /* TabBarAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 2648EA0422C310E5009D18AB /* TabBarAdapter.m */; };
+		2648EA0A22C310FE009D18AB /* BaseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2648EA0922C310FE009D18AB /* BaseVC.m */; };
+		2648EA0B22C310FE009D18AB /* BaseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2648EA0922C310FE009D18AB /* BaseVC.m */; };
 		264A6BBD22C2207A00ADDB4B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 261EEAA922BCD995006B4EEC /* Assets.xcassets */; };
 		264A6BBE22C2211500ADDB4B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 261EEAA922BCD995006B4EEC /* Assets.xcassets */; };
+		7E5FBF78DA4DC935399010C3 /* Pods_TargetPrj.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5244C45B9762CC30424A3FE1 /* Pods_TargetPrj.framework */; };
+		AF701F425577C23060EAAFDB /* Pods_TargetPrj_FH.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74F042CB5983466533B1E307 /* Pods_TargetPrj_FH.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1E97F6C981A497D203E51B86 /* Pods-TargetPrj.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TargetPrj.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TargetPrj/Pods-TargetPrj.debug.xcconfig"; sourceTree = "<group>"; };
+		20B7EE1981344C567F8BAFAA /* Pods-TargetPrj_FH.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TargetPrj_FH.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TargetPrj_FH/Pods-TargetPrj_FH.debug.xcconfig"; sourceTree = "<group>"; };
 		261EEA9D22BCD993006B4EEC /* TargetPrj.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TargetPrj.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		261EEAA722BCD993006B4EEC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		261EEAA922BCD995006B4EEC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -34,7 +52,24 @@
 		261EEABB22BCD9EA006B4EEC /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		261EEADA22BCE431006B4EEC /* TargetPrj_FH.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TargetPrj_FH.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		261EEADB22BCE431006B4EEC /* TargetPrj_FH.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = TargetPrj_FH.plist; path = "/Users/hnbwyh/HNBProject/STYHProject/OC/多Target/TargetPrj/TargetPrj_FH.plist"; sourceTree = "<absolute>"; };
-		264A6BBF22C2269D00ADDB4B /* Config.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Config.h; sourceTree = "<group>"; };
+		2648E9E822C30FB4009D18AB /* HomeVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeVC.h; sourceTree = "<group>"; };
+		2648E9E922C30FB4009D18AB /* HomeVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeVC.m; sourceTree = "<group>"; };
+		2648E9EC22C30FC6009D18AB /* DtVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DtVC.h; sourceTree = "<group>"; };
+		2648E9ED22C30FC6009D18AB /* DtVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DtVC.m; sourceTree = "<group>"; };
+		2648E9F022C31030009D18AB /* TrVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TrVC.h; sourceTree = "<group>"; };
+		2648E9F122C31030009D18AB /* TrVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TrVC.m; sourceTree = "<group>"; };
+		2648E9F422C3103E009D18AB /* MsVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MsVC.h; sourceTree = "<group>"; };
+		2648E9F522C3103E009D18AB /* MsVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MsVC.m; sourceTree = "<group>"; };
+		2648E9FE22C31099009D18AB /* PersonVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PersonVC.h; sourceTree = "<group>"; };
+		2648E9FF22C31099009D18AB /* PersonVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PersonVC.m; sourceTree = "<group>"; };
+		2648EA0322C310E5009D18AB /* TabBarAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarAdapter.h; sourceTree = "<group>"; };
+		2648EA0422C310E5009D18AB /* TabBarAdapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarAdapter.m; sourceTree = "<group>"; };
+		2648EA0822C310FE009D18AB /* BaseVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseVC.h; sourceTree = "<group>"; };
+		2648EA0922C310FE009D18AB /* BaseVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseVC.m; sourceTree = "<group>"; };
+		5244C45B9762CC30424A3FE1 /* Pods_TargetPrj.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TargetPrj.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		74F042CB5983466533B1E307 /* Pods_TargetPrj_FH.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TargetPrj_FH.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		87702F8D813A6DFDDD87A253 /* Pods-TargetPrj.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TargetPrj.release.xcconfig"; path = "Pods/Target Support Files/Pods-TargetPrj/Pods-TargetPrj.release.xcconfig"; sourceTree = "<group>"; };
+		BA3FA15192FA99BCD46BAB95 /* Pods-TargetPrj_FH.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TargetPrj_FH.release.xcconfig"; path = "Pods/Target Support Files/Pods-TargetPrj_FH/Pods-TargetPrj_FH.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,6 +77,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7E5FBF78DA4DC935399010C3 /* Pods_TargetPrj.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -49,17 +85,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF701F425577C23060EAAFDB /* Pods_TargetPrj_FH.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0DBB0BAC2F36953F44CA90E0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5244C45B9762CC30424A3FE1 /* Pods_TargetPrj.framework */,
+				74F042CB5983466533B1E307 /* Pods_TargetPrj_FH.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		261EEA9422BCD993006B4EEC = {
 			isa = PBXGroup;
 			children = (
 				261EEA9F22BCD993006B4EEC /* TargetPrj */,
 				261EEA9E22BCD993006B4EEC /* Products */,
+				97B13E1A4C048DFABB37B035 /* Pods */,
+				0DBB0BAC2F36953F44CA90E0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -90,6 +138,11 @@
 		261EEAB622BCD9E4006B4EEC /* Func */ = {
 			isa = PBXGroup;
 			children = (
+				2648E9E622C30F7D009D18AB /* Home */,
+				2648E9E522C30F7D009D18AB /* Detail */,
+				2648E9E722C30F7D009D18AB /* Tribe */,
+				2648E9E322C30F7D009D18AB /* Message */,
+				2648E9E422C30F7D009D18AB /* Person */,
 				261EEABB22BCD9EA006B4EEC /* ViewController.h */,
 				261EEAB922BCD9EA006B4EEC /* ViewController.m */,
 			);
@@ -99,11 +152,86 @@
 		261EEAB722BCD9EA006B4EEC /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				264A6BBF22C2269D00ADDB4B /* Config.h */,
 				261EEAB822BCD9EA006B4EEC /* AppDelegate.h */,
 				261EEABA22BCD9EA006B4EEC /* AppDelegate.m */,
+				2648EA0522C310E5009D18AB /* BaseVC */,
+				2648EA0222C310E5009D18AB /* Tab */,
 			);
 			path = Main;
+			sourceTree = "<group>";
+		};
+		2648E9E322C30F7D009D18AB /* Message */ = {
+			isa = PBXGroup;
+			children = (
+				2648E9F422C3103E009D18AB /* MsVC.h */,
+				2648E9F522C3103E009D18AB /* MsVC.m */,
+			);
+			path = Message;
+			sourceTree = "<group>";
+		};
+		2648E9E422C30F7D009D18AB /* Person */ = {
+			isa = PBXGroup;
+			children = (
+				2648E9FE22C31099009D18AB /* PersonVC.h */,
+				2648E9FF22C31099009D18AB /* PersonVC.m */,
+			);
+			path = Person;
+			sourceTree = "<group>";
+		};
+		2648E9E522C30F7D009D18AB /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				2648E9EC22C30FC6009D18AB /* DtVC.h */,
+				2648E9ED22C30FC6009D18AB /* DtVC.m */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		2648E9E622C30F7D009D18AB /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				2648E9E822C30FB4009D18AB /* HomeVC.h */,
+				2648E9E922C30FB4009D18AB /* HomeVC.m */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		2648E9E722C30F7D009D18AB /* Tribe */ = {
+			isa = PBXGroup;
+			children = (
+				2648E9F022C31030009D18AB /* TrVC.h */,
+				2648E9F122C31030009D18AB /* TrVC.m */,
+			);
+			path = Tribe;
+			sourceTree = "<group>";
+		};
+		2648EA0222C310E5009D18AB /* Tab */ = {
+			isa = PBXGroup;
+			children = (
+				2648EA0322C310E5009D18AB /* TabBarAdapter.h */,
+				2648EA0422C310E5009D18AB /* TabBarAdapter.m */,
+			);
+			path = Tab;
+			sourceTree = "<group>";
+		};
+		2648EA0522C310E5009D18AB /* BaseVC */ = {
+			isa = PBXGroup;
+			children = (
+				2648EA0822C310FE009D18AB /* BaseVC.h */,
+				2648EA0922C310FE009D18AB /* BaseVC.m */,
+			);
+			path = BaseVC;
+			sourceTree = "<group>";
+		};
+		97B13E1A4C048DFABB37B035 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1E97F6C981A497D203E51B86 /* Pods-TargetPrj.debug.xcconfig */,
+				87702F8D813A6DFDDD87A253 /* Pods-TargetPrj.release.xcconfig */,
+				20B7EE1981344C567F8BAFAA /* Pods-TargetPrj_FH.debug.xcconfig */,
+				BA3FA15192FA99BCD46BAB95 /* Pods-TargetPrj_FH.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -113,9 +241,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 261EEAB322BCD995006B4EEC /* Build configuration list for PBXNativeTarget "TargetPrj" */;
 			buildPhases = (
+				EE83F0C699E3B52417610A16 /* [CP] Check Pods Manifest.lock */,
 				261EEA9922BCD993006B4EEC /* Sources */,
 				261EEA9A22BCD993006B4EEC /* Frameworks */,
 				261EEA9B22BCD993006B4EEC /* Resources */,
+				D06098766105085F0E0CE710 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -130,9 +260,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 261EEAD722BCE431006B4EEC /* Build configuration list for PBXNativeTarget "TargetPrj_FH" */;
 			buildPhases = (
+				B4E8A9B6942C61C28945482C /* [CP] Check Pods Manifest.lock */,
 				261EEACE22BCE431006B4EEC /* Sources */,
 				261EEAD222BCE431006B4EEC /* Frameworks */,
 				261EEAD322BCE431006B4EEC /* Resources */,
+				0BE00C08091C209D82158B05 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -199,14 +331,116 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0BE00C08091C209D82158B05 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-TargetPrj_FH/Pods-TargetPrj_FH-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/CYLTabBarController/CYLTabBarController.framework",
+				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CYLTabBarController.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TargetPrj_FH/Pods-TargetPrj_FH-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B4E8A9B6942C61C28945482C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TargetPrj_FH-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D06098766105085F0E0CE710 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-TargetPrj/Pods-TargetPrj-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/CYLTabBarController/CYLTabBarController.framework",
+				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CYLTabBarController.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TargetPrj/Pods-TargetPrj-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EE83F0C699E3B52417610A16 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TargetPrj-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		261EEA9922BCD993006B4EEC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2648E9EE22C30FC6009D18AB /* DtVC.m in Sources */,
+				2648EA0622C310E5009D18AB /* TabBarAdapter.m in Sources */,
 				261EEABC22BCD9EA006B4EEC /* ViewController.m in Sources */,
+				2648EA0A22C310FE009D18AB /* BaseVC.m in Sources */,
+				2648E9EA22C30FB4009D18AB /* HomeVC.m in Sources */,
 				261EEAB022BCD995006B4EEC /* main.m in Sources */,
+				2648E9F222C31030009D18AB /* TrVC.m in Sources */,
+				2648EA0022C31099009D18AB /* PersonVC.m in Sources */,
 				261EEABD22BCD9EA006B4EEC /* AppDelegate.m in Sources */,
+				2648E9F622C3103E009D18AB /* MsVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -214,9 +448,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2648E9EF22C30FC6009D18AB /* DtVC.m in Sources */,
+				2648EA0722C310E5009D18AB /* TabBarAdapter.m in Sources */,
 				261EEACF22BCE431006B4EEC /* ViewController.m in Sources */,
+				2648EA0B22C310FE009D18AB /* BaseVC.m in Sources */,
+				2648E9EB22C30FB4009D18AB /* HomeVC.m in Sources */,
 				261EEAD022BCE431006B4EEC /* main.m in Sources */,
+				2648E9F322C31030009D18AB /* TrVC.m in Sources */,
+				2648EA0122C31099009D18AB /* PersonVC.m in Sources */,
 				261EEAD122BCE431006B4EEC /* AppDelegate.m in Sources */,
+				2648E9F722C3103E009D18AB /* MsVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -356,6 +597,7 @@
 		};
 		261EEAB422BCD995006B4EEC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1E97F6C981A497D203E51B86 /* Pods-TargetPrj.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -378,6 +620,7 @@
 		};
 		261EEAB522BCD995006B4EEC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 87702F8D813A6DFDDD87A253 /* Pods-TargetPrj.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -395,6 +638,7 @@
 		};
 		261EEAD822BCE431006B4EEC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 20B7EE1981344C567F8BAFAA /* Pods-TargetPrj_FH.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIconFH;
 				CODE_SIGN_STYLE = Automatic;
@@ -403,7 +647,7 @@
 					"$(inherited)",
 					"kTargetFH=1",
 				);
-				INFOPLIST_FILE = TargetPrj_FH.plist;
+				INFOPLIST_FILE = TargetPrj/TargetPrj_FH.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -417,10 +661,11 @@
 		};
 		261EEAD922BCE431006B4EEC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BA3FA15192FA99BCD46BAB95 /* Pods-TargetPrj_FH.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIconFH;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = TargetPrj_FH.plist;
+				INFOPLIST_FILE = TargetPrj/TargetPrj_FH.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

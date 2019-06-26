@@ -1,7 +1,9 @@
 # 多Target
 
-* 创建 Target
 
+##### 多 target 工程创建
+
+* 创建 Target
 
 1. 新建一个新的工程， 有一套相匹配的 .plist 、.app 、target 三个工程文件
 
@@ -57,3 +59,12 @@
 
 // 4.4
 ![image](https://github.com/itwyhuaing/OC-WYH/blob/master/多Target/image/15.png)
+
+
+##### 参考
+
+* [ios Xcode 9 多个target的设置]( https://blog.csdn.net/ycf03211230/article/details/80506505)
+
+* [一份Cocoapods支持多个target - 方式一](https://www.jianshu.com/p/6c13813b8beb)
+
+* [CocoaPods支持多target - 方式二](https://ackirin.com/2018/10/30/cocoapodszhi-chi-duo-target/)

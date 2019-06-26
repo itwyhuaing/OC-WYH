@@ -7,6 +7,9 @@
 //
 
 #import "AppDelegate.h"
+#import "HomeVC.h"
+#import "DtVC.h"
+#import "TabBarAdapter.h"
 
 @interface AppDelegate ()
 
@@ -17,6 +20,16 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    self.window.backgroundColor = [UIColor whiteColor];
+#ifdef kTargetFH
+    NSLog(@"海房");
+    [self fh];
+#else
+    NSLog(@"移民");
+    [self ym];
+#endif
+    [self.window makeKeyAndVisible];
     return YES;
 }
 
@@ -47,5 +60,16 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
+#pragma mark --- 多 Target 业务拆分
+
+- (void)fh {
+//    self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:[HomeVC new]];
+    self.window.rootViewController = [[TabBarAdapter defaultInstance] adapterTabBarVCWithType:WindowRootTabBarTypeFangChan];
+}
+
+- (void)ym {
+//    self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:[DtVC new]];
+    self.window.rootViewController = [[TabBarAdapter defaultInstance] adapterTabBarVCWithType:WindowRootTabBarTypeYiMing];
+}
 
 @end

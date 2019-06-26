@@ -18,14 +18,6 @@
     [super viewDidLoad];
     self.title = NSStringFromClass(self.class);
     self.view.backgroundColor = [UIColor whiteColor];
-    
-#ifdef kTargetFH
-    NSLog(@"海房");
-#else
-    NSLog(@"移民");
-#endif
-
-    
 }
 
 @end

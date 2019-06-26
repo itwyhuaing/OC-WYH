@@ -1,0 +1,17 @@
+source 'https://github.com/CocoaPods/Specs.git'
+use_frameworks!
+inhibit_all_warnings!
+platform :ios, '9.0'
+
+def common_pods
+  pod 'CYLTabBarController', '~> 1.18.0'
+  pod 'Masonry', '~> 1.1.0'
+end
+
+target 'TargetPrj' do
+  common_pods
+end
+
+target 'TargetPrj_FH' do
+  common_pods
+end
