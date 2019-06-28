@@ -14,3 +14,5 @@ Safety 记录。
 #### 参考
 
 * [来，教你如何破解一个 iOS APP](http://netsecurity.51cto.com/art/201810/584834.htm)
+
+* [iOS开发如何避免安全隐患](http://www.cocoachina.com/articles/27047)

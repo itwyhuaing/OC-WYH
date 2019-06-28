@@ -7,11 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TabBarAdapter.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 
+- (void)configTabBarVCWithType:(WindowRootTabBarType)type;
 
 @end
 

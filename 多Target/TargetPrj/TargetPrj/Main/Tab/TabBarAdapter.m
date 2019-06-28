@@ -25,6 +25,9 @@
 @property (nonatomic, strong) UINavigationController *msgNav;
 @property (nonatomic, strong) UINavigationController *myNav;
 
+@property (nonatomic,strong) CYLTabBarController *ymTabbarController;
+@property (nonatomic,strong) CYLTabBarController *hfTabbarController;
+
 @end
 
 @implementation TabBarAdapter
@@ -45,26 +48,32 @@
     self.tabbarController = tabbarController;
     self.tabbarController.delegate = self;
     self.tabbarController.tabBar.backgroundColor = [UIColor whiteColor];
-//    self.tabbarController.tabBar.layer.borderColor = [UIColor redColor].CGColor;
-//    self.tabbarController.tabBar.layer.backgroundColor = [UIColor purpleColor].CGColor;
     [self customizeInterface];
     return self.tabbarController;
 }
 
 - (CYLTabBarController *)resetTabbarControllerWithType:(WindowRootTabBarType)type {
     if (type == WindowRootTabBarTypeFangChan) {
+        //NSLog(@"\n 海房 => %@ \n",self.hfTabbarController);
         return self.hfTabbarController;
     } else {
+        //NSLog(@"\n 移民 => %@ \n",self.ymTabbarController);
         return self.ymTabbarController;
     }
 }
 
 - (CYLTabBarController *)ymTabbarController {
-    return [[CYLTabBarController alloc]initWithViewControllers:self.ymvcs tabBarItemsAttributes:self.ymitems];
+    if (!_ymTabbarController) {
+        _ymTabbarController = [[CYLTabBarController alloc]initWithViewControllers:self.ymvcs tabBarItemsAttributes:self.ymitems];
+    }
+    return _ymTabbarController;
 }
 
 - (CYLTabBarController *)hfTabbarController {
-    return [[CYLTabBarController alloc]initWithViewControllers:self.hfvcs tabBarItemsAttributes:self.hfitems];
+    if (!_hfTabbarController) {
+        _hfTabbarController = [[CYLTabBarController alloc]initWithViewControllers:self.hfvcs tabBarItemsAttributes:self.hfitems];
+    }
+    return _hfTabbarController;
 }
 
 - (NSArray *)ymvcs {
@@ -172,6 +181,22 @@
 
 
 #pragma mark --- UITabBarControllerDelegate
+
+- (BOOL)tabBarController:(UITabBarController *)tabBarController shouldSelectViewController:(UIViewController *)viewController {
+    NSLog(@"\n %s => %@ \n",__FUNCTION__,viewController);
+    BOOL should = YES;
+    [self.tabbarController updateSelectionStatusIfNeededForTabBarController:tabBarController shouldSelectViewController:viewController shouldSelect:should];
+    UIControl *selectedTabButton = [viewController.tabBarItem cyl_tabButton];
+    if (selectedTabButton.selected) {
+        @try {
+            //[[[self class] cyl_topmostViewController] performSelector:@selector(refresh)];
+            NSLog(@"\n 🔴类名与方法名 \n");
+        } @catch (NSException *exception) {
+            NSLog(@"🔴类名与方法名：%@（在第%@行），描述：%@", @(__PRETTY_FUNCTION__), @(__LINE__), exception.reason);
+        }
+    }
+    return should;
+}
 
 - (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController {
     NSLog(@"\n %s => %@ \n",__FUNCTION__,viewController);

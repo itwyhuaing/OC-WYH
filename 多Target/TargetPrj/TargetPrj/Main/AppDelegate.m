@@ -9,7 +9,6 @@
 #import "AppDelegate.h"
 #import "HomeVC.h"
 #import "DtVC.h"
-#import "TabBarAdapter.h"
 
 @interface AppDelegate ()
 
@@ -24,19 +23,19 @@
     self.window.backgroundColor = [UIColor whiteColor];
     
 #ifdef kTargetFH
-    NSLog(@" \n 方式一：海房 \n ");
-    [self fh];
+    //NSLog(@" \n 方式一：海房 \n ");
+    
 #else
-    NSLog(@" \n 方式一：移民 \n ");
-    [self ym];
+    //NSLog(@" \n 方式一：移民 \n ");
 #endif
     
     if (kTarget) {
-        NSLog(@" \n 方式二：海房 \n ");
+        //NSLog(@" \n 方式二：海房 \n ");
+        [self configTabBarVCWithType:WindowRootTabBarTypeFangChan];
     }else {
-        NSLog(@" \n 方式二：移民 \n ");
+        //NSLog(@" \n 方式二：移民 \n ");
+        [self configTabBarVCWithType:WindowRootTabBarTypeYiMing];
     }
-    
     
     [self.window makeKeyAndVisible];
     return YES;
@@ -70,6 +69,10 @@
 }
 
 #pragma mark --- 多 Target 业务拆分
+
+-(void)configTabBarVCWithType:(WindowRootTabBarType)type {
+   self.window.rootViewController = [[TabBarAdapter defaultInstance] adapterTabBarVCWithType:type];
+}
 
 - (void)fh {
 //    self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:[HomeVC new]];
