@@ -27,4 +27,7 @@
 
 ##### 参考
 * [URL Schemes 使用详解](https://sspai.com/post/31500#04)
+
 * [Universal Links通用链接应用跳转总结以及坑](http://www.jianshu.com/p/16374288c976)
+
+* [iOS H5打开App(通用链接)](https://www.jianshu.com/p/0ead88409212)
