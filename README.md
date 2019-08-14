@@ -13,8 +13,8 @@ OC 记录。
 ### ASDK 学习
 * [ASDK 学习](https://github.com/itwyhuaing/OC-WYH/tree/master/ASDKProject)
 
-### URL Schemes
-* [URL Schemes](https://github.com/itwyhuaing/OC-WYH/tree/master/URL%20Schemes)
+### Web打开APP
+* [Web打开APP](https://github.com/itwyhuaing/OC-WYH/tree/master/Web打开APP)
 
 ### 富文本方案
 * [富文本方案](https://github.com/itwyhuaing/OC-WYH/tree/master/Moblie_RichText)

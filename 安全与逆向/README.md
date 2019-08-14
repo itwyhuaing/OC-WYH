@@ -72,3 +72,7 @@ Safety 记录。
 > 应用代码加固 - 代码混淆
 * [iOS安全攻防（二十三）：Objective-C代码混淆 - 涉及安全的系列文章](https://blog.csdn.net/yiyaaixuexi/article/details/29201699)
 * [iOS代码混淆----自动](https://www.jianshu.com/p/0d42e5c6361c)
+
+> 逆向
+
+* [如何在Mac上获取App Store的ipa包](https://www.jianshu.com/p/ce018473fad0)
