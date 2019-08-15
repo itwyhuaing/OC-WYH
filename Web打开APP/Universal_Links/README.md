@@ -1,6 +1,6 @@
 # Universal Links
 
-## [官方英文文档](https://developer.apple.com/library/archive/documentation/General/Conceptual/AppSearch/UniversalLinks.html)         [官方文档翻译参考](https://github.com/itwyhuaing/OC-WYH/blob/master/Web打开APP/Universal_Links/官方文档翻译)   
+## [官方英文文档](https://developer.apple.com/library/archive/documentation/General/Conceptual/AppSearch/UniversalLinks.html)         [官方文档翻译参考](https://github.com/itwyhuaing/OC-WYH/blob/master/Web打开APP/Universal_Links/官方文档翻译.md)   
 
 
 
