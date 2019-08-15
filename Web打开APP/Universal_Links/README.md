@@ -1,106 +1,23 @@
-# 翻译 - 意译为主，直译为辅。
+# Universal Links
 
-## Support Universal Links （支持通用链接技术）
-
-```
-When you support universal links, iOS users can tap a link to your website and get seamlessly redirected to your installed app without going through Safari.
-If your app isn’t installed, tapping a link to your website opens your website in Safari.
-```
-> 当你的 iOS 应用支持通用链接，用户在安装了你的应用的手机上就可以通过点击与应用相应的网站链接直接打开你的应用，而且这个打开过程不经过 Safari .倘若没有安装你的应用，点击这样的链接将会在 Safar 中打开该链接相应的网页。
-
-
-```
-Universal links give you several key benefits that you don’t get when you use custom URL schemes.
-```
-> 通用链接技术可以实现自定义 URL schemes 技术无法实现的一些关键好处。
+## [官方英文文档](https://developer.apple.com/library/archive/documentation/General/Conceptual/AppSearch/UniversalLinks.html)         [官方文档翻译参考](https://github.com/itwyhuaing/OC-WYH/blob/master/Web打开APP/Universal_Links/官方文档翻译)   
 
 
 
-```
-Specifically, universal links are:
+### 已有的方案或 SDK
 
-Unique. Unlike custom URL schemes, universal links can’t be claimed by other apps, because they use standard HTTP or HTTPS links to your website.
+* [linkme](https://www.linkedme.cc)
 
-Secure. When users install your app, iOS checks a file that you’ve uploaded to your web server to make sure that your website allows your app to open URLs on its behalf. Only you can create and upload this file, so the association of your website with your app is secure.
+* [moblink](http://www.mob.com)
 
-Flexible. Universal links work even when your app is not installed. When your app isn’t installed, tapping a link to your website opens the content in Safari, as users expect.
+### 参考
 
-Simple. One URL works for both your website and your app.
+* [Universe Link 接入](https://blog.csdn.net/xxywxlyygx/article/details/77992750)
 
-Private. Other apps can communicate with your app without needing to know whether your app is installed.
+* [iOS H5打开App(通用链接)](https://www.jianshu.com/p/0ead88409212)
 
-```
-> 具体来说，通用链接技术就是：
+* [iOS微信屏蔽通用链接](https://www.jianshu.com/p/bf529236019b)
 
-  ** 独特性。与 URL schemes 技术不同，通用链接技术使用的是可以链接到你网站的标准http或https,所以不能通用链接不可以呗其他应用声明。
+* [微信着手封堵 Universal Link](https://blog.csdn.net/chenyong05314/article/details/79934507)
 
-  ** 安全性。当用户安装你的应用时，iOS系统会校验你已经上传到网站服务器的配置文件，依据该文件验证你的网站是准许在该设备上你的应用可以代替网站加载该相应的URL的。
-
-  ** 灵活性。通用链接在设备未安装应用情况下依旧可以正常加载。这个时候点击相应的链接之后会如用户所期待的那样在 Safari 中打开。
-
-  ** 简单。  一个 URL 可以在不同情况下自动选用合适的打开方式。
-
-  ** 私密性。倘若其他应用和你的应用相互调起，可以无需验证该设备是否已安装了你的应用。（直译如此，但理解起来有点别扭。个人理解是 URL schemes 技术是需要向设备“注册”标识的，而通用链接却不需要。）
-
-
-```
-NOTE
-
-Universal links let users open your app when they tap links to your website within WKWebView and UIWebView views and Safari pages, in addition to links that result in a call to openURL:, such as those that occur in Mail, Messages, and other apps.
-
-When a user is browsing your website in Safari and they tap a universal link to a URL in the same domain as the current webpage, iOS respects the user’s most likely intent and opens the link in Safari. If the user taps a universal link to a URL in a different domain, iOS opens the link in your app.
-
-For users who are running versions of iOS earlier than 9.0, tapping a universal link to your website opens the link in Safari.
-```
-
->> 需要注意的是:
-
-
-   >> 通用链接虽然能够让用户通过在 WKWebView 、 UIWebView 和 Safari 中打开的网站链接的方式打开应用；但是譬如在邮箱、短信等其他应用中出现的可能是通过 “openURL:” 这一 API 方式打开的链接除外。
-
-   >> 当一个用户正在safar中浏览你网站，此时倘若用户点击了当前域名下的一个网页并且该网页的链接是已配置的通用链接，那么iOS系统极有可能会决策用户的意图是继续在网页中展示而不是打开应用；但是倘若在不同的域名中点击了一个已配置的通用链接，iOS系统会决策用户的意图是使用应用打开。
-
-   >> 用户在iOS9.0 之前的系统中打开一个已配置的通用链接，系统只会在 Safari 中打开。
-
-
-```
-Adding support for universal links is easy. There are three steps you need to take:
-
-Create an apple-app-site-association file that contains JSON data about the URLs that your app can handle.
-
-Upload the apple-app-site-association file to your HTTPS web server. You can place the file at the root of your server or in the .well-known subdirectory.
-
-Prepare your app to handle universal links.
-
-
-You can test universal links on a device.
-
-```
-
-> 添加通用链接技术是容易的。你只需要三步就可以实现：
-
-  > > 创建一个 apple-app-site-association 文件，该文件中需要包含一个涉及你的应用所需处理的 URLs 的 Json 数据。
-
-  > > 将已创建的 apple-app-site-association 文件上传到你的网站服务器。你也可以将该文件放在服务器的根目录或者.well-known这个子目录下。
-
-  > > 这样之后，你的应用具备通用链接技术的准备工作就已经完成了。
-
-
-  > > 你可以在一台设备上测试通用链接技术。
-
-
-## Creating and Uploading the Association File （创建并上传关联文件）
-
-
-
-## Preparing Your App to Handle Universal Links （准备处理长链接的应用）
-
-
-
-
-
-
-  ```
-
-  ```
-  >
+* [封堵通用链接的方式](https://stackoverflow.com/questions/38450586/prevent-universal-links-from-opening-in-wkwebview-uiwebview)
