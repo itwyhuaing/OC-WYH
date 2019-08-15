@@ -29,7 +29,7 @@
 
 > SDemoB 工程配置了 URL schemes
 
-![image](https://github.com/itwyhuaing/OC-WYH/blob/master/Web打开APP/image/image_0.jpg)
+![image](https://github.com/itwyhuaing/OC-WYH/blob/master/Web打开APP/image/image_0.png)
 
 
 > 那么在 Safari 中可以输入类似 “appSDemoB://xxx” 的链接直接打开 SDemoB ,xxx 为参数
