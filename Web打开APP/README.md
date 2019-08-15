@@ -27,16 +27,18 @@
 * URL schemes 配置之后的应用运行在设备上之后，所配置的标记会“注册”到系统中；不同的应用有可能相同；但是否会覆盖有待进一步测试（查阅资料显示，有说会覆盖也有说不会覆盖的）。
 * “注册”操作之后，该应用在该设备上就可以通过其他应用打开或者可以直接在 Safari 中验证,譬如
 
-> SDemoB 工程配置了 URL schemes ，
+> SDemoB 工程配置了 URL schemes
 
-![image](https://github.com/itwyhuaing/OC-WYH/blob/master/Web打开APP/image/image_1.jpg)
+![image](https://github.com/itwyhuaing/OC-WYH/blob/master/Web打开APP/image/image_0.jpg)
 
 
 > 那么在 Safari 中可以输入类似 “appSDemoB://xxx” 的链接直接打开 SDemoB ,xxx 为参数
 
-![image](https://github.com/itwyhuaing/OC-WYH/blob/master/Web打开APP/image/image_2.jpg)
+![image](https://github.com/itwyhuaing/OC-WYH/blob/master/Web打开APP/image/image_1.jpg)
 
 > 打开之后的显示如下，这里左上角标记可以回到 safari
+
+![image](https://github.com/itwyhuaing/OC-WYH/blob/master/Web打开APP/image/image_2.jpg)
 
 ![image](https://github.com/itwyhuaing/OC-WYH/blob/master/Web打开APP/image/image_3.jpg)
 
