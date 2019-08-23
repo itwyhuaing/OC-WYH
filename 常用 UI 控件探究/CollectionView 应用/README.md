@@ -13,7 +13,7 @@ collectionview 内部有三种子视图 cell、追加视图(supplementary views)
 UICollectionViewFlowLayout 继承于 UICollectionViewLayout。
 
 ```
-// 行与行之间最小行间距，这里的 “行” 其方向与滚动方向一致
+// 行与行之间最小行间距
 @property (nonatomic) CGFloat minimumLineSpacing;
 // 同一行的cell中互相之间的最小间隔，设置这个值之后，那么cell与cell之间至少为这个值
 @property (nonatomic) CGFloat minimumInteritemSpacing;
@@ -97,7 +97,7 @@ collectionView 上面子视图的相关设置都是由强大的 UICollectionView
 - (BOOL)shouldInvalidateLayoutForBoundsChange:(CGRect)newBounds; // return YES to cause the collection view to requery the layout for geometry information
 ```
 
-4. 需要设置 collectionView 的滚动范围 collectionViewContentSize 。自定义 collectionViewLayout 的时候，必须重写这个方法，并且返回正确的滚动范围，collectionView 才能正常滚动。
+4. 需要设置 collectionView 的滚动范围 collectionViewContentSize 。
 
 ```
 @property(nonatomic, readonly) CGSize collectionViewContentSize;

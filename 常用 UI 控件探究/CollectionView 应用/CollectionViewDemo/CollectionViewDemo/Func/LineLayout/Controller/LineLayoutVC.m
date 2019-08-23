@@ -69,7 +69,7 @@ static NSString *const ID = @"cell";
     
     if (!_imageNames) {
         _imageNames = [NSMutableArray array];
-        for (int i = 0; i < 800; i++ ) {
+        for (int i = 0; i < 8; i++ ) {
             NSString *name = [NSString stringWithFormat:@"%d",i%5 + 1];
             [_imageNames addObject:name];
         }

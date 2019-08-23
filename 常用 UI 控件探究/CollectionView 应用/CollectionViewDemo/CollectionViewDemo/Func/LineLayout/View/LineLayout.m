@@ -31,8 +31,7 @@
     
     NSLog(@" \n \n 测试函数 2 - prepareLayout \n\n ");
     self.scrollDirection        = UICollectionViewScrollDirectionHorizontal;
-    self.itemSize               = CGSizeMake(self.collectionView.bounds.size.height * 0.5, self.collectionView.bounds.size.height * 0.5);
-    
+    self.itemSize               = CGSizeMake(self.collectionView.bounds.size.height * 0.8, self.collectionView.bounds.size.height * 0.8);
 }
 
 
@@ -46,7 +45,7 @@
 - (NSArray<UICollectionViewLayoutAttributes *> *)layoutAttributesForElementsInRect:(CGRect)rect {
 
     NSLog(@" \n \n 测试函数 3 - layoutAttributesForElementsInRect \n\n ");
-    
+
     NSArray *layoutAttrs = [super layoutAttributesForElementsInRect:rect];
     //collectionView 中心点的位置
     CGFloat collectionViewCenterX = self.collectionView.bounds.size.width * 0.5 + self.collectionView.contentOffset.x;
@@ -54,10 +53,13 @@
 
         // item 距离 collectionView 中点的位置距离
         CGFloat delta = ABS(collectionViewCenterX - attrs.center.x);
-        
+
         CGFloat scale  = 1 - delta / self.collectionView.bounds.size.width;
-        attrs.transform = CGAffineTransformMakeScale(scale, scale);
         
+        NSLog(@"\n\n %f - %f  - %f \n\n",delta,scale,self.collectionViewContentSize.width);
+        
+        attrs.transform = CGAffineTransformMakeScale(scale, scale);
+
     }
 
     return layoutAttrs;
@@ -71,29 +73,29 @@
  - proposedContentOffset：原本情况下， collectionView 停止滚动时最终的偏移量
  - velocity：滚动速率，通过这个参数可以了解滚动的方向
  */
-//- (CGPoint)targetContentOffsetForProposedContentOffset:(CGPoint)proposedContentOffset withScrollingVelocity:(CGPoint)velocity {
-//
-//    NSLog(@" \n \n 测试函数 4 - targetContentOffsetForProposedContentOffset \n\n ");
-//    return proposedContentOffset;
-//
-//    // 目的的位置，然后计算与中心点的距离 最小的那一个就 = 中心点的位置。
-//    NSArray *layoutAttrs = [self layoutAttributesForElementsInRect:CGRectMake(proposedContentOffset.x, 0, self.collectionView.bounds.size.width, self.collectionView.bounds.size.height)];
-//
-//    CGFloat centerX = self.collectionView.bounds.size.width * 0.5 + proposedContentOffset.x;
-//    CGFloat minDelta = MAXFLOAT;
-//    for (UICollectionViewLayoutAttributes *attrs in layoutAttrs) {
-////        if (!CGRectIntersectsRect(CGRectMake(proposedContentOffset.x, proposedContentOffset.y, self.collectionView.frame.size.width, self.collectionView.frame.size.height), attrs.frame)){
-////            continue;
-////        }
-//        CGFloat delta = ABS(attrs.center.x - centerX);
-//        if (delta < ABS(minDelta)) {
-//            // 计算出距离中心点最近的 item 与 中心点间的间距
-//            minDelta = attrs.center.x - centerX;
+- (CGPoint)targetContentOffsetForProposedContentOffset:(CGPoint)proposedContentOffset withScrollingVelocity:(CGPoint)velocity {
+
+    NSLog(@" \n \n 测试函数 4 - targetContentOffsetForProposedContentOffset \n\n ");
+    //return proposedContentOffset;
+
+    // 目的的位置，然后计算与中心点的距离 最小的那一个就 = 中心点的位置。
+    NSArray *layoutAttrs = [self layoutAttributesForElementsInRect:CGRectMake(proposedContentOffset.x, 0, self.collectionView.bounds.size.width, self.collectionView.bounds.size.height)];
+
+    CGFloat centerX = self.collectionView.bounds.size.width * 0.5 + proposedContentOffset.x;
+    CGFloat minDelta = MAXFLOAT;
+    for (UICollectionViewLayoutAttributes *attrs in layoutAttrs) {
+//        if (!CGRectIntersectsRect(CGRectMake(proposedContentOffset.x, proposedContentOffset.y, self.collectionView.frame.size.width, self.collectionView.frame.size.height), attrs.frame)){
+//            continue;
 //        }
-//    }
-//
-//    // 最近 item 的中心点距离加上偏移
-//    return CGPointMake(proposedContentOffset.x + minDelta, proposedContentOffset.y);
-//}
+        CGFloat delta = ABS(attrs.center.x - centerX);
+        if (delta < ABS(minDelta)) {
+            // 计算出距离中心点最近的 item 与 中心点间的间距
+            minDelta = attrs.center.x - centerX;
+        }
+    }
+
+    // 最近 item 的中心点距离加上偏移
+    return CGPointMake(proposedContentOffset.x + minDelta, proposedContentOffset.y);
+}
 
 @end

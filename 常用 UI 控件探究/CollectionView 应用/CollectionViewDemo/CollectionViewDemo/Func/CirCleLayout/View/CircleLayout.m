@@ -20,10 +20,10 @@
 @implementation CircleLayout
 
 // 当 collectionView 的显示范围发生改变的时候，是否需要重新刷新布局
--(BOOL)shouldInvalidateLayoutForBoundsChange:(CGRect)newBounds{
-    NSLog(@" \n \n 测试函数 1 - shouldInvalidateLayoutForBoundsChange \n\n ");
-    return TRUE;
-}
+//-(BOOL)shouldInvalidateLayoutForBoundsChange:(CGRect)newBounds{
+//    NSLog(@" \n \n 测试函数 1 - shouldInvalidateLayoutForBoundsChange \n\n ");
+//    return TRUE;
+//}
 
 -(void)prepareLayout{
     [super prepareLayout];

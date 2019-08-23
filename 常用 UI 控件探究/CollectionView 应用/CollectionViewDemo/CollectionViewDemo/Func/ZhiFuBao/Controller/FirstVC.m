@@ -95,7 +95,7 @@
 -(UICollectionView *)collectionV{
     if (!_collectionV) {
         UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
-        flowLayout.minimumLineSpacing          = 10.0 * SCREEN_WIDTHRATE_6;
+        flowLayout.minimumLineSpacing          = 30.0 * SCREEN_WIDTHRATE_6;
         flowLayout.minimumInteritemSpacing     = 10.0 * SCREEN_WIDTHRATE_6;
         flowLayout.itemSize                    = CGSizeMake(56.0 * SCREEN_WIDTHRATE_6, 56.0 * SCREEN_WIDTHRATE_6);
         flowLayout.headerReferenceSize         = CGSizeMake(SCREEN_WIDTH, 30);

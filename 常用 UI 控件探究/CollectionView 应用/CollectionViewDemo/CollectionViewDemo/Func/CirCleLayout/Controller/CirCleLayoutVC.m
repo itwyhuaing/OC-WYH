@@ -39,9 +39,9 @@
 
 #pragma mark ------ UICollectionViewDelegate,UICollectionViewDataSource
 
--(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
-    return 1;
-}
+//-(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
+//    return 2;
+//}
 
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
     return 8;
