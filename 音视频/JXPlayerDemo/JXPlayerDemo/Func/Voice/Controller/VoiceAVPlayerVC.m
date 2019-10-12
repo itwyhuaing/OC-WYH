@@ -12,16 +12,16 @@
 
 @interface VoiceAVPlayerVC ()
 
-@property (strong, nonatomic) JXVoiceAVPlayer *jxVoicePlayer;
-@property (nonatomic,strong) UIProgressView         *progess;
-@property (nonatomic,strong) UIView                 *circle;
+@property (strong, nonatomic) JXVoiceAVPlayer        *jxVoicePlayer;
+@property (nonatomic,strong)  UIProgressView         *progess;
+@property (nonatomic,strong)  UIView                 *circle;
 
 @end
 
 
 @implementation VoiceAVPlayerVC
 
-+(instancetype)currentAVPlayerVC{
++(instancetype)currentAVPlayerVC {
     static VoiceAVPlayerVC *instance = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{

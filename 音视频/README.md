@@ -85,6 +85,11 @@ typedef NS_ENUM(NSInteger, AVPlayerTimeControlStatus) {
 
 ```
 
+>> loadedTimeRanges 时间占比
+
+	![image](https://github.com/itwyhuaing/OC-WYH/blob/master/音视频/image/loadedTimeRanges时间占比.png)
+
+
 > AVPlayer 播放能力 - 后台播放
 
 >> 1. 代码设置
@@ -285,3 +290,54 @@ USEC_PER_SEC * NSEC_PER_USEC    （=1s）
 =109ns(纳秒)
 
 ```
+
+
+### 音视频
+
+1. automaticallyWaitsToMinimizeStalling
+
+iOS 10下，AVplayer 新增属性 automaticallyWaitsToMinimizeStalling 。
+
+文档中的两句话
+HTTP Live Streaming (HLS): 当播放HLS媒体时, automaticallyWaitsToMinimizeStalling 的值为 true.
+File-based Media: 当播放基于文件的媒体, 包括逐渐下载的内容, automaticallyWaitsToMinimizeStalling 的值为 false.
+AVPlayer 在新系统下有时会播放不了,可以将 automaticallyWaitsToMinimizeStalling 设置为 false 即可。
+
+
+2. AVAudioSession 通知处理，
+   AVAudioSessionRouteChangeNotification 拔出耳机暂停播放，
+   AVAudioSessionInterruptionNotification 来电、语音电话、音乐软件等其他音视频软件占用导致中断
+
+3. [iOS 音频-AVAudioSession](https://www.jianshu.com/p/fb0e5fb71b3c)
+
+4. [iOS音频掌柜-- AVAudioSession](https://www.jianshu.com/p/3e0a399380df)
+
+
+5. [iOS UIFeedbackGenerator 系统触感反馈 震动](https://www.jianshu.com/p/49c0ead4b0ae)
+
+6. [Android端和iOS端手机震动功能的实现](https://blog.csdn.net/RadiusCLL/article/details/82659464)
+
+### AVFoundation
+
+1. AVFoundation 是一个关于多媒体操作的库。
+   因为多媒体一般以文件或流的形式存在，所以为了对其进行操作就需要了解很多底层多媒体方面的知识。
+   AVFoundation 为开发者提供了多媒体载体类：AVAsset ，该类封装了统一且友好的接口，无需开发者了解太多底层多媒体方面知识就可轻松开发多媒体功能。
+
+### UIKit
+
+[iOS UIKit框架详解](https://blog.csdn.net/u011774517/article/details/64125115)
+
+
+
+---
+
+## AVKit
+
+> ios 系统中用于处理多媒体资源的框架有 AVKit 与 AVFundation ;其中 AVKit 是基于 AVFundation 的一层视图层封装，使用中常涉及的 API 并不多，主要有 AVRoutePickerView（iOS 11 之后可用） 、AVPlayerViewController（iOS 8 之后可用）。AVKit 与 AVFundation 在 iOS 系统中的层级结构如图所示：
+
+	![image](https://github.com/itwyhuaing/OC-WYH/blob/master/音视频/image/AVFoundation与AVKit.png)
+
+
+##### 参考
+
+* [iOS开发之AVKit框架使用](https://cloud.tencent.com/developer/article/1354073)

@@ -95,10 +95,13 @@
     [self.avplayer.currentItem removeObserver:self forKeyPath:@"status"];
     // 缓冲进度/时间监听
     [self.avplayer.currentItem removeObserver:self forKeyPath:@"loadedTimeRanges"];
-    // 播放进度/时间监听
-    [self.avplayer removeTimeObserver:self.timeObserver];
     // 播放过程监听
     [[NSNotificationCenter defaultCenter] removeObserver:self name:AVPlayerItemDidPlayToEndTimeNotification object:nil];
+    // 播放进度/时间监听
+    if (self.timeObserver) {
+        [self.avplayer removeTimeObserver:self.timeObserver];
+        self.timeObserver = nil;
+    }
 }
 
 // 通知回调
@@ -146,6 +149,9 @@
     }
     
 }
+
+
+#pragma mark ------ 远程控制
 
 - (void)remoteControlEventWithVC:(UIViewController *)vc isResign:(BOOL)isResign{
     if (vc) {
@@ -239,7 +245,7 @@
     [[MPNowPlayingInfoCenter defaultCenter] setNowPlayingInfo:info];
 }
 
-#pragma mark ------ outer methed
+#pragma mark ------ 后台播放
 
 -(void)playBackEnable:(BOOL)able{
     if (able) { // 后台播放能力

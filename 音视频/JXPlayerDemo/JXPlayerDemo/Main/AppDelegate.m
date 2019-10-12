@@ -18,7 +18,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
-    [[VoiceAVPlayerVC currentAVPlayerVC] playBackEnable:TRUE];
+    //[[VoiceAVPlayerVC currentAVPlayerVC] playBackEnable:TRUE];
     
     return YES;
 }
