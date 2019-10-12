@@ -344,3 +344,14 @@ AVPlayer 在新系统下有时会播放不了,可以将 automaticallyWaitsToMini
 ##### 参考
 
 * [iOS开发之AVKit框架使用](https://cloud.tencent.com/developer/article/1354073)
+
+
+---
+
+## AVFoundation
+
+
+
+##### 参考
+
+* [AVFoundation 框架初探 - 系列文章](http://www.cocoachina.com/articles/23088)
