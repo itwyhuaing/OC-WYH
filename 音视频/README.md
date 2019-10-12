@@ -333,9 +333,12 @@ AVPlayer 在新系统下有时会播放不了,可以将 automaticallyWaitsToMini
 
 ## AVKit
 
-> ios 系统中用于处理多媒体资源的框架有 AVKit 与 AVFundation ;其中 AVKit 是基于 AVFundation 的一层视图层封装，使用中常涉及的 API 并不多，主要有 AVRoutePickerView（iOS 11 之后可用） 、AVPlayerViewController（iOS 8 之后可用）。AVKit 与 AVFundation 在 iOS 系统中的层级结构如图所示：
+> ios 系统中用于处理多媒体资源的框架有 AVKit 与 AVFundation ;其中 AVKit 是基于 AVFundation 的一层视图层封装，使用中常涉及的 API 并不多，主要有 AVRoutePickerView（iOS 11 之后可用） 、AVPlayerViewController（iOS 8 之后可用）。
+
+	//AVKit 与 AVFundation 在 iOS 系统中的层级结构如图所示：
 
 	![image](https://github.com/itwyhuaing/OC-WYH/blob/master/音视频/image/AVFoundation与AVKit.png)
+
 
 
 ##### 参考
