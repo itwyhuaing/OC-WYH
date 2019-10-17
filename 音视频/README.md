@@ -10,8 +10,6 @@
 3. 使用WKWebView。
 4. AVPlayer，这种方案可实现较强的个性化定制需求。
 
-
-
 ---
 ###### AVPlayer
 
@@ -136,14 +134,177 @@ typedef NS_ENUM(NSInteger, AVPlayerTimeControlStatus) {
 * [AVPlayer 本地、网络视频播放相关](http://www.jianshu.com/p/de418c21d33c)
 * [CADisplayLink](http://www.jianshu.com/p/c35a81c3b9eb)
 
+
 ---
-###### AVAudioPlayer
 
-*  AVAudioPlayer是属于 AVFundation.framework 的一个类。
+CMTimeMake 和 CMTimeMakeWithSeconds 解释
 
-* 它的功能类似于一个功能强大的播放器，AVAudioPlayer每次播放都需要将上一个player对象释放掉，然后重新创建一个player来进行播放。
+* CMTime 是专门用来表示影片时间的类别,CMTimeMake 亦是用来创建 CMTime ；
+* CMTimeMake(a, b), a为当前第几帧，b为每秒播放多少帧，当前时间为a/b;
+* CMTimeMakeWithSeconds(a, b), a为当前秒数，b为每秒播放多少帧，当前时间为a；
+* CMTimeGetSeconds 将 CMTime 转化为秒。
 
-* 类AVAudioPlayer 与 类AVAudioRecorder 相似。
+> 都表示当前时间为 2 秒，不同的是播放速率后者是前者的4.5倍。
+
+```
+CMTimeMake(20, 10);
+CMTimeMake(90, 45);
+```
+
+
+* 关键词解释：
+
+```
+NSEC：纳秒。
+USEC：微秒。
+MSEC：毫秒
+SEC：秒
+PER：每
+
+NSEC_PER_SEC， 每秒有多少纳秒。
+USEC_PER_SEC， 每秒有多少微秒。   （注意是指在纳秒的基础上）。
+NSEC_PER_USEC，每微秒有多少纳秒。
+
+1 * NSEC_PER_SEC                （=1s）
+1000 * USEC_PER_SEC             （=1s）
+USEC_PER_SEC * NSEC_PER_USEC    （=1s）
+
+1s=103ms(毫秒)
+=106μs(微秒)
+=109ns(纳秒)
+
+```
+
+
+### 音视频
+
+1. automaticallyWaitsToMinimizeStalling
+
+iOS 10下，AVplayer 新增属性 automaticallyWaitsToMinimizeStalling 。
+
+文档中的两句话
+HTTP Live Streaming (HLS): 当播放HLS媒体时, automaticallyWaitsToMinimizeStalling 的值为 true.
+File-based Media: 当播放基于文件的媒体, 包括逐渐下载的内容, automaticallyWaitsToMinimizeStalling 的值为 false.
+AVPlayer 在新系统下有时会播放不了,可以将 automaticallyWaitsToMinimizeStalling 设置为 false 即可。
+
+
+2. AVAudioSession 通知处理，
+   AVAudioSessionRouteChangeNotification 拔出耳机暂停播放，
+   AVAudioSessionInterruptionNotification 来电、语音电话、音乐软件等其他音视频软件占用导致中断
+
+3. [iOS 音频-AVAudioSession](https://www.jianshu.com/p/fb0e5fb71b3c)
+
+4. [iOS音频掌柜-- AVAudioSession](https://www.jianshu.com/p/3e0a399380df)
+
+
+5. [iOS UIFeedbackGenerator 系统触感反馈 震动](https://www.jianshu.com/p/49c0ead4b0ae)
+
+6. [Android端和iOS端手机震动功能的实现](https://blog.csdn.net/RadiusCLL/article/details/82659464)
+
+### AVFoundation
+
+1. AVFoundation 是一个关于多媒体操作的库。
+   因为多媒体一般以文件或流的形式存在，所以为了对其进行操作就需要了解很多底层多媒体方面的知识。
+   AVFoundation 为开发者提供了多媒体载体类：AVAsset ，该类封装了统一且友好的接口，无需开发者了解太多底层多媒体方面知识就可轻松开发多媒体功能。
+
+### UIKit
+
+[iOS UIKit框架详解](https://blog.csdn.net/u011774517/article/details/64125115)
+
+---
+
+# 音视频
+
+* 音频
+
+* 音频
+
+* 音频
+
+* 音频
+
+* 音频
+
+
+---
+
+## AVKit
+
+> ios 系统中用于处理多媒体资源的框架有 AVKit 与 AVFundation ;其中 AVKit 是基于 AVFundation 的一层视图层封装，使用中常涉及的 API 并不多，主要有 AVRoutePickerView（iOS 11 之后可用） 、AVPlayerViewController（iOS 8 之后可用）。
+
+* AVKit 与 AVFundation 在 iOS 系统中的层级结构如图所示：
+
+	![image](https://github.com/itwyhuaing/OC-WYH/blob/master/音视频/image/AVFoundation与AVKit.png)
+
+
+
+##### 参考
+
+* [iOS开发之AVKit框架使用](https://cloud.tencent.com/developer/article/1354073)
+
+
+---
+
+## AVFoundation
+
+> AVFoundation 是苹果在 iOS 和 OS X 系统中用于处理基于时间的媒体数据的框架。该框架在系统中的结构如下图：
+
+	![image](https://github.com/itwyhuaing/OC-WYH/blob/master/音视频/image/AVFoundation与AVKit1.png)
+
+> AVFoundation 封装在 Core Audio、Core Media、Core Animition 等这些框架的层次之上，AVFoundation 里还包括一个音频类。Core Audio 处理所有音频事件，Core Media 提供音频样本和视频帧处理，Core Animition 动画框架。
+
+### AVSpeechSynthesizer
+
+* 该类可实现系统中“文本到语音”的功能开发，意即文字用系统支持的语言读出来。
+
+* 主要涉及的属性/类:
+
+
+// AVSpeechSynthesizer 涉及到的属性
+
+```
+// “文本到语音”过程的代理回调过程
+@property(nonatomic, weak, nullable) id<AVSpeechSynthesizerDelegate> delegate;
+
+// 开始“读”
+- (void)speakUtterance:(AVSpeechUtterance *)utterance;
+
+```
+
+// AVSpeechSynthesizer 涉及到的类 - AVSpeechUtterance，设置文本内容、语音音量语速等信息。
+
+```
+
+// 初始化
++ (instancetype)speechUtteranceWithString:(NSString *)string;
++ (instancetype)speechUtteranceWithAttributedString:(NSAttributedString *)string;
+- (instancetype)initWithString:(NSString *)string;
+- (instancetype)initWithAttributedString:(NSAttributedString *)string;
+
+// 语音类型设置 - 中文、英语、俄语等
+@property(nonatomic, retain, nullable) AVSpeechSynthesisVoice *voice;
+
+// 只读信息 - 文本
+@property(nonatomic, readonly) NSString *speechString;
+@property(nonatomic, readonly) NSAttributedString *attributedSpeechString;
+
+@property(nonatomic) float rate;
+@property(nonatomic) float pitchMultiplier;
+@property(nonatomic) float volume;         
+
+@property(nonatomic) NSTimeInterval preUtteranceDelay;
+@property(nonatomic) NSTimeInterval postUtteranceDelay;
+
+```
+
+* 示例代码可参见 AVFoundationDemo 。
+
+
+### AVAudioPlayer
+
+*  AVAudioPlayer是 AVFundation 框架下的一个类。
+
+* 它的功能类似于一个功能强大的播放器，AVAudioPlayer 每次播放都需要将上一个 player 对象释放掉，然后重新创建一个player来进行播放。
 
 > 常见的属性与方法
 
@@ -241,7 +402,7 @@ typedef NS_ENUM(NSInteger, AVPlayerTimeControlStatus) {
 - (void)audioPlayerDecodeErrorDidOccur:(AVAudioPlayer *)player error:(NSError * __nullable)error;
 
 
-// 播放器中断回调 (比如有电话呼入，该方法就会被回调，该方法可以保存当前播放信息，以便恢复继续播放的进度)
+// (以下四个代理方法已废弃)播放器中断回调 (比如有电话呼入，该方法就会被回调，该方法可以保存当前播放信息，以便恢复继续播放的进度)
 - (void)audioPlayerBeginInterruption:(AVAudioPlayer *)player;
 // 播放器中断回调
 - (void)audioPlayerEndInterruption:(AVAudioPlayer *)player withOptions:(NSUInteger)flags;
@@ -251,106 +412,13 @@ typedef NS_ENUM(NSInteger, AVPlayerTimeControlStatus) {
 
 ```
 
+### AVAudioRecorder
 
----
-
-CMTimeMake 和 CMTimeMakeWithSeconds 解释
-
-* CMTime 是专门用来表示影片时间的类别,CMTimeMake 亦是用来创建 CMTime ；
-* CMTimeMake(a, b), a为当前第几帧，b为每秒播放多少帧，当前时间为a/b;
-* CMTimeMakeWithSeconds(a, b), a为当前秒数，b为每秒播放多少帧，当前时间为a；
-* CMTimeGetSeconds 将 CMTime 转化为秒。
-
-> 都表示当前时间为 2 秒，不同的是播放速率后者是前者的4.5倍。
-```
-CMTimeMake(20, 10);
-CMTimeMake(90, 45);
-```
-
-
-* 关键词解释：
-
-```
-NSEC：纳秒。
-USEC：微秒。
-MSEC：毫秒
-SEC：秒
-PER：每
-
-NSEC_PER_SEC， 每秒有多少纳秒。
-USEC_PER_SEC， 每秒有多少微秒。   （注意是指在纳秒的基础上）。
-NSEC_PER_USEC，每微秒有多少纳秒。
-
-1 * NSEC_PER_SEC                （=1s）
-1000 * USEC_PER_SEC             （=1s）
-USEC_PER_SEC * NSEC_PER_USEC    （=1s）
-
-1s=103ms(毫秒)
-=106μs(微秒)
-=109ns(纳秒)
-
-```
-
-
-### 音视频
-
-1. automaticallyWaitsToMinimizeStalling
-
-iOS 10下，AVplayer 新增属性 automaticallyWaitsToMinimizeStalling 。
-
-文档中的两句话
-HTTP Live Streaming (HLS): 当播放HLS媒体时, automaticallyWaitsToMinimizeStalling 的值为 true.
-File-based Media: 当播放基于文件的媒体, 包括逐渐下载的内容, automaticallyWaitsToMinimizeStalling 的值为 false.
-AVPlayer 在新系统下有时会播放不了,可以将 automaticallyWaitsToMinimizeStalling 设置为 false 即可。
-
-
-2. AVAudioSession 通知处理，
-   AVAudioSessionRouteChangeNotification 拔出耳机暂停播放，
-   AVAudioSessionInterruptionNotification 来电、语音电话、音乐软件等其他音视频软件占用导致中断
-
-3. [iOS 音频-AVAudioSession](https://www.jianshu.com/p/fb0e5fb71b3c)
-
-4. [iOS音频掌柜-- AVAudioSession](https://www.jianshu.com/p/3e0a399380df)
-
-
-5. [iOS UIFeedbackGenerator 系统触感反馈 震动](https://www.jianshu.com/p/49c0ead4b0ae)
-
-6. [Android端和iOS端手机震动功能的实现](https://blog.csdn.net/RadiusCLL/article/details/82659464)
-
-### AVFoundation
-
-1. AVFoundation 是一个关于多媒体操作的库。
-   因为多媒体一般以文件或流的形式存在，所以为了对其进行操作就需要了解很多底层多媒体方面的知识。
-   AVFoundation 为开发者提供了多媒体载体类：AVAsset ，该类封装了统一且友好的接口，无需开发者了解太多底层多媒体方面知识就可轻松开发多媒体功能。
-
-### UIKit
-
-[iOS UIKit框架详解](https://blog.csdn.net/u011774517/article/details/64125115)
+* 类AVAudioPlayer 与 类AVAudioRecorder 相似。
 
 
 
----
-
-## AVKit
-
-> ios 系统中用于处理多媒体资源的框架有 AVKit 与 AVFundation ;其中 AVKit 是基于 AVFundation 的一层视图层封装，使用中常涉及的 API 并不多，主要有 AVRoutePickerView（iOS 11 之后可用） 、AVPlayerViewController（iOS 8 之后可用）。
-
-* AVKit 与 AVFundation 在 iOS 系统中的层级结构如图所示：
-
-	![image](https://github.com/itwyhuaing/OC-WYH/blob/master/音视频/image/AVFoundation与AVKit.png)
-
-
-
-##### 参考
-
-* [iOS开发之AVKit框架使用](https://cloud.tencent.com/developer/article/1354073)
-
-
----
-
-## AVFoundation
-
-
+### AVAudioSession
 
 ##### 参考
 
