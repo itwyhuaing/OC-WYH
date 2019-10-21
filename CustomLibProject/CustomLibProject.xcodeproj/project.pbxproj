@@ -36,6 +36,8 @@
 		26F4ADBC2359C8FF007FDBD1 /* image_6.png in Resources */ = {isa = PBXBuildFile; fileRef = 26F4ADAB2359C8FF007FDBD1 /* image_6.png */; };
 		26F4ADBD2359C8FF007FDBD1 /* image_4.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 26F4ADAC2359C8FF007FDBD1 /* image_4.jpeg */; };
 		26F4ADBE2359C8FF007FDBD1 /* image_5.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 26F4ADAD2359C8FF007FDBD1 /* image_5.jpeg */; };
+		46AD6982235A837300F1D640 /* CLTestVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 46AD6981235A837300F1D640 /* CLTestVC.m */; };
+		46AD6986235A9B6800F1D640 /* UIViewController+VCCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 46AD6985235A9B6800F1D640 /* UIViewController+VCCategory.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -79,6 +81,10 @@
 		26F4ADAC2359C8FF007FDBD1 /* image_4.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image_4.jpeg; sourceTree = "<group>"; };
 		26F4ADAD2359C8FF007FDBD1 /* image_5.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image_5.jpeg; sourceTree = "<group>"; };
 		26F4ADBF2359CC25007FDBD1 /* BannerMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BannerMacro.h; sourceTree = "<group>"; };
+		46AD6980235A837300F1D640 /* CLTestVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CLTestVC.h; sourceTree = "<group>"; };
+		46AD6981235A837300F1D640 /* CLTestVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CLTestVC.m; sourceTree = "<group>"; };
+		46AD6984235A9B6800F1D640 /* UIViewController+VCCategory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+VCCategory.h"; sourceTree = "<group>"; };
+		46AD6985235A9B6800F1D640 /* UIViewController+VCCategory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+VCCategory.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +117,7 @@
 		26F4AD5923599635007FDBD1 /* CustomLibProject */ = {
 			isa = PBXGroup;
 			children = (
+				46AD6983235A9AE800F1D640 /* Categary */,
 				26F4AD9C2359C8FF007FDBD1 /* Resource */,
 				26F4AD742359965A007FDBD1 /* Main */,
 				26F4AD732359965A007FDBD1 /* Func */,
@@ -126,6 +133,7 @@
 		26F4AD732359965A007FDBD1 /* Func */ = {
 			isa = PBXGroup;
 			children = (
+				46AD697F235A835E00F1D640 /* Test */,
 				26F4AD8423599E8F007FDBD1 /* 轮播 */,
 			);
 			path = Func;
@@ -181,25 +189,43 @@
 		26F4AD9C2359C8FF007FDBD1 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				26F4ADA72359C8FF007FDBD1 /* image_1.png */,
+				26F4ADA32359C8FF007FDBD1 /* image_2.png */,
+				26F4ADA52359C8FF007FDBD1 /* image_3.png */,
+				26F4ADA82359C8FF007FDBD1 /* image_4.png */,
+				26F4ADA92359C8FF007FDBD1 /* image_5.png */,
+				26F4ADAB2359C8FF007FDBD1 /* image_6.png */,
+				26F4ADA22359C8FF007FDBD1 /* image_1.jpeg */,
+				26F4ADA62359C8FF007FDBD1 /* image_2.jpeg */,
+				26F4ADAA2359C8FF007FDBD1 /* image_3.jpeg */,
+				26F4ADAC2359C8FF007FDBD1 /* image_4.jpeg */,
+				26F4ADAD2359C8FF007FDBD1 /* image_5.jpeg */,
 				26F4AD9D2359C8FF007FDBD1 /* image_6.jpeg */,
 				26F4AD9E2359C8FF007FDBD1 /* image_05.jpeg */,
 				26F4AD9F2359C8FF007FDBD1 /* image_04.jpeg */,
 				26F4ADA02359C8FF007FDBD1 /* image_03.jpeg */,
 				26F4ADA12359C8FF007FDBD1 /* image_02.jpeg */,
-				26F4ADA22359C8FF007FDBD1 /* image_1.jpeg */,
-				26F4ADA32359C8FF007FDBD1 /* image_2.png */,
 				26F4ADA42359C8FF007FDBD1 /* image_01.jpeg */,
-				26F4ADA52359C8FF007FDBD1 /* image_3.png */,
-				26F4ADA62359C8FF007FDBD1 /* image_2.jpeg */,
-				26F4ADA72359C8FF007FDBD1 /* image_1.png */,
-				26F4ADA82359C8FF007FDBD1 /* image_4.png */,
-				26F4ADA92359C8FF007FDBD1 /* image_5.png */,
-				26F4ADAA2359C8FF007FDBD1 /* image_3.jpeg */,
-				26F4ADAB2359C8FF007FDBD1 /* image_6.png */,
-				26F4ADAC2359C8FF007FDBD1 /* image_4.jpeg */,
-				26F4ADAD2359C8FF007FDBD1 /* image_5.jpeg */,
 			);
 			path = Resource;
+			sourceTree = "<group>";
+		};
+		46AD697F235A835E00F1D640 /* Test */ = {
+			isa = PBXGroup;
+			children = (
+				46AD6980235A837300F1D640 /* CLTestVC.h */,
+				46AD6981235A837300F1D640 /* CLTestVC.m */,
+			);
+			path = Test;
+			sourceTree = "<group>";
+		};
+		46AD6983235A9AE800F1D640 /* Categary */ = {
+			isa = PBXGroup;
+			children = (
+				46AD6984235A9B6800F1D640 /* UIViewController+VCCategory.h */,
+				46AD6985235A9B6800F1D640 /* UIViewController+VCCategory.m */,
+			);
+			path = Categary;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -292,10 +318,12 @@
 				26F4AD6D23599637007FDBD1 /* main.m in Sources */,
 				26F4AD8323599D4C007FDBD1 /* TableVC.m in Sources */,
 				26F4AD942359A3F6007FDBD1 /* CollectionBannerVC.m in Sources */,
+				46AD6986235A9B6800F1D640 /* UIViewController+VCCategory.m in Sources */,
 				26F4AD7B2359965A007FDBD1 /* ViewController.m in Sources */,
 				26F4AD9B2359A506007FDBD1 /* BannerIndictorView.m in Sources */,
 				26F4AD952359A3F6007FDBD1 /* ScrollBannerVC.m in Sources */,
 				26F4AD982359A4C4007FDBD1 /* ScrollBannerView.m in Sources */,
+				46AD6982235A837300F1D640 /* CLTestVC.m in Sources */,
 				26F4AD8723599EB3007FDBD1 /* CLBaseVC.m in Sources */,
 				26F4AD7D2359965A007FDBD1 /* AppDelegate.m in Sources */,
 			);
@@ -439,6 +467,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = CustomLibProject/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -455,6 +484,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = CustomLibProject/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

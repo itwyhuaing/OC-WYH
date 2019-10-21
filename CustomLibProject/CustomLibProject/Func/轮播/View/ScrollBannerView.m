@@ -56,9 +56,7 @@
         _timeInterval       = ti;
         _isManual           = NO;
         
-        // 添加通知监听
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(timerStatusFire:) name:kScrollBannerViewTimerOnNotify object:@1];
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(timerStatusFire:) name:kScrollBannerViewTimerOnNotify object:@0];
+        [self addObservers];
     }
     return self;
 }
@@ -241,12 +239,13 @@
  */
 -(void)timerStatusFire:(NSNotification *)ntf {
     if ([self.timer isValid] && self.timer) {
-        NSDictionary *notifyInfo = ntf.object;
-//        if (on) {
-//            [self.timer setFireDate:[NSDate distantPast]];
-//        }else{
-//            [self.timer setFireDate:[NSDate distantFuture]];
-//        }
+        if ([ntf.name isEqualToString:kScrollBannerViewTimerOnNotify]) {
+            NSLog(@"\n 接收到启动通知 \n");
+            [self.timer setFireDate:[NSDate distantPast]];
+        }else{
+            NSLog(@"\n 接收到暂停通知 \n");
+            [self.timer setFireDate:[NSDate distantFuture]];
+        }
     }
 }
 
@@ -273,7 +272,39 @@
  计时器任务
  */
 - (void)timerTask {
+    NSLog(@"\n 定时器执行 \n");
     [self autoScroll];
+}
+
+
+- (void)didMoveToSuperview {
+    NSLog(@"\n %s \n",__FUNCTION__);
+    if (_timer) {
+        if (!(self.superview && self.window)) {
+            [self stopTimer];
+        }
+    }
+}
+
+-(void)dealloc {
+    NSLog(@"\n %s \n",__FUNCTION__);
+    [self stopTimer];
+}
+
+- (void)addObservers {
+    // 添加通知监听
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(timerStatusFire:) name:kScrollBannerViewTimerOnNotify object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(timerStatusFire:) name:kScrollBannerViewTimerOffNotify object:nil];
+}
+
+- (void)removeObservers {
+    // 移除监听通知
+    [[NSNotificationCenter defaultCenter] removeObserver:self
+                                                    name:kScrollBannerViewTimerOnNotify
+                                                  object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self
+                                                    name:kScrollBannerViewTimerOffNotify
+                                                  object:nil];
 }
 
 #pragma mark ------ lazy load
@@ -297,21 +328,6 @@
         _imgNameArr = [[NSMutableArray alloc] init];
     }
     return _imgNameArr;
-}
-
-- (void)didMoveToSuperview {
-    if (_timer) {
-        if (!(self.superview && self.window)) {
-            [self stopTimer];
-        }
-    }
-}
-
--(void)dealloc {
-    if (_timer != nil) {
-        [_timer invalidate];
-        _timer = nil;
-    }
 }
 
 @end
