@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2609DF48235D9B3A00BB3A70 /* BannerIndictorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2609DF42235D9B3A00BB3A70 /* BannerIndictorView.m */; };
+		2609DF49235D9B3A00BB3A70 /* ScrollBannerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2609DF44235D9B3A00BB3A70 /* ScrollBannerView.m */; };
+		2609DF4C235D9B6300BB3A70 /* CollectionBanner.m in Sources */ = {isa = PBXBuildFile; fileRef = 2609DF4B235D9B6300BB3A70 /* CollectionBanner.m */; };
+		2609DF4F235D9B8800BB3A70 /* CollectionBannerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2609DF4E235D9B8800BB3A70 /* CollectionBannerCell.m */; };
+		2609DF52235DA98E00BB3A70 /* CollectionBannerLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 2609DF51235DA98E00BB3A70 /* CollectionBannerLayout.m */; };
 		26F4AD6523599635007FDBD1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26F4AD6323599635007FDBD1 /* Main.storyboard */; };
 		26F4AD6723599637007FDBD1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 26F4AD6623599637007FDBD1 /* Assets.xcassets */; };
 		26F4AD6A23599637007FDBD1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26F4AD6823599637007FDBD1 /* LaunchScreen.storyboard */; };
@@ -17,8 +22,6 @@
 		26F4AD8723599EB3007FDBD1 /* CLBaseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 26F4AD8623599EB3007FDBD1 /* CLBaseVC.m */; };
 		26F4AD942359A3F6007FDBD1 /* CollectionBannerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 26F4AD8F2359A3F6007FDBD1 /* CollectionBannerVC.m */; };
 		26F4AD952359A3F6007FDBD1 /* ScrollBannerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 26F4AD922359A3F6007FDBD1 /* ScrollBannerVC.m */; };
-		26F4AD982359A4C4007FDBD1 /* ScrollBannerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 26F4AD962359A4C4007FDBD1 /* ScrollBannerView.m */; };
-		26F4AD9B2359A506007FDBD1 /* BannerIndictorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 26F4AD9A2359A506007FDBD1 /* BannerIndictorView.m */; };
 		26F4ADAE2359C8FF007FDBD1 /* image_6.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 26F4AD9D2359C8FF007FDBD1 /* image_6.jpeg */; };
 		26F4ADAF2359C8FF007FDBD1 /* image_05.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 26F4AD9E2359C8FF007FDBD1 /* image_05.jpeg */; };
 		26F4ADB02359C8FF007FDBD1 /* image_04.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 26F4AD9F2359C8FF007FDBD1 /* image_04.jpeg */; };
@@ -41,6 +44,18 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2609DF42235D9B3A00BB3A70 /* BannerIndictorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BannerIndictorView.m; sourceTree = "<group>"; };
+		2609DF43235D9B3A00BB3A70 /* BannerMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BannerMacro.h; sourceTree = "<group>"; };
+		2609DF44235D9B3A00BB3A70 /* ScrollBannerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScrollBannerView.m; sourceTree = "<group>"; };
+		2609DF45235D9B3A00BB3A70 /* BannerIndictorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BannerIndictorView.h; sourceTree = "<group>"; };
+		2609DF46235D9B3A00BB3A70 /* ScrollBannerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScrollBannerView.h; sourceTree = "<group>"; };
+		2609DF4A235D9B6300BB3A70 /* CollectionBanner.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CollectionBanner.h; sourceTree = "<group>"; };
+		2609DF4B235D9B6300BB3A70 /* CollectionBanner.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CollectionBanner.m; sourceTree = "<group>"; };
+		2609DF4D235D9B8800BB3A70 /* CollectionBannerCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CollectionBannerCell.h; sourceTree = "<group>"; };
+		2609DF4E235D9B8800BB3A70 /* CollectionBannerCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CollectionBannerCell.m; sourceTree = "<group>"; };
+		2609DF50235DA98E00BB3A70 /* CollectionBannerLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CollectionBannerLayout.h; sourceTree = "<group>"; };
+		2609DF51235DA98E00BB3A70 /* CollectionBannerLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CollectionBannerLayout.m; sourceTree = "<group>"; };
+		2609DF53235DAFF800BB3A70 /* CLVBannerMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CLVBannerMacro.h; sourceTree = "<group>"; };
 		26F4AD5723599635007FDBD1 /* CustomLibProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CustomLibProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		26F4AD6423599635007FDBD1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		26F4AD6623599637007FDBD1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -59,10 +74,6 @@
 		26F4AD902359A3F6007FDBD1 /* ScrollBannerVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScrollBannerVC.h; sourceTree = "<group>"; };
 		26F4AD912359A3F6007FDBD1 /* CollectionBannerVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionBannerVC.h; sourceTree = "<group>"; };
 		26F4AD922359A3F6007FDBD1 /* ScrollBannerVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScrollBannerVC.m; sourceTree = "<group>"; };
-		26F4AD962359A4C4007FDBD1 /* ScrollBannerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScrollBannerView.m; sourceTree = "<group>"; };
-		26F4AD972359A4C4007FDBD1 /* ScrollBannerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScrollBannerView.h; sourceTree = "<group>"; };
-		26F4AD992359A506007FDBD1 /* BannerIndictorView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BannerIndictorView.h; sourceTree = "<group>"; };
-		26F4AD9A2359A506007FDBD1 /* BannerIndictorView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BannerIndictorView.m; sourceTree = "<group>"; };
 		26F4AD9D2359C8FF007FDBD1 /* image_6.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image_6.jpeg; sourceTree = "<group>"; };
 		26F4AD9E2359C8FF007FDBD1 /* image_05.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image_05.jpeg; sourceTree = "<group>"; };
 		26F4AD9F2359C8FF007FDBD1 /* image_04.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image_04.jpeg; sourceTree = "<group>"; };
@@ -80,7 +91,6 @@
 		26F4ADAB2359C8FF007FDBD1 /* image_6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image_6.png; sourceTree = "<group>"; };
 		26F4ADAC2359C8FF007FDBD1 /* image_4.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image_4.jpeg; sourceTree = "<group>"; };
 		26F4ADAD2359C8FF007FDBD1 /* image_5.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image_5.jpeg; sourceTree = "<group>"; };
-		26F4ADBF2359CC25007FDBD1 /* BannerMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BannerMacro.h; sourceTree = "<group>"; };
 		46AD6980235A837300F1D640 /* CLTestVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CLTestVC.h; sourceTree = "<group>"; };
 		46AD6981235A837300F1D640 /* CLTestVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CLTestVC.m; sourceTree = "<group>"; };
 		46AD6984235A9B6800F1D640 /* UIViewController+VCCategory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+VCCategory.h"; sourceTree = "<group>"; };
@@ -98,6 +108,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2609DF41235D9B3A00BB3A70 /* ScrollBanner */ = {
+			isa = PBXGroup;
+			children = (
+				2609DF42235D9B3A00BB3A70 /* BannerIndictorView.m */,
+				2609DF43235D9B3A00BB3A70 /* BannerMacro.h */,
+				2609DF44235D9B3A00BB3A70 /* ScrollBannerView.m */,
+				2609DF45235D9B3A00BB3A70 /* BannerIndictorView.h */,
+				2609DF46235D9B3A00BB3A70 /* ScrollBannerView.h */,
+			);
+			path = ScrollBanner;
+			sourceTree = "<group>";
+		};
+		2609DF47235D9B3A00BB3A70 /* CollectionBanner */ = {
+			isa = PBXGroup;
+			children = (
+				2609DF53235DAFF800BB3A70 /* CLVBannerMacro.h */,
+				2609DF50235DA98E00BB3A70 /* CollectionBannerLayout.h */,
+				2609DF51235DA98E00BB3A70 /* CollectionBannerLayout.m */,
+				2609DF4A235D9B6300BB3A70 /* CollectionBanner.h */,
+				2609DF4B235D9B6300BB3A70 /* CollectionBanner.m */,
+				2609DF4D235D9B8800BB3A70 /* CollectionBannerCell.h */,
+				2609DF4E235D9B8800BB3A70 /* CollectionBannerCell.m */,
+			);
+			path = CollectionBanner;
+			sourceTree = "<group>";
+		};
 		26F4AD4E23599635007FDBD1 = {
 			isa = PBXGroup;
 			children = (
@@ -177,11 +213,8 @@
 		26F4AD932359A3F6007FDBD1 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				26F4ADBF2359CC25007FDBD1 /* BannerMacro.h */,
-				26F4AD972359A4C4007FDBD1 /* ScrollBannerView.h */,
-				26F4AD962359A4C4007FDBD1 /* ScrollBannerView.m */,
-				26F4AD992359A506007FDBD1 /* BannerIndictorView.h */,
-				26F4AD9A2359A506007FDBD1 /* BannerIndictorView.m */,
+				2609DF41235D9B3A00BB3A70 /* ScrollBanner */,
+				2609DF47235D9B3A00BB3A70 /* CollectionBanner */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -318,14 +351,17 @@
 				26F4AD6D23599637007FDBD1 /* main.m in Sources */,
 				26F4AD8323599D4C007FDBD1 /* TableVC.m in Sources */,
 				26F4AD942359A3F6007FDBD1 /* CollectionBannerVC.m in Sources */,
+				2609DF52235DA98E00BB3A70 /* CollectionBannerLayout.m in Sources */,
+				2609DF49235D9B3A00BB3A70 /* ScrollBannerView.m in Sources */,
 				46AD6986235A9B6800F1D640 /* UIViewController+VCCategory.m in Sources */,
+				2609DF4F235D9B8800BB3A70 /* CollectionBannerCell.m in Sources */,
+				2609DF48235D9B3A00BB3A70 /* BannerIndictorView.m in Sources */,
 				26F4AD7B2359965A007FDBD1 /* ViewController.m in Sources */,
-				26F4AD9B2359A506007FDBD1 /* BannerIndictorView.m in Sources */,
 				26F4AD952359A3F6007FDBD1 /* ScrollBannerVC.m in Sources */,
-				26F4AD982359A4C4007FDBD1 /* ScrollBannerView.m in Sources */,
 				46AD6982235A837300F1D640 /* CLTestVC.m in Sources */,
 				26F4AD8723599EB3007FDBD1 /* CLBaseVC.m in Sources */,
 				26F4AD7D2359965A007FDBD1 /* AppDelegate.m in Sources */,
+				2609DF4C235D9B6300BB3A70 /* CollectionBanner.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

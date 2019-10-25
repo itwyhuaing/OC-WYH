@@ -20,5 +20,4 @@
 #define IMGVIEW_LOCATION_TAG        100
 
 
-
 #endif /* BannerMacro_h */

@@ -1,4 +1,12 @@
+### 分类使用
 
+---
+###### Category 与 Extension
+
+* [【iOS】Category VS Extension 原理详解](http://www.cocoachina.com/ios/20170502/19163.html)
+* [关于分类添加成员变量及分类中方法重写(覆盖) Demo](https://github.com/itwyhuaing/OC-WYH/tree/master/NSRuntime)
+
+---
 ###### iOS 项目中字体设置问题 - Demo 参考分类 JXFont
 
 > 在iOS开发中设置字体的方法有很多种，这里只介绍常用的三种：系统默认设置、内置自定义字体文件、动态下载。

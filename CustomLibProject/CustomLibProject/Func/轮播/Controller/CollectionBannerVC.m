@@ -7,8 +7,12 @@
 //
 
 #import "CollectionBannerVC.h"
+#import "CollectionBanner.h"
+#import "CLVBannerMacro.h"
 
 @interface CollectionBannerVC ()
+
+@property (nonatomic,strong) CollectionBanner *clvBanner;
 
 @end
 
@@ -16,8 +20,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    [self.view addSubview:self.clvBanner];
+    self.clvBanner.dataSource = @[@"0",@"1",@"2",@"3"];
 }
 
+-(CollectionBanner *)clvBanner {
+    if (!_clvBanner) {
+        _clvBanner = [[CollectionBanner alloc] initWithFrame:CGRectMake(0, 100, ScreenWidth, 200)];
+    }
+    return _clvBanner;
+}
 
 @end

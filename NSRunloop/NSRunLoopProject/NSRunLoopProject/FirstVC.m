@@ -18,7 +18,7 @@
 #import "FirstVC.h"
 #import "YHThread.h"
 
-@interface FirstVC ()
+@interface FirstVC () <UIScrollViewDelegate>
 {
     UILabel *displayLabel;
     NSTimer *globalTimer;
@@ -30,11 +30,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    NSLog(@"\n 测试当前RunLoopMode 1: %@ \n",[NSRunLoop currentRunLoop]);
+    
     self.view.backgroundColor = [UIColor whiteColor];
     CGRect rect = CGRectZero;
     rect.size.width = kSCREEN_W;
     rect.size.height = kSCREEN_H;
     UIScrollView *sv = [[UIScrollView alloc] initWithFrame:rect];
+    sv.delegate = self;
     sv.contentSize = CGSizeMake(kSCREEN_W, kSCREEN_H * 300.0);
     
     
@@ -52,11 +56,19 @@
     
     totalTime = 90;
     globalTimer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(updateDisplay:) userInfo:nil repeats:TRUE];
-    
-    
-    [[NSRunLoop currentRunLoop] addTimer:globalTimer forMode:NSRunLoopCommonModes];
-    //[[NSRunLoop currentRunLoop] addTimer:globalTimer forMode:UITrackingRunLoopMode];
-    
+//    [[NSRunLoop currentRunLoop] addTimer:globalTimer forMode:NSRunLoopCommonModes];
+    [[NSRunLoop currentRunLoop] addTimer:globalTimer forMode:UITrackingRunLoopMode];
+}
+
+-(void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    NSLog(@"\n 测试当前RunLoopMode 2: %@ \n",[NSRunLoop currentRunLoop]);
+}
+
+-(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
+    NSLog(@"\n 测试当前RunLoopMode 3: %@ \n",[NSRunLoop currentRunLoop]);
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(6.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        NSLog(@"\n 测试当前RunLoopMode 4: %@ \n",[NSRunLoop currentRunLoop]);
+    });
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -64,15 +76,27 @@
     self.navigationController.navigationBar.translucent = FALSE;
 }
 
+
+-(void)dealloc {
+    NSLog(@"\n 销毁 \n");
+    [self stopTimer];
+}
+
 - (void)updateDisplay:(NSTimer *)t{
     if (totalTime >= 0) {
         displayLabel.text = [NSString stringWithFormat:@"%ld",totalTime];
         totalTime --;
     }else{
+        [self stopTimer];
+    }
+    
+}
+
+- (void)stopTimer {
+    if (globalTimer) {
         [globalTimer invalidate];
         globalTimer = nil;
     }
-    
 }
 
 @end
