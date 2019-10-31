@@ -95,7 +95,7 @@
     }
 
     // 最近 item 的中心点距离加上偏移
-    return CGPointMake(proposedContentOffset.x + minDelta, proposedContentOffset.y);
+    return CGPointMake(proposedContentOffset.x + minDelta, proposedContentOffset.y);//CGPointMake(proposedContentOffset.x + SCREEN_WIDTH/2.0, proposedContentOffset.y);//
 }
 
 @end

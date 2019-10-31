@@ -13,5 +13,10 @@
 #define ScreenWidth  [UIScreen mainScreen].bounds.size.width
 
 #define kItemHeight  200.0
+#define kItemLeftRightGap 60.0
+
+#define kItemLineSpace 1.0
+
+#define kSectionCount 10
 
 #endif /* CLVBannerMacro_h */

@@ -7,6 +7,7 @@
 //
 
 #import "CollectionBanner.h"
+#import "CLVBannerMacro.h"
 #import "CollectionBannerLayout.h"
 #import "CollectionBannerCell.h"
 
@@ -48,25 +49,26 @@
 }
 
 
-- (void)scrollToLocationWithOffsetX:(CGFloat)oftx {
-    CGFloat clv_current_ofx  = oftx;
-    CGFloat clv_content_w    = self.clv.contentSize.width;
-    CGFloat clv_cell_ofx     = (int)(round(clv_current_ofx)) % (int)(round((clv_content_w/100.0)));
-    NSInteger clv_current_idx= (int)(clv_cell_ofx/200.0);
-    //[self.clv setContentOffset:CGPointMake(clv_content_w/2.0+clv_cell_ofx, 0)];
-    [self scrollToLocationAtIndex:clv_current_idx];
-}
+//- (void)scrollToLocationWithOffsetX:(CGFloat)oftx {
+//    CGFloat clv_current_ofx  = oftx;
+//    CGFloat clv_content_w    = self.clv.contentSize.width;
+//    CGFloat clv_cell_ofx     = (int)(round(clv_current_ofx)) % (int)(round((clv_content_w/100.0)));
+//    NSInteger clv_current_idx= (int)(clv_cell_ofx/200.0);
+//    //[self.clv setContentOffset:CGPointMake(clv_content_w/2.0+clv_cell_ofx, 0)];
+//    [self scrollToLocationAtIndex:clv_current_idx];
+//}
 
 - (void)scrollToLocationAtIndex:(NSInteger)idx {
     //NSLog(@"\n 滚动到指定位置 \n");
-    [self.clv scrollToItemAtIndexPath:[NSIndexPath indexPathForRow:idx inSection:100/2]
-    atScrollPosition:UICollectionViewScrollPositionCenteredHorizontally animated:FALSE];
+    [self.clv scrollToItemAtIndexPath:[NSIndexPath indexPathForRow:idx inSection:kSectionCount/2]
+                     atScrollPosition:UICollectionViewScrollPositionCenteredHorizontally
+                             animated:FALSE];
 }
 
 #pragma mark ------ UICollectionViewDelegate,UICollectionViewDataSource
 
 -(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
-    return 100;
+    return kSectionCount;
 }
 
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
@@ -87,26 +89,26 @@
 
 #pragma mark ------ UIScrollViewDelegate
 
--(void)scrollViewDidScroll:(UIScrollView *)scrollView {
-//    NSLog(@"\n 偏移量测试: %f \n",scrollView.contentOffset.x);
-}
-
-- (void)scrollViewWillEndDragging:(UIScrollView *)scrollView withVelocity:(CGPoint)velocity targetContentOffset:(inout CGPoint *)targetContentOffset {
-    NSLog(@"\n\n WillEndDragging : %f \n\n",velocity.x);
-    self.horizonalSpeed = velocity.x;
-}
-
-- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {
-    NSLog(@"\n\n DidEndDragging \n\n");
-    if (self.horizonalSpeed <= 0) {
-        [self scrollToLocationWithOffsetX:scrollView.contentOffset.x];
-    }
-}
-
--(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
-    NSLog(@"\n\n DidEndDecelerating \n\n");
-    [self scrollToLocationWithOffsetX:scrollView.contentOffset.x];
-}
+//-(void)scrollViewDidScroll:(UIScrollView *)scrollView {
+////    NSLog(@"\n 偏移量测试: %f \n",scrollView.contentOffset.x);
+//}
+//
+//- (void)scrollViewWillEndDragging:(UIScrollView *)scrollView withVelocity:(CGPoint)velocity targetContentOffset:(inout CGPoint *)targetContentOffset {
+//    NSLog(@"\n\n WillEndDragging : %f \n\n",velocity.x);
+//    self.horizonalSpeed = velocity.x;
+//}
+//
+//- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {
+//    NSLog(@"\n\n DidEndDragging \n\n");
+//    if (self.horizonalSpeed <= 0) {
+//        [self scrollToLocationWithOffsetX:scrollView.contentOffset.x];
+//    }
+//}
+//
+//-(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
+//    NSLog(@"\n\n DidEndDecelerating \n\n");
+//    [self scrollToLocationWithOffsetX:scrollView.contentOffset.x];
+//}
 
 #pragma mark ------ lazy load
 

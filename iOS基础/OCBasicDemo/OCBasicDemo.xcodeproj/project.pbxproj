@@ -15,6 +15,11 @@
 		26ABDBE923602A1F003E5269 /* TableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 26ABDBE723602A1F003E5269 /* TableVC.m */; };
 		26ABDBEC23602A9A003E5269 /* BaseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 26ABDBEB23602A9A003E5269 /* BaseVC.m */; };
 		26ABDBF223602B3B003E5269 /* CopyVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 26ABDBF123602B3B003E5269 /* CopyVC.m */; };
+		26B49967236AD58D007C068F /* EventChainVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 26B49966236AD58D007C068F /* EventChainVC.m */; };
+		26B4996A236AD5C1007C068F /* EventView.m in Sources */ = {isa = PBXBuildFile; fileRef = 26B49969236AD5C1007C068F /* EventView.m */; };
+		26B4996D236AD5DC007C068F /* EAView.m in Sources */ = {isa = PBXBuildFile; fileRef = 26B4996C236AD5DC007C068F /* EAView.m */; };
+		26B49970236AD5E8007C068F /* EBView.m in Sources */ = {isa = PBXBuildFile; fileRef = 26B4996F236AD5E8007C068F /* EBView.m */; };
+		26B49973236AD5F3007C068F /* ECView.m in Sources */ = {isa = PBXBuildFile; fileRef = 26B49972236AD5F3007C068F /* ECView.m */; };
 		26CDDC8F23628F6D0059B6A1 /* CategoryVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 26CDDC8E23628F6D0059B6A1 /* CategoryVC.m */; };
 		26CDDC9223628FAC0059B6A1 /* TstObj.m in Sources */ = {isa = PBXBuildFile; fileRef = 26CDDC9123628FAC0059B6A1 /* TstObj.m */; };
 		26CDDC9523628FC60059B6A1 /* NSObject+Tst.m in Sources */ = {isa = PBXBuildFile; fileRef = 26CDDC9423628FC60059B6A1 /* NSObject+Tst.m */; };
@@ -41,6 +46,16 @@
 		26ABDBEB23602A9A003E5269 /* BaseVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseVC.m; sourceTree = "<group>"; };
 		26ABDBF023602B3B003E5269 /* CopyVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CopyVC.h; sourceTree = "<group>"; };
 		26ABDBF123602B3B003E5269 /* CopyVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CopyVC.m; sourceTree = "<group>"; };
+		26B49965236AD58D007C068F /* EventChainVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EventChainVC.h; sourceTree = "<group>"; };
+		26B49966236AD58D007C068F /* EventChainVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EventChainVC.m; sourceTree = "<group>"; };
+		26B49968236AD5C1007C068F /* EventView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EventView.h; sourceTree = "<group>"; };
+		26B49969236AD5C1007C068F /* EventView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EventView.m; sourceTree = "<group>"; };
+		26B4996B236AD5DC007C068F /* EAView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EAView.h; sourceTree = "<group>"; };
+		26B4996C236AD5DC007C068F /* EAView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EAView.m; sourceTree = "<group>"; };
+		26B4996E236AD5E8007C068F /* EBView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EBView.h; sourceTree = "<group>"; };
+		26B4996F236AD5E8007C068F /* EBView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EBView.m; sourceTree = "<group>"; };
+		26B49971236AD5F3007C068F /* ECView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ECView.h; sourceTree = "<group>"; };
+		26B49972236AD5F3007C068F /* ECView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ECView.m; sourceTree = "<group>"; };
 		26CDDC8D23628F6D0059B6A1 /* CategoryVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CategoryVC.h; sourceTree = "<group>"; };
 		26CDDC8E23628F6D0059B6A1 /* CategoryVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CategoryVC.m; sourceTree = "<group>"; };
 		26CDDC9023628FAC0059B6A1 /* TstObj.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TstObj.h; sourceTree = "<group>"; };
@@ -118,6 +133,7 @@
 		26ABDBE2236029A4003E5269 /* Func */ = {
 			isa = PBXGroup;
 			children = (
+				26B49964236AD532007C068F /* 响应链 */,
 				26CDDC8C23628F420059B6A1 /* 类别 */,
 				26ABDBE3236029A4003E5269 /* 深浅拷贝 */,
 				26ABDBF323614D02003E5269 /* KVC与KVO */,
@@ -141,6 +157,23 @@
 				26CDDCA0236298E80059B6A1 /* KVO */,
 			);
 			path = "KVC与KVO";
+			sourceTree = "<group>";
+		};
+		26B49964236AD532007C068F /* 响应链 */ = {
+			isa = PBXGroup;
+			children = (
+				26B49965236AD58D007C068F /* EventChainVC.h */,
+				26B49966236AD58D007C068F /* EventChainVC.m */,
+				26B49968236AD5C1007C068F /* EventView.h */,
+				26B49969236AD5C1007C068F /* EventView.m */,
+				26B4996B236AD5DC007C068F /* EAView.h */,
+				26B4996C236AD5DC007C068F /* EAView.m */,
+				26B4996E236AD5E8007C068F /* EBView.h */,
+				26B4996F236AD5E8007C068F /* EBView.m */,
+				26B49971236AD5F3007C068F /* ECView.h */,
+				26B49972236AD5F3007C068F /* ECView.m */,
+			);
+			path = "响应链";
 			sourceTree = "<group>";
 		};
 		26CDDC8C23628F420059B6A1 /* 类别 */ = {
@@ -255,15 +288,20 @@
 				26ABDBE6236029A4003E5269 /* AppDelegate.m in Sources */,
 				26CDDCA92362A17B0059B6A1 /* ModelAndDicVC.m in Sources */,
 				26CDDC9523628FC60059B6A1 /* NSObject+Tst.m in Sources */,
+				26B4996D236AD5DC007C068F /* EAView.m in Sources */,
+				26B4996A236AD5C1007C068F /* EventView.m in Sources */,
 				26CDDCA6236299570059B6A1 /* PersonVC.m in Sources */,
 				26CDDCA3236298E80059B6A1 /* KVCController.m in Sources */,
 				26CDDCA1236298E80059B6A1 /* KVCObj.m in Sources */,
 				26CDDC8F23628F6D0059B6A1 /* CategoryVC.m in Sources */,
 				26ABDBE923602A1F003E5269 /* TableVC.m in Sources */,
 				26ABDBEC23602A9A003E5269 /* BaseVC.m in Sources */,
+				26B49970236AD5E8007C068F /* EBView.m in Sources */,
+				26B49973236AD5F3007C068F /* ECView.m in Sources */,
 				26ABDBF223602B3B003E5269 /* CopyVC.m in Sources */,
 				26CDDC9223628FAC0059B6A1 /* TstObj.m in Sources */,
 				26ABDBD523602952003E5269 /* main.m in Sources */,
+				26B49967236AD58D007C068F /* EventChainVC.m in Sources */,
 				26CDDC98236290C70059B6A1 /* TstObj+TC.m in Sources */,
 				26CDDCA2236298E80059B6A1 /* PageControlVC.m in Sources */,
 			);
