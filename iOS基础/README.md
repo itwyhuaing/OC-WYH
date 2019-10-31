@@ -51,11 +51,11 @@ OC 程序在运行过程中，数据类型和对象的类别并不是编译时�
 
 * 先来看一个比较早的 NSObject 的继承类关系图，与当前最新框架可能有调整。
 
-![image](https://github.com/itwyhuaing/OC-WYH/tree/master/iOS基础/image/NSObject.png)
+![image](https://github.com/itwyhuaing/OC-WYH/blob/master/iOS基础/image/NSObject.png)
 
 * 官方给出的一个默认响应链：
 
-![image](https://github.com/itwyhuaing/OC-WYH/tree/master/iOS基础/image/respondchain.png)
+![image](https://github.com/itwyhuaing/OC-WYH/blob/master/iOS基础/image/respondchain.png)
 
 * 事件类型：Touch Event ，Press Event，Shake-motion events、Remote-control events、Edition menu messages。
 
@@ -81,7 +81,7 @@ OC 程序在运行过程中，数据类型和对象的类别并不是编译时�
 
   > Demo 中 红色视图添加到控制器的视图上；绿色视图和蓝色视图依次添加到红色视图上。视图层级如下:
 
-  ![image](https://github.com/itwyhuaing/OC-WYH/tree/master/iOS基础/image/views.png)
+  ![image](https://github.com/itwyhuaing/OC-WYH/blob/master/iOS基础/image/views.png)
 
   > 点击绿色或蓝色视图任意位置。红色视图的 方法1 都会第一个执行。其后是 子视图的 方法2 的执行。
   红色视图中不主动调用该视图的方法2的情况下，点击绿蓝两个视图相互重叠的区域，方法执行顺序如下：
