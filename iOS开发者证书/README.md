@@ -3,7 +3,21 @@
 
 > 前者挖坑，后来者填坑。关于开发者账号申请、应用创建、证书创建以及应用上传等具体流程已有很多参考；这里只记录自己想记录的关键点。
 
-* 证书种类和功能
+### 证书种类和功能
+
+* 开发者证书种类和功能
+
+![image](https://github.com/itwyhuaing/OC-WYH/blob/master/iOS开发者证书/image/cer0.png)
+
+* 登录开发者账号之后的界面
+
+![image](https://github.com/itwyhuaing/OC-WYH/blob/master/iOS开发者证书/image/cer1.png)
+
+
+![image](https://github.com/itwyhuaing/OC-WYH/blob/master/iOS开发者证书/image/cer2.png)
+
+
+![image](https://github.com/itwyhuaing/OC-WYH/blob/master/iOS开发者证书/image/cer3.png)
 
 
 **开发环境的调试证书**
