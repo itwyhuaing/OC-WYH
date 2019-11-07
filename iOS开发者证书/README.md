@@ -7,7 +7,7 @@
 
 * 开发者证书种类和功能
 
-![image](https://camo.githubusercontent.com/itwyhuaing/OC-WYH/blob/master/iOS开发者证书/image/cer0.png)
+![image](https://github.com/itwyhuaing/OC-WYH/blob/master/iOS开发者证书/image/cer0.png)
 
 * 登录开发者账号之后的界面
 
