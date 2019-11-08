@@ -61,7 +61,7 @@ OC 程序在运行过程中，数据类型和对象的类别并不是编译时�
 
 **注意：** 运动事件相关的加速度计、陀螺仪、磁强计都不属于响应者链。而是 Core Motion 传递事件给你指定的对象。
 
-* 如何确定那个响应者包含 Touch 事件，又该如何确定事件的第一响应者 ？
+* 如何确定哪个响应者包含 Touch 事件，又该如何确定事件的第一响应者 ？
 
 1. 事件响应者的确定依赖以下两个方法，都可在视图中重写。
 
@@ -80,6 +80,10 @@ OC 程序在运行过程中，数据类型和对象的类别并不是编译时�
 2. 事件传递及第一响应者查询过程：当iOS程序中发生 Touch 事件后，系统会将 Touch 加入到 UIApplication 管理的一个任务队列中。UIApplication 将处于任务队列最前端的事件向下分发下去，也即分发给UIWindow。UIWindow将事件向下分发下去，即分发给 UIView。在UIView 上的查询过程如下：方法1 在视图层级间执行，执行过程中可让该视图的每一个子视图调用 方法2 来确定该子视图是否应该接收该 Touch 事件；倘若该子视图不包含该点，该子视图的 方法1 也便不再执行，Touch 事件的查询在此子视图的视图树上便结束了；直到最后查询到可以接收该事件的视图；倘若没有查询到，则该事件将被系统丢弃。
 
   > Demo 中 红色视图添加到控制器的视图上；绿色视图和蓝色视图依次添加到红色视图上。视图层级如下:
+
+
+  ![image](https://github.com/itwyhuaing/OC-WYH/blob/master/iOS基础/image/响应链Demo.png)
+
 
   ![image](https://github.com/itwyhuaing/OC-WYH/blob/master/iOS基础/image/views.png)
 
@@ -100,11 +104,7 @@ OC 程序在运行过程中，数据类型和对象的类别并不是编译时�
  -[ECView pointInside:withEvent:] ===> 1
 ```
 
-3.
-
-4. UIView 不接收（无法接收）事件查询的情况主要有以下三种：（3.1）userInteractionEnabled = FALSE；（3.2）hidden = TRUE；（3.3）alpha < 0.01。
-
-
+4. UIView 不接收（无法接收）事件查询的情况主要有以下三种：（3.1）userInteractionEnabled = FALSE；（3.2）hidden = TRUE；（3.3）alpha < 0.01。其中父视图无法接收时，其子视图一律无法接收。
 
 ### Block
 
