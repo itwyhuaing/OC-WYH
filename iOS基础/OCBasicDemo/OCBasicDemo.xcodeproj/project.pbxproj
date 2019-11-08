@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2611AC6023757156009CA248 /* EventChainVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2611AC5A23757156009CA248 /* EventChainVC.m */; };
+		2611AC6123757156009CA248 /* EventView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2611AC5B23757156009CA248 /* EventView.m */; };
+		2611AC6223757156009CA248 /* EBView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2611AC5C23757156009CA248 /* EBView.m */; };
+		2611AC6323757156009CA248 /* ECView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2611AC5D23757156009CA248 /* ECView.m */; };
+		2611AC6423757156009CA248 /* EAView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2611AC5E23757156009CA248 /* EAView.m */; };
+		2611AC67237571DC009CA248 /* EventChainExampleVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2611AC66237571DC009CA248 /* EventChainExampleVC.m */; };
+		2611AC6A237572D1009CA248 /* UIButton+Tst.m in Sources */ = {isa = PBXBuildFile; fileRef = 2611AC69237572D1009CA248 /* UIButton+Tst.m */; };
 		26ABDBCD23602950003E5269 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26ABDBCB23602950003E5269 /* Main.storyboard */; };
 		26ABDBCF23602952003E5269 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 26ABDBCE23602952003E5269 /* Assets.xcassets */; };
 		26ABDBD223602952003E5269 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26ABDBD023602952003E5269 /* LaunchScreen.storyboard */; };
@@ -15,11 +22,6 @@
 		26ABDBE923602A1F003E5269 /* TableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 26ABDBE723602A1F003E5269 /* TableVC.m */; };
 		26ABDBEC23602A9A003E5269 /* BaseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 26ABDBEB23602A9A003E5269 /* BaseVC.m */; };
 		26ABDBF223602B3B003E5269 /* CopyVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 26ABDBF123602B3B003E5269 /* CopyVC.m */; };
-		26B49967236AD58D007C068F /* EventChainVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 26B49966236AD58D007C068F /* EventChainVC.m */; };
-		26B4996A236AD5C1007C068F /* EventView.m in Sources */ = {isa = PBXBuildFile; fileRef = 26B49969236AD5C1007C068F /* EventView.m */; };
-		26B4996D236AD5DC007C068F /* EAView.m in Sources */ = {isa = PBXBuildFile; fileRef = 26B4996C236AD5DC007C068F /* EAView.m */; };
-		26B49970236AD5E8007C068F /* EBView.m in Sources */ = {isa = PBXBuildFile; fileRef = 26B4996F236AD5E8007C068F /* EBView.m */; };
-		26B49973236AD5F3007C068F /* ECView.m in Sources */ = {isa = PBXBuildFile; fileRef = 26B49972236AD5F3007C068F /* ECView.m */; };
 		26CDDC8F23628F6D0059B6A1 /* CategoryVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 26CDDC8E23628F6D0059B6A1 /* CategoryVC.m */; };
 		26CDDC9223628FAC0059B6A1 /* TstObj.m in Sources */ = {isa = PBXBuildFile; fileRef = 26CDDC9123628FAC0059B6A1 /* TstObj.m */; };
 		26CDDC9523628FC60059B6A1 /* NSObject+Tst.m in Sources */ = {isa = PBXBuildFile; fileRef = 26CDDC9423628FC60059B6A1 /* NSObject+Tst.m */; };
@@ -32,6 +34,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2611AC5523757156009CA248 /* EBView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EBView.h; sourceTree = "<group>"; };
+		2611AC5623757156009CA248 /* EventView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventView.h; sourceTree = "<group>"; };
+		2611AC5723757156009CA248 /* EventChainVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventChainVC.h; sourceTree = "<group>"; };
+		2611AC5823757156009CA248 /* EAView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EAView.h; sourceTree = "<group>"; };
+		2611AC5923757156009CA248 /* ECView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECView.h; sourceTree = "<group>"; };
+		2611AC5A23757156009CA248 /* EventChainVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventChainVC.m; sourceTree = "<group>"; };
+		2611AC5B23757156009CA248 /* EventView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventView.m; sourceTree = "<group>"; };
+		2611AC5C23757156009CA248 /* EBView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EBView.m; sourceTree = "<group>"; };
+		2611AC5D23757156009CA248 /* ECView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECView.m; sourceTree = "<group>"; };
+		2611AC5E23757156009CA248 /* EAView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EAView.m; sourceTree = "<group>"; };
+		2611AC65237571DC009CA248 /* EventChainExampleVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EventChainExampleVC.h; sourceTree = "<group>"; };
+		2611AC66237571DC009CA248 /* EventChainExampleVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EventChainExampleVC.m; sourceTree = "<group>"; };
+		2611AC68237572D1009CA248 /* UIButton+Tst.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIButton+Tst.h"; sourceTree = "<group>"; };
+		2611AC69237572D1009CA248 /* UIButton+Tst.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Tst.m"; sourceTree = "<group>"; };
 		26ABDBBF23602950003E5269 /* OCBasicDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OCBasicDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		26ABDBCC23602950003E5269 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		26ABDBCE23602952003E5269 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -46,16 +62,6 @@
 		26ABDBEB23602A9A003E5269 /* BaseVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseVC.m; sourceTree = "<group>"; };
 		26ABDBF023602B3B003E5269 /* CopyVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CopyVC.h; sourceTree = "<group>"; };
 		26ABDBF123602B3B003E5269 /* CopyVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CopyVC.m; sourceTree = "<group>"; };
-		26B49965236AD58D007C068F /* EventChainVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EventChainVC.h; sourceTree = "<group>"; };
-		26B49966236AD58D007C068F /* EventChainVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EventChainVC.m; sourceTree = "<group>"; };
-		26B49968236AD5C1007C068F /* EventView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EventView.h; sourceTree = "<group>"; };
-		26B49969236AD5C1007C068F /* EventView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EventView.m; sourceTree = "<group>"; };
-		26B4996B236AD5DC007C068F /* EAView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EAView.h; sourceTree = "<group>"; };
-		26B4996C236AD5DC007C068F /* EAView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EAView.m; sourceTree = "<group>"; };
-		26B4996E236AD5E8007C068F /* EBView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EBView.h; sourceTree = "<group>"; };
-		26B4996F236AD5E8007C068F /* EBView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EBView.m; sourceTree = "<group>"; };
-		26B49971236AD5F3007C068F /* ECView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ECView.h; sourceTree = "<group>"; };
-		26B49972236AD5F3007C068F /* ECView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ECView.m; sourceTree = "<group>"; };
 		26CDDC8D23628F6D0059B6A1 /* CategoryVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CategoryVC.h; sourceTree = "<group>"; };
 		26CDDC8E23628F6D0059B6A1 /* CategoryVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CategoryVC.m; sourceTree = "<group>"; };
 		26CDDC9023628FAC0059B6A1 /* TstObj.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TstObj.h; sourceTree = "<group>"; };
@@ -87,6 +93,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2611AC5423757156009CA248 /* 事件响应链原理 */ = {
+			isa = PBXGroup;
+			children = (
+				2611AC5523757156009CA248 /* EBView.h */,
+				2611AC5623757156009CA248 /* EventView.h */,
+				2611AC5723757156009CA248 /* EventChainVC.h */,
+				2611AC5823757156009CA248 /* EAView.h */,
+				2611AC5923757156009CA248 /* ECView.h */,
+				2611AC5A23757156009CA248 /* EventChainVC.m */,
+				2611AC5B23757156009CA248 /* EventView.m */,
+				2611AC5C23757156009CA248 /* EBView.m */,
+				2611AC5D23757156009CA248 /* ECView.m */,
+				2611AC5E23757156009CA248 /* EAView.m */,
+			);
+			path = "事件响应链原理";
+			sourceTree = "<group>";
+		};
+		2611AC5F23757156009CA248 /* 应用示例 */ = {
+			isa = PBXGroup;
+			children = (
+				2611AC65237571DC009CA248 /* EventChainExampleVC.h */,
+				2611AC66237571DC009CA248 /* EventChainExampleVC.m */,
+				2611AC68237572D1009CA248 /* UIButton+Tst.h */,
+				2611AC69237572D1009CA248 /* UIButton+Tst.m */,
+			);
+			path = "应用示例";
+			sourceTree = "<group>";
+		};
 		26ABDBB623602950003E5269 = {
 			isa = PBXGroup;
 			children = (
@@ -122,10 +156,10 @@
 			children = (
 				26ABDBDC236029A3003E5269 /* AppDelegate.h */,
 				26ABDBDF236029A3003E5269 /* AppDelegate.m */,
-				26ABDBE823602A1F003E5269 /* TableVC.h */,
-				26ABDBE723602A1F003E5269 /* TableVC.m */,
 				26ABDBEA23602A9A003E5269 /* BaseVC.h */,
 				26ABDBEB23602A9A003E5269 /* BaseVC.m */,
+				26ABDBE823602A1F003E5269 /* TableVC.h */,
+				26ABDBE723602A1F003E5269 /* TableVC.m */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -162,16 +196,8 @@
 		26B49964236AD532007C068F /* 响应链 */ = {
 			isa = PBXGroup;
 			children = (
-				26B49965236AD58D007C068F /* EventChainVC.h */,
-				26B49966236AD58D007C068F /* EventChainVC.m */,
-				26B49968236AD5C1007C068F /* EventView.h */,
-				26B49969236AD5C1007C068F /* EventView.m */,
-				26B4996B236AD5DC007C068F /* EAView.h */,
-				26B4996C236AD5DC007C068F /* EAView.m */,
-				26B4996E236AD5E8007C068F /* EBView.h */,
-				26B4996F236AD5E8007C068F /* EBView.m */,
-				26B49971236AD5F3007C068F /* ECView.h */,
-				26B49972236AD5F3007C068F /* ECView.m */,
+				2611AC5423757156009CA248 /* 事件响应链原理 */,
+				2611AC5F23757156009CA248 /* 应用示例 */,
 			);
 			path = "响应链";
 			sourceTree = "<group>";
@@ -287,21 +313,23 @@
 			files = (
 				26ABDBE6236029A4003E5269 /* AppDelegate.m in Sources */,
 				26CDDCA92362A17B0059B6A1 /* ModelAndDicVC.m in Sources */,
+				2611AC6323757156009CA248 /* ECView.m in Sources */,
 				26CDDC9523628FC60059B6A1 /* NSObject+Tst.m in Sources */,
-				26B4996D236AD5DC007C068F /* EAView.m in Sources */,
-				26B4996A236AD5C1007C068F /* EventView.m in Sources */,
+				2611AC6123757156009CA248 /* EventView.m in Sources */,
+				2611AC6223757156009CA248 /* EBView.m in Sources */,
 				26CDDCA6236299570059B6A1 /* PersonVC.m in Sources */,
 				26CDDCA3236298E80059B6A1 /* KVCController.m in Sources */,
+				2611AC6A237572D1009CA248 /* UIButton+Tst.m in Sources */,
 				26CDDCA1236298E80059B6A1 /* KVCObj.m in Sources */,
 				26CDDC8F23628F6D0059B6A1 /* CategoryVC.m in Sources */,
+				2611AC67237571DC009CA248 /* EventChainExampleVC.m in Sources */,
 				26ABDBE923602A1F003E5269 /* TableVC.m in Sources */,
 				26ABDBEC23602A9A003E5269 /* BaseVC.m in Sources */,
-				26B49970236AD5E8007C068F /* EBView.m in Sources */,
-				26B49973236AD5F3007C068F /* ECView.m in Sources */,
+				2611AC6423757156009CA248 /* EAView.m in Sources */,
 				26ABDBF223602B3B003E5269 /* CopyVC.m in Sources */,
 				26CDDC9223628FAC0059B6A1 /* TstObj.m in Sources */,
 				26ABDBD523602952003E5269 /* main.m in Sources */,
-				26B49967236AD58D007C068F /* EventChainVC.m in Sources */,
+				2611AC6023757156009CA248 /* EventChainVC.m in Sources */,
 				26CDDC98236290C70059B6A1 /* TstObj+TC.m in Sources */,
 				26CDDCA2236298E80059B6A1 /* PageControlVC.m in Sources */,
 			);
