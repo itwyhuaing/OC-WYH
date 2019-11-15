@@ -6,9 +6,6 @@
 //  Copyright © 2019 JiXia. All rights reserved.
 //
 
-/**
- [iOS深浅拷贝，看完就会](https://blog.csdn.net/DonnyDN/article/details/79381053)
- */
 
 #import "BaseVC.h"
 

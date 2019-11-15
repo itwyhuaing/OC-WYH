@@ -17,8 +17,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
-    [btn sendAction:<#(nonnull SEL)#> to:<#(nullable id)#> forEvent:<#(nullable UIEvent *)#>];
+    //UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+    //[btn sendAction:<#(nonnull SEL)#> to:<#(nullable id)#> forEvent:<#(nullable UIEvent *)#>];
     //objc_msgSend
 }
 

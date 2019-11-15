@@ -1,16 +1,16 @@
 //
-//  UIButton+Tst.h
+//  RTMethodHandleVC.h
 //  OCBasicDemo
 //
-//  Created by hnbwyh on 2019/11/8.
+//  Created by hnbwyh on 2019/11/13.
 //  Copyright © 2019 JiXia. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "BaseVC.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface UIButton (Tst)
+@interface RTMethodHandleVC : BaseVC
 
 @end
 

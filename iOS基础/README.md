@@ -4,18 +4,23 @@ iOS基础 记录 。
 ---
 ### 深浅拷贝
 
+* NSString、NSArray、NSDictionary 在修饰时使用 Copy 和 Strong 的区别 ？（答案见Demo分析）
+
 1. 浅拷贝只是拷贝指向存储空间的指针；深拷贝是新开辟一块内存，将已存储的待拷贝对象拷贝一份存储在新的内存空间里。
 
-2. copy 得到的类型为不可变，mutableCopy 得到的类型为可变；copy 即可是浅拷贝也可是深拷贝，mutableCopy 深拷贝。
+2. copy 得到的类型为不可变（不可变的可以理解为变量的值变化时，存储地址也会改变；也即变更不可变对象的值之后，变为一个新对象，与变更之后有不同的存储空间），mutableCopy 得到的类型为可变；copy 即可是浅拷贝也可是深拷贝，mutableCopy 深拷贝。
 
 3. 属性中，NSString、NSArray、NSDictionary 等不可变类型应当使用 copy 而非 strong ；可见 Demo 数据结果。
+
+#### 参考
+* [iOS深浅拷贝，看完就会](https://blog.csdn.net/DonnyDN/article/details/79381053)
 
 ---
 ### 类的继承、类的类别（分类）、类的扩展
 
 1. 继承，继承了父类的所有方法与属性，避免重新定义也避免代码冗杂；可新增方法与属性、成员变量，可重写父类方法。
 
-2. 类别（category），可在不熟悉原有类的基础上为其新增方法；倘若新增方法与原类中已有方法冲突，则类别中的方法将会覆盖原类中的方法，具有更高优先级。类别可以新增属性，但无法生成相应的成员变量和getter 、setter 方法的实现。
+2. 类别（category），可在不熟悉原有类的基础上为其新增方法；倘若新增方法与原类中已有方法冲突，则类别中的方法将会覆盖原类中的方法，具有更高优先级。类别可以新增属性，但无法生成相应的成员变量和getter 、setter 方法的实现。同一个类的多个分类中存在同名的方法，运行时到底调用哪个方法由编译器决定，最后一个参与编译的方法会被调用。
 
 3. 扩展(extensions)，既可以新增属性、成员变量也可以添加方法；扩展可以视为私有的类别。
 
@@ -106,6 +111,66 @@ OC 程序在运行过程中，数据类型和对象的类别并不是编译时�
 
 4. UIView 不接收（无法接收）事件查询的情况主要有以下三种：（3.1）userInteractionEnabled = FALSE；（3.2）hidden = TRUE；（3.3）alpha < 0.01。其中父视图无法接收时，其子视图一律无法接收。
 
+
+---
+### NSRuntime
+
+**分类增加属性**
+
+* 补充1 - OC 语言字符串(NSString) 与 C 语言中字符串间的转换
+
+```
+<!-- NSString 转 char -->
+NSString *str = @"love";
+const char *cStr = [str UTF8String];
+NSLog(@"cStr = %s", cStr);
+
+<!-- char 转 NSString -->
+char *cStr = "love";
+NSString *str = [NSString stringWithUTF8String:cStr];
+NSLog(@"str = %@", str);
+
+```
+
+* 绑定属性 - 手动设置 set 与 get 方法
+
+```
+/**
+* object - 需要关联属性的对象
+* key    - 用于区分该属性的 key 值
+* value  - 待关联对象属性的值
+* policy - 关联策略
+*/
+void
+objc_setAssociatedObject(id _Nonnull object, const void * _Nonnull key,
+                         id _Nullable value, objc_AssociationPolicy policy)
+```
+
+```
+/**
+* object - 需要关联属性的对象
+* key    - 用于区分该属性的 key 值，该值与上一个方法的 key 值相对应
+*/
+id _Nullable
+objc_getAssociatedObject(id _Nonnull object, const void * _Nonnull key)
+```
+
+* 移除属性
+
+```
+void
+objc_removeAssociatedObjects(id _Nonnull object)
+```
+
+**拦截方法**
+
+
+
+#### 参考
+
+* [OC中Runtime浅析](https://www.jianshu.com/p/07d26bfc17d4)
+
+---
 ### Block
 
 

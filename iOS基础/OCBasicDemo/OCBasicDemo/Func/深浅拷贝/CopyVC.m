@@ -51,6 +51,10 @@
     NSLog(@"\n\n 11 testString - %p \n\n",testString);
     NSLog(@"\n\n 11 self.stronString - %p \n\n",self.stronString);
     NSLog(@"\n\n 11 self.copString - %p \n\n",self.copString);
+    // 修改之后发现 testString 存储地址也发生变化
+    testString = @"testString";
+    NSLog(@"\n修改testString\n %@:%p - %@:%p - %@:%p\n\n",testString,testString,self.stronString,self.stronString,self.copString,self.copString);
+    
     
     NSMutableString *mutableString = [NSMutableString stringWithFormat:@"NSMutableString%d",2];
     self.stronString = mutableString; // 浅拷贝
@@ -58,7 +62,13 @@
     NSLog(@"\n\n 22 mutableString - %p \n\n",mutableString);
     NSLog(@"\n\n 22 self.stronString - %p \n\n",self.stronString);
     NSLog(@"\n\n 22 self.copString - %p \n\n",self.copString);
-    
+    // 修改方式1
+    [mutableString appendString:@"appendString测试"];
+    NSLog(@"\n修改mutableString方式1\n %@:%p - %@:%p - %@:%p\n\n",mutableString,mutableString,self.stronString,self.stronString,self.copString,self.copString);
+    // 修改方式2
+    NSMutableString *tst = [NSMutableString stringWithFormat:@"数据修改测试%d",00];
+    mutableString = tst;
+    NSLog(@"\n修改mutableString方式2\n %@:%p - %@:%p - %@:%p\n\n",mutableString,mutableString,self.stronString,self.stronString,self.copString,self.copString);
 }
 
 - (void)testNSArrayProperty {
@@ -117,58 +127,5 @@
     NSLog(@"\n\n 33 self.stronDic - %@ \n\n\n",self.stronDic);
     NSLog(@"\n\n 33 self.copDic - %@ \n\n\n",self.copDic);
 }
-
-/**
- 
- =============== > NSString
-  11 testString - 0x80909686a26fd97b
-  11 self.stronString - 0x80909686a26fd97b
-  11 self.copString - 0x80909686a26fd97b
-  22 mutableString - 0x600003b6d200
-  22 self.stronString - 0x600003b6d200
-  22 self.copString - 0x600003b6d1a0
- =============== > NSArray
-  11 arr - 0x600003b69a10
-  11 self.stronArr - 0x600003b69a10
-  11 self.copArr - 0x600003b69a10
-  22 mutableArr - 0x600003b6d6b0
-  22 self.stronArr - 0x600003b6d6b0
-  22 self.copArr - 0x600003b6d590
-  原始数组 : (
-     change,
-     mi1,
-     mi2,
-     mi3,
-     addObj
- ) - 0x1019f23c8
-  self.stronArr : (
-     change,
-     mi1,
-     mi2,
-     mi3,
-     addObj
- ) - 0x1019f23c8
-   self.copArr : (
-     mi0,
-     mi1,
-     mi2,
-     mi3
- ) - 0x1019f22e8
- =============== > NSDictionary
-  11 dic - 0x60000354da20
-  11 self.stronDic - 0x60000354da20
-  11 self.copDic - 0x60000354da20
-  22 mutableDic - 0x600003540020
-  22 self.stronDic - 0x600003540020
-  22 self.copDic - 0x600003540060
-  33 mutableDic - {
- }
-  33 self.stronDic - {
- }
-  33 self.copDic - {
-     mutableKey = mutableObj;
- }
-
- */
 
 @end

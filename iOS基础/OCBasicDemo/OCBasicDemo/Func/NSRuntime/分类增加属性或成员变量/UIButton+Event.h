@@ -1,8 +1,8 @@
 //
-//  UIButton+Tst.h
+//  UIButton+Event.h
 //  OCBasicDemo
 //
-//  Created by hnbwyh on 2019/11/8.
+//  Created by hnbwyh on 2019/11/13.
 //  Copyright © 2019 JiXia. All rights reserved.
 //
 
@@ -10,7 +10,9 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface UIButton (Tst)
+@interface UIButton (Event)
+
+@property (nonatomic,assign) NSTimeInterval customInterval;
 
 @end
 

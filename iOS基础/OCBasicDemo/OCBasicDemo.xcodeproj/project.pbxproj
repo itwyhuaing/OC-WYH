@@ -14,6 +14,10 @@
 		2611AC6423757156009CA248 /* EAView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2611AC5E23757156009CA248 /* EAView.m */; };
 		2611AC67237571DC009CA248 /* EventChainExampleVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2611AC66237571DC009CA248 /* EventChainExampleVC.m */; };
 		2611AC6A237572D1009CA248 /* UIButton+Tst.m in Sources */ = {isa = PBXBuildFile; fileRef = 2611AC69237572D1009CA248 /* UIButton+Tst.m */; };
+		262BEDE9237BA193000D0BE0 /* RTMethodHandleVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 262BEDE8237BA193000D0BE0 /* RTMethodHandleVC.m */; };
+		262BEDEF237BA344000D0BE0 /* MethodHandle.m in Sources */ = {isa = PBXBuildFile; fileRef = 262BEDEE237BA344000D0BE0 /* MethodHandle.m */; };
+		262BEDF6237BE1C4000D0BE0 /* RTPropertyVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 262BEDF5237BE1C4000D0BE0 /* RTPropertyVC.m */; };
+		262BEDFC237BE862000D0BE0 /* UIButton+Event.m in Sources */ = {isa = PBXBuildFile; fileRef = 262BEDFB237BE862000D0BE0 /* UIButton+Event.m */; };
 		26ABDBCD23602950003E5269 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26ABDBCB23602950003E5269 /* Main.storyboard */; };
 		26ABDBCF23602952003E5269 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 26ABDBCE23602952003E5269 /* Assets.xcassets */; };
 		26ABDBD223602952003E5269 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26ABDBD023602952003E5269 /* LaunchScreen.storyboard */; };
@@ -48,6 +52,14 @@
 		2611AC66237571DC009CA248 /* EventChainExampleVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EventChainExampleVC.m; sourceTree = "<group>"; };
 		2611AC68237572D1009CA248 /* UIButton+Tst.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIButton+Tst.h"; sourceTree = "<group>"; };
 		2611AC69237572D1009CA248 /* UIButton+Tst.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Tst.m"; sourceTree = "<group>"; };
+		262BEDE7237BA193000D0BE0 /* RTMethodHandleVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RTMethodHandleVC.h; sourceTree = "<group>"; };
+		262BEDE8237BA193000D0BE0 /* RTMethodHandleVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RTMethodHandleVC.m; sourceTree = "<group>"; };
+		262BEDED237BA344000D0BE0 /* MethodHandle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MethodHandle.h; sourceTree = "<group>"; };
+		262BEDEE237BA344000D0BE0 /* MethodHandle.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MethodHandle.m; sourceTree = "<group>"; };
+		262BEDF4237BE1C4000D0BE0 /* RTPropertyVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RTPropertyVC.h; sourceTree = "<group>"; };
+		262BEDF5237BE1C4000D0BE0 /* RTPropertyVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RTPropertyVC.m; sourceTree = "<group>"; };
+		262BEDFA237BE862000D0BE0 /* UIButton+Event.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIButton+Event.h"; sourceTree = "<group>"; };
+		262BEDFB237BE862000D0BE0 /* UIButton+Event.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Event.m"; sourceTree = "<group>"; };
 		26ABDBBF23602950003E5269 /* OCBasicDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OCBasicDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		26ABDBCC23602950003E5269 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		26ABDBCE23602952003E5269 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -121,6 +133,44 @@
 			path = "应用示例";
 			sourceTree = "<group>";
 		};
+		262BEDE1237BA07C000D0BE0 /* Block */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Block;
+			sourceTree = "<group>";
+		};
+		262BEDE2237BA07C000D0BE0 /* NSRuntime */ = {
+			isa = PBXGroup;
+			children = (
+				262BEDE6237BA161000D0BE0 /* 方法拦截 */,
+				262BEDF0237BE151000D0BE0 /* 分类增加属性或成员变量 */,
+			);
+			path = NSRuntime;
+			sourceTree = "<group>";
+		};
+		262BEDE6237BA161000D0BE0 /* 方法拦截 */ = {
+			isa = PBXGroup;
+			children = (
+				262BEDE7237BA193000D0BE0 /* RTMethodHandleVC.h */,
+				262BEDE8237BA193000D0BE0 /* RTMethodHandleVC.m */,
+				262BEDED237BA344000D0BE0 /* MethodHandle.h */,
+				262BEDEE237BA344000D0BE0 /* MethodHandle.m */,
+			);
+			path = "方法拦截";
+			sourceTree = "<group>";
+		};
+		262BEDF0237BE151000D0BE0 /* 分类增加属性或成员变量 */ = {
+			isa = PBXGroup;
+			children = (
+				262BEDF4237BE1C4000D0BE0 /* RTPropertyVC.h */,
+				262BEDF5237BE1C4000D0BE0 /* RTPropertyVC.m */,
+				262BEDFA237BE862000D0BE0 /* UIButton+Event.h */,
+				262BEDFB237BE862000D0BE0 /* UIButton+Event.m */,
+			);
+			path = "分类增加属性或成员变量";
+			sourceTree = "<group>";
+		};
 		26ABDBB623602950003E5269 = {
 			isa = PBXGroup;
 			children = (
@@ -167,6 +217,8 @@
 		26ABDBE2236029A4003E5269 /* Func */ = {
 			isa = PBXGroup;
 			children = (
+				262BEDE1237BA07C000D0BE0 /* Block */,
+				262BEDE2237BA07C000D0BE0 /* NSRuntime */,
 				26B49964236AD532007C068F /* 响应链 */,
 				26CDDC8C23628F420059B6A1 /* 类别 */,
 				26ABDBE3236029A4003E5269 /* 深浅拷贝 */,
@@ -311,11 +363,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				262BEDE9237BA193000D0BE0 /* RTMethodHandleVC.m in Sources */,
 				26ABDBE6236029A4003E5269 /* AppDelegate.m in Sources */,
 				26CDDCA92362A17B0059B6A1 /* ModelAndDicVC.m in Sources */,
 				2611AC6323757156009CA248 /* ECView.m in Sources */,
 				26CDDC9523628FC60059B6A1 /* NSObject+Tst.m in Sources */,
 				2611AC6123757156009CA248 /* EventView.m in Sources */,
+				262BEDF6237BE1C4000D0BE0 /* RTPropertyVC.m in Sources */,
 				2611AC6223757156009CA248 /* EBView.m in Sources */,
 				26CDDCA6236299570059B6A1 /* PersonVC.m in Sources */,
 				26CDDCA3236298E80059B6A1 /* KVCController.m in Sources */,
@@ -331,7 +385,9 @@
 				26ABDBD523602952003E5269 /* main.m in Sources */,
 				2611AC6023757156009CA248 /* EventChainVC.m in Sources */,
 				26CDDC98236290C70059B6A1 /* TstObj+TC.m in Sources */,
+				262BEDEF237BA344000D0BE0 /* MethodHandle.m in Sources */,
 				26CDDCA2236298E80059B6A1 /* PageControlVC.m in Sources */,
+				262BEDFC237BE862000D0BE0 /* UIButton+Event.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
