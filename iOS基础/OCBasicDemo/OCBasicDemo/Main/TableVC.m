@@ -44,13 +44,17 @@
 
 - (void)generateDataSource {
     NSArray *cnts = @[@"重写分类方法-分类方法具有最高优先级",@"深浅Copy",
-                      @"KVC-取值与设值，及异常处理",@"KVC-修改UI",@"KVC-集合运算符与对象运算符",@"KVC,字典与模型转换",
+                      @"KVC-取值与设值，及异常处理",@"KVC-修改UI",
+                      @"KVC-集合运算符与对象运算符",@"KVC,字典与模型转换",
                       @"响应链-原理",@"响应链-应用示例",
-                      @"NSRuntime-方法拦截",@"NSRuntime-分类增加属性"];
+                      @"NSRuntime-方法拦截",@"NSRuntime-分类增加属性",
+                      @"Block 应用"];
     NSArray *vcs  = @[@"CategoryVC",@"CopyVC",
-                      @"KVCController",@"PageControlVC",@"PersonVC",@"ModelAndDicVC",
+                      @"KVCController",@"PageControlVC",
+                      @"PersonVC",@"ModelAndDicVC",
                       @"EventChainVC",@"EventChainExampleVC",
-                      @"RTMethodHandleVC"];
+                      @"RTMethodHandleVC",@"RTPropertyVC",
+                      @"BlockVC"];
     [self.datas addObject:cnts];
     [self.datas addObject:vcs];
 }

@@ -14,6 +14,10 @@
 		2611AC6423757156009CA248 /* EAView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2611AC5E23757156009CA248 /* EAView.m */; };
 		2611AC67237571DC009CA248 /* EventChainExampleVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2611AC66237571DC009CA248 /* EventChainExampleVC.m */; };
 		2611AC6A237572D1009CA248 /* UIButton+Tst.m in Sources */ = {isa = PBXBuildFile; fileRef = 2611AC69237572D1009CA248 /* UIButton+Tst.m */; };
+		2627E51D238CC9D10070B709 /* BlockVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2627E51C238CC9D10070B709 /* BlockVC.m */; };
+		2627E550238F61FA0070B709 /* ChainVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2627E54D238F61FA0070B709 /* ChainVC.m */; };
+		2627E551238F61FA0070B709 /* UILabel+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 2627E54E238F61FA0070B709 /* UILabel+Additions.m */; };
+		2627E555238F67530070B709 /* BlockTestVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2627E554238F67530070B709 /* BlockTestVC.m */; };
 		262BEDE9237BA193000D0BE0 /* RTMethodHandleVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 262BEDE8237BA193000D0BE0 /* RTMethodHandleVC.m */; };
 		262BEDEF237BA344000D0BE0 /* MethodHandle.m in Sources */ = {isa = PBXBuildFile; fileRef = 262BEDEE237BA344000D0BE0 /* MethodHandle.m */; };
 		262BEDF6237BE1C4000D0BE0 /* RTPropertyVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 262BEDF5237BE1C4000D0BE0 /* RTPropertyVC.m */; };
@@ -52,6 +56,14 @@
 		2611AC66237571DC009CA248 /* EventChainExampleVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EventChainExampleVC.m; sourceTree = "<group>"; };
 		2611AC68237572D1009CA248 /* UIButton+Tst.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIButton+Tst.h"; sourceTree = "<group>"; };
 		2611AC69237572D1009CA248 /* UIButton+Tst.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Tst.m"; sourceTree = "<group>"; };
+		2627E51B238CC9D10070B709 /* BlockVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BlockVC.h; sourceTree = "<group>"; };
+		2627E51C238CC9D10070B709 /* BlockVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BlockVC.m; sourceTree = "<group>"; };
+		2627E54C238F61FA0070B709 /* UILabel+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+Additions.h"; sourceTree = "<group>"; };
+		2627E54D238F61FA0070B709 /* ChainVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChainVC.m; sourceTree = "<group>"; };
+		2627E54E238F61FA0070B709 /* UILabel+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+Additions.m"; sourceTree = "<group>"; };
+		2627E54F238F61FA0070B709 /* ChainVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChainVC.h; sourceTree = "<group>"; };
+		2627E553238F67530070B709 /* BlockTestVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BlockTestVC.h; sourceTree = "<group>"; };
+		2627E554238F67530070B709 /* BlockTestVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BlockTestVC.m; sourceTree = "<group>"; };
 		262BEDE7237BA193000D0BE0 /* RTMethodHandleVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RTMethodHandleVC.h; sourceTree = "<group>"; };
 		262BEDE8237BA193000D0BE0 /* RTMethodHandleVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RTMethodHandleVC.m; sourceTree = "<group>"; };
 		262BEDED237BA344000D0BE0 /* MethodHandle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MethodHandle.h; sourceTree = "<group>"; };
@@ -133,9 +145,40 @@
 			path = "应用示例";
 			sourceTree = "<group>";
 		};
+		2627E51E238E13180070B709 /* Libs */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Libs;
+			sourceTree = "<group>";
+		};
+		2627E54B238F61FA0070B709 /* 链式编程 */ = {
+			isa = PBXGroup;
+			children = (
+				2627E54F238F61FA0070B709 /* ChainVC.h */,
+				2627E54D238F61FA0070B709 /* ChainVC.m */,
+				2627E54C238F61FA0070B709 /* UILabel+Additions.h */,
+				2627E54E238F61FA0070B709 /* UILabel+Additions.m */,
+			);
+			path = "链式编程";
+			sourceTree = "<group>";
+		};
+		2627E552238F63140070B709 /* 修改变量值 */ = {
+			isa = PBXGroup;
+			children = (
+				2627E553238F67530070B709 /* BlockTestVC.h */,
+				2627E554238F67530070B709 /* BlockTestVC.m */,
+			);
+			path = "修改变量值";
+			sourceTree = "<group>";
+		};
 		262BEDE1237BA07C000D0BE0 /* Block */ = {
 			isa = PBXGroup;
 			children = (
+				2627E51B238CC9D10070B709 /* BlockVC.h */,
+				2627E51C238CC9D10070B709 /* BlockVC.m */,
+				2627E552238F63140070B709 /* 修改变量值 */,
+				2627E54B238F61FA0070B709 /* 链式编程 */,
 			);
 			path = Block;
 			sourceTree = "<group>";
@@ -190,6 +233,7 @@
 		26ABDBC123602950003E5269 /* OCBasicDemo */ = {
 			isa = PBXGroup;
 			children = (
+				2627E51E238E13180070B709 /* Libs */,
 				26ABDBDB236029A3003E5269 /* Main */,
 				26ABDBE2236029A4003E5269 /* Func */,
 				26ABDBCB23602950003E5269 /* Main.storyboard */,
@@ -363,6 +407,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2627E551238F61FA0070B709 /* UILabel+Additions.m in Sources */,
 				262BEDE9237BA193000D0BE0 /* RTMethodHandleVC.m in Sources */,
 				26ABDBE6236029A4003E5269 /* AppDelegate.m in Sources */,
 				26CDDCA92362A17B0059B6A1 /* ModelAndDicVC.m in Sources */,
@@ -378,9 +423,12 @@
 				26CDDC8F23628F6D0059B6A1 /* CategoryVC.m in Sources */,
 				2611AC67237571DC009CA248 /* EventChainExampleVC.m in Sources */,
 				26ABDBE923602A1F003E5269 /* TableVC.m in Sources */,
+				2627E555238F67530070B709 /* BlockTestVC.m in Sources */,
 				26ABDBEC23602A9A003E5269 /* BaseVC.m in Sources */,
+				2627E550238F61FA0070B709 /* ChainVC.m in Sources */,
 				2611AC6423757156009CA248 /* EAView.m in Sources */,
 				26ABDBF223602B3B003E5269 /* CopyVC.m in Sources */,
+				2627E51D238CC9D10070B709 /* BlockVC.m in Sources */,
 				26CDDC9223628FAC0059B6A1 /* TstObj.m in Sources */,
 				26ABDBD523602952003E5269 /* main.m in Sources */,
 				2611AC6023757156009CA248 /* EventChainVC.m in Sources */,

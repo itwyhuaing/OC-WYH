@@ -173,10 +173,169 @@ objc_removeAssociatedObjects(id _Nonnull object)
 ---
 ### Block
 
+**什么是Blocks**
+
+Blocks 是 C 语言的扩充功能，即带有自动变量（局部变量）的匿名函数。
+
+**Blocks语法**
+
+* 格式
+
+第一部分    第二部分    第三部分    第四部分
+  ^       返回值类型   参数列表     表达式
+
+* 有返回值 & 有参数列表
+
+```
+^ int (int cou) {return cou + 1;}
+```
+
+* 无返回值 & 有参数列表
+
+```
+^ void (int cou) {cou + 1;}
+
+或
+
+^ (int cou){cou + 1}
+```
+
+* 有返回值 & 无参数列表
+
+```
+^ int (void) {print("测试数据");}
+
+或
+
+^ int {print("测试数据");}
+```
+
+* 无返回值 & 无参数列表
+
+```
+^ {print("测试数据");}
+```
+
+**Block类型变量**
+
+* 格式
+
+  第一部分    第二部分    第三部分
+ 返回值类型  (^函数指针)  （参数列表）
+
+* 示例
+
+// C 语言的函数指针，其中funcptr称为函数指针
+```
+int func (int cou) {
+  return cou + 1;
+}
+
+int (*funcptr) (int) = &func;
+```
+
+// Block 类型变量,其中blk称为Block函数指针
+```
+int (^blk) (int);
+```
+
+* Block 赋值为 Block 类型变量示例：
+
+```
+int (^blk)(int) = ^ int (int cou) {return cou + 1;}
+```
+
+* 在函数参数中使用 Block 类型变量
+
+```
+int func(int (^blk) (int)){
+
+}
+```
+
+* 借用 typedef 简化 Block 类型变量
+
+> typedef 返回值类型 (^类型简称)(参数列表);
+
+```
+typedef int(^ConsultBlock)(id info,id record);
+```
+
+**截获自动变量**
+
+* 截获“瞬间值”
+
+```
+int main(){
+  int val = 2;
+  void (^blk) (void) = ^{print(" 第一处 val = %d \n",val);}
+  val = 10;
+  blk();
+  print(" 第二处 val = %d \n",val);
+  return 0;
+}
+```
+
+> 显示的结果
+
+       ```
+ 第一处 val = 2
+ 第二处 val = 10
+```
+
+* 修改截获到的“瞬间值”
+
+> 若想在 Block 函数内修改截获到的变量的值，需要在该自动变量前附加上__block说明符；此时该变量也称为__block变量。
+
+> 不加__block说明符修饰的变量，block 截获时将会copy新的指针。
+
+> 对比如下两种情况下的代码：
+
+```
+<!-- 第一段 （改代码段将会报错，ar可以操作但不可以重新创建）-->
+id arr = [NSMutableArray new];
+void (^blk) (void) = ^{
+  id ar = [NSMutableArray new];
+  [arr addObject:ar];
+}
+
+<!-- 第二段 -->
+__block id arr = [NSMutableArray new];
+void (^blk) (void) = ^{
+  arr = [NSMutableArray new];
+}
+
+```
+
+```
+<!-- 第一段 （最终将显示：@"待测定数据111"）-->
+{
+    __weak typeof(self) weakSelf = self;
+    NSString *tmpCnt = @"待测定数据111";
+    void (^btFunc)(NSString *txt) = ^void(NSString *msg) {
+        weakSelf.label.text = tmpCnt;
+    };
+    tmpCnt = @"已被修改的待测定数据111";
+    btFunc(tmpCnt);
+}
+
+<!-- 第二段 (最终将显示：@"已被修改的待测定数据222")-->
+{
+    __weak typeof(self) weakSelf = self;
+    __block NSString *tmpCnt = @"待测定数据222";
+    void (^btFunc)(NSString *txt) = ^void(NSString *msg) {
+        weakSelf.label.text = tmpCnt;
+    };
+    tmpCnt = @"已被修改的待测定数据222";
+    btFunc(tmpCnt);
+}
+
+```
+
 
 #### 参考
 * [iOS中Block的用法，举例，解析与底层原理](http://www.cocoachina.com/ios/20180424/23147.html)
-
+* [iOS 面试全方位剖析 -- Block篇](https://www.jianshu.com/p/29d8f0a9c812)
 
 
 
@@ -367,3 +526,5 @@ property = 实例变量+setter方法+getter方法
 * [iOS面试知识点整理](http://www.cocoachina.com/cms/wap.php?action=article&id=23051)
 * [iOS面试总结（基础知识深入及新知识扩展）](https://www.jianshu.com/p/c3e56d6cf06f)
 * [iOS面试题合集（上）](https://www.jianshu.com/c/31a515b57aef)
+
+* [iOS 内存管理及区域分布](https://www.jianshu.com/p/79f9d1992879)
