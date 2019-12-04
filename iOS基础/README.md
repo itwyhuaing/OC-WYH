@@ -337,13 +337,13 @@ void (^blk) (void) = ^{
 * [iOS中Block的用法，举例，解析与底层原理](http://www.cocoachina.com/ios/20180424/23147.html)
 
 
-** block 修饰符何时使用 **
+**block修饰符何时使用**
 
 * Block 函数不截获全局变量和静态全局变量，所以也谈不上修饰
 * 未经 block 修饰的局部变量被 Block 截获时，截获到其数值或内容（这里暂且理解截获当前的内存中内容？）；这种形式的截获可以使用-这里的使用是指不变更内存地址的使用方式。
 * 经 block 修饰的局部变量以及未经 block 修饰的静态局部变量被 Block 截获时，截获到的是指针形式；这种形式的截获可以正常使用。
 
-** Block 的内存管理以及 copy 修饰符**
+**Block 的内存管理以及 copy 修饰符**
 
 * 谈及 Block 的内存管理，需要先了解下 Block 类型，共有三种列举入下
 * 谈及 Block 类型作为类的一个属性时所需要的修饰词，项目中常用到 copy ,该修饰次旨在改变 Block 的类型和储存位置
@@ -358,7 +358,7 @@ _NSConcreteMallocBlock 堆类型 - 该类型存储在堆，经 copy 之后增加
 
 ```
 
-** Block 的循环引用 及 weak 修饰词 **
+**Block 的循环引用 及 weak 修饰词**
 
 * Block 在使用过程中之所以会照成循环引用最终导致内存泄露常见的使用方式如下：
 
@@ -397,56 +397,9 @@ __weak typeof(self) weakSelf = self;
 
 ```
 
-#### 参考
+##### 参考
 * [iOS 面试全方位剖析 -- Block篇](https://www.jianshu.com/p/29d8f0a9c812)
-* [iOS中Block的用法，举例，解析与底层原理](http://www.cocoachina.com/ios/20180424/23147.html)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+* [iOS 内存管理及区域分布](https://www.jianshu.com/p/79f9d1992879)
 
 
 ---
@@ -629,5 +582,3 @@ property = 实例变量+setter方法+getter方法
 * [iOS面试知识点整理](http://www.cocoachina.com/cms/wap.php?action=article&id=23051)
 * [iOS面试总结（基础知识深入及新知识扩展）](https://www.jianshu.com/p/c3e56d6cf06f)
 * [iOS面试题合集（上）](https://www.jianshu.com/c/31a515b57aef)
-
-* [iOS 内存管理及区域分布](https://www.jianshu.com/p/79f9d1992879)
