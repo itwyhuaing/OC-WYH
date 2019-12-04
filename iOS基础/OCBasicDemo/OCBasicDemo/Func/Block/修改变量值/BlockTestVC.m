@@ -28,7 +28,7 @@
 }
 
 -(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    [self test5];
+    [self test6];
 }
 
 // 情景一 : 外部变量无 __block 修饰
@@ -105,5 +105,19 @@ block 将截获 指向静态变量的指针
     int rlt = bf(2);
     printf("\n\n test5 :%d \n\n",rlt);
 }
+
+// 情景六 : copy 之后的 block 类型
+/**
+ Block 类型依据存储位置区别有 _NSConcreteGlobalBlock 全局、_NSConcreteStackBlock 栈类型、_NSConcreteMallocBlock 堆类型
+ */
+- (void)test6 {
+    self.tBlock = ^int(int para) {
+        return 8*para;
+    };
+    
+    int rlt = self.tBlock(10);
+    printf("\n\n test6 :%d \n\n",rlt);
+}
+
 
 @end

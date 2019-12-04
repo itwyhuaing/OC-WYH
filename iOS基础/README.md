@@ -168,7 +168,7 @@ objc_removeAssociatedObjects(id _Nonnull object)
 
 #### 参考
 
-* [OC中Runtime浅析](https://www.jianshu.com/p/07d26bfc17d4)
+* [OC中 Runtime 浅析](https://www.jianshu.com/p/07d26bfc17d4)
 
 ---
 ### Block
@@ -278,16 +278,16 @@ int main(){
 
 > 显示的结果
 
-       ```
+```
  第一处 val = 2
  第二处 val = 10
 ```
 
 * 修改截获到的“瞬间值”
 
-> 若想在 Block 函数内修改截获到的变量的值，需要在该自动变量前附加上__block说明符；此时该变量也称为__block变量。
+> 若想在 Block 函数内修改截获到的变量的值，需要在该自动变量前附加上 _ _ block说明符；此时该变量也称为 _ _ block变量。
 
-> 不加__block说明符修饰的变量，block 截获时将会copy新的指针。
+> 不加 _ _ block 说明符修饰的变量，block 截获时将会copy新的指针。
 
 > 对比如下两种情况下的代码：
 
@@ -332,10 +332,113 @@ void (^blk) (void) = ^{
 
 ```
 
+##### 参考
+* 参考书籍 ：《Objective-C高级编程:iOS与OS X多线程和内存管理》
+* [iOS中Block的用法，举例，解析与底层原理](http://www.cocoachina.com/ios/20180424/23147.html)
+
+
+** __block 修饰符何时使用 **
+
+* Block 函数不截获全局变量和静态全局变量，所以也谈不上修饰
+* 未经 __block 修饰的局部变量被 Block 截获时，截获到其数值或内容（这里暂且理解截获当前的内存中内容？）；这种形式的截获可以使用-这里的使用是指不变更内存地址的使用方式。
+* 经 __block 修饰的局部变量以及未经 __block 修饰的静态局部变量被 Block 截获时，截获到的是指针形式；这种形式的截获可以正常使用。
+
+** Block 的内存管理以及 copy 修饰符**
+
+* 谈及 Block 的内存管理，需要先了解下 Block 类型，共有三种列举入下
+* 谈及 Block 类型作为类的一个属性时所需要的修饰词，项目中常用到 copy ,该修饰次旨在改变 Block 的类型和储存位置
+
+```
+
+_NSConcreteGlobalBlock  全局 - 该类型存储在全局区，经 copy 之后什么也不做
+
+_NSConcreteStackBlock 栈类型 - 该类型存储在栈，经 copy 之后将其储存在堆
+
+_NSConcreteMallocBlock 堆类型 - 该类型存储在堆，经 copy 之后增加引用计数
+
+```
+
+** Block 的循环引用 及 __weak 修饰词 **
+
+* Block 在使用过程中之所以会照成循环引用最终导致内存泄露常见的使用方式如下：
+
+```
+// _arr 和 _tstBlk 均为同一个类的属性，此时 self拥有block 而与此同时block也拥有self
+_arr = [NSMutableArray arrayWithObject:@"obj1"];
+_tstBlk = ^(NSString *num){
+    NSString *rlt =  [NSString stringWithFormat:@"%@_%@",num,_arr[0]];
+};
+_tstBlk(@"hello");
+
+// 可参考的两种改进方式
+
+ _arr = [NSMutableArray arrayWithObject:@"obj1"];
+  __weak NSArray *weakArray = _arr;
+    _tstBlk = ^(NSString *num){
+        NSString *rlt = [NSString stringWithFormat:@"%@_%@",num,_arr[0]];
+    };
+    _tstBlk(@"hello");
+
+_arr = [NSMutableArray arrayWithObject:@"obj1"];
+__weak typeof(self) weakSelf = self;
+    _tstBlk = ^(NSString *num){
+        NSString *rlt = [NSString stringWithFormat:@"%@_%@",num,weakSelf.arr[0]];
+    };
+    _tstBlk(@"hello");
+
+// 更加完备的改进方式
+_arr = [NSMutableArray arrayWithObject:@"obj1"];
+__weak typeof(self) weakSelf = self;
+    _tstBlk = ^(NSString *num){
+	 __strong __typeof(self) strongSelf = weakSelf;
+        NSString *rlt = [NSString stringWithFormat:@"%@_%@",num,strongSelf.arr[0]];
+    };
+    _tstBlk(@"hello");
+    
+```
 
 #### 参考
-* [iOS中Block的用法，举例，解析与底层原理](http://www.cocoachina.com/ios/20180424/23147.html)
 * [iOS 面试全方位剖析 -- Block篇](https://www.jianshu.com/p/29d8f0a9c812)
+* [iOS中Block的用法，举例，解析与底层原理](http://www.cocoachina.com/ios/20180424/23147.html)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

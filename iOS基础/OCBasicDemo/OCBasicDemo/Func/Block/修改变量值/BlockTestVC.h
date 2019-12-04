@@ -10,7 +10,10 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+typedef int(^TestBlockFun)(int para);
 @interface BlockTestVC : BaseVC
+
+@property (nonatomic,copy) TestBlockFun tBlock;
 
 @end
 
