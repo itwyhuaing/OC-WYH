@@ -337,11 +337,11 @@ void (^blk) (void) = ^{
 * [iOS中Block的用法，举例，解析与底层原理](http://www.cocoachina.com/ios/20180424/23147.html)
 
 
-** __block 修饰符何时使用 **
+** block 修饰符何时使用 **
 
 * Block 函数不截获全局变量和静态全局变量，所以也谈不上修饰
-* 未经 __block 修饰的局部变量被 Block 截获时，截获到其数值或内容（这里暂且理解截获当前的内存中内容？）；这种形式的截获可以使用-这里的使用是指不变更内存地址的使用方式。
-* 经 __block 修饰的局部变量以及未经 __block 修饰的静态局部变量被 Block 截获时，截获到的是指针形式；这种形式的截获可以正常使用。
+* 未经 block 修饰的局部变量被 Block 截获时，截获到其数值或内容（这里暂且理解截获当前的内存中内容？）；这种形式的截获可以使用-这里的使用是指不变更内存地址的使用方式。
+* 经 block 修饰的局部变量以及未经 block 修饰的静态局部变量被 Block 截获时，截获到的是指针形式；这种形式的截获可以正常使用。
 
 ** Block 的内存管理以及 copy 修饰符**
 
@@ -358,7 +358,7 @@ _NSConcreteMallocBlock 堆类型 - 该类型存储在堆，经 copy 之后增加
 
 ```
 
-** Block 的循环引用 及 __weak 修饰词 **
+** Block 的循环引用 及 weak 修饰词 **
 
 * Block 在使用过程中之所以会照成循环引用最终导致内存泄露常见的使用方式如下：
 
@@ -394,7 +394,7 @@ __weak typeof(self) weakSelf = self;
         NSString *rlt = [NSString stringWithFormat:@"%@_%@",num,strongSelf.arr[0]];
     };
     _tstBlk(@"hello");
-    
+
 ```
 
 #### 参考
