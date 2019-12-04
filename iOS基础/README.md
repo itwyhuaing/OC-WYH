@@ -165,6 +165,9 @@ objc_removeAssociatedObjects(id _Nonnull object)
 **拦截方法**
 
 
+**消息转发**
+
+* 消息转发  (objc_msgForward) 是 IMP 类型，用于消息转发的；当向一个对象发送一条消息，但它并没有实现的时候，objc_msgForward 会尝试做消息转发 。
 
 #### 参考
 
@@ -422,6 +425,20 @@ __weak typeof(self) weakSelf = self;
 
 > Objective-C的类不可以多重继承；可以实现多个接口（协议）。一个类的方法重写，采用分类比较好，这样重写的方法仅对本分类有效，不会影响其他类与原有类的关系。
 
+
+---
+#### OC 的内存管理
+
+> Objective-C的内存管理主要有三种方式ARC(自动内存计数)、手动内存计数、内存池。
+
+* 自动内存计数ARC：由Xcode自动在App编译阶段，在代码中添加内存管理代码。
+
+* 手动内存计数MRC：遵循内存谁申请、谁释放；谁添加，谁释放的原则。
+
+* 内存释放池Release Pool：把需要释放的内存统一放在一个池子中，当池子被抽干后(drain)，池子中所有的内存空间也被自动释放掉。内存池的释放操作分为自动和手动。自动释放受runloop机制影响。
+
+
+---
 #### Property 与 属性修饰符  [参考1](https://juejin.im/post/5bf608c6e51d451f6e5299f7)
 
 * Property
@@ -477,37 +494,12 @@ property = 实例变量+setter方法+getter方法
     4.
     ```
 
-#### 浅拷贝和深拷贝
-
-> 浅拷贝只复制指向对象的指针，而不复制引用对象本身,也就是不会另开辟存储区；深拷贝：复制引用对象本身。内存中存在了两份独立对象本身，当修改A时，A_copy不变。
-
-#### 系统对象的 copy 与 mutableCopy
-
-> 不管是集合类对象（ NSArray、NSDictionary、NSSet ... 之类的对象 ），还是非集合类对象（ NSString, NSNumber ... 之类的对象 ），接收到copy和mutableCopy消息时，都遵循以下准则：
-  >> 1. copy 返回的是不可变对象（immutableObject）；如果用copy返回值调用mutable对象的方法就会crash。
-  >> 2. mutableCopy 返回的是可变对象（mutableObject）。
-
-> 只有对不可变对象进行 copy 操作是指针复制（浅复制），其它情况都是内容复制（深复制）！
-
-#### OC 的内存管理
-
-> Objective-C的内存管理主要有三种方式ARC(自动内存计数)、手动内存计数、内存池。
-
-* 自动内存计数ARC：由Xcode自动在App编译阶段，在代码中添加内存管理代码。
-
-* 手动内存计数MRC：遵循内存谁申请、谁释放；谁添加，谁释放的原则。
-
-* 内存释放池Release Pool：把需要释放的内存统一放在一个池子中，当池子被抽干后(drain)，池子中所有的内存空间也被自动释放掉。内存池的释放操作分为自动和手动。自动释放受runloop机制影响。
-
-
-#### Category（类别/分类）、 Extension（扩展）和继承
-
-* 类别/分类只能扩展方法（属性也可以扩展，但需运用运行时）；类扩展可以扩展属性、方法和成员变量；继承可以增加、修改方法，也可以增加属性。
-
+---
 #### OC 语言的动态特性
 
 > OC 语言的动态特性是指数据类型、对象的类别以及调用该类别对象的方法在代码编译之后的运行时确定，依赖于运行时机制。
 
+---
 #### #import、#include、@class； #import<>、#import””
 
   >  #import是Objective-C导入头文件的关键字，#include是C/C++导入头文件的关键字，使用#import头文件会自动只导入一次，不会重复导入。
@@ -516,6 +508,7 @@ property = 实例变量+setter方法+getter方法
 
   > #import<>用来包含系统的头文件，#import””用来包含用户头文件。
 
+---
 #### @public，@protected，@private，@package 含义
 
 ```
@@ -529,6 +522,7 @@ property = 实例变量+setter方法+getter方法
 
 ```
 
+---
 #### Instruments
 
 * Time Profiler: 性能分析
@@ -539,6 +533,7 @@ property = 实例变量+setter方法+getter方法
 
 * Leaks：检查内存，看是否有内存泄露。
 
+---
 #### GCD 与 NSOperation
 
 > GCD 和 NSOperation 都是用于实现多线程
@@ -547,10 +542,8 @@ property = 实例变量+setter方法+getter方法
 
 > NSOperation 属于Objective-C类，是基于GCD更高一层的封装。复杂任务一般用NSOperation实现。
 
-#### 消息转发  
 
-> 消息转发  (_objc_msgForward) 是 IMP 类型，用于消息转发的；当向一个对象发送一条消息，但它并没有实现的时候，_objc_msgForward 会尝试做消息转发 。
-
+---
 #### 网络
 
 * TCP 与 UDP
@@ -561,7 +554,7 @@ property = 实例变量+setter方法+getter方法
 
 > 简单的说，TCP注重数据安全，而UDP数据传输快点，但安全性一般。
 
-
+---
 #### APNS
 
 > APNS优势：杜绝了类似安卓那种为了接受通知不停在后台唤醒程序保持长连接的行为，由iOS系统和APNS进行长连接替代。
@@ -576,7 +569,7 @@ property = 实例变量+setter方法+getter方法
 
   >> 4). APNS根据设备令牌找到设备，再由iOS根据APPID把推送内容展示
 
-
+---
 ### 关于面试知识题目参考
 
 * [iOS面试知识点整理](http://www.cocoachina.com/cms/wap.php?action=article&id=23051)
