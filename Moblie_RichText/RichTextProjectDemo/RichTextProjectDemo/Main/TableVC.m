@@ -39,8 +39,12 @@
                         @"RichTextEditorVC",
                         @"JXTextViewVC",@"RichTextEditor",
                         @"TextViewLoadHtmlVC",@"WKLoadHtmlVC"];
+    //tmpds  = @[@"富文本编辑:WKWebView实现方式 - WK"];
+    //tmpvcs = @[@"RichTextEditor"];
     _vcs        = [[NSMutableArray alloc] initWithArray:tmpvcs];
     _dataSource = [[NSMutableArray alloc] initWithArray:tmpds];
+    UIViewController *vc = (UIViewController *)[[RichTextEditor alloc] init];
+    [self.navigationController pushViewController:vc animated:FALSE];
 }
 
 #pragma mark - Table view data source

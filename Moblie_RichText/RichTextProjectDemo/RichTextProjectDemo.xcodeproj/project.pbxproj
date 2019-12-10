@@ -29,19 +29,6 @@
 		265D813820A2F8FD00F415F8 /* reload@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 265D811220A2F8FD00F415F8 /* reload@2x.png */; };
 		265D813920A2F8FD00F415F8 /* uploadimageloading.gif in Resources */ = {isa = PBXBuildFile; fileRef = 265D811320A2F8FD00F415F8 /* uploadimageloading.gif */; };
 		265D813A20A2F8FD00F415F8 /* delete@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 265D811420A2F8FD00F415F8 /* delete@2x.png */; };
-		265D813B20A2F8FD00F415F8 /* ZSSBarButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 265D811920A2F8FD00F415F8 /* ZSSBarButtonItem.m */; };
-		265D813C20A2F8FD00F415F8 /* ZSSFontsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 265D811A20A2F8FD00F415F8 /* ZSSFontsViewController.m */; };
-		265D813D20A2F8FD00F415F8 /* ZSSTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 265D811B20A2F8FD00F415F8 /* ZSSTextView.m */; };
-		265D813E20A2F8FD00F415F8 /* HRCgUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 265D812020A2F8FD00F415F8 /* HRCgUtil.m */; };
-		265D813F20A2F8FD00F415F8 /* HRColorPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 265D812120A2F8FD00F415F8 /* HRColorPickerViewController.m */; };
-		265D814020A2F8FD00F415F8 /* HRColorPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 265D812220A2F8FD00F415F8 /* HRColorPickerView.m */; };
-		265D814120A2F8FD00F415F8 /* HRBrightnessCursor.m in Sources */ = {isa = PBXBuildFile; fileRef = 265D812320A2F8FD00F415F8 /* HRBrightnessCursor.m */; };
-		265D814220A2F8FD00F415F8 /* CYRLayoutManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 265D812420A2F8FD00F415F8 /* CYRLayoutManager.m */; };
-		265D814320A2F8FD00F415F8 /* CYRToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 265D812520A2F8FD00F415F8 /* CYRToken.m */; };
-		265D814420A2F8FD00F415F8 /* CYRTextStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = 265D812620A2F8FD00F415F8 /* CYRTextStorage.m */; };
-		265D814520A2F8FD00F415F8 /* CYRTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 265D812720A2F8FD00F415F8 /* CYRTextView.m */; };
-		265D814620A2F8FD00F415F8 /* HRColorUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 265D812820A2F8FD00F415F8 /* HRColorUtil.m */; };
-		265D814720A2F8FD00F415F8 /* HRColorCursor.m in Sources */ = {isa = PBXBuildFile; fileRef = 265D812920A2F8FD00F415F8 /* HRColorCursor.m */; };
 		266958921F7F4B8600382A86 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 266958911F7F4B8600382A86 /* main.m */; };
 		2669589B1F7F4B8700382A86 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 266958991F7F4B8700382A86 /* Main.storyboard */; };
 		2669589D1F7F4B8700382A86 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2669589C1F7F4B8700382A86 /* Assets.xcassets */; };
@@ -49,6 +36,9 @@
 		266958AB1F7F4B8800382A86 /* RichTextProjectDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 266958AA1F7F4B8800382A86 /* RichTextProjectDemoTests.m */; };
 		266958B61F7F4B8800382A86 /* RichTextProjectDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 266958B51F7F4B8800382A86 /* RichTextProjectDemoUITests.m */; };
 		2669590F1F7F877300382A86 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 2669590E1F7F877300382A86 /* README.md */; };
+		26700B06239F740000FFA7E5 /* JSEditorToolBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 26700B05239F740000FFA7E5 /* JSEditorToolBar.m */; };
+		26700B09239F914F00FFA7E5 /* JSEditorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 26700B08239F914F00FFA7E5 /* JSEditorView.m */; };
+		26700B0D239F982800FFA7E5 /* JSEditorHandle.m in Sources */ = {isa = PBXBuildFile; fileRef = 26700B0C239F982800FFA7E5 /* JSEditorHandle.m */; };
 		26C386612260920A000DF059 /* NSTextAttachment+RichText.m in Sources */ = {isa = PBXBuildFile; fileRef = 26C386542260920A000DF059 /* NSTextAttachment+RichText.m */; };
 		26C386622260920A000DF059 /* ImgLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 26C386582260920A000DF059 /* ImgLabel.m */; };
 		26C386632260920A000DF059 /* HTMLLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 26C386592260920A000DF059 /* HTMLLabel.m */; };
@@ -119,33 +109,6 @@
 		265D811220A2F8FD00F415F8 /* reload@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "reload@2x.png"; sourceTree = "<group>"; };
 		265D811320A2F8FD00F415F8 /* uploadimageloading.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = uploadimageloading.gif; sourceTree = "<group>"; };
 		265D811420A2F8FD00F415F8 /* delete@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "delete@2x.png"; sourceTree = "<group>"; };
-		265D811620A2F8FD00F415F8 /* ZSSBarButtonItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZSSBarButtonItem.h; sourceTree = "<group>"; };
-		265D811720A2F8FD00F415F8 /* ZSSFontsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZSSFontsViewController.h; sourceTree = "<group>"; };
-		265D811820A2F8FD00F415F8 /* ZSSTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZSSTextView.h; sourceTree = "<group>"; };
-		265D811920A2F8FD00F415F8 /* ZSSBarButtonItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZSSBarButtonItem.m; sourceTree = "<group>"; };
-		265D811A20A2F8FD00F415F8 /* ZSSFontsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZSSFontsViewController.m; sourceTree = "<group>"; };
-		265D811B20A2F8FD00F415F8 /* ZSSTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZSSTextView.m; sourceTree = "<group>"; };
-		265D811D20A2F8FD00F415F8 /* HRColorCursor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HRColorCursor.h; sourceTree = "<group>"; };
-		265D811E20A2F8FD00F415F8 /* HRColorUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HRColorUtil.h; sourceTree = "<group>"; };
-		265D811F20A2F8FD00F415F8 /* CYRTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYRTextView.h; sourceTree = "<group>"; };
-		265D812020A2F8FD00F415F8 /* HRCgUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HRCgUtil.m; sourceTree = "<group>"; };
-		265D812120A2F8FD00F415F8 /* HRColorPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HRColorPickerViewController.m; sourceTree = "<group>"; };
-		265D812220A2F8FD00F415F8 /* HRColorPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HRColorPickerView.m; sourceTree = "<group>"; };
-		265D812320A2F8FD00F415F8 /* HRBrightnessCursor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HRBrightnessCursor.m; sourceTree = "<group>"; };
-		265D812420A2F8FD00F415F8 /* CYRLayoutManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYRLayoutManager.m; sourceTree = "<group>"; };
-		265D812520A2F8FD00F415F8 /* CYRToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYRToken.m; sourceTree = "<group>"; };
-		265D812620A2F8FD00F415F8 /* CYRTextStorage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYRTextStorage.m; sourceTree = "<group>"; };
-		265D812720A2F8FD00F415F8 /* CYRTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYRTextView.m; sourceTree = "<group>"; };
-		265D812820A2F8FD00F415F8 /* HRColorUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HRColorUtil.m; sourceTree = "<group>"; };
-		265D812920A2F8FD00F415F8 /* HRColorCursor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HRColorCursor.m; sourceTree = "<group>"; };
-		265D812A20A2F8FD00F415F8 /* HRColorPickerMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HRColorPickerMacros.h; sourceTree = "<group>"; };
-		265D812B20A2F8FD00F415F8 /* HRCgUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HRCgUtil.h; sourceTree = "<group>"; };
-		265D812C20A2F8FD00F415F8 /* CYRToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYRToken.h; sourceTree = "<group>"; };
-		265D812D20A2F8FD00F415F8 /* CYRLayoutManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYRLayoutManager.h; sourceTree = "<group>"; };
-		265D812E20A2F8FD00F415F8 /* HRBrightnessCursor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HRBrightnessCursor.h; sourceTree = "<group>"; };
-		265D812F20A2F8FD00F415F8 /* HRColorPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HRColorPickerView.h; sourceTree = "<group>"; };
-		265D813020A2F8FD00F415F8 /* HRColorPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HRColorPickerViewController.h; sourceTree = "<group>"; };
-		265D813120A2F8FD00F415F8 /* CYRTextStorage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYRTextStorage.h; sourceTree = "<group>"; };
 		2669588D1F7F4B8600382A86 /* RichTextProjectDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RichTextProjectDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		266958911F7F4B8600382A86 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		2669589A1F7F4B8700382A86 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -159,6 +122,13 @@
 		266958B51F7F4B8800382A86 /* RichTextProjectDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RichTextProjectDemoUITests.m; sourceTree = "<group>"; };
 		266958B71F7F4B8800382A86 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2669590E1F7F877300382A86 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		26700B04239F740000FFA7E5 /* JSEditorToolBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSEditorToolBar.h; sourceTree = "<group>"; };
+		26700B05239F740000FFA7E5 /* JSEditorToolBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JSEditorToolBar.m; sourceTree = "<group>"; };
+		26700B07239F914F00FFA7E5 /* JSEditorView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSEditorView.h; sourceTree = "<group>"; };
+		26700B08239F914F00FFA7E5 /* JSEditorView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JSEditorView.m; sourceTree = "<group>"; };
+		26700B0B239F982800FFA7E5 /* JSEditorHandle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSEditorHandle.h; sourceTree = "<group>"; };
+		26700B0C239F982800FFA7E5 /* JSEditorHandle.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JSEditorHandle.m; sourceTree = "<group>"; };
+		26700B10239F9BBB00FFA7E5 /* JSEditorConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSEditorConfig.h; sourceTree = "<group>"; };
 		26C386542260920A000DF059 /* NSTextAttachment+RichText.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSTextAttachment+RichText.m"; sourceTree = "<group>"; };
 		26C386552260920A000DF059 /* NSTextAttachment+RichText.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSTextAttachment+RichText.h"; sourceTree = "<group>"; };
 		26C386572260920A000DF059 /* PLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLabel.h; sourceTree = "<group>"; };
@@ -307,11 +277,11 @@
 		265D810720A2F8FD00F415F8 /* JSEditor */ = {
 			isa = PBXGroup;
 			children = (
+				26700B0A239F97E700FFA7E5 /* Handle */,
 				265D810820A2F8FD00F415F8 /* NativeBridge */,
 				265D810B20A2F8FD00F415F8 /* EditorResource */,
 				265D811120A2F8FD00F415F8 /* image */,
 				265D811520A2F8FD00F415F8 /* View */,
-				265D811C20A2F8FD00F415F8 /* ThirdParty */,
 			);
 			path = JSEditor;
 			sourceTree = "<group>";
@@ -350,42 +320,12 @@
 		265D811520A2F8FD00F415F8 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				265D811620A2F8FD00F415F8 /* ZSSBarButtonItem.h */,
-				265D811720A2F8FD00F415F8 /* ZSSFontsViewController.h */,
-				265D811820A2F8FD00F415F8 /* ZSSTextView.h */,
-				265D811920A2F8FD00F415F8 /* ZSSBarButtonItem.m */,
-				265D811A20A2F8FD00F415F8 /* ZSSFontsViewController.m */,
-				265D811B20A2F8FD00F415F8 /* ZSSTextView.m */,
+				26700B04239F740000FFA7E5 /* JSEditorToolBar.h */,
+				26700B05239F740000FFA7E5 /* JSEditorToolBar.m */,
+				26700B07239F914F00FFA7E5 /* JSEditorView.h */,
+				26700B08239F914F00FFA7E5 /* JSEditorView.m */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		265D811C20A2F8FD00F415F8 /* ThirdParty */ = {
-			isa = PBXGroup;
-			children = (
-				265D811D20A2F8FD00F415F8 /* HRColorCursor.h */,
-				265D811E20A2F8FD00F415F8 /* HRColorUtil.h */,
-				265D811F20A2F8FD00F415F8 /* CYRTextView.h */,
-				265D812020A2F8FD00F415F8 /* HRCgUtil.m */,
-				265D812120A2F8FD00F415F8 /* HRColorPickerViewController.m */,
-				265D812220A2F8FD00F415F8 /* HRColorPickerView.m */,
-				265D812320A2F8FD00F415F8 /* HRBrightnessCursor.m */,
-				265D812420A2F8FD00F415F8 /* CYRLayoutManager.m */,
-				265D812520A2F8FD00F415F8 /* CYRToken.m */,
-				265D812620A2F8FD00F415F8 /* CYRTextStorage.m */,
-				265D812720A2F8FD00F415F8 /* CYRTextView.m */,
-				265D812820A2F8FD00F415F8 /* HRColorUtil.m */,
-				265D812920A2F8FD00F415F8 /* HRColorCursor.m */,
-				265D812A20A2F8FD00F415F8 /* HRColorPickerMacros.h */,
-				265D812B20A2F8FD00F415F8 /* HRCgUtil.h */,
-				265D812C20A2F8FD00F415F8 /* CYRToken.h */,
-				265D812D20A2F8FD00F415F8 /* CYRLayoutManager.h */,
-				265D812E20A2F8FD00F415F8 /* HRBrightnessCursor.h */,
-				265D812F20A2F8FD00F415F8 /* HRColorPickerView.h */,
-				265D813020A2F8FD00F415F8 /* HRColorPickerViewController.h */,
-				265D813120A2F8FD00F415F8 /* CYRTextStorage.h */,
-			);
-			path = ThirdParty;
 			sourceTree = "<group>";
 		};
 		266958841F7F4B8600382A86 = {
@@ -460,6 +400,16 @@
 				265D80FC20A1A3DF00F415F8 /* RichTextEditor.m */,
 			);
 			path = JSRichText;
+			sourceTree = "<group>";
+		};
+		26700B0A239F97E700FFA7E5 /* Handle */ = {
+			isa = PBXGroup;
+			children = (
+				26700B0B239F982800FFA7E5 /* JSEditorHandle.h */,
+				26700B0C239F982800FFA7E5 /* JSEditorHandle.m */,
+				26700B10239F9BBB00FFA7E5 /* JSEditorConfig.h */,
+			);
+			path = Handle;
 			sourceTree = "<group>";
 		};
 		26C386502260920A000DF059 /* JXRichTextParser */ = {
@@ -640,6 +590,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -698,43 +649,33 @@
 			buildActionMask = 2147483647;
 			files = (
 				26CAB20B20B50FFE00D94D3D /* JXTextStyle.m in Sources */,
-				265D814020A2F8FD00F415F8 /* HRColorPickerView.m in Sources */,
 				26CAB1F120B3F1A900D94D3D /* NTEditorAttributeConfig.m in Sources */,
 				26CAB20E20B5143300D94D3D /* UIFont+JXFont.m in Sources */,
-				265D813B20A2F8FD00F415F8 /* ZSSBarButtonItem.m in Sources */,
-				265D813E20A2F8FD00F415F8 /* HRCgUtil.m in Sources */,
 				265C2CF620283AE90073F244 /* AppDelegate.m in Sources */,
 				261606B4225DCE1D000BC4F5 /* AttributedTextParserVC.m in Sources */,
 				2626FFBD20AE784D00125D58 /* TextViewLoadHtmlVC.m in Sources */,
 				265C2CF520283AE90073F244 /* ViewController.m in Sources */,
-				265D814320A2F8FD00F415F8 /* CYRToken.m in Sources */,
 				261606B3225DCE1D000BC4F5 /* RichTextEditorVC.m in Sources */,
 				265C2CF920283B070073F244 /* TableVC.m in Sources */,
-				265D814220A2F8FD00F415F8 /* CYRLayoutManager.m in Sources */,
 				26CAB1F420B41E8900D94D3D /* AttributedTest2VC.m in Sources */,
-				265D813C20A2F8FD00F415F8 /* ZSSFontsViewController.m in Sources */,
-				265D813F20A2F8FD00F415F8 /* HRColorPickerViewController.m in Sources */,
 				265D80FE20A1A3E000F415F8 /* RichTextEditor.m in Sources */,
 				26C386612260920A000DF059 /* NSTextAttachment+RichText.m in Sources */,
 				26CAB20120B50D6C00D94D3D /* EditorToolBar.m in Sources */,
+				26700B06239F740000FFA7E5 /* JSEditorToolBar.m in Sources */,
 				26CAB20020B50D6C00D94D3D /* NTEditorMainView.m in Sources */,
+				26700B09239F914F00FFA7E5 /* JSEditorView.m in Sources */,
 				26CAB1FF20B50D6C00D94D3D /* NTEditorHeader.m in Sources */,
 				261606B7225DCE47000BC4F5 /* HTMLVC.m in Sources */,
 				26C386652260920A000DF059 /* PLabel.m in Sources */,
 				2626FFC320AE7E4700125D58 /* WKLoadHtmlVC.m in Sources */,
 				2626FFBA20AD8A5500125D58 /* AttibutedTestVC.m in Sources */,
-				265D814420A2F8FD00F415F8 /* CYRTextStorage.m in Sources */,
-				265D814120A2F8FD00F415F8 /* HRBrightnessCursor.m in Sources */,
 				265D813220A2F8FD00F415F8 /* ZSSRichTextEditor.m in Sources */,
 				26C386622260920A000DF059 /* ImgLabel.m in Sources */,
 				26C386642260920A000DF059 /* FontLabel.m in Sources */,
 				265D80FB20A1A3B900F415F8 /* JXTextViewVC.m in Sources */,
 				266958921F7F4B8600382A86 /* main.m in Sources */,
 				26C386632260920A000DF059 /* HTMLLabel.m in Sources */,
-				265D814520A2F8FD00F415F8 /* CYRTextView.m in Sources */,
-				265D814720A2F8FD00F415F8 /* HRColorCursor.m in Sources */,
-				265D813D20A2F8FD00F415F8 /* ZSSTextView.m in Sources */,
-				265D814620A2F8FD00F415F8 /* HRColorUtil.m in Sources */,
+				26700B0D239F982800FFA7E5 /* JSEditorHandle.m in Sources */,
 				2669590F1F7F877300382A86 /* README.md in Sources */,
 				26CAB20220B50D6C00D94D3D /* ToolBarCommonItem.m in Sources */,
 				261606AB225DC919000BC4F5 /* JXFont.m in Sources */,
@@ -889,7 +830,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = JA7UMD99EC;
 				INFOPLIST_FILE = RichTextProjectDemo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hainbwyh.RichTextProjectDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -902,7 +843,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = JA7UMD99EC;
 				INFOPLIST_FILE = RichTextProjectDemo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hainbwyh.RichTextProjectDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
