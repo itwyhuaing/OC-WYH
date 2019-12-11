@@ -7,16 +7,17 @@
 //
 
 #import "JSEditorView.h"
-#import <WebKit/WebKit.h>
 
 
 @interface JSEditorView () <WKUIDelegate,WKNavigationDelegate>
 
-@property (nonatomic,strong) WKWebView          *wkEditor;
+@property (nonatomic,readwrite,strong) WKWebView          *wkEditor;
 
 @end
 
 @implementation JSEditorView
+
+#pragma mark ------ init
 
 - (instancetype)initWithFrame:(CGRect)frame
 {
@@ -29,39 +30,6 @@
     return self;
 }
 
-- (void)layoutUI {
-    [self addSubview:self.wkEditor];
-}
-
-
-- (void)loadContent {
-    NSBundle *bundle = [NSBundle mainBundle];
-    NSString *htmlPath = [bundle pathForResource:@"editor" ofType:@"html"];
-    [self.wkEditor loadRequest:[NSURLRequest requestWithURL:[NSURL fileURLWithPath:htmlPath]]];
-}
-
--(void)dealloc {
-    [self removeObserver];
-}
-
-- (void)addObserver {
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(keyboardWillShowOrHide:)
-                                                 name:UIKeyboardWillShowNotification
-                                               object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(keyboardWillShowOrHide:)
-                                                 name:UIKeyboardWillHideNotification
-                                               object:nil];
-}
-
-
-- (void)removeObserver {
-    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillShowNotification object:nil];
-    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillHideNotification object:nil];
-}
-
-
 #pragma mark ------ Keyboard
 
 - (void)keyboardWillShowOrHide:(NSNotification *)notify{
@@ -72,58 +40,59 @@
     CGRect keyRectEnd = [[info objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue];
     CGFloat keyboardHeight = UIInterfaceOrientationIsLandscape(orientation) ? ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.000000) ? keyRectEnd.size.height : keyRectEnd.size.width : keyRectEnd.size.height;
     UIViewAnimationOptions animationOptions = curve << 16;
-    
-    //const int extraHeight = 0;// 10;
+    [self logMessage:[NSString stringWithFormat:@"%s:%@:%@:%@:%@",__FUNCTION__,notify.name,self.wkEditor.inputView,[NSValue valueWithCGRect:keyRectEnd],self.superview]];
     if ([notify.name isEqualToString:UIKeyboardWillShowNotification]) {
         [UIView animateWithDuration:duration delay:0 options:animationOptions animations:^{
             
         } completion:^(BOOL finished) {
-            //[self upDateToolBarFrameOriginY:CGRectGetMaxY(self.frame) - keyboardHeight - TOOL_BAR_HEIGHT];
-//            toolBarDownStatus = FALSE;
-            if (_delegate && [_delegate respondsToSelector:@selector(jsEditorView:willShowKeyboardWithHeight:)]) {
-                [_delegate jsEditorView:self willShowKeyboardWithHeight:keyboardHeight];
+            if (_delegate && [_delegate respondsToSelector:@selector(jsEditorView:willShowWithKeyRectEnd:)]) {
+                [_delegate jsEditorView:self willShowWithKeyRectEnd:keyRectEnd];
             }
         }];
         
-    } else {
+    }else if ([notify.name isEqualToString:UIKeyboardDidShowNotification]) {
+        NSLog(@"");
+    }else if ([notify.name isEqualToString:UIKeyboardWillHideNotification]){
         [UIView animateWithDuration:duration delay:0 options:animationOptions animations:^{
             
         } completion:^(BOOL finished) {
-//            [self upDateToolBarFrameOriginY:CGRectGetMaxY(self.frame) - TOOL_BAR_HEIGHT];
-//            toolBarDownStatus = TRUE;
-            if (_delegate && [_delegate respondsToSelector:@selector(jsEditorView:willHideKeyboardWithHeight:)]) {
-                [_delegate jsEditorView:self willHideKeyboardWithHeight:keyboardHeight];
+            if (_delegate && [_delegate respondsToSelector:@selector(jsEditorView:willHideWithKeyRectEnd:)]) {
+                [_delegate jsEditorView:self willHideWithKeyRectEnd:keyRectEnd];
             }
         }];
+    }else if ([notify.name isEqualToString:UIKeyboardDidHideNotification]) {
+        NSLog(@"");
     }
     
 }
 
-#pragma mark ------ delegate
+#pragma mark ------ WKUIDelegate,WKNavigationDelegate
 
 -(void)webView:(WKWebView *)webView decidePolicyForNavigationAction:(WKNavigationAction *)navigationAction decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler {
-    
     NSString *httpString = navigationAction.request.URL.absoluteString;
-    NSLog(@" \n \n \n \n  ===decidePolicyForNavigationAction===  \n %@ \n \n \n \n",httpString);
-    if ([httpString hasPrefix:@"http"]) {
-        decisionHandler(WKNavigationActionPolicyCancel);
-    } else if ([httpString rangeOfString:@"callback://0/"].location != NSNotFound) {
+    WKNavigationActionPolicy policy = WKNavigationActionPolicyAllow;
+    [self logMessage:[NSString stringWithFormat:@"%s:%@",__FUNCTION__,httpString]];
+    if ([httpString hasPrefix:@"http"]){
+        policy = WKNavigationActionPolicyCancel;
+    }else if ([httpString rangeOfString:@"callback://0/"].location != NSNotFound) {
         NSString *className = [httpString stringByReplacingOccurrencesOfString:@"callback://0/" withString:@""];
-        //[self updateToolBarWithButtonName:className];
-        if (_delegate && [_delegate respondsToSelector:@selector(jsEditorView:navigationActionWithFuncs:)]) {
-            [_delegate jsEditorView:self navigationActionWithFuncs:className];
+        if (_navigationDelegate && [_navigationDelegate respondsToSelector:@selector(jsEditorView:navigationActionWithFuncs:)]) {
+            [_navigationDelegate jsEditorView:self navigationActionWithFuncs:className];
         }
     }
-    decisionHandler(WKNavigationActionPolicyAllow);
+    decisionHandler(policy);
 }
 
-//-(void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation{
-//    NSLog(@" ===didFinishNavigation=== ");
-//    NSString *js = @"alerShow()";
-//    [self.wkEditor evaluateJavaScript:js completionHandler:^(id _Nullable info, NSError * _Nullable error) {
-//        NSLog(@" \n \n alerShow :%@ \n \n",info);
-//    }];
-//}
+
+#pragma mark ------ isLog
+
+-(void)setIsLog:(BOOL)isLog {
+    _isLog = isLog;
+}
+
+- (void)logMessage:(NSString *)msg {
+    _isLog ? NSLog(@"\n%s:%@\n\n",__FUNCTION__,msg) : nil;
+}
 
 #pragma mark ------ 懒加载
 
@@ -139,5 +108,42 @@
     }
     return _wkEditor;
 }
+
+
+#pragma mark ------ UI
+
+- (void)layoutUI {
+    [self addSubview:self.wkEditor];
+}
+
+- (void)loadContent {
+    NSBundle *bundle = [NSBundle mainBundle];
+    NSString *htmlPath = [bundle pathForResource:@"editor" ofType:@"html"];
+    [self.wkEditor loadRequest:[NSURLRequest requestWithURL:[NSURL fileURLWithPath:htmlPath]]];
+}
+
+-(void)dealloc {
+    [self logMessage:[NSString stringWithFormat:@"\n%s\n",__FUNCTION__]];
+    [self removeObserver];
+}
+
+#pragma mark ------ private method
+
+- (void)addObserver {
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(keyboardWillShowOrHide:)
+                                                 name:UIKeyboardWillShowNotification
+                                               object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(keyboardWillShowOrHide:)
+                                                 name:UIKeyboardWillHideNotification
+                                               object:nil];
+}
+
+- (void)removeObserver {
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillShowNotification object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillHideNotification object:nil];
+}
+
 
 @end

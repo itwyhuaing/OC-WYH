@@ -21,7 +21,7 @@
 
 // 标记功能位置
 typedef enum : NSUInteger {
-    JSEditorToolBarInsertImage = 0,     // 插入图片
+    JSEditorToolBarInsertImage = 10000,     // 插入图片
     JSEditorToolBarBold,                // 粗体
     JSEditorToolBarItalic,              // 斜体
     JSEditorToolBarStrikethrough,       // 删除线
@@ -34,8 +34,8 @@ typedef enum : NSUInteger {
 
 // 标记操作意向
 typedef enum : NSUInteger {
+    OperateIntentionOFF = 0,
     OperateIntentionON,
-    OperateIntentionOFF,
     OperateIntentionOther,
 } OperateIntention;
 

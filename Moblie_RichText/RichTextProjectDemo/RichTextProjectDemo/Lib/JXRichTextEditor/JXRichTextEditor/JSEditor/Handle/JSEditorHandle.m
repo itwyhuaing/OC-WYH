@@ -16,7 +16,9 @@ void interceptIMP (id self, SEL _cmd, void* arg0, BOOL arg1, BOOL arg2, id arg3)
 
 @implementation JSEditorHandle
 
--(void)editableWeb:(WKWebView *)web funcLocation:(JSEditorToolBarFuncLocation)location completion:(evaluateJsCompletion)completion {
+#pragma mark - common js handle
+
+-(void)formatEditableWeb:(WKWebView *)web funcLocation:(JSEditorToolBarFuncLocation)location completion:(evaluateJsCompletion)completion {
     NSString *js = @"";
     if (location == JSEditorToolBarInsertImage) {
         
@@ -46,7 +48,7 @@ void interceptIMP (id self, SEL _cmd, void* arg0, BOOL arg1, BOOL arg2, id arg3)
 }
 
 
-#pragma mark ------ native - js
+#pragma mark - js 控制键盘
 
 - (void)focusEditableWeb:(WKWebView *)web completion:(evaluateJsCompletion)completion{
     NSString *js = [NSString stringWithFormat:@"zss_editor.focusEditor();"];
@@ -63,6 +65,7 @@ void interceptIMP (id self, SEL _cmd, void* arg0, BOOL arg1, BOOL arg2, id arg3)
 
 }
 
+
 #pragma mark - WKWebView 处理 JS focus() 函数问题
 /**
  可参考1：https://stackoverflow.com/questions/32407185/wkwebview-cant-open-keyboard-for-input-field
@@ -78,5 +81,20 @@ void interceptIMP (id self, SEL _cmd, void* arg0, BOOL arg1, BOOL arg2, id arg3)
     method_setImplementation(originalMethod, impOvverride);
 }
 
+#pragma mark ------ isLog
+
+-(void)setIsLog:(BOOL)isLog {
+    _isLog = isLog;
+}
+
+- (void)logMessage:(NSString *)msg {
+    _isLog ? NSLog(@"\n%s:%@\n\n",__FUNCTION__,msg) : nil;
+}
+
+#pragma mark ------ dealloc
+
+-(void)dealloc {
+    [self logMessage:[NSString stringWithFormat:@"\n%s\n",__FUNCTION__]];
+}
 
 @end

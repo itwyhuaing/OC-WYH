@@ -11,7 +11,7 @@
 #import "JSEditorToolBar.h"
 #import "JSEditorHandle.h"
 
-@interface ZSSRichTextEditor () <JSEditorViewDelegate>
+@interface ZSSRichTextEditor () <JSEditorViewKeyBoardDelegate,JSEditorViewNavigationDelegate>
 
 @property (nonatomic,strong) JSEditorView       *editorView;
 @property (nonatomic,strong) JSEditorToolBar    *toolBarHolder;
@@ -26,7 +26,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self layoutUI];
-    [self.editorHandle setWkWebViewShowKeybord];
+    //[self.editorHandle setWkWebViewShowKeybord];
+    __weak typeof(self)weakSelf = self;
+    self.toolBarHolder.toolBarBlk = ^(JSEditorToolBarFuncLocation location, OperateIntention status) {
+        [weakSelf.editorHandle formatEditableWeb:weakSelf.editorView.wkEditor funcLocation:location completion:^(id  _Nonnull info, NSError * _Nonnull error) {
+            NSLog(@"\n 点击工具条 :\n %@ \n error : \n %@ \n",info,error);
+        }];
+    };
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -34,34 +40,22 @@
     self.view.backgroundColor = [UIColor whiteColor];
 }
 
-- (void)viewDidAppear:(BOOL)animated{
-    [super viewDidAppear:animated];
+-(void)dealloc {
+    NSLog(@"\n\n %s \n\n",__FUNCTION__);
 }
 
--(void)viewWillDisappear:(BOOL)animated{
-    [super viewWillDisappear:animated];
+#pragma mark ------ JSEditorViewKeyBoardDelegate,JSEditorViewNavigationDelegate
+
+-(void)jsEditorView:(JSEditorView *)jsEditor willShowWithKeyRectEnd:(CGRect)rect {
+    CGRect rt = self.toolBarHolder.frame;
+    rt.origin.y = CGRectGetMinY(rect) - CGRectGetHeight(rt);
+    [self.toolBarHolder setFrame:rt];
 }
 
-- (void)viewDidDisappear:(BOOL)animated{
-    [super viewDidDisappear:animated];
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-}
-
-#pragma mark ------ JSEditorViewDelegate
-
--(void)jsEditorView:(JSEditorView *)jsEditor willShowKeyboardWithHeight:(CGFloat)height {
-    CGRect rect = self.toolBarHolder.frame;
-    rect.origin.y -= height;
-    [self.toolBarHolder setFrame:rect];
-}
-
--(void)jsEditorView:(JSEditorView *)jsEditor willHideKeyboardWithHeight:(CGFloat)height {
-    CGRect rect = self.toolBarHolder.frame;
-    rect.origin.y += height;
-    [self.toolBarHolder setFrame:rect];
+-(void)jsEditorView:(JSEditorView *)jsEditor willHideWithKeyRectEnd:(CGRect)rect {
+    CGRect rt = self.toolBarHolder.frame;
+    rt.origin.y = CGRectGetMinY(rect) - CGRectGetHeight(rt) - BOTTOM_HEIGHT_SUIT_IPHONE_X;
+    [self.toolBarHolder setFrame:rt];
 }
 
 -(void)jsEditorView:(JSEditorView *)jsEditor navigationActionWithFuncs:(NSString *)funcs {
@@ -84,6 +78,8 @@
                                                                      SCREEN_WIDTH,
                                                                      SCREEN_HEIGHT)];
         _editorView.delegate = (id)self;
+        _editorView.navigationDelegate = (id)self;
+        _editorView.isLog = TRUE;
     }
     return _editorView;
 }
@@ -94,9 +90,7 @@
                                                                 CGRectGetMaxY(self.view.frame) - TOOL_BAR_HEIGHT - BOTTOM_HEIGHT_SUIT_IPHONE_X,
                                                                 SCREEN_WIDTH,
                                                                 TOOL_BAR_HEIGHT)];
-        _toolBarHolder.toolBarBlk = ^(JSEditorToolBarFuncLocation location, OperateIntention status) {
-            
-        };
+        _toolBarHolder.isLog = TRUE;
     }
     return _toolBarHolder;
 }
@@ -104,6 +98,7 @@
 -(JSEditorHandle *)editorHandle {
     if (!_editorHandle) {
         _editorHandle = [[JSEditorHandle alloc] init];
+        _editorHandle.isLog = TRUE;
     }
     return _editorHandle;
 }
