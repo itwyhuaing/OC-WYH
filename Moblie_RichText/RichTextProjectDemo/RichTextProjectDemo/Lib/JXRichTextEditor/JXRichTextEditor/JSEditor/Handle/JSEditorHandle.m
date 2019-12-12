@@ -18,7 +18,7 @@ void interceptIMP (id self, SEL _cmd, void* arg0, BOOL arg1, BOOL arg2, id arg3)
 
 #pragma mark - common js handle
 
--(void)formatEditableWeb:(WKWebView *)web funcLocation:(JSEditorToolBarFuncLocation)location completion:(evaluateJsCompletion)completion {
+-(void)formatEditableWeb:(WKWebView *)web funcLocation:(JSEditorToolBarFuncType)location intention:(OperateIntention)intention completion:(evaluateJsCompletion)completion {
     NSString *js = @"";
     if (location == JSEditorToolBarInsertImage) {
         
@@ -36,13 +36,19 @@ void interceptIMP (id self, SEL _cmd, void* arg0, BOOL arg1, BOOL arg2, id arg3)
         js = @"zss_editor.setHeading('h1');";
     }
     else if (location == JSEditorToolBarH2) {
-        js = @"zss_editor.setHeading('h2');";
+        js = @"zss_editor.setHeading('h2');"; 
     }
     else if (location == JSEditorToolBarH3) {
         js = @"zss_editor.setHeading('h3');";
     }
     else if (location == JSEditorToolBarH4) {
         js = @"zss_editor.setHeading('h4');";
+    }else if (location == JSEditorToolBarKeyBaord){
+        if (intention == OperateIntentionON) {
+            js = [NSString stringWithFormat:@"zss_editor.focusEditor();"];
+        }else{
+            js = [NSString stringWithFormat:@"zss_editor.blurEditor();"];
+        }
     }
     [web evaluateJavaScript:js completionHandler:completion];
 }
@@ -73,12 +79,15 @@ void interceptIMP (id self, SEL _cmd, void* arg0, BOOL arg1, BOOL arg2, id arg3)
  **/
 
 - (void)setWkWebViewShowKeybord {
-    Class cls = NSClassFromString(@"WKContentView");
-    SEL originalSelector = NSSelectorFromString(@"_startAssistingNode:userIsInteracting:blurPreviousNode:userObject:");
-    Method originalMethod = class_getInstanceMethod(cls, originalSelector);
-    IMP impOvverride = (IMP) interceptIMP;
-    originalIMP = (void *)method_getImplementation(originalMethod);
-    method_setImplementation(originalMethod, impOvverride);
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        Class cls = NSClassFromString(@"WKContentView");
+        SEL originalSelector = NSSelectorFromString(@"_startAssistingNode:userIsInteracting:blurPreviousNode:userObject:");
+        Method originalMethod = class_getInstanceMethod(cls, originalSelector);
+        IMP impOvverride = (IMP) interceptIMP;
+        originalIMP = (void *)method_getImplementation(originalMethod);
+        method_setImplementation(originalMethod, impOvverride);
+    });
 }
 
 #pragma mark ------ isLog

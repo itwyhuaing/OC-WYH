@@ -39,6 +39,8 @@
 		26700B06239F740000FFA7E5 /* JSEditorToolBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 26700B05239F740000FFA7E5 /* JSEditorToolBar.m */; };
 		26700B09239F914F00FFA7E5 /* JSEditorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 26700B08239F914F00FFA7E5 /* JSEditorView.m */; };
 		26700B0D239F982800FFA7E5 /* JSEditorHandle.m in Sources */ = {isa = PBXBuildFile; fileRef = 26700B0C239F982800FFA7E5 /* JSEditorHandle.m */; };
+		26700B1323A21F1200FFA7E5 /* JSEditorDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 26700B1223A21F1200FFA7E5 /* JSEditorDataModel.m */; };
+		26700B1623A2228600FFA7E5 /* JSEditorBarCommonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 26700B1523A2228600FFA7E5 /* JSEditorBarCommonCell.m */; };
 		26C386612260920A000DF059 /* NSTextAttachment+RichText.m in Sources */ = {isa = PBXBuildFile; fileRef = 26C386542260920A000DF059 /* NSTextAttachment+RichText.m */; };
 		26C386622260920A000DF059 /* ImgLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 26C386582260920A000DF059 /* ImgLabel.m */; };
 		26C386632260920A000DF059 /* HTMLLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 26C386592260920A000DF059 /* HTMLLabel.m */; };
@@ -129,6 +131,10 @@
 		26700B0B239F982800FFA7E5 /* JSEditorHandle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSEditorHandle.h; sourceTree = "<group>"; };
 		26700B0C239F982800FFA7E5 /* JSEditorHandle.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JSEditorHandle.m; sourceTree = "<group>"; };
 		26700B10239F9BBB00FFA7E5 /* JSEditorConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSEditorConfig.h; sourceTree = "<group>"; };
+		26700B1123A21F1200FFA7E5 /* JSEditorDataModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSEditorDataModel.h; sourceTree = "<group>"; };
+		26700B1223A21F1200FFA7E5 /* JSEditorDataModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JSEditorDataModel.m; sourceTree = "<group>"; };
+		26700B1423A2228600FFA7E5 /* JSEditorBarCommonCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSEditorBarCommonCell.h; sourceTree = "<group>"; };
+		26700B1523A2228600FFA7E5 /* JSEditorBarCommonCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JSEditorBarCommonCell.m; sourceTree = "<group>"; };
 		26C386542260920A000DF059 /* NSTextAttachment+RichText.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSTextAttachment+RichText.m"; sourceTree = "<group>"; };
 		26C386552260920A000DF059 /* NSTextAttachment+RichText.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSTextAttachment+RichText.h"; sourceTree = "<group>"; };
 		26C386572260920A000DF059 /* PLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLabel.h; sourceTree = "<group>"; };
@@ -322,6 +328,8 @@
 			children = (
 				26700B04239F740000FFA7E5 /* JSEditorToolBar.h */,
 				26700B05239F740000FFA7E5 /* JSEditorToolBar.m */,
+				26700B1423A2228600FFA7E5 /* JSEditorBarCommonCell.h */,
+				26700B1523A2228600FFA7E5 /* JSEditorBarCommonCell.m */,
 				26700B07239F914F00FFA7E5 /* JSEditorView.h */,
 				26700B08239F914F00FFA7E5 /* JSEditorView.m */,
 			);
@@ -407,6 +415,8 @@
 			children = (
 				26700B0B239F982800FFA7E5 /* JSEditorHandle.h */,
 				26700B0C239F982800FFA7E5 /* JSEditorHandle.m */,
+				26700B1123A21F1200FFA7E5 /* JSEditorDataModel.h */,
+				26700B1223A21F1200FFA7E5 /* JSEditorDataModel.m */,
 				26700B10239F9BBB00FFA7E5 /* JSEditorConfig.h */,
 			);
 			path = Handle;
@@ -649,6 +659,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				26CAB20B20B50FFE00D94D3D /* JXTextStyle.m in Sources */,
+				26700B1323A21F1200FFA7E5 /* JSEditorDataModel.m in Sources */,
 				26CAB1F120B3F1A900D94D3D /* NTEditorAttributeConfig.m in Sources */,
 				26CAB20E20B5143300D94D3D /* UIFont+JXFont.m in Sources */,
 				265C2CF620283AE90073F244 /* AppDelegate.m in Sources */,
@@ -657,6 +668,7 @@
 				265C2CF520283AE90073F244 /* ViewController.m in Sources */,
 				261606B3225DCE1D000BC4F5 /* RichTextEditorVC.m in Sources */,
 				265C2CF920283B070073F244 /* TableVC.m in Sources */,
+				26700B1623A2228600FFA7E5 /* JSEditorBarCommonCell.m in Sources */,
 				26CAB1F420B41E8900D94D3D /* AttributedTest2VC.m in Sources */,
 				265D80FE20A1A3E000F415F8 /* RichTextEditor.m in Sources */,
 				26C386612260920A000DF059 /* NSTextAttachment+RichText.m in Sources */,

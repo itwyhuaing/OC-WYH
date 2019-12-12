@@ -16,7 +16,7 @@ typedef void(^evaluateJsCompletion)(id info,NSError *error);
 @interface JSEditorHandle : NSObject
 
 // js 处理通用方法
-- (void)formatEditableWeb:(WKWebView *)web funcLocation:(JSEditorToolBarFuncLocation)location completion:(evaluateJsCompletion)completion;
+- (void)formatEditableWeb:(WKWebView *)web funcLocation:(JSEditorToolBarFuncType)location intention:(OperateIntention)intention completion:(evaluateJsCompletion)completion;
 
 // js “激活”编辑功能
 - (void)focusEditableWeb:(WKWebView *)web completion:(evaluateJsCompletion)completion;

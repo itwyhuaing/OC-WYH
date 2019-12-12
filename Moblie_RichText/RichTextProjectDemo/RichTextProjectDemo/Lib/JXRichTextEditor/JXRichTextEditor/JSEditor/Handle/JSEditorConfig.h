@@ -16,6 +16,7 @@
 #define SCREEN_HEIGHT                           [UIScreen mainScreen].bounds.size.height
 #define IS_IPHONE_X                             ([UIScreen mainScreen].bounds.size.height == 812.f || [UIScreen mainScreen].bounds.size.height == 896.f)
 #define TOOL_BAR_HEIGHT                         44.0
+#define LAYER_LINE_HEIGHT                       0.8
 #define BOTTOM_HEIGHT_SUIT_IPHONE_X             (IS_IPHONE_X ? 34.0 : 0)
 
 
@@ -30,7 +31,7 @@ typedef enum : NSUInteger {
     JSEditorToolBarH3,                  // 字体 H3
     JSEditorToolBarH4,                  // 字体 H4
     JSEditorToolBarKeyBaord,            // 键盘收起或弹起
-} JSEditorToolBarFuncLocation;
+} JSEditorToolBarFuncType;
 
 // 标记操作意向
 typedef enum : NSUInteger {
@@ -39,5 +40,11 @@ typedef enum : NSUInteger {
     OperateIntentionOther,
 } OperateIntention;
 
+// 标记工具条位置
+typedef enum : NSUInteger {
+    JSEditorToolBarYHight = 20000,
+    JSEditorToolBarYLow,
+    JSEditorToolBarYOther,
+} JSEditorToolBarYStatus;
 
 #endif /* JSEditorConfig_h */

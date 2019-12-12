@@ -11,14 +11,20 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-typedef void(^EditerToolBarBlk)(JSEditorToolBarFuncLocation location,OperateIntention status);
+typedef void(^EditerToolBarBlk)(JSEditorToolBarFuncType location,OperateIntention status);
 @interface JSEditorToolBar : UIView
+
+// 初始化
+-(instancetype)initWithFrame:(CGRect)frame items:(NSArray *)items;
 
 // outward-向外传递信号,用户点击
 @property (nonatomic,copy) EditerToolBarBlk toolBarBlk;
 
 // into-向内传递信号，更新 UI
 - (void)updateToolBarWithButtonName:(NSString *)name;
+
+// into-向内传递信号，更新 UI
+@property (nonatomic,assign) JSEditorToolBarYStatus yStatus;
 
 // 是否打印
 @property (nonatomic,assign) BOOL isLog;
