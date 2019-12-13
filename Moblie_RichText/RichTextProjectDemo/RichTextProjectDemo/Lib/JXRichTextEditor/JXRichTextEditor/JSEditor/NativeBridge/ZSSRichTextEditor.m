@@ -10,13 +10,15 @@
 #import "JSEditorView.h"
 #import "JSEditorToolBar.h"
 #import "JSEditorDataModel.h"
-#import "JSEditorHandle.h"
+#import "JSEditorHandleJs.h"
+#import "JSEditorPhotosPicker.h"
 
 @interface ZSSRichTextEditor () <JSEditorViewKeyBoardDelegate,JSEditorViewNavigationDelegate>
 
-@property (nonatomic,strong) JSEditorView       *editorView;
-@property (nonatomic,strong) JSEditorToolBar    *toolBarHolder;
-@property (nonatomic,strong) JSEditorHandle     *editorHandle;
+@property (nonatomic,strong) JSEditorView           *editorView;
+@property (nonatomic,strong) JSEditorToolBar        *toolBarHolder;
+@property (nonatomic,strong) JSEditorHandleJs       *handleJs;
+@property (nonatomic,strong) JSEditorPhotosPicker   *photosPicker;
 
 @end
 
@@ -27,14 +29,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self layoutUI];
-    [self.editorHandle setWkWebViewShowKeybord];
-    __weak typeof(self)weakSelf = self;
-    self.toolBarHolder.toolBarBlk = ^(JSEditorToolBarFuncType location, OperateIntention status) {
-        // 控制编辑区格式
-        [weakSelf.editorHandle formatEditableWeb:weakSelf.editorView.wkEditor funcLocation:location intention:status completion:^(id  _Nonnull info, NSError * _Nonnull error) {
-            NSLog(@"\n \n 点击工具条 : %@ \n error :  %@ \n",info,error);
-        }];
-    };
+    [self.handleJs setWkWebViewShowKeybord];
+    [self handleBlock];
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -44,6 +40,39 @@
 
 -(void)dealloc {
     NSLog(@"\n\n %s \n\n",__FUNCTION__);
+}
+
+
+#pragma mark ------ handle block
+
+- (void)handleBlock {
+    __weak typeof(self)weakSelf = self;
+    self.toolBarHolder.toolBarBlk = ^(JSEditorToolBarFuncType location, OperateIntention status) {
+        // 控制编辑区格式
+        [weakSelf.handleJs formatEditableWeb:weakSelf.editorView.wkEditor funcLocation:location intention:status completion:^(id  _Nonnull info, NSError * _Nonnull error) {
+            NSLog(@"\n \n 点击工具条 : %@ \n error :  %@ \n",info,error);
+            if (location == JSEditorToolBarInsertImage) {
+                [weakSelf.photosPicker pickPhotos];
+            }
+        }];
+    };
+    
+    self.photosPicker.pickerBlock = ^(NSArray<PhotoModel *> * _Nonnull data) {
+        PhotoModel *f = data.firstObject;
+        [weakSelf.handleJs editableWeb:weakSelf.editorView.wkEditor
+                             imagePath:f.writedPath
+                                 width:[NSString stringWithFormat:@"%f",f.compatibleSize.width]
+                                height:[NSString stringWithFormat:@"%f",f.compatibleSize.height]
+                               sideGap:[NSString stringWithFormat:@"%f",f.lrGap]
+                             imageSign:f.uniqueSign
+                           loadingPath:f.loadingPath
+                         reLoadingPath:f.reloadingPath
+                            deletePath:f.deletePath
+                            completion:^(id  _Nonnull info, NSError * _Nonnull error) {
+            NSLog(@"\n\n 插入图片 :%@ - %@ \n",info ,error);
+            [weakSelf dismissViewControllerAnimated:TRUE completion:nil];
+        }];
+    };
 }
 
 #pragma mark ------ JSEditorViewKeyBoardDelegate,JSEditorViewNavigationDelegate
@@ -126,12 +155,19 @@
     return _toolBarHolder;
 }
 
--(JSEditorHandle *)editorHandle {
-    if (!_editorHandle) {
-        _editorHandle = [[JSEditorHandle alloc] init];
-        _editorHandle.isLog = TRUE;
+-(JSEditorHandleJs *)handleJs {
+    if (!_handleJs) {
+        _handleJs = [[JSEditorHandleJs alloc] init];
+        _handleJs.isLog = TRUE;
     }
-    return _editorHandle;
+    return _handleJs;
+}
+
+-(JSEditorPhotosPicker *)photosPicker {
+    if (!_photosPicker) {
+        _photosPicker = [[JSEditorPhotosPicker alloc] initWithPreVC:self];
+    }
+    return _photosPicker;
 }
 
 @end

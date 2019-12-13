@@ -13,6 +13,11 @@
 @end
 
 
+@implementation PhotoModel
+
+@end
+
+
 @implementation JSEditorDataModel
 
 @end

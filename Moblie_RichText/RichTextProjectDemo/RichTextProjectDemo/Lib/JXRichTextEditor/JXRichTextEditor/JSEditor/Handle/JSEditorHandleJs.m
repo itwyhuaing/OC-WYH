@@ -1,12 +1,12 @@
 //
-//  JSEditorHandle.m
+//  JSEditorHandleJs.m
 //  RichTextProjectDemo
 //
 //  Created by hnbwyh on 2019/12/10.
 //  Copyright © 2019 hainbwyh. All rights reserved.
 //
 
-#import "JSEditorHandle.h"
+#import "JSEditorHandleJs.h"
 #import <objc/runtime.h>
 
 static void (*originalIMP)(id self, SEL _cmd, void* arg0, BOOL arg1, BOOL arg2, id arg3) = NULL;
@@ -14,16 +14,13 @@ void interceptIMP (id self, SEL _cmd, void* arg0, BOOL arg1, BOOL arg2, id arg3)
     originalIMP(self, _cmd, arg0, TRUE, arg2, arg3);
 }
 
-@implementation JSEditorHandle
+@implementation JSEditorHandleJs
 
 #pragma mark - common js handle
 
 -(void)formatEditableWeb:(WKWebView *)web funcLocation:(JSEditorToolBarFuncType)location intention:(OperateIntention)intention completion:(evaluateJsCompletion)completion {
     NSString *js = @"";
-    if (location == JSEditorToolBarInsertImage) {
-        
-    }
-    else if (location == JSEditorToolBarBold) {
+    if (location == JSEditorToolBarBold) {
         js = @"zss_editor.setBold();";
     }
     else if (location == JSEditorToolBarItalic) {
@@ -43,34 +40,39 @@ void interceptIMP (id self, SEL _cmd, void* arg0, BOOL arg1, BOOL arg2, id arg3)
     }
     else if (location == JSEditorToolBarH4) {
         js = @"zss_editor.setHeading('h4');";
-    }else if (location == JSEditorToolBarKeyBaord){
+    }else if (location == JSEditorToolBarKeyBaord){ // js 控制键盘
         if (intention == OperateIntentionON) {
             js = [NSString stringWithFormat:@"zss_editor.focusEditor();"];
         }else{
             js = [NSString stringWithFormat:@"zss_editor.blurEditor();"];
         }
     }
-    [web evaluateJavaScript:js completionHandler:completion];
+    [self editableWeb:web operatedJs:js completion:completion];
 }
 
 
-#pragma mark - js 控制键盘
-
-- (void)focusEditableWeb:(WKWebView *)web completion:(evaluateJsCompletion)completion{
-    NSString *js = [NSString stringWithFormat:@"zss_editor.focusEditor();"];
-    [web evaluateJavaScript:js completionHandler:completion];
+-(void)editableWeb:(WKWebView *)web operatedJs:(NSString *)jsContent completion:(evaluateJsCompletion)completion {
+    [web evaluateJavaScript:jsContent completionHandler:completion];
 }
 
-- (void)blurEditableWeb:(WKWebView *)web completion:(evaluateJsCompletion)completion{
-    NSString *js = [NSString stringWithFormat:@"zss_editor.blurEditor();"];
-    [web evaluateJavaScript:js completionHandler:completion];
+-(void)editableWeb:(WKWebView *)web imagePath:(NSString *)iPath width:(NSString *)w height:(NSString *)h sideGap:(NSString *)sGap imageSign:(NSString *)imgSign loadingPath:(NSString *)lPath reLoadingPath:(NSString *)rPath deletePath:(NSString *)dPath completion:(evaluateJsCompletion)completion {
+    __weak typeof(self) weakSelf = self;
+    [self prepareInsertEditableWeb:web completion:^(id  _Nonnull info, NSError * _Nonnull error) {
+        NSString *js = [NSString stringWithFormat:@"zss_editor.insertImage(\"%@\", \"%@\", \"%@\", \"%@\",\"%@\",\"%@\");", [NSURL URLWithString:iPath].absoluteString, w,h,imgSign,[NSURL URLWithString:lPath].absoluteString,sGap];
+        [weakSelf editableWeb:web operatedJs:js completion:^(id  _Nonnull info, NSError * _Nonnull error) {
+            completion ? completion(info,error) : nil;
+        }];
+    }];
 }
 
 
--(void)insertImageFromDevice:(UIButton *)btn{
 
+#pragma mark -
+
+-(void)prepareInsertEditableWeb:(WKWebView *)web completion:(evaluateJsCompletion)completion {
+    NSString *js = @"zss_editor.prepareInsert();";
+    [self editableWeb:web operatedJs:js completion:completion];
 }
-
 
 #pragma mark - WKWebView 处理 JS focus() 函数问题
 /**
