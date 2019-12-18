@@ -524,7 +524,7 @@ zss_editor.insertImage = function(url, w,h,imgID,loadingURL) {
     var extraBrTagID = "extraBrTagID"+imgID;
     var extraNbspTagID = "extraNbspTagID"+imgID;
     var html2 = '<div id="'+prID+'" class="pr appContent" contenteditable="false"><img id="'+insertImageID+'" class="app-img" src="'+url+'" width="'+w+'" height="'+h+'"/><div id="'+maskID+'" class="pa paBox"><div class="com-table"><div contenteditable="false"><div class="grayMaskCL"><div class="com-table"><div class="table-cell"><img class="imgOperationCL" src="'+loadingURL+'"/><p class="textOperationCL uploadingMaskCL" contenteditable="false">上传中，请稍等...</p></div></div></div></div></div></div></div><div id="'+originTextID+'" class="imageOriginText">上传中，请稍等...</div><div id="'+extraBrTagID+'" class="extraBrTagCL"><br></div><div id="'+extraNbspTagID+'" class="extraNbspTagCL">&nbsp;</div>'; //
-
+    console.log("\n insertImage - HTML: \n\n"+html2);
     zss_editor.insertHTML(html2);
     zss_editor.bindMaskID(maskID);
     zss_editor.enabledEditingItems();

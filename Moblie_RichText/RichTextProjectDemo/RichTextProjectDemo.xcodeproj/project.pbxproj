@@ -12,6 +12,7 @@
 		261606B3225DCE1D000BC4F5 /* RichTextEditorVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 261606B1225DCE1C000BC4F5 /* RichTextEditorVC.m */; };
 		261606B4225DCE1D000BC4F5 /* AttributedTextParserVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 261606B2225DCE1C000BC4F5 /* AttributedTextParserVC.m */; };
 		261606B7225DCE47000BC4F5 /* HTMLVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 261606B6225DCE47000BC4F5 /* HTMLVC.m */; };
+		2625B9D423A9CADE00945B2F /* 66.png in Resources */ = {isa = PBXBuildFile; fileRef = 2625B9D323A9CADE00945B2F /* 66.png */; };
 		2626FFBA20AD8A5500125D58 /* AttibutedTestVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2626FFB920AD8A5500125D58 /* AttibutedTestVC.m */; };
 		2626FFBD20AE784D00125D58 /* TextViewLoadHtmlVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2626FFBC20AE784D00125D58 /* TextViewLoadHtmlVC.m */; };
 		2626FFC320AE7E4700125D58 /* WKLoadHtmlVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2626FFC220AE7E4700125D58 /* WKLoadHtmlVC.m */; };
@@ -87,6 +88,7 @@
 		261606B2225DCE1C000BC4F5 /* AttributedTextParserVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AttributedTextParserVC.m; sourceTree = "<group>"; };
 		261606B5225DCE47000BC4F5 /* HTMLVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTMLVC.h; sourceTree = "<group>"; };
 		261606B6225DCE47000BC4F5 /* HTMLVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTMLVC.m; sourceTree = "<group>"; };
+		2625B9D323A9CADE00945B2F /* 66.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 66.png; sourceTree = "<group>"; };
 		2626FFB820AD8A5500125D58 /* AttibutedTestVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AttibutedTestVC.h; sourceTree = "<group>"; };
 		2626FFB920AD8A5500125D58 /* AttibutedTestVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AttibutedTestVC.m; sourceTree = "<group>"; };
 		2626FFBB20AE784D00125D58 /* TextViewLoadHtmlVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TextViewLoadHtmlVC.h; sourceTree = "<group>"; };
@@ -322,6 +324,7 @@
 		265D811120A2F8FD00F415F8 /* image */ = {
 			isa = PBXGroup;
 			children = (
+				2625B9D323A9CADE00945B2F /* 66.png */,
 				265D811220A2F8FD00F415F8 /* reload@2x.png */,
 				265D811320A2F8FD00F415F8 /* uploadimageloading.gif */,
 				265D811420A2F8FD00F415F8 /* delete@2x.png */,
@@ -644,6 +647,7 @@
 				265D813620A2F8FD00F415F8 /* JSBeautifier.js in Resources */,
 				2669589B1F7F4B8700382A86 /* Main.storyboard in Resources */,
 				265D813820A2F8FD00F415F8 /* reload@2x.png in Resources */,
+				2625B9D423A9CADE00945B2F /* 66.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

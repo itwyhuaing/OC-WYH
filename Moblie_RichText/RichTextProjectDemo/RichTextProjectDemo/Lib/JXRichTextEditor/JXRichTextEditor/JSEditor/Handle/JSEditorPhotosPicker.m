@@ -29,7 +29,7 @@
     NSTimeInterval timeInterval = [dat timeIntervalSince1970];
     NSString *tmpString = [NSString stringWithFormat:@"%.0f",timeInterval];
     NSInteger tmpCount = [tmpString integerValue];
-    return [NSString stringWithFormat:@"%ldld",(long)tmpCount];
+    return [NSString stringWithFormat:@"%ld",(long)tmpCount];
 }
 
 - (CGFloat)generateSideGap {
@@ -52,7 +52,7 @@
 
 -(NSString *)generateLoadingPath {
     NSBundle *mainBundle = [NSBundle mainBundle];
-    return [mainBundle pathForResource:@"reload@2x" ofType:@"png"];
+    return [mainBundle pathForResource:@"uploadimageloading" ofType:@"gif"];
 }
 
 -(NSString *)generateReloadingPath {
@@ -62,7 +62,7 @@
 
 -(NSString *)generateDeletePath {
     NSBundle *mainBundle = [NSBundle mainBundle];
-    return [mainBundle pathForResource:@"delete@2x" ofType:@"png"];
+    return [mainBundle pathForResource:@"66" ofType:@"png"];//[mainBundle pathForResource:@"delete@2x" ofType:@"png"];
 }
 
 - (CGSize)compatibleSizeForImage:(UIImage *)img{
@@ -171,14 +171,19 @@
     f.editedImage       = [info objectForKey:UIImagePickerControllerEditedImage];
     f.originalImage     = [info objectForKey:UIImagePickerControllerOriginalImage];
     f.originalPath      = [info objectForKey:UIImagePickerControllerReferenceURL];
-    f.uniqueSign        = [self.manager generateTheBasicCount];
-    f.writedPath        = [self.manager pathForCacheImageWithKey:[NSString stringWithFormat:@"%ld.png",100]]; //f.uniqueSign
     f.loadingPath       = [self.manager generateLoadingPath];
     f.reloadingPath     = [self.manager generateReloadingPath];
     f.deletePath        = [self.manager generateDeletePath];
     f.compatibleSize    = [self.manager compatibleSizeForImage:f.originalImage];
     f.lrGap             = [self.manager generateSideGap];
-    [self.manager writeImage:f.originalImage cachePath:f.writedPath];
+     [self.manager writeImage:f.originalImage cachePath:f.writedPath];
+    // 照片写入本应用内缓存
+    f.uniqueSign        = [self.manager generateTheBasicCount];
+    NSString *targetPath = [self.manager pathForCacheImageWithKey:[NSString stringWithFormat:@"%d.png",100]];;
+    BOOL write = [self.manager writeImage:f.originalImage cachePath:targetPath];
+    if (write) {
+        f.writedPath = f.originalPath;//targetPath;
+    }
     self.pickerBlock ? self.pickerBlock(@[f]) : nil;
 }
 
