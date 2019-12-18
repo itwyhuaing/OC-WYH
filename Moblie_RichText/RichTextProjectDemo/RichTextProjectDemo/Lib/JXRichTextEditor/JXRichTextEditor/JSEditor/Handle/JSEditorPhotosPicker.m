@@ -172,7 +172,7 @@
     f.originalImage     = [info objectForKey:UIImagePickerControllerOriginalImage];
     f.originalPath      = [info objectForKey:UIImagePickerControllerReferenceURL];
     f.uniqueSign        = [self.manager generateTheBasicCount];
-    f.writedPath        = [self.manager pathForCacheImageWithKey:[NSString stringWithFormat:@"%@",f.uniqueSign]];
+    f.writedPath        = [self.manager pathForCacheImageWithKey:[NSString stringWithFormat:@"%ld.png",100]]; //f.uniqueSign
     f.loadingPath       = [self.manager generateLoadingPath];
     f.reloadingPath     = [self.manager generateReloadingPath];
     f.deletePath        = [self.manager generateDeletePath];

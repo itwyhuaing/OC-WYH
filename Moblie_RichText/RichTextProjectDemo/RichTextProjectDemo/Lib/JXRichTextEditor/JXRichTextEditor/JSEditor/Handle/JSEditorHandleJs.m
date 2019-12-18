@@ -58,13 +58,12 @@ void interceptIMP (id self, SEL _cmd, void* arg0, BOOL arg1, BOOL arg2, id arg3)
 -(void)editableWeb:(WKWebView *)web imagePath:(NSString *)iPath width:(NSString *)w height:(NSString *)h sideGap:(NSString *)sGap imageSign:(NSString *)imgSign loadingPath:(NSString *)lPath reLoadingPath:(NSString *)rPath deletePath:(NSString *)dPath completion:(evaluateJsCompletion)completion {
     __weak typeof(self) weakSelf = self;
     [self prepareInsertEditableWeb:web completion:^(id  _Nonnull info, NSError * _Nonnull error) {
-        NSString *js = [NSString stringWithFormat:@"zss_editor.insertImage(\"%@\", \"%@\", \"%@\", \"%@\",\"%@\",\"%@\");", [NSURL URLWithString:iPath].absoluteString, w,h,imgSign,[NSURL URLWithString:lPath].absoluteString,sGap];
+        NSString *js = [NSString stringWithFormat:@"zss_editor.insertImage(\"%@\", \"%@\", \"%@\", \"%@\",\"%@\",\"%@\");", [NSURL fileURLWithPath:iPath].absoluteString, w,h,imgSign,[NSURL fileURLWithPath:lPath].absoluteString,sGap];
         [weakSelf editableWeb:web operatedJs:js completion:^(id  _Nonnull info, NSError * _Nonnull error) {
             completion ? completion(info,error) : nil;
         }];
     }];
 }
-
 
 
 #pragma mark -

@@ -7,11 +7,11 @@
 //
 
 #import "JSEditorView.h"
-
+#import "WKEditorWeb.h"
 
 @interface JSEditorView () <WKUIDelegate,WKNavigationDelegate>
 
-@property (nonatomic,readwrite,strong) WKWebView          *wkEditor;
+@property (nonatomic,readwrite,strong) WKEditorWeb          *wkEditor;
 
 @end
 
@@ -102,7 +102,7 @@
         rect.size = [UIScreen mainScreen].bounds.size;
         rect.size.height -= 64;
         WKWebViewConfiguration *cfg = [[WKWebViewConfiguration alloc] init];
-        _wkEditor = [[WKWebView alloc] initWithFrame:rect configuration:cfg];
+        _wkEditor = [[WKEditorWeb alloc] initWithFrame:rect configuration:cfg];
         _wkEditor.UIDelegate = self;
         _wkEditor.navigationDelegate = self;
     }

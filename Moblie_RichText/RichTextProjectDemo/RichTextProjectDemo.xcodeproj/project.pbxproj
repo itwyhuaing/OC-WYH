@@ -57,6 +57,7 @@
 		26CAB20220B50D6C00D94D3D /* ToolBarCommonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 26CAB1FD20B50D6C00D94D3D /* ToolBarCommonItem.m */; };
 		26CAB20B20B50FFE00D94D3D /* JXTextStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 26CAB20A20B50FFE00D94D3D /* JXTextStyle.m */; };
 		26CAB20E20B5143300D94D3D /* UIFont+JXFont.m in Sources */ = {isa = PBXBuildFile; fileRef = 26CAB20D20B5143300D94D3D /* UIFont+JXFont.m */; };
+		26F1F2D523A75C2300E471A5 /* WKEditorWeb.m in Sources */ = {isa = PBXBuildFile; fileRef = 26F1F2D423A75C2300E471A5 /* WKEditorWeb.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -167,6 +168,8 @@
 		26CAB20A20B50FFE00D94D3D /* JXTextStyle.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JXTextStyle.m; sourceTree = "<group>"; };
 		26CAB20C20B5143300D94D3D /* UIFont+JXFont.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIFont+JXFont.h"; sourceTree = "<group>"; };
 		26CAB20D20B5143300D94D3D /* UIFont+JXFont.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIFont+JXFont.m"; sourceTree = "<group>"; };
+		26F1F2D323A75C2300E471A5 /* WKEditorWeb.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WKEditorWeb.h; sourceTree = "<group>"; };
+		26F1F2D423A75C2300E471A5 /* WKEditorWeb.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WKEditorWeb.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -335,6 +338,8 @@
 				26700B1523A2228600FFA7E5 /* JSEditorBarCommonCell.m */,
 				26700B07239F914F00FFA7E5 /* JSEditorView.h */,
 				26700B08239F914F00FFA7E5 /* JSEditorView.m */,
+				26F1F2D323A75C2300E471A5 /* WKEditorWeb.h */,
+				26F1F2D423A75C2300E471A5 /* WKEditorWeb.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -666,6 +671,7 @@
 				26CAB20B20B50FFE00D94D3D /* JXTextStyle.m in Sources */,
 				26700B1323A21F1200FFA7E5 /* JSEditorDataModel.m in Sources */,
 				26CAB1F120B3F1A900D94D3D /* NTEditorAttributeConfig.m in Sources */,
+				26F1F2D523A75C2300E471A5 /* WKEditorWeb.m in Sources */,
 				26CAB20E20B5143300D94D3D /* UIFont+JXFont.m in Sources */,
 				265C2CF620283AE90073F244 /* AppDelegate.m in Sources */,
 				261606B4225DCE1D000BC4F5 /* AttributedTextParserVC.m in Sources */,
