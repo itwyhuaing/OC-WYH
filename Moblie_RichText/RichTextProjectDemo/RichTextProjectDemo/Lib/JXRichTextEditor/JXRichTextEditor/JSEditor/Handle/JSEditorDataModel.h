@@ -39,6 +39,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic,copy)   NSString                      *uniqueSign;
 // 已选中图片在本地再次写入的地址
 @property (nonatomic,copy)   NSString                      *writedPath;
+// 图片资源转NSData之后经 base64 计算的字符串
+@property (nonatomic,copy)   NSString                      *imgBase64String;
 // 上传图片加载 loading 所需图片路径
 @property (nonatomic,copy)   NSString                      *loadingPath;
 // 上传图片失败后删除图片所需图片路径

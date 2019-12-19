@@ -12,13 +12,15 @@
 #import "JSEditorDataModel.h"
 #import "JSEditorHandleJs.h"
 #import "JSEditorPhotosPicker.h"
+#import "JSEditorPhotosUploader.h"
 
 @interface ZSSRichTextEditor () <JSEditorViewKeyBoardDelegate,JSEditorViewNavigationDelegate>
 
-@property (nonatomic,strong) JSEditorView           *editorView;
-@property (nonatomic,strong) JSEditorToolBar        *toolBarHolder;
-@property (nonatomic,strong) JSEditorHandleJs       *handleJs;
-@property (nonatomic,strong) JSEditorPhotosPicker   *photosPicker;
+@property (nonatomic,strong) JSEditorView                   *editorView;
+@property (nonatomic,strong) JSEditorToolBar                *toolBarHolder;
+@property (nonatomic,strong) JSEditorHandleJs               *handlerJs;
+@property (nonatomic,strong) JSEditorPhotosPicker           *photosPicker;
+@property (nonatomic,strong) JSEditorPhotosUploader         *uploader;
 
 @end
 
@@ -29,7 +31,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self layoutUI];
-    [self.handleJs setWkWebViewShowKeybord];
+    self.handlerJs.handledEditableWeb = self.editorView.wkEditor;
+    [self.handlerJs setWkWebViewShowKeybord];
     [self handleBlock];
 }
 
@@ -49,7 +52,7 @@
     __weak typeof(self)weakSelf = self;
     self.toolBarHolder.toolBarBlk = ^(JSEditorToolBarFuncType location, OperateIntention status) {
         // 控制编辑区格式
-        [weakSelf.handleJs formatEditableWeb:weakSelf.editorView.wkEditor funcLocation:location intention:status completion:^(id  _Nonnull info, NSError * _Nonnull error) {
+        [weakSelf.handlerJs formatEditableWebAtFuncLocation:location intention:status completion:^(id  _Nonnull info, NSError * _Nonnull error) {
             NSLog(@"\n \n 点击工具条 : %@ \n error :  %@ \n",info,error);
             if (location == JSEditorToolBarInsertImage) {
                 [weakSelf.photosPicker pickPhotos];
@@ -57,21 +60,12 @@
         }];
     };
     
+    // 选择图片回调
     self.photosPicker.pickerBlock = ^(NSArray<PhotoModel *> * _Nonnull data) {
-        PhotoModel *f = data.firstObject;
-        [weakSelf.handleJs editableWeb:weakSelf.editorView.wkEditor
-                             imagePath:f.writedPath
-                                 width:[NSString stringWithFormat:@"%f",f.compatibleSize.width]
-                                height:[NSString stringWithFormat:@"%f",f.compatibleSize.height]
-                               sideGap:[NSString stringWithFormat:@"%f",f.lrGap]
-                             imageSign:f.uniqueSign
-                           loadingPath:f.loadingPath
-                         reLoadingPath:f.reloadingPath
-                            deletePath:f.deletePath
-                            completion:^(id  _Nonnull info, NSError * _Nonnull error) {
-            NSLog(@"\n\n 插入图片 :%@ - %@ \n",info ,error);
-            [weakSelf dismissViewControllerAnimated:TRUE completion:nil];
+        [weakSelf.uploader uploadImageWithData:data completion:^(id  _Nonnull info) {
+            
         }];
+        [weakSelf dismissViewControllerAnimated:TRUE completion:nil];
     };
 }
 
@@ -155,12 +149,12 @@
     return _toolBarHolder;
 }
 
--(JSEditorHandleJs *)handleJs {
-    if (!_handleJs) {
-        _handleJs = [[JSEditorHandleJs alloc] init];
-        _handleJs.isLog = TRUE;
+-(JSEditorHandleJs *)handlerJs {
+    if (!_handlerJs) {
+        _handlerJs = [[JSEditorHandleJs alloc] init];
+        _handlerJs.isLog = TRUE;
     }
-    return _handleJs;
+    return _handlerJs;
 }
 
 -(JSEditorPhotosPicker *)photosPicker {
@@ -168,6 +162,13 @@
         _photosPicker = [[JSEditorPhotosPicker alloc] initWithPreVC:self];
     }
     return _photosPicker;
+}
+
+-(JSEditorPhotosUploader *)uploader {
+    if (!_uploader) {
+        _uploader = [JSEditorPhotosUploader new];
+    }
+    return _uploader;
 }
 
 @end

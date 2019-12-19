@@ -543,6 +543,22 @@ zss_editor.insertImageBase64String = function(imageBase64String, w,h,imgID) {
     zss_editor.enabledEditingItems();
 }
 
+zss_editor.insertImageBase64String = function(imageBase64String, w,h,imgID,loadingURL) {
+    zss_editor.restorerange();
+    //var html = '<img id="'+imgID+'" src="'+url+'" width="'+w+'" height="'+h+'"/>';
+    var prID = "prID"+imgID;
+    var insertImageID = "insertImageID"+imgID;
+    var maskID = "maskID"+imgID;
+    var originTextID = "originTextID"+imgID;
+    var extraBrTagID = "extraBrTagID"+imgID;
+    var extraNbspTagID = "extraNbspTagID"+imgID;
+    var html2 = '<div id="'+prID+'" class="pr appContent" contenteditable="false"><img id="'+insertImageID+'" class="app-img" src="data:image/jpeg;base64,'+imageBase64String+'" width="'+w+'" height="'+h+'"/><div id="'+maskID+'" class="pa paBox"><div class="com-table"><div contenteditable="false"><div class="grayMaskCL"><div class="com-table"><div class="table-cell"><img class="imgOperationCL" src="'+loadingURL+'"/><p class="textOperationCL uploadingMaskCL" contenteditable="false">上传中，请稍等...</p></div></div></div></div></div></div></div><div id="'+originTextID+'" class="imageOriginText">上传中，请稍等...</div><div id="'+extraBrTagID+'" class="extraBrTagCL"><br></div><div id="'+extraNbspTagID+'" class="extraNbspTagCL">&nbsp;</div>'; //
+    console.log("\n insertImage - HTML: \n\n"+html2);
+    zss_editor.insertHTML(html2);
+    zss_editor.bindMaskID(maskID);
+    zss_editor.enabledEditingItems();
+}
+
 zss_editor.setHTML = function(html,title) {
     var editor = $('#zss_editor_content');
     editor.html(html);

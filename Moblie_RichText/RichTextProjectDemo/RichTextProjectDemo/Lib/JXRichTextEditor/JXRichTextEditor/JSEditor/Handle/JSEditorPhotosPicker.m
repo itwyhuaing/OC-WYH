@@ -25,11 +25,16 @@
 }
 
 - (NSString *)generateTheBasicCount {
+    NSString *rlt = @"0";
     NSDate *dat = [NSDate dateWithTimeIntervalSinceNow:0];
     NSTimeInterval timeInterval = [dat timeIntervalSince1970];
     NSString *tmpString = [NSString stringWithFormat:@"%.0f",timeInterval];
     NSInteger tmpCount = [tmpString integerValue];
-    return [NSString stringWithFormat:@"%ld",(long)tmpCount];
+    NSString *timeStamp = [NSString stringWithFormat:@"%ld",(long)tmpCount];
+    int randNum1 = arc4random() % (timeStamp.intValue) + 1;
+    int randNum2 = arc4random() % randNum1;
+    rlt = [NSString stringWithFormat:@"%@%d%d",timeStamp,randNum1,randNum2];
+    return rlt;
 }
 
 - (CGFloat)generateSideGap {
@@ -48,6 +53,11 @@
     NSData *data = UIImageJPEGRepresentation(img, 0.5);
     rlt = [data writeToFile:cPath atomically:TRUE];
     return rlt;
+}
+
+- (NSString *)base64WithImage:(UIImage *)img {
+    NSData *imgData = UIImageJPEGRepresentation(img, 0.5);
+    return [imgData base64EncodedStringWithOptions:0];
 }
 
 -(NSString *)generateLoadingPath {
@@ -179,11 +189,14 @@
      [self.manager writeImage:f.originalImage cachePath:f.writedPath];
     // 照片写入本应用内缓存
     f.uniqueSign        = [self.manager generateTheBasicCount];
-    NSString *targetPath = [self.manager pathForCacheImageWithKey:[NSString stringWithFormat:@"%d.png",100]];;
+    NSString *targetPath= [self.manager pathForCacheImageWithKey:[NSString stringWithFormat:@"%@.png",f.uniqueSign]];
     BOOL write = [self.manager writeImage:f.originalImage cachePath:targetPath];
     if (write) {
-        f.writedPath = f.originalPath;//targetPath;
+        f.writedPath = targetPath;
     }
+    // 图片 ，base64String
+    f.imgBase64String = [self.manager base64WithImage:f.originalImage];
+    // 回调
     self.pickerBlock ? self.pickerBlock(@[f]) : nil;
 }
 
