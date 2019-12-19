@@ -16,17 +16,17 @@
 
 @implementation JSEditorPhotosUploader
 
-- (void)uploadImageWithData:(NSArray<PhotoModel *> *)data completion:(PhonesUploadCompletion)completion {
+-(void)uploadImageForEditor:(WKWebView *)web data:(NSArray<PhotoModel *> *)data completion:(PhonesUploadCompletion)completion {
     if (data) {
         for (PhotoModel *f in data) {
-            [self uploadImageWithModel:f completion:completion];
+            [self uploadImageForEditor:web model:f completion:completion];
         }
     }
 }
 
-- (void)uploadImageWithModel:(PhotoModel *)model completion:(PhonesUploadCompletion)completion {
+-(void)uploadImageForEditor:(WKWebView *)web model:(PhotoModel *)model completion:(PhonesUploadCompletion)completion {
     __weak typeof(self)weakSelf = self;
-    [self.handlerJs editableWebInsertImageBase64String:model.imgBase64String
+    [self.handlerJs editableWeb:web insertImgBase64Str:model.editedImgBase64Str
                                                  width:[NSString stringWithFormat:@"%f",model.compatibleSize.width]
                                                 height:[NSString stringWithFormat:@"%f",model.compatibleSize.height]
                                                sideGap:[NSString stringWithFormat:@"%f",model.lrGap]
@@ -35,8 +35,9 @@
                                          reLoadingPath:model.reloadingPath
                                             deletePath:model.deletePath
                                             completion:^(id  _Nonnull info, NSError * _Nonnull error) {
-        [weakSelf.handlerJs removeGrayMaskWithImageSign:model.uniqueSign];
-        completion ? completion(info) : nil;
+        [weakSelf.handlerJs editableWeb:web removeGrayMaskWithImageSign:model.uniqueSign completion:^(id  _Nonnull info, NSError * _Nonnull error) {
+           completion ? completion(info) : nil;
+        }];
     }];
 }
 

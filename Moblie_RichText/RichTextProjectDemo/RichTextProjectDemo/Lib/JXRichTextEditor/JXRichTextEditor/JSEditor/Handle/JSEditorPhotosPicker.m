@@ -195,7 +195,8 @@
         f.writedPath = targetPath;
     }
     // 图片 ，base64String
-    f.imgBase64String = [self.manager base64WithImage:f.originalImage];
+    f.orgImgBase64Str = [self.manager base64WithImage:f.originalImage];
+    f.editedImgBase64Str = [self.manager base64WithImage:f.editedImage];
     // 回调
     self.pickerBlock ? self.pickerBlock(@[f]) : nil;
 }

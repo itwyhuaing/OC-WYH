@@ -31,7 +31,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self layoutUI];
-    self.handlerJs.handledEditableWeb = self.editorView.wkEditor;
     [self.handlerJs setWkWebViewShowKeybord];
     [self handleBlock];
 }
@@ -52,7 +51,7 @@
     __weak typeof(self)weakSelf = self;
     self.toolBarHolder.toolBarBlk = ^(JSEditorToolBarFuncType location, OperateIntention status) {
         // 控制编辑区格式
-        [weakSelf.handlerJs formatEditableWebAtFuncLocation:location intention:status completion:^(id  _Nonnull info, NSError * _Nonnull error) {
+        [weakSelf.handlerJs formatEditableWeb:weakSelf.editorView.wkEditor funcLocation:location intention:status completion:^(id  _Nonnull info, NSError * _Nonnull error) {
             NSLog(@"\n \n 点击工具条 : %@ \n error :  %@ \n",info,error);
             if (location == JSEditorToolBarInsertImage) {
                 [weakSelf.photosPicker pickPhotos];
@@ -62,8 +61,8 @@
     
     // 选择图片回调
     self.photosPicker.pickerBlock = ^(NSArray<PhotoModel *> * _Nonnull data) {
-        [weakSelf.uploader uploadImageWithData:data completion:^(id  _Nonnull info) {
-            
+        [weakSelf.uploader uploadImageForEditor:weakSelf.editorView.wkEditor data:data completion:^(id  _Nonnull info) {
+            NSLog(@"\n 选择图片回调 - %@ \n",info);
         }];
         [weakSelf dismissViewControllerAnimated:TRUE completion:nil];
     };

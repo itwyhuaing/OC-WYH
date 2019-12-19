@@ -15,9 +15,9 @@ NS_ASSUME_NONNULL_BEGIN
 typedef void(^PhonesUploadCompletion)(id info);
 @interface JSEditorPhotosUploader : NSObject
 
--(void)uploadImageWithModel:(PhotoModel *)model completion:(PhonesUploadCompletion)completion;
+-(void)uploadImageForEditor:(WKWebView *)web model:(PhotoModel *)model completion:(PhonesUploadCompletion)completion;
 
--(void)uploadImageWithData:(NSArray<PhotoModel *> *)data completion:(PhonesUploadCompletion)completion;
+-(void)uploadImageForEditor:(WKWebView *)web data:(NSArray<PhotoModel *> *)data completion:(PhonesUploadCompletion)completion;
 
 @end
 

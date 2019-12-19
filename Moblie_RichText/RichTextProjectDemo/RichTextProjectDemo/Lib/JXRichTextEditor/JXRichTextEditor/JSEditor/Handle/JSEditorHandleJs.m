@@ -18,7 +18,7 @@ void interceptIMP (id self, SEL _cmd, void* arg0, BOOL arg1, BOOL arg2, id arg3)
 
 #pragma mark - common js handle
 
--(void)formatEditableWebAtFuncLocation:(JSEditorToolBarFuncType)location intention:(OperateIntention)intention completion:(evaluateJsCompletion)completion {
+-(void)formatEditableWeb:(WKWebView *)web funcLocation:(JSEditorToolBarFuncType)location intention:(OperateIntention)intention completion:(evaluateJsCompletion)completion {
     NSString *js = @"";
     if (location == JSEditorToolBarBold) {
         js = @"zss_editor.setBold();";
@@ -47,45 +47,47 @@ void interceptIMP (id self, SEL _cmd, void* arg0, BOOL arg1, BOOL arg2, id arg3)
             js = [NSString stringWithFormat:@"zss_editor.blurEditor();"];
         }
     }
-    [self editableWebOperatedJs:js completion:completion];
+    [self editableWeb:web operatedJs:js completion:completion];
 }
 
 
--(void)editableWebOperatedJs:(NSString *)jsContent completion:(evaluateJsCompletion)completion {
-    [self.handledEditableWeb evaluateJavaScript:jsContent completionHandler:completion];
+-(void)editableWeb:(WKWebView *)web operatedJs:(NSString *)jsContent completion:(evaluateJsCompletion)completion {
+    [web evaluateJavaScript:jsContent completionHandler:completion];
 }
 
-- (void)editableWebInsertImagePath:(NSString *)iPath
-                             width:(NSString *)w
-                            height:(NSString *)h
-                           sideGap:(NSString *)sGap
-                         imageSign:(NSString *)imgSign
-                       loadingPath:(NSString *)lPath
-                     reLoadingPath:(NSString *)rPath
-                        deletePath:(NSString *)dPath
-                        completion:(evaluateJsCompletion)completion {
+- (void)editableWeb:(WKWebView *)web
+    insertImagePath:(NSString *)iPath
+              width:(NSString *)w
+             height:(NSString *)h
+            sideGap:(NSString *)sGap
+          imageSign:(NSString *)imgSign
+        loadingPath:(NSString *)lPath
+      reLoadingPath:(NSString *)rPath
+         deletePath:(NSString *)dPath
+         completion:(evaluateJsCompletion)completion {
     __weak typeof(self) weakSelf = self;
-    [self prepareInsertEditableWebCompletion:^(id  _Nonnull info, NSError * _Nonnull error) {
+    [self prepareInsertEditableWeb:web completion:^(id  _Nonnull info, NSError * _Nonnull error) {
         NSString *js = [NSString stringWithFormat:@"zss_editor.insertImage(\"%@\", \"%@\", \"%@\", \"%@\",\"%@\",\"%@\");", [NSURL fileURLWithPath:iPath].absoluteString, w,h,imgSign,[NSURL fileURLWithPath:lPath].absoluteString,sGap];
-        [weakSelf editableWebOperatedJs:js completion:^(id  _Nonnull info, NSError * _Nonnull error) {
+        [weakSelf editableWeb:web operatedJs:js completion:^(id  _Nonnull info, NSError * _Nonnull error) {
             completion ? completion(info,error) : nil;
         }];
     }];
 }
 
-- (void)editableWebInsertImageBase64String:(NSString *)string
-                                     width:(NSString *)w
-                                    height:(NSString *)h
-                                   sideGap:(NSString *)sGap
-                                 imageSign:(NSString *)imgSign
-                               loadingPath:(NSString *)lPath
-                             reLoadingPath:(NSString *)rPath
-                                deletePath:(NSString *)dPath
-                                completion:(evaluateJsCompletion)completion {
+- (void)editableWeb:(WKWebView *)web
+ insertImgBase64Str:(NSString *)string
+              width:(NSString *)w
+             height:(NSString *)h
+            sideGap:(NSString *)sGap
+          imageSign:(NSString *)imgSign
+        loadingPath:(NSString *)lPath
+      reLoadingPath:(NSString *)rPath
+         deletePath:(NSString *)dPath
+         completion:(evaluateJsCompletion)completion {
     __weak typeof(self) weakSelf = self;
-    [self prepareInsertEditableWebCompletion:^(id  _Nonnull info, NSError * _Nonnull error) {
+    [self prepareInsertEditableWeb:web completion:^(id  _Nonnull info, NSError * _Nonnull error) {
         NSString *js = [NSString stringWithFormat:@"zss_editor.insertImageBase64String(\"%@\", \"%@\", \"%@\", \"%@\",\"%@\",\"%@\");", string, w,h,imgSign,[NSURL fileURLWithPath:lPath].absoluteString,sGap];
-        [weakSelf editableWebOperatedJs:js completion:^(id  _Nonnull info, NSError * _Nonnull error) {
+        [weakSelf editableWeb:web operatedJs:js completion:^(id  _Nonnull info, NSError * _Nonnull error) {
             completion ? completion(info,error) : nil;
         }];
     }];
@@ -93,13 +95,14 @@ void interceptIMP (id self, SEL _cmd, void* arg0, BOOL arg1, BOOL arg2, id arg3)
 
 #pragma mark -
 
--(void)prepareInsertEditableWebCompletion:(evaluateJsCompletion)completion {
+-(void)prepareInsertEditableWeb:(WKWebView *)web completion:(evaluateJsCompletion)completion {
     NSString *js = @"zss_editor.prepareInsert();";
-    [self editableWebOperatedJs:js completion:completion];
+    [self editableWeb:web operatedJs:js completion:completion];
 }
 
--(void)removeGrayMaskWithImageSign:(NSString *)imgSign {
-    
+- (void)editableWeb:(WKWebView *)web removeGrayMaskWithImageSign:(NSString *)imgSign completion:(evaluateJsCompletion)completion {
+    NSString *js = [NSString stringWithFormat:@"zss_editor.removeGrayMaskWithElementID(\"%@\");",imgSign];
+    [self editableWeb:web operatedJs:js completion:completion];
 }
 
 #pragma mark - WKWebView 处理 JS focus() 函数问题
