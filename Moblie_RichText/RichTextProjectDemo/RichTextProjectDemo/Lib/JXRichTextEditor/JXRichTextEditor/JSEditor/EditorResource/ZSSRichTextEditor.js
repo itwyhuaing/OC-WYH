@@ -33,24 +33,14 @@ zss_editor.contentHeight = 244;
 // Sets to true when extra footer gap shows and requires to hide
 zss_editor.updateScrollOffset = false;
 
-clickeOne = function(){
-    alert(" clickeOne ");
-} //end
-
-clickeTwo = function(){
-    alert("clickeTwo");
-} //end
-
-
-alerShow = function(){
-return "alerShow";
-} //end
+// 标记已隐藏的标签
+zss_editor.hiddedHTMLClass = "hiddedCLS";
 
 /**
  * The initializer function that must be called onLoad
  */
 zss_editor.init = function() {
-
+    
     $('#zss_editor_content').on('touchend', function(e) {
                                 zss_editor.enabledEditingItems(e);
                                 var clicked = $(e.target);
@@ -58,18 +48,18 @@ zss_editor.init = function() {
                                 $('img').removeClass('zs_active');
                                 }
                                 });
-
+    
     $(document).on('selectionchange',function(e){
                    zss_editor.calculateEditorHeightWithCaretPosition();
                    zss_editor.setScrollPosition();
                    zss_editor.enabledEditingItems(e);
                    });
-
+    
     $(window).on('scroll', function(e) {
                  /*** 彻底解决输入时界面抖动问题 */
 //                 zss_editor.updateOffset();
                  });
-
+    
     // Make sure that when we tap anywhere in the document we focus on the editor
     $(window).on('touchmove', function(e) {
                  zss_editor.isDragging = true;
@@ -85,37 +75,39 @@ zss_editor.init = function() {
                 zss_editor.focusEditor();
                  }
                  });
-
+    
     /***rain*/
     $('#zss_editor_title').on('touchstart', function(e) {
                           hideToolbar("true");
                  });
-
+//    $('#zss_editor_content').on('touchstart', function(e) {
+//                                showToolbar("true");
+//                                });
     $('#extraHeight').on('touchstart',function(e){
                          zss_editor.focusEditor();
                          });
-
+    
 }//end
 
 zss_editor.updateOffset = function() {
-
+    
     if (!zss_editor.updateScrollOffset)
         return;
-
+    
     var offsetY = window.document.body.scrollTop;
-
+    
     var footer = $('#zss_editor_footer');
-
+    
     var maxOffsetY = footer.offset().top - zss_editor.contentHeight;
-
+    
     if (maxOffsetY < 0)
         maxOffsetY = 0;
-
+    
     if (offsetY > maxOffsetY)
     {
         window.scrollTo(0, maxOffsetY);
     }
-
+    
     zss_editor.setScrollPosition();
 }
 
@@ -133,22 +125,22 @@ zss_editor.setScrollPosition = function() {
 
 
 zss_editor.setPlaceholder = function(placeholder) {
-
+    
     var editor = $('#zss_editor_content');
-
+    
     //set placeHolder
 	editor.attr("placeholder",placeholder);
-
-    //set focus
+	
+    //set focus			 
 	editor.focusout(function(){
-        var element = $(this);
+        var element = $(this);        
         if (!element.text().trim().length) {
             element.empty();
         }
     });
-
-
-
+	
+	
+    
 }
 
 zss_editor.setFooterHeight = function(footerHeight) {
@@ -170,23 +162,23 @@ zss_editor.getCaretYPosition = function() {
 }
 
 zss_editor.calculateEditorHeightWithCaretPosition = function() {
-
+    
     var padding = 50;
     var c = zss_editor.getCaretYPosition();
-
+    
     var editor = $('#zss_editor_content');
-
+    
     var offsetY = window.document.body.scrollTop;
     var height = zss_editor.contentHeight;
-
+    
     var newPos = window.pageYOffset;
-
+    
     if (c < offsetY) {
         newPos = c;
     } else if (c > (offsetY + height - padding)) {
         newPos = c - height + padding - 18;
     }
-
+    
     window.scrollTo(0, newPos);
 }
 
@@ -277,7 +269,7 @@ zss_editor.setHeading = function(heading) {
     } else {
         document.execCommand('formatBlock', false, '<'+heading+'>');
     }
-
+    
     zss_editor.enabledEditingItems();
 }
 
@@ -291,7 +283,7 @@ zss_editor.setParagraph = function() {
     } else {
         document.execCommand('formatBlock', false, '<p>');
     }
-
+    
     zss_editor.enabledEditingItems();
 }
 
@@ -355,18 +347,18 @@ zss_editor.setFontFamily = function(fontFamily) {
 	document.execCommand("fontName", false, fontFamily);
 	document.execCommand("styleWithCSS", null, false);
 	zss_editor.enabledEditingItems();
-
+		
 }
 
 zss_editor.setTextColor = function(color) {
-
+		
     zss_editor.restorerange();
     document.execCommand("styleWithCSS", null, true);
     document.execCommand('foreColor', false, color);
     document.execCommand("styleWithCSS", null, false);
     zss_editor.enabledEditingItems();
     // document.execCommand("removeFormat", false, "foreColor"); // Removes just foreColor
-
+	
 }
 
 zss_editor.setBackgroundColor = function(color) {
@@ -380,17 +372,17 @@ zss_editor.setBackgroundColor = function(color) {
 // Needs addClass method
 
 zss_editor.insertLink = function(url, title) {
-
+    
     zss_editor.restorerange();
     var sel = document.getSelection();
     console.log(sel);
     if (sel.toString().length != 0) {
         if (sel.rangeCount) {
-
+            
             var el = document.createElement("a");
             el.setAttribute("href", url);
             el.setAttribute("title", title);
-
+            
             var range = sel.getRangeAt(0).cloneRange();
             range.surroundContents(el);
             sel.removeAllRanges();
@@ -401,40 +393,40 @@ zss_editor.insertLink = function(url, title) {
     {
         document.execCommand("insertHTML",false,"<a href='"+url+"'>"+title+"</a>");
     }
-
+    
     zss_editor.enabledEditingItems();
 }
 
 zss_editor.updateLink = function(url, title) {
-
+    
     zss_editor.restorerange();
-
+    
     if (zss_editor.currentEditingLink) {
         var c = zss_editor.currentEditingLink;
         c.attr('href', url);
         c.attr('title', title);
     }
     zss_editor.enabledEditingItems();
-
+    
 }//end
 
 zss_editor.updateImage = function(url, alt) {
-
+    
     zss_editor.restorerange();
-
+    
     if (zss_editor.currentEditingImage) {
         var c = zss_editor.currentEditingImage;
         c.attr('src', url);
         c.attr('alt', alt);
     }
     zss_editor.enabledEditingItems();
-
+    
 }//end
 
 zss_editor.updateImageBase64String = function(imageBase64String, alt) {
-
+    
     zss_editor.restorerange();
-
+    
     if (zss_editor.currentEditingImage) {
         var c = zss_editor.currentEditingImage;
         var src = 'data:image/jpeg;base64,' + imageBase64String;
@@ -442,14 +434,14 @@ zss_editor.updateImageBase64String = function(imageBase64String, alt) {
         c.attr('alt', alt);
     }
     zss_editor.enabledEditingItems();
-
+    
 }//end
 
 /**rain*/
 zss_editor.updateImageSrc = function(imgURL,imgID) {
-
+    
 //    zss_editor.restorerange();
-//
+//    
 //    if (zss_editor.currentEditingImage) {
 //        var c = zss_editor.currentEditingImage;
 //        c.attr('src', imgURL);
@@ -458,12 +450,12 @@ zss_editor.updateImageSrc = function(imgURL,imgID) {
     var tmpImageID = "insertImageID"+imgID;
     var curImage = document.getElementById(tmpImageID);
     curImage.setAttribute('src', imgURL);
-
+    
 }//end
 
 
 zss_editor.unlink = function() {
-
+    
     if (zss_editor.currentEditingLink) {
         var c = zss_editor.currentEditingLink;
         c.contents().unwrap();
@@ -472,7 +464,7 @@ zss_editor.unlink = function() {
 }
 
 zss_editor.quickLink = function() {
-
+    
     var sel = document.getSelection();
     var link_url = "";
     var test = new String(sel);
@@ -497,10 +489,10 @@ zss_editor.quickLink = function() {
             link_url = sel;
         }
     }
-
+    
     var html_code = '<a href="' + link_url + '">' + sel + '</a>';
     zss_editor.insertHTML(html_code);
-
+    
 }
 
 zss_editor.prepareInsert = function() {
@@ -514,7 +506,7 @@ zss_editor.prepareInsert = function() {
 //    zss_editor.enabledEditingItems();
 //}
 // rain
-zss_editor.insertImage = function(url, w,h,imgID,loadingURL) {
+zss_editor.insertImage = function(url, w,h,imgID,loadingURL,sg) {
     zss_editor.restorerange();
     //var html = '<img id="'+imgID+'" src="'+url+'" width="'+w+'" height="'+h+'"/>';
     var prID = "prID"+imgID;
@@ -523,8 +515,8 @@ zss_editor.insertImage = function(url, w,h,imgID,loadingURL) {
     var originTextID = "originTextID"+imgID;
     var extraBrTagID = "extraBrTagID"+imgID;
     var extraNbspTagID = "extraNbspTagID"+imgID;
-    var html2 = '<div id="'+prID+'" class="pr appContent" contenteditable="false"><img id="'+insertImageID+'" class="app-img" src="'+url+'" width="'+w+'" height="'+h+'"/><div id="'+maskID+'" class="pa paBox"><div class="com-table"><div contenteditable="false"><div class="grayMaskCL"><div class="com-table"><div class="table-cell"><img class="imgOperationCL" src="'+loadingURL+'"/><p class="textOperationCL uploadingMaskCL" contenteditable="false">上传中，请稍等...</p></div></div></div></div></div></div></div><div id="'+originTextID+'" class="imageOriginText">上传中，请稍等...</div><div id="'+extraBrTagID+'" class="extraBrTagCL"><br></div><div id="'+extraNbspTagID+'" class="extraNbspTagCL">&nbsp;</div>'; //
-    console.log("\n insertImage - HTML: \n\n"+html2);
+    var html2 = '<div id="'+prID+'" class="pr appContent" contenteditable="false"><img id="'+insertImageID+'" class="app-img" src="'+url+'" width="'+w+'" height="'+h+'"/><div id="'+maskID+'" class="pa paBox"><div class="com-table"><div contenteditable="false"><div class="grayMaskCL"><div class="com-table"><div class="table-cell"><img class="imgOperationCL" src="'+loadingURL+'"/><p class="textOperationCL uploadingMaskCL" contenteditable="false">上传中，请稍等...</p></div></div></div></div></div></div></div><div id="'+originTextID+'" class="imageOriginText" style="margin-left:'+sg+'px;margin-right:'+sg+'px;">上传中，请稍等...</div><div id="'+extraBrTagID+'" class="extraBrTagCL"><br></div><div id="'+extraNbspTagID+'" class="extraNbspTagCL">&nbsp;</div>'; //
+    
     zss_editor.insertHTML(html2);
     zss_editor.bindMaskID(maskID);
     zss_editor.enabledEditingItems();
@@ -562,12 +554,12 @@ zss_editor.insertImageBase64String = function(imageBase64String, w,h,imgID,loadi
 zss_editor.setHTML = function(html,title) {
     var editor = $('#zss_editor_content');
     editor.html(html);
-
+    
     if(title.length > 0){
         var titleDiv = $('#zss_editor_title');
         titleDiv.html(title);
     }
-
+    
 }
 
 zss_editor.insertHTML = function(html) {
@@ -576,7 +568,7 @@ zss_editor.insertHTML = function(html) {
 }
 
 zss_editor.getHTML = function() {
-
+    
     // Images
     var img = $('img');
     if (img.length != 0) {
@@ -591,7 +583,7 @@ zss_editor.getHTML = function() {
                       }
                       });
     }
-
+    
     // Blockquote
     var bq = $('blockquote');
     if (bq.length != 0) {
@@ -605,10 +597,10 @@ zss_editor.getHTML = function() {
                 }
                 });
     }
-
+    
     // Get the contents
     var h = document.getElementById("zss_editor_content").innerHTML;
-
+    
     return h;
 }
 
@@ -621,7 +613,7 @@ zss_editor.isCommandEnabled = function(commandName) {
 }
 
 zss_editor.enabledEditingItems = function(e) {
-
+    
     console.log('enabledEditingItems');
     var items = [];
     if (zss_editor.isCommandEnabled('bold')) {
@@ -673,15 +665,15 @@ zss_editor.enabledEditingItems = function(e) {
 //                  $('img').removeClass('zs_active');
 //                  $(this).addClass('zs_active');
 //                  });
-
+    
     // Use jQuery to figure out those that are not supported
     if (typeof(e) != "undefined") {
-
+        
         // The target element
         var s = zss_editor.getSelectedNode();
         var t = $(s);
         var nodeName = e.target.nodeName.toLowerCase();
-
+        
         // Background Color
         var bgColor = t.css('backgroundColor');
         if (bgColor.length != 0 && bgColor != 'rgba(0, 0, 0, 0)' && bgColor != 'rgb(0, 0, 0)' && bgColor != 'transparent') {
@@ -692,13 +684,13 @@ zss_editor.enabledEditingItems = function(e) {
         if (textColor.length != 0 && textColor != 'rgba(0, 0, 0, 0)' && textColor != 'rgb(0, 0, 0)' && textColor != 'transparent') {
             items.push('textColor');
         }
-
+		
 		//Fonts
 		var font = t.css('font-family');
 		if (font.length != 0 && font != 'Arial, Helvetica, sans-serif') {
-			items.push('fonts');
+			items.push('fonts');	
 		}
-
+		
         // Link
         if (nodeName == 'a') {
             zss_editor.currentEditingLink = t;
@@ -707,7 +699,7 @@ zss_editor.enabledEditingItems = function(e) {
             if (t.attr('title') !== undefined) {
                 items.push('link-title:'+t.attr('title'));
             }
-
+            
         } else {
             zss_editor.currentEditingLink = null;
         }
@@ -722,15 +714,15 @@ zss_editor.enabledEditingItems = function(e) {
             if (t.attr('alt') !== undefined) {
                 items.push('image-alt:'+t.attr('alt'));
             }
-
+            
         } else {
             zss_editor.currentEditingImage = null;
         }
-
+        
     }
-
+    
     if (items.length > 0) {
-
+        
         if (zss_editor.isUsingiOS) {
             window.location = "callback://0/"+items.join(',');
         } else {
@@ -743,11 +735,11 @@ zss_editor.enabledEditingItems = function(e) {
             console.log("callback://");
         }
     }
-
+    
 }
 
 zss_editor.focusEditor = function() {
-
+    
     // the following was taken from http://stackoverflow.com/questions/1125292/how-to-move-cursor-to-end-of-contenteditable-entity/3866442#3866442
     // and ensures we move the cursor to the end of the editor
     var editor = $('#zss_editor_content');
@@ -766,9 +758,9 @@ zss_editor.blurEditor = function() {
 }
 
 zss_editor.setCustomCSS = function(customCSS) {
-
+    
     document.getElementsByTagName('style')[0].innerHTML=customCSS;
-
+    
     //set focus
     /*editor.focusout(function(){
                     var element = $(this);
@@ -776,20 +768,20 @@ zss_editor.setCustomCSS = function(customCSS) {
                     element.empty();
                     }
                     });*/
-
-
-
+    
+    
+    
 }
 
 //end
 
-/** +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++rain*/
+/**rain*/
 
 zss_editor.getTitle = function(){
 
     var titleDiv = document.getElementById("zss_editor_title");
     return titleDiv.innerHTML;
-
+    
 } // end
 
 zss_editor.removeGrayMaskWithElementID = function(eleID){
@@ -798,14 +790,16 @@ zss_editor.removeGrayMaskWithElementID = function(eleID){
     $("#"+maskID).unbind(); // 解绑
     document.getElementById(maskID).remove();
     zss_editor.modifyOriginText(originTextID,"图片来自海那边APP");
-
+    // V 3.1.0 不需要显示文本 ：图片来自海那边APP 。这里之所不直接删除的缘由：如果只上传图片，收起键盘则图片无法显示；故这里做隐藏，上传时移除
+    zss_editor.hiddenHnbOriginText(originTextID);
+    
     // img 标签外部可以不用 div 标签包裹
     var prID = "#prID"+eleID;
     var insertImageID = "#insertImageID"+eleID;
     var imgHtml = $(prID).html();
     $(prID).after(imgHtml);
     $(prID).remove();
-
+    
 } // end
 
 zss_editor.modifyGrayMaskWithElementID =  function(eleID,deleteURL,reloadURL){
@@ -817,7 +811,7 @@ zss_editor.modifyGrayMaskWithElementID =  function(eleID,deleteURL,reloadURL){
     document.getElementById(maskID).innerHTML = '<div class="com-table"><div contenteditable="false"><div class="grayMaskCL"><div class="com-table"><div id="'+deleID+'" class="table-cell" onClick="deleteImage(this);"><img class="imgOperationCL" src="'+deleteURL+'"/><p class="textOperationCL deleteMaskCL" contenteditable="false">删除图片</p></div><div id="'+reloadID+'" class="table-cell" onClick="reloadImage(this);"><img class="imgOperationCL" src="'+reloadURL+'"/><p class="textOperationCL" contenteditable="false">重新上传</p></div></div></div></div></div>';
     zss_editor.modifyOriginText(originTextID,"图片上传失败");
     zss_editor.bindMaskID(maskID);
-
+    
 } // end
 
 zss_editor.reloadingImageGrayWithElementID = function(eleID,loadingURL){
@@ -884,16 +878,16 @@ zss_editor.updateExtraHeightWithKeyBoardHeight = function(extraHeight){
 }//end
 
 zss_editor.tidyEditorContentForServer = function(){
-
+    
     // imageOriginText - 解决不能只输入图片问题，可考虑在此处移除该冗余标签
     //$(".imageOriginText").each(function(){$(this).remove()});
-
+    
     // extraBrTagCL - 额外添加该标签解决不能删除图片问题，可考虑在此处移除该冗余标签
 //    $(".extraBrTagCL").each(function(){$(this).remove()});
-
+    
     // extraNbspTagCL - 额外空格标签，解决插入图片之后的光标定位问题
-    $(".extraNbspTagCL").each(function(){$(this).remove()});
-
+    //$(".extraNbspTagCL").each(function(){$(this).remove()});
+    
     var tmpContent = zss_editor.getHTML();
     return tmpContent;
 } // end
@@ -903,13 +897,18 @@ zss_editor.getOriginalDOM = function(){
     return h;
 } // end
 
-zss_editor.modifyOriginText = function(textID,text){
+zss_editor.getTidyedDOMAfterDelateHiddedHTML = function(){
+    $("."+zss_editor.hiddedHTMLClass).remove();
+    return zss_editor.getOriginalDOM();
+}
 
+zss_editor.modifyOriginText = function(textID,text){
+    
     document.getElementById(textID).innerHTML = text;
 } // end
 
 zss_editor.bindMaskID = function(maskID){
-
+    
     $("#"+maskID).on("DOMNodeRemoved", function(e){
                      var tmpID = maskID.replace('maskID', '');
                      var prID = "#prID"+tmpID;
@@ -921,9 +920,26 @@ zss_editor.bindMaskID = function(maskID){
                      $(originTextID).remove();
                      $(extraBrTagID).remove();
                      $(extraNbspTagID).remove();
-
+                     
                      window.location = "removeImageWithMask://";
-
+                     
                      });//end
-
+    
 } //end
+
+zss_editor.titleContentEditable = function(able){
+    $("#zss_editor_title").attr("contenteditable",able);
+} // end
+
+
+zss_editor.hiddenHnbOriginText = function(textID){
+    // 隐藏
+    document.getElementById(textID).style.display = "none";
+    // 添加标记 - 便于删除该标签
+    document.getElementById(textID).setAttribute("class",zss_editor.hiddedHTMLClass);
+    
+}
+
+zss_editor.removeHnbOriginText = function(textID){
+    $("#"+textID).remove();
+}
