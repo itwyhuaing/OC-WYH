@@ -57,6 +57,11 @@ typedef void(^evaluateJsCompletion)(id info,NSError *error);
 // wkwebiew 处于可编辑状态情况下特殊处理
 - (void)setWkWebViewShowKeybord;
 
+// 获取内容编辑区不作处理的 Dom 
+- (void)originalContentDOMForEditableWeb:(WKWebView *)web completion:(evaluateJsCompletion)completion;
+
+- (void)handleTest:(WKWebView *)web;
+
 @end
 
 NS_ASSUME_NONNULL_END

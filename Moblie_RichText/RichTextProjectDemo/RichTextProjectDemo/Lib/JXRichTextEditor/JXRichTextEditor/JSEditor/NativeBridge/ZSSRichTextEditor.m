@@ -75,6 +75,10 @@
     rt.origin.y = CGRectGetMinY(rect) - CGRectGetHeight(rt);
     [self.toolBarHolder setFrame:rt];
     self.toolBarHolder.yStatus = JSEditorToolBarYHight;
+    
+    // 测试代码
+    [self.handlerJs handleTest:self.editorView.wkEditor];
+    
 }
 
 -(void)jsEditorView:(JSEditorView *)jsEditor willHideWithKeyRectEnd:(CGRect)rect {
@@ -82,6 +86,11 @@
     rt.origin.y = CGRectGetMinY(rect) - CGRectGetHeight(rt) - BOTTOM_HEIGHT_SUIT_IPHONE_X;
     [self.toolBarHolder setFrame:rt];
     self.toolBarHolder.yStatus = JSEditorToolBarYLow;
+    
+    // 测试代码
+    [self.handlerJs originalContentDOMForEditableWeb:self.editorView.wkEditor completion:^(id  _Nonnull info, NSError * _Nonnull error) {
+       NSLog(@"\n\n\n info:\n %@ \n",info);
+    }];
 }
 
 -(void)jsEditorView:(JSEditorView *)jsEditor navigationActionWithFuncs:(NSString *)funcs {

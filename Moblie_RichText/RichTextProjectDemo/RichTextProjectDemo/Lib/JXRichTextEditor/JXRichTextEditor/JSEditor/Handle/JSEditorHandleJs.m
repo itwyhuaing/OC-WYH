@@ -93,6 +93,14 @@ void interceptIMP (id self, SEL _cmd, void* arg0, BOOL arg1, BOOL arg2, id arg3)
     }];
 }
 
+- (void)originalContentDOMForEditableWeb:(WKWebView *)web completion:(evaluateJsCompletion)completion {
+    NSString *js = @"zss_editor.getOriginalDOM();";
+     [self editableWeb:web operatedJs:js completion:^(id  _Nonnull info, NSError * _Nonnull error) {
+         completion ? completion(info,error) : nil;
+    }];
+}
+
+
 #pragma mark -
 
 -(void)prepareInsertEditableWeb:(WKWebView *)web completion:(evaluateJsCompletion)completion {
@@ -103,6 +111,13 @@ void interceptIMP (id self, SEL _cmd, void* arg0, BOOL arg1, BOOL arg2, id arg3)
 - (void)editableWeb:(WKWebView *)web removeGrayMaskWithImageSign:(NSString *)imgSign completion:(evaluateJsCompletion)completion {
     NSString *js = [NSString stringWithFormat:@"zss_editor.removeGrayMaskWithElementID(\"%@\");",imgSign];
     [self editableWeb:web operatedJs:js completion:completion];
+}
+
+- (void)handleTest:(WKWebView *)web {
+    NSString *js = @"zss_editor.handleTest()";
+    [self editableWeb:web operatedJs:js completion:^(id  _Nonnull info, NSError * _Nonnull error) {
+        NSLog(@"\n %s \n\n %@ \n %@ \n",__FUNCTION__,info,error);
+    }];
 }
 
 #pragma mark - WKWebView 处理 JS focus() 函数问题
