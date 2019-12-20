@@ -79,7 +79,7 @@
     self.toolBarHolder.yStatus = JSEditorToolBarYHight;
     
     // 测试代码
-    [self.handlerJs handleTest:self.editorView.wkEditor];
+//    [self.handlerJs handleTest:self.editorView.wkEditor];
     
 }
 
@@ -90,9 +90,9 @@
     self.toolBarHolder.yStatus = JSEditorToolBarYLow;
     
     // 测试代码
-    [self.handlerJs originalContentDOMForEditableWeb:self.editorView.wkEditor completion:^(id  _Nonnull info, NSError * _Nonnull error) {
-       NSLog(@"\n\n\n info:\n %@ \n",info);
-    }];
+//    [self.handlerJs originalContentDOMForEditableWeb:self.editorView.wkEditor completion:^(id  _Nonnull info, NSError * _Nonnull error) {
+//       NSLog(@"\n\n\n info:\n %@ \n",info);
+//    }];
 }
 
 -(void)jsEditorView:(JSEditorView *)jsEditor navigationActionWithFuncs:(NSString *)funcs {

@@ -171,11 +171,13 @@ NSVerticalGlyphFormAttributeName;//垂直或者水平，value是 NSNumber，0表
 
 **JSEditor**
 
-* 代码结构简述：
+* 代码结构简述及运行展示：
 
 ![image](https://github.com/itwyhuaing/OC-WYH/blob/master/Moblie_RichText/image/JSEditor_1.png)
 
 ![image](https://github.com/itwyhuaing/OC-WYH/blob/master/Moblie_RichText/image/JSEditor_2.png)
+
+![image](https://github.com/itwyhuaing/OC-WYH/blob/master/Moblie_RichText/image/JSEditor_3.gif)
 
 * 在 ZSSRichTextEditor 依赖库的基础上，升级至 WKWebView。
 
