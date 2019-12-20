@@ -52,7 +52,6 @@
     paragraphStyle.alignment           = NSTextAlignmentLeft;
     [rltAttributedString addAttribute:NSParagraphStyleAttributeName value:paragraphStyle range:NSMakeRange(0, cnt.length)];
     self.editor.attributedText = rltAttributedString;
-    
 }
 
 -(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{

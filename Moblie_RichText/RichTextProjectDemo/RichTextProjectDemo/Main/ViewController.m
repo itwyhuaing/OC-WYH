@@ -7,7 +7,6 @@
 //
 
 #import "ViewController.h"
-#import "RichTextEditor.h"
 
 @interface ViewController ()
 
@@ -19,13 +18,6 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
 }
-
-
--(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
-    
-    [self.navigationController pushViewController:[[RichTextEditor alloc] init] animated:TRUE];
-}
-
 
 
 @end

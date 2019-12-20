@@ -14,13 +14,15 @@
 #import "JSEditorPhotosPicker.h"
 #import "JSEditorPhotosUploader.h"
 
+
+
 @interface ZSSRichTextEditor () <JSEditorViewKeyBoardDelegate,JSEditorViewNavigationDelegate>
 
-@property (nonatomic,strong) JSEditorView                   *editorView;
-@property (nonatomic,strong) JSEditorToolBar                *toolBarHolder;
-@property (nonatomic,strong) JSEditorHandleJs               *handlerJs;
-@property (nonatomic,strong) JSEditorPhotosPicker           *photosPicker;
-@property (nonatomic,strong) JSEditorPhotosUploader         *uploader;
+@property (nonatomic,strong) JSEditorView                   *editorView;        // 编辑视图 UI
+@property (nonatomic,strong) JSEditorToolBar                *toolBarHolder;     // 编辑工具条 UI
+@property (nonatomic,strong) JSEditorHandleJs               *handlerJs;         // 原生与web交互处理
+@property (nonatomic,strong) JSEditorPhotosPicker           *photosPicker;      // 图片选择
+@property (nonatomic,strong) JSEditorPhotosUploader         *uploader;          // 图片本地显示及网络上传
 
 @end
 

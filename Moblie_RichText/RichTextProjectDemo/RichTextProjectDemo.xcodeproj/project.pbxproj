@@ -13,8 +13,6 @@
 		261606B4225DCE1D000BC4F5 /* AttributedTextParserVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 261606B2225DCE1C000BC4F5 /* AttributedTextParserVC.m */; };
 		261606B7225DCE47000BC4F5 /* HTMLVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 261606B6225DCE47000BC4F5 /* HTMLVC.m */; };
 		2625B9D423A9CADE00945B2F /* 66.png in Resources */ = {isa = PBXBuildFile; fileRef = 2625B9D323A9CADE00945B2F /* 66.png */; };
-		2625B9D723AA00AB00945B2F /* JSEditorPhotosUploader.m in Sources */ = {isa = PBXBuildFile; fileRef = 2625B9D623AA00AB00945B2F /* JSEditorPhotosUploader.m */; };
-		2625B9D923AB641100945B2F /* ZSSRichTextEditor.js in Resources */ = {isa = PBXBuildFile; fileRef = 2625B9D823AB641100945B2F /* ZSSRichTextEditor.js */; };
 		2626FFBA20AD8A5500125D58 /* AttibutedTestVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2626FFB920AD8A5500125D58 /* AttibutedTestVC.m */; };
 		2626FFBD20AE784D00125D58 /* TextViewLoadHtmlVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2626FFBC20AE784D00125D58 /* TextViewLoadHtmlVC.m */; };
 		2626FFC320AE7E4700125D58 /* WKLoadHtmlVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2626FFC220AE7E4700125D58 /* WKLoadHtmlVC.m */; };
@@ -22,15 +20,6 @@
 		265C2CF620283AE90073F244 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 265C2CF320283AE90073F244 /* AppDelegate.m */; };
 		265C2CF920283B070073F244 /* TableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 265C2CF820283B070073F244 /* TableVC.m */; };
 		265D80FB20A1A3B900F415F8 /* JXTextViewVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 265D80FA20A1A3B900F415F8 /* JXTextViewVC.m */; };
-		265D80FE20A1A3E000F415F8 /* RichTextEditor.m in Sources */ = {isa = PBXBuildFile; fileRef = 265D80FC20A1A3DF00F415F8 /* RichTextEditor.m */; };
-		265D813220A2F8FD00F415F8 /* ZSSRichTextEditor.m in Sources */ = {isa = PBXBuildFile; fileRef = 265D810A20A2F8FD00F415F8 /* ZSSRichTextEditor.m */; };
-		265D813420A2F8FD00F415F8 /* jsoc.js in Resources */ = {isa = PBXBuildFile; fileRef = 265D810D20A2F8FD00F415F8 /* jsoc.js */; };
-		265D813520A2F8FD00F415F8 /* editor.html in Resources */ = {isa = PBXBuildFile; fileRef = 265D810E20A2F8FD00F415F8 /* editor.html */; };
-		265D813620A2F8FD00F415F8 /* JSBeautifier.js in Resources */ = {isa = PBXBuildFile; fileRef = 265D810F20A2F8FD00F415F8 /* JSBeautifier.js */; };
-		265D813720A2F8FD00F415F8 /* jQuery.js in Resources */ = {isa = PBXBuildFile; fileRef = 265D811020A2F8FD00F415F8 /* jQuery.js */; };
-		265D813820A2F8FD00F415F8 /* reload@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 265D811220A2F8FD00F415F8 /* reload@2x.png */; };
-		265D813920A2F8FD00F415F8 /* uploadimageloading.gif in Resources */ = {isa = PBXBuildFile; fileRef = 265D811320A2F8FD00F415F8 /* uploadimageloading.gif */; };
-		265D813A20A2F8FD00F415F8 /* delete@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 265D811420A2F8FD00F415F8 /* delete@2x.png */; };
 		266958921F7F4B8600382A86 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 266958911F7F4B8600382A86 /* main.m */; };
 		2669589B1F7F4B8700382A86 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 266958991F7F4B8700382A86 /* Main.storyboard */; };
 		2669589D1F7F4B8700382A86 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2669589C1F7F4B8700382A86 /* Assets.xcassets */; };
@@ -38,12 +27,6 @@
 		266958AB1F7F4B8800382A86 /* RichTextProjectDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 266958AA1F7F4B8800382A86 /* RichTextProjectDemoTests.m */; };
 		266958B61F7F4B8800382A86 /* RichTextProjectDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 266958B51F7F4B8800382A86 /* RichTextProjectDemoUITests.m */; };
 		2669590F1F7F877300382A86 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 2669590E1F7F877300382A86 /* README.md */; };
-		26700B06239F740000FFA7E5 /* JSEditorToolBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 26700B05239F740000FFA7E5 /* JSEditorToolBar.m */; };
-		26700B09239F914F00FFA7E5 /* JSEditorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 26700B08239F914F00FFA7E5 /* JSEditorView.m */; };
-		26700B0D239F982800FFA7E5 /* JSEditorHandleJs.m in Sources */ = {isa = PBXBuildFile; fileRef = 26700B0C239F982800FFA7E5 /* JSEditorHandleJs.m */; };
-		26700B1323A21F1200FFA7E5 /* JSEditorDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 26700B1223A21F1200FFA7E5 /* JSEditorDataModel.m */; };
-		26700B1623A2228600FFA7E5 /* JSEditorBarCommonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 26700B1523A2228600FFA7E5 /* JSEditorBarCommonCell.m */; };
-		26700B1923A32E3700FFA7E5 /* JSEditorPhotosPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 26700B1823A32E3700FFA7E5 /* JSEditorPhotosPicker.m */; };
 		26C386612260920A000DF059 /* NSTextAttachment+RichText.m in Sources */ = {isa = PBXBuildFile; fileRef = 26C386542260920A000DF059 /* NSTextAttachment+RichText.m */; };
 		26C386622260920A000DF059 /* ImgLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 26C386582260920A000DF059 /* ImgLabel.m */; };
 		26C386632260920A000DF059 /* HTMLLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 26C386592260920A000DF059 /* HTMLLabel.m */; };
@@ -59,7 +42,6 @@
 		26CAB20220B50D6C00D94D3D /* ToolBarCommonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 26CAB1FD20B50D6C00D94D3D /* ToolBarCommonItem.m */; };
 		26CAB20B20B50FFE00D94D3D /* JXTextStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 26CAB20A20B50FFE00D94D3D /* JXTextStyle.m */; };
 		26CAB20E20B5143300D94D3D /* UIFont+JXFont.m in Sources */ = {isa = PBXBuildFile; fileRef = 26CAB20D20B5143300D94D3D /* UIFont+JXFont.m */; };
-		26F1F2D523A75C2300E471A5 /* WKEditorWeb.m in Sources */ = {isa = PBXBuildFile; fileRef = 26F1F2D423A75C2300E471A5 /* WKEditorWeb.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,9 +72,6 @@
 		261606B5225DCE47000BC4F5 /* HTMLVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTMLVC.h; sourceTree = "<group>"; };
 		261606B6225DCE47000BC4F5 /* HTMLVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTMLVC.m; sourceTree = "<group>"; };
 		2625B9D323A9CADE00945B2F /* 66.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 66.png; sourceTree = "<group>"; };
-		2625B9D523AA00AB00945B2F /* JSEditorPhotosUploader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSEditorPhotosUploader.h; sourceTree = "<group>"; };
-		2625B9D623AA00AB00945B2F /* JSEditorPhotosUploader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JSEditorPhotosUploader.m; sourceTree = "<group>"; };
-		2625B9D823AB641100945B2F /* ZSSRichTextEditor.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = ZSSRichTextEditor.js; sourceTree = "<group>"; };
 		2626FFB820AD8A5500125D58 /* AttibutedTestVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AttibutedTestVC.h; sourceTree = "<group>"; };
 		2626FFB920AD8A5500125D58 /* AttibutedTestVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AttibutedTestVC.m; sourceTree = "<group>"; };
 		2626FFBB20AE784D00125D58 /* TextViewLoadHtmlVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TextViewLoadHtmlVC.h; sourceTree = "<group>"; };
@@ -107,17 +86,6 @@
 		265C2CF820283B070073F244 /* TableVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TableVC.m; sourceTree = "<group>"; };
 		265D80F920A1A3B900F415F8 /* JXTextViewVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXTextViewVC.h; sourceTree = "<group>"; };
 		265D80FA20A1A3B900F415F8 /* JXTextViewVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXTextViewVC.m; sourceTree = "<group>"; };
-		265D80FC20A1A3DF00F415F8 /* RichTextEditor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RichTextEditor.m; sourceTree = "<group>"; };
-		265D80FD20A1A3E000F415F8 /* RichTextEditor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RichTextEditor.h; sourceTree = "<group>"; };
-		265D810920A2F8FD00F415F8 /* ZSSRichTextEditor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZSSRichTextEditor.h; sourceTree = "<group>"; };
-		265D810A20A2F8FD00F415F8 /* ZSSRichTextEditor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZSSRichTextEditor.m; sourceTree = "<group>"; };
-		265D810D20A2F8FD00F415F8 /* jsoc.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = jsoc.js; sourceTree = "<group>"; };
-		265D810E20A2F8FD00F415F8 /* editor.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = editor.html; sourceTree = "<group>"; };
-		265D810F20A2F8FD00F415F8 /* JSBeautifier.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = JSBeautifier.js; sourceTree = "<group>"; };
-		265D811020A2F8FD00F415F8 /* jQuery.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = jQuery.js; sourceTree = "<group>"; };
-		265D811220A2F8FD00F415F8 /* reload@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "reload@2x.png"; sourceTree = "<group>"; };
-		265D811320A2F8FD00F415F8 /* uploadimageloading.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = uploadimageloading.gif; sourceTree = "<group>"; };
-		265D811420A2F8FD00F415F8 /* delete@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "delete@2x.png"; sourceTree = "<group>"; };
 		2669588D1F7F4B8600382A86 /* RichTextProjectDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RichTextProjectDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		266958911F7F4B8600382A86 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		2669589A1F7F4B8700382A86 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -131,19 +99,6 @@
 		266958B51F7F4B8800382A86 /* RichTextProjectDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RichTextProjectDemoUITests.m; sourceTree = "<group>"; };
 		266958B71F7F4B8800382A86 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2669590E1F7F877300382A86 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		26700B04239F740000FFA7E5 /* JSEditorToolBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSEditorToolBar.h; sourceTree = "<group>"; };
-		26700B05239F740000FFA7E5 /* JSEditorToolBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JSEditorToolBar.m; sourceTree = "<group>"; };
-		26700B07239F914F00FFA7E5 /* JSEditorView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSEditorView.h; sourceTree = "<group>"; };
-		26700B08239F914F00FFA7E5 /* JSEditorView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JSEditorView.m; sourceTree = "<group>"; };
-		26700B0B239F982800FFA7E5 /* JSEditorHandleJs.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSEditorHandleJs.h; sourceTree = "<group>"; };
-		26700B0C239F982800FFA7E5 /* JSEditorHandleJs.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JSEditorHandleJs.m; sourceTree = "<group>"; };
-		26700B10239F9BBB00FFA7E5 /* JSEditorConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSEditorConfig.h; sourceTree = "<group>"; };
-		26700B1123A21F1200FFA7E5 /* JSEditorDataModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSEditorDataModel.h; sourceTree = "<group>"; };
-		26700B1223A21F1200FFA7E5 /* JSEditorDataModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JSEditorDataModel.m; sourceTree = "<group>"; };
-		26700B1423A2228600FFA7E5 /* JSEditorBarCommonCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSEditorBarCommonCell.h; sourceTree = "<group>"; };
-		26700B1523A2228600FFA7E5 /* JSEditorBarCommonCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JSEditorBarCommonCell.m; sourceTree = "<group>"; };
-		26700B1723A32E3700FFA7E5 /* JSEditorPhotosPicker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSEditorPhotosPicker.h; sourceTree = "<group>"; };
-		26700B1823A32E3700FFA7E5 /* JSEditorPhotosPicker.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JSEditorPhotosPicker.m; sourceTree = "<group>"; };
 		26C386542260920A000DF059 /* NSTextAttachment+RichText.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSTextAttachment+RichText.m"; sourceTree = "<group>"; };
 		26C386552260920A000DF059 /* NSTextAttachment+RichText.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSTextAttachment+RichText.h"; sourceTree = "<group>"; };
 		26C386572260920A000DF059 /* PLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLabel.h; sourceTree = "<group>"; };
@@ -173,8 +128,6 @@
 		26CAB20A20B50FFE00D94D3D /* JXTextStyle.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JXTextStyle.m; sourceTree = "<group>"; };
 		26CAB20C20B5143300D94D3D /* UIFont+JXFont.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIFont+JXFont.h"; sourceTree = "<group>"; };
 		26CAB20D20B5143300D94D3D /* UIFont+JXFont.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIFont+JXFont.m"; sourceTree = "<group>"; };
-		26F1F2D323A75C2300E471A5 /* WKEditorWeb.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WKEditorWeb.h; sourceTree = "<group>"; };
-		26F1F2D423A75C2300E471A5 /* WKEditorWeb.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WKEditorWeb.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -234,6 +187,7 @@
 		2626FFBE20AE791D00125D58 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				2625B9D323A9CADE00945B2F /* 66.png */,
 				261606AC225DCDCB000BC4F5 /* cnt.html */,
 				26CAB1EC20B3C5FC00D94D3D /* HtmlContent.html */,
 			);
@@ -275,7 +229,6 @@
 			isa = PBXGroup;
 			children = (
 				265D810620A2F8FD00F415F8 /* NTEditor */,
-				265D810720A2F8FD00F415F8 /* JSEditor */,
 			);
 			name = JXRichTextEditor;
 			path = JXRichTextEditor/JXRichTextEditor;
@@ -289,65 +242,6 @@
 				26CAB1EE20B3F18100D94D3D /* NTEditorConfig */,
 			);
 			path = NTEditor;
-			sourceTree = "<group>";
-		};
-		265D810720A2F8FD00F415F8 /* JSEditor */ = {
-			isa = PBXGroup;
-			children = (
-				26700B0A239F97E700FFA7E5 /* Handle */,
-				265D810820A2F8FD00F415F8 /* NativeBridge */,
-				265D810B20A2F8FD00F415F8 /* EditorResource */,
-				265D811120A2F8FD00F415F8 /* image */,
-				265D811520A2F8FD00F415F8 /* View */,
-			);
-			path = JSEditor;
-			sourceTree = "<group>";
-		};
-		265D810820A2F8FD00F415F8 /* NativeBridge */ = {
-			isa = PBXGroup;
-			children = (
-				265D810920A2F8FD00F415F8 /* ZSSRichTextEditor.h */,
-				265D810A20A2F8FD00F415F8 /* ZSSRichTextEditor.m */,
-			);
-			path = NativeBridge;
-			sourceTree = "<group>";
-		};
-		265D810B20A2F8FD00F415F8 /* EditorResource */ = {
-			isa = PBXGroup;
-			children = (
-				2625B9D823AB641100945B2F /* ZSSRichTextEditor.js */,
-				265D810D20A2F8FD00F415F8 /* jsoc.js */,
-				265D810E20A2F8FD00F415F8 /* editor.html */,
-				265D810F20A2F8FD00F415F8 /* JSBeautifier.js */,
-				265D811020A2F8FD00F415F8 /* jQuery.js */,
-			);
-			path = EditorResource;
-			sourceTree = "<group>";
-		};
-		265D811120A2F8FD00F415F8 /* image */ = {
-			isa = PBXGroup;
-			children = (
-				2625B9D323A9CADE00945B2F /* 66.png */,
-				265D811220A2F8FD00F415F8 /* reload@2x.png */,
-				265D811320A2F8FD00F415F8 /* uploadimageloading.gif */,
-				265D811420A2F8FD00F415F8 /* delete@2x.png */,
-			);
-			path = image;
-			sourceTree = "<group>";
-		};
-		265D811520A2F8FD00F415F8 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				26700B04239F740000FFA7E5 /* JSEditorToolBar.h */,
-				26700B05239F740000FFA7E5 /* JSEditorToolBar.m */,
-				26700B1423A2228600FFA7E5 /* JSEditorBarCommonCell.h */,
-				26700B1523A2228600FFA7E5 /* JSEditorBarCommonCell.m */,
-				26700B07239F914F00FFA7E5 /* JSEditorView.h */,
-				26700B08239F914F00FFA7E5 /* JSEditorView.m */,
-				26F1F2D323A75C2300E471A5 /* WKEditorWeb.h */,
-				26F1F2D423A75C2300E471A5 /* WKEditorWeb.m */,
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		266958841F7F4B8600382A86 = {
@@ -378,7 +272,6 @@
 				265C2CF020283AE90073F244 /* Main */,
 				265D80B420A1A33E00F415F8 /* Lib */,
 				265D80F820A1A3B900F415F8 /* JXRichTextView */,
-				266958C31F7F4CA400382A86 /* JSRichText */,
 				266958991F7F4B8700382A86 /* Main.storyboard */,
 				2669589C1F7F4B8700382A86 /* Assets.xcassets */,
 				2669589E1F7F4B8700382A86 /* LaunchScreen.storyboard */,
@@ -413,31 +306,6 @@
 				266958B71F7F4B8800382A86 /* Info.plist */,
 			);
 			path = RichTextProjectDemoUITests;
-			sourceTree = "<group>";
-		};
-		266958C31F7F4CA400382A86 /* JSRichText */ = {
-			isa = PBXGroup;
-			children = (
-				265D80FD20A1A3E000F415F8 /* RichTextEditor.h */,
-				265D80FC20A1A3DF00F415F8 /* RichTextEditor.m */,
-			);
-			path = JSRichText;
-			sourceTree = "<group>";
-		};
-		26700B0A239F97E700FFA7E5 /* Handle */ = {
-			isa = PBXGroup;
-			children = (
-				26700B0B239F982800FFA7E5 /* JSEditorHandleJs.h */,
-				26700B0C239F982800FFA7E5 /* JSEditorHandleJs.m */,
-				26700B1723A32E3700FFA7E5 /* JSEditorPhotosPicker.h */,
-				26700B1823A32E3700FFA7E5 /* JSEditorPhotosPicker.m */,
-				2625B9D523AA00AB00945B2F /* JSEditorPhotosUploader.h */,
-				2625B9D623AA00AB00945B2F /* JSEditorPhotosUploader.m */,
-				26700B1123A21F1200FFA7E5 /* JSEditorDataModel.h */,
-				26700B1223A21F1200FFA7E5 /* JSEditorDataModel.m */,
-				26700B10239F9BBB00FFA7E5 /* JSEditorConfig.h */,
-			);
-			path = Handle;
 			sourceTree = "<group>";
 		};
 		26C386502260920A000DF059 /* JXRichTextParser */ = {
@@ -640,18 +508,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				266958A01F7F4B8700382A86 /* LaunchScreen.storyboard in Resources */,
-				2625B9D923AB641100945B2F /* ZSSRichTextEditor.js in Resources */,
-				265D813520A2F8FD00F415F8 /* editor.html in Resources */,
-				265D813920A2F8FD00F415F8 /* uploadimageloading.gif in Resources */,
 				261606AD225DCDCB000BC4F5 /* cnt.html in Resources */,
 				26CAB1ED20B3C5FC00D94D3D /* HtmlContent.html in Resources */,
-				265D813A20A2F8FD00F415F8 /* delete@2x.png in Resources */,
-				265D813420A2F8FD00F415F8 /* jsoc.js in Resources */,
-				265D813720A2F8FD00F415F8 /* jQuery.js in Resources */,
 				2669589D1F7F4B8700382A86 /* Assets.xcassets in Resources */,
-				265D813620A2F8FD00F415F8 /* JSBeautifier.js in Resources */,
 				2669589B1F7F4B8700382A86 /* Main.storyboard in Resources */,
-				265D813820A2F8FD00F415F8 /* reload@2x.png in Resources */,
 				2625B9D423A9CADE00945B2F /* 66.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -678,9 +538,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				26CAB20B20B50FFE00D94D3D /* JXTextStyle.m in Sources */,
-				26700B1323A21F1200FFA7E5 /* JSEditorDataModel.m in Sources */,
 				26CAB1F120B3F1A900D94D3D /* NTEditorAttributeConfig.m in Sources */,
-				26F1F2D523A75C2300E471A5 /* WKEditorWeb.m in Sources */,
 				26CAB20E20B5143300D94D3D /* UIFont+JXFont.m in Sources */,
 				265C2CF620283AE90073F244 /* AppDelegate.m in Sources */,
 				261606B4225DCE1D000BC4F5 /* AttributedTextParserVC.m in Sources */,
@@ -688,28 +546,20 @@
 				265C2CF520283AE90073F244 /* ViewController.m in Sources */,
 				261606B3225DCE1D000BC4F5 /* RichTextEditorVC.m in Sources */,
 				265C2CF920283B070073F244 /* TableVC.m in Sources */,
-				26700B1623A2228600FFA7E5 /* JSEditorBarCommonCell.m in Sources */,
 				26CAB1F420B41E8900D94D3D /* AttributedTest2VC.m in Sources */,
-				265D80FE20A1A3E000F415F8 /* RichTextEditor.m in Sources */,
 				26C386612260920A000DF059 /* NSTextAttachment+RichText.m in Sources */,
 				26CAB20120B50D6C00D94D3D /* EditorToolBar.m in Sources */,
-				2625B9D723AA00AB00945B2F /* JSEditorPhotosUploader.m in Sources */,
-				26700B06239F740000FFA7E5 /* JSEditorToolBar.m in Sources */,
 				26CAB20020B50D6C00D94D3D /* NTEditorMainView.m in Sources */,
-				26700B09239F914F00FFA7E5 /* JSEditorView.m in Sources */,
 				26CAB1FF20B50D6C00D94D3D /* NTEditorHeader.m in Sources */,
 				261606B7225DCE47000BC4F5 /* HTMLVC.m in Sources */,
 				26C386652260920A000DF059 /* PLabel.m in Sources */,
 				2626FFC320AE7E4700125D58 /* WKLoadHtmlVC.m in Sources */,
 				2626FFBA20AD8A5500125D58 /* AttibutedTestVC.m in Sources */,
-				26700B1923A32E3700FFA7E5 /* JSEditorPhotosPicker.m in Sources */,
-				265D813220A2F8FD00F415F8 /* ZSSRichTextEditor.m in Sources */,
 				26C386622260920A000DF059 /* ImgLabel.m in Sources */,
 				26C386642260920A000DF059 /* FontLabel.m in Sources */,
 				265D80FB20A1A3B900F415F8 /* JXTextViewVC.m in Sources */,
 				266958921F7F4B8600382A86 /* main.m in Sources */,
 				26C386632260920A000DF059 /* HTMLLabel.m in Sources */,
-				26700B0D239F982800FFA7E5 /* JSEditorHandleJs.m in Sources */,
 				2669590F1F7F877300382A86 /* README.md in Sources */,
 				26CAB20220B50D6C00D94D3D /* ToolBarCommonItem.m in Sources */,
 				261606AB225DC919000BC4F5 /* JXFont.m in Sources */,
@@ -866,7 +716,7 @@
 				INFOPLIST_FILE = RichTextProjectDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.hainbwyh.RichTextProjectDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hinabian.rain;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -879,7 +729,7 @@
 				INFOPLIST_FILE = RichTextProjectDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.hainbwyh.RichTextProjectDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hinabian.rain;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

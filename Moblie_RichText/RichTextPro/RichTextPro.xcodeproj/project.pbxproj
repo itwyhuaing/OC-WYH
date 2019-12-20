@@ -1,0 +1,516 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2625BA3C23AC762D00945B2F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2625BA3A23AC762D00945B2F /* Main.storyboard */; };
+		2625BA3E23AC762E00945B2F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2625BA3D23AC762E00945B2F /* Assets.xcassets */; };
+		2625BA4123AC762E00945B2F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2625BA3F23AC762E00945B2F /* LaunchScreen.storyboard */; };
+		2625BA4423AC762E00945B2F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2625BA4323AC762E00945B2F /* main.m */; };
+		2625BA5523AC76B200945B2F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2625BA5123AC76B200945B2F /* AppDelegate.m */; };
+		2625BA5623AC76B200945B2F /* TableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2625BA5223AC76B200945B2F /* TableVC.m */; };
+		2625BA7823AC776300945B2F /* ZSSRichTextEditor.m in Sources */ = {isa = PBXBuildFile; fileRef = 2625BA5A23AC776300945B2F /* ZSSRichTextEditor.m */; };
+		2625BA7923AC776300945B2F /* ZSSRichTextEditor.js in Resources */ = {isa = PBXBuildFile; fileRef = 2625BA5C23AC776300945B2F /* ZSSRichTextEditor.js */; };
+		2625BA7B23AC776300945B2F /* editor.html in Resources */ = {isa = PBXBuildFile; fileRef = 2625BA5E23AC776300945B2F /* editor.html */; };
+		2625BA7C23AC776300945B2F /* JSBeautifier.js in Resources */ = {isa = PBXBuildFile; fileRef = 2625BA5F23AC776300945B2F /* JSBeautifier.js */; };
+		2625BA7D23AC776300945B2F /* jQuery.js in Resources */ = {isa = PBXBuildFile; fileRef = 2625BA6023AC776300945B2F /* jQuery.js */; };
+		2625BA7E23AC776300945B2F /* JSEditorPhotosPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 2625BA6323AC776300945B2F /* JSEditorPhotosPicker.m */; };
+		2625BA7F23AC776300945B2F /* JSEditorPhotosUploader.m in Sources */ = {isa = PBXBuildFile; fileRef = 2625BA6723AC776300945B2F /* JSEditorPhotosUploader.m */; };
+		2625BA8023AC776300945B2F /* JSEditorHandleJs.m in Sources */ = {isa = PBXBuildFile; fileRef = 2625BA6923AC776300945B2F /* JSEditorHandleJs.m */; };
+		2625BA8123AC776300945B2F /* JSEditorDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2625BA6A23AC776300945B2F /* JSEditorDataModel.m */; };
+		2625BA8223AC776300945B2F /* reload@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2625BA6C23AC776300945B2F /* reload@2x.png */; };
+		2625BA8323AC776300945B2F /* uploadimageloading.gif in Resources */ = {isa = PBXBuildFile; fileRef = 2625BA6D23AC776300945B2F /* uploadimageloading.gif */; };
+		2625BA8423AC776300945B2F /* delete@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2625BA6E23AC776300945B2F /* delete@2x.png */; };
+		2625BA8523AC776300945B2F /* JSEditorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2625BA7123AC776300945B2F /* JSEditorView.m */; };
+		2625BA8623AC776300945B2F /* JSEditorBarCommonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2625BA7223AC776300945B2F /* JSEditorBarCommonCell.m */; };
+		2625BA8723AC776300945B2F /* WKEditorWeb.m in Sources */ = {isa = PBXBuildFile; fileRef = 2625BA7323AC776300945B2F /* WKEditorWeb.m */; };
+		2625BA8823AC776300945B2F /* JSEditorToolBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 2625BA7523AC776300945B2F /* JSEditorToolBar.m */; };
+		2625BA8B23AC778C00945B2F /* JSRichTextEditorVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2625BA8923AC778C00945B2F /* JSRichTextEditorVC.m */; };
+		2625BA8E23AC77C300945B2F /* NativeRichTextEditorVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2625BA8D23AC77C300945B2F /* NativeRichTextEditorVC.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		2625BA2E23AC762D00945B2F /* RichTextPro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RichTextPro.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2625BA3B23AC762D00945B2F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		2625BA3D23AC762E00945B2F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2625BA4023AC762E00945B2F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		2625BA4223AC762E00945B2F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2625BA4323AC762E00945B2F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		2625BA4E23AC76B200945B2F /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		2625BA5023AC76B200945B2F /* TableVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableVC.h; sourceTree = "<group>"; };
+		2625BA5123AC76B200945B2F /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		2625BA5223AC76B200945B2F /* TableVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableVC.m; sourceTree = "<group>"; };
+		2625BA5923AC776300945B2F /* ZSSRichTextEditor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZSSRichTextEditor.h; sourceTree = "<group>"; };
+		2625BA5A23AC776300945B2F /* ZSSRichTextEditor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZSSRichTextEditor.m; sourceTree = "<group>"; };
+		2625BA5C23AC776300945B2F /* ZSSRichTextEditor.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = ZSSRichTextEditor.js; sourceTree = "<group>"; };
+		2625BA5E23AC776300945B2F /* editor.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = editor.html; sourceTree = "<group>"; };
+		2625BA5F23AC776300945B2F /* JSBeautifier.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = JSBeautifier.js; sourceTree = "<group>"; };
+		2625BA6023AC776300945B2F /* jQuery.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = jQuery.js; sourceTree = "<group>"; };
+		2625BA6223AC776300945B2F /* JSEditorPhotosUploader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSEditorPhotosUploader.h; sourceTree = "<group>"; };
+		2625BA6323AC776300945B2F /* JSEditorPhotosPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSEditorPhotosPicker.m; sourceTree = "<group>"; };
+		2625BA6423AC776300945B2F /* JSEditorDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSEditorDataModel.h; sourceTree = "<group>"; };
+		2625BA6523AC776300945B2F /* JSEditorHandleJs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSEditorHandleJs.h; sourceTree = "<group>"; };
+		2625BA6623AC776300945B2F /* JSEditorPhotosPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSEditorPhotosPicker.h; sourceTree = "<group>"; };
+		2625BA6723AC776300945B2F /* JSEditorPhotosUploader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSEditorPhotosUploader.m; sourceTree = "<group>"; };
+		2625BA6823AC776300945B2F /* JSEditorConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSEditorConfig.h; sourceTree = "<group>"; };
+		2625BA6923AC776300945B2F /* JSEditorHandleJs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSEditorHandleJs.m; sourceTree = "<group>"; };
+		2625BA6A23AC776300945B2F /* JSEditorDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSEditorDataModel.m; sourceTree = "<group>"; };
+		2625BA6C23AC776300945B2F /* reload@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "reload@2x.png"; sourceTree = "<group>"; };
+		2625BA6D23AC776300945B2F /* uploadimageloading.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = uploadimageloading.gif; sourceTree = "<group>"; };
+		2625BA6E23AC776300945B2F /* delete@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "delete@2x.png"; sourceTree = "<group>"; };
+		2625BA7023AC776300945B2F /* JSEditorToolBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSEditorToolBar.h; sourceTree = "<group>"; };
+		2625BA7123AC776300945B2F /* JSEditorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSEditorView.m; sourceTree = "<group>"; };
+		2625BA7223AC776300945B2F /* JSEditorBarCommonCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSEditorBarCommonCell.m; sourceTree = "<group>"; };
+		2625BA7323AC776300945B2F /* WKEditorWeb.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WKEditorWeb.m; sourceTree = "<group>"; };
+		2625BA7423AC776300945B2F /* JSEditorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSEditorView.h; sourceTree = "<group>"; };
+		2625BA7523AC776300945B2F /* JSEditorToolBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSEditorToolBar.m; sourceTree = "<group>"; };
+		2625BA7623AC776300945B2F /* WKEditorWeb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WKEditorWeb.h; sourceTree = "<group>"; };
+		2625BA7723AC776300945B2F /* JSEditorBarCommonCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSEditorBarCommonCell.h; sourceTree = "<group>"; };
+		2625BA8923AC778C00945B2F /* JSRichTextEditorVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSRichTextEditorVC.m; sourceTree = "<group>"; };
+		2625BA8A23AC778C00945B2F /* JSRichTextEditorVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSRichTextEditorVC.h; sourceTree = "<group>"; };
+		2625BA8C23AC77C300945B2F /* NativeRichTextEditorVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NativeRichTextEditorVC.h; sourceTree = "<group>"; };
+		2625BA8D23AC77C300945B2F /* NativeRichTextEditorVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NativeRichTextEditorVC.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2625BA2B23AC762D00945B2F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2625BA2523AC762D00945B2F = {
+			isa = PBXGroup;
+			children = (
+				2625BA3023AC762D00945B2F /* RichTextPro */,
+				2625BA2F23AC762D00945B2F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		2625BA2F23AC762D00945B2F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2625BA2E23AC762D00945B2F /* RichTextPro.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2625BA3023AC762D00945B2F /* RichTextPro */ = {
+			isa = PBXGroup;
+			children = (
+				2625BA4D23AC76B200945B2F /* Main */,
+				2625BA4A23AC76B200945B2F /* Func */,
+				2625BA3A23AC762D00945B2F /* Main.storyboard */,
+				2625BA3D23AC762E00945B2F /* Assets.xcassets */,
+				2625BA3F23AC762E00945B2F /* LaunchScreen.storyboard */,
+				2625BA4223AC762E00945B2F /* Info.plist */,
+				2625BA4323AC762E00945B2F /* main.m */,
+			);
+			path = RichTextPro;
+			sourceTree = "<group>";
+		};
+		2625BA4A23AC76B200945B2F /* Func */ = {
+			isa = PBXGroup;
+			children = (
+				2625BA4C23AC76B200945B2F /* Lib */,
+				2625BA4B23AC76B200945B2F /* Test */,
+			);
+			path = Func;
+			sourceTree = "<group>";
+		};
+		2625BA4B23AC76B200945B2F /* Test */ = {
+			isa = PBXGroup;
+			children = (
+				2625BA8C23AC77C300945B2F /* NativeRichTextEditorVC.h */,
+				2625BA8D23AC77C300945B2F /* NativeRichTextEditorVC.m */,
+				2625BA8A23AC778C00945B2F /* JSRichTextEditorVC.h */,
+				2625BA8923AC778C00945B2F /* JSRichTextEditorVC.m */,
+			);
+			path = Test;
+			sourceTree = "<group>";
+		};
+		2625BA4C23AC76B200945B2F /* Lib */ = {
+			isa = PBXGroup;
+			children = (
+				2625BA5723AC776200945B2F /* JSEditor */,
+			);
+			path = Lib;
+			sourceTree = "<group>";
+		};
+		2625BA4D23AC76B200945B2F /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				2625BA4E23AC76B200945B2F /* AppDelegate.h */,
+				2625BA5123AC76B200945B2F /* AppDelegate.m */,
+				2625BA5023AC76B200945B2F /* TableVC.h */,
+				2625BA5223AC76B200945B2F /* TableVC.m */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		2625BA5723AC776200945B2F /* JSEditor */ = {
+			isa = PBXGroup;
+			children = (
+				2625BA5823AC776300945B2F /* NativeBridge */,
+				2625BA5B23AC776300945B2F /* EditorResource */,
+				2625BA6123AC776300945B2F /* Handle */,
+				2625BA6B23AC776300945B2F /* image */,
+				2625BA6F23AC776300945B2F /* View */,
+			);
+			path = JSEditor;
+			sourceTree = "<group>";
+		};
+		2625BA5823AC776300945B2F /* NativeBridge */ = {
+			isa = PBXGroup;
+			children = (
+				2625BA5923AC776300945B2F /* ZSSRichTextEditor.h */,
+				2625BA5A23AC776300945B2F /* ZSSRichTextEditor.m */,
+			);
+			path = NativeBridge;
+			sourceTree = "<group>";
+		};
+		2625BA5B23AC776300945B2F /* EditorResource */ = {
+			isa = PBXGroup;
+			children = (
+				2625BA5C23AC776300945B2F /* ZSSRichTextEditor.js */,
+				2625BA5E23AC776300945B2F /* editor.html */,
+				2625BA5F23AC776300945B2F /* JSBeautifier.js */,
+				2625BA6023AC776300945B2F /* jQuery.js */,
+			);
+			path = EditorResource;
+			sourceTree = "<group>";
+		};
+		2625BA6123AC776300945B2F /* Handle */ = {
+			isa = PBXGroup;
+			children = (
+				2625BA6823AC776300945B2F /* JSEditorConfig.h */,
+				2625BA6223AC776300945B2F /* JSEditorPhotosUploader.h */,
+				2625BA6723AC776300945B2F /* JSEditorPhotosUploader.m */,
+				2625BA6623AC776300945B2F /* JSEditorPhotosPicker.h */,
+				2625BA6323AC776300945B2F /* JSEditorPhotosPicker.m */,
+				2625BA6423AC776300945B2F /* JSEditorDataModel.h */,
+				2625BA6A23AC776300945B2F /* JSEditorDataModel.m */,
+				2625BA6523AC776300945B2F /* JSEditorHandleJs.h */,
+				2625BA6923AC776300945B2F /* JSEditorHandleJs.m */,
+			);
+			path = Handle;
+			sourceTree = "<group>";
+		};
+		2625BA6B23AC776300945B2F /* image */ = {
+			isa = PBXGroup;
+			children = (
+				2625BA6C23AC776300945B2F /* reload@2x.png */,
+				2625BA6D23AC776300945B2F /* uploadimageloading.gif */,
+				2625BA6E23AC776300945B2F /* delete@2x.png */,
+			);
+			path = image;
+			sourceTree = "<group>";
+		};
+		2625BA6F23AC776300945B2F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2625BA7423AC776300945B2F /* JSEditorView.h */,
+				2625BA7123AC776300945B2F /* JSEditorView.m */,
+				2625BA7623AC776300945B2F /* WKEditorWeb.h */,
+				2625BA7323AC776300945B2F /* WKEditorWeb.m */,
+				2625BA7023AC776300945B2F /* JSEditorToolBar.h */,
+				2625BA7523AC776300945B2F /* JSEditorToolBar.m */,
+				2625BA7723AC776300945B2F /* JSEditorBarCommonCell.h */,
+				2625BA7223AC776300945B2F /* JSEditorBarCommonCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2625BA2D23AC762D00945B2F /* RichTextPro */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2625BA4723AC762E00945B2F /* Build configuration list for PBXNativeTarget "RichTextPro" */;
+			buildPhases = (
+				2625BA2A23AC762D00945B2F /* Sources */,
+				2625BA2B23AC762D00945B2F /* Frameworks */,
+				2625BA2C23AC762D00945B2F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RichTextPro;
+			productName = RichTextPro;
+			productReference = 2625BA2E23AC762D00945B2F /* RichTextPro.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2625BA2623AC762D00945B2F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1100;
+				ORGANIZATIONNAME = JiXia;
+				TargetAttributes = {
+					2625BA2D23AC762D00945B2F = {
+						CreatedOnToolsVersion = 11.0;
+					};
+				};
+			};
+			buildConfigurationList = 2625BA2923AC762D00945B2F /* Build configuration list for PBXProject "RichTextPro" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 2625BA2523AC762D00945B2F;
+			productRefGroup = 2625BA2F23AC762D00945B2F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2625BA2D23AC762D00945B2F /* RichTextPro */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2625BA2C23AC762D00945B2F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2625BA4123AC762E00945B2F /* LaunchScreen.storyboard in Resources */,
+				2625BA7B23AC776300945B2F /* editor.html in Resources */,
+				2625BA8323AC776300945B2F /* uploadimageloading.gif in Resources */,
+				2625BA8423AC776300945B2F /* delete@2x.png in Resources */,
+				2625BA7923AC776300945B2F /* ZSSRichTextEditor.js in Resources */,
+				2625BA7D23AC776300945B2F /* jQuery.js in Resources */,
+				2625BA3E23AC762E00945B2F /* Assets.xcassets in Resources */,
+				2625BA7C23AC776300945B2F /* JSBeautifier.js in Resources */,
+				2625BA3C23AC762D00945B2F /* Main.storyboard in Resources */,
+				2625BA8223AC776300945B2F /* reload@2x.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2625BA2A23AC762D00945B2F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2625BA7823AC776300945B2F /* ZSSRichTextEditor.m in Sources */,
+				2625BA5623AC76B200945B2F /* TableVC.m in Sources */,
+				2625BA8623AC776300945B2F /* JSEditorBarCommonCell.m in Sources */,
+				2625BA8023AC776300945B2F /* JSEditorHandleJs.m in Sources */,
+				2625BA8523AC776300945B2F /* JSEditorView.m in Sources */,
+				2625BA4423AC762E00945B2F /* main.m in Sources */,
+				2625BA7E23AC776300945B2F /* JSEditorPhotosPicker.m in Sources */,
+				2625BA8B23AC778C00945B2F /* JSRichTextEditorVC.m in Sources */,
+				2625BA8823AC776300945B2F /* JSEditorToolBar.m in Sources */,
+				2625BA8123AC776300945B2F /* JSEditorDataModel.m in Sources */,
+				2625BA7F23AC776300945B2F /* JSEditorPhotosUploader.m in Sources */,
+				2625BA8723AC776300945B2F /* WKEditorWeb.m in Sources */,
+				2625BA5523AC76B200945B2F /* AppDelegate.m in Sources */,
+				2625BA8E23AC77C300945B2F /* NativeRichTextEditorVC.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		2625BA3A23AC762D00945B2F /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2625BA3B23AC762D00945B2F /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		2625BA3F23AC762E00945B2F /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2625BA4023AC762E00945B2F /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		2625BA4523AC762E00945B2F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		2625BA4623AC762E00945B2F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		2625BA4823AC762E00945B2F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = RichTextPro/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.hinabian.rain.RichTextPro;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		2625BA4923AC762E00945B2F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = RichTextPro/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.hinabian.rain.RichTextPro;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2625BA2923AC762D00945B2F /* Build configuration list for PBXProject "RichTextPro" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2625BA4523AC762E00945B2F /* Debug */,
+				2625BA4623AC762E00945B2F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2625BA4723AC762E00945B2F /* Build configuration list for PBXNativeTarget "RichTextPro" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2625BA4823AC762E00945B2F /* Debug */,
+				2625BA4923AC762E00945B2F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2625BA2623AC762D00945B2F /* Project object */;
+}

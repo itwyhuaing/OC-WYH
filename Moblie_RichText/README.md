@@ -164,3 +164,23 @@ NSVerticalGlyphFormAttributeName;//垂直或者水平，value是 NSNumber，0表
 
 * 原生富文本编辑器
   - [原生富文本编辑器](https://github.com/littleMeaning/SimpleWord)
+
+
+---
+## 富文本编辑的实现
+
+**JSEditor**
+
+* 代码结构简述：
+
+![image]()
+
+![image]()
+
+* 在 ZSSRichTextEditor 依赖库的基础上，升级至 WKWebView。
+
+* 待优化问题 ： 粗体、斜体等样式换行切换才生效。
+
+* [参考1-IOS - WebView富文本开发](https://www.jianshu.com/p/c4d7824362cb)
+* [参考2-HTML 6种空格    ‌‍空白空格的区别](https://blog.csdn.net/u014068781/article/details/77962423)
+* [参考3-document.execCommand](https://developer.mozilla.org/zh-CN/docs/Web/API/Document/execCommand)

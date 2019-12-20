@@ -23,24 +23,10 @@
     
     //  UI 修饰
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
-    NSArray *tmpds  = @[@"测试-UITextView编辑属性\nattributedText、typingAttributes",
-                        @"测试-UITextView编辑属性\nUIFontDescriptor",
-                        @"测试-\nattributedText字符串字体样式信息",
-                        @"测试-\nHTML 标签测试",
-                        @"测试-\nUITextView编辑过程中修改typingAttributes属性",
-                        @"富文本展示:\nUITextView加载HTML",
-                        @"富文本展示:\nWKWebView加载HTML",
-                        @"富文本编辑:\nUITextView 方式实现",];
-    NSArray *tmpvcs = @[@"AttibutedTestVC",
-                        @"AttributedTest2VC",
-                        @"AttributedTextParserVC",
-                        @"HTMLVC",
-                        @"JSRichTextEditorVCVC",
-                        @"TextViewLoadHtmlVC",
-                        @"WKLoadHtmlVC",
-                        @"JXTextViewVC"];
-    //tmpds  = @[@"富文本编辑:WKWebView实现方式 - WK"];
-    //tmpvcs = @[@"JSRichTextEditorVC"];
+    NSArray *tmpds  = @[@"富文本编辑:\nUITextView 方式实现",
+                        @"富文本编辑:\nWKWebView方式实现",];
+    NSArray *tmpvcs = @[@"JXTextViewVC",
+                        @"JSRichTextEditorVC"];
     _vcs        = [[NSMutableArray alloc] initWithArray:tmpvcs];
     _dataSource = [[NSMutableArray alloc] initWithArray:tmpds];
 }
