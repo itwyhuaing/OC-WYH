@@ -1,8 +1,8 @@
 //
-//  NativeRichTextEditorVC.h
+//  NTEditorBarCommonCell.h
 //  RichTextPro
 //
-//  Created by hnbwyh on 2019/12/20.
+//  Created by hnbwyh on 2019/12/23.
 //  Copyright © 2019 JiXia. All rights reserved.
 //
 
@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface NativeRichTextEditorVC : UIViewController
+@interface NTEditorBarCommonCell : UICollectionViewCell
 
 @end
 

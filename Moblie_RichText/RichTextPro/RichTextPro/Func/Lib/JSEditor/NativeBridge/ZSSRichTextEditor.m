@@ -50,7 +50,7 @@
 #pragma mark ------ handle block
 
 - (void)handleBlock {
-    __weak typeof(self)weakSelf = self;
+    WSelf
     self.toolBarHolder.toolBarBlk = ^(JSEditorToolBarFuncType location, OperateIntention status) {
         // 控制编辑区格式
         [weakSelf.handlerJs formatEditableWeb:weakSelf.editorView.wkEditor funcLocation:location intention:status completion:^(id  _Nonnull info, NSError * _Nonnull error) {
@@ -85,7 +85,7 @@
 
 -(void)jsEditorView:(JSEditorView *)jsEditor willHideWithKeyRectEnd:(CGRect)rect {
     CGRect rt = self.toolBarHolder.frame;
-    rt.origin.y = CGRectGetMinY(rect) - CGRectGetHeight(rt) - BOTTOM_HEIGHT_SUIT_IPHONE_X;
+    rt.origin.y = CGRectGetMinY(rect) - CGRectGetHeight(rt) - BOTTOM_HEIGHT_SUIT_OFF_X;
     [self.toolBarHolder setFrame:rt];
     self.toolBarHolder.yStatus = JSEditorToolBarYLow;
     
@@ -124,7 +124,7 @@
 -(JSEditorToolBar *)toolBarHolder {
     if (!_toolBarHolder) {
         CGRect rect = CGRectMake(0,
-        CGRectGetMaxY(self.view.frame) - TOOL_BAR_HEIGHT - BOTTOM_HEIGHT_SUIT_IPHONE_X,
+        CGRectGetMaxY(self.view.frame) - TOOL_BAR_HEIGHT - BOTTOM_HEIGHT_SUIT_OFF_X,
         SCREEN_WIDTH,
         TOOL_BAR_HEIGHT);
         _toolBarHolder = [[JSEditorToolBar alloc] initWithFrame:rect];

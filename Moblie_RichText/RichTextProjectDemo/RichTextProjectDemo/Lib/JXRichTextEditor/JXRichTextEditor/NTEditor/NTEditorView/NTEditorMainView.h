@@ -21,12 +21,6 @@ typedef enum : NSUInteger {
     NTEditorMainViewEditingLocationCnt,
 } NTEditorMainViewEditingLocation;
 
-@class NTEditorMainView;
-@protocol NTEditorMainViewDelegate <NSObject>
-- (void)ntEditorMainView:(NTEditorMainView *)editor didEndEditingWithCnt:(NSString *)cnt;
-
-@end
-
 @interface NTEditorMainView : UITextView <UITextViewDelegate,UITextFieldDelegate>
 
 @property (nonatomic,weak) id<UITextFieldDelegate,UITextViewDelegate> ntDelegate;

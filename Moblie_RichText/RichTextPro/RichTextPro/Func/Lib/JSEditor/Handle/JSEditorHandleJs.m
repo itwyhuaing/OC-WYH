@@ -65,7 +65,7 @@ void interceptIMP (id self, SEL _cmd, void* arg0, BOOL arg1, BOOL arg2, id arg3)
       reLoadingPath:(NSString *)rPath
          deletePath:(NSString *)dPath
          completion:(evaluateJsCompletion)completion {
-    __weak typeof(self) weakSelf = self;
+    WSelf
     [self prepareInsertEditableWeb:web completion:^(id  _Nonnull info, NSError * _Nonnull error) {
         NSString *js = [NSString stringWithFormat:@"zss_editor.insertImage(\"%@\", \"%@\", \"%@\", \"%@\",\"%@\",\"%@\");", [NSURL fileURLWithPath:iPath].absoluteString, w,h,imgSign,[NSURL fileURLWithPath:lPath].absoluteString,sGap];
         [weakSelf editableWeb:web operatedJs:js completion:^(id  _Nonnull info, NSError * _Nonnull error) {
@@ -84,7 +84,7 @@ void interceptIMP (id self, SEL _cmd, void* arg0, BOOL arg1, BOOL arg2, id arg3)
       reLoadingPath:(NSString *)rPath
          deletePath:(NSString *)dPath
          completion:(evaluateJsCompletion)completion {
-    __weak typeof(self) weakSelf = self;
+    WSelf
     [self prepareInsertEditableWeb:web completion:^(id  _Nonnull info, NSError * _Nonnull error) {
         NSString *js = [NSString stringWithFormat:@"zss_editor.insertImageBase64String(\"%@\", \"%@\", \"%@\", \"%@\",\"%@\",\"%@\");", string, w,h,imgSign,[NSURL fileURLWithPath:lPath].absoluteString,sGap];
         [weakSelf editableWeb:web operatedJs:js completion:^(id  _Nonnull info, NSError * _Nonnull error) {

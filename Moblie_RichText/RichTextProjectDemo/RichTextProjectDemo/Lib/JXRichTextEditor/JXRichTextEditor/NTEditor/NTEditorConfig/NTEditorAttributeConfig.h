@@ -18,9 +18,9 @@ typedef enum : NSUInteger {
     EditorRichTextCapacityTypeImage = 20000,
     EditorRichTextCapacityTypeBold,
     EditorRichTextCapacityTypeItalic,
+    EditorRichTextCapacityTypeStrikethrough,
     EditorRichTextCapacityTypeFont,
     EditorRichTextCapacityTypeAlign,
-    EditorRichTextCapacityTypeStrikethrough,
 } EditorRichTextCapacityType;
 
 

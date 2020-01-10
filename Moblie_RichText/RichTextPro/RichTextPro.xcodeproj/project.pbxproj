@@ -30,7 +30,13 @@
 		2625BA8723AC776300945B2F /* WKEditorWeb.m in Sources */ = {isa = PBXBuildFile; fileRef = 2625BA7323AC776300945B2F /* WKEditorWeb.m */; };
 		2625BA8823AC776300945B2F /* JSEditorToolBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 2625BA7523AC776300945B2F /* JSEditorToolBar.m */; };
 		2625BA8B23AC778C00945B2F /* JSRichTextEditorVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2625BA8923AC778C00945B2F /* JSRichTextEditorVC.m */; };
-		2625BA8E23AC77C300945B2F /* NativeRichTextEditorVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2625BA8D23AC77C300945B2F /* NativeRichTextEditorVC.m */; };
+		2659927923B0C556002A3F93 /* NTEditorToolBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 2659927823B0C556002A3F93 /* NTEditorToolBar.m */; };
+		2659927C23B0C582002A3F93 /* NTEditorBarCommonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2659927B23B0C582002A3F93 /* NTEditorBarCommonCell.m */; };
+		2659927F23B0C5B9002A3F93 /* NTEditorDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2659927E23B0C5B9002A3F93 /* NTEditorDataModel.m */; };
+		2659928223B0C638002A3F93 /* NTEditorTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2659928123B0C638002A3F93 /* NTEditorTitleView.m */; };
+		2659928523B0C655002A3F93 /* NTEditorMainView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2659928423B0C655002A3F93 /* NTEditorMainView.m */; };
+		2659928923B1E8FF002A3F93 /* NTEditController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2659928823B1E8FF002A3F93 /* NTEditController.m */; };
+		2659928C23B1E920002A3F93 /* NTRichTextEditorVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2659928B23B1E920002A3F93 /* NTRichTextEditorVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,8 +78,21 @@
 		2625BA7723AC776300945B2F /* JSEditorBarCommonCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSEditorBarCommonCell.h; sourceTree = "<group>"; };
 		2625BA8923AC778C00945B2F /* JSRichTextEditorVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSRichTextEditorVC.m; sourceTree = "<group>"; };
 		2625BA8A23AC778C00945B2F /* JSRichTextEditorVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSRichTextEditorVC.h; sourceTree = "<group>"; };
-		2625BA8C23AC77C300945B2F /* NativeRichTextEditorVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NativeRichTextEditorVC.h; sourceTree = "<group>"; };
-		2625BA8D23AC77C300945B2F /* NativeRichTextEditorVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NativeRichTextEditorVC.m; sourceTree = "<group>"; };
+		2659927723B0C556002A3F93 /* NTEditorToolBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NTEditorToolBar.h; sourceTree = "<group>"; };
+		2659927823B0C556002A3F93 /* NTEditorToolBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NTEditorToolBar.m; sourceTree = "<group>"; };
+		2659927A23B0C582002A3F93 /* NTEditorBarCommonCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NTEditorBarCommonCell.h; sourceTree = "<group>"; };
+		2659927B23B0C582002A3F93 /* NTEditorBarCommonCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NTEditorBarCommonCell.m; sourceTree = "<group>"; };
+		2659927D23B0C5B9002A3F93 /* NTEditorDataModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NTEditorDataModel.h; sourceTree = "<group>"; };
+		2659927E23B0C5B9002A3F93 /* NTEditorDataModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NTEditorDataModel.m; sourceTree = "<group>"; };
+		2659928023B0C638002A3F93 /* NTEditorTitleView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NTEditorTitleView.h; sourceTree = "<group>"; };
+		2659928123B0C638002A3F93 /* NTEditorTitleView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NTEditorTitleView.m; sourceTree = "<group>"; };
+		2659928323B0C655002A3F93 /* NTEditorMainView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NTEditorMainView.h; sourceTree = "<group>"; };
+		2659928423B0C655002A3F93 /* NTEditorMainView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NTEditorMainView.m; sourceTree = "<group>"; };
+		2659928723B1E8FF002A3F93 /* NTEditController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NTEditController.h; sourceTree = "<group>"; };
+		2659928823B1E8FF002A3F93 /* NTEditController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NTEditController.m; sourceTree = "<group>"; };
+		2659928A23B1E920002A3F93 /* NTRichTextEditorVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NTRichTextEditorVC.h; sourceTree = "<group>"; };
+		2659928B23B1E920002A3F93 /* NTRichTextEditorVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NTRichTextEditorVC.m; sourceTree = "<group>"; };
+		2659928D23B1FA72002A3F93 /* NTEditorConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NTEditorConfig.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,8 +148,8 @@
 		2625BA4B23AC76B200945B2F /* Test */ = {
 			isa = PBXGroup;
 			children = (
-				2625BA8C23AC77C300945B2F /* NativeRichTextEditorVC.h */,
-				2625BA8D23AC77C300945B2F /* NativeRichTextEditorVC.m */,
+				2659928A23B1E920002A3F93 /* NTRichTextEditorVC.h */,
+				2659928B23B1E920002A3F93 /* NTRichTextEditorVC.m */,
 				2625BA8A23AC778C00945B2F /* JSRichTextEditorVC.h */,
 				2625BA8923AC778C00945B2F /* JSRichTextEditorVC.m */,
 			);
@@ -141,6 +160,7 @@
 			isa = PBXGroup;
 			children = (
 				2625BA5723AC776200945B2F /* JSEditor */,
+				2659927423B0C4B4002A3F93 /* NTEditor */,
 			);
 			path = Lib;
 			sourceTree = "<group>";
@@ -192,12 +212,12 @@
 			isa = PBXGroup;
 			children = (
 				2625BA6823AC776300945B2F /* JSEditorConfig.h */,
+				2625BA6423AC776300945B2F /* JSEditorDataModel.h */,
+				2625BA6A23AC776300945B2F /* JSEditorDataModel.m */,
 				2625BA6223AC776300945B2F /* JSEditorPhotosUploader.h */,
 				2625BA6723AC776300945B2F /* JSEditorPhotosUploader.m */,
 				2625BA6623AC776300945B2F /* JSEditorPhotosPicker.h */,
 				2625BA6323AC776300945B2F /* JSEditorPhotosPicker.m */,
-				2625BA6423AC776300945B2F /* JSEditorDataModel.h */,
-				2625BA6A23AC776300945B2F /* JSEditorDataModel.m */,
 				2625BA6523AC776300945B2F /* JSEditorHandleJs.h */,
 				2625BA6923AC776300945B2F /* JSEditorHandleJs.m */,
 			);
@@ -227,6 +247,50 @@
 				2625BA7223AC776300945B2F /* JSEditorBarCommonCell.m */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		2659927423B0C4B4002A3F93 /* NTEditor */ = {
+			isa = PBXGroup;
+			children = (
+				2659928623B0C6A2002A3F93 /* NTEditController */,
+				2659927623B0C535002A3F93 /* Handle */,
+				2659927523B0C535002A3F93 /* View */,
+			);
+			path = NTEditor;
+			sourceTree = "<group>";
+		};
+		2659927523B0C535002A3F93 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2659928023B0C638002A3F93 /* NTEditorTitleView.h */,
+				2659928123B0C638002A3F93 /* NTEditorTitleView.m */,
+				2659928323B0C655002A3F93 /* NTEditorMainView.h */,
+				2659928423B0C655002A3F93 /* NTEditorMainView.m */,
+				2659927723B0C556002A3F93 /* NTEditorToolBar.h */,
+				2659927823B0C556002A3F93 /* NTEditorToolBar.m */,
+				2659927A23B0C582002A3F93 /* NTEditorBarCommonCell.h */,
+				2659927B23B0C582002A3F93 /* NTEditorBarCommonCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		2659927623B0C535002A3F93 /* Handle */ = {
+			isa = PBXGroup;
+			children = (
+				2659928D23B1FA72002A3F93 /* NTEditorConfig.h */,
+				2659927D23B0C5B9002A3F93 /* NTEditorDataModel.h */,
+				2659927E23B0C5B9002A3F93 /* NTEditorDataModel.m */,
+			);
+			path = Handle;
+			sourceTree = "<group>";
+		};
+		2659928623B0C6A2002A3F93 /* NTEditController */ = {
+			isa = PBXGroup;
+			children = (
+				2659928723B1E8FF002A3F93 /* NTEditController.h */,
+				2659928823B1E8FF002A3F93 /* NTEditController.m */,
+			);
+			path = NTEditController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -310,16 +374,22 @@
 				2625BA5623AC76B200945B2F /* TableVC.m in Sources */,
 				2625BA8623AC776300945B2F /* JSEditorBarCommonCell.m in Sources */,
 				2625BA8023AC776300945B2F /* JSEditorHandleJs.m in Sources */,
+				2659928223B0C638002A3F93 /* NTEditorTitleView.m in Sources */,
 				2625BA8523AC776300945B2F /* JSEditorView.m in Sources */,
 				2625BA4423AC762E00945B2F /* main.m in Sources */,
+				2659928C23B1E920002A3F93 /* NTRichTextEditorVC.m in Sources */,
+				2659928523B0C655002A3F93 /* NTEditorMainView.m in Sources */,
 				2625BA7E23AC776300945B2F /* JSEditorPhotosPicker.m in Sources */,
 				2625BA8B23AC778C00945B2F /* JSRichTextEditorVC.m in Sources */,
 				2625BA8823AC776300945B2F /* JSEditorToolBar.m in Sources */,
+				2659927C23B0C582002A3F93 /* NTEditorBarCommonCell.m in Sources */,
 				2625BA8123AC776300945B2F /* JSEditorDataModel.m in Sources */,
+				2659928923B1E8FF002A3F93 /* NTEditController.m in Sources */,
 				2625BA7F23AC776300945B2F /* JSEditorPhotosUploader.m in Sources */,
 				2625BA8723AC776300945B2F /* WKEditorWeb.m in Sources */,
 				2625BA5523AC76B200945B2F /* AppDelegate.m in Sources */,
-				2625BA8E23AC77C300945B2F /* NativeRichTextEditorVC.m in Sources */,
+				2659927923B0C556002A3F93 /* NTEditorToolBar.m in Sources */,
+				2659927F23B0C5B9002A3F93 /* NTEditorDataModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -460,13 +530,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = JA7UMD99EC;
 				INFOPLIST_FILE = RichTextPro/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.hinabian.rain.RichTextPro;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hinabian.rain;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -477,13 +548,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = JA7UMD99EC;
 				INFOPLIST_FILE = RichTextPro/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.hinabian.rain.RichTextPro;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hinabian.rain;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
 			};

@@ -112,7 +112,7 @@
 
 #pragma mark ------ publick
 
-- (void)updateBarWithDidSelectedIndex:(NSInteger)index{
+- (void)updateBarWithDidSelectedIndex:(NSInteger)index {
     
     //NSLog(@" \n 点击Bar修改前:%@\n",self.items);
     NSString *didSelectedCnt = self.items[index];
@@ -156,6 +156,7 @@
     if (cnts) {
         [self.items removeAllObjects];
         [self.items addObjectsFromArray:cnts];
+        [self.collectV reloadData];
     }
 }
 

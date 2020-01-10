@@ -25,7 +25,7 @@
 }
 
 -(void)uploadImageForEditor:(WKWebView *)web model:(PhotoModel *)model completion:(PhonesUploadCompletion)completion {
-    __weak typeof(self)weakSelf = self;
+    WSelf
     [self.handlerJs editableWeb:web insertImgBase64Str:model.editedImgBase64Str
                                                  width:[NSString stringWithFormat:@"%f",model.compatibleSize.width]
                                                 height:[NSString stringWithFormat:@"%f",model.compatibleSize.height]

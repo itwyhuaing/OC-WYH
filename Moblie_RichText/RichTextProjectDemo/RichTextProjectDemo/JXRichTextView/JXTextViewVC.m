@@ -140,7 +140,7 @@
 
 #pragma mark - EditorToolBarDelegate
 
--(void)editorToolBar:(EditorToolBar *)bar didSelectItemAtIndexPath:(NSInteger)index{
+-(void)editorToolBar:(EditorToolBar *)bar didSelectItemAtIndexPath:(NSInteger)index {
     NSLog(@"\n \n %s : %ld \n \n",__FUNCTION__,index);
     [self.editorAttributeConfig updateAttributesForEditor:self.jxtv didSelectedIndex:index];
     

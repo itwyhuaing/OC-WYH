@@ -31,7 +31,7 @@
 
 #pragma mark ------ 功能实现
 
-- (void)imageFunction{
+- (void)imageFunction {
     oldTypesDic = self.editor.typingAttributes;
     UIAlertController *alrtVC   = [[UIAlertController alloc] init];
     __weak typeof(self)weakSelf = self;

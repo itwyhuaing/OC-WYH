@@ -110,7 +110,7 @@
 
 
 - (void)pickPhotos {
-    __weak typeof(self) weakSelf = self;
+    WSelf
     UIAlertController *alertVC = [UIAlertController alertControllerWithTitle:@"照片来源" message:@"请做出选择" preferredStyle:UIAlertControllerStyleActionSheet];
     UIAlertAction     *action1 = [UIAlertAction actionWithTitle:@"相机" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         [weakSelf takePhotoes];

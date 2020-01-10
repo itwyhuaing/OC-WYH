@@ -25,7 +25,7 @@
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
     NSArray *tmpds  = @[@"富文本编辑:\nUITextView 方式实现",
                         @"富文本编辑:\nWKWebView方式实现",];
-    NSArray *tmpvcs = @[@"JXTextViewVC",
+    NSArray *tmpvcs = @[@"NTRichTextEditorVC",
                         @"JSRichTextEditorVC"];
     _vcs        = [[NSMutableArray alloc] initWithArray:tmpvcs];
     _dataSource = [[NSMutableArray alloc] initWithArray:tmpds];

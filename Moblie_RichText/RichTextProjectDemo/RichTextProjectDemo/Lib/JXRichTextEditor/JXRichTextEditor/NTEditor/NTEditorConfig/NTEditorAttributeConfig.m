@@ -43,28 +43,28 @@
         {
             test = @"EditorRichTextCapacityTypeBold";
             _boldAble = !_boldAble;
-            _boldAble ? typeingAttributes[NSFontAttributeName] = [UIFont systemFontOfSize:32.0 weight:UIFontWeightBold] : nil;
+            typeingAttributes[NSFontAttributeName] = (_boldAble ? [UIFont systemFontOfSize:32.0 weight:UIFontWeightBold] : [UIFont systemFontOfSize:32.0 weight:UIFontWeightRegular]);
         }
             break;
         case EditorRichTextCapacityTypeItalic:
         {
             test = @"EditorRichTextCapacityTypeItalic";
             _italicAble = !_italicAble;
-            _italicAble ? typeingAttributes[NSObliquenessAttributeName] = @(0.3) : nil;
+            typeingAttributes[NSObliquenessAttributeName] = (_italicAble ? @(0.3) : @(0));
         }
             break;
         case EditorRichTextCapacityTypeStrikethrough:
         {
             test = @"EditorRichTextCapacityTypeStrikethrough";
             _strikeThroughAble = !_strikeThroughAble;
-            _strikeThroughAble ? typeingAttributes[NSStrikethroughStyleAttributeName] = @(NSUnderlineStyleSingle) : nil;
+            typeingAttributes[NSStrikethroughStyleAttributeName] = (_strikeThroughAble ? @(NSUnderlineStyleSingle) : @(NSUnderlineStyleNone));
         }
             break;
         case EditorRichTextCapacityTypeFont:
         {
             test = @"EditorRichTextCapacityTypeFont";
             _fontAble = !_fontAble;
-            _fontAble ? typeingAttributes[NSFontAttributeName] = [UIFont systemFontOfSize:32.0] : nil;
+            typeingAttributes[NSFontAttributeName] = _fontAble ? [UIFont systemFontOfSize:32.0] : [UIFont systemFontOfSize:16.0];
         }
             break;
             
@@ -72,9 +72,6 @@
             break;
     }
     editor.typingAttributes = typeingAttributes;
-    
-    NSLog(@" \n capacity:\n%@\n\n ",test);
-    
 }
 
 @end
