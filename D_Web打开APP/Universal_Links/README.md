@@ -12,6 +12,8 @@
 
 ### 参考
 
+* [iOS9 Universal Links踩坑之旅，移动应用之deeplink唤醒app](https://www.jianshu.com/p/77b530f0c67b)
+
 * [Universe Link 接入](https://blog.csdn.net/xxywxlyygx/article/details/77992750)
 
 * [iOS H5打开App(通用链接)](https://www.jianshu.com/p/0ead88409212)
