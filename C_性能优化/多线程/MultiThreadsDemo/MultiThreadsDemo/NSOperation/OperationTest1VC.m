@@ -22,16 +22,17 @@
      [self func_block];
      NSLog(@"\n \n \n \n \n \n");
     // selector 操作
-     [self func_selector];
+     //[self func_selector];
      NSLog(@"\n \n \n \n \n \n");
     // block 操作,额外添加操作
-     [self func_execution];
+     //[self func_execution];
 }
 
 #pragma mark ------ NSBlockOperation：block 方式封装操作
 
 //NSBlockOperation
 - (void)func_block {
+    
     __weak typeof(self) weakSelf = self;
     NSOperationQueue *queue = [NSOperationQueue mainQueue];//[[NSOperationQueue alloc] init];
     NSBlockOperation *operation1 = [NSBlockOperation blockOperationWithBlock:^{
@@ -45,10 +46,11 @@
     [operation2 addDependency:operation1];
 
     // addOperation 该操作不仅添加操作、也将各自之间的关系添加进来
-//    [queue addOperation:operation1];
-//    [queue addOperation:operation2];
+    [queue addOperation:operation1];
+    [queue addOperation:operation2];
     
-    [operation1 start];
+    //[operation1 start];
+    
 }
 
 - (void)close0 {

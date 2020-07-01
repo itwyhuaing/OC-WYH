@@ -54,7 +54,11 @@
 -(NSMutableArray *)listData{
     if (!_listData) {
         _listData = [NSMutableArray new];
-        [_listData addObjectsFromArray:@[@"UI 测试",@"支付宝应用分类",@"常规瀑布流布局",@"环形布局",@"线性布局 - 动画"]];
+        [_listData addObjectsFromArray:@[
+                                         @"UI 测试",@"支付宝应用分类",
+                                         @"常规瀑布流布局",@"环形布局",
+                                         @"线性布局 - 动画",@"应用测试 0"
+                                        ]];
     }
     return _listData;
 }
@@ -62,7 +66,11 @@
 -(NSMutableArray *)vcs{
     if (!_vcs) {
         _vcs = [NSMutableArray new];
-        [_vcs addObjectsFromArray:@[@"UITestVC",@"FirstVC",@"SecondVC",@"CirCleLayoutVC",@"LineLayoutVC"]];
+        [_vcs addObjectsFromArray:@[
+                                    @"UITestVC",@"FirstVC",
+                                    @"SecondVC",@"CirCleLayoutVC",
+                                    @"LineLayoutVC",@"A0Controller"
+                                    ]];
     }
     return _vcs;
 }

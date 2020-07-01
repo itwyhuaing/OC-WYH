@@ -27,6 +27,9 @@
 		26BA238D215F2B6F00DD8A32 /* SecondVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 26BA238C215F2B6F00DD8A32 /* SecondVC.m */; };
 		26BA2390215F2C0300DD8A32 /* WaterFlowModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 26BA238F215F2C0300DD8A32 /* WaterFlowModel.m */; };
 		26BA2393215F2C7700DD8A32 /* WaterFlowItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 26BA2392215F2C7700DD8A32 /* WaterFlowItem.m */; };
+		26BB77ED24A3320A00AAA47A /* A0Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = 26BB77EC24A3320A00AAA47A /* A0Controller.m */; };
+		26BB77F024A3326A00AAA47A /* A0ClvCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 26BB77EF24A3326A00AAA47A /* A0ClvCell.m */; };
+		26BB77F324A3335200AAA47A /* A0ClvLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 26BB77F224A3335200AAA47A /* A0ClvLayout.m */; };
 		26F1898521958D7700B7D7BF /* UIView+SDAutoLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 26F1898021958D7700B7D7BF /* UIView+SDAutoLayout.m */; };
 		26F1898621958D7700B7D7BF /* UITableView+SDAutoTableViewCellHeight.m in Sources */ = {isa = PBXBuildFile; fileRef = 26F1898321958D7700B7D7BF /* UITableView+SDAutoTableViewCellHeight.m */; };
 /* End PBXBuildFile section */
@@ -77,6 +80,12 @@
 		26BA238F215F2C0300DD8A32 /* WaterFlowModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WaterFlowModel.m; sourceTree = "<group>"; };
 		26BA2391215F2C7700DD8A32 /* WaterFlowItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WaterFlowItem.h; sourceTree = "<group>"; };
 		26BA2392215F2C7700DD8A32 /* WaterFlowItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WaterFlowItem.m; sourceTree = "<group>"; };
+		26BB77EB24A3320A00AAA47A /* A0Controller.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = A0Controller.h; sourceTree = "<group>"; };
+		26BB77EC24A3320A00AAA47A /* A0Controller.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = A0Controller.m; sourceTree = "<group>"; };
+		26BB77EE24A3326A00AAA47A /* A0ClvCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = A0ClvCell.h; sourceTree = "<group>"; };
+		26BB77EF24A3326A00AAA47A /* A0ClvCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = A0ClvCell.m; sourceTree = "<group>"; };
+		26BB77F124A3335200AAA47A /* A0ClvLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = A0ClvLayout.h; sourceTree = "<group>"; };
+		26BB77F224A3335200AAA47A /* A0ClvLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = A0ClvLayout.m; sourceTree = "<group>"; };
 		26F1898021958D7700B7D7BF /* UIView+SDAutoLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+SDAutoLayout.m"; sourceTree = "<group>"; };
 		26F1898121958D7700B7D7BF /* UITableView+SDAutoTableViewCellHeight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+SDAutoTableViewCellHeight.h"; sourceTree = "<group>"; };
 		26F1898221958D7700B7D7BF /* SDAutoLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDAutoLayout.h; sourceTree = "<group>"; };
@@ -167,7 +176,6 @@
 			isa = PBXGroup;
 			children = (
 				26AD6F6C216CBD2A00D01DA2 /* Controller */,
-				26AD6F6D216CBD2A00D01DA2 /* Model */,
 				26AD6F6E216CBD2A00D01DA2 /* View */,
 			);
 			path = LineLayout;
@@ -180,13 +188,6 @@
 				26AD6F76216CBE1D00D01DA2 /* LineLayoutVC.m */,
 			);
 			path = Controller;
-			sourceTree = "<group>";
-		};
-		26AD6F6D216CBD2A00D01DA2 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		26AD6F6E216CBD2A00D01DA2 /* View */ = {
@@ -247,6 +248,7 @@
 		26BA2356215DC79A00DD8A32 /* Func */ = {
 			isa = PBXGroup;
 			children = (
+				26BB77E924A3313900AAA47A /* Apply */,
 				26AD6F7B216DD8BB00D01DA2 /* Notes */,
 				26AD6F6B216CBD2A00D01DA2 /* LineLayout */,
 				26AD6F64216CBA8200D01DA2 /* CirCleLayout */,
@@ -355,6 +357,27 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		26BB77E924A3313900AAA47A /* Apply */ = {
+			isa = PBXGroup;
+			children = (
+				26BB77EA24A3313900AAA47A /* A0 */,
+			);
+			path = Apply;
+			sourceTree = "<group>";
+		};
+		26BB77EA24A3313900AAA47A /* A0 */ = {
+			isa = PBXGroup;
+			children = (
+				26BB77EB24A3320A00AAA47A /* A0Controller.h */,
+				26BB77EC24A3320A00AAA47A /* A0Controller.m */,
+				26BB77EE24A3326A00AAA47A /* A0ClvCell.h */,
+				26BB77EF24A3326A00AAA47A /* A0ClvCell.m */,
+				26BB77F124A3335200AAA47A /* A0ClvLayout.h */,
+				26BB77F224A3335200AAA47A /* A0ClvLayout.m */,
+			);
+			path = A0;
+			sourceTree = "<group>";
+		};
 		26F1897E21958D7700B7D7BF /* ThirdLib */ = {
 			isa = PBXGroup;
 			children = (
@@ -445,10 +468,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				26BB77F324A3335200AAA47A /* A0ClvLayout.m in Sources */,
 				26BA236A215DCE2900DD8A32 /* FirstVC.m in Sources */,
 				26BA2363215DC82000DD8A32 /* TableVC.m in Sources */,
+				26BB77ED24A3320A00AAA47A /* A0Controller.m in Sources */,
 				26AD6F63216C807E00D01DA2 /* UITestVC.m in Sources */,
 				26BA2390215F2C0300DD8A32 /* WaterFlowModel.m in Sources */,
+				26BB77F024A3326A00AAA47A /* A0ClvCell.m in Sources */,
 				26AD6F7A216DA84000D01DA2 /* JXCollectionViewCell.m in Sources */,
 				26AD6F77216CBE1D00D01DA2 /* LineLayoutVC.m in Sources */,
 				26F1898621958D7700B7D7BF /* UITableView+SDAutoTableViewCellHeight.m in Sources */,

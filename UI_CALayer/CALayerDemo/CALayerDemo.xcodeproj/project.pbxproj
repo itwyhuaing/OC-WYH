@@ -12,6 +12,7 @@
 		264920152147DA670010348A /* YHChartLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 2649200B2147DA670010348A /* YHChartLine.m */; };
 		264920172147DA670010348A /* YHChartPie.m in Sources */ = {isa = PBXBuildFile; fileRef = 2649200F2147DA670010348A /* YHChartPie.m */; };
 		264920182147DA670010348A /* YHChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 264920132147DA670010348A /* YHChart.m */; };
+		2653211C24A2FDEC00A452CE /* LayerPathController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2653211B24A2FDEB00A452CE /* LayerPathController.m */; };
 		265C2E78202C1D470073F244 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 265C2E76202C1D470073F244 /* Main.storyboard */; };
 		265C2E7A202C1D470073F244 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 265C2E79202C1D470073F244 /* Assets.xcassets */; };
 		265C2E7D202C1D470073F244 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 265C2E7B202C1D470073F244 /* LaunchScreen.storyboard */; };
@@ -59,6 +60,8 @@
 		2649200F2147DA670010348A /* YHChartPie.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YHChartPie.m; sourceTree = "<group>"; };
 		264920122147DA670010348A /* YHChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YHChart.h; sourceTree = "<group>"; };
 		264920132147DA670010348A /* YHChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YHChart.m; sourceTree = "<group>"; };
+		2653211A24A2FDEB00A452CE /* LayerPathController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LayerPathController.h; sourceTree = "<group>"; };
+		2653211B24A2FDEB00A452CE /* LayerPathController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LayerPathController.m; sourceTree = "<group>"; };
 		265C2E6D202C1D460073F244 /* CALayerDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CALayerDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		265C2E77202C1D470073F244 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		265C2E79202C1D470073F244 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -125,6 +128,8 @@
 			children = (
 				26229483205BA513002057F3 /* LayerPathVC.h */,
 				26229482205BA513002057F3 /* LayerPathVC.m */,
+				2653211A24A2FDEB00A452CE /* LayerPathController.h */,
+				2653211B24A2FDEB00A452CE /* LayerPathController.m */,
 			);
 			path = Apply;
 			sourceTree = "<group>";
@@ -423,6 +428,7 @@
 				265C2EDF202D7BD30073F244 /* CAFirstVC.m in Sources */,
 				265C2ECF202D79C60073F244 /* FirstVC.m in Sources */,
 				264920172147DA670010348A /* YHChartPie.m in Sources */,
+				2653211C24A2FDEC00A452CE /* LayerPathController.m in Sources */,
 				265C2EA8202C21640073F244 /* ViewController.m in Sources */,
 				265C2EAC202C217B0073F244 /* TableVC.m in Sources */,
 				264920152147DA670010348A /* YHChartLine.m in Sources */,
