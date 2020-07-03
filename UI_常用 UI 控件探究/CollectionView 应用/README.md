@@ -125,11 +125,15 @@ collectionView 上面子视图的相关设置都是由强大的 UICollectionView
 
 ### 应用 - 线性缩放、指定位置、“无限”数据展示
 
+** 原理 **
+
 ![image](https://github.com/itwyhuaing/OC-WYH/blob/master/UI_常用%20UI%20控件探究/CollectionView%20应用/images/指定位置与缩放原理.png)
 
 
 ![image](https://github.com/itwyhuaing/OC-WYH/blob/master/UI_常用%20UI%20控件探究/CollectionView%20应用/images/有限数据无限展示原理.png)
 
+
+** “无限”数据展示核心代码 **
 
 ![image](https://github.com/itwyhuaing/OC-WYH/blob/master/UI_常用%20UI%20控件探究/CollectionView%20应用/images/循环数据_code1.png)
 
