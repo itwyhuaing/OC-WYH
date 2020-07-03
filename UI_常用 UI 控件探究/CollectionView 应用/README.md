@@ -122,6 +122,25 @@ collectionView 上面子视图的相关设置都是由强大的 UICollectionView
 - (CGPoint)targetContentOffsetForProposedContentOffset:(CGPoint)proposedContentOffset withScrollingVelocity:(CGPoint)velocity; // return a point at which to rest after scrolling - for layouts that want snap-to-point scrolling behavior
 ```
 
+
+### 应用 - 线性缩放、指定位置、“无限”数据展示
+
+![image](https://github.com/itwyhuaing/OC-WYH/blob/master/UI_常用%20UI%20控件探究/CollectionView%20应用/images/指定位置与缩放原理.png)
+
+
+![image](https://github.com/itwyhuaing/OC-WYH/blob/master/UI_常用%20UI%20控件探究/CollectionView%20应用/images/有限数据无限展示原理.png)
+
+
+![image](https://github.com/itwyhuaing/OC-WYH/blob/master/UI_常用%20UI%20控件探究/CollectionView%20应用/images/循环数据_code1.png)
+
+
+![image](https://github.com/itwyhuaing/OC-WYH/blob/master/UI_常用%20UI%20控件探究/CollectionView%20应用/images/循环数据_code2.png)
+
+
+![image](https://github.com/itwyhuaing/OC-WYH/blob/master/UI_常用%20UI%20控件探究/CollectionView%20应用/images/循环数据_code3.png)
+
+
+
 ### 参考
 
 * [UICollectionViewLayout —— layout 实现圆形布局](https://www.jianshu.com/p/c13ef47c55ff)
