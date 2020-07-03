@@ -116,7 +116,7 @@ collectionView 上面子视图的相关设置都是由强大的 UICollectionView
 - (nullable UICollectionViewLayoutAttributes *)layoutAttributesForDecorationViewOfKind:(NSString*)elementKind atIndexPath:(NSIndexPath *)indexPath;
 ```
 
-6. 当 collectionView 将停止滚动的时候调用，可以重写来实现，collectionView 停在指定的位置 。
+6. 当 collectionView 将停止滚动的时候调用，可以重写来实现，collectionView 停在指定的位置 ;该函数返回滚动停止后的 collectionView.contentOffset ，可设置 item 停留位置。
 
 ```
 - (CGPoint)targetContentOffsetForProposedContentOffset:(CGPoint)proposedContentOffset withScrollingVelocity:(CGPoint)velocity; // return a point at which to rest after scrolling - for layouts that want snap-to-point scrolling behavior

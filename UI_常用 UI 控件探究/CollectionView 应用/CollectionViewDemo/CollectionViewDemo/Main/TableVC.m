@@ -57,7 +57,7 @@
         [_listData addObjectsFromArray:@[
                                          @"UI 测试",@"支付宝应用分类",
                                          @"常规瀑布流布局",@"环形布局",
-                                         @"线性布局 - 动画",@"应用测试 0"
+                                         @"线性:指定滑动位置、缩放动画（FlowLayout）",@"线性:指定滑动位置、缩放动画（Layout）"
                                         ]];
     }
     return _listData;
