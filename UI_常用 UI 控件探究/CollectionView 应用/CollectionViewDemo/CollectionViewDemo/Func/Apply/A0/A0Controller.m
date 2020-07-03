@@ -16,6 +16,9 @@
 
 @property (nonatomic,strong) UICollectionView   *clv;
 
+// 基本数据源
+@property (nonatomic,strong) NSMutableArray *orginalData;
+// 重新设计的数据源 ： 三个基本数据源
 @property (nonatomic,strong) NSMutableArray *dataSource;
 
 @end
@@ -34,15 +37,6 @@
 -(A0ClvLayout *)layout {
     if (!_layout) {
         _layout = [[A0ClvLayout alloc] init];
-        __weak typeof(self) weakSelf = self;
-        _layout.signal = ^(NSInteger location) {
-            NSLog(@" \n\n 测试信号 - 1\n\n ");
-//            if (location == self.dataSource.count - 1) { // 即将最后一个
-//                [weakSelf scrollToAppointedLocation:1];
-//            }else if (location == 0) { // 即将第一个
-//                [weakSelf scrollToAppointedLocation:self.dataSource.count - 2];
-//            }
-        };
     }
     return _layout;
 }
@@ -60,6 +54,13 @@
     return _clv;
 }
 
+-(NSMutableArray *)orginalData {
+    if (!_orginalData) {
+        _orginalData = [[NSMutableArray alloc] initWithArray:@[@"0",@"1",@"2",@"3",@"4",@"5",@"6",@"7",@"8"]];
+    }
+    return _orginalData;
+}
+
 -(NSMutableArray *)dataSource {
     if (!_dataSource) {
         _dataSource = [[NSMutableArray alloc] init];
@@ -68,15 +69,15 @@
 }
 
 - (void)handleDataWithLocation:(NSInteger)location {
-    NSInteger count = 10;
-    NSArray *tmp = @[@"0",@"1",@"2",@"3",@"4",
-                     @"5",@"6",@"7",@"8"];
+    NSInteger count = 3;
     [self.dataSource removeAllObjects];
     for (NSInteger cou = 0; cou < count; cou ++) {
-        [self.dataSource addObjectsFromArray:tmp];
+        [self.dataSource addObjectsFromArray:self.orginalData];
     }
     [self.clv reloadData];
-    [self scrollToAppointedLocation:count/2 * tmp.count + location];
+    NSInteger step = count/2 * self.orginalData.count;
+    NSLog(@"\n\n 实际指定位置 ：%ld - %ld \n\n",step,location);
+    [self scrollToAppointedLocation:step + location];
 }
 
 
@@ -110,19 +111,19 @@
 }
 
 -(void)scrollViewWillEndDragging:(UIScrollView *)scrollView withVelocity:(CGPoint)velocity targetContentOffset:(inout CGPoint *)targetContentOffset {
-    NSLog(@"\n 测试位置 2 : %ld \n",self.layout.location); // 1
+    //NSLog(@"\n 测试位置 2 : %ld \n",self.layout.location); // 1
 }
 
 -(void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {
-    NSLog(@"\n 测试位置 3 : %ld \n",self.layout.location); // 1
+    //NSLog(@"\n 测试位置 3 : %ld \n",self.layout.location); // 1
 }
 
 -(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
-    NSLog(@"\n 测试位置 4 : %ld \n",self.layout.location); // 1
+    //NSLog(@"\n 测试位置 4 : %ld \n",self.layout.location); // 1
     if (self.layout.location == self.dataSource.count - 1) { // 即将最后一个
-        [self handleDataWithLocation:self.layout.location];
+        [self handleDataWithLocation:self.orginalData.count-1];
     }else if (self.layout.location == 0) { // 即将第一个
-        [self handleDataWithLocation:self.layout.location];
+        [self handleDataWithLocation:0];
     }
 
 }

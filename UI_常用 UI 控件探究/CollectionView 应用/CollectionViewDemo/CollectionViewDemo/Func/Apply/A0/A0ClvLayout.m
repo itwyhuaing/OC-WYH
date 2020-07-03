@@ -120,11 +120,6 @@
             _location = cou;
         }
     }
-    
-    
-    if (self.signal) {
-        self.signal(_location);
-    }
     return rlt;
 }
 

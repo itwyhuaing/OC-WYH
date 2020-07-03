@@ -10,12 +10,9 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-typedef void(^OperateSignalBlock)(NSInteger location);
 @interface A0ClvLayout : UICollectionViewLayout
 
 @property (nonatomic,assign,readonly) NSInteger location;
-
-@property (nonatomic,copy) OperateSignalBlock signal;
 
 @end
 
