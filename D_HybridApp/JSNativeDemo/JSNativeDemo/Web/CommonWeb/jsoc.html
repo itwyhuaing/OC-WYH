@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html>
+
+  <head>
+
+    <meta name="viewport" charset="utf-8" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <link rel="stylesheet" type="text/css" href="jsoc.css">
+    <script type="text/javascript" src="./jsoc.js">
+    </script>
+
+  </head>
+
+  <body>
+    <div class="ex_content" id="ex_content">
+      <div class="fucntionSetionCL">
+        <div> 紫色背景为 web 页面，Web 事件调起原生方法，归结到底无非的有两种：<br />
+            1> 拦截 URL <br />
+            2> 利用 WKScriptMessageHandler 。而且这两种方式均可实现 JS 向 Native 传参问题。 两种方式的示例如下 ：</div>
+        <button class="funcBtnCL" type="button" name="JSOC1" onclick="JSOC1()"> JS调用Native： 拦截 URL 方式</button>
+        <button class="funcBtnCL" type="button" name="JSOC2" onclick="JSOC2()"> JS调用Native： WKScriptMessageHandler 协议方式</button>
+        <button class="funcBtnCL" type="button" name="JSOC3" onclick="JSOC3()"> Native 对于 JS-Alert 弹框的转化 </button>
+        <button class="funcBtnCL" type="button" name="JSOC4" onclick="openOtherAPP()"> JS 点击打开另一个 app 或者跳转下载页 </button>
+      </div>
+      
+      <div class="NativeJSFunctionCL">
+          <div id="desCL"> 点击Native按钮,JS 修改 web : <text id="nativeJSTestID">待测试的文本数据</text></div>
+      </div>
+    </div>
+  </body>
+
+</html>

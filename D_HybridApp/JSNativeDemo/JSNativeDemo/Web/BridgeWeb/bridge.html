@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" charset="utf-8" content="width=device-width, initial-scale=0.6, maximum-scale=1.0, user-scalable=no" />
+    <script type="text/javascript">
+        /** 必须添加代码*/
+        function setupWebViewJavascriptBridge(callback) {
+             if (window.WebViewJavascriptBridge) { return callback(WebViewJavascriptBridge); }
+             if (window.WVJBCallbacks) { return window.WVJBCallbacks.push(callback); }
+             window.WVJBCallbacks = [callback];
+             var WVJBIframe = document.createElement('iframe');
+             WVJBIframe.style.display = 'none';
+             WVJBIframe.src = 'wvjbscheme://__BRIDGE_LOADED__';
+             document.documentElement.appendChild(WVJBIframe);
+             setTimeout(function() { document.documentElement.removeChild(WVJBIframe) }, 0)
+         }
+    
+         setupWebViewJavascriptBridge(function(bridge) {
+            /** 原生调js*/
+            bridge.registerHandler('getSomeInfo', function(data, responseCallback) {
+                alert('收到原生调用：获取分享信息');
+                var ShareInfo = {
+                title:"title",
+                subTitle:"subTitle",
+                };
+                var jsonString = JSON.stringify(ShareInfo);
+                responseCallback(jsonString);
+            })
+            
+            // 待验证g函数
+            bridge.callHandler('testFunc', {'uid':'1'}, function responseCallback(responseData) {
+                alert('收到原生回调：获取用户信息\n' + responseData);
+            })
+                                      
+         })
+         
+
+         
+         function locationClick() {
+             WebViewJavascriptBridge.callHandler('locationClick',null,function(response) {
+                                                 alert(response);
+                                                 document.getElementById("returnValue").value = response;
+                                                 });
+         }
+
+        function goBack() {
+            WebViewJavascriptBridge.callHandler('goback');
+        }
+    
+    </script>
+    <title>WebViewJavascriptBridge测试</title>
+  </head>
+  <body>
+    <div class="contentid">
+      <br> web 调用 原生 <br>
+      <button type="button" name="eventButton" id="locationbtn" onclick="locationClick()"> 获取位置信息 </button>
+      <br>
+      <br>
+      <button type="button" name="eventButton" id="gobackbtn" onclick="goBack()"> 返回 </button>
+      <br>
+      <h1>这是回调结果展示区</h1>
+      <textarea id ="returnValue" type="value" rows="5" cols="50">
+          
+      </textarea>
+    </div>
+  </body>
+</html>

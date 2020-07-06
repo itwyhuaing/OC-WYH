@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html>
+
+  <head>
+
+    <meta name="viewport" charset="utf-8" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <script type="text/javascript">
+        function JSOC(){
+            console.log("HTML 打印测试数据");
+            window.webkit.messageHandlers.test.postMessage({title:'测试title',content:'测试content',url:'测试url',rain:'测试zhe'});
+        }
+    </script>
+
+  </head>
+
+  <body>
+    <div class="ex_content" id="ex_content">
+      <div class="fucntionSetionCL">
+          
+        <button type="button" onclick="JSOC()"> 点击打印 </button>
+        
+      </div>
+    </div>
+  </body>
+
+</html>
