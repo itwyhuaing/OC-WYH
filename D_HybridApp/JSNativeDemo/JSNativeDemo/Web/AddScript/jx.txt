@@ -1,0 +1,9 @@
+var JXObj = new Object();
+JXObj.camera = new Object();
+JXObj.camera.getPhoto = function(a,b) {
+    try{
+        window.webkit.messageHandlers.showCamera.postMessage()
+    }catch(e){
+        alert(e)
+    }
+}

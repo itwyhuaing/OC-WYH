@@ -27,9 +27,9 @@
                 responseCallback(jsonString);
             })
             
-            // 待验证g函数
-            bridge.callHandler('testFunc', {'uid':'1'}, function responseCallback(responseData) {
-                alert('收到原生回调：获取用户信息\n' + responseData);
+            // 待验证函数
+            bridge.registerHandler('testFunc', function(data, responseCallback) {
+                alert(' 收到原生回调：获取用户信息 ');
             })
                                       
          })
@@ -44,7 +44,8 @@
          }
 
         function goBack() {
-            WebViewJavascriptBridge.callHandler('goback');
+            //WebViewJavascriptBridge.callHandler('goback',"Test Data");
+            WebViewJavascriptBridge.callHandler('goback',{"k1":"v1","k2":"v2"});
         }
     
     </script>
@@ -52,16 +53,19 @@
   </head>
   <body>
     <div class="contentid">
+      
       <br> web 调用 原生 <br>
-      <button type="button" name="eventButton" id="locationbtn" onclick="locationClick()"> 获取位置信息 </button>
+        <button type="button" name="eventButton" id="locationbtn" onclick="locationClick()"> 获取位置信息 </button>
       <br>
+      
       <br>
-      <button type="button" name="eventButton" id="gobackbtn" onclick="goBack()"> 返回 </button>
+        <button type="button" name="eventButton" id="gobackbtn" onclick="goBack()"> 返回 </button>
       <br>
+      
       <h1>这是回调结果展示区</h1>
-      <textarea id ="returnValue" type="value" rows="5" cols="50">
-          
-      </textarea>
+      
+      <textarea id ="returnValue" type="value" rows="5" cols="50"></textarea>
+      
     </div>
   </body>
 </html>

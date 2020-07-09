@@ -1,0 +1,5 @@
+console.log = (function(originFunc){
+    return function(info) {
+        window.webkit.messageHandlers.log.postMessage(info);
+    }
+})(console.log)

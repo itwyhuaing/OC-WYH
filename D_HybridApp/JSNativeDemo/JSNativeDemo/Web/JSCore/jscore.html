@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" charset="utf-8" content="width=device-width, initial-scale=0.6, maximum-scale=1.0, user-scalable=no" />
+	<title> JavaScriptCore </title>
+    <script type="text/javascript">
+    	 function locationEvent(info) {
+             getLocation();
+    	}
+    </script>
+</head>
+<body>
+
+	<br>
+	<div style="background-color: red"> WKWebView 无法捕获到 JSContext ,但 webkit 提供了更为便利的方式 MessageHandler 处理信息交互 </div>
+    
+    <br>
+    <br>
+		<button type="button" id="location_id" onclick="locationEvent()" > 位置信息 </button>
+	<br>
+    <br>
+
+    
+</body>
+</html>

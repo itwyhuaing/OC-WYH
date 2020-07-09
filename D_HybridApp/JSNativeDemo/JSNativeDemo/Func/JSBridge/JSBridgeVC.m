@@ -26,7 +26,7 @@
     
     // Web + Bridge
     self.webViewBridge = [WKWebViewJavascriptBridge bridgeForWebView:self.wkweb];
-    [self.webViewBridge setWebViewDelegate:self];
+    //[self.webViewBridge setWebViewDelegate:self];
     NSString *budlePath = [[NSBundle mainBundle] pathForResource:@"bridge.html" ofType:nil];
     [self.wkweb loadRequest:[NSURLRequest requestWithURL:[NSURL fileURLWithPath:budlePath]]];
  
@@ -42,7 +42,7 @@
     rect.origin = CGPointMake((self.view.bounds.size.width - rect.size.width) / 2.0,
                               CGRectGetMaxY(btn1.frame) + 15.0);
     UIButton *btn2 = [self createButtonWithTitle:@"点击Btn调起JS方法 Alert" rect:rect];
-    [btn1 addTarget:self action:@selector(clickEventBtn:) forControlEvents:UIControlEventTouchUpInside];
+    [btn2 addTarget:self action:@selector(clickEventBtn:) forControlEvents:UIControlEventTouchUpInside];
     btn1.tag = 100;
     btn2.tag = 200;
     [self.view addSubview:btn1];
@@ -64,6 +64,18 @@
 
 -(void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation {
     NSLog(@"\n === Finish === \n");
+}
+
+
+- (void)webView:(WKWebView *)webView runJavaScriptAlertPanelWithMessage:(NSString *)message initiatedByFrame:(WKFrameInfo *)frame completionHandler:(void (^)(void))completionHandler {
+    UIAlertController *controller = [UIAlertController alertControllerWithTitle:nil message:message preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *doneAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        completionHandler();
+    }];
+    [controller addAction:doneAction];
+    if (self) {
+        [self presentViewController:controller animated:YES completion:nil];
+    }
 }
 
 #pragma mark --- event 

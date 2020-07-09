@@ -20,12 +20,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.dataSource = [[NSMutableArray alloc] initWithArray:@[@"log 日志调试",@"JavaScriptCore ",
-                                                              @"WebViewJavascriptBridge + WKWebView",@"MessageHandler - WK 特有",
-                                                              @"WKDemo 效果"]];
-    self.vcs = [[NSMutableArray alloc] initWithArray:@[@"ConsoleLogVC",@"JSCoreVC",
-                                                       @"JSBridgeVC",@"MsgHandlerVC",
-                                                       @"WKWebVC"]];
+    self.dataSource = [[NSMutableArray alloc] initWithArray:@[@"log 日志调试",@"注入 js",
+                                                              @"JavaScriptCore  - WKWebView 无法捕获到 JSContext",@"WebViewJavascriptBridge + WKWebView",
+                                                              @"MessageHandler - WK 特有",@"WKDemo 效果"]];
+    self.vcs = [[NSMutableArray alloc] initWithArray:@[@"ConsoleLogVC",@"AddUserScriptController",
+                                                       @"JSCoreVC",@"JSBridgeVC",
+                                                       @"MsgHandlerVC",@"WKWebVC"]];
 }
 
 - (void)didReceiveMemoryWarning {

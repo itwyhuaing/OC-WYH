@@ -35,9 +35,15 @@
                                     })(console.log)";
     
     //injected the method when H5 starts to create the DOM tree
-    [cfg.userContentController addUserScript:[[WKUserScript alloc] initWithSource:js
+    [self.wkweb.configuration.userContentController addUserScript:[[WKUserScript alloc] initWithSource:js
                                                                     injectionTime:WKUserScriptInjectionTimeAtDocumentStart
                                                                  forMainFrameOnly:TRUE]];
+    /**
+     self.wkweb.configuration 与 cfg 为不同的指针 ，但此处注入 js ，效果都可以
+     */
+    
+    
+    
     // ======
     
     [self.view addSubview:self.wkweb];
@@ -50,6 +56,7 @@
 
 -(void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    [self.wkweb.configuration.userContentController addScriptMessageHandler:self name:@"log"];
     [self.wkweb.configuration.userContentController addScriptMessageHandler:self name:@"name"];
     [self.wkweb.configuration.userContentController addScriptMessageHandler:self name:@"test"];
 }
@@ -58,6 +65,8 @@
 -(void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
     [self.wkweb.configuration.userContentController removeScriptMessageHandlerForName:@"name"];
+    [self.wkweb.configuration.userContentController removeScriptMessageHandlerForName:@"log"];
+    [self.wkweb.configuration.userContentController removeScriptMessageHandlerForName:@"test"];
 }
 
 
@@ -67,7 +76,7 @@
     if ([message.name isEqualToString:@"log"]) {
         NSLog(@" 打印：%@",message.body);
     }else if ([message.name isEqualToString:@"test"]) {
-        NSLog(@" 打印：%@",message.name);
+        NSLog(@"打印：我是原生 Web 调起原生代码执行：%@",message.name);
     }
 }
 

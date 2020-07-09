@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" charset="utf-8" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title> 注入 js 测试 </title>
+    <script type="text/javascript">
+        function openCamera(){
+            console.log(" 我是 Web - openCamera ")
+            JXObj.camera.getPhoto()
+        }
+    </script>
+</head>
+<body>
+    <button type="button" onclick="openCamera()">打开摄像头</button>
+    <div id="photoInfo"></div>
+</body>
+</html>

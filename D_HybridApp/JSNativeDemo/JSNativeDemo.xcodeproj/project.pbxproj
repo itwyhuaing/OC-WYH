@@ -11,6 +11,10 @@
 		2618A41E22CF5E750047248E /* JXWKWeb.m in Sources */ = {isa = PBXBuildFile; fileRef = 2618A41D22CF5E750047248E /* JXWKWeb.m */; };
 		2618A42022CF5EC50047248E /* WKHandlerWeb.html in Resources */ = {isa = PBXBuildFile; fileRef = 2618A41F22CF5EC50047248E /* WKHandlerWeb.html */; };
 		2618A42322CF5ECD0047248E /* logweb.html in Resources */ = {isa = PBXBuildFile; fileRef = 2618A42222CF5ECD0047248E /* logweb.html */; };
+		262CABD424B32E6B0087F888 /* AddUserScriptController.m in Sources */ = {isa = PBXBuildFile; fileRef = 262CABD324B32E6B0087F888 /* AddUserScriptController.m */; };
+		262CABD724B330130087F888 /* addscript.html in Resources */ = {isa = PBXBuildFile; fileRef = 262CABD624B330130087F888 /* addscript.html */; };
+		262CABD924B332E90087F888 /* jx.txt in Resources */ = {isa = PBXBuildFile; fileRef = 262CABD824B332E90087F888 /* jx.txt */; };
+		262CABDB24B45D090087F888 /* jxlog.txt in Resources */ = {isa = PBXBuildFile; fileRef = 262CABDA24B45D090087F888 /* jxlog.txt */; };
 		26820C38207CC27A00E38FE2 /* MsgHandlerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 26820C2E207CC27A00E38FE2 /* MsgHandlerVC.m */; };
 		26820C39207CC27A00E38FE2 /* JSCoreVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 26820C30207CC27A00E38FE2 /* JSCoreVC.m */; };
 		26820C3B207CC27A00E38FE2 /* JSBridgeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 26820C36207CC27A00E38FE2 /* JSBridgeVC.m */; };
@@ -22,6 +26,7 @@
 		26974C6921215FE200AD6880 /* jsoc.html in Resources */ = {isa = PBXBuildFile; fileRef = 26974C6521215FE200AD6880 /* jsoc.html */; };
 		26974C6A21215FE200AD6880 /* jsoc.css in Resources */ = {isa = PBXBuildFile; fileRef = 26974C6621215FE200AD6880 /* jsoc.css */; };
 		26B0785320932D4F00B4CB3C /* WKWebVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 26B0785220932D4F00B4CB3C /* WKWebVC.m */; };
+		26D28CC224B4704600CC3B0B /* jscore.html in Resources */ = {isa = PBXBuildFile; fileRef = 26D28CC124B4704600CC3B0B /* jscore.html */; };
 		26FCA6A421C3BA950096C4B3 /* bridge.html in Resources */ = {isa = PBXBuildFile; fileRef = 26FCA6A321C3BA950096C4B3 /* bridge.html */; };
 		460CD247207BBB9B00B951F7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 460CD245207BBB9B00B951F7 /* Main.storyboard */; };
 		460CD249207BBB9B00B951F7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 460CD248207BBB9B00B951F7 /* Assets.xcassets */; };
@@ -39,6 +44,11 @@
 		2618A41D22CF5E750047248E /* JXWKWeb.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JXWKWeb.m; sourceTree = "<group>"; };
 		2618A41F22CF5EC50047248E /* WKHandlerWeb.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = WKHandlerWeb.html; sourceTree = "<group>"; };
 		2618A42222CF5ECD0047248E /* logweb.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = logweb.html; sourceTree = "<group>"; };
+		262CABD224B32E6B0087F888 /* AddUserScriptController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddUserScriptController.h; sourceTree = "<group>"; };
+		262CABD324B32E6B0087F888 /* AddUserScriptController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddUserScriptController.m; sourceTree = "<group>"; };
+		262CABD624B330130087F888 /* addscript.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = addscript.html; sourceTree = "<group>"; };
+		262CABD824B332E90087F888 /* jx.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = jx.txt; sourceTree = "<group>"; };
+		262CABDA24B45D090087F888 /* jxlog.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = jxlog.txt; sourceTree = "<group>"; };
 		26820C2D207CC27A00E38FE2 /* MsgHandlerVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MsgHandlerVC.h; sourceTree = "<group>"; };
 		26820C2E207CC27A00E38FE2 /* MsgHandlerVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MsgHandlerVC.m; sourceTree = "<group>"; };
 		26820C30207CC27A00E38FE2 /* JSCoreVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSCoreVC.m; sourceTree = "<group>"; };
@@ -58,6 +68,7 @@
 		26974C6621215FE200AD6880 /* jsoc.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = jsoc.css; sourceTree = "<group>"; };
 		26B0785120932D4F00B4CB3C /* WKWebVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WKWebVC.h; sourceTree = "<group>"; };
 		26B0785220932D4F00B4CB3C /* WKWebVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WKWebVC.m; sourceTree = "<group>"; };
+		26D28CC124B4704600CC3B0B /* jscore.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = jscore.html; sourceTree = "<group>"; };
 		26FCA6A321C3BA950096C4B3 /* bridge.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = bridge.html; sourceTree = "<group>"; };
 		460CD23C207BBB9A00B951F7 /* JSNativeDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JSNativeDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		460CD246207BBB9B00B951F7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -111,6 +122,25 @@
 			path = LogWeb;
 			sourceTree = "<group>";
 		};
+		262CABD124B32CFA0087F888 /* 注入JS */ = {
+			isa = PBXGroup;
+			children = (
+				262CABD224B32E6B0087F888 /* AddUserScriptController.h */,
+				262CABD324B32E6B0087F888 /* AddUserScriptController.m */,
+			);
+			path = "注入JS";
+			sourceTree = "<group>";
+		};
+		262CABD524B32FD90087F888 /* AddScript */ = {
+			isa = PBXGroup;
+			children = (
+				262CABD624B330130087F888 /* addscript.html */,
+				262CABDA24B45D090087F888 /* jxlog.txt */,
+				262CABD824B332E90087F888 /* jx.txt */,
+			);
+			path = AddScript;
+			sourceTree = "<group>";
+		};
 		26820C2C207CC27A00E38FE2 /* MsgHandler */ = {
 			isa = PBXGroup;
 			children = (
@@ -141,6 +171,8 @@
 		26820C43207CC2DF00E38FE2 /* Web */ = {
 			isa = PBXGroup;
 			children = (
+				26D28CC024B4704600CC3B0B /* JSCore */,
+				262CABD524B32FD90087F888 /* AddScript */,
 				2618A42122CF5ECD0047248E /* LogWeb */,
 				2618A41522CF29EC0047248E /* WKHandlerWeb */,
 				26974C6721215FE200AD6880 /* BridgeWeb */,
@@ -199,6 +231,14 @@
 			path = WKDemo;
 			sourceTree = "<group>";
 		};
+		26D28CC024B4704600CC3B0B /* JSCore */ = {
+			isa = PBXGroup;
+			children = (
+				26D28CC124B4704600CC3B0B /* jscore.html */,
+			);
+			path = JSCore;
+			sourceTree = "<group>";
+		};
 		460CD233207BBB9A00B951F7 = {
 			isa = PBXGroup;
 			children = (
@@ -234,6 +274,7 @@
 		460CD255207BBBC800B951F7 /* Func */ = {
 			isa = PBXGroup;
 			children = (
+				262CABD124B32CFA0087F888 /* 注入JS */,
 				2618A41822CF5E220047248E /* Log */,
 				26820C2F207CC27A00E38FE2 /* JSCore */,
 				26820C35207CC27A00E38FE2 /* JSBridge */,
@@ -321,8 +362,12 @@
 				26974C6A21215FE200AD6880 /* jsoc.css in Resources */,
 				26FCA6A421C3BA950096C4B3 /* bridge.html in Resources */,
 				26974C6821215FE200AD6880 /* jsoc.js in Resources */,
+				262CABD724B330130087F888 /* addscript.html in Resources */,
 				460CD249207BBB9B00B951F7 /* Assets.xcassets in Resources */,
+				262CABD924B332E90087F888 /* jx.txt in Resources */,
 				460CD247207BBB9B00B951F7 /* Main.storyboard in Resources */,
+				26D28CC224B4704600CC3B0B /* jscore.html in Resources */,
+				262CABDB24B45D090087F888 /* jxlog.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -343,6 +388,7 @@
 				26820C55207CC63D00E38FE2 /* WKWebViewJavascriptBridge.m in Sources */,
 				26820C54207CC63D00E38FE2 /* WebViewJavascriptBridgeBase.m in Sources */,
 				460CD24F207BBB9B00B951F7 /* main.m in Sources */,
+				262CABD424B32E6B0087F888 /* AddUserScriptController.m in Sources */,
 				460CD25C207BBBC800B951F7 /* ViewController.m in Sources */,
 				26B0785320932D4F00B4CB3C /* WKWebVC.m in Sources */,
 				2618A41B22CF5E450047248E /* ConsoleLogVC.m in Sources */,
