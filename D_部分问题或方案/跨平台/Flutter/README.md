@@ -1,4 +1,9 @@
 ---
+
+* [Flutter中文网](https://flutterchina.club)
+
+
+---
 ### Mac 上搭建 Flutter 开发环境
 
 **安装Flutter SDK**
@@ -75,6 +80,47 @@ flutter doctor
 
 * [Your Android SDK is missing, out of date or corrupted](https://blog.csdn.net/qq_24118527/article/details/82717041)
 
+
+
 **编辑器设置**
+
+
+### 开发实践中遇到的部分问题简述
+
+**Android Studio没有新建flutter项目选项**
+
+> 问题原因：1、Android Studio 版本过低 2、Android Studio 工具中的 flutter 、Dart 插件未安装正确版本。
+
+
+**系统已正确配置flutter环境，但终端执行flutter命令报错：“zsh: command not found: flutter”**
+
+> 虽然已配置系统环境，但Flutter并未永久添加到PATH中；针对此情况，如下代码可实现暂时针对当前命令行窗口设置PATH环境变量。该问题永久解决如下图或参考 [将Flutter永久将添加到PATH中/终端"zsh: command not found: flutter"报错永久解决](https://blog.csdn.net/iotjin/article/details/105629266)
+
+```
+export PATH=`pwd`/flutter/bin:$PATH
+
+```
+
+![image](https://github.com/itwyhuaing/OC-WYH/blob/master/D_部分问题或方案/跨平台/Flutter/image/path_1_2.png)
+
+![image](https://github.com/itwyhuaing/OC-WYH/blob/master/D_部分问题或方案/跨平台/Flutter/image/path_3.png)
+
+![image](https://github.com/itwyhuaing/OC-WYH/blob/master/D_部分问题或方案/跨平台/Flutter/image/path_4.png)
+
+![image](https://github.com/itwyhuaing/OC-WYH/blob/master/D_部分问题或方案/跨平台/Flutter/image/path_5.png)
+
+
+**flutter pub get**
+
+> 首次运行新建工程，往往卡在 flutter pub get 处；暂且的解决方式是把默认的 package 获取地址改为访问没有问题的镜像站就可以了；当前可更新为。
+
+```
+export PUB_HOSTED_URL=https://pub.flutter-io.cn
+export FLUTTER_STORAGE_BASE_URL=https://storage.flutter-io.cn
+
+```
+
+
+
 
 
