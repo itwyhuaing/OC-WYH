@@ -17,6 +17,14 @@
 		263662AD24C8271E0021E9C7 /* BaseController.m in Sources */ = {isa = PBXBuildFile; fileRef = 263662A424C8271E0021E9C7 /* BaseController.m */; };
 		263662AE24C8271E0021E9C7 /* EntryTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = 263662A624C8271E0021E9C7 /* EntryTableController.m */; };
 		263662AF24C8271E0021E9C7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 263662A824C8271E0021E9C7 /* AppDelegate.m */; };
+		263662B324C83BE00021E9C7 /* RSAESCryptor.m in Sources */ = {isa = PBXBuildFile; fileRef = 263662B124C83BE00021E9C7 /* RSAESCryptor.m */; };
+		263662C624C83C380021E9C7 /* SSKeychain.strings in Resources */ = {isa = PBXBuildFile; fileRef = 263662B624C83C380021E9C7 /* SSKeychain.strings */; };
+		263662C724C83C380021E9C7 /* SSKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = 263662BA24C83C380021E9C7 /* SSKeychain.m */; };
+		263662C824C83C380021E9C7 /* SSKeychainQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 263662BB24C83C380021E9C7 /* SSKeychainQuery.m */; };
+		263662C924C83C380021E9C7 /* NSString+Hash.m in Sources */ = {isa = PBXBuildFile; fileRef = 263662BD24C83C380021E9C7 /* NSString+Hash.m */; };
+		263662CA24C83C380021E9C7 /* EncryptionTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 263662C124C83C380021E9C7 /* EncryptionTools.m */; };
+		263662CB24C83C380021E9C7 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 263662C224C83C380021E9C7 /* README.md */; };
+		263662CC24C83C380021E9C7 /* RSACryptor.m in Sources */ = {isa = PBXBuildFile; fileRef = 263662C524C83C380021E9C7 /* RSACryptor.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +46,20 @@
 		263662A724C8271E0021E9C7 /* BaseController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseController.h; sourceTree = "<group>"; };
 		263662A824C8271E0021E9C7 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		263662A924C8271E0021E9C7 /* EntryTableController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EntryTableController.h; sourceTree = "<group>"; };
+		263662B124C83BE00021E9C7 /* RSAESCryptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSAESCryptor.m; sourceTree = "<group>"; };
+		263662B224C83BE00021E9C7 /* RSAESCryptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSAESCryptor.h; sourceTree = "<group>"; };
+		263662B724C83C380021E9C7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/SSKeychain.strings; sourceTree = "<group>"; };
+		263662B824C83C380021E9C7 /* SSKeychain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSKeychain.h; sourceTree = "<group>"; };
+		263662B924C83C380021E9C7 /* SSKeychainQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSKeychainQuery.h; sourceTree = "<group>"; };
+		263662BA24C83C380021E9C7 /* SSKeychain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSKeychain.m; sourceTree = "<group>"; };
+		263662BB24C83C380021E9C7 /* SSKeychainQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSKeychainQuery.m; sourceTree = "<group>"; };
+		263662BD24C83C380021E9C7 /* NSString+Hash.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Hash.m"; sourceTree = "<group>"; };
+		263662BE24C83C380021E9C7 /* NSString+Hash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Hash.h"; sourceTree = "<group>"; };
+		263662C024C83C380021E9C7 /* EncryptionTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EncryptionTools.h; sourceTree = "<group>"; };
+		263662C124C83C380021E9C7 /* EncryptionTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EncryptionTools.m; sourceTree = "<group>"; };
+		263662C224C83C380021E9C7 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		263662C424C83C380021E9C7 /* RSACryptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSACryptor.h; sourceTree = "<group>"; };
+		263662C524C83C380021E9C7 /* RSACryptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSACryptor.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,8 +107,8 @@
 		2636629824C8271E0021E9C7 /* Func */ = {
 			isa = PBXGroup;
 			children = (
-				2636629924C8271E0021E9C7 /* MD5 */,
 				2636629C24C8271E0021E9C7 /* RSA */,
+				2636629924C8271E0021E9C7 /* MD5 */,
 			);
 			path = Func;
 			sourceTree = "<group>";
@@ -103,8 +125,8 @@
 		2636629C24C8271E0021E9C7 /* RSA */ = {
 			isa = PBXGroup;
 			children = (
-				2636629D24C8271E0021E9C7 /* RSAController.m */,
 				2636629E24C8271E0021E9C7 /* RSAController.h */,
+				2636629D24C8271E0021E9C7 /* RSAController.m */,
 			);
 			path = RSA;
 			sourceTree = "<group>";
@@ -112,7 +134,9 @@
 		2636629F24C8271E0021E9C7 /* Lib */ = {
 			isa = PBXGroup;
 			children = (
+				263662B424C83C380021E9C7 /* CodeTool */,
 				263662A024C8271E0021E9C7 /* RSA */,
+				263662B024C83BE00021E9C7 /* RSAESCryptor */,
 			);
 			path = Lib;
 			sourceTree = "<group>";
@@ -120,8 +144,8 @@
 		263662A024C8271E0021E9C7 /* RSA */ = {
 			isa = PBXGroup;
 			children = (
-				263662A124C8271E0021E9C7 /* RSA.m */,
 				263662A224C8271E0021E9C7 /* RSA.h */,
+				263662A124C8271E0021E9C7 /* RSA.m */,
 			);
 			path = RSA;
 			sourceTree = "<group>";
@@ -137,6 +161,66 @@
 				263662A624C8271E0021E9C7 /* EntryTableController.m */,
 			);
 			path = Main;
+			sourceTree = "<group>";
+		};
+		263662B024C83BE00021E9C7 /* RSAESCryptor */ = {
+			isa = PBXGroup;
+			children = (
+				263662B124C83BE00021E9C7 /* RSAESCryptor.m */,
+				263662B224C83BE00021E9C7 /* RSAESCryptor.h */,
+			);
+			path = RSAESCryptor;
+			sourceTree = "<group>";
+		};
+		263662B424C83C380021E9C7 /* CodeTool */ = {
+			isa = PBXGroup;
+			children = (
+				263662B524C83C380021E9C7 /* SSKeychain */,
+				263662BC24C83C380021E9C7 /* Security */,
+				263662BF24C83C380021E9C7 /* Cipher */,
+				263662C224C83C380021E9C7 /* README.md */,
+				263662C324C83C380021E9C7 /* Cipher-RSA */,
+			);
+			path = CodeTool;
+			sourceTree = "<group>";
+		};
+		263662B524C83C380021E9C7 /* SSKeychain */ = {
+			isa = PBXGroup;
+			children = (
+				263662B624C83C380021E9C7 /* SSKeychain.strings */,
+				263662B824C83C380021E9C7 /* SSKeychain.h */,
+				263662B924C83C380021E9C7 /* SSKeychainQuery.h */,
+				263662BA24C83C380021E9C7 /* SSKeychain.m */,
+				263662BB24C83C380021E9C7 /* SSKeychainQuery.m */,
+			);
+			path = SSKeychain;
+			sourceTree = "<group>";
+		};
+		263662BC24C83C380021E9C7 /* Security */ = {
+			isa = PBXGroup;
+			children = (
+				263662BE24C83C380021E9C7 /* NSString+Hash.h */,
+				263662BD24C83C380021E9C7 /* NSString+Hash.m */,
+			);
+			path = Security;
+			sourceTree = "<group>";
+		};
+		263662BF24C83C380021E9C7 /* Cipher */ = {
+			isa = PBXGroup;
+			children = (
+				263662C024C83C380021E9C7 /* EncryptionTools.h */,
+				263662C124C83C380021E9C7 /* EncryptionTools.m */,
+			);
+			path = Cipher;
+			sourceTree = "<group>";
+		};
+		263662C324C83C380021E9C7 /* Cipher-RSA */ = {
+			isa = PBXGroup;
+			children = (
+				263662C424C83C380021E9C7 /* RSACryptor.h */,
+				263662C524C83C380021E9C7 /* RSACryptor.m */,
+			);
+			path = "Cipher-RSA";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -196,7 +280,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				263662C624C83C380021E9C7 /* SSKeychain.strings in Resources */,
 				2636628F24C826990021E9C7 /* LaunchScreen.storyboard in Resources */,
+				263662CB24C83C380021E9C7 /* README.md in Resources */,
 				2636628C24C826990021E9C7 /* Assets.xcassets in Resources */,
 				2636628A24C826970021E9C7 /* Main.storyboard in Resources */,
 			);
@@ -209,10 +295,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				263662CA24C83C380021E9C7 /* EncryptionTools.m in Sources */,
 				263662AB24C8271E0021E9C7 /* RSAController.m in Sources */,
 				263662AE24C8271E0021E9C7 /* EntryTableController.m in Sources */,
+				263662B324C83BE00021E9C7 /* RSAESCryptor.m in Sources */,
+				263662C924C83C380021E9C7 /* NSString+Hash.m in Sources */,
 				263662AD24C8271E0021E9C7 /* BaseController.m in Sources */,
 				263662AA24C8271E0021E9C7 /* MD5Controller.m in Sources */,
+				263662CC24C83C380021E9C7 /* RSACryptor.m in Sources */,
+				263662C724C83C380021E9C7 /* SSKeychain.m in Sources */,
+				263662C824C83C380021E9C7 /* SSKeychainQuery.m in Sources */,
 				263662AC24C8271E0021E9C7 /* RSA.m in Sources */,
 				2636629224C826990021E9C7 /* main.m in Sources */,
 				263662AF24C8271E0021E9C7 /* AppDelegate.m in Sources */,
@@ -236,6 +328,14 @@
 				2636628E24C826990021E9C7 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		263662B624C83C380021E9C7 /* SSKeychain.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				263662B724C83C380021E9C7 /* en */,
+			);
+			name = SSKeychain.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

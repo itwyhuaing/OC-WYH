@@ -21,8 +21,16 @@
     [super viewDidLoad];
     //  UI 修饰
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    _thems = [[NSMutableArray alloc] initWithArray:@[@"RSAController",@"MD5Controller",]];
-    _vcs   = [[NSMutableArray alloc] initWithArray:@[@"RSAController",@"MD5Controller",]];
+    _thems = [[NSMutableArray alloc] initWithArray:@[
+        @"哈希HASH - MD5",@"哈希HASH - SHA",@"哈希HASH - HMAC",
+        @"对称加密 - DES",@"对称加密 - 3DES",@"对称加密 - AES",
+        @"非对称加密 - RSA",@"非对称加密 - RSA",
+    ]];
+    _vcs   = [[NSMutableArray alloc] initWithArray:@[
+        @"MD5Controller",@"",@"",
+        @"",@"",@"",
+        @"RSAController",
+    ]];
 }
 
 #pragma mark - Table view data source
