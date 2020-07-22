@@ -1,5 +1,5 @@
 //
-//  AppDelegate.h
+//  BaseController.h
 //  SafetyDemo
 //
 //  Created by hnbwyh on 2020/7/22.
@@ -8,8 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
+NS_ASSUME_NONNULL_BEGIN
 
+@interface BaseController : UIViewController
 
 @end
 
+NS_ASSUME_NONNULL_END
