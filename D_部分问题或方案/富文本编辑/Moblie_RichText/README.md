@@ -1,4 +1,4 @@
-富文本展示
+一、富文本展示
 ---
 
 **数据结构若为 json 格式**
@@ -54,7 +54,7 @@
 
 
 
-富文本编辑 - 已有方案简介
+二、富文本编辑 - 已有方案简介
 ---
 **原生**
 
@@ -79,7 +79,7 @@
 1. ZSSRichTextEditor(UIWebView)。
 
 
-富文本编辑 - 自己“造”轮子
+三、富文本编辑 - 自己“造”轮子
 ---
 1. ZSSRichTextEditor 升级 WKWebView 实现。 
 
@@ -106,3 +106,6 @@
 * [参考1-IOS - WebView富文本开发](https://www.jianshu.com/p/c4d7824362cb)
 * [参考2-HTML 6种空白空格的区别](https://blog.csdn.net/u014068781/article/details/77962423)
 * [参考3-document.execCommand](https://developer.mozilla.org/zh-CN/docs/Web/API/Document/execCommand)
+
+
+2. UITextView 实现富文本，开发中 ... 
