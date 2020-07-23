@@ -64,10 +64,14 @@ Safety 记录。
 * [iOS开发如何避免安全隐患](http://www.cocoachina.com/articles/27047)
 
 > 加密解密
+* [iOS-常见三种加密（MD5、非对称加密，对称加密）](https://blog.csdn.net/ssy_1992/article/details/79094556)
+* [哈希算法](https://blog.csdn.net/liushengxi_root/article/details/86571193)
+* [SHA算法系列介绍](https://blog.csdn.net/wufaliang003/article/details/79782168)
+* [HMAC算法原理](https://www.cnblogs.com/shoshana-kong/p/11497676.html)
 * [浅谈RSA - Mac 终端命令](https://www.jianshu.com/p/6280aa136292)
 * [公钥，私钥和数字签名这样最好理解](https://blog.csdn.net/tabactivity/article/details/49685319)
 * [一篇文章彻底弄懂Base64编码原理](https://blog.csdn.net/wo541075754/article/details/81734770)
-* [iOS-常见三种加密（MD5、非对称加密，对称加密）](https://blog.csdn.net/ssy_1992/article/details/79094556)
+
 
 > 应用代码加固 - 代码混淆
 * [iOS安全攻防（二十三）：Objective-C代码混淆 - 涉及安全的系列文章](https://blog.csdn.net/yiyaaixuexi/article/details/29201699)
