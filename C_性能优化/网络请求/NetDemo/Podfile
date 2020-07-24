@@ -1,0 +1,6 @@
+platform :ios, '10.0'
+target 'NetDemo' do
+
+pod 'AFNetworking', '~> 4.0.1'
+
+end

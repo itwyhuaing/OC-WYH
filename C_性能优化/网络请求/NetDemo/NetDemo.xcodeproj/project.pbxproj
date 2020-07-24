@@ -7,15 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		261FE2BB24CA8BDD00AE329F /* ReqDataTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 261FE2BA24CA8BDD00AE329F /* ReqDataTool.m */; };
+		261FE2BE24CA92F300AE329F /* ReqSender.m in Sources */ = {isa = PBXBuildFile; fileRef = 261FE2BD24CA92F300AE329F /* ReqSender.m */; };
 		263ABAC62170A23400C5E990 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 263ABAC42170A23400C5E990 /* Main.storyboard */; };
 		263ABAC82170A23600C5E990 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 263ABAC72170A23600C5E990 /* Assets.xcassets */; };
 		263ABACB2170A23600C5E990 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 263ABAC92170A23600C5E990 /* LaunchScreen.storyboard */; };
 		263ABACE2170A23600C5E990 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 263ABACD2170A23600C5E990 /* main.m */; };
 		263ABADA2170A26900C5E990 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 263ABAD72170A26900C5E990 /* ViewController.m */; };
 		263ABADB2170A26900C5E990 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 263ABAD82170A26900C5E990 /* AppDelegate.m */; };
+		918A1DD1F08BBDA5C2360AB5 /* libPods-NetDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 095A08623D9B2D939A019F1F /* libPods-NetDemo.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		095A08623D9B2D939A019F1F /* libPods-NetDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NetDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		261FE2B924CA8BDD00AE329F /* ReqDataTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReqDataTool.h; sourceTree = "<group>"; };
+		261FE2BA24CA8BDD00AE329F /* ReqDataTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReqDataTool.m; sourceTree = "<group>"; };
+		261FE2BC24CA92F300AE329F /* ReqSender.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReqSender.h; sourceTree = "<group>"; };
+		261FE2BD24CA92F300AE329F /* ReqSender.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReqSender.m; sourceTree = "<group>"; };
 		263ABABB2170A23300C5E990 /* NetDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NetDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		263ABAC52170A23400C5E990 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		263ABAC72170A23600C5E990 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -27,6 +35,8 @@
 		263ABAD82170A26900C5E990 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		263ABAD92170A26900C5E990 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		263ABADC2170A2A400C5E990 /* Note.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Note.h; sourceTree = "<group>"; };
+		3679B4582725C0505BC51C2D /* Pods-NetDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NetDemo.release.xcconfig"; path = "Target Support Files/Pods-NetDemo/Pods-NetDemo.release.xcconfig"; sourceTree = "<group>"; };
+		3F03C01D901A57C72EBF3FEE /* Pods-NetDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NetDemo.debug.xcconfig"; path = "Target Support Files/Pods-NetDemo/Pods-NetDemo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -34,17 +44,56 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				918A1DD1F08BBDA5C2360AB5 /* libPods-NetDemo.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1DE05D1C48AAC60ECF5E9F1A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3F03C01D901A57C72EBF3FEE /* Pods-NetDemo.debug.xcconfig */,
+				3679B4582725C0505BC51C2D /* Pods-NetDemo.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		261FE2B624CA88A600AE329F /* Class */ = {
+			isa = PBXGroup;
+			children = (
+				261FE2B724CA88A700AE329F /* DataHandle */,
+				261FE2B824CA88A700AE329F /* NetCenter */,
+			);
+			path = Class;
+			sourceTree = "<group>";
+		};
+		261FE2B724CA88A700AE329F /* DataHandle */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DataHandle;
+			sourceTree = "<group>";
+		};
+		261FE2B824CA88A700AE329F /* NetCenter */ = {
+			isa = PBXGroup;
+			children = (
+				261FE2B924CA8BDD00AE329F /* ReqDataTool.h */,
+				261FE2BA24CA8BDD00AE329F /* ReqDataTool.m */,
+				261FE2BC24CA92F300AE329F /* ReqSender.h */,
+				261FE2BD24CA92F300AE329F /* ReqSender.m */,
+			);
+			path = NetCenter;
+			sourceTree = "<group>";
+		};
 		263ABAB22170A23300C5E990 = {
 			isa = PBXGroup;
 			children = (
 				263ABABD2170A23300C5E990 /* NetDemo */,
 				263ABABC2170A23300C5E990 /* Products */,
+				1DE05D1C48AAC60ECF5E9F1A /* Pods */,
+				47029BD4A15D4C08BE97953C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -73,6 +122,7 @@
 		263ABAD42170A26800C5E990 /* Func */ = {
 			isa = PBXGroup;
 			children = (
+				261FE2B624CA88A600AE329F /* Class */,
 				263ABADC2170A2A400C5E990 /* Note.h */,
 			);
 			path = Func;
@@ -89,6 +139,14 @@
 			path = Main;
 			sourceTree = "<group>";
 		};
+		47029BD4A15D4C08BE97953C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				095A08623D9B2D939A019F1F /* libPods-NetDemo.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -96,6 +154,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 263ABAD12170A23600C5E990 /* Build configuration list for PBXNativeTarget "NetDemo" */;
 			buildPhases = (
+				5F386525604EABACD2D3BF30 /* [CP] Check Pods Manifest.lock */,
 				263ABAB72170A23300C5E990 /* Sources */,
 				263ABAB82170A23300C5E990 /* Frameworks */,
 				263ABAB92170A23300C5E990 /* Resources */,
@@ -154,11 +213,38 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		5F386525604EABACD2D3BF30 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-NetDemo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		263ABAB72170A23300C5E990 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				261FE2BB24CA8BDD00AE329F /* ReqDataTool.m in Sources */,
+				261FE2BE24CA92F300AE329F /* ReqSender.m in Sources */,
 				263ABADA2170A26900C5E990 /* ViewController.m in Sources */,
 				263ABACE2170A23600C5E990 /* main.m in Sources */,
 				263ABADB2170A26900C5E990 /* AppDelegate.m in Sources */,
@@ -299,6 +385,7 @@
 		};
 		263ABAD22170A23600C5E990 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3F03C01D901A57C72EBF3FEE /* Pods-NetDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -315,6 +402,7 @@
 		};
 		263ABAD32170A23600C5E990 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3679B4582725C0505BC51C2D /* Pods-NetDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

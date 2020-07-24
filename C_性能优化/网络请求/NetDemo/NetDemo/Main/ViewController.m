@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "ReqSender.h"
 
 @interface ViewController ()
 
@@ -19,11 +20,26 @@
     
 }
 
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+//    [ReqSender reqServerForShopAdditionWithName:@"name"
+//                                        address:@"address"
+//                                 detail_address:@"detail_address"
+//                                           tels:@"tels"
+//                                         mobies:@"mobies"
+//                                business_images:@"business_images"
+//                                  permit_images:@"permit_images"
+//                                 succeedHandler:^(id  _Nonnull JSON) {
+//
+//                                  } failHandler:^(id  _Nonnull error) {
+//
+//                                }];
+    
+    [ReqSender reqServerForShopListWithKey:@""
+                            succeedHandler:^(id  _Nonnull JSON) {
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    } failHandler:^(id  _Nonnull error) {
+
+    }];
 }
-
 
 @end
