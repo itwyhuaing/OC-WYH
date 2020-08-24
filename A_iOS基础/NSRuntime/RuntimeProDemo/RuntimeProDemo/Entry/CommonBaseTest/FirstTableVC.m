@@ -7,9 +7,7 @@
 //
 
 #import "FirstTableVC.h"
-#import "UIImage+ImageName.h"
 #import "PersonDataModel.h"
-#import <objc/runtime.h>
 
 @interface FirstTableVC ()
 

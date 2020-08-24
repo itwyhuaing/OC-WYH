@@ -7,21 +7,21 @@
 //
 
 #import "UIImage+ImageName.h"
-#import <objc/runtime.h>
+
 
 @implementation UIImage (ImageName)
 
-+(void)load{
-    
-    SEL systemSEL = @selector(imageNamed:);
-    Method systemMethod = class_getClassMethod(self, systemSEL);
-    
-    SEL customSEL = @selector(yh_imageNamed:);
-    Method customMethod = class_getClassMethod(self, customSEL);
-    
-    method_exchangeImplementations(systemMethod, customMethod);
-    
-}
+//+(void)load{
+//    
+//    SEL systemSEL = @selector(imageNamed:);
+//    Method systemMethod = class_getClassMethod(self, systemSEL);
+//    
+//    SEL customSEL = @selector(yh_imageNamed:);
+//    Method customMethod = class_getClassMethod(self, customSEL);
+//    
+//    method_exchangeImplementations(systemMethod, customMethod);
+//    
+//}
 
 + (UIImage *)yh_imageNamed:(NSString *)name{
     CGFloat dVersion = [[UIDevice currentDevice].systemVersion doubleValue];

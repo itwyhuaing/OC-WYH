@@ -7,7 +7,6 @@
 //
 
 #import "UIControl+ClickEvent.h"
-#import <objc/runtime.h>
 
 
 @implementation UIControl (ClickEvent)
@@ -16,20 +15,43 @@
 
 +(void)load{
 
-    SEL sysSEL = @selector(sendAction:to:forEvent:);
-    Method systemMethod = class_getInstanceMethod(self, sysSEL);
-    IMP systemIMP = method_getImplementation(systemMethod);
+//    SEL sysSEL = @selector(sendAction:to:forEvent:);
+//    Method systemMethod = class_getInstanceMethod(self, sysSEL);
+//    IMP systemIMP = method_getImplementation(systemMethod);
+//
+//    SEL customSEL = @selector(custom_sendAction:to:forEvent:);
+//    Method customMethod = class_getInstanceMethod(self, customSEL);
+//    IMP customIMP = method_getImplementation(customMethod);
+//
+//    BOOL didAddMethod = class_addMethod(self, sysSEL, customIMP, method_getTypeEncoding(customMethod));
+//    if (didAddMethod) {
+//        class_replaceMethod(self, customSEL, systemIMP, method_getTypeEncoding(systemMethod));
+//    }else{
+//        method_exchangeImplementations(systemMethod, customMethod);
+//    }
     
-    SEL customSEL = @selector(custom_sendAction:to:forEvent:);
-    Method customMethod = class_getInstanceMethod(self, customSEL);
-    IMP customIMP = method_getImplementation(customMethod);
-
-    BOOL didAddMethod = class_addMethod(self, sysSEL, customIMP, method_getTypeEncoding(customMethod));
-    if (didAddMethod) {
-        class_replaceMethod(self, customSEL, systemIMP, method_getTypeEncoding(systemMethod));
-    }else{
-        method_exchangeImplementations(systemMethod, customMethod);
-    }
+    
+//    SEL sysSEL = @selector(sendAction:to:forEvent:);
+//    IMP systemIMP = [self methodForSelector:sysSEL];
+//
+//    SEL customSEL = @selector(custom_sendAction:to:forEvent:);
+//    IMP customIMP = [self methodForSelector:customSEL];
+//
+//    Method sysMethod        = class_getInstanceMethod(self, sysSEL);
+//    Method customMethod     = class_getInstanceMethod(self, customSEL);
+//    BOOL didAddMethod = class_addMethod(self, sysSEL, customIMP, method_getTypeEncoding(customMethod));
+//    if (didAddMethod) {
+//        class_replaceMethod(self, customSEL, systemIMP, method_getTypeEncoding(sysMethod));
+//    }else {
+//        method_exchangeImplementations(sysMethod, customMethod);
+//    }
+    
+    
+//    SEL sysSEL = @selector(sendAction:to:forEvent:);
+//    SEL customSEL = @selector(custom_sendAction:to:forEvent:);
+//    Method sysMethod        = class_getInstanceMethod(self, sysSEL);
+//    Method customMethod     = class_getInstanceMethod(self, customSEL);
+//    method_exchangeImplementations(sysMethod, customMethod);
 
 }
 

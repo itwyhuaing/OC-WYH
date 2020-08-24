@@ -22,7 +22,7 @@
      [self func_block];
      NSLog(@"\n \n \n \n \n \n");
     // selector 操作
-     //[self func_selector];
+//     [self func_selector];
      NSLog(@"\n \n \n \n \n \n");
     // block 操作,额外添加操作
      //[self func_execution];

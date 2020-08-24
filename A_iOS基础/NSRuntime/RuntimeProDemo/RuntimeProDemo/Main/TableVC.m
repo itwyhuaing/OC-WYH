@@ -14,6 +14,7 @@
 @interface TableVC ()
 
 @property (nonatomic,strong) NSMutableArray *dataSource;
+@property (nonatomic,strong) NSMutableArray *vcs;
 
 @end
 
@@ -23,9 +24,16 @@
     [super viewDidLoad];
     //  UI 修饰
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    NSArray *tmp = @[@"属性/方法遍历、方法拦截",@"DefendContinHitVC - UIButton 防连击",@"CategaryVC",@"4",@"5",@"6"];
-    //NSArray *tmp = @[@"1",@"2",@"3",@"4",@"5",@"6"];
+    NSArray *tmp = @[@"属性/方法遍历、方法拦截",@"DefendContinHitVC - UIButton 防连击",@"CategaryVC",
+                     @"UIControl 点击事件拦截",@"UIGestureRecognizer 响应事件拦截",
+                     @"UITableView didCell "];
     _dataSource = [[NSMutableArray alloc] initWithArray:tmp];
+    _vcs = [[NSMutableArray alloc] initWithArray:@[
+        @"FirstTableVC",@"DefendContinHitVC",@"CategaryVC",
+        @"AnalyzationUICotrolVC",@"AnalyzationGestureVC",@"AnalyzationTabViewVC",
+    ]];
+    
+    NSLog(@"\n HookUITableView : \n %s \n %@ \n %@ \n",__FUNCTION__,self,self.tableView);
     
 }
 
@@ -52,77 +60,12 @@
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    UIViewController *vc;
-    switch (indexPath.row) {
-        case 0:
-        {
-            vc = [[FirstTableVC alloc] init];
-            [self.navigationController pushViewController:vc animated:TRUE];
-            [self.navigationController pushViewController:vc animated:TRUE];
-            
-        }
-            break;
-        case 1:
-            {
-                vc = [[DefendContinHitVC alloc] init];
-                [self.navigationController pushViewController:vc animated:TRUE];
-            }
-            break;
-        case 2:
-        {
-            vc = [[CategaryVC alloc] init];
-            [self.navigationController pushViewController:vc animated:TRUE];
-        }
-            break;
-            
-        default:
-            break;
+    NSString *vcstring = self.vcs[indexPath.row];
+    if (vcstring) {
+        Class cl = NSClassFromString(vcstring);
+        UIViewController *vc = (UIViewController *)[cl new];
+        [self.navigationController pushViewController:vc animated:TRUE];
     }
 }
-
-
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

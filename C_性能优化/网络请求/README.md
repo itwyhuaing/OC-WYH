@@ -9,7 +9,7 @@
 > 2. 合并多个Request ：减少发起请求的次数,既可以降低服务器响应的压力，又可以节省客户端流量。项目中，国家码、发帖所选的圈子名称与 id 以及全局配置项等都可以合并。
 
 * 请求的安全性
-> 可详见 [Cookie与HTTPS](https://github.com/itwyhuaing/OC-WYH/tree/master/Cookie与HTTPS)
+> 可详见 [Cookie与HTTPS](https://github.com/itwyhuaing/OC-WYH/tree/master/A_iOS基础/Cookie与HTTPS)
 
 * 合理的并发数
 > 在一些多个Request集中产生的场景中(大批图片拉取下载)，设置合理的并发数尤为重要。并发数如果太小，会导致“劣质”的请求block住“优质”的请求；如果并发数太大，带宽有限的场景下，会增加请求的整体延迟。

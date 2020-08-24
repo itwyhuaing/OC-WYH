@@ -7,7 +7,7 @@
 //
 
 #import "NSDictionary+JXCategary.h"
-#import <objc/runtime.h>
+
 
 @implementation NSDictionary (JXCategary)
 
