@@ -8,28 +8,31 @@
 
 #import "UIScrollView+Analyzation.h"
 
-
 @implementation UIScrollView (Analyzation)
 
-
 +(void)load {
-//    SEL sySEL          = @selector(scrollViewDidEndDecelerating:);
-//    SEL customSEL      = @selector(analyzation_sendAction:to:forEvent:);
-//
-//    Method sysMethod   = class_getInstanceMethod(self, sySEL);
-//    Method customMethod= class_getInstanceMethod(self, customSEL);
-//
-//    //IMP sysIMP         = method_getImplementation(sysMethod);
-//    IMP customIMP      = method_getImplementation(customMethod);
-//
-//    BOOL isDidAdd   = class_addMethod(self, sySEL, customIMP, method_getTypeEncoding(customMethod));
-//    if (isDidAdd) {
-//        class_replaceMethod(self, sySEL, customIMP, method_getTypeEncoding(customMethod));
-//    }else {
-//        method_exchangeImplementations(sysMethod, customMethod);
-//    }
+//    static dispatch_once_t onceToken;
+//    dispatch_once(&onceToken, ^{
+//        Method originMethod = class_getInstanceMethod([self class], @selector(setDelegate:));
+//        Method newMethod = class_getInstanceMethod([self class], @selector(analyzation_setDelegate:));
+//        method_exchangeImplementations(originMethod, newMethod);
+//    });
 }
 
 
+-(void)analyzation_setDelegate:(id<UIScrollViewDelegate>)delegate {
+    SEL originalSEL = @selector(scrollViewDidEndDecelerating:);
+    SEL newSEL = @selector(analyzation_scrollViewDidEndDecelerating:);
+    Hook_Method([delegate class], originalSEL, [self class], newSEL, originalSEL);
+    
+    [self analyzation_setDelegate:delegate];
+}
+
+
+- (void)analyzation_scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
+    [self analyzation_scrollViewDidEndDecelerating:scrollView];
+    NSLog(@"\n\n hooktest-analyzation_scrollViewDidEndDecelerating:%@ \n\n",self);
+    //[XpathParser xpathForObj:scrollView];
+}
 
 @end

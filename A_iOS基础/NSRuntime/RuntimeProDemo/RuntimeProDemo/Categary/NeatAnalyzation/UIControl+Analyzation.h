@@ -12,8 +12,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface UIControl (Analyzation)
 
-@property (nonatomic,assign) NSTimeInterval acceptEventInterval;
-
 @end
 
 NS_ASSUME_NONNULL_END

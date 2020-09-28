@@ -1,8 +1,8 @@
 //
-//  UIScrollView+Analyzation.h
+//  UIView+Analyzation.h
 //  hinabian
 //
-//  Created by hnbwyh on 2020/8/14.
+//  Created by hnbwyh on 2020/8/20.
 //  Copyright © 2020 深圳市海那边科技有限公司. All rights reserved.
 //
 
@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface UIScrollView (Analyzation)
+@interface UIView (Analyzation)
 
 
 @end
