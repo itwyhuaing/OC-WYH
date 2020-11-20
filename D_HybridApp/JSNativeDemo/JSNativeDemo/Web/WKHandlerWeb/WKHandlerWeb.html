@@ -7,8 +7,9 @@
 
     <script type="text/javascript">
         function JSOC(){
-            //window.webkit.messageHandlers.JSMethod.postMessage({title:'测试title',content:'测试content',url:'测试url',rain:'测试zhe'});
-            window.webkit.messageHandlers.JSMethod.postMessage(null);
+            window.webkit.messageHandlers.JSMethod.postMessage({title:'测试title',content:'测试content',url:'测试url',rain:'测试zhe'});
+            //window.webkit.messageHandlers.JSMethod.postMessage(null);
+            window.webkit.messageHandlers.JSMethod.postMessage("测试数据");
         }
     </script>
 

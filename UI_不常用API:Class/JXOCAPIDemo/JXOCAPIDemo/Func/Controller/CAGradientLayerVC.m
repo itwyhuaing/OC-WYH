@@ -19,7 +19,7 @@
     
      [self lineStyle];
     
-    //[self circleStyle];
+//    [self circleStyle];
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -28,6 +28,7 @@
 }
 
 - (void)lineStyle{
+    
     UIView *v = [[UIView alloc] initWithFrame:CGRectMake(100, 100, 100, 100)];
     CAGradientLayer *gradient   = [CAGradientLayer layer];
     gradient.frame              = v.bounds;
@@ -41,6 +42,12 @@
                        nil];
     [v.layer addSublayer:gradient];
     [self.view addSubview:v];
+    
+    UILabel *l = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
+    l.text = @"测试文本";
+    l.textColor = [UIColor blackColor];
+    [v addSubview:l];
+    
 }
 
 /**
