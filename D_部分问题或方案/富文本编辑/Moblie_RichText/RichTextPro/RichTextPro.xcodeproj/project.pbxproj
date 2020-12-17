@@ -30,6 +30,7 @@
 		2625BA8723AC776300945B2F /* WKEditorWeb.m in Sources */ = {isa = PBXBuildFile; fileRef = 2625BA7323AC776300945B2F /* WKEditorWeb.m */; };
 		2625BA8823AC776300945B2F /* JSEditorToolBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 2625BA7523AC776300945B2F /* JSEditorToolBar.m */; };
 		2625BA8B23AC778C00945B2F /* JSRichTextEditorVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2625BA8923AC778C00945B2F /* JSRichTextEditorVC.m */; };
+		2647D858257889AF000BCAD5 /* TestVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2647D857257889AF000BCAD5 /* TestVC.m */; };
 		2659927923B0C556002A3F93 /* NTEditorToolBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 2659927823B0C556002A3F93 /* NTEditorToolBar.m */; };
 		2659927C23B0C582002A3F93 /* NTEditorBarCommonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2659927B23B0C582002A3F93 /* NTEditorBarCommonCell.m */; };
 		2659927F23B0C5B9002A3F93 /* NTEditorDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2659927E23B0C5B9002A3F93 /* NTEditorDataModel.m */; };
@@ -78,6 +79,8 @@
 		2625BA7723AC776300945B2F /* JSEditorBarCommonCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSEditorBarCommonCell.h; sourceTree = "<group>"; };
 		2625BA8923AC778C00945B2F /* JSRichTextEditorVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSRichTextEditorVC.m; sourceTree = "<group>"; };
 		2625BA8A23AC778C00945B2F /* JSRichTextEditorVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSRichTextEditorVC.h; sourceTree = "<group>"; };
+		2647D856257889AF000BCAD5 /* TestVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestVC.h; sourceTree = "<group>"; };
+		2647D857257889AF000BCAD5 /* TestVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestVC.m; sourceTree = "<group>"; };
 		2659927723B0C556002A3F93 /* NTEditorToolBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NTEditorToolBar.h; sourceTree = "<group>"; };
 		2659927823B0C556002A3F93 /* NTEditorToolBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NTEditorToolBar.m; sourceTree = "<group>"; };
 		2659927A23B0C582002A3F93 /* NTEditorBarCommonCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NTEditorBarCommonCell.h; sourceTree = "<group>"; };
@@ -148,6 +151,8 @@
 		2625BA4B23AC76B200945B2F /* Test */ = {
 			isa = PBXGroup;
 			children = (
+				2647D856257889AF000BCAD5 /* TestVC.h */,
+				2647D857257889AF000BCAD5 /* TestVC.m */,
 				2659928A23B1E920002A3F93 /* NTRichTextEditorVC.h */,
 				2659928B23B1E920002A3F93 /* NTRichTextEditorVC.m */,
 				2625BA8A23AC778C00945B2F /* JSRichTextEditorVC.h */,
@@ -373,6 +378,7 @@
 				2625BA7823AC776300945B2F /* ZSSRichTextEditor.m in Sources */,
 				2625BA5623AC76B200945B2F /* TableVC.m in Sources */,
 				2625BA8623AC776300945B2F /* JSEditorBarCommonCell.m in Sources */,
+				2647D858257889AF000BCAD5 /* TestVC.m in Sources */,
 				2625BA8023AC776300945B2F /* JSEditorHandleJs.m in Sources */,
 				2659928223B0C638002A3F93 /* NTEditorTitleView.m in Sources */,
 				2625BA8523AC776300945B2F /* JSEditorView.m in Sources */,
@@ -537,7 +543,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.hinabian.rain;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hinabian.wyh;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -555,7 +561,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.hinabian.rain;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hinabian.wyh;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
 			};

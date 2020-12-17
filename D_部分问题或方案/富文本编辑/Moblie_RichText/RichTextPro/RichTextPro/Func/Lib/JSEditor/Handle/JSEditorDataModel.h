@@ -51,6 +51,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic,copy)   NSString                      *reloadingPath;
 
 
+// 上传图片加载 loading 所需图片路径
+//@property (nonatomic,copy)   NSString                      *loadingPath;
+
 @end
 
 @interface JSEditorDataModel : NSObject

@@ -197,6 +197,7 @@
     // 图片 ，base64String
     f.orgImgBase64Str = [self.manager base64WithImage:f.originalImage];
     f.editedImgBase64Str = [self.manager base64WithImage:f.editedImage];
+    
     // 回调
     self.pickerBlock ? self.pickerBlock(@[f]) : nil;
 }

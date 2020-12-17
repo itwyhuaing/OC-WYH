@@ -32,13 +32,32 @@
                                                sideGap:[NSString stringWithFormat:@"%f",model.lrGap]
                                              imageSign:model.uniqueSign
                                            loadingPath:model.loadingPath
-                                         reLoadingPath:model.reloadingPath
-                                            deletePath:model.deletePath
+                                         reLoadingPath:@""//model.reloadingPath
+                                            deletePath:@""//model.deletePath
                                             completion:^(id  _Nonnull info, NSError * _Nonnull error) {
-        [weakSelf.handlerJs editableWeb:web removeGrayMaskWithImageSign:model.uniqueSign completion:^(id  _Nonnull info, NSError * _Nonnull error) {
-           completion ? completion(info) : nil;
-        }];
+        
+//        [weakSelf.handlerJs editableWeb:web removeGrayMaskWithImageSign:model.uniqueSign completion:^(id  _Nonnull info, NSError * _Nonnull error) {
+//           completion ? completion(info) : nil;
+//        }];
+        
     }];
+    
+    // insertImagePath
+//    [self.handlerJs editableWeb:web    insertImagePath:model.writedPath
+//                                                 width:[NSString stringWithFormat:@"%f",model.compatibleSize.width]
+//                                                height:[NSString stringWithFormat:@"%f",model.compatibleSize.height]
+//                                               sideGap:[NSString stringWithFormat:@"%f",model.lrGap]
+//                                             imageSign:model.uniqueSign
+//                                           loadingPath:model.loadingPath
+//                                         reLoadingPath:model.reloadingPath
+//                                            deletePath:model.deletePath
+//                                            completion:^(id  _Nonnull info, NSError * _Nonnull error) {
+//        [weakSelf.handlerJs editableWeb:web removeGrayMaskWithImageSign:model.uniqueSign completion:^(id  _Nonnull info, NSError * _Nonnull error) {
+//           completion ? completion(info) : nil;
+//        }];
+//    }];
+    
+    
 }
 
 

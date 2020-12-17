@@ -1,16 +1,16 @@
 PODS:
-  - hpple (0.2.0)
+  - TFHpple (2.0.0)
 
 DEPENDENCIES:
-  - hpple (~> 0.2.0)
+  - TFHpple (~> 2.0.0)
 
 SPEC REPOS:
   trunk:
-    - hpple
+    - TFHpple
 
 SPEC CHECKSUMS:
-  hpple: 3b765f96fc2cd56ad1a49aef6f7be5cb2aa64b57
+  TFHpple: a916fe0799eb30aa29b2670d14d5868cdd3a5b81
 
-PODFILE CHECKSUM: 47f04f464eb5dc6783a333562c2cb9faa8f2c9ba
+PODFILE CHECKSUM: 5005edc1dee8504b6697bca7e9b94a638f316f8a
 
 COCOAPODS: 1.9.3

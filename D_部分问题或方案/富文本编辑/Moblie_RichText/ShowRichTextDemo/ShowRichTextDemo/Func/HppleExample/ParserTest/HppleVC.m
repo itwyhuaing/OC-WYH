@@ -44,8 +44,7 @@
 #pragma mark --- parser
 
 - (void)htmlParser {
-    NSString *html = @"<p><font><b>第1段第1句。</b></font><font>第1段第2句。</font></p><p><font><s>第2段第1句。</s></font><font><u><b>第2段第2句。</b></u></font></p>"; // @"<p><font>第1段第1句。</font><font>第1段测试数据</font></p>";//
-    NSData  *data = [html dataUsingEncoding:NSUTF8StringEncoding];
+    NSData  *data = [_htmlContent dataUsingEncoding:NSUTF8StringEncoding];
     TFHpple *doc = [[TFHpple alloc] initWithHTMLData:data];
     NSArray *elements = [doc searchWithXPathQuery:@"//p"];
     if (elements && elements.count > 0) {
@@ -56,6 +55,7 @@
     }
     NSLog(@"");
 }
+
 
 
 - (void)parserElement:(TFHppleElement *)element{

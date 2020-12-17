@@ -24,11 +24,13 @@
                    @"直接加载HTML，测试HTML ",
                    @"固定富文本原生展示 -> 组装HTML",
                    @"富文本原生编辑 -> 组装HTML",
-                   @"Hpple 解析测试"];
+                   @"TFHpple 解析测试",
+                   @"TFHpple 解析并修改"];
     self.vcs   = @[@"",@"HTMLTestVC",
                    @"AttributedTextParserVC",
                    @"RichTextEditorVC",
-                   @"HppleVC"];
+                   @"HppleVC",
+                   @"ParserAndModifyVC"];
 }
 
 #pragma mark - Table view data source

@@ -57,6 +57,8 @@
             NSLog(@"\n \n 点击工具条 : %@ \n error :  %@ \n",info,error);
             if (location == JSEditorToolBarInsertImage) {
                 [weakSelf.photosPicker pickPhotos];
+            }else if (location == JSEditorToolBarStrikethrough) {
+                
             }
         }];
     };

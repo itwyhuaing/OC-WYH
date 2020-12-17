@@ -18,7 +18,7 @@ void interceptIMP (id self, SEL _cmd, void* arg0, BOOL arg1, BOOL arg2, id arg3)
 
 #pragma mark - common js handle
 
--(void)formatEditableWeb:(WKWebView *)web funcLocation:(JSEditorToolBarFuncType)location intention:(OperateIntention)intention completion:(evaluateJsCompletion)completion {
+-(void)formatEditableWeb:(WKWebView *)web funcLocation:(JSEditorToolBarFuncType)location intention:(OperateIntention)intention completion:(EvaluateJsCompletion)completion {
     NSString *js = @"";
     if (location == JSEditorToolBarBold) {
         js = @"zss_editor.setBold();";
@@ -51,7 +51,7 @@ void interceptIMP (id self, SEL _cmd, void* arg0, BOOL arg1, BOOL arg2, id arg3)
 }
 
 
--(void)editableWeb:(WKWebView *)web operatedJs:(NSString *)jsContent completion:(evaluateJsCompletion)completion {
+-(void)editableWeb:(WKWebView *)web operatedJs:(NSString *)jsContent completion:(EvaluateJsCompletion)completion {
     [web evaluateJavaScript:jsContent completionHandler:completion];
 }
 
@@ -64,7 +64,7 @@ void interceptIMP (id self, SEL _cmd, void* arg0, BOOL arg1, BOOL arg2, id arg3)
         loadingPath:(NSString *)lPath
       reLoadingPath:(NSString *)rPath
          deletePath:(NSString *)dPath
-         completion:(evaluateJsCompletion)completion {
+         completion:(EvaluateJsCompletion)completion {
     WSelf
     [self prepareInsertEditableWeb:web completion:^(id  _Nonnull info, NSError * _Nonnull error) {
         NSString *js = [NSString stringWithFormat:@"zss_editor.insertImage(\"%@\", \"%@\", \"%@\", \"%@\",\"%@\",\"%@\");", [NSURL fileURLWithPath:iPath].absoluteString, w,h,imgSign,[NSURL fileURLWithPath:lPath].absoluteString,sGap];
@@ -83,17 +83,18 @@ void interceptIMP (id self, SEL _cmd, void* arg0, BOOL arg1, BOOL arg2, id arg3)
         loadingPath:(NSString *)lPath
       reLoadingPath:(NSString *)rPath
          deletePath:(NSString *)dPath
-         completion:(evaluateJsCompletion)completion {
+         completion:(EvaluateJsCompletion)completion {
     WSelf
     [self prepareInsertEditableWeb:web completion:^(id  _Nonnull info, NSError * _Nonnull error) {
         NSString *js = [NSString stringWithFormat:@"zss_editor.insertImageBase64String(\"%@\", \"%@\", \"%@\", \"%@\",\"%@\",\"%@\");", string, w,h,imgSign,[NSURL fileURLWithPath:lPath].absoluteString,sGap];
+        NSLog(@"\n\n 准备插入图片-js内部loadingPath格式:\n %@ \n\n",[NSURL fileURLWithPath:lPath].absoluteString);
         [weakSelf editableWeb:web operatedJs:js completion:^(id  _Nonnull info, NSError * _Nonnull error) {
             completion ? completion(info,error) : nil;
         }];
     }];
 }
 
-- (void)originalContentDOMForEditableWeb:(WKWebView *)web completion:(evaluateJsCompletion)completion {
+- (void)originalContentDOMForEditableWeb:(WKWebView *)web completion:(EvaluateJsCompletion)completion {
     NSString *js = @"zss_editor.getOriginalDOM();";
      [self editableWeb:web operatedJs:js completion:^(id  _Nonnull info, NSError * _Nonnull error) {
          completion ? completion(info,error) : nil;
@@ -103,13 +104,18 @@ void interceptIMP (id self, SEL _cmd, void* arg0, BOOL arg1, BOOL arg2, id arg3)
 
 #pragma mark -
 
--(void)prepareInsertEditableWeb:(WKWebView *)web completion:(evaluateJsCompletion)completion {
+-(void)prepareInsertEditableWeb:(WKWebView *)web completion:(EvaluateJsCompletion)completion {
     NSString *js = @"zss_editor.prepareInsert();";
     [self editableWeb:web operatedJs:js completion:completion];
 }
 
-- (void)editableWeb:(WKWebView *)web removeGrayMaskWithImageSign:(NSString *)imgSign completion:(evaluateJsCompletion)completion {
+- (void)editableWeb:(WKWebView *)web removeGrayMaskWithImageSign:(NSString *)imgSign completion:(EvaluateJsCompletion)completion {
     NSString *js = [NSString stringWithFormat:@"zss_editor.removeGrayMaskWithElementID(\"%@\");",imgSign];
+    [self editableWeb:web operatedJs:js completion:completion];
+}
+
+-(void)queryImagesCountForCurrentDOMWithEditableWeb:(WKWebView *)web completion:(EvaluateJsCompletion)completion {
+    NSString *js = @"zss_editor.queryImagesCountForCurrentDOM()";
     [self editableWeb:web operatedJs:js completion:completion];
 }
 
