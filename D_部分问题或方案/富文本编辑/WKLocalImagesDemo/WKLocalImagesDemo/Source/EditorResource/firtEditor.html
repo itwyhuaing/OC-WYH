@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>ZSSRichTextEditor</title>
+<meta name="viewport" charset="utf-8" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+<script type="text/javascript" src="./jQuery.js"></script>
+
+<script type="text/javascript" src="./JSBeautifier.js"></script>
+
+<script type="text/javascript" src="./ZSSRichTextEditor.js"></script>
+
+
+<style type="text/css">
+
+/* Custom CSS Styling */
+
+/*customcss*/
+img{
+    margin: 0 auto;
+    display: block;
+    max-width: 100%;
+}
+
+/**正在上传 mask */
+.pr{position: relative;}
+.pa{position: absolute;}
+.paBox{bottom: 0;left: 0;right: 0;top: 0;}
+.com-table {display: table;width: 100%;text-align: center;height: 100%;table-layout: fixed;}
+.com-table > div{display: table-cell;vertical-align: middle;}
+.grayMaskCL{
+    background-color: rgba(0, 0, 0, 0.8);
+    color:white;
+    height:100px;
+    line-height:100px;
+}
+
+.appContent{
+    margin-bottom:5px;
+}
+
+
+/**rain 333 999*/
+.zss_editor_title{
+    font-size:20px;
+    color:#222;
+    margin:15px;
+    border-bottom:1px dashed #999;
+    padding-bottom: 10px;
+}
+.zs_editor_content{
+    margin:0px 15px;
+    background-color: red;
+}
+
+.imgOperationCL{
+    width:32px;
+    height:32px;
+}
+
+.textOperationCL{
+    line-height: normal;
+    padding-top: 10px;
+    margin: 0;
+}
+
+.extraHeight{
+    height:560px;
+}
+
+
+.imageOriginText{
+    color:#999;
+    text-align:center;
+    border-bottom:1px solid #999;
+    margin-top:10px;
+    margin-left:60px;
+    margin-right:60px;
+    padding-bottom:5px;
+}
+
+</style>
+
+
+<style type="text/css">
+* {
+	outline: 0px solid transparent;
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+	-webkit-touch-callout: none;
+}
+
+html, body {
+	padding: 0;
+	margin: 0;
+	font-family: Arial, Helvetica, sans-serif;
+    /**holon*/
+    height: 100%;
+}
+
+body {
+	padding: 10px;
+	overflow-y: scroll;
+	-webkit-overflow-scrolling: touch;
+}
+
+img.zs_active {
+	/**border: 2px dashed #000;**/
+}
+
+audio {
+	padding: 20px 0;
+}
+
+div.zs_editor_content {
+	/**width: 100%;*/
+	/**height: 100%;*/
+	-webkit-overflow-scrolling: touch;
+	overflow:auto;
+}
+
+[placeholder]:empty:before {
+    content: attr(placeholder);
+    color: #555;
+    /**rain*/
+    vertical-align: top;
+}
+
+[placeholder]:empty:focus:before {
+    content: "";
+}
+
+</style>
+
+</head>
+
+<body onLoad="zss_editor.init();">
+
+    <div id="zss_editor_title" class="zss_editor_title" contenteditable="true" placeholder="请输入标题"></div>
+	<div id="zss_editor_content" class="zs_editor_content" contenteditable="true" placeholder="写点什么吧">
+        <h1>相册图片存于 Tmp 文件</h1>
+        <img src="https://tmp">
+        <h1>相册图片存于 Lib/cache 文件</h1>
+        <img src="https://cache">
+        <h1>目录图片资源(png)加载</h1>
+        <img src="https://bundle/png">
+        <h1>目录图片资源(gif)加载</h1>
+        <img src="https://bundle/gif">
+        <img src="https://">
+    </div>
+    <div id="extraHeight" class="extraHeight"></div>
+	<div id="zss_editor_footer"></div>
+
+</body>
+</html>
