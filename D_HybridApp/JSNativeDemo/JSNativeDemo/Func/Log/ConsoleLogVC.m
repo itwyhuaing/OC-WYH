@@ -32,7 +32,7 @@
                                         return function(info) {\
                                             window.webkit.messageHandlers.log.postMessage(info);\
                                         }\
-                                    })(console.log)";
+                                    })(console.log)"; 
     
     //injected the method when H5 starts to create the DOM tree
     [self.wkweb.configuration.userContentController addUserScript:[[WKUserScript alloc] initWithSource:js
