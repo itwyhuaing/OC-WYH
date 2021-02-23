@@ -10,9 +10,6 @@
 #define RuntimeProDemo_pch
 
 #import <objc/runtime.h>
-// ======= 统计
-#import "NeatAnalyzation.h"
-
 // ====== 其他
 #import "UIControl+ClickEvent.h"
 #import "UIView+Idf.h"

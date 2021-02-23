@@ -28,14 +28,6 @@
 		26B0783E2091B5E900B4CB3C /* NSDictionary+JXCategary.m in Sources */ = {isa = PBXBuildFile; fileRef = 26B0783D2091B5E900B4CB3C /* NSDictionary+JXCategary.m */; };
 		26B078472091D27800B4CB3C /* UIImage+ImageName.m in Sources */ = {isa = PBXBuildFile; fileRef = 26B078432091D27700B4CB3C /* UIImage+ImageName.m */; };
 		26B078482091D27800B4CB3C /* UIControl+ClickEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 26B078452091D27800B4CB3C /* UIControl+ClickEvent.m */; };
-		26C464B924F4FDF000F8921B /* UIView+Analyzation.m in Sources */ = {isa = PBXBuildFile; fileRef = 26C464A924F4FDF000F8921B /* UIView+Analyzation.m */; };
-		26C464BA24F4FDF000F8921B /* XpathParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 26C464AA24F4FDF000F8921B /* XpathParser.m */; };
-		26C464BB24F4FDF000F8921B /* UICollectionView+Analyzation.m in Sources */ = {isa = PBXBuildFile; fileRef = 26C464AD24F4FDF000F8921B /* UICollectionView+Analyzation.m */; };
-		26C464BC24F4FDF000F8921B /* UIScrollView+Analyzation.m in Sources */ = {isa = PBXBuildFile; fileRef = 26C464B024F4FDF000F8921B /* UIScrollView+Analyzation.m */; };
-		26C464BD24F4FDF000F8921B /* UIGestureRecognizer+Analyzation.m in Sources */ = {isa = PBXBuildFile; fileRef = 26C464B124F4FDF000F8921B /* UIGestureRecognizer+Analyzation.m */; };
-		26C464BE24F4FDF000F8921B /* UIControl+Analyzation.m in Sources */ = {isa = PBXBuildFile; fileRef = 26C464B524F4FDF000F8921B /* UIControl+Analyzation.m */; };
-		26C464BF24F4FDF000F8921B /* XpathFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 26C464B624F4FDF000F8921B /* XpathFilter.m */; };
-		26C464C024F4FDF000F8921B /* UITableView+Analyzation.m in Sources */ = {isa = PBXBuildFile; fileRef = 26C464B824F4FDF000F8921B /* UITableView+Analyzation.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,24 +91,6 @@
 		26B078442091D27800B4CB3C /* UIImage+ImageName.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageName.h"; sourceTree = "<group>"; };
 		26B078452091D27800B4CB3C /* UIControl+ClickEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIControl+ClickEvent.m"; sourceTree = "<group>"; };
 		26B078462091D27800B4CB3C /* UIControl+ClickEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIControl+ClickEvent.h"; sourceTree = "<group>"; };
-		26C464A724F4FDF000F8921B /* UIGestureRecognizer+Analyzation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIGestureRecognizer+Analyzation.h"; sourceTree = "<group>"; };
-		26C464A824F4FDF000F8921B /* HookFunction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HookFunction.h; sourceTree = "<group>"; };
-		26C464A924F4FDF000F8921B /* UIView+Analyzation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Analyzation.m"; sourceTree = "<group>"; };
-		26C464AA24F4FDF000F8921B /* XpathParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XpathParser.m; sourceTree = "<group>"; };
-		26C464AB24F4FDF000F8921B /* NeatAnalyzation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NeatAnalyzation.h; sourceTree = "<group>"; };
-		26C464AC24F4FDF000F8921B /* UITableView+Analyzation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+Analyzation.h"; sourceTree = "<group>"; };
-		26C464AD24F4FDF000F8921B /* UICollectionView+Analyzation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UICollectionView+Analyzation.m"; sourceTree = "<group>"; };
-		26C464AE24F4FDF000F8921B /* XpathFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XpathFilter.h; sourceTree = "<group>"; };
-		26C464AF24F4FDF000F8921B /* UIControl+Analyzation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIControl+Analyzation.h"; sourceTree = "<group>"; };
-		26C464B024F4FDF000F8921B /* UIScrollView+Analyzation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+Analyzation.m"; sourceTree = "<group>"; };
-		26C464B124F4FDF000F8921B /* UIGestureRecognizer+Analyzation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIGestureRecognizer+Analyzation.m"; sourceTree = "<group>"; };
-		26C464B224F4FDF000F8921B /* UIView+Analyzation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Analyzation.h"; sourceTree = "<group>"; };
-		26C464B324F4FDF000F8921B /* XpathParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XpathParser.h; sourceTree = "<group>"; };
-		26C464B424F4FDF000F8921B /* UIScrollView+Analyzation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+Analyzation.h"; sourceTree = "<group>"; };
-		26C464B524F4FDF000F8921B /* UIControl+Analyzation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIControl+Analyzation.m"; sourceTree = "<group>"; };
-		26C464B624F4FDF000F8921B /* XpathFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XpathFilter.m; sourceTree = "<group>"; };
-		26C464B724F4FDF000F8921B /* UICollectionView+Analyzation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UICollectionView+Analyzation.h"; sourceTree = "<group>"; };
-		26C464B824F4FDF000F8921B /* UITableView+Analyzation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+Analyzation.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,12 +150,12 @@
 		262C826A24E691B700252BED /* CommonBaseTest */ = {
 			isa = PBXGroup;
 			children = (
-				262C826B24E691B700252BED /* PersonDataModel.h */,
 				262C826C24E691B700252BED /* FirstTableVC.h */,
-				262C826D24E691B700252BED /* CategaryVC.h */,
-				262C826E24E691B700252BED /* PersonDataModel.m */,
 				262C826F24E691B700252BED /* FirstTableVC.m */,
+				262C826D24E691B700252BED /* CategaryVC.h */,
 				262C827024E691B700252BED /* CategaryVC.m */,
+				262C826B24E691B700252BED /* PersonDataModel.h */,
+				262C826E24E691B700252BED /* PersonDataModel.m */,
 			);
 			path = CommonBaseTest;
 			sourceTree = "<group>";
@@ -267,7 +241,6 @@
 		26B078312091B55C00B4CB3C /* Categary */ = {
 			isa = PBXGroup;
 			children = (
-				26C464A624F4FDF000F8921B /* NeatAnalyzation */,
 				26B078372091B55C00B4CB3C /* UINavigationController+Consistent.h */,
 				26B078322091B55C00B4CB3C /* UINavigationController+Consistent.m */,
 				26B078462091D27800B4CB3C /* UIControl+ClickEvent.h */,
@@ -280,31 +253,6 @@
 				262C822124E3D48900252BED /* UIView+Idf.m */,
 			);
 			path = Categary;
-			sourceTree = "<group>";
-		};
-		26C464A624F4FDF000F8921B /* NeatAnalyzation */ = {
-			isa = PBXGroup;
-			children = (
-				26C464AB24F4FDF000F8921B /* NeatAnalyzation.h */,
-				26C464A824F4FDF000F8921B /* HookFunction.h */,
-				26C464B324F4FDF000F8921B /* XpathParser.h */,
-				26C464AA24F4FDF000F8921B /* XpathParser.m */,
-				26C464AE24F4FDF000F8921B /* XpathFilter.h */,
-				26C464B624F4FDF000F8921B /* XpathFilter.m */,
-				26C464AF24F4FDF000F8921B /* UIControl+Analyzation.h */,
-				26C464B524F4FDF000F8921B /* UIControl+Analyzation.m */,
-				26C464AC24F4FDF000F8921B /* UITableView+Analyzation.h */,
-				26C464B824F4FDF000F8921B /* UITableView+Analyzation.m */,
-				26C464B724F4FDF000F8921B /* UICollectionView+Analyzation.h */,
-				26C464AD24F4FDF000F8921B /* UICollectionView+Analyzation.m */,
-				26C464B224F4FDF000F8921B /* UIView+Analyzation.h */,
-				26C464A924F4FDF000F8921B /* UIView+Analyzation.m */,
-				26C464B424F4FDF000F8921B /* UIScrollView+Analyzation.h */,
-				26C464B024F4FDF000F8921B /* UIScrollView+Analyzation.m */,
-				26C464A724F4FDF000F8921B /* UIGestureRecognizer+Analyzation.h */,
-				26C464B124F4FDF000F8921B /* UIGestureRecognizer+Analyzation.m */,
-			);
-			path = NeatAnalyzation;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -442,26 +390,18 @@
 			files = (
 				262C822224E3D48900252BED /* UIView+Idf.m in Sources */,
 				26B078472091D27800B4CB3C /* UIImage+ImageName.m in Sources */,
-				26C464BC24F4FDF000F8921B /* UIScrollView+Analyzation.m in Sources */,
 				26B078482091D27800B4CB3C /* UIControl+ClickEvent.m in Sources */,
-				26C464BE24F4FDF000F8921B /* UIControl+Analyzation.m in Sources */,
 				26B078382091B55C00B4CB3C /* UINavigationController+Consistent.m in Sources */,
 				268627EB201F270E002F610E /* TableVC.m in Sources */,
 				268627BF201F225F002F610E /* main.m in Sources */,
 				262C827624E691B700252BED /* CategaryVC.m in Sources */,
 				262C827324E691B700252BED /* ImgTextAttachment.m in Sources */,
-				26C464C024F4FDF000F8921B /* UITableView+Analyzation.m in Sources */,
-				26C464BB24F4FDF000F8921B /* UICollectionView+Analyzation.m in Sources */,
-				26C464BA24F4FDF000F8921B /* XpathParser.m in Sources */,
 				26B0783E2091B5E900B4CB3C /* NSDictionary+JXCategary.m in Sources */,
 				268627EA201F270E002F610E /* AppDelegate.m in Sources */,
-				26C464B924F4FDF000F8921B /* UIView+Analyzation.m in Sources */,
 				265BE2B924EA50410098986D /* AnalyzationTabViewVC.m in Sources */,
 				262C827C24E6920500252BED /* AnalyzationGestureVC.m in Sources */,
 				262C827424E691B700252BED /* PersonDataModel.m in Sources */,
-				26C464BD24F4FDF000F8921B /* UIGestureRecognizer+Analyzation.m in Sources */,
 				262C827224E691B700252BED /* DefendContinHitVC.m in Sources */,
-				26C464BF24F4FDF000F8921B /* XpathFilter.m in Sources */,
 				262C827524E691B700252BED /* FirstTableVC.m in Sources */,
 				262C827924E691EE00252BED /* AnalyzationUICotrolVC.m in Sources */,
 			);
