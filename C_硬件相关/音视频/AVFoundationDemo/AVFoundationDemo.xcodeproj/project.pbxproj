@@ -11,7 +11,6 @@
 		2660F50723546D9000311A0F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2660F50623546D9000311A0F /* Assets.xcassets */; };
 		2660F50A23546D9000311A0F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2660F50823546D9000311A0F /* LaunchScreen.storyboard */; };
 		2660F50D23546D9000311A0F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2660F50C23546D9000311A0F /* main.m */; };
-		2660F51B23546DC200311A0F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2660F51623546DC200311A0F /* ViewController.m */; };
 		2660F51D23546DC200311A0F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2660F51823546DC200311A0F /* AppDelegate.m */; };
 		2660F520235476DA00311A0F /* TableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2660F51E235476D900311A0F /* TableVC.m */; };
 		2660F5242354771200311A0F /* AVSpeechSynthesizerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2660F5232354771200311A0F /* AVSpeechSynthesizerVC.m */; };
@@ -19,7 +18,8 @@
 		2660F52A23547F1D00311A0F /* AVAudioRecorderVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2660F52923547F1D00311A0F /* AVAudioRecorderVC.m */; };
 		2660F52D23547F7200311A0F /* AVAudioSessionVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2660F52C23547F7200311A0F /* AVAudioSessionVC.m */; };
 		2660F5302355B8AB00311A0F /* Voice02.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2660F52F2355B8AB00311A0F /* Voice02.mp3 */; };
-		2660F533235700D500311A0F /* recoder.caf in Resources */ = {isa = PBXBuildFile; fileRef = 2660F532235700D500311A0F /* recoder.caf */; };
+		26A30EF726284CF9007F98DC /* recoder.caf in Resources */ = {isa = PBXBuildFile; fileRef = 26A30EF626284CF9007F98DC /* recoder.caf */; };
+		BD2E74E8CA14CC88D1921260 /* libPods-AVFoundationDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A3959203F0F4EDBE2D6BA3ED /* libPods-AVFoundationDemo.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,9 +30,7 @@
 		2660F50B23546D9000311A0F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2660F50C23546D9000311A0F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		2660F51523546DC200311A0F /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		2660F51623546DC200311A0F /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		2660F51823546DC200311A0F /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		2660F51923546DC200311A0F /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		2660F51E235476D900311A0F /* TableVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableVC.m; sourceTree = "<group>"; };
 		2660F51F235476D900311A0F /* TableVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableVC.h; sourceTree = "<group>"; };
 		2660F5222354771200311A0F /* AVSpeechSynthesizerVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AVSpeechSynthesizerVC.h; sourceTree = "<group>"; };
@@ -44,7 +42,10 @@
 		2660F52B23547F7200311A0F /* AVAudioSessionVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AVAudioSessionVC.h; sourceTree = "<group>"; };
 		2660F52C23547F7200311A0F /* AVAudioSessionVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AVAudioSessionVC.m; sourceTree = "<group>"; };
 		2660F52F2355B8AB00311A0F /* Voice02.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Voice02.mp3; sourceTree = "<group>"; };
-		2660F532235700D500311A0F /* recoder.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = recoder.caf; sourceTree = "<group>"; };
+		26A30EF626284CF9007F98DC /* recoder.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = recoder.caf; sourceTree = "<group>"; };
+		A3959203F0F4EDBE2D6BA3ED /* libPods-AVFoundationDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AVFoundationDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D8740876DBBF86C6831F8A1F /* Pods-AVFoundationDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AVFoundationDemo.debug.xcconfig"; path = "Target Support Files/Pods-AVFoundationDemo/Pods-AVFoundationDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		EE13FD3F9273BBD256B42D59 /* Pods-AVFoundationDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AVFoundationDemo.release.xcconfig"; path = "Target Support Files/Pods-AVFoundationDemo/Pods-AVFoundationDemo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD2E74E8CA14CC88D1921260 /* libPods-AVFoundationDemo.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +65,8 @@
 			children = (
 				2660F4F923546D8E00311A0F /* AVFoundationDemo */,
 				2660F4F823546D8E00311A0F /* Products */,
+				857C8CAC3DDBC6ED5252D5AF /* Pods */,
+				E50F5E98FCD21A8125F0F48B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -102,8 +106,6 @@
 			children = (
 				2660F51523546DC200311A0F /* AppDelegate.h */,
 				2660F51823546DC200311A0F /* AppDelegate.m */,
-				2660F51923546DC200311A0F /* ViewController.h */,
-				2660F51623546DC200311A0F /* ViewController.m */,
 				2660F51F235476D900311A0F /* TableVC.h */,
 				2660F51E235476D900311A0F /* TableVC.m */,
 			);
@@ -128,10 +130,27 @@
 		2660F52E2355B8AB00311A0F /* source */ = {
 			isa = PBXGroup;
 			children = (
-				2660F532235700D500311A0F /* recoder.caf */,
+				26A30EF626284CF9007F98DC /* recoder.caf */,
 				2660F52F2355B8AB00311A0F /* Voice02.mp3 */,
 			);
 			path = source;
+			sourceTree = "<group>";
+		};
+		857C8CAC3DDBC6ED5252D5AF /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D8740876DBBF86C6831F8A1F /* Pods-AVFoundationDemo.debug.xcconfig */,
+				EE13FD3F9273BBD256B42D59 /* Pods-AVFoundationDemo.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		E50F5E98FCD21A8125F0F48B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A3959203F0F4EDBE2D6BA3ED /* libPods-AVFoundationDemo.a */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -141,6 +160,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2660F51023546D9000311A0F /* Build configuration list for PBXNativeTarget "AVFoundationDemo" */;
 			buildPhases = (
+				10DDB4AC75C2DCCF6A68EDEF /* [CP] Check Pods Manifest.lock */,
 				2660F4F323546D8E00311A0F /* Sources */,
 				2660F4F423546D8E00311A0F /* Frameworks */,
 				2660F4F523546D8E00311A0F /* Resources */,
@@ -194,12 +214,37 @@
 				2660F50A23546D9000311A0F /* LaunchScreen.storyboard in Resources */,
 				2660F5302355B8AB00311A0F /* Voice02.mp3 in Resources */,
 				2660F50723546D9000311A0F /* Assets.xcassets in Resources */,
-				2660F533235700D500311A0F /* recoder.caf in Resources */,
+				26A30EF726284CF9007F98DC /* recoder.caf in Resources */,
 				2660F50523546D8E00311A0F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		10DDB4AC75C2DCCF6A68EDEF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AVFoundationDemo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		2660F4F323546D8E00311A0F /* Sources */ = {
@@ -212,7 +257,6 @@
 				2660F52D23547F7200311A0F /* AVAudioSessionVC.m in Sources */,
 				2660F5242354771200311A0F /* AVSpeechSynthesizerVC.m in Sources */,
 				2660F52723547E0500311A0F /* AVAudioPlayerVC.m in Sources */,
-				2660F51B23546DC200311A0F /* ViewController.m in Sources */,
 				2660F50D23546D9000311A0F /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -351,6 +395,7 @@
 		};
 		2660F51123546D9000311A0F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D8740876DBBF86C6831F8A1F /* Pods-AVFoundationDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -369,6 +414,7 @@
 		};
 		2660F51223546D9000311A0F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EE13FD3F9273BBD256B42D59 /* Pods-AVFoundationDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

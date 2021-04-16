@@ -1,0 +1,5 @@
+platform :ios, '11.0'
+target 'AVFoundationDemo' do
+	pod 'MBProgressHUD', '~> 1.0.0'
+end
+

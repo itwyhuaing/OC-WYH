@@ -48,8 +48,8 @@ static NSString *kVC            = @"vc";
 -(NSMutableArray<NSDictionary *> *)cnts{
     if (!_cnts) {
         _cnts = [[NSMutableArray alloc] init];
-        NSArray *thems = @[@"AVSpeechSynthesizer",@"AVAudioPlayer",
-                            @"AVAudioRecorder",@"AVAudioSession"];
+        NSArray *thems = @[@"AVSpeechSynthesizer",@"AVAudioPlayer播放",
+                            @"AVAudioRecorder录制",@"AVAudioSession"];
         NSArray *vcs   = @[@"AVSpeechSynthesizerVC",@"AVAudioPlayerVC",
                             @"AVAudioRecorderVC",@"AVAudioSessionVC"];
         for (NSInteger cou = 0; cou < thems.count; cou ++) {

@@ -633,14 +633,14 @@
 				DEVELOPMENT_TEAM = JA7UMD99EC;
 				GCC_PREFIX_HEADER = CollectionViewDemo/Config/CollectionViewDemoPrefix.pch;
 				INFOPLIST_FILE = CollectionViewDemo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.jixia.rain;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hinabian.hainabian;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -652,14 +652,14 @@
 				DEVELOPMENT_TEAM = JA7UMD99EC;
 				GCC_PREFIX_HEADER = CollectionViewDemo/Config/CollectionViewDemoPrefix.pch;
 				INFOPLIST_FILE = CollectionViewDemo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.jixia.rain;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hinabian.hainabian;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
