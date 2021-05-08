@@ -48,7 +48,6 @@
     l.textColor = [UIColor blackColor];
     [v addSubview:l];
     
-    
 }
 
 /**
